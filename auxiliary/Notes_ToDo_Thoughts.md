@@ -156,4 +156,10 @@ Read the [published paper](https://doi.org/10.1098/rspb.2020.0496). All material
 
 I replaced your `.css` with `.scss`. I changed the primary color to the green from the `?` in the MADA logo.
 
+## Publishing
+
+1. Run `quarto render` in terminal.
+2. Commit and push changes.
+3. Run `quarto publish gh-pages` in terminal and follow prompts.
+
 # Scribblings

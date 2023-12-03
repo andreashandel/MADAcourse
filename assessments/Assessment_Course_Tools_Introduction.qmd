@@ -16,7 +16,7 @@ Each module has an __Assessments__ page, like this one, which describes what the
 
 ## Quiz
 
-Get the quiz sheet for this module from the general [**Assessments**](./Course_Assessments.html) page. Fill it in, then submit to the online grading system before the deadline.
+Get the quiz sheet for this module from the general [**Assessments**](../courseinfo/Course_Assessments.qmd) page. Fill it in, then submit to the online grading system before the deadline.
 
 For this first module, you have 2 submission attempts. This allows you to get used to the submission system. 
 

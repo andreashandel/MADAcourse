@@ -120,7 +120,7 @@ To that end, provide the following pieces of information:
 
 Check the [Project Review Template file](templatefiles/Project_Review_Template.qmd) to see how this submission will be assessed by your peers. I will not grade this part but it will be assessed by your peers, as described in the [*Project Review*](Project_Review.qmd) document.
 
-*A great project would be at the level of Brian McKay's paper example you checked out in the [Motivating Examples document](./Data_Analysis_Motivation.html), or one of the projects on the `Project Examples` page.*
+*A great project would be at the level of Brian McKay's paper example you checked out in the [Motivating Examples document](../modules/Data_Analysis_Motivation.qmd), or one of the projects on the `Project Examples` page.*
 
 # Part 6
 
