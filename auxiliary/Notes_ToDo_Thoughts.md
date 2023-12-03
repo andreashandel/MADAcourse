@@ -99,9 +99,10 @@ To link between pages in **different** folders - use double dots to get to the p
 Example as seen in `assessments/Assessment_Course_Tools_Introduction.qmd`:
 `[**Schedule**](../courseinfo/Course_Schedule.qmd)`
 
-This way of cross referencing is cool because you can link to specific sections.
+This way of cross referencing is cool because you can link to specific sections. Add a `#sec-` identifier to any heading per these [Quarto docs](https://quarto.org/docs/authoring/cross-references.html#sections). 
 
 Example as seen in `project/Project_Review.qmd`:
+
 `-   Use the simple grading rubric shown in the part 3 section of the [Project Details](Project_Details.qmd#sec-part-3) document.`
 
 ## Contributors - author roles in metadata
@@ -141,7 +142,8 @@ knitr::include_graphics("../media/xkcd-flowcharts.png")
 
 ## Accessibility
  
-Accessibility is really important to me so I thought I'd call attention to some of your hyperlink names. Most are great (concise and descriptive) but some are just called [here] which aren't [helpful link names](https://www.a11yproject.com/posts/creating-valid-and-accessible-links/. 
+Accessibility is really important to me so I thought I'd call attention to some of your hyperlink names. Most are great (concise and descriptive) but some are just called [here] which aren't [helpful link names](https://www.a11yproject.com/posts/creating-valid-and-accessible-links/). 
+
 Not good:
 
 You can find the published paper [here](https://doi.org/10.1098/rspb.2020.0496). All materials to reproduce the full project and all results are available as supplementary material [here](https://doi.org/10.5061/dryad.51c59zw4v).
