@@ -1,0 +1,14 @@
+{
+  "hash": "34849d020312a273326c7198a08a36e9",
+  "result": {
+    "markdown": "---\ntitle: Assessment - Evaluating models\nauthor: Andreas Handel\ndate: \"2023-11-28 22:29:36\"\noutput: \n  html_document:\n    toc_depth: 3\n---\n\n\n\n\n\n\n# Quiz\n\nGet the quiz sheet for this module from the general [__Assessments__](./Course_Assessments.html) page. Fill it in, then submit to the online grading system before the deadline. \n\n\n# Exercise\n\nWe definitely need to practice some of the topics we covered in this (and previous modules). But since at the end of the week there is another project deadline, I want you to focus on that. Thus no exercise this week, we'll practice the topics we covered in upcoming exercises.\n\n\n# Project\n\nFinish (and make sure to push) part 3 of the project. There is no need to submit a link. Unless you renamed your repository, I, and your classmates, know where to find it based on your previous submissions. Make sure the link you posted previously to the `project_related` Slack channel is accurate. If you are using a private repository, add the students who will review your project as collaborators (see `announcement` channel).\n\n\n\n# Discussion\n\nWrite a post in this week's discussion channel that answers this question:\n\nWhich of the concept(s) we covered in this module is/are the most interesting/surprising to you, and why? And which concept(s) or topic(s) from this module's materials do you find the most confusing, and why/how so? \n\nPost by Wednesday, then reply to each other by Friday. See if you can help each other reduce any existing confusion. I'll be participating too of course.\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

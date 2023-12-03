@@ -94,7 +94,7 @@ Again, make sure you document well. Prior to each code piece that produces some 
 **Once you are done with this part, you should have code that explores and cleans the data, and saves the final cleaned data set to an Rds file. You should also have documentation, either as comments in the code, or text in an Rmd file, or notes in a readme file (or even better, all of those), that explain what variables the data contain, what each variable means, which 2 (one continuous, 1 categorical) you decide are the main outcomes of interest. Also decide on a predictor variable that is of main interest. And state which other predictor/input variables are worth considering. For the predictors, you can say "all" if you don't have too many. If you have a lot of variables, specify which ones are of main importance.**
 
 :::note
-For this exercise, it isn't so important that the outcomes and predictors you pick are of actual scientific interest. Say if you had `age` and `sex` and some other variables related to the location a person lives, you can declare your continuous outcome of interest to be `age` and your categorical to be `sex`, even if there is no scientific reason to assume they are associated with the location variables. Of course for a real study, you would try to look at outcome-predictor combinations that make scientific sense, but this is just an exercise, so some potential nonsensical assumptions are allowed `r emoji::emoji('grin')`.
+For this exercise, it isn't so important that the outcomes and predictors you pick are of actual scientific interest. Say if you had `age` and `sex` and some other variables related to the location a person lives, you can declare your continuous outcome of interest to be `age` and your categorical to be `sex`, even if there is no scientific reason to assume they are associated with the location variables. Of course for a real study, you would try to look at outcome-predictor combinations that make scientific sense, but this is just an exercise, so some potential nonsensical assumptions are allowed 😁.
 :::
 
 
@@ -111,7 +111,7 @@ Fork and clone your partner's repository. (Alternatively, the first person can a
 
 Read through their code so you understand what the two outcomes of interest are, the main predictors, and what the rest of the data contain. 
 
-**Hopefully their code is nicely documented. If it is, you should see how this is much better than going into some Excel file, manually deleting stuff, and nobody ever knows what happened. if it isn't well documented, feel free to bug them to improve their meta-data/documentation to a level where you can understand what's going on. (That's a common task that analysts need to do with their data-generating collaborators `r emoji::emoji('grin')`.)**
+**Hopefully their code is nicely documented. If it is, you should see how this is much better than going into some Excel file, manually deleting stuff, and nobody ever knows what happened. if it isn't well documented, feel free to bug them to improve their meta-data/documentation to a level where you can understand what's going on. (That's a common task that analysts need to do with their data-generating collaborators 😁.)**
 
 Start with a clean analysis script. You can either use an Rmd file, or you can do an R script. In either case, document/comment well.
 

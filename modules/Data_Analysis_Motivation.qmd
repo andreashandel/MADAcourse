@@ -1,0 +1,100 @@
+---
+title: MADA - Motivating Data Analysis Examples 
+subtitle: ""
+---
+
+# Overview
+
+We'll get into the details of what data analysis is and how to do it very soon. But to start out, I want to provide a few hopefully inspiring and motivating examples of data analysis and use. You'll be doing similar projects yourself soon! In fact, you will be reproducing several analyses below.
+
+
+# Learning Objectives
+* Get motivated toward learning and doing data science.
+* See what's possible with R and what you'll be able to do yourself soon.
+
+
+# Motivating Videos
+
+There are lots of good videos online discussing different aspects of the vast topic of data analysis. [TED](https://www.ted.com/) is an especially good source for such videos.
+
+## TED talk 1
+Arguably one of the best communicators of public health data was the late [Hans Rosling](https://en.wikipedia.org/wiki/Hans_Rosling). He has several great entertaining and enlightening TED talks. Here is one of them: A statistics talk that has been viewed millions of times!
+
+<p>
+<div style="max-width:854px"><div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://embed.ted.com/talks/hans_rosling_shows_the_best_stats_you_ve_ever_seen" width="854" height="480" style="position:absolute;left:0;top:0;width:100%;height:100%" frameborder="0" scrolling="no" allowfullscreen></iframe></div></div>
+</p>
+
+You can watch [more TED talks by Hans Rosling here](https://www.ted.com/speakers/hans_rosling). The software he uses to illustrate data is called Gapminder and [available online](https://www.gapminder.org/tools/#$chart-type=bubbles) on the [Gapminder website](https://www.gapminder.org/).
+
+
+## TED talk 2
+In this entertaining and empowering talk, [Talithia Williams](https://www.ted.com/speakers/talithia_williams) argues for the utility of careful assessment of data in your personal life.
+
+<p>
+<div style="max-width:854px"><div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://embed.ted.com/talks/talithia_williams_own_your_body_s_data" width="854" height="480" style="position:absolute;left:0;top:0;width:100%;height:100%" frameborder="0" scrolling="no" allowfullscreen></iframe></div></div>
+</p>
+
+
+## TED talk 3
+In this talk, [Sebastian Wernicke](https://www.ted.com/speakers/sebastian_wernicke) gives some cautionary suggestions about trusting data too much and argues for critical assessment as an important part of any data analysis and decision process.
+
+<p>
+<iframe src="https://embed.ted.com/talks/sebastian_wernicke_how_to_use_data_to_make_a_hit_tv_show" width="640" height="360" frameborder="0" scrolling="no" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+</p>
+
+
+## More TED talks 
+The TED website has [a large number of data related talks](https://www.ted.com/topics/data). Feel free to explore as much as you like. If you find especially good ones, post them on the class discussion board.
+
+
+# Case studies
+It is by now very common that individuals post data analyses online in a reproducible manner by providing all the code and data to recreate it.
+
+
+## TidyTuesday
+An interesting initiative started by [Thomas Mock](https://themockup.blog/) is [TidyTuesday](https://github.com/rfordatascience/tidytuesday), where every Tuesday a new dataset is released and individuals are encouraged to analyze it. Later in this course, you will be participating in some TidyTuesdays yourself. Tidy Tuesday has by now been running [for many years](https://themockup.blog/posts/2021-04-01-three-years-of-tidytuesday/).
+
+Individuals who participate in TidyTuesday often post their projects online [and link to it on social media](https://nsgrantham.shinyapps.io/tidytuesdayrocks/). We will look at an example by [David Robinson](http://varianceexplained.org/). David does screencast recordings showing him analyze the data. 
+
+You don't need to watch all of the almost 2 hour long recording 😄, but do watch the first few minutes to see him coding/analyzing in real-time. You might just get hooked and keep watching. You might not be familiar with some or most of the R coding,  but you will still get the overall idea of how he does the analysis. And his thinking out loud is informative as well. See for yourself:
+
+<p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/2HpRXIpU4jI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
+
+If you like the ability to look over his shoulder while he does data analysis, [he has a bunch more of those screencast recordings](https://youtube.com/playlist?list=PL19ev-r1GBwkuyiwnxoHTRC8TTqP8OEi8).
+
+There are others who live-stream data analysis, including competitions, on platforms such as Twitch. Check out [Jesse Mostipak, aka Kiersi](https://www.twitch.tv/kierisi) or [Nick Wan](https://www.twitch.tv/nickwan_datasci) if interested.
+
+Dave does his work reproducibly [and shares the code](https://github.com/dgrtwo/data-screencasts) as R Markdown files. For specific files, see the links provided in the video description. For convenience, [here is the link to download the code for his analysis](https://raw.githubusercontent.com/dgrtwo/data-screencasts/master/2021_05_18_salary_survey.Rmd). Just save the file after it opens in your browser. It should be named `2021_05_18_salary_survey.Rmd`. Click on it, and it should open in RStudio. 
+
+Once the file is open in RStudio, you might see at the top of the file a message suggesting that you need to install several packages to run the file. Do so. If you don't get that auto-suggestion, you need to install the packages by hand. Every package that is called with the `library()` command needs to be installed first. 
+
+This is a good example of an _almost works_ reproducible example. It's quite rare that things work completely without adjustments on different machines, and how to do that best is a huge topic in data analysis (e.g., for drug companies that need full reproducibility for licensing). In this example, I had to make the following adjustments:
+* Change `output: html_output` to `output: html_document` in the YAML section.
+* Install the `ranger` package, which is not listed under the `library` statements but is needed.
+
+With those changes, I was able to run the whole script by hitting the `Knit` button in RStudio. If you are still missing a package, you will get an error message. If things work out, the whole script will run a while (depending on the speed of your computer), and you should get a document/report which reproduces the complete analysis he did in the video! If things don't work out, post your error message to Slack so someone can help troubleshoot. One potential problem could arise from the fact that David uses parallel computing to make things run faster. If you get an error message, you can try commenting out or deleting the line of code that says `doParallel::registerDoParallel(cores = 4)` and see if it works without it. It worked ok with that line of code on my windows machine, but might not always work. (If on Windows, you might be asked about firewall network permissions. That's a quirk of how parallel computing works on a single machine. Just say "yes" to both public and private networks.)
+
+Again, most or all of the R code might not make sense to you just yet. That's ok. The main point is to show you a nice example of a data analysis done in a way that others (you) can reproduce with just a few clicks. As part of this class, you will be producing those kinds of reproducible R Markdown files (well, we'll be doing Quarto files, which is the improved successor of R Markdown).
+
+
+## Research Project
+
+Fully open and reproducible analyses are also becoming common in academic research, with authors publishing everything needed to reproduce their paper and results. In my research group, we try to adhere to this approach as much as possible. As an example, I'm sharing a recent project/paper by Dr. Brian McKay, a former grad student in my group. You can find the published paper [here](https://doi.org/10.1098/rspb.2020.0496). All materials to reproduce the full project and all results are available as supplementary material [here](https://doi.org/10.5061/dryad.51c59zw4v). Take a look at the `Usage Notes` section on the website.
+
+Next, click on `Download Dataset`, and unzip the file. You should end up with a folder called `ProcSocB Supplemental Material`. 
+
+
+Inside that folder you can see subfolders containing all the data and code to fully reproduce the analysis and manuscript. Find and click on `Virulence_Trade-off.Rproj`. This should open in RStudio. To reproduce the manuscript, go into the `Manuscript` folder, open `Manuscript.Rmd`. You'll see some code at the top which loads various datasets containing results. Further down, you'll find the text of the manuscript, combined with simple R commands that dynamically place numbers and figures into the text. Re-create the manuscript by clicking on the `knit` button. There might be error messages related to missing packages. If that happens, install those packages (e.g. 'bookdown'). If you get stuck, post your problem to the discussion boards.
+
+Feel free to explore further by opening various R scripts and running them. The `Usage Notes` section on the website where you downloaded the zip file, or the `Supplementary-Material.docx` document explain what the different pieces do and how to use them. 
+
+As you can tell, this is more complex and complete compared to the single R Markdown file example above. The details on how you structure your project and folders/files are up to you, but they should provide a way to organize things so it's easy for you and others to understand what is going on where.
+
+This example hopefully gives you an idea how nice and easy it is to _write a whole paper_ with just a few clicks of a button. It is a combination of R scripts and R Markdown files (in this case a version called bookdown), which allow a fully automated generation of a complete data analysis and manuscript, including all figures, tables, references, etc. This is an incredibly efficient workflow and one you'll learn and use in this class. For instance if there was a mistake somewhere in the data, instead of going through the manuscript and manually changing numbers, one could just re-run the whole code, and it will produce new results based on the updated data in a fully automated manner. It's a bit more work upfront until you get the hang of it, but once you have it set up, it can save an enormous amount of time and avoid potential copy & paste mistakes.
+
+
+
+
+

@@ -1,0 +1,30 @@
+---
+title: Assessment - Evaluating models
+subtitle: ""
+---
+
+
+# Quiz
+
+Get the quiz sheet for this module from the general [__Assessments__](../courseinfo/Course_Assessments.qmd) page. Fill it in, then submit to the online grading system before the deadline. 
+
+
+# Exercise
+
+We definitely need to practice some of the topics we covered in this (and previous modules). But since at the end of the week there is another project deadline, I want you to focus on that. Thus no exercise this week, we'll practice the topics we covered in upcoming exercises.
+
+
+# Project
+
+Finish (and make sure to push) part 3 of the project. There is no need to submit a link. Unless you renamed your repository, I, and your classmates, know where to find it based on your previous submissions. Make sure the link you posted previously to the `project_related` Slack channel is accurate. If you are using a private repository, add the students who will review your project as collaborators (see `announcement` channel).
+
+
+
+# Discussion
+
+Write a post in this week's discussion channel that answers this question:
+
+Which of the concept(s) we covered in this module is/are the most interesting/surprising to you, and why? And which concept(s) or topic(s) from this module's materials do you find the most confusing, and why/how so? 
+
+Post by Wednesday, then reply to each other by Friday. See if you can help each other reduce any existing confusion. I'll be participating too of course.
+
