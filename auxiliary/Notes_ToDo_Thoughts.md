@@ -49,11 +49,16 @@ format:
 
 These can be overwritten in individual .qmd files. I noticed you had your affiliation on most pages so I included it, but you can easily comment it out/remove it.
 
+**AH: I plan to remove affiliation everywhere. Feel free to remove, otherwise I can.** 
+
 ### Emojis
 
 Quarto allows you to insert emojis without the `emoji` package. [https://quarto.org/docs/visual-editor/content.html#emojis](https://quarto.org/docs/visual-editor/content.html#emojis)
 
 I replaced your `emoji` calls with just the emoji and removed the library call in `index.qmd`.
+
+**AH: Ok. I rarely use the viusal editor, I assume this works equally well in the text editor version?  And I do want to make sure things are somewhat portable to different formats, e.g. if I want to make (revealjs) slides using some of the text, or for some reason need to create Word or pdf output of some of the text, I'd like things to work as much as possible. I didn't fully understand what they say in the emoji documentation about when/how native emojis are supported. Just want to make sure this is as output-independent as possible.** 
+
 
 ### Navigation
 
@@ -99,9 +104,10 @@ To link between pages in **different** folders - use double dots to get to the p
 Example as seen in `assessments/Assessment_Course_Tools_Introduction.qmd`:
 `[**Schedule**](../courseinfo/Course_Schedule.qmd)`
 
-This way of cross referencing is cool because you can link to specific sections.
+This way of cross referencing is cool because you can link to specific sections. Add a `#sec-` identifier to any heading per these [Quarto docs](https://quarto.org/docs/authoring/cross-references.html#sections). 
 
 Example as seen in `project/Project_Review.qmd`:
+
 `-   Use the simple grading rubric shown in the part 3 section of the [Project Details](Project_Details.qmd#sec-part-3) document.`
 
 ## Contributors - author roles in metadata
@@ -139,9 +145,14 @@ knitr::include_graphics("../media/xkcd-flowcharts.png")
 
 **I can adjust these for you, but wanted to check if you would prefer to continue to use knitr::include_graphics().**
 
+
+**AH: I'm ok doing it the Quarto way. I mostly used the knitr version since it was more robust/flexible across different output formats (e.g., slides, word docs, etc.) compared to the Rmarkdown way. It also allowed more fine control. But it seems Quarto is now as good or better in placement and compatibility, and I like the idea of being somewhat language-agnostic (e.g. if I decided to switch to Julia in the future, it would seem a bit odd to have calls to knitr). So yes, if you think doing figure placement in Quarto gives us all that knitr can do and more, I'm happy to make the switch.**
+
+
 ## Accessibility
  
-Accessibility is really important to me so I thought I'd call attention to some of your hyperlink names. Most are great (concise and descriptive) but some are just called [here] which aren't [helpful link names](https://www.a11yproject.com/posts/creating-valid-and-accessible-links/. 
+Accessibility is really important to me so I thought I'd call attention to some of your hyperlink names. Most are great (concise and descriptive) but some are just called [here] which aren't [helpful link names](https://www.a11yproject.com/posts/creating-valid-and-accessible-links/). 
+
 Not good:
 
 You can find the published paper [here](https://doi.org/10.1098/rspb.2020.0496). All materials to reproduce the full project and all results are available as supplementary material [here](https://doi.org/10.5061/dryad.51c59zw4v).
@@ -152,9 +163,14 @@ Read the [published paper](https://doi.org/10.1098/rspb.2020.0496). All material
 
 **I can adjust these for you, just let me know if you're okay with it.**
 
+**AH: Agree, making things accessible if possible is a good idea. So yes, feel free to adjust any of those and reword to make it better. (There might be other areas where this is not ideal, for instance I'm not sure I have alt-text for all figures and other embeddings. Feel free to add any of that too if you run into something that you think needs improvement)**
+
 ## Styling
 
 I replaced your `.css` with `.scss`. I changed the primary color to the green from the `?` in the MADA logo.
+
+**AH: I like things to look good, but I'm not much of a styler/designer :), so feel free to improve the looks of everything as much as you like. (Just don't make it too complicated, I don't want to have a lot of overhead/complexity like calling extra packages for fancy fonts or stuff like that)**
+
 
 ## Publishing
 
