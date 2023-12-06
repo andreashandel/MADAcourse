@@ -1,0 +1,140 @@
+---
+title: Assessment - Fitting Basic Statistical Models
+subtitle: ""
+---
+
+
+# Quiz
+
+Get the quiz sheet for this module from the general [__Assessments__](../../courseinfo/Course_Assessments.qmd) page. Fill it in, then submit to the online grading system before the deadline. 
+
+
+# Exercise
+
+We'll practice a bit of model fitting using the `tidymodels` framework. Of course, some wrangling tasks are likely part as well. This is another solo exercise. We'll eventually get back to group work, I promise 😃.
+
+
+## Setup
+
+**This will be part of your portfolio site.** 
+
+We are going to use [the data from Brian McKay's paper](https://datadryad.org/stash/dataset/doi:10.5061/dryad.51c59zw4v) you saw at the beginning of the course. Download all his files and **make sure to unzip**. Find the `SympAct_Any_Pos.Rda` file, which is the one we'll work with. 
+
+Make a folder inside your portfolio repository, call it `fluanalysis`. Make a `data` sub-folder and place the the `SympAct_Any_Pos.Rda` file into that folder. You can just use a single `data` folder for this exercise, but if you want, you can also make separate `raw_data` and `processed_data` folders and place his `.Rda` file into the `raw_data` folder. (I know he already processed it some, but we use it as our start, so for us that is the raw material.)
+
+
+
+## Wrangling revisited
+
+We already spent time on the important steps of data wrangling/cleaning and exploring/visualizing. But practice makes perfect 😄 so we'll talk a bit more and do a bit more of it here.
+
+By now you will have figured out that the whole wrangling/exploring process is iterative. Without exploring your data, you don't know how to clean/wrangle it. Without at least some cleaning, exploration often doesn't work (e.g. if you have missing values, some R summary functions don't work properly).
+
+For this exercise, create a single `code` folder inside the `fluanalysis` folder and place a Quarto file (either as stand-alone Quarto or Quarto+R) called `wrangling.qmd` into that folder. Add code that further processes and cleans the data as follows:
+
+* Load the data. Note that this is actually an `RDS` file/object, not an `RData/RDA` file, despite the somewhat misleading `.Rda` file name ending. So you need to use the right function to load `RDS` files into R.
+* Remove all variables that have _Score_ or _Total_ or _FluA_ or _FluB_ or _Dxname_ or _Activity_ in their name. Don't do this manually one by one, figure out how to use R commands that let you remove things in an efficient manner, using e.g., `contains()` or `starts_with()` from `dplyr/tidyselect`.
+* Also remove the variable `Unique.Visit`. You should be left with 32 variables coding for presence or absence of some symptom. Only one, temperature, is continuous. A few have multiple categories.
+* Remove any NA observations, there aren't many. 
+
+**Make sure to add plenty of comments and text explaining each step. State briefly why you are making a decision, and then if the code is not obvious, explain the how.**
+
+At the end of your (fairly short) cleaning process, you should end up with 730 observations and 32 variables. Save the new data set as `RDS` file into the appropriate folder (either `data` or if you made it, your clean data folder). (For single objects [`RDS` is better than `RData/RDA`.](https://rstudio-education.github.io/hopr/dataio.html#r-files) )   
+
+For our further analysis, we decide (well, I'm deciding that for you 😀) that our main continuous outcome of interest is **Body temperature**, and our main categorical outcome is **Nausea**. We want to see if the other symptoms are correlated with (predict) those outcomes.
+
+
+## EDA revisited
+
+As part of the data wrangling/cleaning, and also to some extent as stand-alone exploration to prepare you for the formal statistical fitting, you need to explore and understand your data. Add a Quarto file (call it `exploration.qmd`) into the `code` folder. Write code that does a bit of exploration, produces a few figures and tables. 
+
+At minimum, your exploration code should do the following:
+
+* For each (important) variable, produce and print some numerical output (e.g. a table or some summary statistics numbers).
+* For each (important) continuous variable, create a histogram or density plot. 
+* Create scatterplots or boxplots or similar plots for the variable you decided is your main outcome of interest and the most important (or all depending on number of variables) independent variables/predictors. For this dataset, you can pick and choose a few predictor variables.
+* If applicable to your data, make some pairwise correlation plots. (Not applicable here)
+* If needed for your data, explore the pattern of missing values. (Not applicable here)
+* Any other exploration steps that might be useful.
+
+In general, if you only have a limited number of variables, say less than 10, you can usually explore them all. If you have a lot, focus your exploration on the ones you think are most interesting and important, which of course is the outcome and the main predictors of interest. You can decide on the predictors to explore. I determined the outcomes of interest for you above. Of course, if there are variables you know are of no interest, you can remove them during the cleaning/wrangling stage and don't need to explore them.
+
+
+## General wrangling and EDA comments
+
+Always make sure you document well. Prior to each code piece that produces some output, you should add text describing what you are about to do and why. After you produced the result, add some text that comments on what you see and what it means. E.g. you could write something like _Histogram for height shows two persons at 20in, everyone else else is above 50in. Checked to see if those are wrong entries or not. Decided to remove those observations._
+
+Once you've come this far, you should generally have at a minimum code that explores and cleans the data, produces some figures and tables, and saves the cleaned data set to an `Rds` file. You should also have documentation, as comments in the code and as text in a Quarto document, as well as some notes in README file(s), that explain what the different parts of data and code are/do, what variables the data contain, what each variable means, which are the main outcome(s) and main predictor(s), etc. Providing all this meta-information is important so that someone else (or your future self) can easily understand what is going on.
+
+:::note
+For this exercise, it isn't so important that the outcomes and predictors are of actual scientific interest. We won't do exciting science here, just explore the analysis workflow. However, I want to remind you that having good/interesting question to answer (and data you can use to answer it) is the **most important** part of any research project. Rather a great question and basic stats than really fancy stats answering a question nobody cares about!
+:::
+
+:::note
+Any good data collection and analysis requires that data is documented with meta-data to describe what it contains, what units things are in, what variables are allowed, etc. Without good meta-data, analyses often go wrong. There are famous examples in the literature where the coding 0/1 was assumed to mean the opposite of what it was, so all conclusions were wrong. To guard against this, careful documentation is crucial. Also, giving variables easy to understand names and values is best. E.g. instead of coding sex as 0/1/99, code it as Male/Female/Other, or something along those lines. Factors in R allow you to do this very easily, so you may as well!
+:::
+
+
+# Model fitting
+
+Finally, we'll do some model fitting. Place a file called `fitting.qmd` into the `code folder` (or sub-folder, if you use them). As always, you can either have all the R code inside the Quarto document, or you can structure it such that the code is in a separate file and pulled into Quarto as needed. In either case, document/comment well.
+
+Add code that does the following operations:
+
+1. Loads cleaned data.
+2. Fits a linear model to the continuous outcome (**Body temperature**) using only the main predictor of interest.
+3. Fits another linear model to the continuous outcome using all (important) predictors of interest.
+4. Compares the model results for the model with just the main predictor and all predictors. 
+5. Fits a logistic model to the categorical outcome (**Nausea**) using only the main predictor of interest.
+6. Fits another logistic model to the categorical outcome using all (important) predictors of interest.
+7. Compares the model results for the categorical model with just the main predictor and all predictors.
+
+**Here, we decide that `RunnyNose` is our main predictor of interest, and we also care about all others. So you should fit models with each of the 2 outcomes and `RunnyNose` and models with each of the 2 outcomes and all predictors. Consider whichever outcome you are currently NOT fitting to also be a predictor of interest.** 
+
+You might have noticed that we are including some predictors twice, e.g. we have _Weakness_ as 4 categories and also as yes/no. That's likely not ideal. We'll address that soon, for now let's just "throw it all in". Because we do that, you might get some warning messages from your code about rank deficiency. Usually, we would need to inspect those and make sure we either fix or understand what's going on and are ok with it. For now, you can ignore.
+
+For all of these operations, you should use the the `tidymodels` framework. To do so, I suggest to go to the [build a model tutorial](https://www.tidymodels.org/start/models/) in the _Get Started_ section on the `tidymodels` website. There, you'll see an example of fitting some data with a linear model, followed by a Bayesian model. We won't do the Bayesian one (but if you want you can try). From that tutorial, pick out the bits and pieces you need to fit your two linear models. You'll need to use the `linear_reg()` and `set_engine("lm")` commands. For the logistic model, you will need to use `logistic_reg()` and `set_engine("glm")`.
+
+For each of the 4 fits (2 linear models, 2 logistic models), report the results in some way, either as table or figure. You might want to try the `glance()` function. You can also play around a bit with the `predict()` function or do some other explorations with your fits. This is open-ended, so play around as much or as little as you like. 
+
+Comparison of models should be based on performance of the models (and anything else you want to look at). This should be heuristic, with you looking at and discussing differences. Please no comparison using p-values or other statistical shenanigans 😄.
+
+The main point of this is to get you started fitting models with `tidymodels`. You'll likely see lots of information on the `tidymodels` website that might not make sense yet, such as pre-processing, model evaluation, tuning, etc. Just ignore that for now, we'll get to it soon enough.
+
+If you are extra ambitious or just enjoy playing around with `tidymodels`, add a *k*-nearest neighbors model fit to the continuous and/or categorical outcome. You do that by choosing `nearest_neighbor()` as the model type (instead of `linear_reg()` or `logistic_reg()`). It seems that `nearest_neighbor()` currently only supports a single engine (underlying implementation/model) called `kknn`, so you don't even have to set an engine, it will use that one as default (but it's still good practice in case `tidymodels` adds another engine in the future 😀). The rest should work as before. The fact that we can easily switch models and don't have to write much new code is the beauty of the `tidymodels` framework and will become even clearer soon.
+
+
+:::note
+I'm a big fan of fitting models in a Bayesian framework. R has many good packages. Most of them connect to the [Stan software](https://mc-stan.org/), an independent piece of powerful Bayesian fitting software. It can be somewhat tricky to get the installation of Stan and the connection to R working. So if you try to do some Bayesian modeling, along the lines of the example in the `tidymodels` tutorial, some initial fiddling is required. Once you get it up and running, it usually works well. The Stan website provides useful instructions. Learning some Bayesian statistics is very useful. Unfortunately, it's beyond what we can cover in this course.
+:::
+
+
+# Updating the portfolio website
+
+Once you completed your `tidymodels` exploration, make sure everything runs and produces relevant output (tables, figures, text, etc.). **Also make sure everything is documented well.**
+
+Now it's time to add everything to the portfolio website. For that, open the `_quarto.yml` file and make a new entry in the `navbar` section. Make a new main menu entry (at the same level as the the current `Projects` entry) and call it `Flu Analysis`. Underneath this entry, make 3 sub menu entries for the 3 Quarto files you just created, namely wrangling/Exploration/Fitting. Note that you need to point to the html file in the folder you created the Quarto file. So for instance for your wrangling file, it should look like 
+
+```{r, eval = FALSE}
+href: ./fluanalysis/code/wrangling.html
+```
+
+**Remember that YAML is very picky about indentation, so if you get strange error messages, it is often likely that your entries are not aligned/indented exactly right. 
+If you suspect that you have this problem, you can show whitespace characters in RStudio by going to `Tools -> Global Options -> Code -> Display" and check _Show Whitespace Characters_.
+**
+
+Recompile your full portfolio website. If everything works, you should see a new menu item called `Flu Analysis` next to `Projects` with 3 entries (Wrangling/Exploration/Fitting), each one containing the rendered version of your Quarto file. Once everyting works and looks as it should, remember to commit and push your updates to GitHub.
+
+
+**Since this is part of your portfolio site, you don't need to post anything, I know where to find it. Therefore there is no exercise Slack channel for this module.**
+
+
+
+# Discussion
+
+Write a post in this week's discussion channel that answers this question:
+
+Which major new insight did you gain from this week's topic (or any topic related to model fitting you got exposed to over the last few weeks) and how will that maybe affect your analyses in the future? And what point(s) do you find rather confusing about the model fitting material we covered so far?
+
+Post by Wednesday, then reply to each other by Friday. See if you can help each other reduce any existing confusion. I'll be participating too, of course!
+

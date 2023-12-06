@@ -70,7 +70,7 @@ To that end, provide the following pieces of information:
 -   All non-relevant files (e.g., leftovers from the template) removed or updated.
 -   Some documentation (e.g. a readme.md file) explaining how your project is set up and which scripts need to be run in what order to reproduce everything.
 -   Files with well-documented code (either R scripts or Rmd files) that do all the previous tasks (cleaning/processing), as well as running a few analyses. You can start with simple bivariate ones, looking for patterns between your outcome(s) and individual predictors of interest. I suggest as much as possible you use the `tidymodels` framework. You can also try a few multivariable GLM. Results from those explorations should be saved in whatever form you consider most appropriate (figures or tables).
--   A main article/manuscript file which contains the most pertinent results and findings from everything you have done so far. You can include more figures/tables here than you would in a regular manuscript. However, it should still be nicely readable and somewhat focused, so don't produce page-long raw R output or a ton of exploratory figures or similar things. The main results of your analysis should be in this manuscript. Any further explorations and results (figures and tables) should go into a separate Rmarkdown file that comprises the supplementary material. For some idea on how this can be structured, you can for instance revisit Brian's project we looked at [in this unit](../modules/Data_Analysis_Motivation.qmd).
+-   A main article/manuscript file which contains the most pertinent results and findings from everything you have done so far. You can include more figures/tables here than you would in a regular manuscript. However, it should still be nicely readable and somewhat focused, so don't produce page-long raw R output or a ton of exploratory figures or similar things. The main results of your analysis should be in this manuscript. Any further explorations and results (figures and tables) should go into a separate Rmarkdown file that comprises the supplementary material. For some idea on how this can be structured, you can for instance revisit Brian's project we looked at [in this unit](../modules/data_analysis/Data_Analysis_Motivation.qmd).
 
 Grading for this part will follow this rubric:
 
@@ -120,7 +120,7 @@ To that end, provide the following pieces of information:
 
 Check the [Project Review Template file](templatefiles/Project_Review_Template.qmd) to see how this submission will be assessed by your peers. I will not grade this part but it will be assessed by your peers, as described in the [*Project Review*](Project_Review.qmd) document.
 
-*A great project would be at the level of Brian McKay's paper example you checked out in the [Motivating Examples document](../modules/Data_Analysis_Motivation.qmd), or one of the projects on the `Project Examples` page.*
+*A great project would be at the level of Brian McKay's paper example you checked out in the [Motivating Examples document](../modules/data_analysis/Data_Analysis_Motivation.qmd), or one of the projects on the `Project Examples` page.*
 
 # Part 6
 

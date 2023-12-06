@@ -51,6 +51,8 @@ These can be overwritten in individual .qmd files. I noticed you had your affili
 
 **AH: I plan to remove affiliation everywhere. Feel free to remove, otherwise I can.** 
 
+JR: removed ✅
+
 ### Emojis
 
 Quarto allows you to insert emojis without the `emoji` package. [https://quarto.org/docs/visual-editor/content.html#emojis](https://quarto.org/docs/visual-editor/content.html#emojis)
@@ -59,6 +61,20 @@ I replaced your `emoji` calls with just the emoji and removed the library call i
 
 **AH: Ok. I rarely use the viusal editor, I assume this works equally well in the text editor version?  And I do want to make sure things are somewhat portable to different formats, e.g. if I want to make (revealjs) slides using some of the text, or for some reason need to create Word or pdf output of some of the text, I'd like things to work as much as possible. I didn't fully understand what they say in the emoji documentation about when/how native emojis are supported. Just want to make sure this is as output-independent as possible.** 
 
+JR: You can insert emojis without the visual editor.
+on Windows, the shortcut is `Windows + .`
+on Mac: `Ctrl + Cmd + Space`
+
+For output to a different format, add this to the YAML heading of the file.
+
+```
+---
+title: "My Document"
+from: markdown+emoji
+---
+```
+
+Or, I can switch them back to the `emoji` package if you prefer?
 
 ### Navigation
 
@@ -148,6 +164,7 @@ knitr::include_graphics("../media/xkcd-flowcharts.png")
 
 **AH: I'm ok doing it the Quarto way. I mostly used the knitr version since it was more robust/flexible across different output formats (e.g., slides, word docs, etc.) compared to the Rmarkdown way. It also allowed more fine control. But it seems Quarto is now as good or better in placement and compatibility, and I like the idea of being somewhat language-agnostic (e.g. if I decided to switch to Julia in the future, it would seem a bit odd to have calls to knitr). So yes, if you think doing figure placement in Quarto gives us all that knitr can do and more, I'm happy to make the switch.**
 
+JR: will do!
 
 ## Accessibility
  
@@ -165,12 +182,15 @@ Read the [published paper](https://doi.org/10.1098/rspb.2020.0496). All material
 
 **AH: Agree, making things accessible if possible is a good idea. So yes, feel free to adjust any of those and reword to make it better. (There might be other areas where this is not ideal, for instance I'm not sure I have alt-text for all figures and other embeddings. Feel free to add any of that too if you run into something that you think needs improvement)**
 
+JR: will do!
+
 ## Styling
 
 I replaced your `.css` with `.scss`. I changed the primary color to the green from the `?` in the MADA logo.
 
 **AH: I like things to look good, but I'm not much of a styler/designer :), so feel free to improve the looks of everything as much as you like. (Just don't make it too complicated, I don't want to have a lot of overhead/complexity like calling extra packages for fancy fonts or stuff like that)**
 
+JR: got it :)
 
 ## Publishing
 

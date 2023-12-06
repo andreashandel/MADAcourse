@@ -32,19 +32,19 @@ For each module, you are asked to fill out an Excel sheet with questions related
 
 _Quizzes will become available here as the course progresses. Once a quiz is available, you should be able to submit it at any time before the deadline._
 
-* [Module 1 – Course and tools introduction](../assessments/quizsheets/m1_mada_course_tools_student.xlsx) - you have 2 attempts available for this one.
-* [Module 2 – Data analysis introduction ](../assessments/quizsheets/m2_mada_data_analysis_intro_student.xlsx)
-* [Module 3 – R coding basics](../assessments/quizsheets/m3_mada_coding_basics_student.xlsx)
-* [Module 4 – Contemplating, finding and wrangling data](../assessments/quizsheets/m4_mada_data_finding_wrangling_student.xlsx)
-* [Module 5 – Visualization](../assessments/quizsheets/m5_mada_visualization_student.xlsx)
-* [Module 6 – Exploration](../assessments/quizsheets/m6_mada_data_exploration_student.xlsx)
-* [Module 7 – Statistical Analysis Overview](../assessments/quizsheets/m7_mada_statistical_analysis_overview_student.xlsx)
-* [Module 8 – Fitting basic statistical models](../assessments/quizsheets/m8_mada_basic_statistical_models_student.xlsx)
-* [Module 9 – Evaluating your model fits](../assessments/quizsheets/m9_mada_model_evaluation_student.xlsx)
-* [Module 10 – Improving your model fits](../assessments/quizsheets/m10_mada_model_improvement_student.xlsx)
-* [Module 11 – Machine Learning Models I](../assessments/quizsheets/m11_mada_ml_models_1_student.xlsx)
-* [Module 12 – Machine Learning Models II](../assessments/quizsheets/m12_mada_ml_models_2_student.xlsx)
-* [Module 13 – The complete analysis workflow](../assessments/quizsheets/m13_mada_full_workflow_student.xlsx)
+* [Module 1 – Course and tools introduction](../modules/quizsheets/m1_mada_course_tools_student.xlsx) - you have 2 attempts available for this one.
+* [Module 2 – Data analysis introduction ](../modules/quizsheets/m2_mada_data_analysis_intro_student.xlsx)
+* [Module 3 – R coding basics](../modules/quizsheets/m3_mada_coding_basics_student.xlsx)
+* [Module 4 – Contemplating, finding and wrangling data](../modules/quizsheets/m4_mada_data_finding_wrangling_student.xlsx)
+* [Module 5 – Visualization](../modules/quizsheets/m5_mada_visualization_student.xlsx)
+* [Module 6 – Exploration](../modules/quizsheets/m6_mada_data_exploration_student.xlsx)
+* [Module 7 – Statistical Analysis Overview](../modules/quizsheets/m7_mada_statistical_analysis_overview_student.xlsx)
+* [Module 8 – Fitting basic statistical models](../modules/quizsheets/m8_mada_basic_statistical_models_student.xlsx)
+* [Module 9 – Evaluating your model fits](../modules/quizsheets/m9_mada_model_evaluation_student.xlsx)
+* [Module 10 – Improving your model fits](../modules/quizsheets/m10_mada_model_improvement_student.xlsx)
+* [Module 11 – Machine Learning Models I](../modules/quizsheets/m11_mada_ml_models_1_student.xlsx)
+* [Module 12 – Machine Learning Models II](../modules/quizsheets/m12_mada_ml_models_2_student.xlsx)
+* [Module 13 – The complete analysis workflow](../modules/quizsheets/m13_mada_full_workflow_student.xlsx)
 
 
 
