@@ -15,7 +15,7 @@ Note that in general, there is no regulatory terminology agency, so everyone can
 
 --- 
 
-Not surprisingly, I'm not the 1st one with the idea of compiling a list of data science related terms and definitions. After starting this, I found another one by Frank Harrell, which you can find [here](http://hbiostat.org/doc/glossary.pdf). I'm sure I'll find and list more alternatives soon.
+Not surprisingly, I'm not the 1st one with the idea of compiling a list of data science related terms and definitions. After starting this, I found another one by Frank Harrell, which you can find [here](https://hbiostat.org/glossary/). I'm sure I'll find and list more alternatives soon.
 
 
 --- 

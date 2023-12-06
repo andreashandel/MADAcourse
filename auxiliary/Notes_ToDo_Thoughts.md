@@ -192,6 +192,15 @@ I replaced your `.css` with `.scss`. I changed the primary color to the green fr
 
 JR: got it :)
 
+## Broken links
+
+	
+- https://www.thinkful.com/blog/why-learning-to-code-is-so-damn-hard/
+  - Linked from: /modules/coding_basics/Rcoding_Basics.html
+
+- https://mlr3book.mlr-org.com/optimization.html
+  - Linked from: modules/model_improvement/Model_Improvement_Subset_Selection.html
+
 ## Publishing
 
 1. Run `quarto render` in terminal.
