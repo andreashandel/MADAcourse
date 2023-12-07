@@ -1,0 +1,8 @@
+---
+pagetitle: "MADA course placeholder"
+---
+
+Updated course materials to come shortly.
+
+
+[Old page is here](https://andreashandel.github.io/MADAcourse-RMarkdown/). 
