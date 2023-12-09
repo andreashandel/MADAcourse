@@ -9,12 +9,7 @@ subtitle: ""
 
 In this module, we will discuss ways one can try to improve model performance.
 
-
-```{r trainfit,  fig.show='hold', fig.cap='', echo=FALSE, fig.align='center', fig.alt = 'An XKCD comic strip with one panel. One person is on the left, and the other is on the right, holding a shovel, and standing on top of a pile of matrices and math symbols. The left person says "This is your machine learning system?", then the right person says "Yup! You pour the data into this big pile of linear algebra, then collect the answers on the other side." The left person responds "What if the answers are wrong?" and the right person replies with "Just stir the pile until they start looking right."'}
-knitr::include_graphics("../../media/xkcd-machine_learning.png")
-```
-
-
+![Source: xkcd.com](../../media/xkcd-machine_learning.png){fig-alt='An XKCD comic strip with one panel. One person is on the left, and the other is on the right, holding a shovel, and standing on top of a pile of matrices and math symbols. The left person says "This is your machine learning system?", then the right person says "Yup! You pour the data into this big pile of linear algebra, then collect the answers on the other side." The left person responds "What if the answers are wrong?" and the right person replies with "Just stir the pile until they start looking right."'}
 
 # Learning Objectives
 * Learn how to process your data to improve model performance.

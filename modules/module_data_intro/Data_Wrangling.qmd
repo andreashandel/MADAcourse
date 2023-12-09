@@ -12,9 +12,7 @@ authors:
 
 In this unit, we will discuss what data wrangling is and why it's a very important part of any analysis. 
 
-```{r cartoon,  echo=FALSE, fig.cap='How data used to be cleaned before the tidyverse.', out.width = '80%', fig.align='center', fig.alt='A cartoon showing two men with cleaning supplies standing in front of a woman, who is sitting at a desk. The caption on the cartoon reads "We\'re ready to scrube the data. #betterdata".'}
-knitr::include_graphics("../../media/cartoonscrubdata.jpg")
-```
+![How data used to be cleaned before the tidyverse.](../../media/cartoonscrubdata.jpg){width="80%" fig-alt='A cartoon showing two men with cleaning supplies standing in front of a woman, who is sitting at a desk. The caption on the cartoon reads "We\'re ready to scrube the data. #betterdata".'}
 
 # Learning Objectives
 
@@ -86,7 +84,7 @@ We will cover exploratory analysis in a separate, later module, and we will cons
 
 [The whole _Wrangle_ section of R4DS](http://r4ds.had.co.nz/index.html) shows a lot of the topics discussed here in action. For a more interactive (but less comprehensive) source of information, check out the _Work with Data_ and _Tidy your Data_ sections of the [R Studio Primers](https://rstudio.cloud/learn/primers/). 
 
-[This paper](https://www.tandfonline.com/doi/pdf/10.1198/000313006X150182) provides a nice further discussion regarding outliers. It's very non-technical (no equations) and easy to read.
+[Finney 2012](https://www.tandfonline.com/doi/pdf/10.1198/000313006X150182) provides a nice further discussion regarding outliers. It's very non-technical (no equations) and easy to read.
 
 
 

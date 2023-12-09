@@ -76,6 +76,9 @@ from: markdown+emoji
 
 Or, I can switch them back to the `emoji` package if you prefer?
 
+
+**AH: Do it whichever way you want, just document somewhere the different ways so in case I need to do it a different way in the future, I remember.**
+
 ### Navigation
 
 Your site uses hybrid navigation (navbar plus sidebar) as detailed in these [Quarto docs](https://quarto.org/docs/websites/website-navigation.html#hybrid-navigation).
@@ -88,7 +91,7 @@ In `_quarto.yml`, under the `website:` level, follow this general structure:
       - text: "General Information" # 3rd indent
         file: courseinfo/Course_Syllabus.qmd
       - text: "Content"
-        file: modules/Introduction_Course.qmd
+        file: modules/module_intro_tools/Introduction_Course.qmd
   sidebar: # 1st indent
       - title: "General Information"  # 3rd indent
         style: "docked"
@@ -101,7 +104,7 @@ In `_quarto.yml`, under the `website:` level, follow this general structure:
           - section: "1. Course and Tools Introduction"
             contents:
               - text: "Course Introduction"
-                file: modules/Introduction_Course.qmd
+                file: modules/module_intro_tools/Introduction_Course.qmd
 ```
 
 Note the text in the navbar matches the title in the sidebar and the files are the same. The sidebar style, collapse-level, and other options don't need to be included in other sidebars (unless you want a different setting for a specific sidebar).
@@ -143,7 +146,7 @@ authors:
 
 ## Images
 
-You can also use markdown image syntax instead of `knitr::include_graphics()`. It might be more efficient when rendering since it doesn't require execution [Quarto figures](https://quarto.org/docs/authoring/figures.html) though I haven't tested this. Anyway, it's more aligned with "the Quarto way" and `fig-align` is set to center in `_quarto.yml` so it doesn't need to be repeated for each figure.
+You can also use markdown image syntax instead of `knitr::include_graphics()`. It might be more efficient when rendering since it doesn't require execution [Quarto figures](https://quarto.org/docs/authoring/figures.html) though I haven't tested this. Anyway, it's more aligned with "the Quarto way" and `fig-align` is set to center in `_quarto.yml` so it doesn't need to be repeated for each figure. 
 
 See the syntax differences below:
 
@@ -154,9 +157,7 @@ See the syntax differences below:
 knitr::include_graphics("../media/xkcd-flowcharts.png")
 ```
 
-::: {fig}
 ![Flowcharts are sometimes, but not always good visualization tools. Source: xkcd.com.](../media/xkcd-flowcharts.png){width="60%" fig-alt="A comic from the website XKCD. It shows an extremely confusing and illogical flowchart which includes a line chart, a battery charging circuit, a resistance diagram, a golden spiral, and an arrow that leads out of the containing box, among other things."}
-:::
 ````
 
 **I can adjust these for you, but wanted to check if you would prefer to continue to use knitr::include_graphics().**
@@ -164,7 +165,9 @@ knitr::include_graphics("../media/xkcd-flowcharts.png")
 
 **AH: I'm ok doing it the Quarto way. I mostly used the knitr version since it was more robust/flexible across different output formats (e.g., slides, word docs, etc.) compared to the Rmarkdown way. It also allowed more fine control. But it seems Quarto is now as good or better in placement and compatibility, and I like the idea of being somewhat language-agnostic (e.g. if I decided to switch to Julia in the future, it would seem a bit odd to have calls to knitr). So yes, if you think doing figure placement in Quarto gives us all that knitr can do and more, I'm happy to make the switch.**
 
-JR: will do!
+JR: Done.
+
+Note: the global fig-align setting in the yaml applies to figures which Quarto defines as having a label and caption. Supposedly this will get fixed in Quarto 1.4 according to this [issue](https://github.com/quarto-dev/quarto-cli/issues/4315#issuecomment-1444304192). To get around this until the next release, we need to make sure all images have captions OR set fig-align="center" for the individual image that doesn't have a caption.
 
 ## Accessibility
  
@@ -182,7 +185,7 @@ Read the [published paper](https://doi.org/10.1098/rspb.2020.0496). All material
 
 **AH: Agree, making things accessible if possible is a good idea. So yes, feel free to adjust any of those and reword to make it better. (There might be other areas where this is not ideal, for instance I'm not sure I have alt-text for all figures and other embeddings. Feel free to add any of that too if you run into something that you think needs improvement)**
 
-JR: will do!
+JR: I replaced most "here" and "this" with either the article authors+date or a short description of the linked resource.
 
 ## Styling
 
@@ -196,10 +199,13 @@ JR: got it :)
 
 	
 - https://www.thinkful.com/blog/why-learning-to-code-is-so-damn-hard/
-  - Linked from: /modules/coding_basics/Rcoding_Basics.html
+  - Linked from: /modules/module_coding_basics/Rcoding_Basics.html
 
 - https://mlr3book.mlr-org.com/optimization.html
-  - Linked from: modules/model_improvement/Model_Improvement_Subset_Selection.html
+  - Linked from: modules/module_model_improvement/Model_Improvement_Subset_Selection.html
+  
+- Not broken, but goes to general Journal website, not an actual article: https://academic.oup.com/jn/article/143/6/931/4571741
+  - from modules: module_data_analysis/Data_Analysis_Overview.qmd
 
 ## Publishing
 

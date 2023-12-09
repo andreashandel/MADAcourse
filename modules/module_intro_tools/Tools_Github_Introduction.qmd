@@ -19,10 +19,7 @@ This document gives a brief explanation of Git, GitHub and related tools, and de
 # Why use Git/GitHub
 You want to use GitHub to avoid this:
 
-```{r versioncontrol,  echo=FALSE, fig.cap='', out.width = '60%', fig.align='center'}
-knitr::include_graphics("../../media/phd_versioncontrol.gif")
-```
-
+![Source: [phdcomics.com](https://phdcomics.com/)](../../media/phd_versioncontrol.gif){width="60%"}
 
 _GitHub_ gives you an organized way to track your projects. It is very well suited for collaborative work. Historically, version control was used for software development. It has since become broader and is now used for many types of projects, including data science projects. If you want to learn a bit more about Git/GitHub and why it is a great tool for data analysis, [check out this article by Jenny Bryan](https://peerj.com/preprints/3159/). 
 
@@ -39,9 +36,9 @@ Finally, if you have data, you need to be careful since by default, GitHub repos
 
 
 # Getting Git/GitHub
-Git is a piece of software. It can be installed [from here](https://git-scm.com/). If you use GitKraken as described below, you don't need to install Git separately. However, it might still be worth doing so, in case at some point you need to do some Git operation outside of GitKraken (e.g, through RStudio or a terminal). 
+Git is a piece of software. It can be installed from the [Git website](https://git-scm.com/). If you use GitKraken as described below, you don't need to install Git separately. However, it might still be worth doing so, in case at some point you need to do some Git operation outside of GitKraken (e.g, through RStudio or a terminal). 
 
-GitHub is an online platform. You don't need to install anything, but if you don't have a GitHub account yet, you need to create one [here](https://github.com/). **Note that GitHub is widely used professionally. You might use it beyond this class and for your future career. You might also want to allow other people to see your GitHub presence. You should therefore use a future-proof, professional sounding user name for your GitHub account.** You can use your UGA or a different email for GitHub. Whichever email you use is where you will receive GitHub activity related notifications (including our GitHub class activities). 
+GitHub is an online platform. You don't need to install anything, but if you don't have a GitHub account yet, you need to create one on [GitHub.com](https://github.com/). **Note that GitHub is widely used professionally. You might use it beyond this class and for your future career. You might also want to allow other people to see your GitHub presence. You should therefore use a future-proof, professional sounding user name for your GitHub account.** You can use your UGA or a different email for GitHub. Whichever email you use is where you will receive GitHub activity related notifications (including our GitHub class activities). 
 
 
 # How to use Git/GitHub
@@ -104,4 +101,4 @@ GitHub can be confusing. Start slow. Using the graphical interface (GitKraken) m
 
 If the quick install instructions above are not detailed enough, follow these in [Jenny's paper](https://peerj.com/preprints/3159/) or her great online book [happygitwithr](https://happygitwithr.com/). 
 
-Another source worth looking at for GitHub information is [this chapter of IDS](https://rafalab.GitHub.io/dsbook/git.html). There is also a lot of good beginner material online. 
+Another source worth looking at for GitHub information is this [chapter of IDS](https://rafalab.GitHub.io/dsbook/git.html). There is also a lot of good beginner material online. 

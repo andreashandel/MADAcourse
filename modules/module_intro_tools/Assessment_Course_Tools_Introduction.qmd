@@ -52,7 +52,7 @@ You should gone through all content in this module and should be set up with all
 
 ### Github setup
 
-I made a template for you to get started. Go to [this page](https://github.com/andreashandel/online-portfolio-template). Make sure you are logged into GitHub, then click on `Use this template`. Create a new repository, call it `yourname-MADA-portfolio` (`yourname` should include both your first and last name, e.g. `andreashandel-MADA-portfolio`.) Choose public repository, then create it.
+I made a template for you to get started. Go to the [Online Portfolio Template](https://github.com/andreashandel/online-portfolio-template). Make sure you are logged into GitHub, then click on `Use this template`. Create a new repository, call it `yourname-MADA-portfolio` (`yourname` should include both your first and last name, e.g. `andreashandel-MADA-portfolio`.) Choose public repository, then create it.
 
 Next, **clone** the repository (which will be something like `https://github.com/USERNAME/yourname-MADA-portfolio/`) from Github.com to your local computer (using Gitkraken or whatever software/method you decided to use). I recommend that you make a folder somewhere on your computer (e.g., called *MADA-course*) and place all class-related repositories (of which this is the first one) into this folder. Remember that these GitHub repositories/folders should **not** be synced with some other software (e.g., Dropbox/OneDrive).
 
@@ -69,7 +69,7 @@ If you got that far, let's create some content.
 
 ### Quarto content creation
 
-**For this part of the task, [this comprehensive Quarto guide](https://quarto.org/docs/guide/) and [the Quarto section of the work-in-progress 2nd edition of R for Data Science](https://r4ds.hadley.nz/quarto.html) will likely be useful.**
+**For this part of the task, the [comprehensive Quarto guide](https://quarto.org/docs/guide/) and [the Quarto section of the work-in-progress 2nd edition of R for Data Science](https://r4ds.hadley.nz/quarto.html) will likely be useful.**
 
 Open `index.qmd`. This is the main landing page for your website. Change the text however you want to. What you are writing here is Markdown, so now would be a good time to check out some of the Markdown resources and play with them. You will also see at the top of your R Studio window two buttons `Source` and `Visual`. This allows you to switch between editing Markdown in plain format, and using a visual editor. It's a good idea to switch back and forth to start to learn how certain graphical elements look like in plain text formatting. You'll likely be using a mix of visual and source view a lot.
 
@@ -153,8 +153,8 @@ In the future, if you work on repositories like this one (or any others), your w
 
 ### Further information
 
-I wrote a tutorial a while back describing the setup with Github pages. It has some additional information and you can [check it out here](https://www.andreashandel.com/posts/github-website/). Note that this tutorial still used R Markdown instead of Quarto. Some of the information still applies, other parts are different with Quarto.
+I wrote a tutorial a while back describing the setup with Github pages. It has some additional information, which you can check out on [my website](https://www.andreashandel.com/posts/github-website/). Note that this tutorial still used R Markdown instead of Quarto. Some of the information still applies, other parts are different with Quarto.
 
-Using Github pages makes it fairly easy to create websites. I currently host all my course websites in this way. What we created was a fairly basic page. It is easy with Quarto to create other, more full-featured websites. For instance [my personal website](https://www.andreashandel.com/) uses Quarto. If you are interested in such a more full-featured approach, check out [this part of the Quarto documentation](https://quarto.org/docs/websites/). You can also find a few more links to other resources [here](https://www.andreashandel.com/posts/2022-10-01-hugo-to-quarto-migration/).
+Using Github pages makes it fairly easy to create websites. I currently host all my course websites in this way. What we created was a fairly basic page. It is easy with Quarto to create other, more full-featured websites. For instance [my personal website](https://www.andreashandel.com/) uses Quarto. If you are interested in such a more full-featured approach, check out this part of the [Quarto documentation](https://quarto.org/docs/websites/). You can also find a few more links to [other resources](https://www.andreashandel.com/posts/2022-10-01-hugo-to-quarto-migration/).
 
 

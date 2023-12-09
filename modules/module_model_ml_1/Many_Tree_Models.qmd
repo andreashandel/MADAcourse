@@ -54,7 +54,7 @@ The many-tree methods described above are examples of what is often called **ens
 
 # Implementing tree models in R
 
-The `tidymodels` framework allows access to many different types of packages/algorithms that implement tree-based models. You can see the [full list here](https://www.tidymodels.org/find/parsnip/). 
+The `tidymodels` framework allows access to many different types of packages/algorithms that implement tree-based models. You can see the full list on the [`parsnip` model search page](https://www.tidymodels.org/find/parsnip/). 
 
 Many of these methods and packages are similar and differ in the details of the model implementation, the speed at which they run, if one can parallelize them, etc. Some common ones that people use are `rpart` for individual trees, `ranger` for random forests, and `xgboost` for boosting. Many others are available too, e.g., the `bonsai` package has several other methods. Often it doesn't matter much which package you use. Sometimes you might need specific features that only a certain package can give you, so you need to go with that one. 
 

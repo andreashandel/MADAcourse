@@ -90,11 +90,7 @@ There isn't really one single, standard go-to method for unsupervised learning -
 [_Unsupervised Learning_ chapter of ISLR](https://statlearning.com/). There are also chapters on PCA and different types of clustering [in HMLR](https://bradleyboehmke.github.io/HOML/).
 
 
-```{r kmeans,  echo=FALSE, fig.cap='Choosing K is an important task. 3 sometimes works. Source: xkcd.com.', out.width = '50%', fig.align='center'}
-knitr::include_graphics("../../media/xkcd_k_means_clustering_2x.png")
-```
-
-
+![Choosing K is an important task. 3 sometimes works. Source: xkcd.com.](../../media/xkcd_k_means_clustering_2x.png){width="50%"}
 
 # The zoo of statistical tests
 
@@ -104,7 +100,7 @@ Pretty much all of those tests have equivalent formulations as multivariable mod
 
 Because of that, and since this course is about **modern** data analysis, we will not cover any classical statistical tests and instead start with multivariable, GLM-type models and then move on to more complex/modern machine learning models. 
 
-If you never thought about the relation between classical statistical tests and GLM-type models, you might want to check out [this resource](https://lindeloev.github.io/tests-as-linear/) by [Jonas Kristoffer Lindeløv](https://lindeloev.net/) which explains the relation between the two in a good bit of detail. [This website/book](https://steverxd.github.io/Stat_tests/) by [Steve Doogue](https://stevedoogue.netlify.app/) is also good, it is based on the original text by Lindeløv and covers some topics in more detail. Both resources show examples in R, and have links to further materials. At some point in your career as a data analyst, you might need to use or interpret classical statistical tests, and having a general idea that they can map to GLM-type and other models might be helpful.
+If you never thought about the relation between classical statistical tests and GLM-type models, you might want to check out [_Common statistical tests are linear models_](https://lindeloev.github.io/tests-as-linear/) by [Jonas Kristoffer Lindeløv](https://lindeloev.net/) which explains the relation between the two in a good bit of detail. [_Statistical tests as linear models_](https://steverxd.github.io/Stat_tests/) by [Steve Doogue](https://stevedoogue.netlify.app/) is also good, it is based on the original text by Lindeløv and covers some topics in more detail. Both resources show examples in R, and have links to further materials. At some point in your career as a data analyst, you might need to use or interpret classical statistical tests, and having a general idea that they can map to GLM-type and other models might be helpful.
 
 
 # Further reading

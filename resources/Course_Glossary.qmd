@@ -15,7 +15,7 @@ Note that in general, there is no regulatory terminology agency, so everyone can
 
 --- 
 
-Not surprisingly, I'm not the 1st one with the idea of compiling a list of data science related terms and definitions. After starting this, I found another one by Frank Harrell, which you can find [here](https://hbiostat.org/glossary/). I'm sure I'll find and list more alternatives soon.
+Not surprisingly, I'm not the 1st one with the idea of compiling a list of data science related terms and definitions. After starting this, I found another one by Frank Harrell, which you can find on his [website](https://hbiostat.org/glossary/). I'm sure I'll find and list more alternatives soon.
 
 
 --- 
@@ -55,7 +55,7 @@ __Interval scale variable:__ A numerical (quantitative) variable for which takin
 
 __Labeled data:__ If we have data for which there is a specific outcome of interest and we know it, it is called labeled data. For instance, if we had a lot of pictures of tissue samples, and someone had gone through them and labeled them as cancerous or not cancerous, it is labeled data. Labeled data (the most common type) is usually analyzed using __Supervised Learning/Analysis__ approaches.
 
-__Machine Learning:__ An approach to data analysis that tends to use more complex models. The goal is mainly to obtain a model that is good at prediction. Understanding how different inputs lead to different outcomes is of secondary importance. Data is often abundant, so more complex models can be used. Often this term and __Statistics/Statistical Learning__ are used interchangably (though some people try to distinguish them, see e.g. [this blog post](https://www.fharrell.com/post/stat-ml/)).
+__Machine Learning:__ An approach to data analysis that tends to use more complex models. The goal is mainly to obtain a model that is good at prediction. Understanding how different inputs lead to different outcomes is of secondary importance. Data is often abundant, so more complex models can be used. Often this term and __Statistics/Statistical Learning__ are used interchangably (though some people try to distinguish them, see e.g. [Frank Harrell's blog post](https://www.fharrell.com/post/stat-ml/)).
 
 __Mechanistic Modeling:__ Building and using models that explicitly incorporate mechanisms and processes of the system under study to understand _how_ things interact and lead to specific outcomes. Many models in the hard sciences are of this type. A common way to formulate such models is with differential equations.
 

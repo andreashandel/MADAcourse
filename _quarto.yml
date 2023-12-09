@@ -18,8 +18,8 @@ format:
     toc_depth: 3
     toc_float: 
       collapsed: false
-    fig-align: center # I noticed you often set fig-align to center in your knitr::include_graphics() chunks
-
+    fig-align: center # images need a caption to be considered a figure (https://github.com/quarto-dev/quarto-cli/issues/6509)
+    
 execute: 
   freeze: auto  # re-render only when source changes
   

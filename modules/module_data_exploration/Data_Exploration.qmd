@@ -14,9 +14,7 @@ In this unit, we will continue the topic of dealing with data prior to the actua
 
 While there were separate modules for _finding and wrangling_ and _visualizing_ data, I want to remind you of this diagram:
 
-```{r workflow,  echo=FALSE, fig.cap='Data analysis workflow', out.width = '50%', fig.align='center'}
-knitr::include_graphics("../../media/analysis-workflow.png")
-```
+![Data analysis workflow](../../media/analysis-workflow.png){width="50%"}
 
 Different data-analysis related tasks rarely happen in a linear sequence. Instead there is a general stage before statistical analysis where you _mess_ with your data (that's a technical term 😁) to get ready for the main formal analysis. And often, as you start that formal analysis, you'll have to go back and do some more cleaning/exploration.
 

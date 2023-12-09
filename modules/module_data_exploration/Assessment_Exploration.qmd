@@ -23,9 +23,9 @@ This is another solo exercise, so no group work this week, but of course more Gi
 
 You briefly encountered Tidy Tuesday before in the [Data Analysis Motivation unit](../module_data_analysis/Data_Analysis_Motivation.qmd). If you can't remember, revisit that unit and re-read that section. Also read the information at the provided links. 
 
-If you want to see another Tidy Tuesday example, [here is one I did](https://www.andreashandel.com/posts/2019-10-02-tidy-tuesday-exploration/index.html), as part of a previous version of MADA. I did it at the same time the students did theirs. I plan to do my own Tidy Tuesday again this time. 
+If you want to see another Tidy Tuesday example, see [one I did](https://www.andreashandel.com/posts/2019-10-02-tidy-tuesday-exploration/index.html), as part of a previous version of MADA. I did it at the same time the students did theirs. I plan to do my own Tidy Tuesday again this time. 
 
-For even more examples of previous analyses, [see this Shiny app](https://nsgrantham.shinyapps.io/tidytuesdayrocks/) which scans twitter for posts mentioning `#tidytuesday`. Unfortunately, it doesn't seem to be updated/maintained anymore. But you can still find people on social media posting links to their Tidy Tuesday creations (feel free to share yours as well).  
+For even more examples of previous analyses, see this [Shiny app](https://nsgrantham.shinyapps.io/tidytuesdayrocks/) which scans twitter for posts mentioning `#tidytuesday`. Unfortunately, it doesn't seem to be updated/maintained anymore. But you can still find people on social media posting links to their Tidy Tuesday creations (feel free to share yours as well).  
 
 
 :::note

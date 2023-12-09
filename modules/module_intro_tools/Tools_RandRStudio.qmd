@@ -53,11 +53,7 @@ The "official" place for packages is the [CRAN website](https://cran.r-project.o
 To install a package from CRAN, go to the R prompt at the bottom left of your RStudio session and type `install.packages("PACKAGENAME")`. The figure shows an example where I installed a package called `learnr`. Often, a package needs other packages to work  (called dependencies), and they are installed automatically. It usually doesn't matter if you use a single or double quotation mark around the name of the package. Note that R cares about capitalization, so you need to get the upper and lower case exactly right. Otherwise, it won't work.
 
 
-```{r installfig,  echo=FALSE, fig.cap='Installing an R package. Right-click on the image to enlarge it.', out.width = '100%', fig.align='center'}
-knitr::include_graphics("../../media/installpackagesscreenshot.png")
-```
-
-
+![Installing an R package. Right-click on the image and open in a new tab to enlarge it.](../../media/installpackagesscreenshot.png)
 
 Try installing a package yourself. Open RStudio. Then go to the R prompt (the `>` symbol) in the lower-left corner and type
 
@@ -103,6 +99,6 @@ The quality of R packages varies. In general, if they are on `CRAN` or `biocondu
 
 # Learning R Studio
 
-If you are new to R and RStudio and want to learn a bit more, I suggest you skim through [this chapter of IDS](https://rafalab.github.io/dsbook/getting-started.html).
+If you are new to R and RStudio and want to learn a bit more, I suggest you skim through this [chapter of IDS](https://rafalab.github.io/dsbook/getting-started.html).
 
 While one can use R and do pretty much every task, including all the ones we cover in this class, without using RStudio. However, RStudio is very useful; it has a lot of features that make your R coding life easier. It has become pretty much the default integrated development environment (IDE) for R. Since RStudio has lots of features, it takes time to learn them. A good resource to learn more about RStudio are the [R Studio Essentials](https://resources.rstudio.com/) collection of videos. 

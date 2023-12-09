@@ -21,7 +21,7 @@ While there are tons of packages available, some are very commonly used. For dat
 
 # Tidy data
 
-The concept of the tidyverse can be traced back to the concept of _tidy data_, which [Hadley Wickham](http://hadley.nz/) introduced in [this article](https://www.jstatsoft.org/article/view/v059i10/). Give the article a quick read to get the overall idea. You will see it a lot, so it's good to be familiar with it. 
+The concept of the tidyverse can be traced back to the concept of _tidy data_, which [Hadley Wickham](http://hadley.nz/) introduced in his [TIdy Data paper](https://www.jstatsoft.org/article/view/v059i10/). Give the article a quick read to get the overall idea. You will see it a lot, so it's good to be familiar with it. 
 
 
 # Tidyverse philosophy 
@@ -33,7 +33,7 @@ Note that there are many more R packages that are not part of the core tidyverse
 
 # Learning the Tidyverse 
 
-To learn more and practice some of the tidyverse functionality, I suggest you go through the _Work with Data_ and _Tidy your Data_ sections of the [R Studio primers](https://rstudio.cloud/learn/primers/). More or less the same content, presented a bit differently and non-interactively, can be found in the [_Tidy data_ chapter in R4DS](https://r4ds.had.co.nz/tidy-data.html). This might be a good reference to look up things. If you want to practice and learn more, read the  _tidyverse_, _Introduction to data wrangling_, _Reshaping data_ and _Joining tables_ chapters of [IDS](https://rafalab.github.io/dsbook/). If you want some more data tyding practice, check out [this tutorial by Garrett Grolemund](http://garrettgman.github.io/tidying/) or [this short blog post by Joachim Goedhart](https://thenode.biologists.com/converting-excellent-spreadsheets-tidy-data/education/). 
+To learn more and practice some of the tidyverse functionality, I suggest you go through the _Work with Data_ and _Tidy your Data_ sections of the [R Studio primers](https://rstudio.cloud/learn/primers/). More or less the same content, presented a bit differently and non-interactively, can be found in the [_Tidy data_ chapter in R4DS](https://r4ds.had.co.nz/tidy-data.html). This might be a good reference to look up things. If you want to practice and learn more, read the  _tidyverse_, _Introduction to data wrangling_, _Reshaping data_ and _Joining tables_ chapters of [IDS](https://rafalab.github.io/dsbook/). If you want some more data tidying practice, check out [Garrett Grolemund's tutorial](http://garrettgman.github.io/tidying/) or [Joachim Goedhart's short blog post](https://thenode.biologists.com/converting-excellent-spreadsheets-tidy-data/education/). 
 
 These are a lot of resources, and I don't expect you to work through all of them in detail. I do suggest you take a quick look at all of them, and then work through some of them based on your knowledge level. As we progress through the course and you are asked to do a lot of these tasks, you will likely want to re-visit these materials. And as always, Google is your friend.
 

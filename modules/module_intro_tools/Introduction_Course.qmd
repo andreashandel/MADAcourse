@@ -30,9 +30,7 @@ A related goal is to introduce you to a set of tools that allow for a modern, re
 
 For more detailed learning objectives, see the course syllabus.
 
-```{r datacartoon,  echo=FALSE, fig.cap="In this course, I randomly switch back and forth between singluar and plural. Source: phdcomics.com.", out.width = '100%', fig.align='center'}
-knitr::include_graphics("../../media/phd_dataisorare.gif")
-```
+![In this course, I randomly switch back and forth between singluar and plural. Source: phdcomics.com.](../../media/phd_dataisorare.gif)
 
 ## Course Philosophy
 

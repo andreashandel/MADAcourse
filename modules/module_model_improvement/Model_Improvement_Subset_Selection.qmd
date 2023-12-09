@@ -22,9 +22,7 @@ You want a model that gets the trade-off between high bias (model not flexible e
 
 I showed the figure below previously. I'm repeating it here as a refresher. The yellow model (straight line), in this example, has too much bias. The model is too simple to capture all the important patterns, and it **underfits** the data. The performance metric (mean square error here) is high for both the training and test/CV data (yellow squares on the left of the right panel.) The green model (very wiggly line) has too much variance. It goes too close to the data used for fitting and doesn't generalize to new data, it **overfits** the data. This reflects itself in good performance (low MSE) for the train data, but high MSE for the test/CV data (green squares on left of the left panel) In this example, the blue model has the optimal model complexity. It captures the overall pattern in the data, without trying to fit the noise/variability. This manifests itself with the best performance on the test/CV data (blue squares).
 
-```{r trainfit,  fig.show='hold', fig.cap='Bias-variance tradeoff. Source: ISLR.', echo=FALSE, fig.align='center', fig.alt = "A scatterplot with two panels. The left panel shows several data points along with a few different models: a straight line, a curve that passes through the middle of the points, and a curve that oscillates frequently to hit many of the points. The right panel shows the MSE of these models against the training data, where the oscillating curve performs best, and also against new data, where the curve which oscillates less frequently performs best."}
-knitr::include_graphics("../../media/islr-fig29.jpg")
-```
+![Bias-variance tradeoff. Source: ISLR.](../../media/islr-fig29.jpg){fig-alt="A scatterplot with two panels. The left panel shows several data points along with a few different models: a straight line, a curve that passes through the middle of the points, and a curve that oscillates frequently to hit many of the points. The right panel shows the MSE of these models against the training data, where the oscillating curve performs best, and also against new data, where the curve which oscillates less frequently performs best."}
 
 We talked about cross-validation and how it can be used to help you determine if your model overfits (or underfits). What we haven't discussed is how to find a model that gets the trade-off between bias and variance right. Two common techniques are subset selection and regularization.
 
@@ -110,10 +108,10 @@ Because of this, and since I don't want to jump around different R packages more
 
 For more details on subset selection, [see section 6.1. of ISLR](https://statlearning.com/) and [sections 18-22 of the caret manual](https://topepo.github.io/caret/). 
 
-As just mentioned, since `tidymodels` [currently doesn't support the subset selection approaches described here](https://stackoverflow.com/questions/66651033/stepwise-algorithm-in-tidymodels#comment117845482_66651033
+As just mentioned, since `tidymodels` currently doesn't support the subset selection approaches described in this [StackOverflow question](https://stackoverflow.com/questions/66651033/stepwise-algorithm-in-tidymodels#comment117845482_66651033
 ), we won't try them. The next topic, regularization, does something similar to subset selection and is often more computationally efficient. We will try some of those methods. 
 
-[This paper](https://projecteuclid.org/journals/statistical-science/volume-35/issue-4/Best-Subset-Forward-Stepwise-or-Lasso-Analysis-and-Recommendations-Based/10.1214/19-STS733.short) by some rather famous statisticians discusses subset selection and how it compares to methods like LASSO.
+In [Hastie et al. 2020](https://projecteuclid.org/journals/statistical-science/volume-35/issue-4/Best-Subset-Forward-Stepwise-or-Lasso-Analysis-and-Recommendations-Based/10.1214/19-STS733.short), some rather famous statisticians discuss subset selection and how it compares to methods like LASSO.
 
 
 

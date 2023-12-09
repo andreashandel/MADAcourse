@@ -7,9 +7,7 @@ subtitle: ""
 
 In this unit, you will learn the concept of reproducible research, why it is important and helpful to build your analyses in a reproducible manner, and what tools you can use to implement an automated, reproducible workflow.
 
-```{r repro,  echo=FALSE, fig.cap='Not a good example of reproducibility.', out.width = '70%', fig.align='center'}
-knitr::include_graphics("../../media/amiracleoccurs.gif")
-```
+![Not a good example of reproducibility.](../../media/amiracleoccurs.gif)
 
 # Learning Objectives
 
@@ -83,7 +81,7 @@ R Markdown is still around and functional. For instance, this course website is 
 
 The idea behind Quarto is that you have a system that allows you to combine code with text and simple formatting to easily and reproducibly turn them into a lot of different output formats, e.g., HTML, PDF, Word, or slides. You can apply layout and styling to those documents, which is done separately from the content. This means you can quickly switch between outputs. Quarto [calls various other pieces of software](https://quarto.org/docs/get-started/hello/rstudio.html#how-it-works) to - almost magically - turn text and code input into a variety of different output formats. The good thing is, you generally don't need to care what goes on under the hood, it all happens (almost always) smoothly behind the scenes.
 
-The input (for us) into a Quarto document are `R` code and Markdown text. Markdown is a simple way of formatting text to get some reasonably nice layouts with minimal effort. If you have no experience with Markdown, I suggest you go through [this nice, short interactive tutorial.](https://www.markdowntutorial.com/). A good reference to look up formatting for Markdown until you have it memorized is this [online cheat sheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
+The input (for us) into a Quarto document are `R` code and Markdown text. Markdown is a simple way of formatting text to get some reasonably nice layouts with minimal effort. If you have no experience with Markdown, I suggest you go through this nice, short [interactive tutorial](https://www.markdowntutorial.com/). A good reference to look up formatting for Markdown until you have it memorized is this [online cheat sheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
 
 **Quarto and R Markdown Note:** Quarto is fairly new. It didn't exist yet last time I taught the course. I'm switching to Quarto because I think it's the future. But you might still find me talking about R Markdown in some places. If you do, let me know so I can update. In general, either R Markdown or Quarto will do the job, but Quarto is the future, so it's best to use/learn it.
 
@@ -107,4 +105,4 @@ We'll cover that more later, but it is important to not do things that only work
 
 Another good idea is to start your R code with `use_blank_slate()` from the [`usethis` R package](https://usethis.r-lib.org/).
 
-For some more background on this, see [this article](https://www.tidyverse.org/blog/2017/12/workflow-vs-script/) by Jenny Bryan, co-author of both the `here` and `usethis` packages.
+For some more background on this, see the [Tidyverse article](https://www.tidyverse.org/blog/2017/12/workflow-vs-script/) by Jenny Bryan, co-author of both the `here` and `usethis` packages.

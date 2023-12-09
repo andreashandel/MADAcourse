@@ -21,11 +21,9 @@ R (or any other programming language) is best learned by "doing it". You will le
 
 This figure illustrates the journey of learning to write code:
 
-```{r datacartoon,  echo=FALSE, fig.cap="The journey of learning to code. [From this Source.](https://www.thinkful.com/blog/why-learning-to-code-is-so-damn-hard/)", out.width = '100%', fig.align='center'}
-knitr::include_graphics("../../media/LearningToCode.jpg")
-```
+![The journey of learning to code. Source: [Thinkful blog post](https://www.thinkful.com/blog/why-learning-to-code-is-so-damn-hard/).](../../media/LearningToCode.jpg)
 
-It is [from this good article](https://www.thinkful.com/blog/why-learning-to-code-is-so-damn-hard/). Read the article, or read at least the beginning. 
+It is from the Thinkful article [Why Learning to Code is So Damn Hard](https://www.thinkful.com/blog/why-learning-to-code-is-so-damn-hard/). Read the article, or read at least the beginning. 
 
 My goal is that during this course, you will reach the beginning of the _upswing of awesome_, at least when it comes to being able to use R to perform data analyses. But to get there, you'll have to go over the _cliff of confusion_ and through the _desert of despair_, and I'm confident that you'll get there and won't be stuck in the _hand-holding honeymoon_. In fact, at times I'm providing you less detailed instructions than I could to get you quickly to the stage where you have to figure out bits yourself. I guess one could say that instead of hand-holding, I let you stumble and fall some, and then will help you to get back up 😃. It might feel a bit more frustrating at least initially, but it's a much better way to learn.
 
@@ -57,9 +55,7 @@ Maybe the most important skill for learning any programming language is figuring
 
 If you have a problem with your code, it's likely someone else had the same/similar problem before you and asked a question (and probably got an answer). So search the web, and you'll find something useful most of the time.
 
-```{r versioncontrol,  echo=FALSE, fig.cap='Fortunately rare for R. Source: xkcd.com.', out.width = '60%', fig.align='center'}
-knitr::include_graphics("../../media/xkcd_wisdom_of_the_ancients.png")
-```
+![Fortunately rare for R. Source: xkcd.com.](../../media/xkcd_wisdom_of_the_ancients.png){width="60%"}
 
 In those rare cases when you cannot find information online that helps you figure out your problem, feel free to ask for help. The _Resources_ document describes various ways to get help. 
 

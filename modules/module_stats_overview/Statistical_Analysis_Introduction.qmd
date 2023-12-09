@@ -8,10 +8,7 @@ subtitle: ""
 
 In this Unit, we will take another look at the whole data analysis process. Here, we focus on the actual (statistical) analysis (which I also call model fitting) component of the data analysis process. A general conceptual understanding is useful before we jump into looking at and applying specific modeling/statistical approaches.
 
-```{r comic,  echo=FALSE, fig.cap='', out.width = '50%', fig.align='center',fig.alt="A comic of two scientists standing in front of a lab bench that has electrophoresis gel printouts scattered on it. One says to the other 'Data don't make any sense, we will have to resort to statistics.'"}
-knitr::include_graphics("../../media/vadlo_statistics.png")
-```
-
+![Source: VALDO.com](../../media/vadlo_statistics.png){width="50%" fig-alt="A comic of two scientists standing in front of a lab bench that has electrophoresis gel printouts scattered on it. One says to the other 'Data don't make any sense, we will have to resort to statistics.'"}
 
 # Learning Objectives
 
@@ -45,12 +42,9 @@ Depending on the objective, you will likely be using different statistical appro
 
 # Data Analysis Types
 
-The following way of categorizing types of data analyses follows [_The Art of Data Science (ADS)_](https://leanpub.com/artofdatascience) -- specifically, chapter 3. Now might be a good time to give that chapter another quick re-read. A very similar, shortened version of the ADA chapter 3 discussion can be found in [this article by Jeff Leek and Roger Peng](../../media/leek15science.pdf). The following figure from their paper gives a good summary of what follows.
+The following way of categorizing types of data analyses follows [_The Art of Data Science (ADS)_](https://leanpub.com/artofdatascience) -- specifically, chapter 3. Now might be a good time to give that chapter another quick re-read. A very similar, shortened version of the ADA chapter 3 discussion can be found in [Jeff Leek and Roger Peng's article](../../media/leek15science.pdf). The following figure from their paper gives a good summary of what follows.
 
-```{r workflow2,  echo=FALSE, fig.cap='', out.width = '80%', fig.align='center'}
-knitr::include_graphics("../../media/data-analysis-chart.jpg")
-```
-
+![Source: [Leek and Peng 2015](../../media/leek15science.pdf)](../../media/data-analysis-chart.jpg){fig-width="80%"}
 
 The most straightforward analysis is a **descriptive** one. At that stage, you process, summarize and present the data, and do not go further. You don't need to fit any statistical models. A lot of data collected by surveillance systems or government agencies falls into the descriptive category. For most scientific projects, we often start with a descriptive presentation. E.g. _Table 1_ in a study often describes and summarizes the data source. Note that some authors have the bad habit of including model fitting quantities, such as p-values, in a descriptive table. Measures that involve fitting a model (such as p-values), go beyond a descriptive analysis and [should therefore generally not be in a descriptive table](https://discourse.datamethods.org/t/reference-collection-to-push-back-against-common-statistical-myths/1787#p-values-in-table-1-of-randomized-trials-2). 
 
