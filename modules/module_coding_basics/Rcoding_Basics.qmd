@@ -21,7 +21,7 @@ R (or any other programming language) is best learned by "doing it". You will le
 
 This figure illustrates the journey of learning to write code:
 
-![The journey of learning to code. Source: [Thinkful blog post](https://www.thinkful.com/blog/why-learning-to-code-is-so-damn-hard/).](../../media/LearningToCode.jpg)
+![The journey of learning to code. Source: [Thinkful blog post](https://www.thinkful.com/blog/why-learning-to-code-is-so-damn-hard/).](../../media/LearningToCode.jpg){fig-alt="Graph titled Coding Confidence vs Compentence. The x-axis is Competence and y-axis is confidence. The first peak is called the hand-holding honeymoon, the decline is called the cliff of confusion, the bottom of the decline is called the desert of despair, the beginning of the incline is called the upswing of awesome, and the end of the graph is the highest peak that says Job Ready."}
 
 It is from the Thinkful article [Why Learning to Code is So Damn Hard](https://www.thinkful.com/blog/why-learning-to-code-is-so-damn-hard/). Read the article, or read at least the beginning. 
 
@@ -55,7 +55,7 @@ Maybe the most important skill for learning any programming language is figuring
 
 If you have a problem with your code, it's likely someone else had the same/similar problem before you and asked a question (and probably got an answer). So search the web, and you'll find something useful most of the time.
 
-![Fortunately rare for R. Source: xkcd.com.](../../media/xkcd_wisdom_of_the_ancients.png){width="60%"}
+![Fortunately rare for R. Source: xkcd.com.](../../media/xkcd_wisdom_of_the_ancients.png){width="60%" fig-alt="An xkcd comic of a stick figure shaking a computer screen saying 'Who were you, denvercoder9? What did you see?!'. Outside the the box, it says 'Never have I felt so close to another soul. And yet so helplessly alone as when I Google an error and there's one result. A thread by someone with the same problem and no answer last posted in 2003."}
 
 In those rare cases when you cannot find information online that helps you figure out your problem, feel free to ask for help. The _Resources_ document describes various ways to get help. 
 

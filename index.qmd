@@ -2,7 +2,7 @@
 toc: FALSE
 ---
 
-![](media/MADAlogo.png){width="150px" style="float:right"}
+![](media/MADAlogo.png){width="150px" style="float:right" fig-alt="MADA logo"}
 
 # Modern Applied Data Analysis (MADA)
 

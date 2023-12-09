@@ -23,7 +23,7 @@ For this approach, you start by creating your repository on GitHub. The most com
 
 Once you are in the location/account where you want the new repository, click on `Repositories` to see your list of repositories (which might initially be empty). Now create a new repository  by clicking the green _New_ button. A page should show up where you can specify details for your new repository, something like this:
 
-![](../../media/newrepo.png){width="60%" fig-align="center"}
+![](../../media/newrepo.png){width="60%" fig-align="center" fig-alt="Screenshot of GitHub on the 'Create a new repository' page. The new repository is named 'mynewrepository', set to Public, and the boxes are checked for 'Add a README file' and 'Add .gitignore' with the .gitignore template set to R."}
 
 Specify the repository owner. Make sure it's the one you want, e.g., yourself or an organization you are part of. Pick a good name for your repository. Set the repository as private or public. In general, you should consider doing it public, unless there is an important reason to have it private (e.g. confidential data). Note that if you set it to private, you might not be able to access it with the free version of GitKraken. Check the box _Initialize this repository with a README_. Set the _.gitignore_ option to `R`. You can keep the license box unchecked, or choose a license for your page. Click "create repository".  
 
@@ -69,7 +69,7 @@ Above we created the repository on GitHub first, then cloned it to the local mac
 ### RStudio
 Open RStudio. Choose `File`, `New Project`, `New Directory` and (usually) you'll choose `New Project`. Pick a project name and location. Check the `Create a git repository` box. *This button might not appear if you only installed Gitkraken and not Git.*
 
-![](../../media/newproject.png){width="60%" fig-alt="center"}
+![](../../media/newproject.png){width="60%" fig-alt="center" fig-alt="Screenshot of RStudio New Project Wizard with the directory named 'mynewproject' and the 'Create a git repository' checkbox marked."}
 
 Create your content in the project folder.
 

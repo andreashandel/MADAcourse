@@ -7,7 +7,7 @@ subtitle: ""
 
 In this unit, you will learn the concept of reproducible research, why it is important and helpful to build your analyses in a reproducible manner, and what tools you can use to implement an automated, reproducible workflow.
 
-![Not a good example of reproducibility.](../../media/amiracleoccurs.gif)
+![Not a good example of reproducibility.](../../media/amiracleoccurs.gif){fig-alt="Comic of two people in front of a chalkboard that has mathematical equations and the phrase 'then a miracle occurs' between equations. The person pointing at that phrase says 'I think you should be more explicit here in step two.'"}
 
 # Learning Objectives
 

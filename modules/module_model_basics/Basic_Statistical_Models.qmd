@@ -90,7 +90,7 @@ There isn't really one single, standard go-to method for unsupervised learning -
 [_Unsupervised Learning_ chapter of ISLR](https://statlearning.com/). There are also chapters on PCA and different types of clustering [in HMLR](https://bradleyboehmke.github.io/HOML/).
 
 
-![Choosing K is an important task. 3 sometimes works. Source: xkcd.com.](../../media/xkcd_k_means_clustering_2x.png){width="50%"}
+![Choosing K is an important task. 3 sometimes works. Source: xkcd.com.](../../media/xkcd_k_means_clustering_2x.png){width="50%" fig-alt="xkcd comic with person pointing a poster and saying 'Our analysis shows that there are three kinds of people in the world: those who use k-means clustering with k=3, and two other types whose qualitative interpretation is unclear."}
 
 # The zoo of statistical tests
 

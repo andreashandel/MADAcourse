@@ -53,7 +53,7 @@ The "official" place for packages is the [CRAN website](https://cran.r-project.o
 To install a package from CRAN, go to the R prompt at the bottom left of your RStudio session and type `install.packages("PACKAGENAME")`. The figure shows an example where I installed a package called `learnr`. Often, a package needs other packages to work  (called dependencies), and they are installed automatically. It usually doesn't matter if you use a single or double quotation mark around the name of the package. Note that R cares about capitalization, so you need to get the upper and lower case exactly right. Otherwise, it won't work.
 
 
-![Installing an R package. Right-click on the image and open in a new tab to enlarge it.](../../media/installpackagesscreenshot.png)
+![Installing an R package. Right-click on the image and open in a new tab to enlarge it.](../../media/installpackagesscreenshot.png){fig-alt="Screenshot of RStudio with the command 'install.packages(learnr)' in the console."}
 
 Try installing a package yourself. Open RStudio. Then go to the R prompt (the `>` symbol) in the lower-left corner and type
 

@@ -187,6 +187,10 @@ Read the [published paper](https://doi.org/10.1098/rspb.2020.0496). All material
 
 JR: I replaced most "here" and "this" with either the article authors+date or a short description of the linked resource.
 
+Added alt-text to images except:
+- (../../media/islr-fig29.jpg) in Model_Evaluation_Overfitting
+- (../../media/cross_validation.jpg) in Model_Evaluation_Overfitting
+
 ## Styling
 
 I replaced your `.css` with `.scss`. I changed the primary color to the green from the `?` in the MADA logo.

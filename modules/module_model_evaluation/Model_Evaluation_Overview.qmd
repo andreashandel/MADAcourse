@@ -7,7 +7,7 @@ subtitle: ""
 # Overview
 In this module, we will discuss how one can assess the quality of different models, and what aspects of model quality one needs to consider.
 
-![](../../media/assessment-cartoon.jpg){width="70%" fig-align="center"}
+![](../../media/assessment-cartoon.jpg){width="70%" fig-align="center" fig-alt="A comic of a person holding a clipboard asking another person 'How hard - on a scale of one to ten?' to which the other responds 'The way I feel is hard to quantify!'"}
 
 # Learning Objectives
 * Learn how to determine different aspects of model quality
