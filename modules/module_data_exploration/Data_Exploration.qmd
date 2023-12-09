@@ -52,7 +52,7 @@ You could also explore your data by running simple bivariate statistical models,
 
 # Further reading
 
-(Re)read the _Exploratory Data Analysis_ and _Using Models to Explore Your Data_ chapters (4 and 5) in _The Art of Data science (ADS) book._ We looked at that book previously. You don't need to work/code along. But if you want to, see the notes at the bottom of the [Data Analysis Overview](../data_analysis/Data_Analysis_Overview.qmd) page for some details on how to do it.
+(Re)read the _Exploratory Data Analysis_ and _Using Models to Explore Your Data_ chapters (4 and 5) in _The Art of Data science (ADS) book._ We looked at that book previously. You don't need to work/code along. But if you want to, see the notes at the bottom of the [Data Analysis Overview](../module_data_analysis/Data_Analysis_Overview.qmd) page for some details on how to do it.
 
 Also go through the rather short EDA tutorial which is part of the [Visualize Data R Studio Primer](https://rstudio.cloud/learn/primers/3).
 

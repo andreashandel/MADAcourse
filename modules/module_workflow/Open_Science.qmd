@@ -19,7 +19,7 @@ In this unit, we'll talk a bit more about reproducible research, and how that fi
 
 # Introduction
 
-Way back at [the beginning of the course](../intro_tools/Tools_Reproducibility.qmd),
+Way back at [the beginning of the course](../module_intro_tools/Tools_Reproducibility.qmd),
 we briefly discussed reproducibility. Throughout the course, we emphasized the importance to do analyses in a reproducible (and thus generally automated/scripted) manner. In this module, we'll discuss a bit more what reproducible research means and entails, current trends towards open science, and why you pretty much need to have a solid grasp on reproducible research strategies in the future. 
 
 
@@ -128,7 +128,7 @@ In general, a lot of authors still hide behind "I can't share my data, it's conf
 
 # Reproducibility (and replicability too)
 
-We discussed **reproducibility** in [this reading](../intro_tools/Tools_Reproducibility.qmd), revisit it if you need a refresher.
+We discussed **reproducibility** in [this reading](../module_intro_tools/Tools_Reproducibility.qmd), revisit it if you need a refresher.
 In one sentence, *your research is reproducible if another scientist can repeat your methods on your data and get the same results.* That is, someone
 else can take your code and data, rerun all your code, and get the same answers that you got in your paper.
 

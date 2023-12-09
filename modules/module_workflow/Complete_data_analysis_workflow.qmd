@@ -14,7 +14,7 @@ This very short unit re-visits all of the data analysis concepts and components 
 
 
 # Introduction
-Earlier in the course, we covered the whole data analysis workflow and all its components in a big-picture manner, trying to look ahead. Back then, the topics were abstract. At this stage, we have covered each topic and worked on specific examples. Now is a good time to [re-read the earlier unit.](../data_analysis/Data_Analysis_Overview.qmd) 
+Earlier in the course, we covered the whole data analysis workflow and all its components in a big-picture manner, trying to look ahead. Back then, the topics were abstract. At this stage, we have covered each topic and worked on specific examples. Now is a good time to [re-read the earlier unit.](../module_data_analysis/Data_Analysis_Overview.qmd) 
 
 Hopefully, upon re-reading, some of the topics that were theoretical and abstract back when you first read it are now clearer and more concrete.
 

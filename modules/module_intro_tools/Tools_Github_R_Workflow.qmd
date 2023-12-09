@@ -11,7 +11,7 @@ This document gives a brief discussion of working with R projects through GitHub
 
 
 # Prerequisites
-I assume you read through the [Git/GitHub introduction](../intro_tools/Tools_Github_Introduction.qmd) and have created a GitHub account.
+I assume you read through the [Git/GitHub introduction](../module_intro_tools/Tools_Github_Introduction.qmd) and have created a GitHub account.
 
 I also assume that you are using the GitKraken client. If you don't, you need to adjust things accordingly.
 
