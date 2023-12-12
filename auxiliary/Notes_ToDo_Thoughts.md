@@ -115,7 +115,7 @@ Use the `.qmd` file rather than the `.html` per the [Quarto docs](https://quarto
 
 To link between pages **within the same** folder - just use the name of the other file.
 
-Example as seen in `courseinf/Course_Syllabus.qmd`:
+Example as seen in `courseinfo/Course_Syllabus.qmd`:
 `[_Assessments page_](Course_Assessments.qmd)`
 
 To link between pages in **different** folders - use double dots to get to the parent directory and then the desired folder name.
@@ -125,9 +125,18 @@ Example as seen in `assessments/Assessment_Course_Tools_Introduction.qmd`:
 
 This way of cross referencing is cool because you can link to specific sections. Add a `#sec-` identifier to any heading per these [Quarto docs](https://quarto.org/docs/authoring/cross-references.html#sections). 
 
-Example as seen in `project/Project_Review.qmd`:
+For example:
 
-`-   Use the simple grading rubric shown in the part 3 section of the [Project Details](Project_Details.qmd#sec-part-3) document.`
+In project/Project_Details.qmd:
+```
+# Part 3 {#sec-part-3}
+```
+
+In project/Project_Review.qmd:
+
+```
+-   Use the simple grading rubric shown in the part 3 section of the [Project Details](Project_Details.qmd#sec-part-3) document.
+```
 
 ## Contributors - author roles in metadata
 
@@ -187,6 +196,10 @@ Read the [published paper](https://doi.org/10.1098/rspb.2020.0496). All material
 
 JR: I replaced most "here" and "this" with either the article authors+date or a short description of the linked resource.
 
+I also removed most "the", "a", and other articles outside of the hyperlinks.
+
+For consistency sake, I tried to go through and italicize article and book names.
+
 Added alt-text to images except:
 - (../../media/islr-fig29.jpg) in Model_Evaluation_Overfitting
 - (../../media/cross_validation.jpg) in Model_Evaluation_Overfitting
@@ -201,7 +214,6 @@ JR: got it :)
 
 ## Broken links
 
-	
 - https://www.thinkful.com/blog/why-learning-to-code-is-so-damn-hard/
   - Linked from: /modules/module_coding_basics/Rcoding_Basics.html
 
@@ -210,6 +222,16 @@ JR: got it :)
   
 - Not broken, but goes to general Journal website, not an actual article: https://academic.oup.com/jn/article/143/6/931/4571741
   - from modules: module_data_analysis/Data_Analysis_Overview.qmd
+  
+## Markdown: bold and italics
+
+I changed underscores to asterisks for bold and italics for markdown best practices according to the [Markdown Guide](https://www.markdownguide.org/basic-syntax/#bold-best-practices).
+
+For consistency I made:
+
+- books and articles *italics*
+- internal links to other pages on the course website **bold**
+- left whatever regular text as you had it italicized or bold
 
 ## Publishing
 
@@ -218,3 +240,13 @@ JR: got it :)
 3. Run `quarto publish gh-pages` in terminal and follow prompts.
 
 # Scribblings
+
+## RStudio Primers -> Posit Recipes
+
+Updated [RStudio Primers](https://posit.cloud/learn/primers) to [Posit Recipes](https://posit.cloud/learn/recipes) as the primers page says they will no longer be available after mid-Dec 2023. You may want to update your notes about the exercises and the names of the primers in `RCoding_Basics.qmd`, `Data_Types.qmd`, `Data_Wrangling.qmd`.
+
+Also check to see if this is still accurate in `Model_Evaluation_Performance.qmd`: "If you want to get some more intuition with fitting a continuous outcome, go through this [interactive tutorial](https://shiny.ovpr.uga.edu/modelperformance/). If it looks like the Posit Recipes you've seen, that is no accident. Both use the [`learnr` package](https://rstudio.github.io/learnr/).
+
+# JR todo: 
+- left off at module_data_presentation (consistency with hyperlinks and markdown)
+- change colors for notes boxes in `.scss` to meet WGA color accessibility

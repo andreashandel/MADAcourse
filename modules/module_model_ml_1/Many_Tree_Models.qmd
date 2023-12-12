@@ -48,7 +48,7 @@ Another possible disadvantage of many-tree models is that they generally take lo
 
 As mentioned, bagging and boosting are approaches that can be applied to methods other than trees. For instance, one can bag/boost linear models, GAMs, etc.
 
-The many-tree methods described above are examples of what is often called **ensemble methods.**  Boosting is an example of using an ensemble of weak learners, i.e., a combination of models that individually don't perform that well, but when combined, they often have outstanding performance. The combination of different individual models/learners (weak or not) is often called **model averaging** or **model stacking**, and such methods lead to some of the best-performing models in machine learning. For more on this, see e.g., the [_Stacked Models_ chapter of HMLR](https://bradleyboehmke.github.io/HOML/stacking.html). We will not further cover these models, but if you have a situation where you need the best model performance available, such models might be worth looking at. 
+The many-tree methods described above are examples of what is often called **ensemble methods.**  Boosting is an example of using an ensemble of weak learners, i.e., a combination of models that individually don't perform that well, but when combined, they often have outstanding performance. The combination of different individual models/learners (weak or not) is often called **model averaging** or **model stacking**, and such methods lead to some of the best-performing models in machine learning. For more on this, see e.g., the [Stacked Models chapter of *HMLR*](https://bradleyboehmke.github.io/HOML/stacking.html). We will not further cover these models, but if you have a situation where you need the best model performance available, such models might be worth looking at. 
 
 
 
@@ -63,5 +63,5 @@ Since `tidymodels` is still under development, there are many other packages for
 
 # Further information
 
-For more details on the many-tree methods described here, see [chapter 8 of ISLR](https://statlearning.com/) and [chapters 10-12 of HMLR](https://bradleyboehmke.github.io/HOML/DT.html).
+For more details on the many-tree methods described here, see [chapter 8 of *ISLR*](https://statlearning.com/) and [chapters 10-12 of *HMLR*](https://bradleyboehmke.github.io/HOML/DT.html).
 

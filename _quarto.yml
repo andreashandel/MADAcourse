@@ -19,6 +19,7 @@ format:
     toc_float: 
       collapsed: false
     fig-align: center # images need a caption to be considered a figure (https://github.com/quarto-dev/quarto-cli/issues/6509)
+    highlight-style: a11y # accessible syntax color theme
     
 execute: 
   freeze: auto  # re-render only when source changes

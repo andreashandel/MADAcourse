@@ -31,23 +31,23 @@ This type of data is actually quite common. A hierarchy (also at times called mu
 
 # Time-series data
 
-Time series are a specialized data type that are autocorrelated, and we can therefore get better predictions by using specialized models that take this data structure into account. A good resource is the free textbook [Forecasting: Principles and Practice](https://otexts.com/fpp3/) and a lot of the other work by [Rob Hyndman](https://robjhyndman.com/). 
+Time series are a specialized data type that are autocorrelated, and we can therefore get better predictions by using specialized models that take this data structure into account. A good resource is the free textbook [*Forecasting: Principles and Practice*](https://otexts.com/fpp3/) and a lot of the other work by [Rob Hyndman](https://robjhyndman.com/). 
 
-A very useful set of tools to allow times-series work in R is the set of packages called [the tidyverts](https://tidyverts.org/). The [`modeltime`](https://business-science.github.io/modeltime/) `R` package allows one to use the `tidymodels` framework to analyze time-series data.
+A very useful set of tools to allow times-series work in R is the set of packages called the [`tidyverts`](https://tidyverts.org/). The [`modeltime`](https://business-science.github.io/modeltime/) `R` package allows one to use the `tidymodels` framework to analyze time-series data.
 
-CRAN also has a [Task View for _Time Series Analysis_.](https://cran.r-project.org/web/views/TimeSeries.html) (A _Task View_ on CRAN is a site that tries to combine and summarize various R packages for a specific topic). Another task view that deals with longitudinal/time-series data is the [_Survival Analysis_ Task View](https://cran.r-project.org/web/views/Survival.html).
+CRAN also has a [Task View for _Time Series Analysis_.](https://cran.r-project.org/web/views/TimeSeries.html) (A _Task View_ on CRAN is a site that tries to combine and summarize various R packages for a specific topic). Another task view that deals with longitudinal/time-series data is the [*Survival Analysis* Task View](https://cran.r-project.org/web/views/Survival.html).
 
 # Spatial data
 
-Like time series data, spatial data also feature autocorrelation, but typically in two dimensions. (I.e., latitude and longitude.) Spatiotemporal data, typically collected as repeated measurements of spatial data over time, is also somewhat common. One could also have an elevation coordinate and have 3D (or even 4D spatiotemporal data) spatial data, but most analyses focus on 2D spatial autocorrelation structures.
+Like time series data, spatial data also feature autocorrelation, but typically in two dimensions. (i.e., latitude and longitude.) Spatiotemporal data, typically collected as repeated measurements of spatial data over time, is also somewhat common. One could also have an elevation coordinate and have 3D (or even 4D spatiotemporal data) spatial data, but most analyses focus on 2D spatial autocorrelation structures.
 
 While there is (to my knowledge) no current way to fit specific spatial models in `tidymodels` (i.e. no `modeltime` analogue), one can use spatial resampling through the [`spatialsample`](https://spatialsample.tidymodels.org/) package, which provides resampling methods that take spatial autocorrelation into account.
 
-You can find a community-curated list of resources for spatial data in [the Big Book of R](https://www.bigbookofr.com/geospatial.html) or in the [spatial data CRAN task view](https://cran.r-project.org/web/views/Spatial.html).
+You can find a community-curated list of resources for spatial data in [The Big Book of R](https://www.bigbookofr.com/geospatial.html) or in the [*spatial data* CRAN task view](https://cran.r-project.org/web/views/Spatial.html).
 
 # Text
 
-Working with and analyzing larger sections of text is becoming increasingly important. Complex and powerful AI tools (e.g., ChatGPT) have become rather good at working with text. The analysis of text often goes by the term _natural language processing_. Such text analysis will continue to increase in importance, given the increasing data streams of that type. If you are interested in doing full analyses of text data, the [`tidytext` R package](https://juliasilge.github.io/tidytext/) and the [Text mining with R book](https://www.tidytextmining.com/) are great resources. A short introduction to this topic is [The _text mining_ chapter (27) of IDS](https://rafalab.github.io/dsbook/text-mining.html). 
+Working with and analyzing larger sections of text is becoming increasingly important. Complex and powerful AI tools (e.g., ChatGPT) have become rather good at working with text. The analysis of text often goes by the term _natural language processing_. Such text analysis will continue to increase in importance, given the increasing data streams of that type. If you are interested in doing full analyses of text data, the [`tidytext` R package](https://juliasilge.github.io/tidytext/) and the [*Text mining with R* book](https://www.tidytextmining.com/) are great resources. A short introduction to this topic is the [Text Mining chapter (27) of *IDS*](https://rafalab.github.io/dsbook/text-mining.html). 
 
 
 
@@ -79,4 +79,4 @@ I have close to zero experience trying to analyse images/sounds. Unfortunately, 
 
 # Further reading
 
-See the references provided in the sections above, as well as the general references on the course website. 
+See the references provided in the sections above, as well as the [**Resources**](../../resources/Course_Resources.qmd) section on the course website. 

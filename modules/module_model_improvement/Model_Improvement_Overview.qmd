@@ -25,7 +25,7 @@ Trying different models is, of course, always an option, and possibly a good one
 
 We are covering several important approaches to model performance improvement here. But as we go through these topics (and the rest of the course) always keep these things in mind: 
 
-* __Good performance alone doesn't mean a model is good!__
-* __Good performance on a scientifically wrong metric is useless!__
-* __Good performance assessed with the data used to build the model is not too meaningful!__
+* **Good performance alone doesn't mean a model is good!**
+* **Good performance on a scientifically wrong metric is useless!**
+* **Good performance assessed with the data used to build the model is not too meaningful!**
 

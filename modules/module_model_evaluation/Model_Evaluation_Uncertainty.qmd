@@ -42,4 +42,4 @@ So what about the **p-value**? This quantity doesn't measure uncertainty directl
 
 # Further learning
 
-Bootstrapping is discussed in [the _Resampling Methods_ chapter of ISLR](https://statlearning.com/) and [the _Cross Validation_ chapter of IDS](https://rafalab.github.io/dsbook/cross-validation.html). The other topics are covered in various places in the different course materials we've been using, but again not in any full chapters/sections. So if you have suggestions for good resources, let me know.
+Bootstrapping is discussed in [the Resampling Methods chapter of *ISLR*](https://statlearning.com/) and [the Cross Validation chapter of *IDS*](https://rafalab.github.io/dsbook/cross-validation.html). The other topics are covered in various places in the different course materials we've been using, but again not in any full chapters/sections. So if you have suggestions for good resources, let me know.

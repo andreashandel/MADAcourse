@@ -34,13 +34,13 @@ The math behind SVM is not that easy to follow, and since SVM models are somewha
 
 # SVM in `tidymodels`
 
-Tidymodels/parsnip [has several SVM models](https://parsnip.tidymodels.org/reference/index.html), such as `svm_linear()` and `svm_poly()`. They can be used as part of the `tidymodels` workflow like any other ML model you have already seen. They also need tuning. 
+`tidymodels`/`parsnip` has several [SVM models](https://parsnip.tidymodels.org/reference/index.html), such as `svm_linear()` and `svm_poly()`. They can be used as part of the `tidymodels` workflow like any other ML model you have already seen. They also need tuning. 
 
 
 
 # Further Resources
 
-To learn a bit more about SVM, you can check out [chapter 9 of ISL](https://statlearning.com/) which discusses SVM. So does [chapter 14 of HMLR](https://bradleyboehmke.github.io/HOML/svm.html).
+To learn a bit more about SVM, you can check out [chapter 9 of *ISL*](https://statlearning.com/) which discusses SVM. So does [chapter 14 of *HMLR*](https://bradleyboehmke.github.io/HOML/svm.html).
 
 
 

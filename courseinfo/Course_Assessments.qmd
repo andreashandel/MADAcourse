@@ -19,32 +19,32 @@ The quizzes cover the basics and ensure that you have gone through some of the m
 
 Quizzes are auto-graded on submission based on a simple counting of the right answers. At the end, I'll average across all quizzes. Note that since there are >10 quizzes and all quizzes together count for only a fraction of the total grade, each quiz counts for a small part of your grade. So try to get them as correct and complete as possible, but don't stress out about missing a question here and there.
 
-**The link to the website for quiz submission is pinned to the _announcements_ Discord channel. Before submitting any quizzes, you need to set up a password by filling the Google Form that was shared with you in the welcome email.**
+**The link to the website for quiz submission is pinned to the *announcements* Discord channel. Before submitting any quizzes, you need to set up a password by filling the Google Form that was shared with you in the welcome email.**
 
 **Unless otherwise specified, you can submit each quiz once, and it needs to be submitted by the deadline (generally Fridays), otherwise the system will not take your submission.**
 
 
 ### Quiz sheets
 
-For each module, you are asked to fill out an Excel sheet with questions related to the course material. Download the quiz files from the links below, fill in the `Answer` column, and submit to the online quiz submission system by the deadline specified in the __Schedule__ document.
+For each module, you are asked to fill out an Excel sheet with questions related to the course material. Download the quiz files from the links below, fill in the `Answer` column, and submit to the online quiz submission system by the deadline specified in the [**Schedule**](Course_Schedule.qmd) document.
 
-**You can expand and resize the columns/rows of the Excel file so you can make sure to see all content. Other than that, please only fill in the _Answer_ column and don't make other changes (e.g. don't rename or delete rows/columns). If you do make changes, submission might fail. If that happens and you get an error message during submission, simply come back here, download a fresh sheet and copy and paste your answers into it, making sure to not change any other part of the sheet.** 
+**You can expand and resize the columns/rows of the Excel file so you can make sure to see all content. Other than that, please only fill in the *Answer* column and don't make other changes (e.g. don't rename or delete rows/columns). If you do make changes, submission might fail. If that happens and you get an error message during submission, simply come back here, download a fresh sheet and copy and paste your answers into it, making sure to not change any other part of the sheet.** 
 
-_Quizzes will become available here as the course progresses. Once a quiz is available, you should be able to submit it at any time before the deadline._
+*Quizzes will become available here as the course progresses. Once a quiz is available, you should be able to submit it at any time before the deadline.*
 
-* [Module 1 – Course and tools introduction](../modules/quizsheets/m1_mada_course_tools_student.xlsx) - you have 2 attempts available for this one.
-* [Module 2 – Data analysis introduction ](../modules/quizsheets/m2_mada_data_analysis_intro_student.xlsx)
-* [Module 3 – R coding basics](../modules/quizsheets/m3_mada_coding_basics_student.xlsx)
-* [Module 4 – Contemplating, finding and wrangling data](../modules/quizsheets/m4_mada_data_finding_wrangling_student.xlsx)
-* [Module 5 – Visualization](../modules/quizsheets/m5_mada_visualization_student.xlsx)
-* [Module 6 – Exploration](../modules/quizsheets/m6_mada_data_exploration_student.xlsx)
-* [Module 7 – Statistical Analysis Overview](../modules/quizsheets/m7_mada_statistical_analysis_overview_student.xlsx)
-* [Module 8 – Fitting basic statistical models](../modules/quizsheets/m8_mada_basic_statistical_models_student.xlsx)
-* [Module 9 – Evaluating your model fits](../modules/quizsheets/m9_mada_model_evaluation_student.xlsx)
-* [Module 10 – Improving your model fits](../modules/quizsheets/m10_mada_model_improvement_student.xlsx)
-* [Module 11 – Machine Learning Models I](../modules/quizsheets/m11_mada_ml_models_1_student.xlsx)
-* [Module 12 – Machine Learning Models II](../modules/quizsheets/m12_mada_ml_models_2_student.xlsx)
-* [Module 13 – The complete analysis workflow](../modules/quizsheets/m13_mada_full_workflow_student.xlsx)
+* [Module 1 – Course and tools introduction](../quizsheets/m1_mada_course_tools_student.xlsx) - you have 2 attempts available for this one.
+* [Module 2 – Data analysis introduction ](../quizsheets/m2_mada_data_analysis_intro_student.xlsx)
+* [Module 3 – R coding basics](../quizsheets/m3_mada_coding_basics_student.xlsx)
+* [Module 4 – Contemplating, finding and wrangling data](../quizsheets/m4_mada_data_finding_wrangling_student.xlsx)
+* [Module 5 – Visualization](../quizsheets/m5_mada_visualization_student.xlsx)
+* [Module 6 – Exploration](../quizsheets/m6_mada_data_exploration_student.xlsx)
+* [Module 7 – Statistical Analysis Overview](../quizsheets/m7_mada_statistical_analysis_overview_student.xlsx)
+* [Module 8 – Fitting basic statistical models](../quizsheets/m8_mada_basic_statistical_models_student.xlsx)
+* [Module 9 – Evaluating your model fits](../quizsheets/m9_mada_model_evaluation_student.xlsx)
+* [Module 10 – Improving your model fits](../quizsheets/m10_mada_model_improvement_student.xlsx)
+* [Module 11 – Machine Learning Models I](../quizsheets/m11_mada_ml_models_1_student.xlsx)
+* [Module 12 – Machine Learning Models II](../quizsheets/m12_mada_ml_models_2_student.xlsx)
+* [Module 13 – The complete analysis workflow](../quizsheets/m13_mada_full_workflow_student.xlsx)
 
 
 
@@ -57,7 +57,7 @@ Because the exercises are so important, they are usually quite in-depth and also
 
 If you get stuck during the exercises (quite possible), feel free to ask for help. Use the various course materials, the course discussion board as well as outside resources. But do try to do as much as possible yourself (of course with the help of Google). 
 
-__Unless otherwise specified, exercises are due by Friday. Quite often, some part of the exercise needs to be done before that deadline to allow for group work.__ 
+**Unless otherwise specified, exercises are due by Friday. Quite often, some part of the exercise needs to be done before that deadline to allow for group work.** 
 
 
 ### Exercise grading
@@ -82,7 +82,7 @@ We can't have in-class discussions in an online course, but hopefully we can sti
 
 You will be asked to participate in discussions throughout the course, and discussion participation is part of the grade. The discussions are meant to connect the module content to the broader context and hopefully will spark interesting further thoughts and insights. 
 
-__Unless otherwise specified, the first posting of the discussion is due by Wednesday, the discussion replies are due by Friday. Post to the discussion channel for the applicable module (e.g. module2_discussion, module3_discussion).__ 
+**Unless otherwise specified, the first posting of the discussion is due by Wednesday, the discussion replies are due by Friday. Post to the discussion channel for the applicable module (e.g. module2_discussion, module3_discussion).** 
 
 
 ### Discussion guidelines
@@ -103,9 +103,9 @@ To make sure discussions work well for everyone, here are some general guideline
 
 For most modules, you'll have to do the following (unless specifically directed otherwise):
 
-* You need to write a post (generally a few hundred words) as instructed. Post it to the appropriate channel by __Wednesday evening__. 
-* You need to write __at least__ 3 replies to posts from classmates. Those can be replies to 3 different posts or multiple back-and-forth (of substance) for the same post/thread. You must post your replies by __Friday evening__. 
-* For each module (i.e. each week) you need to post a **minimum** of 4 posts (1 initial, 3 replies) with around 500 _meaningful_ words total by the deadlines. I won't count words (unless it looks really short), and probably also won't count the number of posts, unless both seem well below the minimum.
+* You need to write a post (generally a few hundred words) as instructed. Post it to the appropriate channel by **Wednesday evening**. 
+* You need to write **at least** 3 replies to posts from classmates. Those can be replies to 3 different posts or multiple back-and-forth (of substance) for the same post/thread. You must post your replies by **Friday evening**. 
+* For each module (i.e. each week) you need to post a **minimum** of 4 posts (1 initial, 3 replies) with around 500 *meaningful* words total by the deadlines. I won't count words (unless it looks really short), and probably also won't count the number of posts, unless both seem well below the minimum.
 * I will use the same 0-3 point score for each discussion as for the quizzes.
 * Going above the minimum (more posts, longer contributions, especially thoughtful, etc.) will count positively toward the participation portion of the final grade.
 * For each module, the assessment document contains specific discussion instructions. If the specific discussion instructions are different than the general ones here, you should follow the specific ones.
@@ -113,4 +113,4 @@ For most modules, you'll have to do the following (unless specifically directed 
 
 ## Projects
 
-See the __Projects__ section on the website for more information.
+See the [**Projects**](../project/Project_Overview.qmd) section on the website for more information.

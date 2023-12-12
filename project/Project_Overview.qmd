@@ -29,7 +29,7 @@ There are several deadlines throughout the course at which time you need to subm
 * Part 5: Complete project, ready for peer review.
 * Part 6: Complete final project, updated based on reviewer feedback.
 
-The deadlines are listed in the __Schedule__ document (it's unlikely, but they might change, so keep checking that document).
+The deadlines are listed in the **Schedule** document (it's unlikely, but they might change, so keep checking that document).
 
 
 # Project Requirements

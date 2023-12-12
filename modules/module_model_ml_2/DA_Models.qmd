@@ -34,11 +34,11 @@ DA models are not as common as logistic regression, thus it might require a bit 
 
 # DA in `tidymodels`
 
-`Tidymodels` has the [`discrim` pacakge](https://discrim.tidymodels.org), which implements several forms of discriminant analysis.
+`tidymodels` has the [`discrim` pacakge](https://discrim.tidymodels.org), which implements several forms of discriminant analysis.
 
 
 
 # Further Resources
 
-[Chapter 4 of ISLR](https://statlearning.com/) discusses discriminant analysis. So does the _Generative Models_ section in the [_Examples of algorithms_ chapter in IDS](https://rafalab.github.io/dsbook/examples-of-algorithms.html).
+[Chapter 4 of *ISLR*](https://statlearning.com/) discusses discriminant analysis. So does the _Generative Models_ section in the [Examples of algorithms chapter in *IDS*](https://rafalab.github.io/dsbook/examples-of-algorithms.html).
 

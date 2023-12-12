@@ -15,41 +15,41 @@ The main goal for this course is for you to learn the whole process of performin
 
 The specific learning objectives that I hope you will achieve by going through this course are:
 
-_Define meaningful data analysis questions and assess the feasibility of answering these questions with the available data._
+*Define meaningful data analysis questions and assess the feasibility of answering these questions with the available data.*
 
 * Given a data set, define the questions that can be answered and formulate and implement suitable analytic approaches.
 * Given a data analysis question, determine the type of data and analytic approach needed to answer it.
 
 
-_Be able to obtain, organize and process data for detailed analysis._
+*Be able to obtain, organize and process data for detailed analysis.*
 
 * Know how to obtain data from a variety of different sources.
 * Be knowledgeable about data types and standards and how to process them.
 * Be able to organize and process data in a reproducible, automated and documented manner.
 * Be able to thoughtfully and critically assess strengths and weaknesses of specific data sets and process the data appropriately.
 
-_Be knowledgeable of different data analysis methods and select the appropriate approach for a given project based on data and question._
+*Be knowledgeable of different data analysis methods and select the appropriate approach for a given project based on data and question.*
 
 * Critically compare and evaluate the strengths and weaknesses of different data analysis approaches. 
 * Judge the appropriateness of different approaches for specific questions and data sets and know how to apply an appropriate analytic approach.
 * Design and implement successful data analyses using state-of-the-art analysis software to translate data to information and knowledge that leads to actionable insights.
 
-_Efficiently communicate results from data analyses to a variety of stakeholders._
+*Efficiently communicate results from data analyses to a variety of stakeholders.*
 
 * Summarize analysis results in ways that provide actionable conclusions and that are easily understandable by different audiences, such as laypersons, decision makers, and expert colleagues.
 * Assess the strengths and weaknesses of different formats for representing the results of data analyses.
 
-_Use modern coding and analysis tools to implement automated, reproducible analysis and project management workflows._
+*Use modern coding and analysis tools to implement automated, reproducible analysis and project management workflows.*
 
 * Explain the importance of workflow, project management, and reproducibility tools, and know how to use those tools.
 * Be proficient in R coding to implement and execute a complete data analysis project in a reproducible and automated manner.
 * Be comfortable using R and Github to do data analysis in a reproducible manner.
 * Be able to quickly learn how to use new software and tools, figure out how to get help when stuck, and make it work for you.
 
-_Develop skills to critically assess your own and others' analyses and conclusions._
+*Develop skills to critically assess your own and others' analyses and conclusions.*
 
 * Judge the usefulness and appropriateness of data analyses described in the primary research literature.
-* Learn to _look over your shoulder_ and critically assess what you are doing, what assumptions you make by doing certain things, and if and how you can justify these.
+* Learn to *look over your shoulder* and critically assess what you are doing, what assumptions you make by doing certain things, and if and how you can justify these.
 
 
 ## Topics
@@ -81,11 +81,11 @@ Here is a non-exhaustive lists of topics that this course does and does not cove
 ## Prerequisites
 
 
-_Formal requirement for the course is BIOS 7010. Knowledge of material from BIOS 7010 is assumed. If your lack pre-requisites prevent you from enrolling in this course, please contact me to get permission to enroll._
+*Formal requirement for the course is BIOS 7010. Knowledge of material from BIOS 7010 is assumed. If your lack pre-requisites prevent you from enrolling in this course, please contact me to get permission to enroll.*
 
 This is a quantitative course. We will not discuss the mathematical details of specific data analysis approaches, however some statistical background and being comfortable with quantitative thinking are needed. Knowledge of statistics at the level of fitting linear or logistic models to data (e.g., as obtained in our BIOS 7010 and 7020 courses) are assumed. Some R coding skills (e.g., as obtained in our EPID 7500 class), are helpful. 
 
-If you do not have any coding or statistics knowledge, you can still take the class, but you need to be prepared to spend extra time and effort to fill any gaps. This will be especially true for the R coding part. Some of you likely have previous R experience, while others might have little to none. If you are in the _little to none_ category, expect to spend extra time getting up to speed. I believe it's doable and worth the effort, but you need to be prepared for it. There will be plenty of help from myself, classmates, and the internet if you end up getting stuck with some of the coding, but your effort and commitment are still required.
+If you do not have any coding or statistics knowledge, you can still take the class, but you need to be prepared to spend extra time and effort to fill any gaps. This will be especially true for the R coding part. Some of you likely have previous R experience, while others might have little to none. If you are in the *little to none* category, expect to spend extra time getting up to speed. I believe it's doable and worth the effort, but you need to be prepared for it. There will be plenty of help from myself, classmates, and the internet if you end up getting stuck with some of the coding, but your effort and commitment are still required.
 
 **To re-emphasize: For those among you who have not used R or any other programming language before, this course will be time-consuming. Budget your time accordingly and plan ahead! If you do, I'm fairly certain you will find it worth it. If you are not able or willing to allot the time needed to learn enough R (and GitHub) to make things work, this course might not be ideal for you.**
 
@@ -124,7 +124,7 @@ All course materials are freely available online. We will make use of several fr
 
 **This course is very hands-on. The weekly exercises (aka homework) are usually quite in-depth and also often time-consuming. Plan accordingly.** For each exercise, I will provide detailed instructions that hopefully make it clear what you need to do. The materials provided on the course website are not meant to be memorized, but to be used to be able to do the hands-on activities, such as the exercises and the class project.
 
-For more details on course logistics, see the other information in the _General Information_ section of the course website.
+For more details on course logistics, see the other information in the *General Information* section of the course website.
 
 
 ## Privacy/FERPA 
@@ -148,7 +148,7 @@ The grade will be made up as follows:
 
 The following grading scale will be used, final grades might be curved (upward, never down): A 93-100, A- 90-93, B+ 87-90, B 83-87, B- 80-83, C+ 77-80, C 73-77, C- 70-73, D 60-70, F < 60
 
-More detailed descriptions of the different assessments is provided on the [_Assessments page_](Course_Assessments.qmd).
+More detailed descriptions of the different assessments is provided on the [**Assessments page**](Course_Assessments.qmd).
 
 ## Class Attendance, Make-up Policy
 
@@ -162,7 +162,7 @@ If you have questions about any aspect of the course, please do not hesitate to 
 
 ## University Honor Code and Academic Honesty Policy
 
-All academic work must meet the standards contained in _A Culture of Honesty_. All students are responsible to inform themselves about those standards before performing any academic work. More detailed information about academic honesty can be found at: http://www.uga.edu/honesty/
+All academic work must meet the standards contained in *A Culture of Honesty*. All students are responsible to inform themselves about those standards before performing any academic work. More detailed information about academic honesty can be found on UGA's [honesty webpage](http://www.uga.edu/honesty/).
 
 Discussions with your classmates and the instructor are encouraged. However, the final work should be your own.
 
@@ -177,9 +177,9 @@ This syllabus is a general plan, deviations announced to the class by the instru
 
 ## Course Outline
 
-For an outline of the course, please see the [_Course Schedule_](Course_Schedule.qmd) document. 
+For an outline of the course, please see the [**Course Schedule**](Course_Schedule.qmd) document. 
 
 
 ## More Details
 
-The _General Information_ section and the introductory unit of this course contains all the logistic details you need to know.
+The *General Information* section and the [**introductory unit**](../modules/module_intro_tools/Introduction_Course.qmd) of this course contains all the logistic details you need to know.

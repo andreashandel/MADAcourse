@@ -19,7 +19,7 @@ In this unit, we'll talk a bit more about reproducible research, and how that fi
 
 # Introduction
 
-Way back at [the beginning of the course](../module_intro_tools/Tools_Reproducibility.qmd),
+Way back at the [beginning of the course](../module_intro_tools/Tools_Reproducibility.qmd),
 we briefly discussed reproducibility. Throughout the course, we emphasized the importance to do analyses in a reproducible (and thus generally automated/scripted) manner. In this module, we'll discuss a bit more what reproducible research means and entails, current trends towards open science, and why you pretty much need to have a solid grasp on reproducible research strategies in the future. 
 
 
@@ -46,8 +46,8 @@ and open science now, rather than scrambling to learn it in the future!**
 
 There are many ways of defining and describing "open science".
 
-If you search online for "what is open science," you will likely find various conceptual diagrams and descriptions. The papers [Open science saves lives: lessons from the COVID-19 pandemic](https://bmcmedresmethodol.biomedcentral.com/articles/10.1186/s12874-021-01304-y) 
-and [From Open Data to Open Science](https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2020EA001562)
+If you search online for "what is open science," you will likely find various conceptual diagrams and descriptions. The papers [*Open science saves lives: lessons from the COVID-19 pandemic*](https://bmcmedresmethodol.biomedcentral.com/articles/10.1186/s12874-021-01304-y) 
+and [*From Open Data to Open Science*](https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2020EA001562)
 provide pretty good conceptual discussions of open science, but I think the
 best of schematic summary is from [NASA](https://www.earthdata.nasa.gov/esds/open-science/oss-for-eso-workshops).
 
@@ -83,7 +83,7 @@ While you're a student at UGA, [our library has a fund](https://www.libs.uga.edu
 that can help you with this. In the future, it seems likely that any federally
 funded projects in the US will require an open access fund as part of the budget,
 as publishing OA can often be prohibitively expensive. If you want to learn
-more check out [wikipedia page](https://en.wikipedia.org/wiki/Open_access),
+more, check out the [Wikipedia page on Open Access](https://en.wikipedia.org/wiki/Open_access),
 or if you *really* want to learn more, see [Peter Suber's book on OA](https://dash.harvard.edu/bitstream/handle/1/10752204/9780262517638_Open_Access.pdf).
 
 The main purpose of this section is to talk about data sharing. Data sharing
@@ -131,7 +131,7 @@ In one sentence, *your research is reproducible if another scientist can repeat 
 else can take your code and data, rerun all your code, and get the same answers that you got in your paper.
 
 An important and related issue is **replicability** -— you've probably heard of
-the "replication crisis" in science. If not, see for instance this [wikipedia page](https://en.wikipedia.org/wiki/Replication_crisis). 
+the "replication crisis" in science. If not, see for instance this [Wikipedia page](https://en.wikipedia.org/wiki/Replication_crisis). 
 In one sentence, *your research is replicable if someone else can follow your methods and materials to collect new data, analyze their data, and get similar results*. 
 Of course in social and semi-social sciences (like epidemiology), when your results often
 depend on the target population of interest and are expected to vary over
@@ -147,7 +147,8 @@ Note that replicability is somewhat related to the analysis topic of generalizab
 
 The topic of inclusivity in data science is heavily tied into the idea of
 data ethics -- critical thinking about the potential results and consequences
-of the products we create is crucial in data science. Many of you have some public health training, and are therefore likely familiar with [the Belmont Report](https://www.hhs.gov/ohrp/regulations-and-policy/belmont-report/index.html).
+of the products we create is crucial in data science. Many of you have some public health training, and are therefore likely familiar with the [Belmont Report](https://www.hhs.gov/ohrp/regulations-and-policy/belmont-report/index.html).
+
 Regardless of your scientific background, when working with data (especially
 human subjects data), the guiding principles of respect for persons, beneficience, and justice
 should be critical considerations for all of our research.

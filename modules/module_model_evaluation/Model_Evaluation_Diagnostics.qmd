@@ -66,11 +66,11 @@ A nice feature of using subset selection or LASSO with GLMs, or fitting a single
 
 Those simple approaches are not available anymore for more complex models. With complex models, we generally give up interpretability in exchange for better performance. However, we ideally want both. The last several years have seen a good amount of development to come up with methods that allow one to peek inside the black box, i.e. to understand why and how a complex model makes its predictions, and what the role of specific predictor variables is on the outcome. This area is generally called _interpretable machine learning_. 
 
-There's no point in me repeating what others have already said (much better than I could) 😃, therefore, instead of me writing more on this, please take a look at [chapters 2 and 3 of the _Interpretable Machine Learning (IML) book_](https://christophm.github.io/interpretable-ml-book/), which gives a very nice introduction on this topic. As you can tell by the title, the whole book is about interpretation of machine learning methods, and is a great resource. 
+There's no point in me repeating what others have already said (much better than I could) 😃, therefore, instead of me writing more on this, please take a look at [chapters 2 and 3 of the *Interpretable Machine Learning (IML)* book](https://christophm.github.io/interpretable-ml-book/), which gives a very nice introduction on this topic. As you can tell by the title, the whole book is about interpretation of machine learning methods, and is a great resource. 
 
-For a shorter, but also great resource, check out [chapter 16 of HMLR](https://bradleyboehmke.github.io/HOML/iml.html), which provides both a quick introduction and overview to the topic, and lists and illustrates the use of several R packages to do various interpretation tasks.
+For a shorter, but also great resource, check out [chapter 16 of *HMLR*](https://bradleyboehmke.github.io/HOML/iml.html), which provides both a quick introduction and overview to the topic, and lists and illustrates the use of several R packages to do various interpretation tasks.
 
-Another good introduction is [Chapter 18 of _Tidy Modeling with R_](https://www.tmwr.org/explain.html).
+Another good introduction is [chapter 18 of *Tidy Modeling with R*](https://www.tmwr.org/explain.html).
 
 As models get more complex, making sense of them will increase in importance. Even if you are mainly interested in predictive performance and less on understanding your system, it is a good idea to investigate your model in some detail. You might often figure out things that can help further increase model performance. Also, without understanding at least to some extent how complex models make their predictions, the potential for unnoticed bias increases. A good example of this can be found [in this very recent Science paper](https://science.sciencemag.org/content/366/6464/447) which describes racial bias in a machine learning model that tries to predict healthcare needs of patients. See also [Ruha Benjamin's commentary](https://science.sciencemag.org/content/366/6464/421) on the article. Thus, this area of interpreting results from complex models will likely see much development in the near future, hopefully leading to models that are both powerful (and thus likely complex) and interpretable. 
 
@@ -90,7 +90,7 @@ If at any time during your analysis, you get warning messages, you need to inves
 
 # Further learning
 
-In addition to the sources mentioned above, other good reads are the [_Judging model effectiveness_ chapter](https://www.tmwr.org/performance.html) and the [_When should you trust your predictions?_ chapter](https://www.tmwr.org/trust.html) of TMWR.
+In addition to the sources mentioned above, other good reads are the [*Judging model effectiveness*](https://www.tmwr.org/performance.html) and [*When should you trust your predictions?*](https://www.tmwr.org/trust.html) chapters of TMWR.
 
 
 

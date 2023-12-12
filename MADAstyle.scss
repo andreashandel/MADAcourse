@@ -5,10 +5,20 @@ $primary: #4c6e3e;
 
 /*-- scss:rules --*/
 
+// Source code light gray background
+div.sourceCode {
+    background-color: #f7f7f7;
+    border: 1px solid rgba(204,204,204,.65);
+    border-radius: .25rem;
+}
 
 /* Image
 ---------------*/
 
+// Align caption to center
+.panel-caption, .figure-caption, figcaption {
+    text-align: center;
+}
 
 /* .image {
   max-width: 100%;

@@ -28,7 +28,7 @@ A second goal is to introduce you to some modern analysis approaches commonly re
 
 A related goal is to introduce you to a set of tools that allow for a modern, reproducible workflow of your analysis.
 
-For more detailed learning objectives, see the course syllabus.
+For more detailed learning objectives, see the [**Syllabus**](../../courseinfo/Course_Syllabus.qmd).
 
 ![In this course, I randomly switch back and forth between singluar and plural. Source: phdcomics.com.](../../media/phd_dataisorare.gif){fig-alt="A four panel PhD comic. First panel shows one person ask another 'Do you write the data is... or the data are? Is it singular or plural?'. Second panel show the person responding 'That is a depp philosophical question, actually.' The third panel shows a white board with 'is' above information, question mark about data, and 'are' above facts. The person continues the response with 'It depends on whether you consider data to be facts (plural) or information (which is singular). It's a fascinating grammatical conundrum.'. The last panel shows the original person holding up a chart with only one data point and asking 'What if I only have one data point?', to which the other person responds 'Then you have bigger problems than grammar.'"}
 
@@ -50,7 +50,7 @@ Here are my goals, promises, and expectations for this course.
 
 ## Course Setup
 
--   The course is split into modules. Each module will usually be covered in a week. The **Schedule** document gives an outline. The schedule is not fully finalized and will change, so check frequently.
+-   The course is split into modules. Each module will usually be covered in a week. The [**Schedule**](../../courseinfo/Course_Syllabus.qmd) document gives an outline. The schedule is not fully finalized and will change, so check frequently.
 -   Each module consists of one or several units/documents containing a mix of things I wrote, and writings or videos by others. They are listed in the order you should go through them.
 -   All material for the course can be accessed through this course website. Some material might not be available yet and will be unlocked as the course proceeds.
 -   There is generally a lot of material for each unit. You are expected to go through the main components at a level that allows you to get the big picture and be able to answer the quiz questions. Once you get the overall idea, consider the materials to be resources you can visit on demand, e.g., when you are working on the exercises.
@@ -71,12 +71,12 @@ This is a brief overview of the tools we will be using for this class. The next 
 
 ## Assessments
 
-For details on assessments, see the [Assessments page](../../courseinfo/Course_Assessments.qmd).
+For details on assessments, see the [**Assessments**](../../courseinfo/Course_Assessments.qmd) page.
 
 ## Course Resources
 
-We'll be drawing on a lot of different resources. I compiled a list with the ones we'll use and others you might find helpful in the **Resources** section of the class website.
+We'll be drawing on a lot of different resources. I compiled a list with the ones we'll use and others you might find helpful in the [**Resources**](../../resources/Course_Resources.qmd) section of the class website.
 
 ## Getting help
 
-I do not expect you to figure it all out yourselves. You will get stuck and are encouraged to seek help. You can ask for help from your classmates or your instructor. Also, use the wider community online. For specific places to get help, see the **Resources** pages.
+I do not expect you to figure it all out yourselves. You will get stuck and are encouraged to seek help. You can ask for help from your classmates or your instructor. Also, use the wider community online. For specific places to get help, see the [**Resources**](../../resources/Course_Resources.qmd) pages.

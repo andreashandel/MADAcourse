@@ -19,7 +19,7 @@ In this unit, we will cover a class of models generally referred to as decision 
 
 # Introduction
 
-Simple GLMs have the main limitation of capturing only overall smooth patterns relating inputs and outcomes. Higher order terms or interactions must be manually specified. The polynomial and spline models we discussed allow for more flexible patterns, at the cost of more potential overfitting and also reduced interpretability. Another class of models that allow non-linear relation between inputs and outcomes are based on [**Decision trees**](https://en.wikipedia.org/wiki/Decision_tree). In general, a decision tree is a tree-like structure that helps you make decisions. In machine learning, there are [specific methods to build those trees](https://en.wikipedia.org/wiki/Decision_tree_learning). Decision trees can be used for continuous outcomes, in which case they are called **regression trees** or for categorical outcomes, in which case they are called **classification trees**. The umbrella term **Classification and regression trees - or CART for short** is also often used to mean the same as decision trees.
+Simple GLMs have the main limitation of capturing only overall smooth patterns relating inputs and outcomes. Higher order terms or interactions must be manually specified. The polynomial and spline models we discussed allow for more flexible patterns, at the cost of more potential overfitting and also reduced interpretability. Another class of models that allow non-linear relation between inputs and outcomes are based on [**decision trees**](https://en.wikipedia.org/wiki/Decision_tree). In general, a decision tree is a tree-like structure that helps you make decisions. In machine learning, there are [specific methods to build those trees](https://en.wikipedia.org/wiki/Decision_tree_learning). Decision trees can be used for continuous outcomes, in which case they are called **regression trees** or for categorical outcomes, in which case they are called **classification trees**. The umbrella term **Classification and regression trees - or CART for short** is also often used to mean the same as decision trees.
 
 Basic tree models have the advantage of being fairly easy to understand and use, even by non-statisticians. Trees can deal with nonlinear relations between predictors and outcome, they easily accomodate more than two categories for classification, and they can handle predictors that have missing values.
 
@@ -53,7 +53,7 @@ We keep building the tree in this way until some criterion is met (e.g., no more
 
 Algorithms that implement the tree building routine differ in their details, which is why you will see many different options in both `mlr` and `caret`. In general, if you have a good signal in your data, any algorithm should pick up on it.
 
-Since trees have a tendency to **overfit**, it is common to __regularize__ them by including a penalty for tree size. For instance, if we were to minimize SSR/RMSE, we would add a penalty to the cost function, _C_, to get 
+Since trees have a tendency to **overfit**, it is common to **regularize** them by including a penalty for tree size. For instance, if we were to minimize SSR/RMSE, we would add a penalty to the cost function, _C_, to get 
 
 $$C = SSR + \lambda T, $$
 
@@ -78,7 +78,7 @@ The main disadvantage of trees is that they usually have reduced performance com
 
 # Further information
 
-[R2D3's excellent interactive tutorial](http://www.r2d3.us/visual-intro-to-machine-learning-part-1/) gives a very nice, visual introduction to machine learning in general and trees in particular. It covers and nicely illustrates some of the topics discussed here, as well as topics discussed in previous units. In [part 2 of the tutorial](http://www.r2d3.us/visual-intro-to-machine-learning-part-2/) the authors discuss overfitting. I strongly recommend you check it out, even if you just skim through it. It is fun and informative!
+[*R2D3*'s excellent interactive tutorial](http://www.r2d3.us/visual-intro-to-machine-learning-part-1/) gives a very nice, visual introduction to machine learning in general and trees in particular. It covers and nicely illustrates some of the topics discussed here, as well as topics discussed in previous units. In [part 2 of the tutorial](http://www.r2d3.us/visual-intro-to-machine-learning-part-2/) the authors discuss overfitting. I strongly recommend you check it out, even if you just skim through it. It is fun and informative!
 
-For more on tree models, see the first part [_Tree-based Methods_ chapter of ISLR](https://statlearning.com/), the [_Decision Trees_ chapter of HMLR](https://bradleyboehmke.github.io/HOML/DT.html).
+For more on tree models, see the first part [Tree-based Methods chapter of *ISLR*](https://statlearning.com/), the [Decision Trees chapter of *HMLR*](https://bradleyboehmke.github.io/HOML/DT.html).
 

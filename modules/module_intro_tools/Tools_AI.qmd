@@ -47,11 +47,11 @@ For some more eloquent use of Copilot, see the [video](https://youtu.be/yVq-b5xH
 
 # Other tools
 
-As you learned from Thomas Mock's video above, the [chattr R package](https://mlverse.github.io/chattr/) is another great way to use ChatGPT from within R. I recommend exploring it.
+As you learned from Thomas Mock's video above, the [`chattr` R package](https://mlverse.github.io/chattr/) is another great way to use ChatGPT from within R. I recommend exploring it.
 
 As you are probably aware, these AI tools are changing rapidly. I'm writing this in November 2023, you will read this a few months later. It could be that at this point, some new versions of AI tools have come out that are even better. Do explore and if you find some especially promising platform or package, let me know!
 
-# Shortocmings and Dangers of AI Tools
+# Shortcomings and Dangers of AI Tools
 
 For all its promises, AI is not without its problems. It still has many shortcomings and dangers. Here, I'll discuss some of the most important ones.
 
@@ -107,4 +107,4 @@ AI tools can be very useful tools to help you write code and do your data analys
 
 # Further Resources
 
-I have started an AI section on the [General Resources](../../resources/General_Resources.qmd) page. If you have other useful resources, I'd love to hear about them.
+I have started an AI section on the [**General Resources**](../../resources/General_Resources.qmd) page. If you have other useful resources, I'd love to hear about them.

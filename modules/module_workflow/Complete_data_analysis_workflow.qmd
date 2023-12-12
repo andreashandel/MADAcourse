@@ -25,7 +25,7 @@ Here, I want to briefly repeat and re-iterate the main components. I'll keep thi
 While I hope you appreciate by now that every data analysis is different, and you need to make lots of decisions along the way. For each, there is often more than one possible reasonable choice, but there are some components that I think are needed for any high quality project. Those can be seen as the basic ingredients of a good data analysis, with lots of freedom within each category. 
 
 :::note
-I mentioned this point previously, probably more than once 😄: This need to make choices and decisions on how exactly to perform various steps of an analysis is one reason why p-values are generally meaningless, or at least do not mean what people think/claim they mean. For some good and easy introductions to that topic, see the "Pitfalls" section on the [General Resources page](../../resources/General_Resources.qmd).
+I mentioned this point previously, probably more than once 😄: This need to make choices and decisions on how exactly to perform various steps of an analysis is one reason why p-values are generally meaningless, or at least do not mean what people think/claim they mean. For some good and easy introductions to that topic, see the [**Pitfalls** ](../../resources/General_Resources.qmd#sec-pitfalls) section on the [**General Resources**](../../resources/General_Resources.qmd) page).
 :::
 
 

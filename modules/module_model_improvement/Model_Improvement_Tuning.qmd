@@ -62,7 +62,7 @@ To solve this problem, there are a few major methods:
 
 # Tuning with R
 
-`tidymodels`, and its package [`tune`](https://tune.tidymodels.org/) currently have a few different algorithms for searching the tuning parameter space implemented. Grid search is the main one, but the package also implements  _Iterative Bayesian optimization_. The [`finetune`](https://github.com/tidymodels/finetune) which is not yet on CRAN implements _Simulated Annealing_ and _Racing Methods_. To learn more about those, see [chapters 12-14 in Tidy Modeling With R](https://www.tmwr.org/).
+`tidymodels`, and its package [`tune`](https://tune.tidymodels.org/) currently have a few different algorithms for searching the tuning parameter space implemented. Grid search is the main one, but the package also implements  _Iterative Bayesian optimization_. The [`finetune`](https://github.com/tidymodels/finetune) which is not yet on CRAN implements _Simulated Annealing_ and _Racing Methods_. To learn more about those, see [chapters 12-14 in *Tidy Modeling With R*](https://www.tmwr.org/).
 
 
 The `mlr3/mlr` package I keep mentioning also has algorithms to tune parameters, including some that are not available (yet) in `tidymodels`. For tuning in `mlr` see e.g. [tuning tutorial](https://mlr.mlr-org.com/articles/tutorial/tune.html
@@ -84,7 +84,7 @@ The more tuning parameters in your model, the more data you need to be able to t
 
 # Further information
 
-Most relevant and maybe good to visit next are [chapters 12-14 in Tidy Modeling With R](https://www.tmwr.org/), which discuss the general tuning process, and then explain how to do grid search and iterative search using `tidymodels`.
+Most relevant and maybe good to visit next are [chapters 12-14 in *Tidy Modeling With R*](https://www.tmwr.org/), which discuss the general tuning process, and then explain how to do grid search and iterative search using `tidymodels`.
 
-[Section 2.5.3 of HMLR](https://bradleyboehmke.github.io/HOML/process.html#tune-overfit) provides a very short section on tuning. [ISLR](https://www.statlearning.com/) mentions tuning in various places but doesn't describe it in a dedicated section. [IDS](https://rafalab.github.io/dsbook/) mentions it in the _Machine Learning_ chapters but also does not have a dedicated section on the topic. 
+[Section 2.5.3 of *HMLR*](https://bradleyboehmke.github.io/HOML/process.html#tune-overfit) provides a very short section on tuning. [ISLR](https://www.statlearning.com/) mentions tuning in various places but doesn't describe it in a dedicated section. [*IDS*](https://rafalab.github.io/dsbook/) mentions it in the _Machine Learning_ chapters but also does not have a dedicated section on the topic. 
 

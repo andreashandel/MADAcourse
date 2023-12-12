@@ -35,7 +35,7 @@ The *Assessments* column lists items that need to be submitted and that will be 
 
 ## Synchronous Zoom meetings
 
-I will offer a weekly, **completely optional** Zoom meeting (aka office hour). See the *Communication* section for some more details. You can find the Zoom link on Slack. The plan is to have weekly alternating times for those zoom meetings such that everyone is able to make the meeting at least every 2 weeks.
+I will offer a weekly, **completely optional** Zoom meeting (aka office hour). See the [*Communication*](Course_Communication.qmd) section for some more details. You can find the Zoom link on Slack. The plan is to have weekly alternating times for those zoom meetings such that everyone is able to make the meeting at least every 2 weeks.
 
 The current plan is to have **Zoom meetings for odd module numbers on Tuesdays at 8am, and for even module numbers on Wednesdays at 8am.**
 

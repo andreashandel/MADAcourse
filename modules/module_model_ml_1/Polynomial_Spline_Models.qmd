@@ -33,12 +33,13 @@ If, instead, your outcome was integer counts of something, you could use a Poiss
 
 $$\textrm{Poisson model:} \qquad \log \left( Y \right) = b_0 + b_1X_1 + b_2 X_2 + \ldots + b_n X_n.$$
 
-Similar GLMs for outcomes that are distributed in other ways are possible, see e.g. [the list on Wikipedia](https://en.wikipedia.org/wiki/Generalized_linear_model). In `R`, if you use the `glm()` function, you can set the link function by specifying the `family` argument. If you use `tidymodels`, there are similar ways to set the link function, depending on the underlying fitting function you use.
+Similar GLMs for outcomes that are distributed in other ways are possible, see e.g. the [list on Wikipedia](https://en.wikipedia.org/wiki/Generalized_linear_model). In `R`, if you use the `glm()` function, you can set the link function by specifying the `family` argument. If you use `tidymodels`, there are similar ways to set the link function, depending on the underlying fitting function you use.
 
 This model structure is easy to understand, one can test the impact of individual predictor variables by taking them in and out of the model (subset selection) or alternative approaches (e.g. regularization), and one can see in the final model which predictor variables survive, and what their impact is, as given by the coefficients in front of the variables. 
 
-:::note
-If you have a model that has a mix of categorical and continuous input variables, and you want to compare their impact by looking at the values of their coefficients, you need to standardize your continuous variables so they are on a similar scale as your categorical variables. :::
+::: note
+If you have a model that has a mix of categorical and continuous input variables, and you want to compare their impact by looking at the values of their coefficients, you need to standardize your continuous variables so they are on a similar scale as your categorical variables. 
+:::
 
 Basic linear and generalized linear models (LMs and GLMs) such as logistic or poisson regression impose a specific structural relation between your inputs/predictors and your outcomes. This means that if you have more complex patterns relating your inputs with your output(s), basic GLMs might not capture it fully. For instance if you had a scenario where you measured the activity/movement of some animal and how that might be impacted by temperature, it is quite feasible to expect a curved relationship. At low temperatures, the animals try to stay warm and don't move much. At high temperature, the animals also don't move much and instead try to stay cool. At some intermediate temperature, their movement is largest. So if you had data for animal movement as outcome, and temperature as your predictor variable, a linear model would not be good. You wanted a model that allows the pattern to curve. If you start with a linear model and look at the plot of your residuals, or an outcome-prediction plot, you would see systematic deviations, telling you that your model is not missing important patterns in the data and you are therefore **underfitting.**
 
@@ -95,13 +96,13 @@ By now, you have learned what you can do to try and minimize overfitting. Most i
 
 # Model fitting in R
 
-A lot of separate packages exist to fit the models discussed here. Not all, but several of the most important ones, [can be accessed through the `tidymodels` framework](https://www.tidymodels.org/find/parsnip/). We will explore some of them in the exercises so you get a general idea of how this works. You can then explore more models as interested or as needed for your specific research questions.
+A lot of separate packages exist to fit the models discussed here. Not all, but several of the most important ones, can be accessed through the [`tidymodels` framework](https://www.tidymodels.org/find/parsnip/). We will explore some of them in the exercises so you get a general idea of how this works. You can then explore more models as interested or as needed for your specific research questions.
 
 
 
 # Further information
 
-This short summary closely followed the information in the [_Moving beyond linearity_ chapter of ISL](https://statlearning.com/). Check out that chapter for further information on the models covered here, as well as a few additional variations. HMLR also discusses several models of this type. See for instance the [_Multivariate Adaptive Regression Splines_ chapter](https://bradleyboehmke.github.io/HOML/mars.html). The [_Smoothing_ chapter of IDS](https://rafalab.github.io/dsbook/smoothing.html) also covers the topic discussed here. For specific ways of using some of these models through `tidymodels`, check out some of the tutorials in the [tidymodels "learn" section](https://www.tidymodels.org/learn/).
+This short summary closely followed the information in the [Moving Beyond Linearity chapter of *ISL*](https://statlearning.com/). Check out that chapter for further information on the models covered here, as well as a few additional variations. HMLR also discusses several models of this type. See for instance the [Multivariate Adaptive Regression Splines chapter of *HMLR*](https://bradleyboehmke.github.io/HOML/mars.html). The [Smoothing chapter of *IDS*](https://rafalab.github.io/dsbook/smoothing.html) also covers the topic discussed here. For specific ways of using some of these models through `tidymodels`, check out some of the tutorials in the [`tidymodels` "learn" section](https://www.tidymodels.org/learn/).
 
 
 

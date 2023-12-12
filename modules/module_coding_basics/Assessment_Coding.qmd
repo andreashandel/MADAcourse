@@ -7,7 +7,7 @@ subtitle: ""
 
 # Quiz
 
-Get the quiz sheet for this module from the general [__Assessments__](../../courseinfo/Course_Assessments.qmd) page. Fill it in, then submit to the online grading system before the deadline. 
+Get the quiz sheet for this module from the general [**Assessments**](../../courseinfo/Course_Assessments.qmd) page. Fill it in, then submit to the online grading system before the deadline. 
 
 # Exercise
 
@@ -64,7 +64,7 @@ class(gapminder)
 
 :::note
 You can accomplish the next steps (and pretty much anything) with just basic R commands and not using extra functionality from packages. However, things are often easier with packages. 
-For data processing tasks, the packages from [the tidyverse]() are very useful. You can do the following tasks with any commands/packages you like. 
+For data processing tasks, the packages from the [`tidyverse`](https://www.tidyverse.org/) are very useful. You can do the following tasks with any commands/packages you like. 
 :::
 
 Write code that assigns only the African countries to a new object/variable called `africadata`. Run `str` and `summary` on the new object you created. You should now have 2907 observations, down from 10545. Depending on how you do this, you might also notice that all the different categories are still kept in the `continent` (and other) variables, but show 0. R does not automatically remove categories of what in R is called a factor variable (a categorical variable) even if they are empty. We don't have to worry about that just now, but something to keep in mind, it can sometimes lead to strange behavior.
@@ -72,7 +72,7 @@ Write code that assigns only the African countries to a new object/variable call
 Take the `africadata` object and create two new objects  (name them whatever you want), one that contains only `infant_mortality` and `life_expectancy` and one that contains only `population` and `life_expectancy`. You should have two new objects/variables with 2907 rows and two columns. Use the `str`, and `summary` commands to take a look at both.
 
 :::note
-I find it the least confusing to call _things which store values in R_ `objects` (e.g., `x` is an object here: `x <- 2 + 2`) and reserve the word `variable` for a data variable, i.e., usually a column. However, it is common in programming to refer to an `object` as a `variable` as well. Because of that, I sometimes use that terminology (inadvertently) too. So if I talk about a variable, you need to determine from the context if I mean a certain variable in the data (e.g. height or weight), or a variable in R (e.g. `x` or `result`) that stores some content.
+I find it the least confusing to call *things which store values in R* `objects` (e.g., `x` is an object here: `x <- 2 + 2`) and reserve the word `variable` for a data variable, i.e., usually a column. However, it is common in programming to refer to an `object` as a `variable` as well. Because of that, I sometimes use that terminology (inadvertently) too. So if I talk about a variable, you need to determine from the context if I mean a certain variable in the data (e.g. height or weight), or a variable in R (e.g. `x` or `result`) that stores some content.
 :::
 
 
