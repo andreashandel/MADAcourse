@@ -71,13 +71,9 @@ Individuals who participate in TidyTuesday often post their projects online and 
 
 You don't need to watch all of the almost 2 hour long recording 😄, but do watch the first few minutes to see him coding/analyzing in real-time. You might just get hooked and keep watching. You might not be familiar with some or most of the R coding, but you will still get the overall idea of how he does the analysis. And his thinking out loud is informative as well. See for yourself:
 
-::: {style="max-width:854px"}
-::: {style="position:relative;height:0;padding-bottom:56.25%"}
 <iframe width="560" height="315" src="https://www.youtube.com/embed/2HpRXIpU4jI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 
 </iframe>
-:::
-:::
 
 If you like the ability to look over his shoulder while he does data analysis, he has a bunch more of those [screencast recordings](https://youtube.com/playlist?list=PL19ev-r1GBwkuyiwnxoHTRC8TTqP8OEi8).
 
