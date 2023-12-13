@@ -178,6 +178,38 @@ JR: Done.
 
 Note: the global fig-align setting in the yaml applies to figures which Quarto defines as having a label and caption. Supposedly this will get fixed in Quarto 1.4 according to this [issue](https://github.com/quarto-dev/quarto-cli/issues/4315#issuecomment-1444304192). To get around this until the next release, we need to make sure all images have captions OR set fig-align="center" for the individual image that doesn't have a caption.
 
+## Video iframes
+
+I added a couple of css rules to `MADAstyle.scss` so you don't have to add all the styling to every iframe based on this [article](https://www.h3xed.com/web-development/how-to-make-a-responsive-100-width-youtube-iframe-embed). This also improves consistency and responsiveness between different video websites (Ted vs YouTube) and across different screen sizes.
+
+Instead of:
+
+```
+Ted Talk embedded video
+<p>
+<iframe src="https://embed.ted.com/talks/sebastian_wernicke_how_to_use_data_to_make_a_hit_tv_show" width="640" height="360" frameborder="0" scrolling="no" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+</p>
+
+YouTube embedded video
+<p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/2HpRXIpU4jI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
+```
+
+You create a div with the class `container` then set the iframe class to `video` for any video you want to embded in an iframe. Remove the width/height in the embed code so that the CSS takes over and sets it dynamically to 100% of the screen width.
+
+```
+Ted Talk
+::: container
+<iframe class="video" src="https://embed.ted.com/talks/sebastian_wernicke_how_to_use_data_to_make_a_hit_tv_show" frameborder="0" scrolling="no" allowfullscreen></iframe>
+:::
+
+YouTube
+::: container
+<iframe class="video" src="https://www.youtube.com/embed/2HpRXIpU4jI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+:::
+```
+
 ## Accessibility
  
 Accessibility is really important to me so I thought I'd call attention to some of your hyperlink names. Most are great (concise and descriptive) but some are just called [here] which aren't [helpful link names](https://www.a11yproject.com/posts/creating-valid-and-accessible-links/). 
@@ -211,6 +243,8 @@ I replaced your `.css` with `.scss`. I changed the primary color to the green fr
 **AH: I like things to look good, but I'm not much of a styler/designer :), so feel free to improve the looks of everything as much as you like. (Just don't make it too complicated, I don't want to have a lot of overhead/complexity like calling extra packages for fancy fonts or stuff like that)**
 
 JR: got it :)
+
+I adjusted the css for the note and warning divs for more modern rounded borders, and lighter background colors that meet WGA color contrast standards for the body text and hyperlinks.
 
 ## Broken links
 
@@ -247,6 +281,4 @@ Updated [RStudio Primers](https://posit.cloud/learn/primers) to [Posit Recipes](
 
 Also check to see if this is still accurate in `Model_Evaluation_Performance.qmd`: "If you want to get some more intuition with fitting a continuous outcome, go through this [interactive tutorial](https://shiny.ovpr.uga.edu/modelperformance/). If it looks like the Posit Recipes you've seen, that is no accident. Both use the [`learnr` package](https://rstudio.github.io/learnr/).
 
-# JR todo: 
-- left off at module_data_presentation (consistency with hyperlinks and markdown)
-- change colors for notes boxes in `.scss` to meet WGA color accessibility
+RStudio primeres is also mentioned in `Course_Resources.qmd` and `General_Resources.qmd`, which I left as is.

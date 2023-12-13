@@ -36,7 +36,7 @@ RStudio is an integrated development environment (IDE) made by the folks from [P
 -   If you haven't already, [install R first](https://www.r-project.org/). You can pick any mirror you like. If you already have R installed, make sure it is a fairly recent version, at least version 4.1 or newer. I recommend you upgrade to the most recent version (as of this writing 4.2.2, but if there is a newer one available, use that one).
 -   Once you have R installed, install the free version of [RStudio Desktop](https://www.rstudio.com/products/rstudio/download/). Get the most recent version. If you have an older one already installed, update it.
 
-Installing R and RStudio should be fairly straightforward. If you want detailed instructions [go through this chapter of IDS](https://rafalab.github.io/dsbook/installing-r-rstudio.html). If things don't work, ask for help on the discussion boards.
+Installing R and RStudio should be fairly straightforward. If you want detailed instructions, go through this [chapter of IDS](https://rafalab.github.io/dsbook/installing-r-rstudio.html). If things don't work, ask for help on the discussion boards.
 
 I personally only have experience with Windows (and a little bit of Mac), but everything should work on all the standard operating systems (Windows, Mac, and even Linux).
 
@@ -90,4 +90,4 @@ The quality of R packages varies. In general, if they are on `CRAN` or `biocondu
 
 If you are new to R and RStudio and want to learn a bit more, I suggest you skim through this [chapter of *IDS*](https://rafalab.github.io/dsbook/getting-started.html).
 
-While one can use R and do pretty much every task, including all the ones we cover in this class, without using RStudio. However, RStudio is very useful; it has a lot of features that make your R coding life easier. It has become pretty much the default integrated development environment (IDE) for R. Since RStudio has lots of features, it takes time to learn them. A good resource to learn more about RStudio are the [R Studio Essentials](https://resources.rstudio.com/) collection of videos.
+While one can use R and do pretty much every task, including all the ones we cover in this class, without using RStudio. However, RStudio is very useful; it has a lot of features that make your R coding life easier. It has become pretty much the default integrated development environment (IDE) for R. Since RStudio has lots of features, it takes time to learn them. A good resource to learn more about RStudio are the [RStudio Essentials](https://resources.rstudio.com/) collection of videos.

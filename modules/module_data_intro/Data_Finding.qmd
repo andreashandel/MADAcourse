@@ -64,14 +64,10 @@ If the data loads, it might do so with or without error or warning messages. In 
 
 If you want to see a few examples of live-coding which show how to read data into R, you can check out these videos by Jeff Leek.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/z7pOxe6dDG0" frameborder="0" allowfullscreen>
+::: container
+<iframe class="video" src="https://www.youtube.com/embed/z7pOxe6dDG0" frameborder="0" allowfullscreen></iframe>
+:::
 
-</iframe>
-
-\
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/7lE7lzwC_NY" frameborder="0" allowfullscreen>
-
-</iframe>
-
-</p>
+::: container
+<iframe class="video" src="https://www.youtube.com/embed/7lE7lzwC_NY" frameborder="0" allowfullscreen></iframe>
+:::

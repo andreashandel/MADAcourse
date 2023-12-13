@@ -24,7 +24,7 @@ You want to use GitHub to avoid this:
 
 ![Source: [phdcomics.com](https://phdcomics.com/)](../../media/phd_versioncontrol.gif){width="60%"}
 
-*GitHub* gives you an organized way to track your projects. It is very well suited for collaborative work. Historically, version control was used for software development. It has since become broader and is now used for many types of projects, including data science projects. If you want to learn a bit more about Git/GitHub and why it is a great tool for data analysis, [check out this article by Jenny Bryan](https://peerj.com/preprints/3159/).
+*GitHub* gives you an organized way to track your projects. It is very well suited for collaborative work. Historically, version control was used for software development. It has since become broader and is now used for many types of projects, including data science projects. If you want to learn a bit more about Git/GitHub and why it is a great tool for data analysis, check out this [article by Jenny Bryan](https://peerj.com/preprints/3159/).
 
 # What to (not) use Git/GitHub for
 

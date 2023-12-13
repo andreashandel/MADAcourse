@@ -26,9 +26,9 @@ The kind of data determines the amount of processing that needs to be done befor
 
 If you want to hear someone else's definition and explanation of what data is, you can watch this video by [Jeff Leek](http://jtleek.com/).
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/sRArT81TVEM" frameborder="0" allowfullscreen>
-
-</iframe>
+::: container
+<iframe class="video" src="https://www.youtube.com/embed/sRArT81TVEM" frameborder="0" allowfullscreen></iframe>
+:::
 
 # Types of Variables
 
@@ -103,9 +103,9 @@ Other types of data structures exist; they are often introduced by specific R pa
 
 For some more information, you can check out this video by [Jeff Leek](http://jtleek.com/) where he talks about the types of data and structures I described above. He also shows some R/coding examples and discusses the important concept of missing values and `NA`.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/T9n7j8180GQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-
-</iframe>
+::: container
+<iframe class="video" src="https://www.youtube.com/embed/T9n7j8180GQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+:::
 
 ## Non-rectangular data
 

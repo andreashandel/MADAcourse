@@ -3,49 +3,124 @@ title: Course Resources
 subtitle: ""
 ---
 
+This page lists resources that this course draws on frequently or at
+least occasionally. For a more extensive list of data science resources,
+see the *General Resources* page.
 
-This page lists resources that this course draws on frequently or at least occasionally. For a more extensive list of data science resources, see the _General Resources_ page.
-
-All materials described below are (should be) freely available online. If you can't get to them, let me know. Note that a lot of the listed resources are dynamic and ever changing. That means occasionally links might not work, sites go offline, chapters in online books get re-arranged, etc. If you notice anything that's not quite right, please let me know.
-
+All materials described below are (should be) freely available online.
+If you can't get to them, let me know. Note that a lot of the listed
+resources are dynamic and ever changing. That means occasionally links
+might not work, sites go offline, chapters in online books get
+re-arranged, etc. If you notice anything that's not quite right, please
+let me know.
 
 # Books and online tutorials
 
-* [IDS = Introduction to Data Science](https://rafalab.github.io/dsbook/) is the book I'll refer to a good bit in the 1st part of the course. 
-* [R4DS = R for Data Science (2nd edition)](https://r4ds.hadley.nz/). This book will also be mentioned frequently. It is a very gentle and good introduction to data science in R. It has a lot of good exercises [and solutions.](https://mine-cetinkaya-rundel.github.io/r4ds-solutions/)
-Note that most of the course material was written when only [the 1st edition](http://r4ds.had.co.nz/) existed. I've tried to update references to specific chapters/pages of R4DS on this website, but it could be that there is still the occasional pointer to something in the 1st edition. If you find such outdated references/links, please let me know so I can fix.
-* [ADS = The Art of Data Science](https://leanpub.com/artofdatascience) has some good big-picture, introductory level chapters on different aspects of a data analysis. It is a _pay what you want_ book with a minimum price of zero, which means you can get it for free (note that the book + video bundle has a non-zero minimum price). (I heard that sometimes, once you register, the email with the book link goes to the spam folder, make sure to check there.)  
-* [ISL(R) = An Introduction to Statistical Learning (in R)](https://statlearning.com/) is a good introduction to the statistical and machine learning (i.e. model fitting) part of the data analysis workflow. I'll refer to it frequently in the second part of the course. While we won't work through the exercises/labs that are part of ISL, if you are interested in trying out some of those, [Emil Hvitfeldt's website](https://emilhvitfeldt.github.io/ISLR-tidymodels-labs/index.html) does the labs using the tidymodels set of packages, which we will also be using in this course.
-* [HMLR = Hands-on Machine Learning with R](https://bradleyboehmke.github.io/HOML/) covers somewhat similar material as ISL, but with different emphasis and a different approach. I refer to it in several of the later course modules.
-* [FES = Feature Engineering and Selection](https://bookdown.org/max/FES/) focuses on a specific aspect of the data analysis workflow and is a good resource for those topics.
-* [HGR = happygitwitR](https://happygitwithr.com/) is a good resource to learn some of the basics of Git/Github with R.
-* [RP = R Studio Primers](https://rstudio.cloud/learn/primers) are a great source for introductory, interactive tutorials covering basics of R coding and data analysis. 
-
+-   [*IDS* = *Introduction to Data
+    Science*](https://rafalab.github.io/dsbook/) is the book I'll refer
+    to a good bit in the 1st part of the course.
+-   [*R4DS* = *R for Data Science* (2nd
+    edition)](https://r4ds.hadley.nz/). This book will also be mentioned
+    frequently. It is a very gentle and good introduction to data
+    science in R. It has a lot of good exercises [and
+    solutions.](https://mine-cetinkaya-rundel.github.io/r4ds-solutions/)
+    Note that most of the course material was written when only the [1st
+    edition](http://r4ds.had.co.nz/) existed. I've tried to update
+    references to specific chapters/pages of R4DS on this website, but
+    it could be that there is still the occasional pointer to something
+    in the 1st edition. If you find such outdated references/links,
+    please let me know so I can fix.
+-   [*ADS* = *The Art of Data
+    Science*](https://leanpub.com/artofdatascience) has some good
+    big-picture, introductory level chapters on different aspects of a
+    data analysis. It is a *pay what you want* book with a minimum price
+    of zero, which means you can get it for free (note that the book +
+    video bundle has a non-zero minimum price). (I heard that sometimes,
+    once you register, the email with the book link goes to the spam
+    folder, make sure to check there.)
+-   [*ISL*(R) = *An Introduction to Statistical Learning* (in
+    R)](https://statlearning.com/) is a good introduction to the
+    statistical and machine learning (i.e. model fitting) part of the
+    data analysis workflow. I'll refer to it frequently in the second
+    part of the course. While we won't work through the exercises/labs
+    that are part of ISL, if you are interested in trying out some of
+    those, [Emil Hvitfeldt's
+    website](https://emilhvitfeldt.github.io/ISLR-tidymodels-labs/index.html)
+    does the labs using the `tidymodels` set of packages, which we will
+    also be using in this course.
+-   [*HMLR* = *Hands-on Machine Learning with
+    R*](https://bradleyboehmke.github.io/HOML/) covers somewhat similar
+    material as ISL, but with different emphasis and a different
+    approach. I refer to it in several of the later course modules.
+-   [*FES* = *Feature Engineering and
+    Selection*](https://bookdown.org/max/FES/) focuses on a specific
+    aspect of the data analysis workflow and is a good resource for
+    those topics.
+-   [*HGR* = *happygitwitR*](https://happygitwithr.com/) is a good
+    resource to learn some of the basics of Git/Github with R.
+-   [*RP* = *R Studio Primers*](https://rstudio.cloud/learn/primers) are
+    a great source for introductory, interactive tutorials covering
+    basics of R coding and data analysis.
 
 # Tools
 
-* We'll be using [R](https://www.r-project.org/) and [R Studio Desktop](https://www.rstudio.com/products/rstudio/download/). The [R and R Studio document](../modules/module_intro_tools/Tools_RandRStudio.qmd) has details. 
-* We will also be using [Git](https://git-scm.com/) and [GitHub](https://github.com/). You need to get that software and a GitHub user account. I also recommend/assume you are using the [GitKraken](https://www.gitkraken.com/) client (but you don't have to). See the [GitHub introduction document](../modules/module_intro_tools/Tools_Github_Introduction.qmd) for details.
-
+-   We'll be using [R](https://www.r-project.org/) and [R Studio
+    Desktop](https://www.rstudio.com/products/rstudio/download/). The [R
+    and R Studio
+    document](../modules/module_intro_tools/Tools_RandRStudio.qmd) has
+    details.
+-   We will also be using [Git](https://git-scm.com/) and
+    [GitHub](https://github.com/). You need to get that software and a
+    GitHub user account. I also recommend/assume you are using the
+    [GitKraken](https://www.gitkraken.com/) client (but you don't have
+    to). See the [**GitHub introduction
+    document**](../modules/module_intro_tools/Tools_Github_Introduction.qmd)
+    for details.
 
 # Important notes
 
-* The last time this course was taught, the company now called **Posit** was called **R Studio**. You will likely see the old label show up. The **software** we use for coding R is still called R Studio.
-* The last time the course was taught, **Quarto** did not exist, we used **R Markdown** instead. You will likely see references to **R Markdown**. Just think of it as now being Quarto (i.e. instead of `.Rmd` files we now work with `.qmd` files).
-
-
+-   The last time this course was taught, the company now called
+    **Posit** was called **R Studio**. You will likely see the old label
+    show up. The **software** we use for coding R is still called R
+    Studio.
+-   The last time the course was taught, **Quarto** did not exist, we
+    used **R Markdown** instead. You will likely see references to **R
+    Markdown**. Just think of it as now being Quarto (i.e. instead of
+    `.Rmd` files we now work with `.qmd` files).
 
 # General help
 
-* The main place to get any course specific help are our course discussion boards. Use them widely to ask questions, to answer others' questions, to post links to interesting resources, etc. 
-* Most questions you will have are likely not course specific, but will have to do with R/Github/RMarkdown/etc. For that, Google will be your best friend. Most of the time, someone had the same problem/question you do and someone else answered it. The only tricky thing is finding that post. Even after years of doing this, I probably google how to do something in R every day 😃.
-* When you search online for help, quite often you land on some [StackExchange](https://stackexchange.com/) site (often [Stack Overflow](https://stackoverflow.com/)). [These are a collection of widely-used online question and answer sites](https://stackexchange.com/sites) covering all kinds of topics (including R, Github, Data Analysis, etc.). The majority of the time, you will find an answer, or at least something that gets you closer, on those sites. I rarely go to those sites directly, instead I type my query into Google and it often sends me to one of the StackExchange sites.
-* The [Rstudio community](https://community.rstudio.com/) is another good place to ask questions. It is not as widely used as StackExchange, but it seems to be more newcomer friendly. I haven't used it much.
-* Another highly recommended resource is the [R for data science community](https://www.rfordatasci.com/). They have a Slack workspace which you can join for free and ask questions about R, Data Science and related topics. They are very newbie-friendly. I have not used them much but they seem to respond fairly quickly and are helpful.
-
+-   The main place to get any course specific help are our course
+    discussion boards. Use them widely to ask questions, to answer
+    others' questions, to post links to interesting resources, etc.
+-   Most questions you will have are likely not course specific, but
+    will have to do with R/Github/RMarkdown/etc. For that, Google will
+    be your best friend. Most of the time, someone had the same
+    problem/question you do and someone else answered it. The only
+    tricky thing is finding that post. Even after years of doing this, I
+    probably google how to do something in R every day 😃.
+-   When you search online for help, quite often you land on some
+    [StackExchange](https://stackexchange.com/) site (often [Stack
+    Overflow](https://stackoverflow.com/)). These are a [collection of
+    widely-used online question and answer
+    sites](https://stackexchange.com/sites) covering all kinds of topics
+    (including R, Github, Data Analysis, etc.). The majority of the
+    time, you will find an answer, or at least something that gets you
+    closer, on those sites. I rarely go to those sites directly, instead
+    I type my query into Google and it often sends me to one of the
+    StackExchange sites.
+-   The [Posit community](https://community.rstudio.com/) is another
+    good place to ask questions. It is not as widely used as
+    StackExchange, but it seems to be more newcomer friendly. I haven't
+    used it much.
+-   Another highly recommended resource is the [R for Data Science
+    learning community](https://www.rfordatasci.com/). They have a Slack
+    workspace which you can join for free and ask questions about R,
+    Data Science and related topics. They are very newbie-friendly. I
+    have not used them much but they seem to respond fairly quickly and
+    are helpful.
 
 # More resources
 
-The [general resources](General_Resources.qmd) page has a more extensive list of relevant resources.
-
-
+The [General Resources](General_Resources.qmd) page has a more extensive
+list of relevant resources.

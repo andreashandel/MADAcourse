@@ -3,13 +3,6 @@ title: Deep Learning, Artificial Intelligence and Big Data
 subtitle: ""
 ---
 
-```{r, include=FALSE}
-#set some figure options
-knitr::opts_chunk$set(out.width = '70%')
-```
-
-
-
 # Overview
 In this unit, we will **very** briefly talk about the topics of Deep Learning, Artificial Intelligence and Big Data, and how R can be used for them. 
 

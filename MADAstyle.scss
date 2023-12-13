@@ -1,6 +1,8 @@
 /*-- scss:defaults --*/
 
 // Got this color from MADA logo
+// Hyperlinks are based on the primary color
+
 $primary: #4c6e3e;
 
 /*-- scss:rules --*/
@@ -12,8 +14,7 @@ div.sourceCode {
     border-radius: .25rem;
 }
 
-/* Image
----------------*/
+/* Images ---------------*/
 
 // Align caption to center
 .panel-caption, .figure-caption, figcaption {
@@ -41,8 +42,7 @@ div.sourceCode {
 }
  */
 
-/* Image inside figure div, for diagrams
----------------*/
+/* Image inside figure div, for diagrams ---------------*/
 
 .figure img {
 	max-width: 100%;
@@ -68,23 +68,45 @@ a.thumbnail:hover {
   text-decoration: none;
 }
 
+/* iframe ---------------*/
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    margin-bottom: 1em;
+}
+
+.video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Note and warning divs ---------------*/
 
 div.note
 {
     padding: 1em;
     margin: 1em 0;
-    color: #1f5386;
-    background-color: #bed3ec;
-    border: solid 5px #dfedff;
+    color: #153e67;
+    background-color: #dde8f6;
+    border: solid 10px #ecf4ff;
+    border-radius: 10px;
+
 }
 
 div.warning
 {
     padding: 1em;
     margin: 1em 0;
-    color: black;
-    background-color: #fd9d89;
-    border: solid 5px #fbcabf;
+    color: #6c1f0e;
+    background-color: #ffece7;
+    border: solid 10px #fff4f2;
+    border-radius: 10px;
 }
 
 

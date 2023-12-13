@@ -20,44 +20,32 @@ There are lots of good videos online discussing different aspects of the vast to
 
 Arguably one of the best communicators of public health data was the late [Hans Rosling](https://en.wikipedia.org/wiki/Hans_Rosling). He has several great entertaining and enlightening TED talks. Here is one of them: A statistics talk that has been viewed millions of times!
 
-::: {style="max-width:854px"}
-::: {style="position:relative;height:0;padding-bottom:56.25%"}
-<iframe src="https://embed.ted.com/talks/hans_rosling_shows_the_best_stats_you_ve_ever_seen" width="854" height="480" style="position:absolute;left:0;top:0;width:100%;height:100%" frameborder="0" scrolling="no" allowfullscreen>
-
+::: container
+<iframe class="video" src="https://embed.ted.com/talks/hans_rosling_shows_the_best_stats_you_ve_ever_seen" frameborder="0" scrolling="no" allowfullscreen>
 </iframe>
 :::
-:::
 
-\
 You can watch [more TED talks by Hans Rosling](https://www.ted.com/speakers/hans_rosling). The software he uses to illustrate data is called Gapminder and [available online](https://www.gapminder.org/tools/#$chart-type=bubbles) on the [Gapminder website](https://www.gapminder.org/).
 
 ## TED talk 2
 
 In this entertaining and empowering talk, [Talithia Williams](https://www.ted.com/speakers/talithia_williams) argues for the utility of careful assessment of data in your personal life.
 
-::: {style="max-width:854px"}
-::: {style="position:relative;height:0;padding-bottom:56.25%"}
-<iframe src="https://embed.ted.com/talks/talithia_williams_own_your_body_s_data" width="854" height="480" style="position:absolute;left:0;top:0;width:100%;height:100%" frameborder="0" scrolling="no" allowfullscreen>
-
-</iframe>
-:::
+::: container
+<iframe class="video" src="https://embed.ted.com/talks/talithia_williams_own_your_body_s_data" frameborder="0" scrolling="no" allowfullscreen></iframe>
 :::
 
 ## TED talk 3
 
 In this talk, [Sebastian Wernicke](https://www.ted.com/speakers/sebastian_wernicke) gives some cautionary suggestions about trusting data too much and argues for critical assessment as an important part of any data analysis and decision process.
 
-::: {style="max-width:854px"}
-::: {style="position:relative;height:0;padding-bottom:56.25%"}
-<iframe src="https://embed.ted.com/talks/sebastian_wernicke_how_to_use_data_to_make_a_hit_tv_show" width="854" height="480" style="position:absolute;left:0;top:0;width:100%;height:100%" frameborder="0" scrolling="no" allowfullscreen>
-
-</iframe>
-:::
+::: container
+<iframe class="video" src="https://embed.ted.com/talks/sebastian_wernicke_how_to_use_data_to_make_a_hit_tv_show" frameborder="0" scrolling="no" allowfullscreen></iframe>
 :::
 
 ## More TED talks
 
-The TED website has [a large number of data related talks](https://www.ted.com/topics/data). Feel free to explore as much as you like. If you find especially good ones, post them on the class discussion board.
+The TED website has a [large number of data related talks](https://www.ted.com/topics/data). Feel free to explore as much as you like. If you find especially good ones, post them on the class discussion board.
 
 # Case studies
 
@@ -71,9 +59,9 @@ Individuals who participate in TidyTuesday often post their projects online and 
 
 You don't need to watch all of the almost 2 hour long recording 😄, but do watch the first few minutes to see him coding/analyzing in real-time. You might just get hooked and keep watching. You might not be familiar with some or most of the R coding, but you will still get the overall idea of how he does the analysis. And his thinking out loud is informative as well. See for yourself:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/2HpRXIpU4jI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-
-</iframe>
+::: container
+<iframe class="video" src="https://www.youtube.com/embed/2HpRXIpU4jI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+:::
 
 If you like the ability to look over his shoulder while he does data analysis, he has a bunch more of those [screencast recordings](https://youtube.com/playlist?list=PL19ev-r1GBwkuyiwnxoHTRC8TTqP8OEi8).
 

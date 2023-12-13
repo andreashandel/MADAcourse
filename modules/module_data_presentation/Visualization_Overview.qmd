@@ -21,27 +21,15 @@ The topic of visualization is enormous, and impossible to cover thoroughly in a 
 
 In the first video [Mona Chalabi](https://monachalabi.com/) talks about good ways to present data and statistics and how good graphs can help in understanding.
 
-::: {style="max-width:854px"}
-::: {style="position:relative;height:0;padding-bottom:56.25%"}
-<iframe src="https://embed.ted.com/talks/mona_chalabi_3_ways_to_spot_a_bad_statistic" width="854" height="480" style="position:absolute;left:0;top:0;width:100%;height:100%" frameborder="0" scrolling="no" allowfullscreen>
-
-</iframe>
+::: container
+<iframe class="video" src="https://embed.ted.com/talks/mona_chalabi_3_ways_to_spot_a_bad_statistic" frameborder="0" scrolling="no" allowfullscreen></iframe>
 :::
-:::
-
-\
 
 In the second video [Chris Jordan](http://www.chrisjordan.com/gallery/epu/#e-pluribus-unum) discusses how one can take abstract facts and make them much more tangible through visualization.
 
-::: {style="max-width:854px"}
-::: {style="position:relative;height:0;padding-bottom:56.25%"}
-<iframe src="https://embed.ted.com/talks/lang/en/chris_jordan_pictures_some_shocking_stats" width="854" height="480" style="position:absolute;left:0;top:0;width:100%;height:100%" frameborder="0" scrolling="no" allowfullscreen>
-
-</iframe>
+::: container
+<iframe class="video" src="https://embed.ted.com/talks/lang/en/chris_jordan_pictures_some_shocking_stats" frameborder="0" scrolling="no" allowfullscreen></iframe>
 :::
-:::
-
-\
 
 If you are interested, you can find more interesting talks on visualization in this [*TED topics* site](https://www.ted.com/topics/visualizations) and this [*TED Studies* collection](http://www.ted.com/read/ted-studies/statistics).
 

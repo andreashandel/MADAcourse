@@ -27,6 +27,6 @@ In your Quarto document, you can then cite the reference by adding the key, such
 
 For references with Quarto, see this [Quarto documentation](https://quarto.org/docs/authoring/footnotes-and-citations.html).
 
-Some more details on citations and references in R Markdown/bookdown can be found in the RMarkdown Cookbook [bibliography section](https://bookdown.org/yihui/rmarkdown-cookbook/bibliography.html) and [citations section](https://bookdown.org/yihui/bookdown/citations.html).
+Some more details on citations and references in R Markdown/bookdown can be found in the *RMarkdown Cookbook* [bibliography section](https://bookdown.org/yihui/rmarkdown-cookbook/bibliography.html) and [citations section](https://bookdown.org/yihui/bookdown/citations.html).
 
 You will see a few examples of bibtex use together with Quarto/R Markdown in the course, so when it's time for you to use it (e.g. for the class project), you should know how to go about doing it.

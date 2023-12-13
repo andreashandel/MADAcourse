@@ -20,7 +20,7 @@ There are really only 2 major ways data/results are generally presented: Tables 
 
 ## Figures
 
-A well-done figure is able to convey a lot of complex information in an inutitive and understandable format. On the flip side, a poorly thought-out figure can be utterly confusing even if it is presenting something simple. Worse, figures can easily be (ab)used to mislead the reader. Your goal is to make sure that your figures are great-looking, easy to understand and not misleading. We'll go over some more details relating to figures in subsequent units.
+A well-done figure is able to convey a lot of complex information in an intuitive and understandable format. On the flip side, a poorly thought-out figure can be utterly confusing even if it is presenting something simple. Worse, figures can easily be (ab)used to mislead the reader. Your goal is to make sure that your figures are great-looking, easy to understand and not misleading. We'll go over some more details relating to figures in subsequent units.
 
 ## Tables
 

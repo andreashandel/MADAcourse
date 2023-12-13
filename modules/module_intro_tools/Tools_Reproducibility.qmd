@@ -21,9 +21,9 @@ A hallmark of proper scientific research is that findings can be replicated/repr
 
 This video provides a short discussion of some of the current problems with reproducibility in science:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/VcgO2v3JjCU" frameborder="0" allowfullscreen>
-
-</iframe>
+::: container
+<iframe class="video" src="https://www.youtube.com/embed/VcgO2v3JjCU" frameborder="0" allowfullscreen></iframe>
+:::
 
 # Reproducibility of Analyses
 
@@ -35,9 +35,9 @@ While there is a strong movement toward *Open Access*, providing all the data is
 
 In this video, [Roger Peng](http://www.biostat.jhsph.edu/~rpeng/) goes into some more details of the concept of reproducible research:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/DfBSiOupI1I" frameborder="0" allowfullscreen>
-
-</iframe>
+::: container
+<iframe class="video" src="https://www.youtube.com/embed/DfBSiOupI1I" frameborder="0" allowfullscreen></iframe>
+:::
 
 Roger Peng has additional videos related to reproducible research in this [playlist of videos](https://www.youtube.com/playlist?list=PLjTlxb-wKvXOU4WW4p3qc4VKWTI4gLNUf)
 
