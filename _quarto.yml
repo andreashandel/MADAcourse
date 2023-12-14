@@ -35,8 +35,8 @@ format:
 website:
   title: "MADA Course"
   description: "Modern Applied Data Analysis (MADA)"
-  # site-url: https://andreashandel.github.io/MADAcourse/
-  # repo-url: https://github.com/andreashandel/MADAcourse/
+  site-url: https://andreashandel.github.io/MADAcourse/
+  repo-url: https://github.com/andreashandel/MADAcourse/
   favicon: media/MADAlogo.png
   page-navigation: true # adds previous/next buttons to bottom of page
   navbar:
