@@ -1,5 +1,5 @@
 ---
-title: Decision trees
+title: Decision Trees
 subtitle: ""
 ---
 

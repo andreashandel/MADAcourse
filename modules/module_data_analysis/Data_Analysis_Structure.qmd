@@ -1,5 +1,5 @@
 ---
-title: MADA - Structure of a Data Analysis
+title: Structure of a Data Analysis
 subtitle: ""
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: MADA - Motivating Data Analysis Examples 
+title: Motivating Data Analysis Examples 
 subtitle: ""
 ---
 

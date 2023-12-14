@@ -1,5 +1,5 @@
 ---
-title: Reference management
+title: Reference Management
 subtitle: ""
 ---
 

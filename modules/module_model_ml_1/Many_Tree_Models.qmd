@@ -1,5 +1,5 @@
 ---
-title: Many-tree based models 
+title: Many-Tree Based Models 
 subtitle: ""
 ---
 

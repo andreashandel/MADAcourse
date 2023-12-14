@@ -1,5 +1,5 @@
 ---
-title: Fitting (simple) statistical models in R
+title: Fitting (Simple) Statistical Models in R
 subtitle: ""
 ---
 

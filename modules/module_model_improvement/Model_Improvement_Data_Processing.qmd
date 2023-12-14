@@ -1,5 +1,5 @@
 ---
-title: Some common data processing tasks
+title: Some Common Data Processing Tasks
 subtitle: ""
 ---
 

@@ -15,9 +15,13 @@ div.sourceCode {
 }
 
 // Bold the title of the active document in the sidebar
-
 div.sidebar-item-container .active, div.sidebar-item-container .show>.nav-link, div.sidebar-item-container .sidebar-link>code {
     font-weight: bold;
+}
+
+// Add a little more space between heading and author / date metadata
+#title-block-header.quarto-title-block.default .quarto-title .title {
+    margin-bottom: 0.5em;
 }
 
 /* Images ---------------*/

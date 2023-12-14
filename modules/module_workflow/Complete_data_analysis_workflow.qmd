@@ -1,5 +1,5 @@
 ---
-title: Revisting the full data analysis workflow
+title: Revisting the Full Data Analysis Workflow
 subtitle: ""
 ---
 
