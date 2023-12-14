@@ -56,7 +56,7 @@ website:
       - text: "Content"
         file: modules/module_intro_tools/Introduction_Course.qmd
       - text: "Assessments"
-        file: modules/module_intro_tools/Assessment_Course_Tools_Introduction.qmd
+        file: courseinfo/Course_Assessments.qmd
       - text: "Project"
         file: project/Project_Overview.qmd
       - text: "Resources"

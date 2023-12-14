@@ -2,8 +2,17 @@
 
 Most general comments/thoughts are in the Notes and Thoughts document in the off-line course folder.
 
+ 
+
 
 # ToDo
+
+* Can we change color scheme to something less stark/dark?
+* Can one make the images larger, they are at times hard to see/read.
+
+
+
+--
 
 * Continue updating Assessment_Data_Analysis
 * Update/finish AI unit
