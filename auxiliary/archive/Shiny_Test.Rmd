@@ -1,0 +1,25 @@
+---
+title: A testbed for Shiny
+subtitle: ""
+author: Andreas Handel
+institute: "University of Georgia"
+date: "`r as.Date(file.mtime(knitr::current_input()))`"
+#bibliography: ../media/references.bib
+output: 
+  html_document:
+    toc: FALSE
+---
+
+
+This page currently only exists so I can test embedding of Shiny apps and other interactive content.
+
+# LearnR
+
+This embeds a learnR bit of code. Content not related to this course, just a test.
+
+```{r echo=FALSE,  scrolling="no", width="100%"}
+set.seed(12)
+heights_island1 <- rnorm(50,10,2)
+knitr::include_url("https://tinystats.shinyapps.io/06-standardError-ex5/")
+```
+

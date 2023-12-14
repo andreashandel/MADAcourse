@@ -1,0 +1,182 @@
+---
+title: More Data and Models we didn't cover 
+subtitle: ""
+---
+
+# Overview
+
+In this unit, I mention very briefly a few types of data and models that
+we unfortunately didn't have time to cover.
+
+# Learning Objectives
+
+-   Be familiar with some other types of common data.
+-   Know about some additional analysis approaches.
+
+# Introduction
+
+This course already covers a lot of material (maybe more than should be
+covered in a single semester 😁. Of course, there is much more in the
+area of data analysis that we were not able to cover.
+
+Our focus here was on the analysis of what is sometimes called
+*rectangular data*. We have observations (individual units of data)
+generally as rows, and variables (outcome and predictors) as columns.
+This is still the most common type of data, especially in public health
+and more generally the life sciences. However, more complex types of
+data are rapidly increasing in frequency and importance. If the data has
+a different structure, it will usually require different, specialized
+analysis approaches. The good news is that most of the general
+approaches we covered in this course still apply. The difference is
+often in how the data is processed, and the specific way data and models
+are combined.
+
+The following sections very briefly mention some common types of more
+complex data and provide a few pointers towards their analysis. Those
+categories are not mutually exclusive, some data sources can have more
+than one property (e.g., real-time text data).
+
+# Hierarchical data
+
+This type of data is actually quite common. A hierarchy (also at times
+called multi-level or nesting structure) occurs when there is some type
+of grouping inherent. For instance, if you analyze heart attacks from
+different hospitals, there might be systematic differences between
+hospitals that are worth taking into account. You can then build models
+that take that into account. I think there is a strong case to be made
+that one should often start with a hierarchical modeling approach, and
+only drop it if one is convinced that there are no systematic
+differences in the data. Unfortunately, such hierarchical models are
+still a little bit harder to implement, and often a lot harder to
+understand and interpret. For such models, a Bayesian framework is often
+very useful. A good introductory resource for hierarchical modeling, and
+especially how to do it with `R`, is [*Statistical
+Rethinking*](https://xcelab.net/rm/statistical-rethinking/) (the second
+half of the book). The new edition of *R4DS* has a chapter on [working
+with hierarchical data](https://r4ds.hadley.nz/rectangling.html) (but
+does not cover the fitting/analysis part.) There is also a CRAN Task
+view that lists [R packages relevant to hierarchical
+modeling](https://cran.r-project.org/web/views/MixedModels.html).
+
+# Time-series data
+
+Time series are a specialized data type that are autocorrelated, and we
+can therefore get better predictions by using specialized models that
+take this data structure into account. A good resource is the free
+textbook [*Forecasting: Principles and
+Practice*](https://otexts.com/fpp3/) and a lot of the other work by [Rob
+Hyndman](https://robjhyndman.com/).
+
+A very useful set of tools to allow times-series work in R is the set of
+packages called the [`tidyverts`](https://tidyverts.org/). The
+[`modeltime`](https://business-science.github.io/modeltime/) `R` package
+allows one to use the `tidymodels` framework to analyze time-series
+data.
+
+CRAN also has a [Task View for *Time Series
+Analysis*.](https://cran.r-project.org/web/views/TimeSeries.html) (A
+*Task View* on CRAN is a site that tries to combine and summarize
+various R packages for a specific topic). Another task view that deals
+with longitudinal/time-series data is the [*Survival Analysis* Task
+View](https://cran.r-project.org/web/views/Survival.html).
+
+# Spatial data
+
+Like time series data, spatial data also feature autocorrelation, but
+typically in two dimensions. (i.e., latitude and longitude.)
+Spatiotemporal data, typically collected as repeated measurements of
+spatial data over time, is also somewhat common. One could also have an
+elevation coordinate and have 3D (or even 4D spatiotemporal data)
+spatial data, but most analyses focus on 2D spatial autocorrelation
+structures.
+
+While there is (to my knowledge) no current way to fit specific spatial
+models in `tidymodels` (i.e. no `modeltime` analogue), one can use
+spatial resampling through the
+[`spatialsample`](https://spatialsample.tidymodels.org/) package, which
+provides resampling methods that take spatial autocorrelation into
+account.
+
+You can find a community-curated list of resources for spatial data in
+[*The Big Book of R*](https://www.bigbookofr.com/geospatial.html) or in
+the [*Spatial Data* CRAN task
+view](https://cran.r-project.org/web/views/Spatial.html).
+
+# Text
+
+Working with and analyzing larger sections of text is becoming
+increasingly important. Complex and powerful AI tools (e.g., ChatGPT)
+have become rather good at working with text. The analysis of text often
+goes by the term *natural language processing*. Such text analysis will
+continue to increase in importance, given the increasing data streams of
+that type. If you are interested in doing full analyses of text data,
+the [`tidytext` R package](https://juliasilge.github.io/tidytext/) and
+the [*Text mining with R* book](https://www.tidytextmining.com/) are
+great resources. A short introduction to this topic is the [Text Mining
+chapter (27) of
+*IDS*](https://rafalab.github.io/dsbook/text-mining.html).
+
+# Genetics and -omics data
+
+The main genetic type of data is based on sequences. A lot of
+specialized tools exist to work with what is often fairly noisy data.
+Aligning sequences, comparing them, placing them on phylogenetic trees,
+and other such operations are so common and important that there is a
+large area of tools for those purposes.
+
+Data that is often called `-omics` (e.g., metabolomics, glycomics) is
+often rectangular in structure, but often has distinguishing features,
+such as few individuals/rows and **many** observations/columns. Such
+data needs special treatment. Often, variable/feature reduction is a
+common step in the analysis workflow.
+
+The [bioconductor](https://www.bioconductor.org/) website is your source
+for (almost) all tools and resources related to genetics and omics-type
+data analyses in `R`.
+
+# Big data
+
+This term is a bit fuzzy. Operationally, it often means anything you
+can't work with on your local computer. Sometimes data is somewhat big,
+you can still work with it on your local computer but it takes very long
+and you have so many observations that everything is statistically
+significant. Thus, big data generally requires both special approaches
+and tools towards wrangling/exploring/cleaning and often also special
+approaches for its analysis. A short discussion of *Big Data* is
+provided in the AI/Deep Learning module.
+
+# Images, Audio, Video
+
+Images are generally converted into multiple matrices of values for
+different pixels of an image. For instance, one could divide an image
+into a 100x100 grid of pixels, and assign each pixel RGB (color) values
+and intensity. That means one would have 4 matrices of numeric values,
+each of size 100x100. One would then perform operations on those values.
+As you can imagine, that quickly leads to fairly large amounts of data.
+These days, most successful image analysis is done using some form of
+**neural nets**, which are generally considered an **artificial
+intelligence (AI)** method (but recall that ML and AI terminology is
+somewhat fuzzy. The general current usage is that AI are a type of ML,
+specifically the neural net type.)
+
+Videos are basically time-series of images. Of course, analysis of
+videos is even harder than analysis of images. Again, neural-net based
+AI methods are most often used.
+
+Audio also has a time-series structure that needs to be taken into
+account when analyzing it. It is conceptually similar to video, a
+time-series of sounds. In fact, if the video has sound, then audio
+analysis could be part of the video analysis.
+
+I have close to zero experience trying to analyse images/sounds.
+Unfortunately, because of my lack of experience, I don't even know what
+a good introductory source would be to get started if you were
+interested (other than the generic "look around online"). I do think
+that if you wanted to analyze that kind of data, `R` is probably not the
+best tool.
+
+# Further reading
+
+See the references provided in the sections above, as well as the
+[**Resources**](../../resources/Course_Resources.qmd) section on the
+course website.

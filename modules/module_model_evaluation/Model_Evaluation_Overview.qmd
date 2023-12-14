@@ -1,0 +1,31 @@
+---
+title: Model Evaluation Overview
+subtitle: ""
+---
+
+# Overview
+
+In this module, we will discuss how one can assess the quality of different models, and what aspects of model quality one needs to consider.
+
+![](../../media/assessment-cartoon.jpg){width="70%" fig-align="center" fig-alt="A comic of a person holding a clipboard asking another person 'How hard - on a scale of one to ten?' to which the other responds 'The way I feel is hard to quantify!'"}
+
+# Learning Objectives
+
+-   Learn how to determine different aspects of model quality
+-   Become familiar with different types of model performance metrics
+-   Become able to choose the right assessment metric for your problem
+-   Learn what model uncertainty is and how to compute it
+-   Become familiar with model diagnostics
+
+# Introduction
+
+If we fit any kind of statistical model to data, we need to determine the quality of a fit somehow. How do we know one model is *better* than another? How do we know any given model is *good*? These questions, i.e., what model is *better* among a group of models, and if a model is *good* (even the best among a group of awful models can be a bad model!) have multiple parts to them, only some of which can be answered by statistics. Others are judgment calls.
+
+There is no single way to define quality. Instead, multiple factors should be considered. Here are some important aspects to think about:
+
+-   Model performance: How well do the predictions from the model compare to the actual data?
+-   Model complexity: How easy or hard is it to understand the model? How fast does it run? How robust is it to violations of the assumptions you made?
+-   Model uncertainty: How much uncertainty is associated with the predictions made by the model?
+-   Model misspecification: How much systematic deviation is there between model predictions and actual data?
+
+We will discuss these different ways one can assess model quality in this module.
