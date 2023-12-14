@@ -7,6 +7,9 @@ project:
     - "!auxillary/" # don't render anything in auxillary
   resources: "*.xlsx" # include quizsheets in _site
 
+execute: 
+  freeze: auto  # re-render only when source changes
+
 format:
   html:
     theme: [yeti, MADAstyle.scss]
@@ -25,13 +28,11 @@ format:
       content-mode: full # uses up the full screen
       sidebar-width: 350px # widens the sidebar so most module names fit on one line
       body-width: 900px # widens body content
-execute: 
-  freeze: auto  # re-render only when source changes
   
 website:
   title: "MADA Course"
-  # site-url: https://andreashandel.github.io/MADAcourse/
-  # repo-url: https://github.com/andreashandel/MADAcourse/
+  site-url: https://andreashandel.github.io/MADAcourse/
+  repo-url: https://github.com/andreashandel/MADAcourse/
   favicon: media/MADAlogo.png
   page-navigation: true # adds previous/next buttons to bottom of page
   navbar:
