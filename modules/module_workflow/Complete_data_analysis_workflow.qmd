@@ -20,8 +20,8 @@ discussion, meant to wrap up things.
 Earlier in the course, we covered the whole data analysis workflow and
 all its components in a big-picture manner, trying to look ahead. Back
 then, the topics were abstract. At this stage, we have covered each
-topic and worked on specific examples. Now is a good time to [re-read
-the earlier unit.](../module_data_analysis/Data_Analysis_Overview.qmd)
+topic and worked on specific examples. Now is a good time to [**re-read
+the earlier unit**](../module_data_analysis/Data_Analysis_Overview.qmd).
 
 Hopefully, upon re-reading, some of the topics that were theoretical and
 abstract back when you first read it are now clearer and more concrete.
@@ -227,7 +227,7 @@ keeping in mind:
     appropriate for your project, consider other sources of
     dissemination. For instance, make a website for your analysis. Turn
     it into a blog post. Tweet about it. Use interactive tools (e.g.
-    [the R Shiny package](https://shiny.rstudio.com/)) to allow the
+    the [R `Shiny` package](https://shiny.rstudio.com/)) to allow the
     audience to interact with your results. Be creative and think about
     the best ways to reach your intended audience.
 

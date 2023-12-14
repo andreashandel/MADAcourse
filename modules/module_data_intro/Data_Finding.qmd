@@ -31,7 +31,7 @@ Wherever you get data from, document it as much as possible. When did you get it
 
 Treat the raw data as you would a very fragile object. Ideally, do not touch it. Do not edit it. You want to only **read** the data into R, even if it is in a bad format, and then apply fixes/cleaning in R. If this is not possible, and you need to make edits to the data in whatever format you got it (e.g., Excel, SAS), **make a copy of the data files and place those copies in a separate folder, AND ONLY EDIT THOSE COPIES. Also, write down the edits you made.**
 
-A large portion of data is entered and stored in spreadsheets, such as Excel. If you collaborate with others who produce and enter the data, especially if it is a frequent collaboration, having a discussion with them about best practices for data entry and storage could potentially save you a lot of time. If this is a situation you find yourself in, I recommend you read, and then ask your collaborators to read and implement the excellent paper [Data Organization in Spreadsheets](../../media/broman18amstat.pdf) by Broman and Woo.
+A large portion of data is entered and stored in spreadsheets, such as Excel. If you collaborate with others who produce and enter the data, especially if it is a frequent collaboration, having a discussion with them about best practices for data entry and storage could potentially save you a lot of time. If this is a situation you find yourself in, I recommend you read, and then ask your collaborators to read and implement the excellent paper [*Data Organization in Spreadsheets*](../../media/broman18amstat.pdf) by Broman and Woo.
 
 # Data import in R
 
@@ -48,7 +48,7 @@ Here are some of the most prominent ones:
 
 The packages I listed above are all from the `tidyverse`. There are many more packages with additional functionality, e.g., for reading in large data fast.
 
-To learn some more, you can check out the [Importing Data chapter in *IDS*](https://rafalab.github.io/dsbook/importing-data.html). The [Web scraping chapter in *IDS*](https://rafalab.github.io/dsbook/web-scraping.html) provides additional information on how to pull online data into R.
+To learn some more, you can check out the [Importing Data chapter in *IDS*](https://rafalab.github.io/dsbook/importing-data.html). The [Web Scraping chapter in *IDS*](https://rafalab.github.io/dsbook/web-scraping.html) provides additional information on how to pull online data into R.
 
 # Checking the data
 

@@ -79,6 +79,25 @@ Or, I can switch them back to the `emoji` package if you prefer?
 
 **AH: Do it whichever way you want, just document somewhere the different ways so in case I need to do it a different way in the future, I remember.**
 
+#### How to use emojis in Quarto without the visual editor
+
+Use keyboard shortcuts to open the dialog box of emojis, which you can search and double click to insert into any text input on your computer (including RStudio/VSCode). These will render for any HTML output, including revealjs presentations.
+
+on Windows, the shortcut is `Windows + .`
+on Mac: `Ctrl + Cmd + Space`
+
+If rendering to a non-html format like docx, add `from: markdown+emoji` to the YAML heading of the file.
+
+```
+---
+title: "Word doc report"
+format: docx
+from: markdown+emoji
+---
+```
+
+For more details, see the [emoji Quarto docs]([https://quarto.org/docs/visual-editor/content.html#emojis](https://quarto.org/docs/visual-editor/content.html#emojis)).
+
 ### Navigation
 
 Your site uses hybrid navigation (navbar plus sidebar) as detailed in these [Quarto docs](https://quarto.org/docs/websites/website-navigation.html#hybrid-navigation).
@@ -226,7 +245,7 @@ Read the [published paper](https://doi.org/10.1098/rspb.2020.0496). All material
 
 **AH: Agree, making things accessible if possible is a good idea. So yes, feel free to adjust any of those and reword to make it better. (There might be other areas where this is not ideal, for instance I'm not sure I have alt-text for all figures and other embeddings. Feel free to add any of that too if you run into something that you think needs improvement)**
 
-JR: I replaced most "here" and "this" with either the article authors+date or a short description of the linked resource.
+JR: I replaced most "here" and "this" with either the article's `Author Year` or a short description of the linked resource.
 
 I also removed most "the", "a", and other articles outside of the hyperlinks.
 
@@ -257,7 +276,7 @@ I adjusted the css for the note and warning divs for more modern rounded borders
 - Not broken, but goes to general Journal website, not an actual article: https://academic.oup.com/jn/article/143/6/931/4571741
   - from modules: module_data_analysis/Data_Analysis_Overview.qmd
   
-## Markdown: bold and italics
+## Markdown: bold and italics and horizontal lines
 
 I changed underscores to asterisks for bold and italics for markdown best practices according to the [Markdown Guide](https://www.markdownguide.org/basic-syntax/#bold-best-practices).
 
@@ -266,6 +285,8 @@ For consistency I made:
 - books and articles *italics*
 - internal links to other pages on the course website **bold**
 - left whatever regular text as you had it italicized or bold
+
+In `Course_Glossery.qmd`, there was an entire line of 80 dashes. With Quarto, you only need 3 to create a horizontal rule :)
 
 ## Publishing
 

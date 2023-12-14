@@ -65,7 +65,7 @@ We also covered overfitting and strategies to minimize it (e.g., cross-validatio
 
 # Project
 
-Review and provide feedback on part 3 of the projects you have been assigned to as described in the **Projects** section.
+Review and provide feedback on part 3 of the projects you have been assigned to as described in the [ **Projects**](../../project/Project_Overview.qmd) section.
 
 # Discussion
 

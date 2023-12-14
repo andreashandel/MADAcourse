@@ -75,4 +75,4 @@ If at any time during your analysis, you get warning messages, you need to inves
 
 # Further learning
 
-In addition to the sources mentioned above, other good reads are the [Judging model effectiveness](https://www.tmwr.org/performance.html) and [When should you trust your predictions?](https://www.tmwr.org/trust.html) chapters of *TMWR*.
+In addition to the sources mentioned above, other good reads are the [Judging Model Effectiveness](https://www.tmwr.org/performance.html) and [When Should You Trust Your Predictions?](https://www.tmwr.org/trust.html) chapters of *TMWR*.

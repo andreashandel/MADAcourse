@@ -105,7 +105,7 @@ new to programming this isn't generally recommended, but some online R
 personalities will assign variables this way.*
 
 If you want to practice some basic coding further, I suggest you go
-through [chapters 2 and 3 of IDS](https://rafalab.github.io/dsbook/).
+through [chapters 2 and 3 of *IDS*](https://rafalab.github.io/dsbook/).
 Continuing on to chapter 4 is a good idea. Alternatively, pick any other
 source you like, e.g. those listed in the resources section of this
 course, or anything else you find. (If you find something not listed

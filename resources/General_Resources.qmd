@@ -5,13 +5,14 @@ subtitle: ""
 
 I kept adding resources until things got too unwieldy and the *Course
 Resources* page was becoming too large 😁. So I decided to split things
-into two pages. The *Course Resources* page lists materials directly
-related to and used/mentioned in the course. This page lists a lot of
-other resources that are not heavily featured in the course, but that
-might be useful and interesting. Everything listed here is broadly
-related to the course topic, i.e. the resources focus on Data
-Science/Stats/R Coding/GitHub/etc. For even more materials, see the
-links to various lists by others at the end of this document.
+into two pages. The [**Course Resources**](Course_Resources.qmd) page
+lists materials directly related to and used/mentioned in the course.
+This page lists a lot of other resources that are not heavily featured
+in the course, but that might be useful and interesting. Everything
+listed here is broadly related to the course topic, i.e. the resources
+focus on Data Science/Stats/R Coding/GitHub/etc. For even more
+materials, see the links to various lists by others at the end of this
+document.
 
 Most materials described below are (should be) freely available online.
 For better or for worse, a lot of the resources I list below are dynamic
@@ -106,7 +107,7 @@ listed and not listed), I'd love to receive feedback.
 -   [*Introduction to Modern
     Statistics*](https://openintro-ims.netlify.app/) is a free online
     textbook teaching statistics using R in a modern framework.
--   [Telling Stories with Data](https://tellingstorieswithdata.com/) -
+-   [*Telling Stories with Data*](https://tellingstorieswithdata.com/) -
     an interesting way to discuss data analysis, focusing on the
     story/message.
 -   [*Reproducible Medical Research with
@@ -283,7 +284,7 @@ non-technical and thus beginner-friendly.
     Rethinking*](https://xcelab.net/rm/statistical-rethinking/) by
     Richard McElreath also covers a good bit of causal analysis at a
     very accessible introductory level. He also has several great
-    recordings on the topic [on his YouTube
+    recordings on the topic on his [YouTube
     channel](https://www.youtube.com/channel/UCNJK6_DZvcMqNSzQdEkzvzA).
 -   [Causal Inference in R
     Workshop](https://r-causal.github.io/causal_workshop_website/)

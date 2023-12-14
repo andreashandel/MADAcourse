@@ -20,7 +20,7 @@ fairly well defined, other terms are often used and abused in ways
 outside the definitions I provide. Always look carefully at what is
 described to decide what exactly is going on.
 
-------------------------------------------------------------------------
+---
 
 Not surprisingly, I'm not the 1st one with the idea of compiling a list
 of data science related terms and definitions. After starting this, I
@@ -28,7 +28,7 @@ found another one by Frank Harrell, which you can find on his
 [website](https://hbiostat.org/glossary/). I'm sure I'll find and list
 more alternatives soon.
 
-------------------------------------------------------------------------
+---
 
 **Artificial Intelligence:** The use of **Deep Learning** and related
 approaches applied to "complex" problems. Historically, it was used for

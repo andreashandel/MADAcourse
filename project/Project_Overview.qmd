@@ -126,7 +126,7 @@ file. See the template for an example.
 
 # Project template
 
-I created [a public Github repository called
+I created a [public Github repository called
 dataanalyis-template](https://github.com/andreashandel/dataanalysis-template)
 which is meant as a template for doing a data analysis project. It has
 different folders for organizing your project. Various readme files are
@@ -167,15 +167,14 @@ submission.
     to see that you deliver what you were supposed to and got the
     project to the requested stage.
 -   Your classmates will provide peer-review feedback on parts 3 and 5.
-    Details on that is provided in the [**Project Review
-    document**](Project_Review.qmd).
+    Details on that is provided in the [**Project Review**](Project_Review.qmd) document.
 -   Part 6 is the final submission.
 
 The initial submissions and peer reviews make up 40% of the project
 grade. The final submission counts for the remaining 60%.
 
 **More details on what exactly is expected and how it is assessed is
-provided in the *Project Details* document.**
+provided in the [**Project Details**](Project_Details.qmd) document.
 
 # Project communications
 

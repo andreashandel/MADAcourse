@@ -5,7 +5,7 @@ subtitle: ""
 
 This page lists resources that this course draws on frequently or at
 least occasionally. For a more extensive list of data science resources,
-see the *General Resources* page.
+see the [**General Resources**](General_Resources.qmd) page.
 
 All materials described below are (should be) freely available online.
 If you can't get to them, let me know. Note that a lot of the listed
@@ -122,5 +122,5 @@ let me know.
 
 # More resources
 
-The [General Resources](General_Resources.qmd) page has a more extensive
+The [**General Resources**](General_Resources.qmd) page has a more extensive
 list of relevant resources.

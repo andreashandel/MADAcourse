@@ -55,7 +55,7 @@ Rethinking*](https://xcelab.net/rm/statistical-rethinking/) (the second
 half of the book). The new edition of *R4DS* has a chapter on [working
 with hierarchical data](https://r4ds.hadley.nz/rectangling.html) (but
 does not cover the fitting/analysis part.) There is also a CRAN Task
-view that [lists R packages relevant to hierarchical
+view that lists [R packages relevant to hierarchical
 modeling](https://cran.r-project.org/web/views/MixedModels.html).
 
 # Time-series data
@@ -98,7 +98,7 @@ provides resampling methods that take spatial autocorrelation into
 account.
 
 You can find a community-curated list of resources for spatial data in
-[The Big Book of R](https://www.bigbookofr.com/geospatial.html) or in
+[*The Big Book of R*](https://www.bigbookofr.com/geospatial.html) or in
 the [*Spatial Data* CRAN task
 view](https://cran.r-project.org/web/views/Spatial.html).
 

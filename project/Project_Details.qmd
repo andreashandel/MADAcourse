@@ -56,7 +56,7 @@ To that end, provide the following pieces of information:
 Grading for this part will follow the following rubric:
 
 | **Category**          | **Description**                                                                                                                          | **Score** |
-|------------------------|------------------------|------------------------|
+|------------------------|---------------------------------------------------------------------------------------------------------|------------------------|
 | Sufficient            | Submission is (almost) complete, contains enough information to allow assessment of feasibility of proposed project. Fully reproducible. | 3         |
 | Somewhat insufficient | Most components are present, but noticeable gaps exist, or existing materials can't be fully reproduced.                                 | 2         |
 | Not sufficient        | Submission is rather incomplete, has major missing parts which does not allow assessment of feasibility of proposed project              | 1         |
@@ -112,7 +112,7 @@ To that end, provide the following pieces of information:
 Grading for this part will follow the following rubric:
 
 | **Category**          | **Description**                                                        | **Score** |
-|------------------------|------------------------|------------------------|
+|------------------------|------------------------------------------------------------------------------------------------------------------|------------------------|
 | Sufficient            | Submission is (almost) complete                                        | 3         |
 | Somewhat insufficient | Submission is somewhat incomplete, parts missing or not reproducible   | 2         |
 | Insufficient          | Submission is very incomplete, major parts missing or not reproducible | 1         |
@@ -162,7 +162,7 @@ Grading for this part will follow this rubric:
 | Absent                | (Almost) everything of submission is missing                               | 0         |
 
 *This part of your project will be assessed by some of your classmates.
-See the [`Reviews`](Project_Review.qmd) document for more details.*
+See the [**Project Review**](Project_Review.qmd) document for more details.*
 
 # Part 4
 
@@ -224,8 +224,7 @@ To that end, provide the following pieces of information:
 -   Meta-data explaining your data as needed.
 -   Everything very well documented and polished as much as possible.
 
-Check the [**Project Review Template
-file**](templatefiles/Project_Review_Template.qmd) to see how this
+Check the [**Project Review Template**](templatefiles/Project_Review_Template.qmd) file to see how this
 submission will be assessed by your peers. I will not grade this part
 but it will be assessed by your peers, as described in the [**Project
 Review**](Project_Review.qmd) document.

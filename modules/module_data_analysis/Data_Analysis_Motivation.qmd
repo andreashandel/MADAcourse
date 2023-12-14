@@ -55,7 +55,7 @@ It is by now very common that individuals post data analyses online in a reprodu
 
 An interesting initiative started by [Thomas Mock](https://themockup.blog/) is [TidyTuesday](https://github.com/rfordatascience/tidytuesday), where every Tuesday a new dataset is released and individuals are encouraged to analyze it. Later in this course, you will be participating in some TidyTuesdays yourself. Tidy Tuesday has by now been running [for many years](https://themockup.blog/posts/2021-04-01-three-years-of-tidytuesday/).
 
-Individuals who participate in TidyTuesday often post their projects online and [link to it on social media](https://nsgrantham.shinyapps.io/tidytuesdayrocks/). We will look at an example by [David Robinson](http://varianceexplained.org/). David does screencast recordings showing him analyze the data.
+Individuals who participate in TidyTuesday often post their projects online and link to it on [social media](https://nsgrantham.shinyapps.io/tidytuesdayrocks/). We will look at an example by [David Robinson](http://varianceexplained.org/). David does screencast recordings showing him analyze the data.
 
 You don't need to watch all of the almost 2 hour long recording 😄, but do watch the first few minutes to see him coding/analyzing in real-time. You might just get hooked and keep watching. You might not be familiar with some or most of the R coding, but you will still get the overall idea of how he does the analysis. And his thinking out loud is informative as well. See for yourself:
 

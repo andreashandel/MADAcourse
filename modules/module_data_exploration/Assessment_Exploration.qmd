@@ -29,7 +29,7 @@ Apparently, there is now also a [Tidy Tuesday podcast](https://www.tidytuesday.c
 
 ## Your Tidy Tuesday Exercise
 
-Your assignment is to participate in Tidy Tuesday by analyzing this week's dataset. You can start as soon as the dataset is posted, which is Mondays. [The datasets are released on GitHub](https://github.com/rfordatascience/tidytuesday). As I'm writing this, I have no idea what the data will be the week this exercise happens. That's part of the fun of it 😄.
+Your assignment is to participate in Tidy Tuesday by analyzing this week's dataset. You can start as soon as the dataset is posted, which is Mondays. The [datasets are released on GitHub](https://github.com/rfordatascience/tidytuesday). As I'm writing this, I have no idea what the data will be the week this exercise happens. That's part of the fun of it 😄.
 
 Here are some more detailed instructions:
 
