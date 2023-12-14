@@ -6,10 +6,15 @@ project:
   render: 
     - "*.qmd" # render all .qmd files
     - "!auxillary/" # don't render anything in auxillary
+    - "!renv/"
   resources: "*.xlsx" # include quizsheets in _site
 
 execute: 
   freeze: auto  # re-render only when source changes
+  cache: true
+
+description-meta: "Modern Applied Data Analysis (MADA) course"
+engine: knitr
 
 format:
   html:
@@ -35,7 +40,7 @@ format:
   
 website:
   title: "MADA Course"
-  description: "Modern Applied Data Analysis (MADA)"
+  description: "Modern Applied Data Analysis (MADA) course"
   site-url: https://andreashandel.github.io/MADAcourse/
   repo-url: https://github.com/andreashandel/MADAcourse/
   favicon: media/MADAlogo.png
@@ -73,8 +78,6 @@ website:
               file: courseinfo/Course_Schedule.qmd
             - text: "Communication"
               file: courseinfo/Course_Communication.qmd
-            - text: "Assessments"
-              file: courseinfo/Course_Assessments.qmd
               
       - title: "Content"
         contents:
@@ -203,6 +206,8 @@ website:
             
       - title: "Assessments"
         contents:
+            - text: "Assessments Overview"
+              file: courseinfo/Course_Assessments.qmd
             - text: "1. Course and Tools Introduction"
               file: modules/module_intro_tools/Assessment_Course_Tools_Introduction.qmd
             - text: "2. Data Analysis Introduction"

@@ -3,15 +3,15 @@ title: Assessment - Course and Tools Introduction
 subtitle: ""
 ---
 
-# Module Assessments
+# Overview Reminder
 
-Each module comes with an assessment. Those are things you need to do that will be graded. The table on the [**Schedule**](../../courseinfo/Course_Schedule.qmd) page lists the assessments for each module.
+Each module comes with assessments. Those are things you need to do that will be graded. The table on the [**Schedule**](../../courseinfo/Course_Schedule.qmd) page lists the assessments for each module.
 
-If you haven't done so, please read through the [**Assessments**](../../courseinfo/Course_Assessments.qmd) page so you know how each type of assessment should be done and how it's graded.
+If you haven't done so, please read through the [**Assessments Overview**](../../courseinfo/Course_Assessments.qmd) page so you know how each type of assessment should be done and how grading works.
 
 Each module has an **Assessments** page, like this one, which describes what the assessments are and what you should do. Often, there is a good bit of information for the exercises.
 
-## Quiz
+# Quiz
 
 Get the quiz sheet for this module from the general [**Assessments**](../../courseinfo/Course_Assessments.qmd) page. Fill it in, then submit to the online grading system before the deadline.
 
@@ -19,7 +19,7 @@ For this first module, you have 2 submission attempts. This allows you to get us
 
 Note that the quiz submission system will only become available once student passwords have been set.
 
-## Discussion
+# Discussion
 
 The discussion for this module is all about introductions. For your original post, simply post the URL to the website you will create by doing the exercise below into the `introductions` Discord channel. **Do so by Wednesday 5pm.**
 
@@ -27,7 +27,7 @@ For your replies, visit some of your classmates websites and leave feedback as a
 
 I hope this will allow you to start getting to know each other, even if only virtually.
 
-## Exercise
+# Exercise
 
 For this exercise, you are asked to do start using Github, R, RStudio, and Quarto to create a website which will become your portfolio for this class. You'll write and post a short personal introduction of yourself.
 
