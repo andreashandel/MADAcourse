@@ -1,0 +1,76 @@
+---
+title: Assessment - Improving Models
+subtitle: ""
+---
+
+# Quiz
+
+Get the quiz sheet for this module from the general [**Assessments**](../../courseinfo/Course_Assessments.qmd) page. Fill it in, then submit to the online grading system before the deadline.
+
+# Exercise
+
+We'll practice the topics covered in this and prior units by continuing with the exercise we started previously.
+
+## Setup
+
+You'll continue working on the *Flu Analysis* exercise you started previously. We'll also do some group work again, using the -- by now familiar -- M1, M2, ... setup. Assign each other a number. As much as possible, do it such that you end up working with group members you have not (or not in a while) worked with. If you are in a group of 4, you can do pairs. That of course doesn't work in a group of 3 or 5, so you need to use the 'circular' setup there. The goal is that, as in past exercises, everyone will work on their own repository and on one other person's repository.
+
+At this stage, I assume all the data wrangling and EDA code, as well as the model fitting code you worked on previously is present and fully functional. If there are still some issues that need to be resolved, go ahead and do so.
+
+Place a new Quarto file called `modeleval.qmd` into the code folder (or sub-folder, if you use them). As always, you can of course either use a single Quarto file with code or put the code into an R script and pull it into the Quarto file. In either case, document/comment well.
+
+## Data splitting
+
+Write code that takes the data and splits it randomly into a train and test that, following for instance the example in the [Data Splitting section of the Get Started `tidymodels` tutorial](https://www.tidymodels.org/start/recipes/).
+
+## Workflow creation and model fitting
+
+Next, following the example in the [Create Recipes section of the Get Started `tidymodels` tutorial](https://www.tidymodels.org/start/recipes/), create a simple recipe that fits a logistic model to our **categorical outcome of interest**, using all predictors. (We start with categorical and all predictors since that's the closest to the shown example). For now, you can ignore the concept of `roles` and `features` they mention.
+
+Set a model as you did in the previous exercise, then use the `workflow()` function to create a simple workflow that fits a logistic model to all predictors using the `glm` engine. To that end, follow the *Fit a model with a recipe* section of the tutorial and adjust for your case.
+
+You should end up with a fit object similar to the one shown at the end of that section in the tutorial - of course, yours will look somewhat different since you are using a different dataset, but overall things should look similar.
+
+## Model 1 evaluation
+
+Follow the example in the *Use a trained workflow to predict* section of the tutorial to look at the predictions, ROC curve and ROC-AUC for your data. Apply it to both the training and the test data. ROC curve analysis and ROC-AUC is another common performance measure/metric for categorical outcomes. If you are not familiar with it, you can read more about them by following the link in the tutorial. It's not too important to go into the details for now. The focus here is on getting the code to work. In general, a ROC-AUC of 0.5 means the model is no good, 1 is a perfect model. Generally, somewhere above 0.7 do people think the model might be useful. If your model has a ROC-AUC a lot less than 0.5, you likely have an issue with how your factors are coded or how `tidymodels` is interpreting them.
+
+## Alternative model
+
+Let's re-do the fitting but now with a model that only fits the main predictor to the categorical outcome. You should notice that the only thing you have to change is to set up a new `recipe`, this time one that only has the name of the predictor of interest on the right side of the formula (instead of the `.` symbol, which is shorthand notation for "all predictors".) Then you can set up a new workflow with the new recipe, rerun the fit and evaluate performance using the same code as above. In general, if you do multiple models/recipes, you might want to write a loop to go over them, or parallelize/vectorize things. For now, just copying and pasting most of the code is ok.
+
+## Wrap up part 1
+
+Make sure everything runs and works as expected. Also make sure everything is well commented/documented/explained! Then commit, push and tell your classmate that they can take over. **Finish this by Wednesday.**
+
+## Continuous outcome
+
+Fork and clone (or if you are added as collaborator, clone directly) your classmate's repository. Open their `modeleval.qmd` file. **Add a heading at the bottom that says `# This section added by YOURFULLNAME`. I need this so I can grade accordingly.**
+
+Add code that repeats the above steps, but now fits linear models to the continuous outcome. One model with all predictors, one model with just the main predictor. For that, you need to change your metric. RMSE is a good one to choose. You should find that a lot of the code your classmate wrote can copied/pasted/re-used with only minimal modifications. Make sure to add comments/documentation.
+
+## Wrap up part 2
+
+Make sure everything runs and works as expected. Then commit, push and if you forked the repo, initiate a pull request. Tell our classmate that its done.
+
+## Test and website update
+
+The original repository owner should make sure everything works. Then, add the newly created Quarto document as an entry into your `_quarto.yml` file, as a sub-menu of `Flu fitting`. Call it `Model Evaluation`. Recompile your portfolio website and make sure everything works and shows up as expected. Then commit and push.
+
+**Since this is part of your portfolio site, you don't need to post anything, I know where to find it. Therefore there is no exercise Slack channel for this module.**
+
+## Looking ahead
+
+We also covered overfitting and strategies to minimize it (e.g., cross-validation), and further model assessment strategies in the materials. We'll practice those in future exercises. I figured the above will already take a good bit of getting used to, and we will be able to practice more when we look at further model types in the coming weeks.
+
+# Project
+
+Review and provide feedback on part 3 of the projects you have been assigned to as described in the [ **Projects**](../../project/Project_Overview.qmd) section.
+
+# Discussion
+
+Because you'll be doing the project reviews, there is no discussion assignment for this module.
+
+<!-- Find a peer-reviewed paper where the authors use one or several of the approaches covered this week, and discuss if the authors properly explain and justify why they are doing what they are doing, and why you think what they are doing is or is not a good approach given their stated objective(s). -->
+
+<!-- Post your discussion (with link to paper) by Wednesday, then read at least one other paper posted by your classmates and comment on it. -->

@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Andreas Handel">
+
+<title>MADA Course - Types of Data</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../modules/module_data_intro/Data_Finding.html" rel="next">
+<link href="../../modules/module_coding_basics/Rcoding_Tidyverse.html" rel="prev">
+<link href="../../media/MADAlogo.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar docked nav-fixed fullcontent">
+
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../media/MADAlogo.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">MADA Course</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../courseinfo/Course_Syllabus.html" rel="" target="">
+ <span class="menu-text">General Information</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../../modules/module_intro_tools/Introduction_Course.html" rel="" target="" aria-current="page">
+ <span class="menu-text">Content</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../modules/module_intro_tools/Assessment_Course_Tools_Introduction.html" rel="" target="">
+ <span class="menu-text">Assessments</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../project/Project_Overview.html" rel="" target="">
+ <span class="menu-text">Project</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../resources/Course_Resources.html" rel="" target="">
+ <span class="menu-text">Resources</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/andreashandel/MADAcourse" rel="" target=""><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../modules/module_data_intro/Data_Types.html">4. Contemplating, Finding and Wrangling Data</a></li><li class="breadcrumb-item"><a href="../../modules/module_data_intro/Data_Types.html">Data Types</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
+ <span class="menu-text">1. Course and Tools Introduction</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module_intro_tools/Introduction_Course.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Course Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module_intro_tools/Tools_RandRStudio.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R and Rstudio</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module_intro_tools/Tools_Github_Introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">GitHub Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module_intro_tools/Tools_Github_R_Workflow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">GitHub and R Workflow</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module_intro_tools/Tools_Reproducibility.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Reproducibility, Quarto &amp; Co</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module_intro_tools/Tools_AI.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">AI Tools</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module_intro_tools/Tools_Reference_Management.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Reference Management</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module_intro_tools/Tools_Tips_Guidance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Guidance and Tips for R/RStudio/GitHub</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+ <span class="menu-text">2. Data Analysis Introduction</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module_data_analysis/Data_Analysis_Motivation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Motivating Examples</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module_data_analysis/Data_Analysis_Overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Analysis Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module_data_analysis/Data_Analysis_Structure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Analysis Structure</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+ <span class="menu-text">3. R Coding Basics</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module_coding_basics/Rcoding_Basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R Coding Basics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module_coding_basics/Rcoding_Tidyverse.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tidyverse and Friends</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+ <span class="menu-text">4. Contemplating, Finding and Wrangling Data</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module_data_intro/Data_Types.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Data Types</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module_data_intro/Data_Finding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Finding Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module_data_intro/Data_Generation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Making Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module_data_intro/Data_Wrangling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Wrangling</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+ <span class="menu-text">5. Presenting Data and Results</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module_data_presentation/Presenting_Results_Overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presenting Results Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module_data_presentation/Visualization_Overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Visualization Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module_data_presentation/Visualization_in_R.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Visualization in R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module_data_presentation/Tables_in_R.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tables in R</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
+ <span class="menu-text">6. Data Exploration</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module_data_exploration/Data_Exploration.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exploring data</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false">
+ <span class="menu-text">7. Statistical Analysis Overview</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module_stats_overview/Statistical_Analysis_Introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Statistical Analysis Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module_stats_overview/Statistical_Terminology.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Some Statistical Model Fitting Terminology</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false">
+ <span class="menu-text">8. Fitting Basic Statistical Models</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module_model_basics/Basic_Statistical_Models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Basic Statistical Models</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module_model_basics/Model_Fitting_R.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fitting Statistical Models in R</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false">
+ <span class="menu-text">9. Evaluating Your Model Fits</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module_model_evaluation/Model_Evaluation_Overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model Evaluation Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module_model_evaluation/Model_Evaluation_Performance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model Performance Evaluation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module_model_evaluation/Model_Evaluation_Overfitting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model Performance &amp; Overfitting</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module_model_evaluation/Model_Evaluation_Diagnostics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model Diagostics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module_model_evaluation/Model_Evaluation_Uncertainty.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model Uncertainty</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false">
+ <span class="menu-text">10. Improving Your Model Fits</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module_model_improvement/Model_Improvement_Overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Improving Model Fits Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module_model_improvement/Model_Improvement_Data_Processing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Pre-Processing Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module_model_improvement/Model_Improvement_Subset_Selection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Subset Selection</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module_model_improvement/Model_Improvement_Regularization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Regularization</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module_model_improvement/Model_Improvement_Tuning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model Tuning</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="false">
+ <span class="menu-text">11. Machine Learning Models I</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module_model_ml_1/ML_Models_Overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ML Models Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module_model_ml_1/Polynomial_Spline_Models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Polynomial and Spline Models</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module_model_ml_1/Decision_Trees.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Decision Trees</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module_model_ml_1/Many_Tree_Models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Many-Tree Models</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="false">
+ <span class="menu-text">12. Machine Learning Models II</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module_model_ml_2/SVM_Models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Support Vector Machine Models</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module_model_ml_2/DA_Models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Discriminant Analysis Models</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module_model_ml_2/More_ML_Models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Some More ML models</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" aria-expanded="false">
+ <span class="menu-text">13. Complete Analysis Workflow</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module_workflow/Complete_Data_Analysis_Workflow.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Complete Data Analysis Workflow</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module_workflow/Data_Models_Not_Covered.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">More Data and Models</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module_workflow/Open_Science.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Open Science</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" aria-expanded="false">
+ <span class="menu-text">14. Deep Learning, AI &amp; Big Data</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module_big_data/DL_AI_BigData.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Deep Learning, AI &amp; Big Data</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives">Objectives</a></li>
+  <li><a href="#what-is-data" id="toc-what-is-data" class="nav-link" data-scroll-target="#what-is-data">What is data</a></li>
+  <li><a href="#types-of-variables" id="toc-types-of-variables" class="nav-link" data-scroll-target="#types-of-variables">Types of Variables</a></li>
+  <li><a href="#analysis-approaches-based-on-data" id="toc-analysis-approaches-based-on-data" class="nav-link" data-scroll-target="#analysis-approaches-based-on-data">Analysis approaches based on data</a></li>
+  <li><a href="#working-with-different-data-types-in-r" id="toc-working-with-different-data-types-in-r" class="nav-link" data-scroll-target="#working-with-different-data-types-in-r">Working with different data types in R</a>
+  <ul class="collapse">
+  <li><a href="#basic-data-types" id="toc-basic-data-types" class="nav-link" data-scroll-target="#basic-data-types">Basic data types</a></li>
+  <li><a href="#data-structures-in-r" id="toc-data-structures-in-r" class="nav-link" data-scroll-target="#data-structures-in-r">Data structures in R</a></li>
+  <li><a href="#non-rectangular-data" id="toc-non-rectangular-data" class="nav-link" data-scroll-target="#non-rectangular-data">Non-rectangular data</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Types of Data</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Andreas Handel </p>
+          </div>
+  </div>
+    
+  
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">2023-12-14</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
+<section id="overview" class="level1">
+<h1>Overview</h1>
+<p>For this unit, we will discuss different types of data and how data type influences the analysis approach.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../media/dilbert_wrongdata.gif" class="img-fluid figure-img" style="width:80.0%" alt="A Dilbert comic strip in three panels. In the first panel, Dilbert's boss says to use the CRS database to size the market, and Dilbert replies 'That data is wrong'. In the second panel, the boss says 'Then use the SIBS database,' to which Dilbert replies, 'That data is also wrong.' In the third and last panel, the boss says 'Can you average them?' and Dilbert replies 'Sure. I can multiply them too.'"></p>
+<figcaption class="figure-caption">You might not want to get yourself that kind of data. Source: dilbert.com.</figcaption>
+</figure>
+</div>
+</section>
+<section id="objectives" class="level1">
+<h1>Objectives</h1>
+<ul>
+<li>Understand different types of data</li>
+<li>Know that different data types require different analysis approaches</li>
+<li>Know different base data types in R and how to deal with them</li>
+<li>Know about important data structures in R and how to deal with them</li>
+</ul>
+</section>
+<section id="what-is-data" class="level1">
+<h1>What is data</h1>
+<p>Broadly speaking, we can define data as anything that (potentially) contains information. Data can be images, sound, video, text, or a combination of any of these. You most likely encounter data in spreadsheets, with observations as rows and variables as columns. However, data is getting much more varied and complex. Data from fitness devices such as Fitbits, Tweets, Facebook posts, purchasing behavior, movement, etc. are all streams of data that can contain useful information.</p>
+<p>The kind of data determines the amount of processing that needs to be done before analysis. Somehow you need to turn your data into something that you can analyze. While analysis of images, video, and text is undoubtedly interesting, it is not the focus of this course. But you are still welcome to use such sources of data for your project.</p>
+<p><strong>In this course, we focus on the data source that you are most likely to encounter in your analyses. And that data source is quite likely the “(messy) spreadsheet” type, containing bits of information collected on individuals.</strong> You are of course welcome to play around with other data types during this course, e.g.&nbsp;for your course project.</p>
+<p>If you want to hear someone else’s definition and explanation of what data is, you can watch this video by <a href="http://jtleek.com/">Jeff Leek</a>.</p>
+<div class="container">
+<iframe class="video" src="https://www.youtube.com/embed/sRArT81TVEM" frameborder="0" allowfullscreen="">
+</iframe>
+</div>
+</section>
+<section id="types-of-variables" class="level1">
+<h1>Types of Variables</h1>
+<p>We usually refer to pieces of data/information (e.g., gender and age) as variables. Different types of variables exist, and depending on the type, the analysis will be different. The main categories are:</p>
+<p><strong>Quantitative:</strong> This data type, also called <em>interval</em> data, generally allows one to do certain mathematical operations, e.g., subtraction or addition. Different subcategories exist:</p>
+<ul>
+<li>Continuous: Can, in principle, be any number. Examples are height, weight, age, etc.</li>
+<li>Discrete: Can only take discrete (integer) values, e.g., the number of siblings a person has.</li>
+<li>Fraction/Proportion: Continuous, but between 0-1.</li>
+<li>Sometimes other special forms (e.g., only positive, only in some range).</li>
+<li>A special case of quantitative data is <em>ratio</em> data. Data measured on a ratio scale have all the properties of interval data, and in addition, the zero value is a “true zero”. That is, a value of zero represents an actual minimum possible variable. For example, mass and distance are ratio data. Multiplying and dividing ratio scale data makes sense (e.g.&nbsp;a 2 kilogram pumpkin has twice the mass of a 1 kilogram pumpkin).</li>
+</ul>
+<p><strong>Qualitative:</strong> Broadly speaking, qualitative data are those that do not allow one to perform any mathematical operations such as subtraction or addition. Qualitative data which has no intrinsic order is also caled <em>nominal</em> (scale) data. Types of such data are:</p>
+<ul>
+<li>Descriptive: e.g., free text data from participant interviews.</li>
+<li>Categorical: e.g., hair color, ethnicity. No ordering is possible. A special and common case of categorical is data with 2 categories, e.g., yes/no, dead/alive, diseased/healthy.</li>
+</ul>
+<p><strong>Ordinal:</strong> This is usually considered a type of categorical variable, but it is worth thinking about it as something on its own. Ordinal data fall in between being strictly quantitative or strictly qualitative. For instance, if a question asks a person to rank their level of a pain on a scale from 1-10, a 7 is clearly higher than a 6, and a 6 higher than a 5. But it’s unclear if the difference between 5 and 6 is the same as 6 and 7. Thus it is not clear if one can do operations like subtraction (to get a difference of 1 in each case). Another example is level of education, which a survey might collect in categories of ‘no high school’, ‘high school’, ‘some college’, ‘college degree’, ‘graduate degree’. We could code that with numbers 1-5, and in some sense these items are ordered, but it’s unclear if one is justified in considering the difference between ‘high school (2)’ and ‘some college (3)’ the same as ‘some college (3)’ and ‘college degree (4)’.</p>
+</section>
+<section id="analysis-approaches-based-on-data" class="level1">
+<h1>Analysis approaches based on data</h1>
+<p>The type of variables will influence the analysis approach. That’s especially true for the outcomes of interest, less so for the independent, predictor variables.</p>
+<p>Methods applied to quantitative outcomes are usually referred to as <strong>regression approaches</strong>, with different variants depending on the subtype (e.g., linear regression for continuous, Poisson regression for discrete). Methods applied to categorical outcomes are usually referred to as <strong>classification approaches.</strong><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> If you have an ordinal outcome, you can use <a href="https://en.wikipedia.org/wiki/Ordinal_regression"><strong>ordinal regression</strong></a>. Alternatively, you can treat the outcome as unordered categorical or as continuous (depending on how you code them, i.e., in R as a factor or numeric). There are no rules as to when it is ok to treat an ordinal variable as fully quantitative. It is often done but needs to be justified. You can always treat it as categorical, but then you lose some information, namely the ordering.</p>
+<p>In the machine learning literature, <em>supervised</em> learning refers to cases when we have a specific outcome of interest. This kind of data is most common. For data where there is no clear outcome, analysis methods are usually referred to as clustering approaches and are also called <em>unsupervised</em> learning methods.</p>
+<p>We will discuss and apply some of those methods in more detail when we begin our discussion of analysis methods.</p>
+</section>
+<section id="working-with-different-data-types-in-r" class="level1">
+<h1>Working with different data types in R</h1>
+<p>To efficiently work with data in R, you need to understand how the types of data described above are represented in and handled by R.</p>
+<p>The following is a summary of the most important data types in R. I’m also listing useful packages to deal with them. You have already seen some of the information I describe below. Now would be a good time to revisit the <em>Types</em> section of the Posit <a href="https://posit.cloud/learn/primers/1.2">Programming Basics recipe</a> and to revisit <a href="https://rafalab.github.io/dsbook/r-basics.html">chapter 3 of <em>IDS</em></a>.</p>
+<section id="basic-data-types" class="level2">
+<h2 class="anchored" data-anchor-id="basic-data-types">Basic data types</h2>
+<p><strong>Characters/strings:</strong> A string is a collection of characters. You will often hear the labels “character” and “string” used interchangeably, though strictly speaking, a string is a collection of characters. Everything can be encoded as a character string. Unfortunately, you cannot do a lot of analysis with strings. For instance, if you have the numbers 2 and 3, you can add and subtract. But if you code those numbers as characters “2” and “3”, you can’t do much with them. Thus, transforming characters into other, more useful categories (if applicable) is a common task. It is common that you read in some data and there is a variable which should be numeric, but some entries are not (e.g., the original spreadsheet shows something like “&lt;10”). In this case, R reads all of these variables as characters. You then have to go in, clean the “&lt;10” value, and convert the rest to numeric. Sometimes you do want to work with strings directly. There are many tools and packages in R that are helpful, including base R command. The <a href="https://stringr.tidyverse.org/"><code>stringr</code> package</a> is particularly useful.</p>
+<p>It is quite likely that you will need to work with strings at some point during a data analysis, even if it is only to find specific values, clean up variable names, etc. Thus, learning more about this topic is a good idea. A very powerful, and also very confusing way to deal with strings is to use what are called <em>regular expressions</em> (or regex for short). This concept applies to any programming language, not just R. Being at least somewhat familiar with the concept of <a href="https://github.com/rstudio/cheatsheets/blob/master/regex.pdf">regular expressions</a> is useful.</p>
+<p>If you have no experience manipulating strings, I suggest you work through the <a href="https://r4ds.had.co.nz/strings.html">Strings chapter (14) of <em>R4DS</em></a>, and do the exercises. The <a href="https://rafalab.github.io/dsbook/string-processing.html">string processing chapter (25) of <em>IDS</em></a> contains further good material that is worth working through. Another good source is the <a href="https://stat545.com/character-vectors.html">Character Vectors chapter in the <em>STAT 545</em> book</a> by <a href="https://jennybryan.org/">Jenny Bryan</a>. Take a look at those various sources, decide which one is right for your level and go through some of them. And/or consult them as needed.</p>
+<p><strong>Factors:</strong> That’s what R calls categorical variables. They can be ordered/ordinal or not. You need to make sure variables that should be coded as a factor are, and that those that shouldn’t be aren’t. For instance, you might have a variable with entries of 0, 1, and 2. Those could be numeric values, e.g., the number of siblings a person has. Or it could be a factor coding for 3 types of ethnicity (unordered), or 3 levels of socioeconomic status (ordered). You need to make sure it is coded as factor or numeric, based on what you know about the variable. An excellent package to work with factors is the <a href="https://forcats.tidyverse.org/"><code>forcats</code> package</a>.</p>
+<p>To learn some more about factors, you might want to go through the <a href="https://r4ds.had.co.nz/factors.html">Factors chapter of <em>R4DS</em></a>, and do the exercises.</p>
+<p><strong>Logical:</strong> You can think of a logical variable as a type of categorical variable with 2 categories, TRUE and FALSE. Alternatively, in R, 0 is interpreted as FALSE and 1 as TRUE (and vice versa). You will use those logical values often when checking your data, e.g., if you want to see if your variable <code>x</code> is greater than 5, then the R command <code>x &gt; 5</code> will return either TRUE or FALSE, based on the value of <code>x</code>.</p>
+<p><strong>Numeric (double/integer):</strong> Numeric values that are either integers or any other numeric value (double). You generally do not need to care too much how exactly your numeric values are coded. Often, you can treat integers as general numeric value. (In R, a general numeric variable is called <code>double</code>.) You might rarely come across a case where some analytic method or other bits of code requires integers to be specified as such. In R, you can use the <code>as.integer()</code> function to convert general numeric values to integers. You don’t really need any other special packages in R to deal with numeric values. Note that when you type an integer value, e.g.&nbsp;<code>x &lt;- 2</code>, into R, this is considered numeric by default. If you want to make sure it is treated as integer, add an <code>L</code>, e.g.&nbsp;<code>x &lt;- 2L</code>.</p>
+<p><strong>Date/time:</strong> While dates are a type of continuous numeric variable, you should assign the date class explicitly in R, which allows you to do more with them. Dates are quite difficult to work with in base R (which usually calls them <code>POSIX</code> variables). The <a href="https://lubridate.tidyverse.org/"><code>lubridate</code> package</a> is a good package to work with dates, and is more user friendly. Others exist.</p>
+<p>To learn some more about dates and times in R, check out the <a href="https://r4ds.had.co.nz/dates-and-times.html">Dates and times chapter of <em>R4DS</em></a> as well as the <a href="https://rafalab.github.io/dsbook/parsing-dates-and-times.html">Parsing Dates and Times chapter of <em>IDS</em></a>.</p>
+</section>
+<section id="data-structures-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="data-structures-in-r">Data structures in R</h2>
+<p>The basic data types in R are usually combined into larger objects. The main ones in R are described in the following.</p>
+<p><strong>Vectors:</strong> vectors are a simple collection of elements in a single row or column. In R, the easiest way to create vectors is with the <code>concatenate</code> command, <code>c()</code>. An example is <code>x1 &lt;- c(3,12,5)</code>. A single vector can contain only one element type (e.g., all characters or all numeric). If you try to mix and match, everything ends up as a character. Type the command for <code>x1</code> and <code>x2 &lt;- c(6, 5, 'h')</code> into R and apply the <code>class()</code> command to both <code>x1</code> and <code>x2</code> and note the difference.</p>
+<p><strong>Matrices:</strong> A matrix is a collection of elements in rows and columns. A matrix can contain only one element type. You can think of a matrix as a collection of <code>horizontal vectors</code> stacked on top of each other or <code>vertical vectors</code> next to each other.</p>
+<p><strong>Data frames:</strong> A data frame has the same shape as a matrix, i.e., it is a collection of elements in rows and columns. The critical difference is that each column of a data frame can contain elements of different types. This makes it ideal for storing data, with each row and observation and each variable in a column, and different columns potentially with different data types. E.g., column 1 could be age and numeric, and column 2 could be gender and be categorical, etc.</p>
+<p><strong>A list:</strong> Lists are the most flexible data types in R. You can combine different elements as in data frames. Further, each element can be of varying length. For instance, you could have the first list element contain a person’s name, the second list element their age, the third their address. You can even have other elements inside lists, for instance, you could have a data frame as a list element containing the names and ages of the person’s parents. Lists are very flexible, and if you get deeper into data analysis, you’ll be working with them. The downside is that because they are more flexible, they can also be a bit more confusing to work with. With enough practice, you’ll figure it out. Also note that almost every function in R that returns something a bit more complicated to you (e.g., the result from a linear fit), returns it as a list.</p>
+<p>Other types of data structures exist; they are often introduced by specific R packages. An important one to know is the <code>tibble</code> which is a type of data frame used in the <code>tidyverse</code>. It is similar, but not exactly like a data frame. You can read more about <code>tibbles</code> <a href="https://tibble.tidyverse.org/">on its package website</a> and in <a href="https://r4ds.had.co.nz/tibbles.html"><em>R4DS</em> chapter 10</a>.</p>
+<p>For some more information, you can check out this video by <a href="http://jtleek.com/">Jeff Leek</a> where he talks about the types of data and structures I described above. He also shows some R/coding examples and discusses the important concept of missing values and <code>NA</code>.</p>
+<div class="container">
+<iframe class="video" src="https://www.youtube.com/embed/T9n7j8180GQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
+</div>
+</section>
+<section id="non-rectangular-data" class="level2">
+<h2 class="anchored" data-anchor-id="non-rectangular-data">Non-rectangular data</h2>
+<p>We don’t have the time to cover analysis of all the variety of data that exists. As stated before, our focus here was on the analysis of what is sometimes called <em>rectangular data</em>. We have observations (individual units of data) generally as rows, and variables (outcome and predictors) as columns. This is still the most common type of data, especially in public health and more generally the life sciences. However, more complex types of data are rapidly increasing in frequency and importance. If the data has a different structure, it will usually require different, specialized analysis approaches. The good news is that most of what we cover in this course still applies. The difference is often in the processing of the data, and the exact way data and models are combined.</p>
+<p>At the end of the course, there is a page that briefly goes into other types of data (time-series, text, and some others) and provides very brief pointers for further resources, should you be interested in data of that type.</p>
+
+
+</section>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Logistic regression, which you might be familiar, is used for classification. However, the underlying model predicts a quantitative outcome (a value between 0 and 1 usually interpreted as a probability), which is then binned to make categorical predictions.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../modules/module_coding_basics/Rcoding_Tidyverse.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Tidyverse and Friends</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../modules/module_data_intro/Data_Finding.html" class="pagination-link">
+        <span class="nav-page-text">Finding Data</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
