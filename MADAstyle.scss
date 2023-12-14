@@ -26,9 +26,15 @@ div.sidebar-item-container .active, div.sidebar-item-container .show>.nav-link, 
 
 /* Images ---------------*/
 
-// Align caption to center
-.panel-caption, .figure-caption, figcaption {
-    text-align: center;
+// Quarto figure class contains the figure and the figure-caption. The below rules set the figure class to center-justify both the image and caption. But the text itself in the caption is left-justified.
+
+.figure {
+  display: grid;
+  justify-items: center;
+}
+
+.figure-caption {
+  text-align: left;
 }
 
 /* .image {
@@ -52,7 +58,7 @@ div.sidebar-item-container .active, div.sidebar-item-container .show>.nav-link, 
 }
  */
 
-/* Image inside figure div, for diagrams ---------------*/
+/* Image inside figure div, for diagrams ---------------
 
 .figure img {
 	max-width: 100%;
@@ -64,7 +70,7 @@ div.sidebar-item-container .active, div.sidebar-item-container .show>.nav-link, 
 	padding: 0;
 	margin: auto;
 }
-
+*/
 
 .thumbnail .caption {
   padding: 0;

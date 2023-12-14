@@ -29,14 +29,14 @@ format:
     grid: 
     # see https://quarto.org/docs/output-formats/page-layout.html#html-page-layout
       content-mode: full # uses up the full screen
-      sidebar-width: 350px # widens the sidebar so most module names fit on one line
+      sidebar-width: 300px # widens the sidebar so most module names fit on one line
       body-width: 900px # widens body content
   
 website:
   title: "MADA Course"
   description: "Modern Applied Data Analysis (MADA)"
-  site-url: https://andreashandel.github.io/MADAcourse/
-  repo-url: https://github.com/andreashandel/MADAcourse/
+  # site-url: https://andreashandel.github.io/MADAcourse/
+  # repo-url: https://github.com/andreashandel/MADAcourse/
   favicon: media/MADAlogo.png
   page-navigation: true # adds previous/next buttons to bottom of page
   navbar:
