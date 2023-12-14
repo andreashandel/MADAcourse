@@ -13,14 +13,17 @@ execute:
 format:
   html:
     theme: [yeti, MADAstyle.scss]
+    # author and date get added to every page unless you specify author: "" and date: "" in the document YAML header
     author: 
       - name: "Andreas Handel"
     date-modified: last-modified
-    date-format: iso
+    date-format: iso # YYYY-MM-DD
+    # table of contents on every page unless you set `toc: false`
     toc: true
     toc_depth: 3
     toc_float: 
       collapsed: false
+    # link-external-newwindow: true # open links in new tab or window
     fig-align: center # images need a caption to be considered a figure (https://github.com/quarto-dev/quarto-cli/issues/6509)
     highlight-style: a11y # accessible syntax color theme
     grid: 
@@ -31,6 +34,7 @@ format:
   
 website:
   title: "MADA Course"
+  description: "Modern Applied Data Analysis (MADA)"
   site-url: https://andreashandel.github.io/MADAcourse/
   repo-url: https://github.com/andreashandel/MADAcourse/
   favicon: media/MADAlogo.png

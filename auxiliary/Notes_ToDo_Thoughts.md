@@ -276,6 +276,18 @@ I adjusted the css for the note and warning divs for more modern rounded borders
 - Not broken, but goes to general Journal website, not an actual article: https://academic.oup.com/jn/article/143/6/931/4571741
   - from modules: module_data_analysis/Data_Analysis_Overview.qmd
   
+## Open links in new tab or window
+
+I noticed you have this on your landing page: 
+
+> "Note that by default, all links open in the current tab. You’ll likely want external ones to open in a separate tab or window. To do so, you can (with most browsers) hold the Ctrl button when clicking, or do a right-click and select open in new tab/window."
+
+I added the following to `_quarto.yml` in case you'd prefer the default to have links open in a new tab, you just need to uncomment this line out.
+
+```
+# link-external-newwindow: true # open links in new tab or window
+```
+  
 ## Markdown: bold and italics and horizontal lines
 
 I changed underscores to asterisks for bold and italics for markdown best practices according to the [Markdown Guide](https://www.markdownguide.org/basic-syntax/#bold-best-practices).
