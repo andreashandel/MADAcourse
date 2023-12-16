@@ -29,7 +29,7 @@ format:
     toc_depth: 3
     toc_float: 
       collapsed: false
-    # link-external-newwindow: true # open links in new tab or window
+    link-external-newwindow: true # open external links in new tab or window
     fig-align: center # images need a caption to be considered a figure (https://github.com/quarto-dev/quarto-cli/issues/6509)
     highlight-style: a11y # accessible syntax color theme
     grid: 
@@ -199,10 +199,17 @@ website:
                file: modules/module_workflow/Data_Models_Not_Covered.qmd
              - text: "Open Science"
                file: modules/module_workflow/Open_Science.qmd
-          - section: "14. Deep Learning, AI & Big Data"
+          - section: "14. AI & Big Data"
             contents:
-             - text: "Deep Learning, AI & Big Data"
-               file: modules/module_big_data/DL_AI_BigData.qmd  
+             - text: "AI Introduction"
+               file: modules/module_ai/ai-introduction/ai-introduction.qmd  
+             - text: "AI Concepts"
+               file: modules/module_ai/ai-conceptual/ai-conceptual.qmd  
+             - text: "AI for EDA"
+               file: modules/module_ai/ai-eda-R/ai-eda-R.qmd  
+             - text: "Current AI Tools"
+               file: modules/module_ai/ai-tools/ai-tools.qmd  
+            
             
       - title: "Assessments"
         contents:

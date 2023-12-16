@@ -87,8 +87,6 @@ This is a quantitative course. We will not discuss the mathematical details of s
 
 If you do not have any coding or statistics knowledge, you can still take the class, but you need to be prepared to spend extra time and effort to fill any gaps. This will be especially true for the R coding part. Some of you likely have previous R experience, while others might have little to none. If you are in the *little to none* category, expect to spend extra time getting up to speed. I believe it's doable and worth the effort, but you need to be prepared for it. There will be plenty of help from myself, classmates, and the internet if you end up getting stuck with some of the coding, but your effort and commitment are still required.
 
-**To re-emphasize: For those among you who have not used R or any other programming language before, this course will be time-consuming. Budget your time accordingly and plan ahead! If you do, I'm fairly certain you will find it worth it. If you are not able or willing to allot the time needed to learn enough R (and GitHub) to make things work, this course might not be ideal for you.**
-
 
 ## Should I take this course?
 
@@ -102,6 +100,9 @@ Here are a few more pointers to what to expect from the course, and comments fro
 * You will learn skills that are likely useful for your research/work career.
 * You will be using `R`, `GitHub`, `Quarto` and other useful tools.
 
+:::{.emphasis}
+To re-emphasize: This course requires a significant time commitment, especially if you have not used R or any other programming language before. Budget your time accordingly and plan ahead! If you do, I'm fairly certain you will find it worth it. If you are not able or willing to allot the time needed to learn enough R (and GitHub) to make things work, this course might not be ideal for you.
+:::
 
 ### Some feedback from past students
 

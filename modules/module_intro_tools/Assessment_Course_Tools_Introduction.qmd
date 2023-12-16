@@ -3,7 +3,7 @@ title: Assessment - Course and Tools Introduction
 subtitle: ""
 ---
 
-# Overview Reminder
+# Reminder
 
 Each module comes with assessments. Those are things you need to do that will be graded. The table on the [**Schedule**](../../courseinfo/Course_Schedule.qmd) page lists the assessments for each module.
 

@@ -1,0 +1,55 @@
+---
+title: A conceptual framework for thinking about AI
+subtitle: ""
+date: 2023-12-01
+date-modified: last-modified
+output: 
+  html_document:
+    toc_depth: 3
+---
+
+
+
+```{r setup, include=FALSE}
+library(emoji)
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+
+# Overview
+This unit consists of some thoughts and musings about AI and how to best think of and use it in a bigger picture framework.
+
+# Goals
+By the end of the unit, you should:
+
+* Know about a few ways one can conceptualize current AI tools.
+
+
+# Introduction
+
+Your goal is generally to analyze some real-world data to answer a question. So what's the point of producing synthatic (also often referred to as simulated or artificial or fake) data? There are several good reasons why this can sometimes be useful.
+
+
+# AI as the intern/1st year graduate
+
+
+# AI as electricity
+
+
+
+
+# Summary
+
+To sum up,  important reasons to use synthetic data are:
+
+
+
+# Further Resources
+
+In the next units, we will discuss how to actually generate synthetic data and how to use it.
+
+
+
+

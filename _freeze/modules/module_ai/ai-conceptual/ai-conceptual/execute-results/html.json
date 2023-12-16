@@ -1,0 +1,14 @@
+{
+  "hash": "edaacc443d7d1fd7678373bf944b6be2",
+  "result": {
+    "markdown": "---\ntitle: A conceptual framework for thinking about AI\nsubtitle: \"\"\ndate: 2023-12-01\ndate-modified: last-modified\noutput: \n  html_document:\n    toc_depth: 3\n---\n\n\n\n\n\n\n\n# Overview\nThis unit consists of some thoughts and musings about AI and how to best think of and use it in a bigger picture framework.\n\n# Goals\nBy the end of the unit, you should:\n\n* Know about a few ways one can conceptualize current AI tools.\n\n\n# Introduction\n\nYour goal is generally to analyze some real-world data to answer a question. So what's the point of producing synthatic (also often referred to as simulated or artificial or fake) data? There are several good reasons why this can sometimes be useful.\n\n\n# AI as the intern/1st year graduate\n\n\n# AI as electricity\n\n\n\n\n# Summary\n\nTo sum up,  important reasons to use synthetic data are:\n\n\n\n# Further Resources\n\nIn the next units, we will discuss how to actually generate synthetic data and how to use it.\n\n\n\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

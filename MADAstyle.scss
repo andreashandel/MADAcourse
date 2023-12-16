@@ -106,11 +106,11 @@ a.thumbnail:hover {
 
 div.note
 {
-    padding: 1em;
-    margin: 1em 0;
+    padding: 0.5em;
+    margin: 0.5em 0;
     color: #153e67;
     background-color: #dde8f6;
-    border: solid 10px #ecf4ff;
+    border: solid 5px #ecf4ff;
     border-radius: 10px;
 
 }
@@ -124,6 +124,18 @@ div.warning
     border: solid 10px #fff4f2;
     border-radius: 10px;
 }
+
+div.emphasis
+{
+    padding: 0.5em;
+    margin: 0.5em 0;
+    color: #145233;
+    background-color: #d6f5e6;
+    border: solid 5px #33cc80;
+    border-radius: 10px;
+
+}
+
 
 
 /* -----------div tips------------- */

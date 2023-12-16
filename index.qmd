@@ -32,7 +32,7 @@ The **Project** section provides instructions and detailed information for the s
 
 The **Resources** section contains a **Course Resources** document with listings of materials that are most relevant to the course. Some of this material will assigned as part of this course. You will be told what exactly to read or work through. The **General Resources** section lists other resources in case you might find them helpful. All materials are (should be) available freely online. The **Glossary** section provides brief definitions of terms used in this course.
 
-Note that by default, all links open in the current tab. You'll likely want external ones to open in a separate tab or window. To do so, you can (with most browsers) hold the `Ctrl` button when clicking, or do a right-click and select `open in new tab/window`.
+<!-- Note that by default, all links open in the current tab. You'll likely want external ones to open in a separate tab or window. To do so, you can (with most browsers) hold the `Ctrl` button when clicking, or do a right-click and select `open in new tab/window`. -->
 
 # Getting started
 

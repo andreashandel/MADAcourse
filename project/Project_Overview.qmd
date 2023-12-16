@@ -3,10 +3,12 @@ title: Class Project Overview
 subtitle: ""
 ---
 
-*Some of this will only fully make sense once we are a few weeks into
+::: {.note}
+Some of this will only fully make sense once we are a few weeks into
 the course. It's nevertheless a good idea to read through it and get an
 overall idea before we have discussed all the different tools and
-details mentioned. Re-visit/re-read as needed.*
+details mentioned. Re-visit/re-read as needed.
+:::
 
 # Overview
 

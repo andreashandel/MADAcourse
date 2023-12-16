@@ -3,13 +3,11 @@
 Most general comments/thoughts are in the Notes and Thoughts document in the off-line course folder.
 
  
-
-
 # ToDo
 
-* Can we change color scheme to something less stark/dark?
+* Can we change color scheme to something less stark/dark? And could we have a light and dark scheme?
 * Can one make the images larger, they are at times hard to see/read.
-
+* Switch most of the bold text blocks to callouts/divs (currently note/emphasis/warning) 
 
 
 --
@@ -26,6 +24,7 @@ Most general comments/thoughts are in the Notes and Thoughts document in the off
 ## Helpful tip for getting YAML indentations
 
 Any time I work in the `.yml`, I turn on indentation guides. Indentation is so important and so annoying! In RStudio > `Tools` > `Global Options` > `Code` > `Display` > `Indentation Guides` > pick an option from the dropdown menu. I've also commented the number of indents in the examples below for your reference.
+
 
 ## Quarto Conversion notes
 
@@ -242,37 +241,7 @@ YouTube
  
 Accessibility is really important to me so I thought I'd call attention to some of your hyperlink names. Most are great (concise and descriptive) but some are just called [here] which aren't [helpful link names](https://www.a11yproject.com/posts/creating-valid-and-accessible-links/). 
 
-Not good:
 
-You can find the published paper [here](https://doi.org/10.1098/rspb.2020.0496). All materials to reproduce the full project and all results are available as supplementary material [here](https://doi.org/10.5061/dryad.51c59zw4v).
-
-Good:
-
-Read the [published paper](https://doi.org/10.1098/rspb.2020.0496). All materials to reproduce the full project and all results are available as [supplementary material](https://doi.org/10.5061/dryad.51c59zw4v).
-
-**I can adjust these for you, just let me know if you're okay with it.**
-
-**AH: Agree, making things accessible if possible is a good idea. So yes, feel free to adjust any of those and reword to make it better. (There might be other areas where this is not ideal, for instance I'm not sure I have alt-text for all figures and other embeddings. Feel free to add any of that too if you run into something that you think needs improvement)**
-
-JR: I replaced most "here" and "this" with either the article's `Author Year` or a short description of the linked resource.
-
-I also removed most "the", "a", and other articles outside of the hyperlinks.
-
-For consistency sake, I tried to go through and italicize article and book names.
-
-Added alt-text to images except:
-- (../../media/islr-fig29.jpg) in Model_Evaluation_Overfitting
-- (../../media/cross_validation.jpg) in Model_Evaluation_Overfitting
-
-## Styling
-
-I replaced your `.css` with `.scss`. I changed the primary color to the green from the `?` in the MADA logo.
-
-**AH: I like things to look good, but I'm not much of a styler/designer :), so feel free to improve the looks of everything as much as you like. (Just don't make it too complicated, I don't want to have a lot of overhead/complexity like calling extra packages for fancy fonts or stuff like that)**
-
-JR: got it :)
-
-I adjusted the css for the note and warning divs for more modern rounded borders, and lighter background colors that meet WGA color contrast standards for the body text and hyperlinks.
 
 ## Broken links
 
@@ -285,35 +254,7 @@ I adjusted the css for the note and warning divs for more modern rounded borders
 - Not broken, but goes to general Journal website, not an actual article: https://academic.oup.com/jn/article/143/6/931/4571741
   - from modules: module_data_analysis/Data_Analysis_Overview.qmd
   
-## Open links in new tab or window
 
-I noticed you have this on your landing page: 
-
-> "Note that by default, all links open in the current tab. You’ll likely want external ones to open in a separate tab or window. To do so, you can (with most browsers) hold the Ctrl button when clicking, or do a right-click and select open in new tab/window."
-
-I added the following to `_quarto.yml` in case you'd prefer the default to have links open in a new tab, you just need to uncomment this line out.
-
-```
-# link-external-newwindow: true # open links in new tab or window
-```
-  
-## Markdown: bold and italics and horizontal lines
-
-I changed underscores to asterisks for bold and italics for markdown best practices according to the [Markdown Guide](https://www.markdownguide.org/basic-syntax/#bold-best-practices).
-
-For consistency I made:
-
-- books and articles *italics*
-- internal links to other pages on the course website **bold**
-- left whatever regular text as you had it italicized or bold
-
-In `Course_Glossery.qmd`, there was an entire line of 80 dashes. With Quarto, you only need 3 to create a horizontal rule :)
-
-## Publishing
-
-1. Run `quarto render` in terminal.
-2. Commit and push changes.
-3. Run `quarto publish gh-pages` in terminal and follow prompts.
 
 # Scribblings
 

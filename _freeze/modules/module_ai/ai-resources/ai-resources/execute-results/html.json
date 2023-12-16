@@ -1,0 +1,14 @@
+{
+  "hash": "15cf4f30d04cc0b4617f0640dae8f7da",
+  "result": {
+    "markdown": "---\ntitle: A collection of links to AI resources\nsubtitle: \"\"\ndate: 2023-12-01\ndate-modified: last-modified\noutput: \n  html_document:\n    toc_depth: 3\n---\n\n\n\n\n\n\n\n# Overview\nThis unit consists mainly of a collection of links to AI resources that might be useful. I tried to group them into themes and provide a bit of commentary. The focus is on generative AI tools.\n\n# Goals\nBy the end of the unit, you should:\n\n* Be aware of a few places where you can learn more about AI.\n\n\n\n# AI in general\n\n* [One Useful Thing](https://www.oneusefulthing.org/) is a Substack blog by Ethan Mollick where he discusses ideas around (generative) AI from a very applied user perspective. I read his writings regularly, and you might find a lot of what he wrote echoed in my writing, because that's where I get the ideas from 😁.\n\n\n* [Unconfuse Me](https://www.gatesnotes.com/Podcast) is a podcast by Bill Gates that covers all kinds of topics, but has a few interesting AI-themed ones, namely (as of this writing) episodes 2 and 5.\n\n\n# AI and teaching\n\n* [Wharton Interactive](https://interactive.wharton.upenn.edu/teaching-with-ai/) is an initiative by Ethan and Lilach Mollick and colleagues at Wharton that - among other things - looks at the use of AI for teaching and learning. The website contains some interesting ideas and links to papers that look further into AI use.\n\n\n# AI and Coding\n\n\n\n\n\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
