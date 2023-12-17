@@ -8,6 +8,8 @@ Most general comments/thoughts are in the Notes and Thoughts document in the off
 * Can we change color scheme to something less stark/dark? And could we have a light and dark scheme?
 * Can one make the images larger, they are at times hard to see/read.
 * Switch most of the bold text blocks to callouts/divs (currently note/emphasis/warning) 
+* Try to eventually have consistent naming of folders and files: All lowercase, with dashes as separators 
+https://developers.google.com/style/filenames 
 
 
 --

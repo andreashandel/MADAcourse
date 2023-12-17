@@ -1,0 +1,92 @@
+---
+title: Scrambling existing data - R
+subtitle: ""
+---
+
+
+
+```{r, include=FALSE, cache=FALSE}
+#R script that contains code chunks shown below
+knitr::read_chunk('synthetic-data-existing-R-example-code.R')
+```
+
+
+# Overview
+In this tutorial, we discuss how to scramble existing data to make it "new".
+
+
+# Goals
+
+* Be able to generate scrambled data with `R` based on existing data.
+
+
+
+# Introduction
+
+If you want to be as close to the original data as possible, you can just take that data and scramble values such that observations become new.
+
+Let's say you have individuals with different characteristics such as age, height, gender, BMI, etc. By just randomly re-assigning values for each variable to individuals, you create new individuals. Those individuals are not real and thus you minimize potential problems with confidentiality. 
+
+Since you are using exactly the same values for each variable as in the original dataset, the distribution for each variable remains the same and is thus very close (in fact, identical) to the real data.
+
+However, a problem with such scrambling is that while you preserve the distribution of each variable, you might break associations. For instance, males are generally taller than females. If you randomly scramble both gender and height without taking into account this potential association, you might end up with a dataset that has a distribution of heights among males and females that is the same. Depending on your goals, this might or might not be a problem.
+
+
+## AI help 
+
+Since you are working with the real data, you probably don't want to sue AI for this, unless your AI tool operates in a secure environment (e.g., fully on your companies' servers). 
+
+
+## Example
+
+Time for a simple example. You can find the code shown below in [this file](synthetic-data-existing-R-exmaple-code.R).
+
+
+### Setup
+
+First, we do the usual setup steps of package loading and other housekeeping steps.
+
+```{r, packages, message=FALSE, warning=FALSE}
+```
+
+```{r, setup, message=FALSE}
+```
+
+### Data loading and exploring
+
+We'll look at some real data from [this paper](https://royalsocietypublishing.org/doi/10.1098/rspb.2020.0496). As is good habit (and should be the standard), the authors (which includes some of us) supplied the data as part of the supplementary materials, which can be found [here](https://datadryad.org/stash/dataset/doi:10.5061/dryad.51c59zw4v). 
+
+If you want to work along, go ahead and download the supplement, which is a zip file. Inside the zip file, find the _Clean Data_ folder and the `SympAct_Any_Pos.Rda` file. Copy that file to the location where you'll be placing your `R` script. 
+
+First, we load the data. Note that the authors (that would be us `r emoji::emoji('smirking face')`) used the wrong file ending, they called it an `.Rda` file, even though it is an `.Rds` file (for a discussion of the differences, see e.g. [here](http://www.sthda.com/english/wiki/saving-data-into-r-data-format-rds-and-rdata)).
+
+
+### The data 
+
+```{r, loaddata}
+```
+
+Next, we take a peek.
+
+
+```{r, checkdata}
+```
+
+So it looks like these are 735 individuals (rows) and 63 variables (columns). A lot of them have names of symptoms and are coded as Yes/No. Some variables are harder to  understand, for instance without some meta-data/explanation, it is impossible to guess what `TransScore3F` stands for. Hopefully, your data came with some codebook/data dictionary/information sheet that explains what exactly everything means. For this specific data set, you can look through the supplementary materials to learn more. We won't delve into it now, and just pick out a few variables to illustrate the data scrambling process.
+
+
+### Data scrambling
+
+Let's assume we are interested in just a few of these variables, namely 
+
+
+
+
+# Further Resources
+
+
+
+
+
+
+

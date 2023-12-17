@@ -1,0 +1,157 @@
+---
+title: Generating synthetic data with R
+subtitle: ""
+---
+
+
+
+```{r, include=FALSE, cache=FALSE}
+#R script that contains code chunks shown below
+knitr::read_chunk('synthetic-data-new-R-example-1-code.R')
+knitr::read_chunk('synthetic-data-new-R-example-2-code.R')
+```
+
+
+# Overview
+In this unit, we look at a few examples of generating synthetic data with basic `R` code.
+
+
+# Goals
+
+* Be able to generate synthetic data with `R`.
+
+
+# Introduction
+
+While there are `R` packages available that help with the generation of synthetic data - and we will discuss them in a different unit, it is also fairly easy to use basic R functionality to generate simulated data. We'll do a few examples to show how this can be done.
+
+## AI help example
+
+Using AI to generate code that creates synthetic data can be very efficient. Here is an example. I typed the following prompt into ChatGPT 3.5.
+
+:::prompt
+Write R code that generates a dataset of 100 individuals with ages from 18 to 49, BMI values from 15 to 40 and smoking status as yes or no. Assume that age and BMI are uncorrelated. Assume that smokers have a somewhat lower BMI. Then use the patchwork R package to generate a panel of ggplot2 plots. The first panel should show a violin plot with BMI on the y-axis and smoking status on the x-axis. The second panel should show a scatterplot with age on the y-axis and BMI on the x-axis. Add thorough documentation to your code.
+:::
+
+The result was [this fully-working code](./ChatGPT-example.R).
+
+Since the AI systems are continuously updated, it is possible that if you type the same prompt into ChatGPT, your code might look slightly differently, but hopefully it is still working.
+
+In my experience, you usually don't quite get what you want on the first try. But it's easy to tell the AI to update the code until it does what you want it to, or at least is close and then you can do the rest by hand. The code in the examples below was also partially generated through back and forth with ChatGPT, together with some manual editing.
+
+
+# Example 1
+
+For the first example, we'll generate a simple dataset of some hypothetical clinical trial for some treatment (say, a Cholesterol lowering medication) and its impact on outcomes such as Cholesterol levels and adverse events.
+
+:::note
+It is often useful to go slow and type your own code, or copy and paste the code chunks below and execute one at a time. However, if you are in a hurry, you can find the code for this example in [this file](synthetic-data-new-R-example-1-code.R).
+:::
+
+:::note
+In the code below, you might be wondering what the `dplyr::glimpse()` and similar such notation is about. This notation indicates explicitly from which package the function comes. Once you loaded a package, that's not necessary anymore, just using `glimpse()` would work equally. But it is often nice to quickly see what package a function comes from. Thus, you'll see us use the explicit notation often, though not always. It's a matter of being more explicit versus typing less. We switch back and forth.
+:::
+
+
+
+
+## Setup
+
+We'll start by loading the packages used in the code below. While we will not use packages that are specifically meant to generate synthetic data, we will still use several common packages that make data generation tasks easier. That said, you could also do all of this with base `R` and no additional packages.
+
+
+```{r, packages, message=FALSE, warning=FALSE}
+```
+
+```{r, setup, message=FALSE}
+```
+
+
+## Generating data 
+
+```{r, makedata}
+```
+
+
+## Checking data 
+
+Take a peek at the generated data.
+
+
+```{r, checkdata}
+```
+
+
+This concludes our first example. This was a very simple setup, with rectangular data. You often encounter these kind of data in clinical trials. As you generate your data, you can build in any dependencies between variables you want to explore. Then later, when you use the data to test your analysis code, you can see if your analysis code can detect the dependencies you built in. We'll come back to that. 
+
+You could also add further complexities into your synthetic data, for instance you could set some values to be missing, or you could add some outliers. The goal is to generate data that has as the important features of your real dataset to allow you to test your analysis approach on data where you now the truth (since you generated it). If your analysis works on your generated data, there is hope it might also work on the real data (for which of course you don't know the truth). We'll define in a later unit what we mean by "your analysis works". But basically, you want to be able to recover the patterns/dependencies you built into your data with your analysis methods.
+
+
+# Example 2
+
+In this example, we'll generate a dataset that has a more complex structure. We'll generate a dataset that has a longitudinal structure, i.e. repeated measurements over time. We'll also generate a dataset that has a hierarchical structure, i.e. measurements nested within groups.    
+
+We'll walk slowly through the code junks, you can find all the code in one file [here](synthetic-data-new-R-example-2-code.R).
+
+
+
+## Setup
+
+The usual setup steps.
+
+```{r, packages-ex2, message=FALSE, warning=FALSE}
+```
+
+```{r, setup-ex2, message=FALSE}
+```
+
+
+## Generating data 
+
+```{r, makedata-ex2}
+```
+
+
+## Checking data 
+
+Take a peek at the generated data.
+
+
+```{r, checkdata-ex2}
+```
+
+
+## Exploratory plot
+
+```{r, plotdata-ex2}
+```
+
+This dataset has a bit more complicated structure than the previous one, but it isn't much harder to generate it with code. You'll want to generate your data such that it mimics the real data you plan on analyzing.
+
+## Save data
+
+```{r, savedata-ex2}
+```
+
+We are saving the data as CSV and Rds files. CSV files are readable with pretty much any software and thus very portable. Rds files are R-specific, thus not as flexible. The advantage of Rds files is that they are generally smaller, and they retain information about the variables, e.g. if they are factor or numeric variables. Either format works, sometimes one or the other might be better.
+
+
+
+# Summary
+
+Generating synthetic data is incredibly useful. You know exactly what patterns, dependencies and parameter values you used as input to generate your data. You can therefore test/validate your code and make sure your analysis approach can recover the original inputs. If it cannot, it means you will also likely have the same problems with your real data (though you might not know it since you can't check).
+
+If things work when fitting your models to your synthetic data, you have increased confidence (though no guarantee!) that you might also get reasonable results when applying your analysis method to the real data.
+
+Synthetic data also allow you to more easily share what you are doing with colleagues, the public, AI systems, etc. without the risk of breaking confidentiality/privacy.
+
+Using the help of AI to write code that generates data can be very useful and speed up things.
+
+In future units, we'll look at using this synthetic data to test model candidates.
+
+
+# Further Resources
+
+While the manual generation of data is generally fairly easy and gives you the most control, sometimes using `R` packages specifically designed for this purpose can be useful. We'll look at a few in later units. 
+
+

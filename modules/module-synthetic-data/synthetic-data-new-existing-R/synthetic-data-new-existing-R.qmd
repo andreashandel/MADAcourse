@@ -1,0 +1,114 @@
+---
+title: Generating synthetic data based on existing data - R
+subtitle: ""
+---
+
+
+
+```{r, include=FALSE, cache=FALSE}
+#R script that contains code chunks shown below
+knitr::read_chunk('synthetic-data-new-existing-R-example-code.R')
+```
+
+
+# Overview
+In this unit, we discuss how to generate synthetic data based on existing data.
+
+
+# Goals
+
+* Be able to generate synthetic data with `R` based on existing data.
+
+
+
+# Introduction
+
+You generally want to produce synthetic data that resembles the real data you are interested in. The simplest approach is to just look at the variables of interest in your actual data, then write code to generate synthetic data with those variables and values for each variable that are similar to the original data.
+
+That's quick, you can use AI to help, and often that's good enough. But sometimes you might want to generate synthetic data that resembles the original data very closely. 
+
+In that case, you will first want to determine the ranges and distributions of your existing data and then use that information to generate new synthetic data.
+
+
+## AI help 
+
+You probably don't want to feed your real data to the AI. So the first part of summarizing existing data has to be done in a safe/secure space. Once you have good data summaries, you can use AI to generate synthetic data and code as shown in the previous tutorial.
+
+## Example
+
+We'll use the data we generated in example 1 of the previous tutorial and now assume that this is "real" data and that we want to generate synthetic data that's similar to the real data. 
+
+### Setup
+
+First, we do the usual setup steps of package loading and other housekeeping steps.
+
+```{r, packages, message=FALSE, warning=FALSE}
+```
+
+```{r, setup, message=FALSE}
+```
+
+
+
+### Load and explore data
+
+In a first step, we want to understand how each variable in the real data set is distributed, so we can create synthetic data that looks very similar.
+
+We can use various helper functions from different packages to get good descriptive summaries of the data and variables. This code below shows two such helper functions. 
+
+Note that we added more information to the table output. The table summary function treats the date variable and patient ID variable as numeric, so the output is somewhat nonsensical. But this is just for internal "quick and dirty" use, so we don't need to make things pretty. Of course you could if you needed/wanted.
+
+```{r, summarize-data}
+```
+
+We can also look at the distribution of the different variables individually, using e.g., base `R` commands (or any other package of your choice).
+
+```{r, explore-variables}
+```
+
+Looks like a normal distribution for age and uniform distribution for blood pressure should work well. That's of course not surprising since we produced the data that way in an earlier tutorial. But for real data you don't know what process produced it, you just want to see how things are distributed so you can recreate it that way.
+
+For Cholesterol, the distribution doesn't look quite normal. That's because in the original data generating process, we made it dependent on treatment. 
+
+If you want to see if there are correlations in the data that you might want to also have in your synthetic data, you can explore those with tables or plots like these. 
+
+```{r, explore-correlations}
+```
+
+At this stage, it is up to you to decide if you want to try to include correlations between variables that might or might not exist in the real data, or if you just want to give each variable an independent distribution.
+
+
+### Generate data
+
+Now we'll create synthetic data that is similar to the real data.
+
+```{r, make-data}
+```
+
+
+You can always make your synthetic data partially different from the real data for important quantities (e.g., your main input/exposure or outcome of interest) to explore different implications and model performance.
+
+### Check and save data
+
+Quick peek at generated data to make sure things look ok, then we can save it.
+
+```{r, check-data}
+```
+
+
+## Summary
+
+The process of generating synthetic data based on existing data is fairly straightforward:
+
+1. Load existing data.
+2. Look at distributions/frequencies of variables of interest.
+3. Generate new data with variables that are distributed like original data.
+
+Sometimes, you can just look at your original data and make up new data that's roughly similar. At other times you want to be very close, in that case you need to either draw new values from distributions that are well-describe the original data, or you need to re-sample the original data (with or without replacement).
+
+Fortunately, most of the time it's good enough to get your data somewhat similar to the original. You would hope/expect any kind of statistical method to work well on different sets of data that are roughly similar. If that's not the case, your method might not be very robust and might require changes.
+
+# Further Resources
+
+There are a number of R packages that can let you generate data more easily. We'll look at some in another tutorial. But it's always good to be able to do it yourself, in case you end up in a situation where the available packages can't get you what you need.
+

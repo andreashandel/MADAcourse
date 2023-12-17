@@ -199,16 +199,23 @@ website:
                file: modules/module_workflow/Data_Models_Not_Covered.qmd
              - text: "Open Science"
                file: modules/module_workflow/Open_Science.qmd
-          - section: "14. AI & Big Data"
+          - section: "AI & Big Data"
             contents:
              - text: "AI Introduction"
-               file: modules/module_ai/ai-introduction/ai-introduction.qmd  
+               file: modules/module-ai/ai-introduction/ai-introduction.qmd  
              - text: "AI Concepts"
-               file: modules/module_ai/ai-conceptual/ai-conceptual.qmd  
+               file: modules/module-ai/ai-conceptual/ai-conceptual.qmd  
              - text: "AI for EDA"
-               file: modules/module_ai/ai-eda-R/ai-eda-R.qmd  
+               file: modules/module-ai/ai-eda-R/ai-eda-R.qmd  
              - text: "Current AI Tools"
-               file: modules/module_ai/ai-tools/ai-tools.qmd  
+               file: modules/module-ai/ai-tools/ai-tools.qmd  
+          - section: "Synthetic Data"
+            contents:
+             - text: "Synthetic Data Introduction"
+               file: modules/module-synthetic-data/synthetic-data-introduction/synthetic-data-introduction.qmd  
+             - text: "Creating new data"
+               file: modules/module-synthetic-data/synthetic-data-new-R/synthetic-data-new-R.qmd  
+            
             
             
       - title: "Assessments"

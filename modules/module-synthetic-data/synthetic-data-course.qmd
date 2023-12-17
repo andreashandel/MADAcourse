@@ -1,0 +1,34 @@
+---
+title: Overview of the synthetic data course 
+subtitle: ""
+---
+
+
+# Overview
+This course covers why and how to generate and use synthetic (also known as simulated/artificial/fake) data.
+
+
+# Goals
+By the end of the course, you should:
+
+* Know about reasons why one might want to use simulated data.
+* Be familiar with ways to generate synthetic data.
+* Be aware of several R packages that can be used to generate synthetic data.
+* Know how to use synthetic data for testing.
+* Know how to use synthetic data with AI tools.
+
+
+# Content
+
+The course is divided into the following units:
+
+* [Introduction and Motivation](./synthetic-data-introduction/synthetic-data-introduction.html)
+* [Creating new data - R](./synthetic-data-new-R/synthetic-data-new-R.html)
+* [Creating new data based on existing data - R](./synthetic-data-new-existing-R/synthetic-data-new-existing-R.html)
+* [Scrambling existing data - R](./synthetic-data-exisiting-R/synthetic-data-exisiting-R.html)
+* [R packages for data creation](./synthetic-data-R-packages/synthetic-data-R-packages.html)
+* [Use synthetic data with AI tools - R](./synthetic-data-AI-tools-R/synthetic-data-AI-tools-R.html)
+* [Use synthetic data to test models - R](./synthetic-data-model-testing-R/synthetic-data-model-testing-R.html)
+
+* Same as above with Julia
+

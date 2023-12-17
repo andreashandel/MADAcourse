@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Andreas Handel">
+<meta name="description" content="Modern Applied Data Analysis (MADA) course">
+
+<title>MADA Course - Assessment - Data Analysis</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../modules/module_coding_basics/Assessment_Coding.html" rel="next">
+<link href="../../modules/module_intro_tools/Assessment_Course_Tools_Introduction.html" rel="prev">
+<link href="../../media/MADAlogo.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar docked nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../media/MADAlogo.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">MADA Course</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../courseinfo/Course_Syllabus.html" rel="" target="">
+ <span class="menu-text">General Information</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../modules/module_intro_tools/Introduction_Course.html" rel="" target="">
+ <span class="menu-text">Content</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../../courseinfo/Course_Assessments.html" rel="" target="" aria-current="page">
+ <span class="menu-text">Assessments</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../project/Project_Overview.html" rel="" target="">
+ <span class="menu-text">Project</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../resources/Course_Resources.html" rel="" target="">
+ <span class="menu-text">Resources</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/andreashandel/MADAcourse" rel="" target=""><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../modules/module_data_analysis/Assessment_Data_Analysis.html">2. Data Analysis Introduction</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../courseinfo/Course_Assessments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Assessments Overview</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module_intro_tools/Assessment_Course_Tools_Introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1. Course and Tools Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module_data_analysis/Assessment_Data_Analysis.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">2. Data Analysis Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module_coding_basics/Assessment_Coding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3. R Coding Basics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module_data_intro/Assessment_Data_Finding_Wrangling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4. Contemplating, Finding and Wrangling Data</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module_data_presentation/Assessment_Presenting_Results.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5. Presenting Data and Results</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module_data_exploration/Assessment_Exploration.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6. Data Exploration</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module_stats_overview/Assessment_Statistical_Analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7. Statistical Analysis Overview</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module_model_basics/Assessment_Fitting_Basic_Models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8. Fitting Basic Statistical Models</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module_model_evaluation/Assessment_Model_Evaluation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">9. Evaluating Your Model Fits</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module_model_improvement/Assessment_Model_Improvement.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10. Improving Your Model Fits</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module_model_ml_1/Assessment_ML_Models_1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11. Machine Learning Models I</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module_model_ml_2/Assessment_ML_Models_2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12. Machine Learning Models II</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/module_workflow/Assessment_Complete_Workflow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">13. Complete Analysis Workflow</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#quiz" id="toc-quiz" class="nav-link active" data-scroll-target="#quiz">Quiz</a></li>
+  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a>
+  <ul class="collapse">
+  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise">Exercise</a>
+  <ul class="collapse">
+  <li><a href="#group-setup" id="toc-group-setup" class="nav-link" data-scroll-target="#group-setup">Group setup</a></li>
+  <li><a href="#part-1" id="toc-part-1" class="nav-link" data-scroll-target="#part-1">Part 1</a></li>
+  <li><a href="#part-2" id="toc-part-2" class="nav-link" data-scroll-target="#part-2">Part 2</a></li>
+  <li><a href="#part-3" id="toc-part-3" class="nav-link" data-scroll-target="#part-3">Part 3</a></li>
+  </ul></li>
+  <li><a href="#more-information" id="toc-more-information" class="nav-link" data-scroll-target="#more-information">More information</a></li>
+  <li><a href="#another-fork-and-pull-exercise" id="toc-another-fork-and-pull-exercise" class="nav-link" data-scroll-target="#another-fork-and-pull-exercise">Another <em>fork and pull</em> exercise</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Assessment - Data Analysis</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Andreas Handel </p>
+          </div>
+  </div>
+    
+  
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">2023-12-14</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
+<section id="quiz" class="level2">
+<h2 class="anchored" data-anchor-id="quiz">Quiz</h2>
+<p>Get the quiz sheet for this module from the general <a href="../../courseinfo/Course_Assessments.html"><strong>Assessments</strong></a> page. Fill it in, then submit to the online grading system before the deadline.</p>
+</section>
+<section id="discussion" class="level1">
+<h1>Discussion</h1>
+<p>Look online and find an example of a research project that provides (or claims to provide) all materials to allow reproduction of results, similar to Dr.&nbsp;Brian McKay’s project I shared with you. If you are able, download the materials and see if you can reproduce things. I suggest you focus on projects that are done with our set of tools (R/Quarto, etc.), but that’s not required. Report the project you found and your experience being able (or not) to reproduce it as a post in the <em>Module 2 Discussion</em> channel. <strong>Do so by Wednesday 5pm.</strong></p>
+<p>Then take a look at a few of your classmates’ postings and discuss/comment on what they found. <strong>Do so by the Friday deadline.</strong></p>
+<section id="exercise" class="level2">
+<h2 class="anchored" data-anchor-id="exercise">Exercise</h2>
+<p>For this exercise, you will get more GitHub practice and do parts of a very small data analysis. You will start doing group work.</p>
+<section id="group-setup" class="level3">
+<h3 class="anchored" data-anchor-id="group-setup">Group setup</h3>
+<p>If you haven’t already, find your group. You can find that information in the pinned post in the <code>announcements</code> channel. Get in touch with your group members. You will need to exchange GitHub user names. Assign each group member an (arbitrary) number (I’m calling them M1, M2, …). You will start working in your portfolio repository and finish this part by Wednesday. Then M2 will contribute to M1’s repository, M3 will work on M2s, etc. M1 will contribute to the last person in the group (M3/M4/M5, based on the number of people in our group). This way, everyone will work on their own and one other group member’s repository.</p>
+<p><strong>Because there are multiple parts to this exercise, the due dates are adjusted, see below.</strong></p>
+</section>
+<section id="part-1" class="level3">
+<h3 class="anchored" data-anchor-id="part-1">Part 1</h3>
+<p>Take a look inside the <code>starter-analysis-exercise</code> folder. You will find files and folders that provide a template for a data analysis.</p>
+<p>The Github repository with the full template is called <a href="https://github.com/andreashandel/dataanalysis-template">dataanalyis-template</a>, you’ll be using it for your class project later in the course.</p>
+<p>Go to the github repository for the <a href="https://github.com/andreashandel/dataanalysis-template">dataanalysis-template</a> and read the information in the <code>README.md</code> file (shown at the bottom of the repository website). You can ignore the bits about <code>renv</code>, we are not using that just yet.</p>
+<p>Then take a look at the different folders, files, <code>readme</code> comments that you find inside the <code>starter-analysis-exercise</code> folder. Feel free to run the various R and Quarto scripts. The idea is that you get some familiarity with the whole setup to prepare you for the next steps.</p>
+<p>Now go ahead and open the <code>exampledata.xlsx</code> file (with Excel or a similar program) and adds 2 more columns to the data. One column should be something numeric, the other can be something consisting of (a few) different categories. As a (boring) example, you could add eye color and waist size. Feel free to come up with more creative attributes/variables to add. Also add descriptions of your new variables to the <code>Codebook</code> sheet. Once done, save the new data as <strong><code>exampledata2.xlsx</code></strong>.</p>
+<p>Commit your changes (write a meaningful commit message) and push them to GitHub.com.</p>
+<p><strong>You need to have this done by Tuesday evening.</strong></p>
+</section>
+<section id="part-2" class="level3">
+<h3 class="anchored" data-anchor-id="part-2">Part 2</h3>
+<p>Based on the group setup you did above, tell the classmate who will be working on your project that it’s ready and where to find it. Assuming you are M1, you would tell M2 that things are ready. At the same time, you should be notified by another classmate that their repository is ready for you (again, if you happen to be M1, it would be the last person in the group, say M4 or M5).</p>
+<p>You will work on your classmate’s repository using what is called the <strong>Fork and pull-request</strong> workflow. You’ll be using that multiple times throughout this class.</p>
+<p>The basic idea is as follows. First, you make a copy of someone’s GitHub repository. In GitHub terminology, that is called doing a <em>fork</em> of their repository. You can do that for any public repository.</p>
+<p>Next, you implement your improvements in the forked repository. Once you are done, you ask the owner of the original repository to incorporate the updates you made in the fork into their main repository. This last part is called issuing a <strong>pull request</strong>. You are requesting that the other person <em>pull</em> your changes into their repository, hence the at times confusing (at least for me) terminology. I prefer to think of them as <em>merge</em> requests or <em>sync</em> requests, i.e.&nbsp;you are requesting that they merge or sync your changes into their repository. You’ll find the terminology <em>merge request</em> is used at times. If the person who controls the main repository likes your changes, they will <em>merge</em> your fork into the main branch. And just like that, you have contributed to some project becoming better! We will practice this <em>fork and pull</em> flow now.</p>
+<p>Find the repository of the team member you will contribute to and <code>Fork</code> their repository on <code>Github.com</code>. Clone it to your local machine, as you have done previously with your own repositories. In fact, this fork is now your own repository, you have it forever, even if the person who owns the original repository deletes theirs.</p>
+<p>Go into the <code>starter-analysis-exercise</code> folder and look at the <code>exampledata2.xlsx</code> file and information in <code>Codebook</code> to understand what new variables your classmate created.</p>
+<p>Find <code>processingfile.qmd</code> inside <code>/code/processing_code/</code>, make a copy of the file, call it <code>processingfile2.qmd</code>. Update the code in <code>processingfile2.qmd</code> such that it now loads the new data file called <code>exampledata2.xlsx</code>. Take a look at the new data. Add code to clean the new data as needed. Have the code save the updated data to <code>processeddata2.rds</code>.</p>
+<p>Next, open <code>eda.qmd</code> inside <code>/code/eda_code/</code> (EDA stands for exploratory data analysis). Make a copy, add code to the new file that creates a boxplot with the new categorical variable (whatever it is) on the x-axis, and height on the y-axis. Also create a scatterplot with weight on the x-axis and the new numerical variable on the y-axis. Save both figures to files.</p>
+<p>Once you wrote your code, confirm that it runs without problems and errors, and produces the expected results. Once everything is good, commit and push your changes to the remote. Note that this pushes to <strong>your fork</strong> (i.e.&nbsp;copy) of the repository.</p>
+<p>Now it’s time to offer your contribution to your classmate to integrate into their repository. Go to your (forked) repository on the GitHub website. In the top left, you should see the <em>New Pull Request</em> button. (Underneath, it should say something like <code>this branch is N commits ahead of NNN</code>). Click the <em>New Pull Request</em> button. A page comes up showing what you want to do, which is to send your changes to the original repository. You are requesting that the other person <em>pull</em> your changes into their repository. Hopefully, you’ll see a green check-mark that says <em>able to merge</em>. If your classmate made changes to the same files you did, it could have created a merge conflict. Hopefully, this won’t be the case. In either case (merge conflict or not), you can click the green button and <em>Create a pull request</em>. You are presented with a box in which you want to add a meaningful title, so the other person knows what you changed and some more explanation in the box. Then click <em>Create pull request</em>.</p>
+<p><strong>You need to have this done by Thursday evening.</strong></p>
+</section>
+<section id="part-3" class="level3">
+<h3 class="anchored" data-anchor-id="part-3">Part 3</h3>
+<p>By Thursday evening, everyone should have received a pull request from the classmate who worked on their repository.</p>
+<p>Go to the GitHub site and to your online portfolio repository. Click on <em>Pull requests</em>, then click on the request (there should only be one). Take a look. On the first page, it shows you their message and if there are conflicts with your version of the repository. Hopefully, you didn’t change things around while they did, so there shouldn’t be any conflicts. Click on the <em>Files changed</em> button, which will show you an overview of the code they changed. Removals are red, and additions are green.</p>
+<p>On the main pull request site, you can do various things. If you don’t like the suggested edits, you can write a comment and close the pull request without merging their changes into your repository. If you like most of what they did, but there is something they need to adjust, write a comment and let them know. Close the pull request and ask them to send a new one. If you are ok with their changes (hopefully, this is the case here), you can merge the pull request and close it. Their updates are now part of your repository.</p>
+<p>Once you finished the merging of their updates into your repository online, pull the latest version to your local computer.</p>
+<p>Next, find <code>statistical_analysis.R</code> inside <code>/code/analysis_code/</code>. Make a copy. Edit the code such that it fits a third linear model with <code>Height</code> as outcome and the 2 new variables as predictors. Save the result into <code>resulttable3.rds</code> into the appropriate results folder.</p>
+<div class="note">
+<p>I’m sure you noticed that we switched from Quarto files to R scripts. I’m doing this to show you that either are fine. Sometimes it’s better to combine code and text in one file. Sometimes just having code by itself is easier/better. In any case, you should add lots of comments and documentation to the Quarto or R file.</p>
+</div>
+<p>Now we are ready to include the new findings. Open <code>Manuscript.qmd</code>. Add code to display the two new figures and the new table. Add a few sentences to each to explain what it shows and what it means.</p>
+<p>Once all is done, fully rebuild your website. Commit and push your changes. Go to your website URL to make sure the updated page with the new figures included shows up under the Starter Analysis Exercise project entry.</p>
+<p><strong>You need to have this done by Friday evening. Since this will be part of your portfolio site, and you already posted a link to that previously, you don’t need to post anything, I know where to find it. I will assess both the contribution of the repository owner and the classmate who added to this.</strong></p>
+</section>
+</section>
+<section id="more-information" class="level2">
+<h2 class="anchored" data-anchor-id="more-information">More information</h2>
+<p>Some more information on <em>forks</em> and <em>pulls</em> and what to do if things don’t go right can be found in <a href="https://happygitwithr.com/"><em>happygitwithR</em></a>. Note that a lot of the commands described for use on the command line (e.g.&nbsp;<code>stash</code>) can be applied graphically through GitKraken.</p>
+<div class="note">
+<p>Github also has <em>branches</em>. Those are similar to forks but meant for more internal use. For instance, if you have a project and want to implement something new, but it might not work, you can create a branch, work in that branch, and once everything is ok, you can merge the branch into the main/master. This is useful if you write software that others are using, and you don’t want to break the whole thing. It is also helpful if you work with collaborators on a project. To be able to use branches, you need to be an owner or member of a repository. In contrast, you can fork any public repository.</p>
+</div>
+</section>
+<section id="another-fork-and-pull-exercise" class="level2">
+<h2 class="anchored" data-anchor-id="another-fork-and-pull-exercise">Another <em>fork and pull</em> exercise</h2>
+<p><strong>This is optional. You can do it at any time during this course (and more than once) 😁.</strong></p>
+<p>Help improve the course with your contributions! Find something wrong/unclear/worth improving with this course (e.g.&nbsp;a typo, something confusing, a broken link, a suggestion for a new reference, or anything else). Go to the <a href="https://github.com/andreashandel/MADAcourse">Github repository for this course</a>. Follow the steps outlined above: Fork the course to your personal account, clone it to your local computer, implement your updates, push it back to GitHub, then initiate a pull request. I will get a notification of your pull request. If things look ok and no conflicts exist, I will merge your improvements into the course. And just like that, you have contributed to improving this course! (And of course, you will be listed in the <em>Acknowledgments</em> section of the main course page.)</p>
+<p>Another option for helping to improve the course website is to file a GitHub Issue. Feel free to do so any time during the course to let me know of anything that needs fixing.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp("https:\/\/andreashandel\.github\.io\/MADAcourse\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../modules/module_intro_tools/Assessment_Course_Tools_Introduction.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">1. Course and Tools Introduction</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../modules/module_coding_basics/Assessment_Coding.html" class="pagination-link">
+        <span class="nav-page-text">3. R Coding Basics</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

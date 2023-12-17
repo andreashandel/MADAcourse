@@ -1,0 +1,57 @@
+---
+title: Currently available AI tools
+subtitle: ""
+---
+
+
+
+# Overview
+In this tutorial, we discuss some currently available AI tools and when/how you might want to use them. This is of course a rapidly moving field, so a few months from now things might have changed. I can hopefully keep up somewhat, but check the last modified date of this page `r emoji::emoij('grin')`.
+
+# Goals
+By the end of the tutorial, you should:
+
+* Be familiar with current AI tools and when/how to use them.
+
+
+# Introduction
+
+Your goal is generally to analyze some real-world data to answer a question. So what's the point of producing synthatic (also often referred to as simulated or artificial or fake) data? There are several good reasons why this can sometimes be useful.
+
+
+# ChatGPT
+
+
+# Bing
+
+
+# GitHub Co-Pilot
+
+
+# 
+
+
+# Summary
+
+To sum up, important reasons to use synthetic data are:
+
+- Full knowledge of the truth, which can be used for model testing
+- No problems with confidentiality
+- Potentially easier to manipulate
+
+Ways to generate synthetic data are:
+
+- Completely made up
+- Following distributions obtained from the original data
+- Scrambling of the original data
+- A mix of these approaches
+
+
+
+# Further Resources
+
+In the next units, we will discuss how to actually generate synthetic data and how to use it.
+
+
+
+

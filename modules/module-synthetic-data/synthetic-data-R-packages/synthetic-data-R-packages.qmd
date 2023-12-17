@@ -1,0 +1,55 @@
+---
+title: R packages to generate synthetic data
+subtitle: ""
+---
+
+
+# Overview
+This unit provides brief introductions of different `R` packages that can be used to generate synthetic/simulated/artificial/fake data.
+
+
+# Goals
+
+* Be familiar with several R packages that can be used to generate synthetic data.
+
+# Pre-requisites
+
+We assume that you have gone through the prior 
+
+# Introduction
+
+While it is generally not that difficult to write a bit of R code to generate your own data, sometimes it can be useful to reach for dedicated packages. R has a number of such packages. 
+
+
+## R packages to generate synthetic data
+
+* The [coxed package](https://cran.r-project.org/web/packages/coxed/index.html) allows you - among other things - to generate longitudinal survival (time-to-event) data using its [`sim.survdata()` function](https://cran.r-project.org/web/packages/coxed/vignettes/simulating_survival_data.html).
+
+* The [admiral package](https://pharmaverse.github.io/admiral/index.html), which is part of the [pharmaverse](https://pharmaverse.org/), allows users to generate data in [ADaM format]().
+
+
+simstudy: https://cran.r-project.org/web/packages/simstudy/index.html
+synthpop: https://cran.r-project.org/web/packages/synthpop/index.html
+bindata: https://cran.r-project.org/web/packages/bindata/index.html
+mlbench: https://cran.r-project.org/web/packages/mlbench/index.html
+simPop: https://cran.r-project.org/web/packages/simPop/index.html
+simFrame: https://cran.r-project.org/web/packages/simFrame/index.html
+simmer: https://cran.r-project.org/web/packages/simmer/index.html
+simLife: https://cran.r-project.org/web/packages/simLife/index.html
+
+
+
+* The [coxed package](https://cran.r-project.org/web/packages/coxed/index.html) allows you - among other things - to generate longitudinal survival (time-to-event) data using its [`sim.survdata()` function](https://cran.r-project.org/web/packages/coxed/vignettes/simulating_survival_data.html).
+
+
+
+# Further Resources
+
+# References
+
+
+
+
+
+
+

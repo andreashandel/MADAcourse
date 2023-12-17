@@ -1,0 +1,41 @@
+---
+title: Introduction to current AI tools
+subtitle: ""
+---
+
+
+# Overview
+In this unit, we discuss 
+
+# Goals
+By the end of the unit, you should:
+
+
+# Introduction
+
+
+
+# Summary
+
+To sum up, important reasons to use synthetic data are:
+
+- Full knowledge of the truth, which can be used for model testing
+- No problems with confidentiality
+- Potentially easier to manipulate
+
+Ways to generate synthetic data are:
+
+- Completely made up
+- Following distributions obtained from the original data
+- Scrambling of the original data
+- A mix of these approaches
+
+
+
+# Further Resources
+
+In the next units, we will discuss how to actually generate synthetic data and how to use it.
+
+
+
+

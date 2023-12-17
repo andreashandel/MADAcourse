@@ -163,6 +163,9 @@ listed and not listed), I'd love to receive feedback.
 -   [Graphics Principles](https://graphicsprinciples.github.io/) is a
     website that gives general tips for effective visual communication.
     Examples using R are also provided.
+- [From Data to Viz](https://www.data-to-viz.com/) is a website that guides you through selection of suitable visualizations based on your data. It also provides nice explanations of many useful plot types.
+- [The R Graph Gallery](https://r-graph-gallery.com/index.html) has a large collection of plots made with R, also showing the code. A great place for inspiration and copy/paste/modify.
+
 
 # Pitfalls and best practices in data analysis {#sec-pitfalls}
 
