@@ -65,7 +65,9 @@ We will discuss and apply some of those methods in more detail when we begin our
 
 To efficiently work with data in R, you need to understand how the types of data described above are represented in and handled by R.
 
-The following is a summary of the most important data types in R. I'm also listing useful packages to deal with them. You have already seen some of the information I describe below. Now would be a good time to revisit the *Types* section of the Posit [Programming Basics recipe](https://posit.cloud/learn/primers/1.2) and to revisit [chapter 3 of *IDS*](https://rafalab.github.io/dsbook/r-basics.html).
+The following is a summary of the most important data types in R. I'm also listing useful packages to deal with them. You have already seen some of the information I describe below. 
+
+For a refresher or to learn more, check for instance the [R Objects Chapter of Hands-On Programming with R ](https://rstudio-education.github.io/hopr/r-objects.html) or [chapter 2 of *IDS*](https://rafalab.github.io/dsbook/r-basics.html).
 
 ## Basic data types
 

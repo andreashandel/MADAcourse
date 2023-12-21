@@ -307,9 +307,6 @@ non-technical and thus beginner-friendly.
 
 # R coding
 
--   [R Studio primers](https://rstudio.cloud/learn/primers) are a great
-    collection of lessons covering the basics of R coding and data
-    analysis. I highly recommend them.
 -   [R Studio education](https://education.rstudio.com/) is a fairly new
     website that I expect will contain an increasing collection to all
     kinds of useful teaching resources related to R and Data Science.

@@ -16,10 +16,10 @@ let me know.
 
 # Books and online tutorials
 
--   [*IDS* = *Introduction to Data
-    Science*](https://rafalab.github.io/dsbook/) is the book I'll refer
+-   [**Introduction to Data
+    Science (IDS**](https://rafalab.github.io/dsbook/) is the book I'll refer
     to a good bit in the 1st part of the course.
--   [*R4DS* = *R for Data Science* (2nd
+-   [**R for Data Science (R4DS)** (2nd
     edition)](https://r4ds.hadley.nz/). This book will also be mentioned
     frequently. It is a very gentle and good introduction to data
     science in R. It has a lot of good exercises [and
@@ -30,16 +30,15 @@ let me know.
     it could be that there is still the occasional pointer to something
     in the 1st edition. If you find such outdated references/links,
     please let me know so I can fix.
--   [*ADS* = *The Art of Data
-    Science*](https://leanpub.com/artofdatascience) has some good
+-   [**he Art of Data
+    Science (ADS)**](https://leanpub.com/artofdatascience) has some good
     big-picture, introductory level chapters on different aspects of a
     data analysis. It is a *pay what you want* book with a minimum price
     of zero, which means you can get it for free (note that the book +
     video bundle has a non-zero minimum price). (I heard that sometimes,
     once you register, the email with the book link goes to the spam
     folder, make sure to check there.)
--   [*ISL*(R) = *An Introduction to Statistical Learning* (in
-    R)](https://statlearning.com/) is a good introduction to the
+-   [**An Introduction to Statistical Learning (with R) (ISL)**](https://statlearning.com/) is a good introduction to the
     statistical and machine learning (i.e. model fitting) part of the
     data analysis workflow. I'll refer to it frequently in the second
     part of the course. While we won't work through the exercises/labs
@@ -48,19 +47,17 @@ let me know.
     website](https://emilhvitfeldt.github.io/ISLR-tidymodels-labs/index.html)
     does the labs using the `tidymodels` set of packages, which we will
     also be using in this course.
--   [*HMLR* = *Hands-on Machine Learning with
-    R*](https://bradleyboehmke.github.io/HOML/) covers somewhat similar
+-   [**Hands-on Machine Learning with R (HMLR)**](https://bradleyboehmke.github.io/HOML/) covers somewhat similar
     material as ISL, but with different emphasis and a different
     approach. I refer to it in several of the later course modules.
--   [*FES* = *Feature Engineering and
-    Selection*](https://bookdown.org/max/FES/) focuses on a specific
+-   [**Feature Engineering and
+    Selection (FES)**](https://bookdown.org/max/FES/) focuses on a specific
     aspect of the data analysis workflow and is a good resource for
     those topics.
--   [*HGR* = *happygitwitR*](https://happygitwithr.com/) is a good
+-   [**happygitwitR (HGR)**](https://happygitwithr.com/) is a good
     resource to learn some of the basics of Git/Github with R.
--   [*RP* = *R Studio Primers*](https://rstudio.cloud/learn/primers) are
-    a great source for introductory, interactive tutorials covering
-    basics of R coding and data analysis.
+-   [**Posit Recipes (PR)**](https://posit.cloud/learn/recipes) are
+    a great source for short code examples to do common tasks. 
 
 # Tools
 
@@ -79,14 +76,13 @@ let me know.
 
 # Important notes
 
--   The last time this course was taught, the company now called
+-   The company now called
     **Posit** was called **R Studio**. You will likely see the old label
-    show up. The **software** we use for coding R is still called R
+    show up. The **software editor** we use for writing R code is still called R
     Studio.
--   The last time the course was taught, **Quarto** did not exist, we
-    used **R Markdown** instead. You will likely see references to **R
+-   **Quarto** is fairly new, in the past we used **R Markdown** instead. You will likely see references to **R
     Markdown**. Just think of it as now being Quarto (i.e. instead of
-    `.Rmd` files we now work with `.qmd` files).
+    `.Rmd` files we now work with `.qmd` files). They are very similar, Quarto is basically the newer version of R Markdown. R Markdown still works, but Quarto is more powerful, so it's the better option to use/learn it.
 
 # General help
 

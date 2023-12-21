@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<head>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta charset="utf-8" />
+<meta name="generator" content="quarto-1.3.450" />
 
-<meta name="author" content="Andreas Handel">
-<meta name="description" content="Modern Applied Data Analysis (MADA) course">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
 
-<title>MADA Course - Data Analysis Overview</title>
+<meta name="author" content="Andreas Handel" />
+<meta name="description" content="Modern Applied Data Analysis (MADA) course" />
+
+<title>MADA Course – Data Analysis Overview</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,25 +26,7 @@ ul.task-list li input[type="checkbox"] {
 }
 </style>
 
-
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<link href="../../modules/module_data_analysis/Data_Analysis_Structure.html" rel="next">
-<link href="../../modules/module_data_analysis/Data_Analysis_Motivation.html" rel="prev">
-<link href="../../media/MADAlogo.png" rel="icon" type="image/png">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<!-- htmldependencies:E3FAD763 -->
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -67,7 +51,7 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-sidebar docked nav-fixed fullcontent">
+<body>
 
 
 <div id="quarto-search-results"></div>
@@ -75,43 +59,48 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../media/MADAlogo.png" alt="" class="navbar-logo">
+    <a href="/index.html" class="navbar-brand navbar-brand-logo">
+    <img src="/media/MADAlogo.png" alt="" class="navbar-logo" />
     </a>
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="/index.html">
     <span class="navbar-title">MADA Course</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+  aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"
+  onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../courseinfo/Course_Syllabus.html" rel="" target="">
+    <a class="nav-link" href="/courseinfo/Course_Syllabus.html" rel="" target="">
  <span class="menu-text">General Information</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../../modules/module_intro_tools/Introduction_Course.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="/modules/module_intro_tools/Introduction_Course.html" rel="" target="">
  <span class="menu-text">Content</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../courseinfo/Course_Assessments.html" rel="" target="">
+    <a class="nav-link" href="/courseinfo/Course_Assessments.html" rel="" target="">
  <span class="menu-text">Assessments</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../project/Project_Overview.html" rel="" target="">
+    <a class="nav-link" href="/project/Project_Overview.html" rel="" target="">
  <span class="menu-text">Project</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../resources/Course_Resources.html" rel="" target="">
+    <a class="nav-link" href="/resources/Course_Resources.html" rel="" target="">
  <span class="menu-text">Resources</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/andreashandel/MADAcourse" rel="" target=""><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/andreashandel/MADAcourse" rel="" target=""><i 
+  class="bi bi-github" 
+  role="img" 
+>
 </i> 
  <span class="menu-text"></span></a>
   </li>  
@@ -123,11 +112,16 @@ ul.task-list li input[type="checkbox"] {
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn"
+      data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" 
+      aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation"
+      onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../modules/module_data_analysis/Data_Analysis_Motivation.html">2. Data Analysis Introduction</a></li><li class="breadcrumb-item"><a href="../../modules/module_data_analysis/Data_Analysis_Overview.html">Data Analysis Overview</a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      <h1 class="quarto-secondary-nav-title"></h1>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" 
+      aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation"
+      onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
   </nav>
@@ -149,49 +143,49 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../modules/module_intro_tools/Introduction_Course.html" class="sidebar-item-text sidebar-link">
+  <a href="/modules/module_intro_tools/Introduction_Course.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Course Introduction</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../modules/module_intro_tools/Tools_RandRStudio.html" class="sidebar-item-text sidebar-link">
+  <a href="/modules/module_intro_tools/Tools_RandRStudio.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R and Rstudio</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../modules/module_intro_tools/Tools_Github_Introduction.html" class="sidebar-item-text sidebar-link">
+  <a href="/modules/module_intro_tools/Tools_Github_Introduction.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">GitHub Introduction</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../modules/module_intro_tools/Tools_Github_R_Workflow.html" class="sidebar-item-text sidebar-link">
+  <a href="/modules/module_intro_tools/Tools_Github_R_Workflow.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">GitHub and R Workflow</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../modules/module_intro_tools/Tools_Reproducibility.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Reproducibility, Quarto &amp; Co</span></a>
+  <a href="/modules/module_intro_tools/Tools_Reproducibility.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Reproducibility, Quarto & Co</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../modules/module_intro_tools/Tools_AI.html" class="sidebar-item-text sidebar-link">
+  <a href="/modules/module_intro_tools/Tools_AI.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">AI Tools</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../modules/module_intro_tools/Tools_Reference_Management.html" class="sidebar-item-text sidebar-link">
+  <a href="/modules/module_intro_tools/Tools_Reference_Management.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Reference Management</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../modules/module_intro_tools/Tools_Tips_Guidance.html" class="sidebar-item-text sidebar-link">
+  <a href="/modules/module_intro_tools/Tools_Tips_Guidance.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Guidance and Tips for R/RStudio/GitHub</span></a>
   </div>
 </li>
@@ -208,19 +202,19 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../modules/module_data_analysis/Data_Analysis_Motivation.html" class="sidebar-item-text sidebar-link">
+  <a href="/modules/module_data_analysis/Data_Analysis_Motivation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Motivating Examples</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../modules/module_data_analysis/Data_Analysis_Overview.html" class="sidebar-item-text sidebar-link active">
+  <a href="/modules/module_data_analysis/Data_Analysis_Overview.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Data Analysis Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../modules/module_data_analysis/Data_Analysis_Structure.html" class="sidebar-item-text sidebar-link">
+  <a href="/modules/module_data_analysis/Data_Analysis_Structure.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data Analysis Structure</span></a>
   </div>
 </li>
@@ -237,13 +231,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../modules/module_coding_basics/Rcoding_Basics.html" class="sidebar-item-text sidebar-link">
+  <a href="/modules/module_coding_basics/Rcoding_Basics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R Coding Basics</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../modules/module_coding_basics/Rcoding_Tidyverse.html" class="sidebar-item-text sidebar-link">
+  <a href="/modules/module_coding_basics/Rcoding_Tidyverse.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Tidyverse and Friends</span></a>
   </div>
 </li>
@@ -260,25 +254,25 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../modules/module_data_intro/Data_Types.html" class="sidebar-item-text sidebar-link">
+  <a href="/modules/module_data_intro/Data_Types.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data Types</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../modules/module_data_intro/Data_Finding.html" class="sidebar-item-text sidebar-link">
+  <a href="/modules/module_data_intro/Data_Finding.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Finding Data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../modules/module_data_intro/Data_Generation.html" class="sidebar-item-text sidebar-link">
+  <a href="/modules/module_data_intro/Data_Generation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Making Data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../modules/module_data_intro/Data_Wrangling.html" class="sidebar-item-text sidebar-link">
+  <a href="/modules/module_data_intro/Data_Wrangling.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data Wrangling</span></a>
   </div>
 </li>
@@ -295,25 +289,25 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../modules/module_data_presentation/Presenting_Results_Overview.html" class="sidebar-item-text sidebar-link">
+  <a href="/modules/module_data_presentation/Presenting_Results_Overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Presenting Results Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../modules/module_data_presentation/Visualization_Overview.html" class="sidebar-item-text sidebar-link">
+  <a href="/modules/module_data_presentation/Visualization_Overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Visualization Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../modules/module_data_presentation/Visualization_in_R.html" class="sidebar-item-text sidebar-link">
+  <a href="/modules/module_data_presentation/Visualization_in_R.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Visualization in R</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../modules/module_data_presentation/Tables_in_R.html" class="sidebar-item-text sidebar-link">
+  <a href="/modules/module_data_presentation/Tables_in_R.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Tables in R</span></a>
   </div>
 </li>
@@ -330,7 +324,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../modules/module_data_exploration/Data_Exploration.html" class="sidebar-item-text sidebar-link">
+  <a href="/modules/module_data_exploration/Data_Exploration.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exploring data</span></a>
   </div>
 </li>
@@ -347,13 +341,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../modules/module_stats_overview/Statistical_Analysis_Introduction.html" class="sidebar-item-text sidebar-link">
+  <a href="/modules/module_stats_overview/Statistical_Analysis_Introduction.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Statistical Analysis Introduction</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../modules/module_stats_overview/Statistical_Terminology.html" class="sidebar-item-text sidebar-link">
+  <a href="/modules/module_stats_overview/Statistical_Terminology.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Some Statistical Model Fitting Terminology</span></a>
   </div>
 </li>
@@ -370,13 +364,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../modules/module_model_basics/Basic_Statistical_Models.html" class="sidebar-item-text sidebar-link">
+  <a href="/modules/module_model_basics/Basic_Statistical_Models.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Basic Statistical Models</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../modules/module_model_basics/Model_Fitting_R.html" class="sidebar-item-text sidebar-link">
+  <a href="/modules/module_model_basics/Model_Fitting_R.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Fitting Statistical Models in R</span></a>
   </div>
 </li>
@@ -393,31 +387,31 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../modules/module_model_evaluation/Model_Evaluation_Overview.html" class="sidebar-item-text sidebar-link">
+  <a href="/modules/module_model_evaluation/Model_Evaluation_Overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Model Evaluation Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../modules/module_model_evaluation/Model_Evaluation_Performance.html" class="sidebar-item-text sidebar-link">
+  <a href="/modules/module_model_evaluation/Model_Evaluation_Performance.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Model Performance Evaluation</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../modules/module_model_evaluation/Model_Evaluation_Overfitting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Model Performance &amp; Overfitting</span></a>
+  <a href="/modules/module_model_evaluation/Model_Evaluation_Overfitting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model Performance & Overfitting</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../modules/module_model_evaluation/Model_Evaluation_Diagnostics.html" class="sidebar-item-text sidebar-link">
+  <a href="/modules/module_model_evaluation/Model_Evaluation_Diagnostics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Model Diagostics</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../modules/module_model_evaluation/Model_Evaluation_Uncertainty.html" class="sidebar-item-text sidebar-link">
+  <a href="/modules/module_model_evaluation/Model_Evaluation_Uncertainty.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Model Uncertainty</span></a>
   </div>
 </li>
@@ -434,31 +428,31 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../modules/module_model_improvement/Model_Improvement_Overview.html" class="sidebar-item-text sidebar-link">
+  <a href="/modules/module_model_improvement/Model_Improvement_Overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Improving Model Fits Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../modules/module_model_improvement/Model_Improvement_Data_Processing.html" class="sidebar-item-text sidebar-link">
+  <a href="/modules/module_model_improvement/Model_Improvement_Data_Processing.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Pre-Processing Data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../modules/module_model_improvement/Model_Improvement_Subset_Selection.html" class="sidebar-item-text sidebar-link">
+  <a href="/modules/module_model_improvement/Model_Improvement_Subset_Selection.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Subset Selection</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../modules/module_model_improvement/Model_Improvement_Regularization.html" class="sidebar-item-text sidebar-link">
+  <a href="/modules/module_model_improvement/Model_Improvement_Regularization.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Regularization</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../modules/module_model_improvement/Model_Improvement_Tuning.html" class="sidebar-item-text sidebar-link">
+  <a href="/modules/module_model_improvement/Model_Improvement_Tuning.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Model Tuning</span></a>
   </div>
 </li>
@@ -475,25 +469,25 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../modules/module_model_ml_1/ML_Models_Overview.html" class="sidebar-item-text sidebar-link">
+  <a href="/modules/module_model_ml_1/ML_Models_Overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">ML Models Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../modules/module_model_ml_1/Polynomial_Spline_Models.html" class="sidebar-item-text sidebar-link">
+  <a href="/modules/module_model_ml_1/Polynomial_Spline_Models.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Polynomial and Spline Models</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../modules/module_model_ml_1/Decision_Trees.html" class="sidebar-item-text sidebar-link">
+  <a href="/modules/module_model_ml_1/Decision_Trees.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Decision Trees</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../modules/module_model_ml_1/Many_Tree_Models.html" class="sidebar-item-text sidebar-link">
+  <a href="/modules/module_model_ml_1/Many_Tree_Models.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Many-Tree Models</span></a>
   </div>
 </li>
@@ -510,19 +504,19 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../modules/module_model_ml_2/SVM_Models.html" class="sidebar-item-text sidebar-link">
+  <a href="/modules/module_model_ml_2/SVM_Models.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Support Vector Machine Models</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../modules/module_model_ml_2/DA_Models.html" class="sidebar-item-text sidebar-link">
+  <a href="/modules/module_model_ml_2/DA_Models.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Discriminant Analysis Models</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../modules/module_model_ml_2/More_ML_Models.html" class="sidebar-item-text sidebar-link">
+  <a href="/modules/module_model_ml_2/More_ML_Models.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Some More ML models</span></a>
   </div>
 </li>
@@ -539,19 +533,19 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../modules/module_workflow/Complete_Data_Analysis_Workflow.qmd" class="sidebar-item-text sidebar-link">
+  <a href="/modules/module_workflow/Complete_Data_Analysis_Workflow.qmd" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Complete Data Analysis Workflow</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../modules/module_workflow/Data_Models_Not_Covered.html" class="sidebar-item-text sidebar-link">
+  <a href="/modules/module_workflow/Data_Models_Not_Covered.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">More Data and Models</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../modules/module_workflow/Open_Science.html" class="sidebar-item-text sidebar-link">
+  <a href="/modules/module_workflow/Open_Science.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Open Science</span></a>
   </div>
 </li>
@@ -560,7 +554,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" aria-expanded="false">
- <span class="menu-text">AI &amp; Big Data</span></a>
+ <span class="menu-text">AI & Big Data</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -568,25 +562,25 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../modules/module-ai/ai-introduction/ai-introduction.html" class="sidebar-item-text sidebar-link">
+  <a href="/modules/module-ai/ai-introduction/ai-introduction.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">AI Introduction</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../modules/module-ai/ai-conceptual/ai-conceptual.html" class="sidebar-item-text sidebar-link">
+  <a href="/modules/module-ai/ai-conceptual/ai-conceptual.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">AI Concepts</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../modules/module-ai/ai-eda-R/ai-eda-R.html" class="sidebar-item-text sidebar-link">
+  <a href="/modules/module-ai/ai-eda-R/ai-eda-R.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">AI for EDA</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../modules/module-ai/ai-tools/ai-tools.html" class="sidebar-item-text sidebar-link">
+  <a href="/modules/module-ai/ai-tools/ai-tools.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Current AI Tools</span></a>
   </div>
 </li>
@@ -603,13 +597,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../modules/module-synthetic-data/synthetic-data-introduction/synthetic-data-introduction.html" class="sidebar-item-text sidebar-link">
+  <a href="/modules/module-synthetic-data/synthetic-data-introduction/synthetic-data-introduction.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Synthetic Data Introduction</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../modules/module-synthetic-data/synthetic-data-new-R/synthetic-data-new-R.html" class="sidebar-item-text sidebar-link">
+  <a href="/modules/module-synthetic-data/synthetic-data-new-R/synthetic-data-new-R.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Creating new data</span></a>
   </div>
 </li>
@@ -618,28 +612,10 @@ ul.task-list li input[type="checkbox"] {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" ></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
-  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
-  <li><a href="#data-analysis-workflow" id="toc-data-analysis-workflow" class="nav-link" data-scroll-target="#data-analysis-workflow">Data Analysis Workflow</a></li>
-  <li><a href="#question-data-match" id="toc-question-data-match" class="nav-link" data-scroll-target="#question-data-match">Question &amp; Data Match</a></li>
-  <li><a href="#getting-and-loading-data" id="toc-getting-and-loading-data" class="nav-link" data-scroll-target="#getting-and-loading-data">Getting and loading data</a></li>
-  <li><a href="#exploring-and-cleaning-data" id="toc-exploring-and-cleaning-data" class="nav-link" data-scroll-target="#exploring-and-cleaning-data">Exploring and cleaning data</a></li>
-  <li><a href="#pause-and-ponder" id="toc-pause-and-ponder" class="nav-link" data-scroll-target="#pause-and-ponder">Pause and ponder</a></li>
-  <li><a href="#pre-process-data" id="toc-pre-process-data" class="nav-link" data-scroll-target="#pre-process-data">Pre-process Data</a></li>
-  <li><a href="#analyzing-data" id="toc-analyzing-data" class="nav-link" data-scroll-target="#analyzing-data">Analyzing Data</a></li>
-  <li><a href="#evaluating-and-interpreting-results" id="toc-evaluating-and-interpreting-results" class="nav-link" data-scroll-target="#evaluating-and-interpreting-results">Evaluating and interpreting results</a></li>
-  <li><a href="#reporting-and-communicating-your-results" id="toc-reporting-and-communicating-your-results" class="nav-link" data-scroll-target="#reporting-and-communicating-your-results">Reporting and communicating your results</a></li>
-  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further reading</a></li>
-  <li><a href="#sec-some-practice" id="toc-sec-some-practice" class="nav-link" data-scroll-target="#sec-some-practice">Some practice</a></li>
-  </ul>
-</nav>
+        <div id="quarto-toc-target"></div>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -664,7 +640,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2023-12-14</p>
+      <p class="date-modified">2023-12-20</p>
     </div>
   </div>
     
@@ -672,7 +648,25 @@ ul.task-list li input[type="checkbox"] {
   
 
 </header>
-
+<nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#overview" id="toc-overview">Overview</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives">Learning Objectives</a></li>
+  <li><a href="#data-analysis-workflow" id="toc-data-analysis-workflow">Data Analysis Workflow</a></li>
+  <li><a href="#question-data-match" id="toc-question-data-match">Question &amp; Data Match</a></li>
+  <li><a href="#getting-and-loading-data" id="toc-getting-and-loading-data">Getting and loading data</a></li>
+  <li><a href="#exploring-and-cleaning-data" id="toc-exploring-and-cleaning-data">Exploring and cleaning data</a></li>
+  <li><a href="#pause-and-ponder" id="toc-pause-and-ponder">Pause and ponder</a></li>
+  <li><a href="#pre-process-data" id="toc-pre-process-data">Pre-process Data</a></li>
+  <li><a href="#analyzing-data" id="toc-analyzing-data">Analyzing Data</a></li>
+  <li><a href="#evaluating-and-interpreting-results" id="toc-evaluating-and-interpreting-results">Evaluating and interpreting results</a></li>
+  <li><a href="#reporting-and-communicating-your-results" id="toc-reporting-and-communicating-your-results">Reporting and communicating your results</a></li>
+  <li><a href="#further-reading" id="toc-further-reading">Further reading</a></li>
+  <li><a href="#sec-some-practice" id="toc-sec-some-practice">Some practice</a></li>
+  </ul>
+</nav>
 <section id="overview" class="level1">
 <h1>Overview</h1>
 <p>In this unit, we will talk about the whole data analysis workflow from a general, big-picture perspective. We’ll then revisit the different components in more detail later.</p>
@@ -680,7 +674,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="learning-objectives" class="level1">
 <h1>Learning Objectives</h1>
 <ul>
-<li>Understand the elements of a data analysis.<br>
+<li>Understand the elements of a data analysis.<br />
 </li>
 <li>Know the role and importance of each component of a data analysis.</li>
 </ul>
@@ -689,9 +683,9 @@ ul.task-list li input[type="checkbox"] {
 <h1>Data Analysis Workflow</h1>
 <p>The following figure provides a conceptual illustration of the whole data analysis workflow.</p>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../../media/analysis-workflow.png" class="img-fluid figure-img" style="width:60.0%" alt="Double sided arrow points between Question and Data with the text 'Match needed' above the arrow. A spiral moves from Load, to Clean, to Explore, to Process. Below the spiral an arrow points from Model to Report. An rounded arrow points from Model and Report back up to the spiral with the word Repeat."></p>
-<figcaption class="figure-caption">Data analysis workflow</figcaption>
+<figure>
+<p><img src="../../media/analysis-workflow.png" class="img-fluid" style="width:60.0%" alt="Double sided arrow points between Question and Data with the text &#39;Match needed&#39; above the arrow. A spiral moves from Load, to Clean, to Explore, to Process. Below the spiral an arrow points from Model to Report. An rounded arrow points from Model and Report back up to the spiral with the word Repeat." /></p>
+<figcaption>Data analysis workflow</figcaption>
 </figure>
 </div>
 <p>The spiral is meant to represent that while the different steps in an analysis are rarely linear, things should improve over time until you have the data and code in a form that everything fits and you can produce <em>final</em> results.</p>
@@ -757,7 +751,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="evaluating-and-interpreting-results" class="level1">
 <h1>Evaluating and interpreting results</h1>
 <p>Once you have your results, and before you decide on how (or if) to report them, you should take another break and carefully contemplate what your findings mean. Do the results make sense? Occasionally, there is some new and interesting finding that goes against everything we think we know. However, most of the time if you find something that doesn’t ring true (e.g., increased exercise shortens your lifespan), it probably isn’t. You need to think carefully about what your result actually means and how to interpret results. We can certainly think of a way to get a result that suggests increased exercise shortens lifespan. For instance, we could look at a group of people who practice some kind of extreme sport that not infrequently leads to death, and compare that group to people who do not practice this sport. You might find that those with increased exercise live less long <em>in that particular scenario</em>. But of course, that doesn’t mean you have overall shown that normal exercise shortens lifespan.</p>
-<p>Unfortunately, the scientific literature is full of examples where the interpretation of the results are likely not right. A good and amusing example was published in a very prestigious journal by <a href="../../media/messerli12nejm.pdf">Messerli 2012</a> While there is no arguing with the data, the interpretation that <em>“…it seems most likely that in a dose-dependent way, chocolate intake provides the abundant fertile ground needed for the sprouting of Nobel laureates…”</em> is of course <a href="https://epianalysis.wordpress.com/2012/11/19/chocolate/">nonsense</a>, see also this <a href="https://academic.oup.com/jn/article/143/6/931/4571741">article</a>. You can find more rebuttals online. Unfortunately, since the original study was in a prestigious journal, the nonsense was <a href="https://www.google.com/search?q=Chocolate+Consumption+Nobel+Laureates">widely reported in the media</a>. You can see Forbes, BusinessInsider, Time Magazine, and some other news outlets reporting the finding fairly uncritically. To this day, I do not know if this <a href="https://www.reuters.com/article/us-eat-chocolate-win-the-nobel-prize/eat-chocolate-win-the-nobel-prize-idUSBRE8991MS20121010">NEJM paper</a> was meant as a satire or for real.</p>
+<p>Unfortunately, the scientific literature is full of examples where the interpretation of the results are likely not right. A good and amusing example was published in the New England Journal of Medicine, a very prestigious journal, by <a href="../../media/messerli12nejm.pdf">Messerli 2012</a>. The showed that chocolate consumption and Nobel prizes were correlated. While there is no arguing with the data, the interpretation that <em>“…it seems most likely that in a dose-dependent way, chocolate intake provides the abundant fertile ground needed for the sprouting of Nobel laureates…”</em> is of course <a href="https://epianalysis.wordpress.com/2012/11/19/chocolate/">nonsense</a>, see also <a href="https://link.springer.com/article/10.1007/s10393-020-01472-1">this article</a> for a more general discussion. You can find more rebuttals online. Unfortunately, since the original study was in a prestigious journal, the nonsense was <a href="https://www.google.com/search?q=Chocolate+Consumption+Nobel+Laureates">widely reported in the media</a>. You can see Forbes, BusinessInsider, Time Magazine, and some other news outlets reporting the finding fairly uncritically. To this day, I do not know if this article was meant as a satire or for real.</p>
 </section>
 <section id="reporting-and-communicating-your-results" class="level1">
 <h1>Reporting and communicating your results</h1>
@@ -778,12 +772,16 @@ ul.task-list li input[type="checkbox"] {
 <p>You will also notice that the data is different than what they report. Their book was published on 2018-06-22, but on the website where the data comes from, a time stamp of 2019-05-07 is listed. Thus the data got updated after the book was published, again making things not quite reproducible. (Changes to data are common, which is a reason why an automated and reproducible workflow is so important!)</p>
 <p>Finally, there are minor errors/typos in the book, e.g., what the code does and what the text says are not the same when looking at time (page 41).</p>
 <p>Overall, while you should be able to reproduce most of what they show, it will be slightly different since the data has changed, and you will need to make adjustments to code. If you have no R coding experience, trying to get it to work might be too tedious, so skip for now and consider revisiting later once you learned some R coding.</p>
-
-
+<div id="quarto-navigation-envelope" class="hidden">
+<p><span class="hidden" data-render-id="quarto-int-sidebar-title">Content</span> <span class="hidden" data-render-id="quarto-int-navbar-title">MADA Course</span> <span class="hidden" data-render-id="quarto-int-next">Data Analysis Structure</span> <span class="hidden" data-render-id="quarto-int-prev">Motivating Examples</span> <span class="hidden" data-render-id="quarto-int-sidebar:quarto-sidebar-section-1">1. Course and Tools Introduction</span> <span class="hidden" data-render-id="quarto-int-sidebar:/modules/module_intro_tools/Introduction_Course.html">Course Introduction</span> <span class="hidden" data-render-id="quarto-int-sidebar:/modules/module_intro_tools/Tools_RandRStudio.html">R and Rstudio</span> <span class="hidden" data-render-id="quarto-int-sidebar:/modules/module_intro_tools/Tools_Github_Introduction.html">GitHub Introduction</span> <span class="hidden" data-render-id="quarto-int-sidebar:/modules/module_intro_tools/Tools_Github_R_Workflow.html">GitHub and R Workflow</span> <span class="hidden" data-render-id="quarto-int-sidebar:/modules/module_intro_tools/Tools_Reproducibility.html">Reproducibility, Quarto &amp; Co</span> <span class="hidden" data-render-id="quarto-int-sidebar:/modules/module_intro_tools/Tools_AI.html">AI Tools</span> <span class="hidden" data-render-id="quarto-int-sidebar:/modules/module_intro_tools/Tools_Reference_Management.html">Reference Management</span> <span class="hidden" data-render-id="quarto-int-sidebar:/modules/module_intro_tools/Tools_Tips_Guidance.html">Guidance and Tips for R/RStudio/GitHub</span> <span class="hidden" data-render-id="quarto-int-sidebar:quarto-sidebar-section-2">2. Data Analysis Introduction</span> <span class="hidden" data-render-id="quarto-int-sidebar:/modules/module_data_analysis/Data_Analysis_Motivation.html">Motivating Examples</span> <span class="hidden" data-render-id="quarto-int-sidebar:/modules/module_data_analysis/Data_Analysis_Overview.html">Data Analysis Overview</span> <span class="hidden" data-render-id="quarto-int-sidebar:/modules/module_data_analysis/Data_Analysis_Structure.html">Data Analysis Structure</span> <span class="hidden" data-render-id="quarto-int-sidebar:quarto-sidebar-section-3">3. R Coding Basics</span> <span class="hidden" data-render-id="quarto-int-sidebar:/modules/module_coding_basics/Rcoding_Basics.html">R Coding Basics</span> <span class="hidden" data-render-id="quarto-int-sidebar:/modules/module_coding_basics/Rcoding_Tidyverse.html">Tidyverse and Friends</span> <span class="hidden" data-render-id="quarto-int-sidebar:quarto-sidebar-section-4">4. Contemplating, Finding and Wrangling Data</span> <span class="hidden" data-render-id="quarto-int-sidebar:/modules/module_data_intro/Data_Types.html">Data Types</span> <span class="hidden" data-render-id="quarto-int-sidebar:/modules/module_data_intro/Data_Finding.html">Finding Data</span> <span class="hidden" data-render-id="quarto-int-sidebar:/modules/module_data_intro/Data_Generation.html">Making Data</span> <span class="hidden" data-render-id="quarto-int-sidebar:/modules/module_data_intro/Data_Wrangling.html">Data Wrangling</span> <span class="hidden" data-render-id="quarto-int-sidebar:quarto-sidebar-section-5">5. Presenting Data and Results</span> <span class="hidden" data-render-id="quarto-int-sidebar:/modules/module_data_presentation/Presenting_Results_Overview.html">Presenting Results Overview</span> <span class="hidden" data-render-id="quarto-int-sidebar:/modules/module_data_presentation/Visualization_Overview.html">Visualization Overview</span> <span class="hidden" data-render-id="quarto-int-sidebar:/modules/module_data_presentation/Visualization_in_R.html">Visualization in R</span> <span class="hidden" data-render-id="quarto-int-sidebar:/modules/module_data_presentation/Tables_in_R.html">Tables in R</span> <span class="hidden" data-render-id="quarto-int-sidebar:quarto-sidebar-section-6">6. Data Exploration</span> <span class="hidden" data-render-id="quarto-int-sidebar:/modules/module_data_exploration/Data_Exploration.html">Exploring data</span> <span class="hidden" data-render-id="quarto-int-sidebar:quarto-sidebar-section-7">7. Statistical Analysis Overview</span> <span class="hidden" data-render-id="quarto-int-sidebar:/modules/module_stats_overview/Statistical_Analysis_Introduction.html">Statistical Analysis Introduction</span> <span class="hidden" data-render-id="quarto-int-sidebar:/modules/module_stats_overview/Statistical_Terminology.html">Some Statistical Model Fitting Terminology</span> <span class="hidden" data-render-id="quarto-int-sidebar:quarto-sidebar-section-8">8. Fitting Basic Statistical Models</span> <span class="hidden" data-render-id="quarto-int-sidebar:/modules/module_model_basics/Basic_Statistical_Models.html">Basic Statistical Models</span> <span class="hidden" data-render-id="quarto-int-sidebar:/modules/module_model_basics/Model_Fitting_R.html">Fitting Statistical Models in R</span> <span class="hidden" data-render-id="quarto-int-sidebar:quarto-sidebar-section-9">9. Evaluating Your Model Fits</span> <span class="hidden" data-render-id="quarto-int-sidebar:/modules/module_model_evaluation/Model_Evaluation_Overview.html">Model Evaluation Overview</span> <span class="hidden" data-render-id="quarto-int-sidebar:/modules/module_model_evaluation/Model_Evaluation_Performance.html">Model Performance Evaluation</span> <span class="hidden" data-render-id="quarto-int-sidebar:/modules/module_model_evaluation/Model_Evaluation_Overfitting.html">Model Performance &amp; Overfitting</span> <span class="hidden" data-render-id="quarto-int-sidebar:/modules/module_model_evaluation/Model_Evaluation_Diagnostics.html">Model Diagostics</span> <span class="hidden" data-render-id="quarto-int-sidebar:/modules/module_model_evaluation/Model_Evaluation_Uncertainty.html">Model Uncertainty</span> <span class="hidden" data-render-id="quarto-int-sidebar:quarto-sidebar-section-10">10. Improving Your Model Fits</span> <span class="hidden" data-render-id="quarto-int-sidebar:/modules/module_model_improvement/Model_Improvement_Overview.html">Improving Model Fits Overview</span> <span class="hidden" data-render-id="quarto-int-sidebar:/modules/module_model_improvement/Model_Improvement_Data_Processing.html">Pre-Processing Data</span> <span class="hidden" data-render-id="quarto-int-sidebar:/modules/module_model_improvement/Model_Improvement_Subset_Selection.html">Subset Selection</span> <span class="hidden" data-render-id="quarto-int-sidebar:/modules/module_model_improvement/Model_Improvement_Regularization.html">Regularization</span> <span class="hidden" data-render-id="quarto-int-sidebar:/modules/module_model_improvement/Model_Improvement_Tuning.html">Model Tuning</span> <span class="hidden" data-render-id="quarto-int-sidebar:quarto-sidebar-section-11">11. Machine Learning Models I</span> <span class="hidden" data-render-id="quarto-int-sidebar:/modules/module_model_ml_1/ML_Models_Overview.html">ML Models Overview</span> <span class="hidden" data-render-id="quarto-int-sidebar:/modules/module_model_ml_1/Polynomial_Spline_Models.html">Polynomial and Spline Models</span> <span class="hidden" data-render-id="quarto-int-sidebar:/modules/module_model_ml_1/Decision_Trees.html">Decision Trees</span> <span class="hidden" data-render-id="quarto-int-sidebar:/modules/module_model_ml_1/Many_Tree_Models.html">Many-Tree Models</span> <span class="hidden" data-render-id="quarto-int-sidebar:quarto-sidebar-section-12">12. Machine Learning Models II</span> <span class="hidden" data-render-id="quarto-int-sidebar:/modules/module_model_ml_2/SVM_Models.html">Support Vector Machine Models</span> <span class="hidden" data-render-id="quarto-int-sidebar:/modules/module_model_ml_2/DA_Models.html">Discriminant Analysis Models</span> <span class="hidden" data-render-id="quarto-int-sidebar:/modules/module_model_ml_2/More_ML_Models.html">Some More ML models</span> <span class="hidden" data-render-id="quarto-int-sidebar:quarto-sidebar-section-13">13. Complete Analysis Workflow</span> <span class="hidden" data-render-id="quarto-int-sidebar:/modules/module_workflow/Complete_Data_Analysis_Workflow.qmd">Complete Data Analysis Workflow</span> <span class="hidden" data-render-id="quarto-int-sidebar:/modules/module_workflow/Data_Models_Not_Covered.html">More Data and Models</span> <span class="hidden" data-render-id="quarto-int-sidebar:/modules/module_workflow/Open_Science.html">Open Science</span> <span class="hidden" data-render-id="quarto-int-sidebar:quarto-sidebar-section-14">AI &amp; Big Data</span> <span class="hidden" data-render-id="quarto-int-sidebar:/modules/module-ai/ai-introduction/ai-introduction.html">AI Introduction</span> <span class="hidden" data-render-id="quarto-int-sidebar:/modules/module-ai/ai-conceptual/ai-conceptual.html">AI Concepts</span> <span class="hidden" data-render-id="quarto-int-sidebar:/modules/module-ai/ai-eda-R/ai-eda-R.html">AI for EDA</span> <span class="hidden" data-render-id="quarto-int-sidebar:/modules/module-ai/ai-tools/ai-tools.html">Current AI Tools</span> <span class="hidden" data-render-id="quarto-int-sidebar:quarto-sidebar-section-15">Synthetic Data</span> <span class="hidden" data-render-id="quarto-int-sidebar:/modules/module-synthetic-data/synthetic-data-introduction/synthetic-data-introduction.html">Synthetic Data Introduction</span> <span class="hidden" data-render-id="quarto-int-sidebar:/modules/module-synthetic-data/synthetic-data-new-R/synthetic-data-new-R.html">Creating new data</span> <span class="hidden" data-render-id="quarto-int-navbar:General Information">General Information</span> <span class="hidden" data-render-id="quarto-int-navbar:/courseinfo/Course_Syllabus.html">/courseinfo/Course_Syllabus.html</span> <span class="hidden" data-render-id="quarto-int-navbar:Content">Content</span> <span class="hidden" data-render-id="quarto-int-navbar:/modules/module_intro_tools/Introduction_Course.html">/modules/module_intro_tools/Introduction_Course.html</span> <span class="hidden" data-render-id="quarto-int-navbar:Assessments">Assessments</span> <span class="hidden" data-render-id="quarto-int-navbar:/courseinfo/Course_Assessments.html">/courseinfo/Course_Assessments.html</span> <span class="hidden" data-render-id="quarto-int-navbar:Project">Project</span> <span class="hidden" data-render-id="quarto-int-navbar:/project/Project_Overview.html">/project/Project_Overview.html</span> <span class="hidden" data-render-id="quarto-int-navbar:Resources">Resources</span> <span class="hidden" data-render-id="quarto-int-navbar:/resources/Course_Resources.html">/resources/Course_Resources.html</span> <span class="hidden" data-render-id="quarto-int-navbar:https://github.com/andreashandel/MADAcourse">https://github.com/andreashandel/MADAcourse</span> <span class="hidden" data-render-id="quarto-breadcrumbs-9764a82142091a4850785b3dd87e1bff">2. Data Analysis Introduction</span> <span class="hidden" data-render-id="quarto-breadcrumbs-315e467c7f2e2e4cf21bb3fdc1fb77e7">Data Analysis Overview</span></p>
+</div>
+<div id="quarto-meta-markdown" class="hidden">
+<p><span class="hidden" data-render-id="quarto-metatitle">MADA Course - Data Analysis Overview</span> <span class="hidden" data-render-id="quarto-twittercardtitle">MADA Course - Data Analysis Overview</span> <span class="hidden" data-render-id="quarto-ogcardtitle">MADA Course - Data Analysis Overview</span> <span class="hidden" data-render-id="quarto-metasitename">MADA Course</span> <span class="hidden" data-render-id="quarto-twittercarddesc"></span> <span class="hidden" data-render-id="quarto-ogcardddesc"></span></p>
+</div>
 </section>
 
 </main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+<script id = "quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -1032,18 +1030,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../modules/module_data_analysis/Data_Analysis_Motivation.html" class="pagination-link">
+      <a  href="/modules/module_data_analysis/Data_Analysis_Motivation.html" class="pagination-link">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Motivating Examples</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../modules/module_data_analysis/Data_Analysis_Structure.html" class="pagination-link">
+      <a  href="/modules/module_data_analysis/Data_Analysis_Structure.html" class="pagination-link">
         <span class="nav-page-text">Data Analysis Structure</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
 
+</body>
 
-
-</body></html>
+</html>

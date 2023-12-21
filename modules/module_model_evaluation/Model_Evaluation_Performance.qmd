@@ -135,7 +135,7 @@ Using the Likelihood is the most general and flexible approach to model fitting 
 
 # Further materials
 
-If you want to get some more intuition with fitting a continuous outcome, go through this [interactive tutorial](https://shiny.ovpr.uga.edu/modelperformance/). If it looks like the Posit Recipes you've seen, that is no accident. Both use the [`learnr` package](https://rstudio.github.io/learnr/). The difference is that I wrote this tutorial, the other ones were written by Posit and are therefore more polished and less buggy 😄.
+If you want to get some more intuition with fitting a continuous outcome, go through this [interactive tutorial](https://shiny.ovpr.uga.edu/modelperformance/). 
 
 The [Model Evaluation section of *HMLR*](https://bradleyboehmke.github.io/HOML/process.html#model-eval) lists and describes various performance metrics. The [Performance chapter of *Tidy Modeling with R*](https://www.tmwr.org/performance.html) also discusses different performance metrics.
 

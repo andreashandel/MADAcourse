@@ -10,13 +10,15 @@ likely the one unit which will have the greatest diversity in
 pre-existing knowledge. Some of you might already have enough R
 knowledge that this will just be a quick refresher.
 
-**For those among you who have not used R or any other programming
+::: warning
+For those among you who have not used R or any other programming
 language before, this unit (and everything else related to R in this
 course) will be time-consuming. Be prepared to put in a good bit of time
 and effort. Budget your time accordingly and plan ahead! If you do, I'm
 fairly certain you will find it worth it. If you are not able or willing
 to allot the time needed to learn enough R to make things work, this
-course might not be ideal for you.**
+course might not be ideal for you.
+:::
 
 # Learning Objectives
 
@@ -42,11 +44,7 @@ listed below and in the
 This figure illustrates the journey of learning to write code:
 
 ![The journey of learning to code. Source: [Thinkful blog
-post](https://www.thinkful.com/blog/why-learning-to-code-is-so-damn-hard/).](../../media/LearningToCode.jpg){fig-alt="Graph titled Coding Confidence vs Compentence. The x-axis is Competence and y-axis is confidence. The first peak is called the hand-holding honeymoon, the decline is called the cliff of confusion, the bottom of the decline is called the desert of despair, the beginning of the incline is called the upswing of awesome, and the end of the graph is the highest peak that says Job Ready."}
-
-It is from the Thinkful article [Why Learning to Code is So Damn
-Hard](https://www.thinkful.com/blog/why-learning-to-code-is-so-damn-hard/).
-Read the article, or read at least the beginning.
+post.](https://www.thinkful.com/blog/) Original post is not online anymore. {fig-alt="Graph titled Coding Confidence vs Compentence. The x-axis is Competence and y-axis is confidence. The first peak is called the hand-holding honeymoon, the decline is called the cliff of confusion, the bottom of the decline is called the desert of despair, the beginning of the incline is called the upswing of awesome, and the end of the graph is the highest peak that says Job Ready."}
 
 My goal is that during this course, you will reach the beginning of the
 *upswing of awesome*, at least when it comes to being able to use R to
@@ -66,32 +64,22 @@ regularly encounter the *cliff of confusion* and the *desert of despair*
 if I'm trying to do something new that I haven't done before and
 invariably get stuck.
 
+
 # Learning the basics of R
 
-Going through the resources below and practicing the material will
-likely take a good bit of time for those new to programming. I estimate
-20+ hours! You will also likely have to come back and revisit R coding
-throughout the course. Be prepared to spend a good bit of time learning
-some coding. I think it's a skill that's worth the effort 😃.
+This course is not a learn-to-code course. Therefore, we'll be writing code as-needed as we go along. Depending on your level of R coding experience, this might go very quickly or rather slowly. Be prepared to spend a good bit of time learning some coding. I think it's a skill that's worth the effort 😃.
 
-*Note: If you already know some R, most of these exercises will be
-refreshers. You can decide which ones are useful and which ones are
-not.*
+If you have no prior R coding experience, you might want to try a few of the [swirl tutorials](https://swirlstats.com/) or work your way through the beginning chapters of [Hands-On Programming with R](https://rstudio-education.github.io/hopr/). [Chapters 1 through 3 of *IDS*](https://rafalab.github.io/dsbook/) are also a good option. 
 
-Posit developed a nice set of [online tutorials they call
-Recipes](https://posit.cloud/learn/recipes). (It's free, but you might
-need to create an account/log in). I am recommending the primers highly.
-If you are new to R, start with the `The Basics` section, work through
-the tutorials.
+Alternatively, pick any other
+source you like, e.g. those listed in the resources section of this
+course, or anything else you find. (If you find something not listed
+that is really useful, feel free to share!) Of course, AI tools can also be very helpful, but to use them well you do need to know some coding yourself.
 
-*Note: Some of the bits surrounding the exercises are somewhat strange.
-You can generally type anything you want into the R boxes, and you
-always get a 'that's right' kind of message. The R package that is used
-to write this tutorial is in the early stages of development and is not
-full-featured yet. I'm sure it will get better over time. The whole
-tutorial should still work.*
 
-*Note: There are two ways of assigning something to an object in R, one
+
+::: note
+There are two ways of assigning something to an object in R, one
 can write `x <- 2` or `x = 2` and often (but not always) you can use
 either. People argue about which way to do it. In the RStudio tutorial,
 they do it the first way. If you are completely new to programming, I
@@ -103,13 +91,8 @@ I write code, I usually do a mix (without any logic to it). In R, you
 can also write this in the opposite direction, i.e. `2 -> x`. If you are
 new to programming this isn't generally recommended, but some online R
 personalities will assign variables this way.*
+:::
 
-If you want to practice some basic coding further, I suggest you go
-through [chapters 2 and 3 of *IDS*](https://rafalab.github.io/dsbook/).
-Continuing on to chapter 4 is a good idea. Alternatively, pick any other
-source you like, e.g. those listed in the resources section of this
-course, or anything else you find. (If you find something not listed
-that is really useful, feel free to share!)
 
 # More R coding
 
@@ -176,7 +159,11 @@ out this video by Roger Peng.
 <iframe class="video" src="https://www.youtube.com/embed/ZFaWxxzouCY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 :::
 
+Asking AI for help can often faster and more efficient than trying to find the answer via Google/StackOverflow. So make use of AI tools to help you get to working code quickly.
+
+::: note
 As you continue on your coding journey, keep in mind: **The great thing
 about programming is that you can't really "break" things too much. In
 the worst case you get an error message. So experiment and try out
 anything you like!**
+:::
