@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.3.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -120,23 +120,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../../courseinfo/Course_Overview.html" rel="" target="">
+    <a class="nav-link" href="../../../courseinfo/course-overview.html" rel="" target="">
  <span class="menu-text">General Information</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../modules/Content_Overview.html" rel="" target="">
+    <a class="nav-link" href="../../../modules/content-overview.html" rel="" target="">
  <span class="menu-text">Content</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../courseinfo/Course_Assessments.html" rel="" target="">
+    <a class="nav-link" href="../../../courseinfo/assessments-overview.html" rel="" target="">
  <span class="menu-text">Assessments</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../project/Project_Overview.html" rel="" target="">
+    <a class="nav-link" href="../../../project/project-overview.html" rel="" target="">
  <span class="menu-text">Project</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../resources/Resources_Overview.html" rel="" target="">
+    <a class="nav-link" href="../../../resources/resources-overview.html" rel="" target="">
  <span class="menu-text">Resources</span></a>
   </li>  
 </ul>
@@ -202,7 +202,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2023-12-16</p>
+      <p class="date-modified">2023-12-18</p>
     </div>
   </div>
     
@@ -237,10 +237,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="setup" class="level3">
 <h3 class="anchored" data-anchor-id="setup">Setup</h3>
 <p>First, we do the usual setup steps of package loading and other housekeeping steps.</p>
-<div class="cell" data-hash="synthetic-data-existing-R_cache/html/packages_941b209b7a02b30abe35d2e9ec3e9f02">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">'dplyr'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-hash="synthetic-data-existing-R_cache/html/setup_bf048fa8fd3cf4c60544e17a4058e0b0">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># setting a random number seed for reproducibility</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -253,12 +253,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="the-data" class="level3">
 <h3 class="anchored" data-anchor-id="the-data">The data</h3>
-<div class="cell" data-hash="synthetic-data-existing-R_cache/html/loaddata_29b0692a004cc395381c8bc828e90411">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#assuming your R script is in the same folder</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>rawdat <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">'SympAct_Any_Pos.Rda'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Next, we take a peek.</p>
-<div class="cell" data-hash="synthetic-data-existing-R_cache/html/checkdata_608f2bc8a48a6df710adeb2978657747">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(rawdat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 735  63</code></pre>

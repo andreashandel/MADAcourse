@@ -178,5 +178,5 @@ best tool.
 # Further reading
 
 See the references provided in the sections above, as well as the
-[**Resources**](../../resources/Course_Resources.qmd) section on the
+[**Resources**](../../resources/resources-course.qmd) section on the
 course website.

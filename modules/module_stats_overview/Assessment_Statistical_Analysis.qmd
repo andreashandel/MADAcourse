@@ -6,7 +6,7 @@ subtitle: ""
 # Quiz
 
 Get the quiz sheet for this module from the general
-[**Assessments**](../../courseinfo/Course_Assessments.qmd) page. Fill it
+[**Assessments**](../../courseinfo/assessments-overview.qmd) page. Fill it
 in, then submit to the online grading system before the deadline.
 
 # Exercise

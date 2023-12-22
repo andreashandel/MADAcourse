@@ -1,8 +1,0 @@
----
-title: Course Information Overview
-subtitle: ""
----
-
-This section contains most of the logistic information. The [Syllabus page](./Course_Syllabus.qmd) explains all the general logistic parts, the [Schedule page](./Course_schedule.qmd) lists what content is covered and what assessments you need to do each week, and the [Communication page](./Course_Communication.qmd) provides details on how we'll interact throughout this course.
-
-A few more logistic details can be found in other places, e.g., the [**introductory unit**](../modules/module_intro_tools/Introduction_Course.qmd) of this course. You'll be pointed to the sources.

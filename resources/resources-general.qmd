@@ -1,0 +1,421 @@
+---
+title: More Data Science Resources
+subtitle: ""
+---
+
+I kept adding resources until things got too unwieldy and the *Course
+Resources* page was becoming too large 😁. So I decided to split things
+into two pages. The [**Course Resources**](resources-course.qmd) page
+lists materials directly related to and used/mentioned in the course.
+This page lists a lot of other resources that are not heavily featured
+in the course, but that might be useful and interesting. Everything
+listed here is broadly related to the course topic, i.e. the resources
+focus on Data Science/Stats/R Coding/GitHub/etc. For even more
+materials, see the links to various lists by others at the end of this
+document.
+
+Most materials described below are (should be) freely available online.
+For better or for worse, a lot of the resources I list below are dynamic
+and ever changing. That means occasionally links might not work, sites
+go offline, chapters in online books get re-arranged, etc. If any link
+does not work and you can't access the materials for some reason, let me
+know so I can update this document.
+
+I placed them into categories according to main topic, but there is a
+lot of overlap. Many R coding resources focus on data analysis, and most
+data science resources I list focus on R.
+
+I am familiar with some, but not all of these resources. Sometimes I
+just took a quick glimpse to decide if it was worth including them here.
+If you find particular resources especially helpful or unhelpful (both
+listed and not listed), I'd love to receive feedback.
+
+# General Data Science
+
+-   [Cloud Based Data
+    Science](https://leanpub.com/universities/set/jhu/chromebook-data-science) -
+    a nice online course covering many of the topics we cover at a
+    somewhat more basic level. You can decide what to pay for it,
+    including getting it for free. That course used to be called
+    [Chromebook Data
+    Science](https://jhudatascience.org/chromebookdatascience/index.html)
+    and seems to be now updated and rebranded as [Cloud Based Data
+    Science](https://www.clouddatascience.org/). It is done by [Jeff
+    Leek](http://jtleek.com/) and his team. You'll run into Jeff
+    multiple times throughout this course.
+-   ["Data Science Specialization" on
+    Coursera](https://www.coursera.org/specialization/jhudatascience/1).
+    One of the first comprehensive online offerings. Coursera has gotten
+    more restrictive over the years, but I think you can still get each
+    course for free.
+-   [Stat 545](https://stat545.com/index.html) is the name of Jenny
+    Bryan's previous course on Data Wrangling and exploratory analysis.
+    She has since turned this into a stand-alone
+    website/book/course/resource. Covers a bit similar topics to the
+    R4DS book, but with a different emphasis and from a more
+    comprehensive and advanced perspective.
+-   [Advanced data analysis for the social
+    sciences](http://www.princeton.edu/~mjs3/soc504_s2015/)
+-   Advanced Data Science [version
+    1](http://jtleek.com/advdatasci/index.html) and [version
+    2](https://jhu-advdatasci.github.io/2018/index.html)
+-   [Data science for economists](https://github.com/uo-ec607/lectures)
+-   [STOR 390 - Introduction to data
+    science](https://idc9.github.io/stor390/)
+-   [Kaggle (owned by Google)](https://www.kaggle.com/) is a website
+    that hosts data analysis competitions. Everyone can participate and
+    compete for - sometimes rather large - prizes. The website also has
+    a lot of good datasets and code, as well as other resources related
+    to data analysis. Definitely worth checking out.
+-   I used to recommend and use Datacamp, an online platform that has
+    interactive courses teaching R and Data Analysis (and other topics).
+    Unfortunately, the company dealt rather poorly with a [case of
+    sexual
+    harassment](https://www.buzzfeednews.com/article/daveyalba/datacamp-sexual-harassment-metoo-tech-startup).
+    They also became much less academic-friendly, their student discount
+    is much less nice than it used to be, and apparently they recently
+    sued R Studio (a company I think highly of). I'm not sure what the
+    current status is on both their company culture and their
+    academic/student-friendliness, but I have basically moved on. Too
+    much other good stuff available to bother further.
+-   [Exploratory Data Analysis](https://eda.seas.gwu.edu/) - materials
+    for an online course teaching exploratory data analysis using R,
+    taught by [John Paul Helveston](https://www.jhelvy.com/).
+-   The journal PeerJ has a collection of articles on the topic of
+    [Practical Data Science for
+    Stats](https://peerj.com/collections/50-practicaldatascistats/). A
+    lot of the papers in that collection use R.
+-   Roger Peng and Hillary Parker have a Stats and Data Science related
+    podcast called [Not so standard
+    deviations](http://nssdeviations.com/).
+-   A few individuals, most notably [Roger
+    Peng](https://leanpub.com/u/rdpeng), [Brian
+    Caffo](https://leanpub.com/u/bcaffo) and [Jeff
+    Leek](https://leanpub.com/u/jtleek) have books on Leanpub related to
+    R and data science. Most of the books have a minimum price of zero
+    and are worth looking at. If you feel any of these Leanpub books are
+    worth paying for, go ahead and do so. But I am fairly sure those
+    authors do not rely on the book royalties for their living 😄, so if
+    you can't or don't want to pay, getting them for free is ok. As a
+    side note, Leanpub uses Markdown, which means if you write a report
+    in (R)Markdown and want to turn it into a (self)-published book, it
+    is rather easy to do with Leanpub. That's how those individuals made
+    their books, as spin-offs from their RMarkdown course materials.
+-   [*ModernDive - Statistical Inference via Data
+    Science*](https://moderndive.com) - another good recent book
+    covering data analysis with R.
+-   [*Introduction to Modern
+    Statistics*](https://openintro-ims.netlify.app/) is a free online
+    textbook teaching statistics using R in a modern framework.
+-   [*Telling Stories with Data*](https://tellingstorieswithdata.com/) -
+    an interesting way to discuss data analysis, focusing on the
+    story/message.
+-   [*Reproducible Medical Research with
+    R*](https://bookdown.org/pdr_higgins/rmrwr/) - free online book
+    showing how to use R to do basic analysis.
+-   [*Data Science for the Biomedical
+    Sciences*](https://ds4biomed.tech/) - another free online textbook.
+    Part of a workshop, but can also be used for self-learning.
+-   [*Elements of Statistical
+    Learning*](https://hastie.su.domains/ElemStatLearn/) - is a somewhat
+    advanced book on statistical/machine learning. Not useful as
+    introduction, but a potentially good reference.
+-   [*Interpretable Machine
+    Learning*](https://christophm.github.io/interpretable-ml-book/) is
+    an online book that discusses approaches that can be used to start
+    making sense of sometimes complex ML models.
+-   [Jesse Mostipak, aka Kiersi](https://www.twitch.tv/kierisi) streams
+    data science sessions on Twitch.
+-   [Nick Wan](https://www.twitch.tv/nickwan_datasci) is another date
+    science Twitch streamer.
+-   [David Robinson](https://www.youtube.com/user/safe4democracy/videos)
+    has videos of screencasts showing him digging into datasets from
+    TidyTuesday and other sources.
+-   [Andrew Heiss](https://www.andrewheiss.com/) has a lot of good
+    materials related to R and data analysis on his website.
+
+# Data Sources and Wrangling
+
+-   [`juicr` R
+    package](https://cran.r-project.org/web/packages/juicr/index.html)
+    allows one to extract numerical values from figures.
+
+# Data Visualization
+
+-   [Data Visualization](https://datavizs21.classes.andrewheiss.com/) -
+    comprehensive materials for an online course on data visualization
+    in R, taught by [Andrew Heiss](https://www.andrewheiss.com/).
+-   A great free book which discusses the principles of good data
+    visualization is [*Fundamentals of Data
+    Visualization*](https://serialmentor.com/dataviz/). The book is not
+    R specific (and doesn't show R code, but all figures are made in R).
+    \* [*Data Visualization - A practical
+    introduction*](https://socviz.co/) is a fairly complete free online
+    draft of a book by the same name. It provides a general introduction
+    to making good graphs, and the R code for the figures is shown.
+-   [Flowing Data](https://flowingdata.com/) is a website with a lot of
+    cool information on how to make great data visualizations. Some
+    content is free, other parts are not.
+-   The [`esquisse` R package](https://dreamrs.github.io/esquisse/) lets
+    you quickly make ggplots in an interactive manner. Very good to get
+    started on some exploratory plots. You can take the ggplot code you
+    generated and tweak further.
+-   [Graphics Principles](https://graphicsprinciples.github.io/) is a
+    website that gives general tips for effective visual communication.
+    Examples using R are also provided.
+- [From Data to Viz](https://www.data-to-viz.com/) is a website that guides you through selection of suitable visualizations based on your data. It also provides nice explanations of many useful plot types.
+- [The R Graph Gallery](https://r-graph-gallery.com/index.html) has a large collection of plots made with R, also showing the code. A great place for inspiration and copy/paste/modify.
+
+
+# Pitfalls and best practices in data analysis {#sec-pitfalls}
+
+## Researcher degrees of freedom (p-hacking)
+
+-   The concept of [Researcher degrees of
+    freedom](https://en.wikipedia.org/wiki/Researcher_degrees_of_freedom),
+    which is related to [Data
+    Dredging](https://en.wikipedia.org/wiki/Data_dredging) and
+    [*p-hacking*](https://doi.org/10.1371/journal.pbio.1002106) are
+    important ideas to keep in mind when doing a data analysis. Note
+    that this issue is often cast in the language of p-values since
+    those are still (unfortunately) the most common approach to
+    statistical analyses. But the concept applies even if one doesn't
+    use p-values.
+-   You can find a fun hands-on exploration of the potential problem of
+    researcher degrees of freedom in this [538
+    visualization](https://projects.fivethirtyeight.com/p-hacking/) and
+    another [choose-your-own adventure
+    story](https://jabde.com/2022/03/20/p-hack-your-own-adventure/).
+-   For further discussions of this general problem, see e.g. this
+    [article from
+    538](https://fivethirtyeight.com/features/science-isnt-broken/)
+    (which goes with the hands-on example just mentioned) or [Gelman's
+    and Loken's
+    article](https://www.americanscientist.org/article/the-statistical-crisis-in-science),
+    with their closely related [article from
+    2013](http://www.stat.columbia.edu/~gelman/research/unpublished/p_hacking.pdf).
+-   [Simmons et al. 2011](https://pubmed.ncbi.nlm.nih.gov/22006061/)
+    provides a nice and easy to follow illustration how researcher
+    degrees of freedom, combined with incomplete reporting, can lead to
+    apparently nonsensical results. The study is a (fake) psychology
+    study, but everything applies in general and it is easy to follow.
+-   Not surprisingly, *xkcd* has also [covered the topic of
+    p-hacking](https://xkcd.com/882/).
+
+## Reproducible research
+
+-   [Trisovic et al.
+    2022](https://www.nature.com/articles/s41597-022-01143-6) provides a
+    nice glimpse at the problems that still exist when trying to
+    reproduce/replicate prior studies by re-running the code.
+-   [*R Workflow*](http://hbiostat.org/rflow/) is an online book
+    describing how to do reproducible research using the R ecosystem and
+    the still fairly new [Quarto](https://quarto.org/) framework.
+-   For more Quarto, the [Awesome
+    Quarto](https://github.com/mcanouil/awesome-quarto) repository has a
+    nice curated list of links to resources.
+
+# General Statistical Analysis
+
+-   [Common statistical tests are linear
+    models](https://lindeloev.github.io/tests-as-linear/) is a website
+    that illustrates how many standard statistical tests are equivalent
+    to certain types of linear models. Very useful if you are bewildered
+    by the zoo of statistical tests and wonder how they are related to
+    regression models.
+-   [Library of Statistical Techniques](https://lost-stats.github.io/)
+    is a collection of short explanations and code covering a range of
+    different statistical topics. More general data analysis topics,
+    e.g. wrangling and visualization, are also covered.
+-   [Common statistical myths and how to push
+    back](https://discourse.datamethods.org/t/reference-collection-to-push-back-against-common-statistical-myths/1787) -
+    this is a collection of links to references that address/refute
+    common statistical myths (i.e., things that are wrong but that are
+    commonly done/said/written in the scientific literature anyway.)
+-   [Improving Your Statistical
+    Inferences](https://lakens.github.io/statistical_inferences/) is an
+    online resource with useful information on how to improve various
+    types of statistical analyses.
+-   [Moving to a World Beyond
+    "p\<0.05"](https://www.tandfonline.com/doi/full/10.1080/00031305.2019.1583913)
+    is a nice article with suggestions for how to report statistical
+    results more appropriately than being fixated on p-values.
+
+# Bayesian Analysis
+
+*While we don't cover Bayesian methods in this course, I personally find
+them very useful and compelling. Here are some resources that could be
+worth checking out if you want to learn some Bayesian statistics/data
+analysis.*
+
+-   [*Statistical
+    Rethinking*](https://xcelab.net/rm/statistical-rethinking/) by
+    Richard McElreath. My favorite stats book (Bayesian or otherwise).
+    It starts slow but goes pretty far. The book is not free (but worth
+    the price), but there are resources on the website which are free.
+-   [*Bayes Rules*](https://www.bayesrulesbook.com/) by Johnson, Ott and
+    Dogucu. Very hands-on introduction to Bayesian statistics. The
+    online version is free.
+
+<!-- # Longitudinal Analysis -->
+
+```{=html}
+<!-- * This [
+set of lecture notes](https://data.princeton.edu/wws509/notes/c7s1) provide - among other topics - a nice introduction to survival modeling of longitudinal data. -->
+```
+# Causal Analysis
+
+Unfortunately, as part of this course, we cannot cover the broad and
+important topic of [causal
+analysis](https://en.wikipedia.org/wiki/Causal_analysis). However, it is
+a topic worth learning. If you are interested, here are a few basic
+references that can get you started. Most of the ones listed are fairly
+non-technical and thus beginner-friendly.
+
+-   [Short paper by Hernán
+    2018](https://ajph.aphapublications.org/doi/full/10.2105/AJPH.2018.304337)
+    provides a very basic and easy introduction and commentary on the
+    topic of causal analysis.
+-   [*Causal Inference - The
+    Mixtape*](https://mixtape.scunning.com/index.html) is the free
+    online version of a book that provides a good introduction to causal
+    analysis/inference/modeling.
+-   [*Causal Inference: What
+    If*](https://www.hsph.harvard.edu/miguel-hernan/causal-inference-book/)
+    is a great book on the topic that's freely available online.
+-   The above mentioned [*Statistical
+    Rethinking*](https://xcelab.net/rm/statistical-rethinking/) by
+    Richard McElreath also covers a good bit of causal analysis at a
+    very accessible introductory level. He also has several great
+    recordings on the topic on his [YouTube
+    channel](https://www.youtube.com/channel/UCNJK6_DZvcMqNSzQdEkzvzA).
+-   [Causal Inference in R
+    Workshop](https://r-causal.github.io/causal_workshop_website/)
+    contains workshop materials and a link to a book covering the topic.
+
+# Machine Learning (ML)
+
+-   [Machine Learning University (MLU)](https://mlu-explain.github.io/)
+    is an educational offering from Amazon with several nice tutorials
+    covering important ML-related topics. It also includes very basic
+    statistical concepts such as linear/logistic regression.
+
+# Artificial Intelligence (AI) 
+
+Given the importance and rapid change of AI, I made a [separate resource unit.](../modules/module-ai/ai-resources/ai-resources.qmd)
+
+
+
+# R coding
+
+-   [R Studio education](https://education.rstudio.com/) is a fairly new
+    website that I expect will contain an increasing collection to all
+    kinds of useful teaching resources related to R and Data Science.
+    Check their *Learn* section for links to resources.
+-   [`swirl`](http://swirlstats.com) is a package that teaches R
+    inside R. Especially complete beginner students have found it to be
+    a nice start since it provides very encouraging feedback. The
+    downside is that all code writing happens interactively in the `R`
+    console, which is not the way one writes real code. It's still worth
+    checking out if you want to get some more direct, hands-on R
+    practice. Unfortunately, the package seems dormant and hasn't been
+    updated in a few years (but what's in there probably still works?)
+-   [Ready for R](https://ready4r.netlify.app/) - materials for a basic
+    introductory online R course taught by [Ted
+    Laderas](https://laderast.github.io/).
+-   [*Modern R with the tidyverse*](https://modern-rstats.eu/) - online
+    book that provides a very nice introduction to important concepts of
+    R coding with a focus on data analysis.
+-   [Intro to Programming for Analytics](http://p4a.seas.gwu.edu/) -
+    materials for an online course teaching intro to programming with R,
+    taught by [John Paul Helveston](https://www.jhelvy.com/).
+-   [*Efficient R
+    programming*](https://csgillespie.github.io/efficientR/) contains a
+    lot of good tips and tricks towards writing better code.
+-   [*R for Epidemiology*](https://www.r4epi.com/) - an introduction to
+    R with a focus on tasks that are often used in Epidemiology/Public
+    Health.
+-   [*Tidy Modeling with R*](https://www.tmwr.org/) are the beginnings
+    of a hopefully great and comprehensive book that describes
+    analysis/modeling using the `tidyverse` set of packages.
+-   [*Learning statistics with
+    R*](https://learningstatisticswithr.com/) - I've not read/used it,
+    but heard from others who like it.
+-   [*What They Forgot to Teach You About R*](https://rstats.wtf/) is
+    the beginning of an online book which covers some topics rarely
+    found elsewhere. As of this writing, the book is fairly incomplete,
+    but still worth checking out. Especially the first several chapters
+    and the *debugging R code* sections are worth learning/reading.
+-   [*The `Introverse` R
+    package*](https://spielmanlab.github.io/introverse/index.html) is
+    providing more novice-friendly help files for important `tidyverse`
+    functions. If you struggle with the default help file for a
+    function, check out this package.
+
+# Git/GitHub
+
+-   The [Software Carpentry](https://software-carpentry.org/) has a
+    great introductory course that walks you through the basics of Git
+    (and GitHub) step-by-step. This is useful if you want to know what
+    exactly is going on, even if you mainly use a graphical interface
+    for your Git/GitHub work. The whole course materials are
+    [online](http://swcarpentry.github.io/git-novice/).
+
+# Quarto
+
+-   The [Quarto website](https://quarto.org/) has a ton of great
+    information and documentation.
+-   Here is another example and template of setting up a website with
+    [Quarto](https://www.marvinschmitt.com/blog/website-tutorial-quarto/),
+    similar to what you are asked to do for the Introductory
+    Exercise.
+-   [Quarto Club](https://quarto.club/) is a collection of nice Quarto
+    website examples. Most of them have their source code on GitHub, so
+    you can see how the creators of those pages accomplished what they
+    made, and shamelessly copy/paste/adapt 😁.
+
+# Lists and other sources
+
+-   [Big Book of R](https://www.bigbookofr.com/) - a website listing and
+    summarizing several hundred books, many free, related to R and Data
+    Science. If you are looking for a resource on a specific topic, this
+    is a good place to check.
+-   By now, there are hundreds of books on R and Data Science available
+    online. Many of these books are written in bookdown, a version of R
+    Markdown. You will learn all about it in this course. It is worth
+    checking out the [main bookdown website](https://bookdown.org/) as
+    well as the [archive list](https://bookdown.org/home/archive/) and
+    scrolling through the list of books. Some of the books you can find
+    there are very good. Of course, there is also a good bit of "noise".
+-   Another recent list of good R and Data Science resources is [Chris
+    Engelhardt's GitHub
+    repository](https://github.com/Chris-Engelhardt/data_sci_guide).
+-   [Teach Data Science](https://teachdatascience.com/) - a blog with
+    short, informative posts on various aspects related to data science
+    using R.
+-   [Machine
+    Learning](https://m-clark.github.io/introduction-to-machine-learning/) -
+    an online reference (almost book) which nicely explains some of the
+    basics of machine learning.
+-   RStudio has a [collection of materials for data
+    science](https://resources.rstudio.com/the-essentials-of-data-science).
+-   [R Studio
+    cheatsheets](https://www.rstudio.com/resources/cheatsheets/) are 1
+    page reference documents that quickly let you see how you use
+    specific R packages or do certain tasks. A very useful resource,
+    definitely check them out.
+-   [A
+    meta-cheatsheet](https://github.com/business-science/cheatsheets/blob/master/Data_Science_With_R_Workflow.pdf) -
+    this is a cheat-sheet showing you links to different R packages and
+    their cheat-sheets for specific tasks. A nice overview document,
+    developed by the folks at
+    [business-science.io](https://www.business-science.io/).
+-   [Data Science Learning
+    Resources](https://www.mbastack.org/data-science-learning-resources/) -
+    a collection of links to resources that discuss general aspects of
+    the data science field.
+-   I created lists related to R and Data Analysis (as well as other
+    topics). You can find all resource lists on [my
+    website](https://andreashandel.github.io/research-and-teaching-resources/).
+    (These lists are works in progress, and some are better/more useful
+    than others. Feel free to send me links/resources to include).

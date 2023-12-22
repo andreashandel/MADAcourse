@@ -17,8 +17,12 @@ Most general comments/thoughts are in the Notes and Thoughts document in the off
 
 * Turn mentions of specific pages on main page into links.
 
+* Rename the 'modules' folder to 'content' and adjust links.
+
 * Try to eventually have consistent naming of folders and files: All lowercase, with dashes as separators 
 https://developers.google.com/style/filenames 
+
+
 
 * Eventually, each unit should have these sections: 
 # Overview

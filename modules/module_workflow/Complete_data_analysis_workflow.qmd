@@ -47,9 +47,9 @@ to make choices and decisions on how exactly to perform various steps of
 an analysis is one reason why p-values are generally meaningless, or at
 least do not mean what people think/claim they mean. For some good and
 easy introductions to that topic, see the
-[**Pitfalls**](../../resources/General_Resources.qmd#sec-pitfalls)
+[**Pitfalls**](../../resources/resources-general.qmd#sec-pitfalls)
 section on the [**General
-Resources**](../../resources/General_Resources.qmd) page).
+Resources**](../../resources/resources-general.qmd) page).
 :::
 
 ## The question

@@ -45,4 +45,4 @@ others types of graphs are less frequently used (e.g., violin plots or hex bins)
 
 # Further visualization resources
 
-See the [**General Resources**](../../resources/General_Resources.qmd) page for some additional sources.
+See the [**General Resources**](../../resources/resources-general.qmd) page for some additional sources.

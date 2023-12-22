@@ -58,4 +58,4 @@ In general, using AI tools to make figures and tables can save a lot of time.
 
 # Further resources
 
-The additional units in this module go into more depth for figure and table generation. See also the [**General Resources**](../../resources/General_Resources.qmd) page for some additional sources.
+The additional units in this module go into more depth for figure and table generation. See also the [**General Resources**](../../resources/resources-general.qmd) page for some additional sources.

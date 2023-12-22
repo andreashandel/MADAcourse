@@ -52,15 +52,15 @@ website:
     logo: media/MADAlogo.png
     left:
       - text: "General Information"
-        file: courseinfo/Course_Overview.qmd
+        file: courseinfo/course-overview.qmd
       - text: "Content"
-        file: modules/Content_Overview.qmd
+        file: modules/content-overview.qmd
       - text: "Assessments"
-        file: courseinfo/Course_Assessments.qmd
+        file: courseinfo/assessments-overview.qmd
       - text: "Project"
-        file: project/Project_Overview.qmd
+        file: project/project-overview.qmd
       - text: "Resources"
-        file: resources/Resources_Overview.qmd
+        file: resources/resources-overview.qmd
 
     right:
       - icon: github 
@@ -72,15 +72,19 @@ website:
         collapse-level: 1 
         background: "#e3e2db" # cream color from MADA logo background
         contents:
+            - text: "Course Overview"
+              file: courseinfo/course-overview.qmd
             - text: "Syllabus"
-              file: courseinfo/Course_Syllabus.qmd
+              file: courseinfo/course-syllabus.qmd
             - text: "Schedule"
-              file: courseinfo/Course_Schedule.qmd
+              file: courseinfo/course-schedule.qmd
             - text: "Communication"
-              file: courseinfo/Course_Communication.qmd
+              file: courseinfo/course-communication.qmd
               
       - title: "Content"
         contents:
+          - text: "Content Overview"
+            file: modules/content-overview.qmd
           - section: "1. Course and Tools Introduction"
             contents:
               - text: "Course Introduction"
@@ -232,7 +236,7 @@ website:
       - title: "Assessments"
         contents:
             - text: "Assessments Overview"
-              file: courseinfo/Course_Assessments.qmd
+              file: courseinfo/assessments-overview.qmd
             - text: "1. Course and Tools Introduction"
               file: modules/module_intro_tools/Assessment_Course_Tools_Introduction.qmd
             - text: "2. Data Analysis Introduction"
@@ -263,20 +267,22 @@ website:
       - title: "Project"
         contents:
            - text: "Project Overview"
-             file: project/Project_Overview.qmd
+             file: project/project-overview.qmd
            - text: "Project Details"
-             file: project/Project_Details.qmd
+             file: project/project-details.qmd
            - text: "Project Review"
-             file: project/Project_Review.qmd
+             file: project/project-review.qmd
            - text: "Project Examples"
-             file: project/Project_Examples.qmd
+             file: project/project-examples.qmd
                  
       - title: "Resources"
         contents:
+           - text: "Resources Overview"
+             file: resources/resources-overview.qmd
            - text: "Course Resources"
-             file: resources/Course_Resources.qmd
+             file: resources/resources-course.qmd
            - text: "General Resources"
-             file: resources/General_Resources.qmd
+             file: resources/resources-general.qmd
            - text: "Glossary"
-             file: resources/Course_Glossary.qmd
+             file: resources/resources-glossary.qmd
              

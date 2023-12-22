@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.3.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -91,23 +91,23 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../courseinfo/Course_Overview.html" rel="" target="">
+    <a class="nav-link" href="../../courseinfo/course-overview.html" rel="" target="">
  <span class="menu-text">General Information</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../modules/Content_Overview.html" rel="" target="">
+    <a class="nav-link active" href="../../modules/content-overview.html" rel="" target="" aria-current="page">
  <span class="menu-text">Content</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../courseinfo/Course_Assessments.html" rel="" target="">
+    <a class="nav-link" href="../../courseinfo/assessments-overview.html" rel="" target="">
  <span class="menu-text">Assessments</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../project/Project_Overview.html" rel="" target="">
+    <a class="nav-link" href="../../project/project-overview.html" rel="" target="">
  <span class="menu-text">Project</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../resources/Resources_Overview.html" rel="" target="">
+    <a class="nav-link" href="../../resources/resources-overview.html" rel="" target="">
  <span class="menu-text">Resources</span></a>
   </li>  
 </ul>
@@ -140,6 +140,12 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../modules/content-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Content Overview</span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
@@ -704,7 +710,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2023-12-20</p>
+      <p class="date-modified">2023-12-22</p>
     </div>
   </div>
     
@@ -765,7 +771,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="manual-subset-selection">Manual subset selection</h2>
 <p>All the approaches above use cross-validated performance of some metric to determine which predictors should be included in the model. Another, still commonly used strategy is to do subset selection manually. The analyst usually starts with a simple model containing just one predictor (the most important one), and then decides based on model results (e.g., systematic deviations in the residuals) and/or based on scientific knowledge, if adding additional predictors is justified. For a skilled analyst with a lot of subject matter expertise, this can lead to models that are all-around very good. They have good performance, make scientific sense, and are still simple. Unfortunately, this requires a lot of knowledge, time and careful analysis. Also, the analyst needs to honestly report any model they tried, not just the one they end up with. Otherwise they are using and not reporting <a href="https://en.wikipedia.org/wiki/Researcher_degrees_of_freedom">researcher’s degrees of freedom</a>, which leads to overfitting. Most analyses are not done that way.</p>
 <div class="note">
-<p>I mentioned this before in various places and it’s a theme throughout the course, that unless data is collected and analyzed using pre-specified protocols (e.g., a clinical trial for FDA approval) it is almost always the case that scientists have so much flexibility during the data collection and analysis stages that p-values and similar statistical measures are meaningless. The <a href="https://en.wikipedia.org/wiki/Researcher_degrees_of_freedom">Researcher’s degrees of freedom</a> issue is everywhere and essentially impossible to get rid of. For more on this topic, see the <a href="../../resources/General_Resources.html#sec-pitfalls"><strong>Pitfalls</strong></a> section on the <a href="../../resources/General_Resources.html"><strong>General Resources</strong></a> page.</p>
+<p>I mentioned this before in various places and it’s a theme throughout the course, that unless data is collected and analyzed using pre-specified protocols (e.g., a clinical trial for FDA approval) it is almost always the case that scientists have so much flexibility during the data collection and analysis stages that p-values and similar statistical measures are meaningless. The <a href="https://en.wikipedia.org/wiki/Researcher_degrees_of_freedom">Researcher’s degrees of freedom</a> issue is everywhere and essentially impossible to get rid of. For more on this topic, see the <a href="../../resources/resources-general.html#sec-pitfalls"><strong>Pitfalls</strong></a> section on the <a href="../../resources/resources-general.html"><strong>General Resources</strong></a> page.</p>
 <p>All of this applies to manual subset selection (which is why I’m thinking about it here and adding this note), but it is more general and applies to every step in a scientific project.</p>
 </div>
 </section>

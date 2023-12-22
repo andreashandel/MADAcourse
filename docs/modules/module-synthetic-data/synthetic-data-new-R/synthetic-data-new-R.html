@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.3.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -123,23 +123,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../../courseinfo/Course_Overview.html" rel="" target="">
+    <a class="nav-link" href="../../../courseinfo/course-overview.html" rel="" target="">
  <span class="menu-text">General Information</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../modules/Content_Overview.html" rel="" target="">
+    <a class="nav-link active" href="../../../modules/content-overview.html" rel="" target="" aria-current="page">
  <span class="menu-text">Content</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../courseinfo/Course_Assessments.html" rel="" target="">
+    <a class="nav-link" href="../../../courseinfo/assessments-overview.html" rel="" target="">
  <span class="menu-text">Assessments</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../project/Project_Overview.html" rel="" target="">
+    <a class="nav-link" href="../../../project/project-overview.html" rel="" target="">
  <span class="menu-text">Project</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../resources/Resources_Overview.html" rel="" target="">
+    <a class="nav-link" href="../../../resources/resources-overview.html" rel="" target="">
  <span class="menu-text">Resources</span></a>
   </li>  
 </ul>
@@ -172,6 +172,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../modules/content-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Content Overview</span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
@@ -743,7 +749,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2023-12-16</p>
+      <p class="date-modified">2023-12-18</p>
     </div>
   </div>
     
@@ -788,7 +794,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="setup" class="level2">
 <h2 class="anchored" data-anchor-id="setup">Setup</h2>
 <p>We’ll start by loading the packages used in the code below. While we will not use packages that are specifically meant to generate synthetic data, we will still use several common packages that make data generation tasks easier. That said, you could also do all of this with base <code>R</code> and no additional packages.</p>
-<div class="cell" data-hash="synthetic-data-new-R_cache/html/packages_9a6ff8e59ea1152fd6748dea23252017">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># make sure the packages are installed</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Load required packages</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
@@ -796,7 +802,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-hash="synthetic-data-new-R_cache/html/setup_c33ca7030beeac83b7ef578793dbb901">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set a seed for reproducibility</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the number of observations (patients) to generate</span></span>
@@ -805,7 +811,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="generating-data" class="level2">
 <h2 class="anchored" data-anchor-id="generating-data">Generating data</h2>
-<div class="cell" data-hash="synthetic-data-new-R_cache/html/makedata_b209356433002641af254c6455034531">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create an empty data frame with placeholders for variables</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>syn_dat <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">PatientID =</span> <span class="fu">numeric</span>(n_patients),</span>
@@ -881,7 +887,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="checking-data" class="level2">
 <h2 class="anchored" data-anchor-id="checking-data">Checking data</h2>
 <p>Take a peek at the generated data.</p>
-<div class="cell" data-hash="synthetic-data-new-R_cache/html/checkdata_d25b4b318fce8fa3880b631fe43b47be">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(syn_dat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   PatientID           Age           Gender          TreatmentGroup    
@@ -940,13 +946,13 @@ $ AdverseEvent   &lt;int&gt; 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
 <section id="setup-1" class="level2">
 <h2 class="anchored" data-anchor-id="setup-1">Setup</h2>
 <p>The usual setup steps.</p>
-<div class="cell" data-hash="synthetic-data-new-R_cache/html/packages-ex2_7e159ee70f5936da44c8a93b7828f6ce">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># make sure the packages are installed</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Load required packages</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-hash="synthetic-data-new-R_cache/html/setup-ex2_cf713c4fd9370781f3a772d0e052e799">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set seed for reproducibility</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Number of patients in each treatment group</span></span>
@@ -958,7 +964,7 @@ $ AdverseEvent   &lt;int&gt; 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
 </section>
 <section id="generating-data-1" class="level2">
 <h2 class="anchored" data-anchor-id="generating-data-1">Generating data</h2>
-<div class="cell" data-hash="synthetic-data-new-R_cache/html/makedata-ex2_8290b86e34b9029d8bb6b339083955ed">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Treatment group levels</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>treatment_groups <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Low Dose"</span>, <span class="st">"High Dose"</span>)</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1017,7 +1023,7 @@ $ AdverseEvent   &lt;int&gt; 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
 <section id="checking-data-1" class="level2">
 <h2 class="anchored" data-anchor-id="checking-data-1">Checking data</h2>
 <p>Take a peek at the generated data.</p>
-<div class="cell" data-hash="synthetic-data-new-R_cache/html/checkdata-ex2_dfa9e7a555ea90d58f75b81e17045951">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the first few rows of the generated dataset</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">head</span>(syn_dat2))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1061,7 +1067,7 @@ $ AdverseEvent      &lt;int&gt; 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 
 </section>
 <section id="exploratory-plot" class="level2">
 <h2 class="anchored" data-anchor-id="exploratory-plot">Exploratory plot</h2>
-<div class="cell" data-hash="synthetic-data-new-R_cache/html/plotdata-ex2_2801f11c8410294136b518fefa2ac313">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot drug concentrations over time for each individual using ggplot2</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(syn_dat2, <span class="fu">aes</span>(<span class="at">x =</span> Day, <span class="at">y =</span> DrugConcentration, </span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">group =</span> <span class="fu">as.factor</span>(PatientID), <span class="at">color =</span> TreatmentGroup)) <span class="sc">+</span></span>
@@ -1097,7 +1103,7 @@ $ AdverseEvent      &lt;int&gt; 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 
 </section>
 <section id="save-data" class="level2">
 <h2 class="anchored" data-anchor-id="save-data">Save data</h2>
-<div class="cell" data-hash="synthetic-data-new-R_cache/html/savedata-ex2_08e0a97d6b5bbfb78f429eaffb0bab25">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the simulated data to a CSV or Rds file</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(syn_dat2, <span class="st">"syn_dat2.csv"</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(syn_dat2, <span class="st">"syn_dat2.Rds"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>

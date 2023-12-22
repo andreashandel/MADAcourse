@@ -41,4 +41,4 @@ Interactive graphs and apps are beyond what we'll cover in this class, but it is
 
 # Further R visualization resources
 
-There are of course a whole lot more resources available. Almost all books that teach data analysis with R contain some visualization chapter. There are likely also many other good books, websites, and R packages available. A few more are listed on the [**General Resources**](../../resources/General_Resources.qmd) page. I'm sure you'll find many others yourself. If you come across any particularly nice sources, please let me know so I can add them.
+There are of course a whole lot more resources available. Almost all books that teach data analysis with R contain some visualization chapter. There are likely also many other good books, websites, and R packages available. A few more are listed on the [**General Resources**](../../resources/resources-general.qmd) page. I'm sure you'll find many others yourself. If you come across any particularly nice sources, please let me know so I can add them.

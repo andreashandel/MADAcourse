@@ -1,0 +1,11 @@
+---
+title: Content Overview
+subtitle: ""
+---
+
+This section contains almost all of the content, organized into modules. Each module has several units. 
+
+Assessments for each module are in the separate [Assessments section](../courseinfo/assessments-overview.qmd). 
+
+The [Schedule page](../courseinfo/course-schedule.qmd) lists what content is covered and what assessments you need to do each week.
+

@@ -39,7 +39,7 @@ will get frustrated with some weird error message in your code (still
 happens to me at least once a week), and you will eventually figure it
 out. Make use of the great resources that are out there. They are all
 listed below and in the
-[**Resources**](../../resources/Course_Resources.qmd) section.
+[**Resources**](../../resources/resources-course.qmd) section.
 
 This figure illustrates the journey of learning to write code:
 

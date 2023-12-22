@@ -5,15 +5,15 @@ subtitle: ""
 
 # Reminder
 
-Each module comes with assessments. Those are things you need to do that will be graded. The table on the [**Schedule**](../../courseinfo/Course_Schedule.qmd) page lists the assessments for each module.
+Each module comes with assessments. Those are things you need to do that will be graded. The table on the [**Schedule**](../../courseinfo/course-schedule.qmd) page lists the assessments for each module.
 
-If you haven't done so, please read through the [**Assessments Overview**](../../courseinfo/Course_Assessments.qmd) page so you know how each type of assessment should be done and how grading works.
+If you haven't done so, please read through the [**Assessments Overview**](../../courseinfo/assessments-overview.qmd) page so you know how each type of assessment should be done and how grading works.
 
 Each module has an **Assessments** page, like this one, which describes what the assessments are and what you should do. Often, there is a good bit of information for the exercises.
 
 # Quiz
 
-Get the quiz sheet for this module from the general [**Assessments**](../../courseinfo/Course_Assessments.qmd) page. Fill it in, then submit to the online grading system before the deadline.
+Get the quiz sheet for this module from the general [**Assessments**](../../courseinfo/assessments-overview.qmd) page. Fill it in, then submit to the online grading system before the deadline.
 
 For this first module, you have 2 submission attempts. This allows you to get used to the submission system.
 

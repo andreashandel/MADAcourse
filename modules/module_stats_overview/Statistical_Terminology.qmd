@@ -36,7 +36,7 @@ at times useful, the reality is that the terminology is not clearly
 defined and all over the place.
 
 For additional attempts at defining terms related to data analysis, see
-the [**Glossary**](../../resources/Course_Glossary.qmd) page -- and
+the [**Glossary**](../../resources/resources-glossary.qmd) page -- and
 certainly feel free to contribute!
 
 # Statistics, Machine Learning and Artificial Intelligence
