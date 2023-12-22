@@ -1,0 +1,14 @@
+---
+title: Resources Overview
+subtitle: ""
+---
+
+This section contains pages with brief descriptions and links to other resources. 
+
+The [Course Resources](Course_Resources.qmd) page lists materials that are most relevant to the course. Some of this material will assigned as part of this course. 
+
+The [General Resources](General_Resources.qmd) page lists other resources in case you might find them helpful. All materials are (should be) available freely online. 
+
+The [Glossary page](Course_Glossary.qmd) provides brief definitions of terms used in this course.
+
+If you come across any other good resources, or find some important term is missing from the glossary, please let me know (or contribute a pull request with your updates to the course website).

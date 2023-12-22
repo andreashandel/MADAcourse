@@ -300,10 +300,11 @@ non-technical and thus beginner-friendly.
     covering important ML-related topics. It also includes very basic
     statistical concepts such as linear/logistic regression.
 
-# Artificial Intelligence (AI) tools
+# Artificial Intelligence (AI) 
 
--   [Ethan Mollick's blog](https://www.oneusefulthing.org/) has a lot of
-    generally useful information on AI use.
+Given the importance and rapid change of AI, I made a [separate resource unit.](../modules/module-ai/ai-resources/ai-resources.qmd)
+
+
 
 # R coding
 

@@ -10,10 +10,14 @@ subtitle: ""
 # Overview
 This unit consists mainly of a collection of links to AI resources that might be useful. I tried to group them into themes and provide a bit of commentary. The focus is on generative AI tools.
 
-# Goals
+# Learning Objectives
 By the end of the unit, you should:
 
 * Be aware of a few places where you can learn more about AI.
+
+
+# Introduction
+
 
 
 
@@ -30,7 +34,10 @@ By the end of the unit, you should:
 
 # AI and teaching
 
-* [Wharton Interactive](https://interactive.wharton.upenn.edu/teaching-with-ai/) is an initiative by Ethan and Lilach Mollick and colleagues at Wharton that - among other things - looks at the use of AI for teaching and learning. The website contains some interesting ideas and links to papers that look further into AI use.
+-   [Ethan Mollick's blog](https://www.oneusefulthing.org/) has a lot of
+    generally useful information on AI use.
+
+- [Wharton Interactive](https://interactive.wharton.upenn.edu/teaching-with-ai/) is an initiative by Ethan and Lilach Mollick and colleagues at Wharton that - among other things - looks at the use of AI for teaching and learning. The website contains some interesting ideas and links to papers that look further into AI use.
 
 
 # AI and Coding

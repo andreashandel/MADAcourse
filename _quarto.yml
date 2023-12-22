@@ -11,7 +11,7 @@ project:
 
 execute: 
   freeze: auto  # re-render only when source changes
-  cache: true
+  #cache: true # cache any computiations unless things change - probably not needed here
 
 description-meta: "Modern Applied Data Analysis (MADA) course"
 engine: knitr
@@ -52,15 +52,15 @@ website:
     logo: media/MADAlogo.png
     left:
       - text: "General Information"
-        file: courseinfo/Course_Syllabus.qmd
+        file: courseinfo/Course_Overview.qmd
       - text: "Content"
-        file: modules/module_intro_tools/Introduction_Course.qmd
+        file: modules/Content_Overview.qmd
       - text: "Assessments"
         file: courseinfo/Course_Assessments.qmd
       - text: "Project"
         file: project/Project_Overview.qmd
       - text: "Resources"
-        file: resources/Course_Resources.qmd
+        file: resources/Resources_Overview.qmd
 
     right:
       - icon: github 
@@ -199,23 +199,34 @@ website:
                file: modules/module_workflow/Data_Models_Not_Covered.qmd
              - text: "Open Science"
                file: modules/module_workflow/Open_Science.qmd
-          - section: "AI & Big Data"
-            contents:
-             - text: "AI Introduction"
-               file: modules/module-ai/ai-introduction/ai-introduction.qmd  
-             - text: "AI Concepts"
-               file: modules/module-ai/ai-conceptual/ai-conceptual.qmd  
-             - text: "AI for EDA"
-               file: modules/module-ai/ai-eda-R/ai-eda-R.qmd  
-             - text: "Current AI Tools"
-               file: modules/module-ai/ai-tools/ai-tools.qmd  
           - section: "Synthetic Data"
             contents:
              - text: "Synthetic Data Introduction"
                file: modules/module-synthetic-data/synthetic-data-introduction/synthetic-data-introduction.qmd  
              - text: "Creating new data"
                file: modules/module-synthetic-data/synthetic-data-new-R/synthetic-data-new-R.qmd  
-            
+          - section: "AI"
+            contents:
+             - text: "AI Overview"
+               file: modules/module-ai/ai-overview.qmd  
+             - text: "Introduction to AI"
+               file: modules/module-ai/ai-introduction/ai-introduction.qmd  
+             - text: "Introduction to LLM AI tools"
+               file: modules/module-ai/ai-llm-introduction/ai-llm-introduction.qmd  
+             - text: "AI Concepts"
+               file: modules/module-ai/ai-conceptual/ai-conceptual.qmd  
+             - text: "Current AI Tools"
+               file: modules/module-ai/ai-tools/ai-tools.qmd  
+             - text: "Write code with AI"
+               file: modules/module-ai/ai-write-code-R/ai-write-code-R.qmd  
+             - text: "Fix code with AI"
+               file: modules/module-ai/ai-fix-code-R/ai-fix-code-R.qmd  
+             - text: "Explore data with AI"
+               file: modules/module-ai/ai-eda-R/ai-eda-R.qmd  
+             - text: "Analyze data with AI"
+               file: modules/module-ai/ai-analysis-R/ai-analysis-R.qmd  
+             - text: "AI Resources"
+               file: modules/module-ai/ai-resources/ai-resources.qmd  
             
             
       - title: "Assessments"

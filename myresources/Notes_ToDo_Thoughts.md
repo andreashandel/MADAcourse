@@ -3,14 +3,36 @@
 Most general comments/thoughts are in the Notes and Thoughts document in the off-line course folder.
 
 
+# Notes
+
+* There are some files that are not (yet) linked to the navigation structure (e.g. in the module-ai) folder. That's on purpose.
+
  
 # ToDo
 
 * Can we change color scheme to something less stark/dark? And could we have a light and dark scheme?
-* Can one make the images larger, they are at times hard to see/read.
+* Can one make the images larger, they are at times hard to see/read. And could one do that in a way that they can be 'centrally controlled', like the CSS code fo the video sizing?
+
 * Switch most of the bold text blocks to callouts/divs (currently note/emphasis/warning) 
+
+* Turn mentions of specific pages on main page into links.
+
 * Try to eventually have consistent naming of folders and files: All lowercase, with dashes as separators 
 https://developers.google.com/style/filenames 
+
+* Eventually, each unit should have these sections: 
+# Overview
+# Learning Objectives
+# Introduction
+# Topic 1
+## Subtopic 1
+## Subtopic 2
+# Topic 2
+## Subtopic 1
+...
+# Summary
+# Further Resources
+
 
 
 --
@@ -55,10 +77,6 @@ For output to a different format, add this to the YAML heading of the file.
 # ---
 # ```
 
-Or, I can switch them back to the `emoji` package if you prefer?
-
-
-**AH: Do it whichever way you want, just document somewhere the different ways so in case I need to do it a different way in the future, I remember.**
 
 #### How to use emojis in Quarto without the visual editor
 

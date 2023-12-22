@@ -1,0 +1,47 @@
+---
+title: Overview of AI content
+subtitle: ""
+---
+
+
+# Overview
+This module provides a brief introduction to AI and why and how to use AI tools.
+
+
+# Learning Objectives
+
+* Know some basic concepts of AI.
+* Know why to use AI tools.
+* Understand risks and limitations of AI tools.
+* Know how to use some common AI tools.
+* Be familiar with ways to use AI for data analysis tasks.
+* Be aware of ways to use AI with R.
+
+
+# Content
+
+The module consists of the following units:
+
+* [Introduction to AI](./ai-introduction/ai-introduction.html)
+
+* [Introduction to LLM AI tools](./ai-introduction/ai-llm-introduction.html)
+
+* [A conceptual framework for LLM AI tools](./ai-tools/ai-conceptual.html)
+
+* [Recommended AI tools](./ai-tools/ai-tools.html)
+
+* [Using AI to write code](./ai-write-code-R/ai-write-code-R.html)
+
+* [Using AI to fix code](./ai-fix-code-R/ai-fix-code-R.html)
+
+* [Using AI to explore data](./ai-eda-R/ai-eda-R.html)
+
+* [Using AI to analyze data](./ai-analysis-R/ai-analysis-R.html)
+
+* [Links to AI resources](./ai-resources/ai-resources.html)
+
+<!-- * [Using AI to write a report](./ai-report-writing/ai-report-writing.html) -->
+
+<!-- * [Using AI to critique a product](./ai-product-critique/ai-product-critique.html) -->
+
+<!-- * [Using AI to problem-solve](./ai-problem-solving/ai-problem-solving.html) -->
