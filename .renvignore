@@ -27,6 +27,10 @@
 .DS_Store
 
 # folders that don't contain any R code
-/quizsheets/
-/docs/
-*_freeze/
+quizsheets/
+docs/
+_freeze/
+index_cache/
+media/
+quizsheets/
+myresources/

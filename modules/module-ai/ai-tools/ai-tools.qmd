@@ -6,7 +6,8 @@ subtitle: ""
 
 
 # Overview
-In this tutorial, we discuss some currently available AI tools and when/how you might want to use them. This is of course a rapidly moving field, so a few months from now things might have changed. I can hopefully keep up somewhat, but check the last modified date of this page `r emoji::emoij('grin')`.
+In this tutorial, we discuss some currently available LLM AI tools and when/how you might want to use them. This is of course a rapidly moving field, so a few months from now things might have changed. I can hopefully keep up somewhat, but check the last modified date of this page 😁.
+
 
 # Goals
 By the end of the tutorial, you should:
@@ -16,14 +17,15 @@ By the end of the tutorial, you should:
 
 # Introduction
 
-Your goal is generally to analyze some real-world data to answer a question. So what's the point of producing synthatic (also often referred to as simulated or artificial or fake) data? There are several good reasons why this can sometimes be useful.
+
+
+
+# OpenAI ChatGPT
 
 As of this writing, for the AI tools we are interested in (the LLMs), ChatGPT is probably the most useful tool. You can access it by creating a [free account](https://chat.openai.com/).
 
 ChatGPT is also part of the Microsoft [Bing search engine](https://www.bing.com/) (currently located oder the "Chat" tab) and [GitHub's CoPilot](https://github.com/features/copilot).
 
-
-# OpenAI ChatGPT
 
 If you haven't already, I suggest you create a ChatGPT/OpenAI account. As of this writing, you can get a [free account](https://chat.openai.com/). Once you log in, you see a fairly plain interface with an area into which you can type your prompts. You can provide fairly elaborate prompts, and ask for code. For instance, try placing this into the bar:
 
@@ -47,6 +49,9 @@ Once you have Copilot activated, you can use it in R Studio. (It is also possibl
 To get Copilot working in R Studio, follow these [instructions](https://docs.posit.co/ide/user/ide/guide/tools/copilot.html). You might want to leave Copilot indexing unchecked for now. The instruction guide explains what this is. See the note on confidentiality issues below why you might not want to turn it on. Once you have co-pilot up and running, you should see it show up in the bottom of your R Studio input window (the top right window where you write code). It will start suggesting things as you type, once you stop for a few seconds. You can set that time in the options.
 
 For some more eloquent use of Copilot, see the [video](https://youtu.be/yVq-b5xHmac?si=DPJXXnEoViVFYA1T) by Thomas Mock from Posit/RStudio. It's a bit long, but I highly recommend you watch it. Efficient use of AI in general and Copilot specifically will likely save you a lot of time for the rest of this course!
+
+**In general, I recommend you turn off Copilot in RStudio when you are not actively using it.** And before you turn it on, make sure the document you have open, and any other files it might have access to, do not contain information you want to keep private.
+
 
 # Other tools
 

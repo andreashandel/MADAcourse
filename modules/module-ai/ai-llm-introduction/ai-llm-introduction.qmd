@@ -5,19 +5,22 @@ subtitle: ""
 
 # Overview
 
-This unit provides an introduction to the use of Large Language Model (LLM) based Artificial Intelligence (AI) tools (such as ChatGPT) for coding and data analysis. Here, and in general, I will for simplicity mostly just refer to them as AI.
+This unit provides an introduction to the use of Large Language Model (LLM) based Artificial Intelligence (AI) tools (such as ChatGPT) for coding and data analysis. 
 
 # Learning Objectives
 
 -   Be aware of possible ways to use AI to help with data analysis.
 -   Understand strengths, weaknesses and dangers of using AI.
--   Know how to use AI with R and RStudio.
+
 
 # Introduction
 
-By now, you have certainly heard of ChatGPT and similar AI-based tools. You probably have also tried them out. There are different types of AI focused on processing different types of input or output (e.g., images, text). Here, I focus on those tools that take text-based instructions and can produce text as output, both regular language text and code. Those AI tools have the potential to speed up your work, so you should explore and use them. However, there are dangers as well, which are important to keep in mind.
 
-This is a very practical tutorial from a user perspective. I'll only discuss how to use those tools. If you want to learn more about the general workings, ethical issues regarding licensing of training data and biased results, etc., [One Useful Thing's blog](https://www.oneusefulthing.org/) is a good starting point. Also consider this [Coursera course](https://www.coursera.org/learn/generative-ai-for-everyone).
+By now, you have certainly heard of ChatGPT and similar AI-based tools. You probably have also tried them out. AI is a broad field, and there are different AI algorithms. You can potentially use some of them to analyze your data. We discussed this in a previous unit. The focus here is on AI tools that can help you in various coding and data analysis tasks. 
+
+Currently, the best tools for that are those based on Large Language Models (LLM). For simplicity, I'm just going to call them AI tools here, but be aware that there are other AI approaches out there. 
+
+This is a very practical tutorial from a user perspective. I'll only discuss how to use those tools. If you want to learn more about the general workings, ethical issues regarding licensing of training data and biased results, etc., take a look at the AI resources page.  
 
 
 # Available AI tools
@@ -37,7 +40,8 @@ When you use AI to help with data analysis, you might want to show your data to 
 
 Beyond the data, it is important to keep in mind that if you have the AI running (e.g., through the R Studio CoPilot integration), it might access not just your current file but possibly also other sources you link to, e.g. other stuff on your computer. If you have things you don't want the company to "grab" and copy to their servers, then be careful on what you let the AI access.
 
-**In general, I recommend you turn off Copilot in RStudio when you are not actively using it.** And before you turn it on, make sure the document you have open, and any other files it might have access to, do not contain information you want to keep private.
+**In general, be careful what information you let the AI access and be aware that it might end up on the server of whatever company is running the AI tool.**
+
 
 ## Non-working code
 
@@ -82,4 +86,4 @@ AI tools can be very useful tools to help you write code and do your data analys
 
 # Further Resources
 
-I have started an [AI resource unit](../ai-resources/ai-resources.qmd). If you have other useful resources, I'd love to hear about them.
+See the [AI resource unit](../ai-resources/ai-resources.qmd). If you have other useful resources, I'd love to hear about them.
