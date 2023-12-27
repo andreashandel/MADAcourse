@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -668,8 +668,10 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
-  <li><a href="#goals" id="toc-goals" class="nav-link" data-scroll-target="#goals">Goals</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
   <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#good-prompting" id="toc-good-prompting" class="nav-link" data-scroll-target="#good-prompting">Good prompting</a></li>
+  <li><a href="#iterating" id="toc-iterating" class="nav-link" data-scroll-target="#iterating">Iterating</a></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
   <li><a href="#further-resources" id="toc-further-resources" class="nav-link" data-scroll-target="#further-resources">Further Resources</a></li>
   </ul>
@@ -698,7 +700,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2023-12-18</p>
+      <p class="date-modified">2023-12-27</p>
     </div>
   </div>
     
@@ -709,34 +711,43 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="overview" class="level1">
 <h1>Overview</h1>
-<p>In this unit, we discuss</p>
+<p>In this unit, we discuss using LLM AI tools to help write code.</p>
 </section>
-<section id="goals" class="level1">
-<h1>Goals</h1>
-<p>By the end of the unit, you should:</p>
+<section id="learning-objectives" class="level1">
+<h1>Learning Objectives</h1>
+<ul>
+<li>Know how to use current LLM AI tools to help with coding.</li>
+<li>Be familiar with several approaches of coding.</li>
+</ul>
 </section>
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
+<p>If you write code, there are (at least) two major parts to the effort. First, you have to figure out what exactly you want to accomplish with your code. Second, you need to write a bunch of commands in some programming language of your choice to get what you are hoping to accomplish. The first part is generally the intellectually more challenging one, and a step which AI (currently) are not very good at. The second part is generally less hard, but it can be very tedious, especially if you are new to coding or if you need to write a lot of code. AI are getting pretty good at helping with writing code.</p>
+<p>I expect that soon, instead of people writing code, most code will be written by AI under the guidance and direction of people. This should eventually lead to much more efficient, and potentially also better code. We aren’t quite there yet, but the current AI tools are already quite useful for helping with code tasks, so you should use them.</p>
+</section>
+<section id="good-prompting" class="level1">
+<h1>Good prompting</h1>
+<p>To get good results from the AI, it is important that you be as specific as you can with your prompt.</p>
+<p>Try this prompt with one of the LLM AI:</p>
+<p><em>Write R code that generates a scatterplot and a boxplot</em></p>
+<p>Now try this prompt:</p>
+<p><em>Write R code that uses the ggplot2 package to . Use the patchwork package to </em></p>
+<p>As you can see, good prompts are often quite long. It makes sense to write those down outside the AI first. That also helps somewhat with reproducibility. I generally try to stick AI prompts at the top of my R/Quarto files, or into a separate file.</p>
+<p>You also notice that for the second prompt, I had to know more about the programming language, for instance I had to know that there is a package called <code>ggplot2</code> and one called <code>patchwork</code>.</p>
+<p>You will find that the more you know in general about a topic, the more useful those AI tools become. That means that you still have to learn some coding (or whatever the topic is) and understand it enough on a big picture level to be able to be useful. But you don’t necessarily need to be an expert.</p>
+<p>An analogy I like is that of a composer. A composer needs to know enough about the various instruments of an orchestra to be able to write music for each instrument. But they don’t need to be able to play each instrument. Similarly, you need to know enough about coding or whatever the topic is you are working on to <em>compose</em> prompts for the AI and evaluate what it produces, but you don’t necessarily need to be an expert coder.</p>
+</section>
+<section id="iterating" class="level1">
+<h1>Iterating</h1>
+<p>It’s rare that you get exactly what you want from the AI with your first prompt. Quite likely, you realize that you weren’t specific enough, or that you really wanted something slightly different but didn’t properly specify it in the prompt. Often, the code might also not quite work. The AI might have just made up a package or function that doesn’t exist, or otherwise introduced mistakes.</p>
+<p>While it would be nice to get a great product on the first try, the process is so fast that it doesn’t matter much. Just try again. You can either update your prompt and feed it to the AI again. Or you can tell it what changes you want to make. Try this as an example. Start with this prompt:</p>
+<p>_ _</p>
 </section>
 <section id="summary" class="level1">
 <h1>Summary</h1>
-<p>To sum up, important reasons to use synthetic data are:</p>
-<ul>
-<li>Full knowledge of the truth, which can be used for model testing</li>
-<li>No problems with confidentiality</li>
-<li>Potentially easier to manipulate</li>
-</ul>
-<p>Ways to generate synthetic data are:</p>
-<ul>
-<li>Completely made up</li>
-<li>Following distributions obtained from the original data</li>
-<li>Scrambling of the original data</li>
-<li>A mix of these approaches</li>
-</ul>
 </section>
 <section id="further-resources" class="level1">
 <h1>Further Resources</h1>
-<p>In the next units, we will discuss how to actually generate synthetic data and how to use it.</p>
 
 
 </section>

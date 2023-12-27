@@ -5,36 +5,70 @@ subtitle: ""
 
 
 # Overview
-In this unit, we discuss 
+In this unit, we discuss using LLM AI tools to help write code.
 
-# Goals
-By the end of the unit, you should:
+
+# Learning Objectives
+
+* Know how to use current LLM AI tools to help with coding.
+* Be familiar with several approaches of coding.
 
 
 # Introduction
+
+If you write code, there are (at least) two major parts to the effort. First, you have to figure out what exactly you want to accomplish with your code. Second, you need to write a bunch of commands in some programming language of your choice to get what you are hoping to accomplish. 
+The first part is generally the intellectually more challenging one, and a step which AI (currently) are not very good at. The second part is generally less hard, but it can be very tedious, especially if you are new to coding or if you need to write a lot of code. AI are getting pretty good at helping with writing code.
+
+I expect that soon, instead of people writing code, most code will be written by AI under the guidance and direction of people. This should eventually lead to much more efficient, and potentially also better code. We aren't quite there yet, but the current AI tools are already quite useful for helping with code tasks, so you should use them.
+
+# Good prompting
+
+To get good results from the AI, it is important that you be as specific as you can with your prompt.
+
+Try this prompt with one of the LLM AI:
+
+_Write R code that generates a scatterplot and a violin plot_
+
+Now try this prompt:
+
+_*_Write R code that generates a dataset of 100 individuals with ages from 18 to 49, BMI values from 15 to 40 and smoking status as yes or no. Assume that age and BMI are uncorrelated. Assume that smokers have a somewhat lower BMI. Then use the patchwork R package to generate a panel of ggplot2 plots. The first panel should show a violin plot with BMI on the y-axis and smoking status on the x-axis. The second panel should show a scatterplot with age on the y-axis and BMI on the x-axis. Add thorough documentation to your code._
+
+When I gave that prompt to ChatGPT 3.5, it gave me this [fully working code](../../media/ChatGPT_example.R). It is possible that when you try this, the code will look slightly different. Remember, these AI tools are not fully deterministic and can produce different results each time. Hopefully, what you get will run. If not, you might need to either fix the code or ask the AI to fix it (we'll look at that in another unit).
+
+
+As you can see, good prompts are often quite long. It makes sense to write those down outside the AI first. That also helps somewhat with reproducibility. I generally try to stick AI prompts at the top of my R/Quarto files, or into a separate file.
+
+You also notice that for the second prompt, I had to know more about the programming language, for instance I had to know that there is a package called `ggplot2` and one called `patchwork`. 
+
+You will find that the more you know in general about a topic, the more useful those AI tools become. That means that you still have to learn some coding (or whatever the topic is) and understand it enough on a big picture level to be able to be useful. But you don't necessarily need to be an expert.
+
+An analogy I like is that of a composer. A composer needs to know enough about the various instruments of an orchestra to be able to write music for each instrument. But they don't need to be able to play each instrument. Similarly, you need to know enough about coding or whatever the topic is you are working on to _compose_ prompts for the AI and evaluate what it produces, but you don't necessarily need to be an expert coder.
+
+
+# Iterating
+
+It's rare that you get exactly what you want from the AI with your first prompt. Quite likely, you realize that you weren't specific enough, or that you really wanted something slightly different but didn't properly specify it in the prompt. Often, the code might also not quite work. The AI might have just made up a package or function that doesn't exist, or otherwise introduced mistakes. 
+
+While it would be nice to get a great product on the first try, the process is so fast that it doesn't matter much. Just try again. You can either update your prompt and feed it to the AI again. Or you can tell it what changes you want to make. Try this as an example. Start with the prompt from above:
+
+
+_Write R code that generates a dataset of 100 individuals with ages from 18 to 49, BMI values from 15 to 40 and obesity status as yes or no. Make a figure that shows age on the x-axis, BMI value on the y-axis, and stratification by obesity status._
+
+When I fed that code to Bing it produced [this code](../../media/Bing_itereate_example.R). Note that it didn't really give me an R script, I copied what it produced into an R file.
+
+The code runs, but there are problems. 
+
+
 
 
 
 # Summary
 
-To sum up, important reasons to use synthetic data are:
-
-- Full knowledge of the truth, which can be used for model testing
-- No problems with confidentiality
-- Potentially easier to manipulate
-
-Ways to generate synthetic data are:
-
-- Completely made up
-- Following distributions obtained from the original data
-- Scrambling of the original data
-- A mix of these approaches
 
 
 
 # Further Resources
 
-In the next units, we will discuss how to actually generate synthetic data and how to use it.
 
 
 

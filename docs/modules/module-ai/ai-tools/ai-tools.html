@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -713,7 +713,7 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="overview" class="level1">
 <h1>Overview</h1>
-<p>In this tutorial, we discuss some currently available AI tools and when/how you might want to use them. This is of course a rapidly moving field, so a few months from now things might have changed. I can hopefully keep up somewhat, but check the last modified date of this page <code>r emoji::emoij('grin')</code>.</p>
+<p>In this tutorial, we discuss some currently available LLM AI tools and when/how you might want to use them. This is of course a rapidly moving field, so a few months from now things might have changed. I can hopefully keep up somewhat, but check the last modified date of this page 😁.</p>
 </section>
 <section id="goals" class="level1">
 <h1>Goals</h1>
@@ -724,12 +724,11 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
-<p>Your goal is generally to analyze some real-world data to answer a question. So what’s the point of producing synthatic (also often referred to as simulated or artificial or fake) data? There are several good reasons why this can sometimes be useful.</p>
-<p>As of this writing, for the AI tools we are interested in (the LLMs), ChatGPT is probably the most useful tool. You can access it by creating a <a href="https://chat.openai.com/">free account</a>.</p>
-<p>ChatGPT is also part of the Microsoft <a href="https://www.bing.com/">Bing search engine</a> (currently located oder the “Chat” tab) and <a href="https://github.com/features/copilot">GitHub’s CoPilot</a>.</p>
 </section>
 <section id="openai-chatgpt" class="level1">
 <h1>OpenAI ChatGPT</h1>
+<p>As of this writing, for the AI tools we are interested in (the LLMs), ChatGPT is probably the most useful tool. You can access it by creating a <a href="https://chat.openai.com/">free account</a>.</p>
+<p>ChatGPT is also part of the Microsoft <a href="https://www.bing.com/">Bing search engine</a> (currently located oder the “Chat” tab) and <a href="https://github.com/features/copilot">GitHub’s CoPilot</a>.</p>
 <p>If you haven’t already, I suggest you create a ChatGPT/OpenAI account. As of this writing, you can get a <a href="https://chat.openai.com/">free account</a>. Once you log in, you see a fairly plain interface with an area into which you can type your prompts. You can provide fairly elaborate prompts, and ask for code. For instance, try placing this into the bar:</p>
 <p><em>Write R code that generates a dataset of 100 individuals with ages from 18 to 49, BMI values from 15 to 40 and smoking status as yes or no. Assume that age and BMI are uncorrelated. Assume that smokers have a somewhat lower BMI. Then use the patchwork R package to generate a panel of ggplot2 plots. The first panel should show a violin plot with BMI on the y-axis and smoking status on the x-axis. The second panel should show a scatterplot with age on the y-axis and BMI on the x-axis. Add thorough documentation to your code.</em></p>
 <p>When I did that, ChatGPT gave me this <a href="../../media/ChatGPT_example.R">fully working code</a>. It is possible that when you run it, the code will look slightly different (see the comment below on non-reproducibility). Hopefully, what you get will run. If not, you might need to either fix the code or ask the AI to fix it.</p>
@@ -744,6 +743,7 @@ ul.task-list li input[type="checkbox"] {
 <p>Once you have Copilot activated, you can use it in R Studio. (It is also possible to use it with other popular editors, such as VS Code, but for this course I will focus on R Studio. If you prefer to code in VS Code, you can install the Copilot plugin).</p>
 <p>To get Copilot working in R Studio, follow these <a href="https://docs.posit.co/ide/user/ide/guide/tools/copilot.html">instructions</a>. You might want to leave Copilot indexing unchecked for now. The instruction guide explains what this is. See the note on confidentiality issues below why you might not want to turn it on. Once you have co-pilot up and running, you should see it show up in the bottom of your R Studio input window (the top right window where you write code). It will start suggesting things as you type, once you stop for a few seconds. You can set that time in the options.</p>
 <p>For some more eloquent use of Copilot, see the <a href="https://youtu.be/yVq-b5xHmac?si=DPJXXnEoViVFYA1T">video</a> by Thomas Mock from Posit/RStudio. It’s a bit long, but I highly recommend you watch it. Efficient use of AI in general and Copilot specifically will likely save you a lot of time for the rest of this course!</p>
+<p><strong>In general, I recommend you turn off Copilot in RStudio when you are not actively using it.</strong> And before you turn it on, make sure the document you have open, and any other files it might have access to, do not contain information you want to keep private.</p>
 </section>
 <section id="other-tools" class="level1">
 <h1>Other tools</h1>

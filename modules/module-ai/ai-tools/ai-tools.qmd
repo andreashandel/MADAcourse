@@ -9,29 +9,30 @@ subtitle: ""
 In this tutorial, we discuss some currently available LLM AI tools and when/how you might want to use them. This is of course a rapidly moving field, so a few months from now things might have changed. I can hopefully keep up somewhat, but check the last modified date of this page 😁.
 
 
-# Goals
-By the end of the tutorial, you should:
+# Learning Objectives
 
 * Be familiar with current AI tools and when/how to use them.
 
 
 # Introduction
 
+It seems that every month a new LLM AI tool is announced. They are expected to keep getting better fairly rapidly for the foreseeable future. As you use these tools, it's definitely useful to play around and explore. Here, I'm describing those that seem - as of this writing - the most useful ones for coding and data analysis tasks. Other AI tools might be more suitable for other tasks.
 
+
+# In brief
+
+Currently, ChatGPT 4 is the most powerful LLM AI tool. You can access it through a paid subscription via OpenAi, or for free through Microsoft's Bing. ChatGPT 3.5 is the less powerful, free version you can access by creating a free OpenAI account. Despite being less powerful, I've found it to work pretty well to write R code.
 
 
 # OpenAI ChatGPT
 
 As of this writing, for the AI tools we are interested in (the LLMs), ChatGPT is probably the most useful tool. You can access it by creating a [free account](https://chat.openai.com/).
 
-ChatGPT is also part of the Microsoft [Bing search engine](https://www.bing.com/) (currently located oder the "Chat" tab) and [GitHub's CoPilot](https://github.com/features/copilot).
+ChatGPT is also part of the Microsoft [Bing search engine](https://www.bing.com/) (currently located under the "Chat" tab) and [GitHub's CoPilot](https://github.com/features/copilot).
+
+If you haven't already, I suggest you create a ChatGPT/OpenAI account. As of this writing, you can get a [free account](https://chat.openai.com/). Once you log in, you see a fairly plain interface with an area into which you can type your prompts. You can provide fairly elaborate prompts. We'll look at examples in other units. 
 
 
-If you haven't already, I suggest you create a ChatGPT/OpenAI account. As of this writing, you can get a [free account](https://chat.openai.com/). Once you log in, you see a fairly plain interface with an area into which you can type your prompts. You can provide fairly elaborate prompts, and ask for code. For instance, try placing this into the bar:
-
-*Write R code that generates a dataset of 100 individuals with ages from 18 to 49, BMI values from 15 to 40 and smoking status as yes or no. Assume that age and BMI are uncorrelated. Assume that smokers have a somewhat lower BMI. Then use the patchwork R package to generate a panel of ggplot2 plots. The first panel should show a violin plot with BMI on the y-axis and smoking status on the x-axis. The second panel should show a scatterplot with age on the y-axis and BMI on the x-axis. Add thorough documentation to your code.*
-
-When I did that, ChatGPT gave me this [fully working code](../../media/ChatGPT_example.R). It is possible that when you run it, the code will look slightly different (see the comment below on non-reproducibility). Hopefully, what you get will run. If not, you might need to either fix the code or ask the AI to fix it.
 
 
 # Bing (still OpenAI GPT)
@@ -53,19 +54,30 @@ For some more eloquent use of Copilot, see the [video](https://youtu.be/yVq-b5xH
 **In general, I recommend you turn off Copilot in RStudio when you are not actively using it.** And before you turn it on, make sure the document you have open, and any other files it might have access to, do not contain information you want to keep private.
 
 
+# Other LLM AI
+
+Other companies, such as Google and Anthropic, are also busy creating LLM AIs. I haven't tried them yet to see how well they write code. 
+
+
 # Other tools
 
-As you learned from Thomas Mock's video above, the [`chattr` R package](https://mlverse.github.io/chattr/) is another great way to use ChatGPT from within R. I recommend exploring it.
+It is quite likely that in the future, there will be several LLM AI tools that are used by the majority of users, and then there will be lots of customizations running on top of those. There are already specialized LLM AI tools for layers and doctors and other professions that use ChatGPT under the hood. GitHub CoPilot is such a customization for coding. I expect further tools to keep coming out at a fairly rapid pace.
 
-As you are probably aware, these AI tools are changing rapidly. I'm writing this in November 2023, you will read this a few months later. It could be that at this point, some new versions of AI tools have come out that are even better. Do explore and if you find some especially promising platform or package, let me know!
+For instance, as you learned from Thomas Mock's video above, the [`chattr` R package](https://mlverse.github.io/chattr/) is another great way to use ChatGPT from within R. I recommend exploring it.
+
+As you are probably aware, these AI tools are changing rapidly. I'm writing this in December 2023, you will read this a few months later. It could be that at this point, some new versions of AI tools have come out that are even better. Do explore and if you find some especially promising platform or package, let me know!
 
 
 # Summary
 
+LLM AI tools are changing rapidly. Currently, ChatGPT seems to do a good job at helping with coding and data analysis related tasks. New tools are showing up and are generally worth exploring.
+
 
 # Further Resources
 
-For a list and description of some other AI tools, see this [guide on using AI to do stuff](https://www.oneusefulthing.org/p/how-to-use-ai-to-do-stuff-an-opinionated).
+For a list and description of some other AI tools (e.g., those that can produce images), see this [guide on using AI to do stuff](https://www.oneusefulthing.org/p/how-to-use-ai-to-do-stuff-an-opinionated).
+Also see the [AI resource unit](../ai-resources/ai-resources.qmd).
+
 
 
 

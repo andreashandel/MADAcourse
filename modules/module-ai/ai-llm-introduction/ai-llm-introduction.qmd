@@ -45,7 +45,7 @@ Beyond the data, it is important to keep in mind that if you have the AI running
 
 ## Non-working code
 
-While most of the AI tools have become pretty good at coding in R and other languages, at times they don't get it right. You might get code back that doesn't work. AI are known to "hallucinate", i.e., make up stuff. For instance it's not uncommon that the AI invents an R command that does not exist. So when you get your code back, you often need to do some trouble-shooting. At times, you can tell the AI that the code is not correct and ask it to fix it. It doesn't always work, then you have to either do fixes by hand or try to reformulate your request.
+While most of the AI tools have become pretty good at coding in R and other languages, at times they don't get it right. You might get code back that doesn't work. AI are known to **hallucinate**, i.e., make up stuff. For instance it's not uncommon that the AI invents an R command that does not exist. So when you get your code back, you often need to do some trouble-shooting. At times, you can tell the AI that the code is not correct and ask it to fix it. It doesn't always work, then you have to either do fixes by hand or try to reformulate your request.
 
 ## Reproducibility
 
