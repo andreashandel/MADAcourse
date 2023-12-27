@@ -5,13 +5,28 @@ Most general comments/thoughts are in the Notes and Thoughts document in the off
 
 # Notes
 
-* There are some files that are not (yet) linked to the navigation structure (e.g. in the module-ai) folder. That's on purpose.
+* There are some files that are not (yet) linked to the navigation structure . That's on purpose.
+
+* I'm doing local rendering into the docs folder and syncing/pushing it instead of using gh-pages workflow.
+
+
 
  
 # ToDo
 
-* Can we change color scheme to something less stark/dark? And could we have a light and dark scheme?
+* Is there an easier way to do internal referencing to files? Having to remember the local structure is unwieldy and fragile. For instance this is cumbersome: 
+I got [this code](../../../code/bing-iterate-example-update1.R)
+
+Instead, I'd like to just write [this code](bing-iterate-example-update1.R) and let Quarto figure out where the file is. Is there a way to maybe define a file that contains all the path mappings? This way it would be easier to write, and also if I change things around, I don't have to update all links.
+
+
+* Can we change color scheme to something less stark/dark? And could we have a light and dark scheme? 
+
+* Make the callout block divs nicer.
+
+
 * Can one make the images larger, they are at times hard to see/read. And could one do that in a way that they can be 'centrally controlled', like the CSS code fo the video sizing?
+
 
 * Switch most of the bold text blocks to callouts/divs (currently note/emphasis/warning) 
 
@@ -25,9 +40,6 @@ https://developers.google.com/style/filenames
 * Is there a way to automatically reverse-check to see if all files in /media/ are actually being used in at least one of the Quarto documents?
 
 * Wrap all AI prompts in the files inside the ::: prompt div
-* Make the callout block divs nicer.
-
-
 
 * Eventually, each unit should have these sections: 
 # Overview

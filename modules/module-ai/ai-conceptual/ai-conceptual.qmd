@@ -11,7 +11,6 @@ This unit consists of some thoughts and musings about AI and how to best think o
 
 
 # Learning Objectives
-By the end of the unit, you should:
 
 * Know about a few ways one can conceptualize current AI tools.
 

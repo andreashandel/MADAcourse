@@ -141,9 +141,20 @@ div.prompt
 {
     padding: 0.5em;
     margin: 0.5em 0;
-    color: #153e67;
-    background-color: #dde8f6;
-    border: solid 5px #ecf4ff;
+    color: black;
+    background-color: #c7dcf2;
+    border: solid 5px #0c7ef5;
+    border-radius: 10px;
+
+}
+
+div.output
+{
+    padding: 0.5em;
+    margin: 0.5em 0;
+    color: black;
+    background-color: #d0f7e2;
+    border: solid 5px #029645;
     border-radius: 10px;
 
 }

@@ -203,12 +203,6 @@ website:
                file: modules/module_workflow/Data_Models_Not_Covered.qmd
              - text: "Open Science"
                file: modules/module_workflow/Open_Science.qmd
-          - section: "Synthetic Data"
-            contents:
-             - text: "Synthetic Data Introduction"
-               file: modules/module-synthetic-data/synthetic-data-introduction/synthetic-data-introduction.qmd  
-             - text: "Creating new data"
-               file: modules/module-synthetic-data/synthetic-data-new-R/synthetic-data-new-R.qmd  
           - section: "AI"
             contents:
              - text: "AI Overview"
@@ -231,6 +225,12 @@ website:
                file: modules/module-ai/ai-analysis-R/ai-analysis-R.qmd  
              - text: "AI Resources"
                file: modules/module-ai/ai-resources/ai-resources.qmd  
+          - section: "Synthetic Data"
+            contents:
+             - text: "Synthetic Data Introduction"
+               file: modules/module-synthetic-data/synthetic-data-introduction/synthetic-data-introduction.qmd  
+             - text: "Creating new data"
+               file: modules/module-synthetic-data/synthetic-data-new-R/synthetic-data-new-R.qmd  
             
             
       - title: "Assessments"

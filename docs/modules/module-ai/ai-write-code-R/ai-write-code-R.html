@@ -565,36 +565,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" aria-expanded="false">
- <span class="menu-text">Synthetic Data</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../modules/module-synthetic-data/synthetic-data-introduction/synthetic-data-introduction.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Synthetic Data Introduction</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../modules/module-synthetic-data/synthetic-data-new-R/synthetic-data-new-R.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Creating new data</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" aria-expanded="true">
  <span class="menu-text">AI</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../modules/module-ai/ai-overview.html" class="sidebar-item-text sidebar-link">
@@ -653,6 +630,29 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="../../../modules/module-ai/ai-resources/ai-resources.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">AI Resources</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" aria-expanded="false">
+ <span class="menu-text">Synthetic Data</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../modules/module-synthetic-data/synthetic-data-introduction/synthetic-data-introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Synthetic Data Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../modules/module-synthetic-data/synthetic-data-new-R/synthetic-data-new-R.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Creating new data</span></a>
   </div>
 </li>
       </ul>
@@ -732,12 +732,12 @@ ul.task-list li input[type="checkbox"] {
 <div class="prompt">
 <p>Write R code that generates a scatterplot and a violin plot.</p>
 </div>
-<p>Your result might or might not be close to what you had in mind. If you are not providing a lot of details, the AI can decide what to do and sometimes it’s close to what you had in mind, but often it isnt’.</p>
+<p>Your result might or might not be close to what you had in mind. If you are not providing a lot of details, the AI can decide what to do and sometimes it is close to what you had in mind, but often it is not.</p>
 <p>Now try this prompt:</p>
 <div class="prompt">
 <p>Write R code that generates a dataset of 100 individuals with ages from 18 to 49, BMI values from 15 to 40 and smoking status as yes or no. Assume that age and BMI are uncorrelated. Assume that smokers have a somewhat lower BMI. Then use the patchwork R package to generate a panel of ggplot2 plots. The first panel should show a violin plot with BMI on the y-axis and smoking status on the x-axis. The second panel should show a scatterplot with age on the y-axis and BMI on the x-axis. Add thorough documentation to your code.</p>
 </div>
-<p>When I gave the second prompt to ChatGPT 3.5, it gave me this <a href="../../code/chatgpt-example.R">fully working code</a>. It is possible that when you try this, the code will look slightly different. Remember, these AI tools are not fully deterministic and can produce different results each time. Hopefully, what you get will run. If not, you might need to either fix the code or ask the AI to fix it (we’ll look at that in another unit).</p>
+<p>When I gave the second prompt to ChatGPT 3.5, it gave me this <a href="../../../code/chatgpt-example.R">fully working code</a>. It is possible that when you try this, the code will look slightly different. Remember, these AI tools are not fully deterministic and can produce different results each time. Hopefully, what you get will run. If not, you might need to either fix the code or ask the AI to fix it (we’ll look at that in another unit).</p>
 <p>As you can see, good prompts are often quite long. It makes sense to write those down outside the AI first. That also helps somewhat with reproducibility. I generally try to stick AI prompts at the top of my R/Quarto files, or into a separate file.</p>
 <p>You also notice that for the second prompt, I had to know more about the programming language, for instance I had to know that there is a package called <code>ggplot2</code> and one called <code>patchwork</code>.</p>
 <p>You will find that the more you know in general about a topic, the more useful those AI tools become. That means that you still have to learn some coding (or whatever the topic is) and understand it enough on a big picture level to be able to be useful. But you don’t necessarily need to be an expert.</p>
@@ -750,12 +750,12 @@ ul.task-list li input[type="checkbox"] {
 <div class="prompt">
 <p>Write R code that generates a dataset of 100 individuals, half of them female, with ages from 18 to 49, weight from 100 to 500 pounds and BMI from 15 to 35. Make a figure that shows weight on the x-axis, BMI on the y-axis, and stratification by sex. Add thorough documentation to the code.</p>
 </div>
-<p>When I fed that to Bing in “precise” mode it produced <a href="../../code/bing-iterate-example.R">this code</a>. Note that it didn’t really give me an R script, I copied what it produced into an R file.</p>
+<p>When I fed that to Bing in “precise” mode it produced <a href="../../../code/bing-iterate-example.R">this code</a>. Note that it didn’t really give me an R script, I copied what it produced into an R file.</p>
 <p>The code runs and produces a figure, but there are problems. Right now, the data is generated assuming each variable is independent of the other. We know that weight is strongly correlated with BMI, since it’s part of the equation defining BMI. We also know that males are generally heavier. We can easily fix this. One approach is to update your prompt and make it more explicit, such as:</p>
 <div class="prompt">
 <p>Write R code that generates a dataset of 100 individuals, half of them female, with ages from 18 to 49, weight from 100 to 500 pounds and BMI from 15 to 35. Assume that males are generally somewhat heavier than females. Also assume thet BMI and weight are positively correlated, based on the definition of BMI. Make a figure that shows weight on the x-axis, BMI on the y-axis, and stratification by sex. Add thorough documentation to the code.</p>
 </div>
-<p>With this updated prompt, I got <a href="../../code/bing-iterate-example-update1.R">this code</a>, here are the relevant bits</p>
+<p>With this updated prompt, I got <a href="../../../code/bing-iterate-example-update1.R">this code</a>, here are the relevant bits:</p>
 <div class="output">
 <pre><code># Generate a dataset of 100 individuals
 data &lt;- data.frame(
@@ -779,7 +779,7 @@ data &lt;- data.frame(
 <div class="prompt">
 <p>Update the code such that males and females are randomly distributed, make sure that males are on average heavier than females, and compute values for BMI as a function of weight with some random variation added.</p>
 </div>
-<p>With this updated prompt, I got <a href="../../code/bing-iterate-example-update2.R">this code</a>, here are the relevant bits</p>
+<p>With this prompt, I got <a href="../../code/bing-iterate-example-update2.R">this further updated code</a>, here are again the relevant bits:</p>
 <div class="output">
 <pre><code># Generate a dataset of 100 individuals
 data &lt;- data.frame(
