@@ -22,6 +22,11 @@ Most general comments/thoughts are in the Notes and Thoughts document in the off
 * Try to eventually have consistent naming of folders and files: All lowercase, with dashes as separators 
 https://developers.google.com/style/filenames 
 
+* Is there a way to automatically reverse-check to see if all files in /media/ are actually being used in at least one of the Quarto documents?
+
+* Wrap all AI prompts in the files inside the ::: prompt div
+* Make the callout block divs nicer.
+
 
 
 * Eventually, each unit should have these sections: 

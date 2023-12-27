@@ -667,11 +667,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a>
-  <ul class="collapse">
-  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives"># Learning Objectives</a></li>
-  </ul></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
   <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#fixing-through-iteration" id="toc-fixing-through-iteration" class="nav-link" data-scroll-target="#fixing-through-iteration">Fixing through iteration</a></li>
+  <li><a href="#manual-intervention" id="toc-manual-intervention" class="nav-link" data-scroll-target="#manual-intervention">Manual intervention</a></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
   <li><a href="#further-resources" id="toc-further-resources" class="nav-link" data-scroll-target="#further-resources">Further Resources</a></li>
   </ul>
@@ -700,7 +700,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2023-12-21</p>
+      <p class="date-modified">2023-12-27</p>
     </div>
   </div>
     
@@ -711,19 +711,60 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="overview" class="level1">
 <h1>Overview</h1>
-<p>In this unit, we discuss</p>
-<section id="learning-objectives" class="level2">
-<h2 class="anchored" data-anchor-id="learning-objectives"># Learning Objectives</h2>
+<p>In this unit, we discuss using LLM AI tools to help fix code.</p>
 </section>
+<section id="learning-objectives" class="level1">
+<h1>Learning Objectives</h1>
+<ul>
+<li>Know how to use current LLM AI tools to help fix code.</li>
+</ul>
 </section>
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
+<p>This topic is very similar to the approach for writing code. In that unit, we already discussed how to iteratively update and improve the code. Fixing non-working code is really just another version of asking the AI iteratively to improve things. However, it seemed distinct enough to me that I thought it’s worth placing it into a separate unit.</p>
+<p>The assumption is that you have some code (likely AI generated, but could also be code you wrote) and need to fix some typos. If the code was generated in the current session, you can just refer to it in your prompt. If the code was generated previously, you will supply the code as part of the prompt. The latter approach is more general, so I’m focusing on that one.</p>
+</section>
+<section id="fixing-through-iteration" class="level1">
+<h1>Fixing through iteration</h1>
+<p>The most basic approach is to just feed the AI non-working code and tell it to fix it. Here is an example continued from the non-working code we had at the end of the <a href="../../../modules/module-ai/ai-write-code-R/ai-write-code-R.html">AI and code writing unit</a>. To mimic a general setting, with code possibly produced earlier or not by the AI, I started a new session with the Bing AI in ‘precise’ mode and gave it this prompt.</p>
+<div class="prompt">
+<p>This code does not work. Please fix it.</p>
+<p>PASTE ALL CODE FROM <a href="../../code/bing-iterate-example-update2.R">THIS FILE</a> HERE.</p>
+</div>
+<p>Here is what I got back:</p>
+<div class="output">
+<p>I see that you’re trying to generate a scatter plot of BMI against weight, stratified by sex. The code you’ve provided seems to be correct. However, the issue might be due to the specific versions of the ggplot2 and dplyr libraries you’re using, or it could be a problem with your R environment.</p>
+<p>If you’re getting a specific error message, could you please provide it? That would help me understand the issue better and provide a more accurate solution. If you’re not seeing an error message, could you please describe what’s happening when you say the code doesn’t work? For example, is the plot not displaying as expected, or are the calculations not producing the right results? This additional information will help me assist you more effectively.</p>
+</div>
+<p>So this didn’t work. What’s next? One option is to see if another LLM AI can do it. For instance I could try and switch to another mode in Bing (creative or balanced) or try another LLM. I’m not doing this for now, but it might at times be worth giving it a try. What I’ll do here is to help the AI (as it suggested) by being more specific about the problem. Here is my updated prompt:</p>
+<div class="prompt">
+<p>The code below produces this error message:</p>
+<p>Error in eval(ei, envir) : object ‘sex’ not found</p>
+<p>Please fix it.</p>
+<p>PASTE ALL CODE FROM <a href="../../code/bing-iterate-example-update2.R">THIS FILE</a> HERE.</p>
+</div>
+<p>With this prompt, I got it to work. The AI gave me this helpful explanation and fully working code</p>
+<div class="output">
+<p>The error message you’re seeing is due to the sex variable not being recognized within the ifelse function in your data.frame creation. This is because the sex variable is not yet defined at the time ifelse is called.</p>
+<p>You can fix this by first creating the sex variable and then using it in the ifelse function. Here’s the corrected code:</p>
+<p><a href="../../code/bing-iterate-example-update3.R">CODE IS HERE</a></p>
+</div>
+<p>The end result is still not perfect, the difference in weight by sex is too large and we might want more scatter. But that can easily be fixed with either further iterations of asking the AI to update the code, or manual interventions. Speaking of manual interventions…</p>
+</section>
+<section id="manual-intervention" class="level1">
+<h1>Manual intervention</h1>
+<p>The overall goal is to get working code as quickly as possible. The goal is not to have it all AI generated. Therefore, if you reach a stage where you realize it’s faster if you just fix the code yourself, go ahead and do so.</p>
+<p>That occurs at two stages. The most obvious one is close to the end. The AI has given you code that is very close to what you want, but there are a few issues, either conceptual or coding errors, that are not quite the way they should be, but when you see the code, you immediately know how to make those changes. Then just go ahead and finish things off manually. At that point, you should be able to “turn off” the AI and have working code that you can apply to your project.</p>
+<p>The other time you might want to intervene manually is if the AI gets stuck. You keep asking it to fix/update, and it just doesn’t produce what you want. At this stage, you could go ahead and make some manual adjustments to the code that you know should happen, and then feed the – maybe still not fully working – code back to the AI and ask it to update further.</p>
+<p>The nature of the AI algorithms is that they can “get stuck” and if you give them a slight change of scenery, they might be able to get unstuck and get you closer to your goal.</p>
 </section>
 <section id="summary" class="level1">
 <h1>Summary</h1>
+<p>As with code writing, for fixing code, being as specific as possible and iterating are key. Usually, if you tell the AI exactly what needs fixing and do a few iterations, you’ll get to something that fully works, or is so close that you can quickly finish the rest manually.</p>
 </section>
 <section id="further-resources" class="level1">
 <h1>Further Resources</h1>
+<p>See the <a href="../../../modules/module-ai/ai-resources/ai-resources.html">AI resource unit</a>.</p>
 
 
 </section>

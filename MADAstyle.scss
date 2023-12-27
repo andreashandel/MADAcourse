@@ -102,7 +102,7 @@ a.thumbnail:hover {
     height: 100%;
 }
 
-/* Note and warning divs ---------------*/
+/* Various divs to label text, similar to Quarto callout blocks but customized  ---------------*/
 
 div.note
 {
@@ -135,6 +135,19 @@ div.emphasis
     border-radius: 10px;
 
 }
+
+
+div.prompt
+{
+    padding: 0.5em;
+    margin: 0.5em 0;
+    color: #153e67;
+    background-color: #dde8f6;
+    border: solid 5px #ecf4ff;
+    border-radius: 10px;
+
+}
+
 
 
 

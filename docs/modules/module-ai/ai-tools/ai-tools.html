@@ -668,11 +668,13 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
-  <li><a href="#goals" id="toc-goals" class="nav-link" data-scroll-target="#goals">Goals</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
   <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#in-brief" id="toc-in-brief" class="nav-link" data-scroll-target="#in-brief">In brief</a></li>
   <li><a href="#openai-chatgpt" id="toc-openai-chatgpt" class="nav-link" data-scroll-target="#openai-chatgpt">OpenAI ChatGPT</a></li>
   <li><a href="#bing-still-openai-gpt" id="toc-bing-still-openai-gpt" class="nav-link" data-scroll-target="#bing-still-openai-gpt">Bing (still OpenAI GPT)</a></li>
   <li><a href="#github-copilot" id="toc-github-copilot" class="nav-link" data-scroll-target="#github-copilot">GitHub Copilot</a></li>
+  <li><a href="#other-llm-ai" id="toc-other-llm-ai" class="nav-link" data-scroll-target="#other-llm-ai">Other LLM AI</a></li>
   <li><a href="#other-tools" id="toc-other-tools" class="nav-link" data-scroll-target="#other-tools">Other tools</a></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
   <li><a href="#further-resources" id="toc-further-resources" class="nav-link" data-scroll-target="#further-resources">Further Resources</a></li>
@@ -702,7 +704,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2023-12-22</p>
+      <p class="date-modified">2023-12-27</p>
     </div>
   </div>
     
@@ -715,23 +717,25 @@ ul.task-list li input[type="checkbox"] {
 <h1>Overview</h1>
 <p>In this tutorial, we discuss some currently available LLM AI tools and when/how you might want to use them. This is of course a rapidly moving field, so a few months from now things might have changed. I can hopefully keep up somewhat, but check the last modified date of this page 😁.</p>
 </section>
-<section id="goals" class="level1">
-<h1>Goals</h1>
-<p>By the end of the tutorial, you should:</p>
+<section id="learning-objectives" class="level1">
+<h1>Learning Objectives</h1>
 <ul>
 <li>Be familiar with current AI tools and when/how to use them.</li>
 </ul>
 </section>
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
+<p>It seems that every month a new LLM AI tool is announced. They are expected to keep getting better fairly rapidly for the foreseeable future. As you use these tools, it’s definitely useful to play around and explore. Here, I’m describing those that seem - as of this writing - the most useful ones for coding and data analysis tasks. Other AI tools might be more suitable for other tasks.</p>
+</section>
+<section id="in-brief" class="level1">
+<h1>In brief</h1>
+<p>Currently, ChatGPT 4 is the most powerful LLM AI tool. You can access it through a paid subscription via OpenAi, or for free through Microsoft’s Bing. ChatGPT 3.5 is the less powerful, free version you can access by creating a free OpenAI account. Despite being less powerful, I’ve found it to work pretty well to write R code.</p>
 </section>
 <section id="openai-chatgpt" class="level1">
 <h1>OpenAI ChatGPT</h1>
 <p>As of this writing, for the AI tools we are interested in (the LLMs), ChatGPT is probably the most useful tool. You can access it by creating a <a href="https://chat.openai.com/">free account</a>.</p>
-<p>ChatGPT is also part of the Microsoft <a href="https://www.bing.com/">Bing search engine</a> (currently located oder the “Chat” tab) and <a href="https://github.com/features/copilot">GitHub’s CoPilot</a>.</p>
-<p>If you haven’t already, I suggest you create a ChatGPT/OpenAI account. As of this writing, you can get a <a href="https://chat.openai.com/">free account</a>. Once you log in, you see a fairly plain interface with an area into which you can type your prompts. You can provide fairly elaborate prompts, and ask for code. For instance, try placing this into the bar:</p>
-<p><em>Write R code that generates a dataset of 100 individuals with ages from 18 to 49, BMI values from 15 to 40 and smoking status as yes or no. Assume that age and BMI are uncorrelated. Assume that smokers have a somewhat lower BMI. Then use the patchwork R package to generate a panel of ggplot2 plots. The first panel should show a violin plot with BMI on the y-axis and smoking status on the x-axis. The second panel should show a scatterplot with age on the y-axis and BMI on the x-axis. Add thorough documentation to your code.</em></p>
-<p>When I did that, ChatGPT gave me this <a href="../../media/ChatGPT_example.R">fully working code</a>. It is possible that when you run it, the code will look slightly different (see the comment below on non-reproducibility). Hopefully, what you get will run. If not, you might need to either fix the code or ask the AI to fix it.</p>
+<p>ChatGPT is also part of the Microsoft <a href="https://www.bing.com/">Bing search engine</a> (currently located under the “Chat” tab) and <a href="https://github.com/features/copilot">GitHub’s CoPilot</a>.</p>
+<p>If you haven’t already, I suggest you create a ChatGPT/OpenAI account. As of this writing, you can get a <a href="https://chat.openai.com/">free account</a>. Once you log in, you see a fairly plain interface with an area into which you can type your prompts. You can provide fairly elaborate prompts. We’ll look at examples in other units.</p>
 </section>
 <section id="bing-still-openai-gpt" class="level1">
 <h1>Bing (still OpenAI GPT)</h1>
@@ -745,17 +749,23 @@ ul.task-list li input[type="checkbox"] {
 <p>For some more eloquent use of Copilot, see the <a href="https://youtu.be/yVq-b5xHmac?si=DPJXXnEoViVFYA1T">video</a> by Thomas Mock from Posit/RStudio. It’s a bit long, but I highly recommend you watch it. Efficient use of AI in general and Copilot specifically will likely save you a lot of time for the rest of this course!</p>
 <p><strong>In general, I recommend you turn off Copilot in RStudio when you are not actively using it.</strong> And before you turn it on, make sure the document you have open, and any other files it might have access to, do not contain information you want to keep private.</p>
 </section>
+<section id="other-llm-ai" class="level1">
+<h1>Other LLM AI</h1>
+<p>Other companies, such as Google and Anthropic, are also busy creating LLM AIs. I haven’t tried them yet to see how well they write code.</p>
+</section>
 <section id="other-tools" class="level1">
 <h1>Other tools</h1>
-<p>As you learned from Thomas Mock’s video above, the <a href="https://mlverse.github.io/chattr/"><code>chattr</code> R package</a> is another great way to use ChatGPT from within R. I recommend exploring it.</p>
-<p>As you are probably aware, these AI tools are changing rapidly. I’m writing this in November 2023, you will read this a few months later. It could be that at this point, some new versions of AI tools have come out that are even better. Do explore and if you find some especially promising platform or package, let me know!</p>
+<p>It is quite likely that in the future, there will be several LLM AI tools that are used by the majority of users, and then there will be lots of customizations running on top of those. There are already specialized LLM AI tools for layers and doctors and other professions that use ChatGPT under the hood. GitHub CoPilot is such a customization for coding. I expect further tools to keep coming out at a fairly rapid pace.</p>
+<p>For instance, as you learned from Thomas Mock’s video above, the <a href="https://mlverse.github.io/chattr/"><code>chattr</code> R package</a> is another great way to use ChatGPT from within R. I recommend exploring it.</p>
+<p>As you are probably aware, these AI tools are changing rapidly. I’m writing this in December 2023, you will read this a few months later. It could be that at this point, some new versions of AI tools have come out that are even better. Do explore and if you find some especially promising platform or package, let me know!</p>
 </section>
 <section id="summary" class="level1">
 <h1>Summary</h1>
+<p>LLM AI tools are changing rapidly. Currently, ChatGPT seems to do a good job at helping with coding and data analysis related tasks. New tools are showing up and are generally worth exploring.</p>
 </section>
 <section id="further-resources" class="level1">
 <h1>Further Resources</h1>
-<p>For a list and description of some other AI tools, see this <a href="https://www.oneusefulthing.org/p/how-to-use-ai-to-do-stuff-an-opinionated">guide on using AI to do stuff</a>.</p>
+<p>For a list and description of some other AI tools (e.g., those that can produce images), see this <a href="https://www.oneusefulthing.org/p/how-to-use-ai-to-do-stuff-an-opinionated">guide on using AI to do stuff</a>. Also see the <a href="../../../modules/module-ai/ai-resources/ai-resources.html">AI resource unit</a>.</p>
 
 
 </section>

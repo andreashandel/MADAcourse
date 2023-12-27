@@ -5,36 +5,42 @@ subtitle: ""
 
 
 # Overview
-In this unit, we discuss 
+In this unit, we discuss using AI tools to help with exploratory data analysis.
 
-# Goals
-By the end of the unit, you should:
+# Learning Objectives
+
+* Know why and how to use AI to help with exploratory analysis.
+* Be aware of possible confidentiality issues.
 
 
 # Introduction
+
+In an exploratory analysis, you generally want to look at many aspects of your data to get a good idea of what you have in front of you. While R has many powerful functions that let you explore your data quickly, combining R with AI generated code can speed up things even more.
+
+
+# Confidentiality and Privacy
+
+It is important to re-iterate from a previous unit: If you allow the AI to "see" your data, this data might end up on the servers of the company running the AI (ChatGPT, Microsoft, Google) and might be used by them for future training of their models. Therefore, be careful with what you let the AI see. If you are re-analyzing publicly available data, you shouldn't have to worry. But if the data is in any way confidential, it might not be a good idea to allow the AI to see it. 
+
+The best solution in that case is to generate synthetic data that looks like your real data, then ask the AI to write code to analyze this synthetic data. Once the AI gives you working code, you can take it off-line and apply it to your real data.
+
+Since synthetic (artificial/fake/simulated) data is very useful for many parts of the data analyis workflow, it is covered in a [separate module](../../module-synthetic-data/synthetic-data-course.qmd). 
+
+
+
+# Basic exploratory data analyis (EDA)
+
 
 
 
 # Summary
 
-To sum up, important reasons to use synthetic data are:
-
-- Full knowledge of the truth, which can be used for model testing
-- No problems with confidentiality
-- Potentially easier to manipulate
-
-Ways to generate synthetic data are:
-
-- Completely made up
-- Following distributions obtained from the original data
-- Scrambling of the original data
-- A mix of these approaches
 
 
 
 # Further Resources
 
-In the next units, we will discuss how to actually generate synthetic data and how to use it.
+See the [AI resource unit](../ai-resources/ai-resources.qmd).
 
 
 

@@ -10,8 +10,8 @@ In this unit, we discuss using LLM AI tools to help write code.
 
 # Learning Objectives
 
-* Know how to use current LLM AI tools to help with coding.
-* Be familiar with several approaches of coding.
+* Know how and why to use current LLM AI tools to help with coding.
+* Be familiar with several approaches of LLM AI assisted coding.
 
 
 # Introduction
@@ -27,13 +27,20 @@ To get good results from the AI, it is important that you be as specific as you 
 
 Try this prompt with one of the LLM AI:
 
-_Write R code that generates a scatterplot and a violin plot_
+::: prompt
+Write R code that generates a scatterplot and a violin plot.
+:::
+
+Your result might or might not be close to what you had in mind. If you are not providing a lot of details, the AI can decide what to do and sometimes it's close to what you had in mind, but often it isnt'.
+
 
 Now try this prompt:
 
-_*_Write R code that generates a dataset of 100 individuals with ages from 18 to 49, BMI values from 15 to 40 and smoking status as yes or no. Assume that age and BMI are uncorrelated. Assume that smokers have a somewhat lower BMI. Then use the patchwork R package to generate a panel of ggplot2 plots. The first panel should show a violin plot with BMI on the y-axis and smoking status on the x-axis. The second panel should show a scatterplot with age on the y-axis and BMI on the x-axis. Add thorough documentation to your code._
+::: prompt
+Write R code that generates a dataset of 100 individuals with ages from 18 to 49, BMI values from 15 to 40 and smoking status as yes or no. Assume that age and BMI are uncorrelated. Assume that smokers have a somewhat lower BMI. Then use the patchwork R package to generate a panel of ggplot2 plots. The first panel should show a violin plot with BMI on the y-axis and smoking status on the x-axis. The second panel should show a scatterplot with age on the y-axis and BMI on the x-axis. Add thorough documentation to your code.
+:::
 
-When I gave that prompt to ChatGPT 3.5, it gave me this [fully working code](../../media/ChatGPT_example.R). It is possible that when you try this, the code will look slightly different. Remember, these AI tools are not fully deterministic and can produce different results each time. Hopefully, what you get will run. If not, you might need to either fix the code or ask the AI to fix it (we'll look at that in another unit).
+When I gave the second prompt to ChatGPT 3.5, it gave me this [fully working code](../../code/chatgpt-example.R). It is possible that when you try this, the code will look slightly different. Remember, these AI tools are not fully deterministic and can produce different results each time. Hopefully, what you get will run. If not, you might need to either fix the code or ask the AI to fix it (we'll look at that in another unit).
 
 
 As you can see, good prompts are often quite long. It makes sense to write those down outside the AI first. That also helps somewhat with reproducibility. I generally try to stick AI prompts at the top of my R/Quarto files, or into a separate file.
@@ -49,26 +56,92 @@ An analogy I like is that of a composer. A composer needs to know enough about t
 
 It's rare that you get exactly what you want from the AI with your first prompt. Quite likely, you realize that you weren't specific enough, or that you really wanted something slightly different but didn't properly specify it in the prompt. Often, the code might also not quite work. The AI might have just made up a package or function that doesn't exist, or otherwise introduced mistakes. 
 
-While it would be nice to get a great product on the first try, the process is so fast that it doesn't matter much. Just try again. You can either update your prompt and feed it to the AI again. Or you can tell it what changes you want to make. Try this as an example. Start with the prompt from above:
+While it would be nice to get a great product on the first try, the process is so fast that it doesn't matter much. Just try again. You can either update your prompt and feed it to the AI again. Or you can tell it what changes you want to make. Try this as a starting prompt:
+
+::: prompt
+Write R code that generates a dataset of 100 individuals, half of them female, with ages from 18 to 49, weight from 100 to 500 pounds and BMI from 15 to 35. Make a figure that shows weight on the x-axis, BMI on the y-axis, and stratification by sex. Add thorough documentation to the code.
+:::
 
 
-_Write R code that generates a dataset of 100 individuals with ages from 18 to 49, BMI values from 15 to 40 and obesity status as yes or no. Make a figure that shows age on the x-axis, BMI value on the y-axis, and stratification by obesity status._
+When I fed that to Bing in "precise" mode it produced [this code](../../code/bing-iterate-example.R). Note that it didn't really give me an R script, I copied what it produced into an R file.
 
-When I fed that code to Bing it produced [this code](../../media/Bing_itereate_example.R). Note that it didn't really give me an R script, I copied what it produced into an R file.
+The code runs and produces a figure, but there are problems. Right now, the data is generated assuming each variable is independent of the other. We know that weight is strongly correlated with BMI, since it's part of the equation defining BMI. We also know that males are generally heavier. We can easily fix this. One approach is to update your prompt and make it more explicit, such as: 
 
-The code runs, but there are problems. 
+::: prompt
+Write R code that generates a dataset of 100 individuals, half of them female, with ages from 18 to 49, weight from 100 to 500 pounds and BMI from 15 to 35. Assume that males are generally somewhat heavier than females. Also assume thet BMI and weight are positively correlated, based on the definition of BMI. Make a figure that shows weight on the x-axis, BMI on the y-axis, and stratification by sex. Add thorough documentation to the code.
+:::
 
+With this updated prompt, I got [this code](../../code/bing-iterate-example-update1.R), here are the relevant bits
 
+::: output
+```
+# Generate a dataset of 100 individuals
+data <- data.frame(
+  # Generate sex variable with half of them female
+  sex = rep(c("male", "female"), each = 50),
+  
+  # Generate ages from 18 to 49
+  age = sample(18:49, 100, replace = TRUE),
+  
+  # Generate weight values from 100 to 500 pounds
+  # Assume that males are generally somewhat heavier than females
+  weight = c(runif(50, min = 100, max = 400), runif(50, min = 200, max = 500)),
+  
+  # Generate BMI values from 15 to 35
+  # Assume that BMI and weight are positively correlated
+  bmi = c(runif(50, min = 15, max = 25), runif(50, min = 25, max = 35))
+)
+```
+:::
+
+There are several issues. It labeled the first 50 individuals as males, but assigned them the lighter instead of heavier weight. It also didn't properly create BMI values as function of weight.
+
+We could of course modify the prompt above further, trying again. Or we can directly iterate at the prompt and ask the AI to update the code. Here is an example:
+
+::: prompt
+Update the code such that males and females are randomly distributed, make sure that males are on average heavier than females, and compute values for BMI as a function of weight with some random variation added.
+:::
+
+With this updated prompt, I got [this code](../../code/bing-iterate-example-update2.R), here are the relevant bits
+
+::: output
+```
+# Generate a dataset of 100 individuals
+data <- data.frame(
+  # Generate sex variable with males and females randomly distributed
+  sex = sample(rep(c("male", "female"), each = 50)),
+  
+  # Generate ages from 18 to 49
+  age = sample(18:49, 100, replace = TRUE),
+  
+  # Generate weight values from 100 to 500 pounds
+  # Make sure that males are on average heavier than females
+  weight = ifelse(sex == "male", runif(50, min = 300, max = 500), runif(50, min = 100, max = 300))
+)
+
+# Compute values for BMI as a function of weight with some random variation added
+# Assume a height of 1.75 meters for simplicity
+# BMI = weight(kg) / height(m)^2
+# Convert weight from pounds to kg (1 pound = 0.453592 kg)
+data$bmi <- (data$weight * 0.453592) / (1.75^2) + rnorm(100)
+```
+:::
+
+That looks better. However, when you try to run it, you'll find that it doesn't work. The problem is that it tries to use the variable `sex` before that data frame is defined. So we need to fix that code. We could of course do it by hand, but we can also see if we can get the AI to fix its own code. Which brings us to the next unit, [read on there](../ai-fix-code/ai-fix-code-R).
 
 
 
 # Summary
 
+LLM AI are very helpful at assisting with writing code. You need to know exactly what you want and the more specific your prompt, the better. Rarely do you get exactly what you want on the first try, but iterating is easy and fast.
+
+It is usefyul to write down your prompts so can go back to them later (and readers, including your future self, can see what you did).
 
 
 
 # Further Resources
 
+See the [AI resource unit](../ai-resources/ai-resources.qmd).
 
 
 
