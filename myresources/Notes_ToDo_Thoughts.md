@@ -5,8 +5,6 @@ Most general comments/thoughts are in the Notes and Thoughts document in the off
 
 # Notes
 
-* There are some files that are not (yet) linked to the navigation structure . That's on purpose.
-
 * I'm doing local rendering into the docs folder and syncing/pushing it instead of using gh-pages workflow.
 
 
@@ -24,11 +22,9 @@ Instead, I'd like to just write [this code](bing-iterate-example-update1.R) and 
 
 * Make the callout block divs nicer.
 
-
 * Can one make the images larger, they are at times hard to see/read. And could one do that in a way that they can be 'centrally controlled', like the CSS code fo the video sizing?
 
-
-* Switch most of the bold text blocks to callouts/divs (currently note/emphasis/warning) 
+* Switch most of the bold text blocks to callouts/divs. Add more divs/callout categories as needed.
 
 * Turn mentions of specific pages on main page into links.
 
@@ -55,37 +51,26 @@ https://developers.google.com/style/filenames
 # Further Resources
 
 
+* Update links/references to R4DS 2nd edition instead of 1st.
 
 --
 
 * Continue updating Assessment_Data_Analysis
-* Update/finish AI unit and synthetic data unit
 * Write table unit
 * Update course_tools_intro assessment
 * implement data generation/AI assessment
 
 
-# Worth checking out
-
-
-
 
 # Notes from Quarto conversion by Jadey
 
-## Helpful tip for getting YAML indentations
-
-Any time I work in the `.yml`, I turn on indentation guides. Indentation is so important and so annoying! In RStudio > `Tools` > `Global Options` > `Code` > `Display` > `Indentation Guides` > pick an option from the dropdown menu. I've also commented the number of indents in the examples below for your reference.
 
 
 ## Emojis
 
 Quarto allows you to insert emojis without the `emoji` package. [https://quarto.org/docs/visual-editor/content.html#emojis](https://quarto.org/docs/visual-editor/content.html#emojis)
 
-I replaced your `emoji` calls with just the emoji and removed the library call in `index.qmd`.
-
-**AH: Ok. I rarely use the viusal editor, I assume this works equally well in the text editor version?  And I do want to make sure things are somewhat portable to different formats, e.g. if I want to make (revealjs) slides using some of the text, or for some reason need to create Word or pdf output of some of the text, I'd like things to work as much as possible. I didn't fully understand what they say in the emoji documentation about when/how native emojis are supported. Just want to make sure this is as output-independent as possible.** 
-
-JR: You can insert emojis without the visual editor.
+You can insert emojis without the visual editor.
 on Windows, the shortcut is `Windows + .`
 on Mac: `Ctrl + Cmd + Space`
 
@@ -93,35 +78,16 @@ For output to a different format, add this to the YAML heading of the file.
 
 # ```
 # ---
-# title: "My Document"
+# title: "Word doc report"
+# format: docx
 # from: markdown+emoji
 # ---
 # ```
 
 
-#### How to use emojis in Quarto without the visual editor
-
-Use keyboard shortcuts to open the dialog box of emojis, which you can search and double click to insert into any text input on your computer (including RStudio/VSCode). These will render for any HTML output, including revealjs presentations.
-
-on Windows, the shortcut is `Windows + .`
-on Mac: `Ctrl + Cmd + Space`
-
-If rendering to a non-html format like docx, add `from: markdown+emoji` to the YAML heading of the file.
-
-```
----
-title: "Word doc report"
-format: docx
-from: markdown+emoji
----
-```
-
-For more details, see the [emoji Quarto docs]([https://quarto.org/docs/visual-editor/content.html#emojis](https://quarto.org/docs/visual-editor/content.html#emojis)).
-
 ### Navigation
 
 Your site uses hybrid navigation (navbar plus sidebar) as detailed in these [Quarto docs](https://quarto.org/docs/websites/website-navigation.html#hybrid-navigation).
-
 
 Note the text in the navbar matches the title in the sidebar and the files are the same. The sidebar style, collapse-level, and other options don't need to be included in other sidebars (unless you want a different setting for a specific sidebar).
 
@@ -141,19 +107,6 @@ Example as seen in `assessments/Assessment_Course_Tools_Introduction.qmd`:
 
 This way of cross referencing is cool because you can link to specific sections. Add a `#sec-` identifier to any heading per these [Quarto docs](https://quarto.org/docs/authoring/cross-references.html#sections). 
 
-For example:
-
-In project/Project_Details.qmd:
-```
-# Part 3 {#sec-part-3}
-```
-
-In project/Project_Review.qmd:
-
-```
--   Use the simple grading rubric shown in the part 3 section of the [Project Details](Project_Details.qmd#sec-part-3) document.
-```
-
 ## Contributors - author roles in metadata
 
 In `Data_Exploration.qmd` and `Data_Wrangling.qmd`, you had a contributors field which isn't valid in Quarto. Beginning in Quarto 1.4, authors will have a `role` key available per this [stack overflow Q/A](https://stackoverflow.com/questions/77046856/how-to-get-author-roles-defined-in-quarto-document-to-appear-in-output). So for now both names show as authors.
@@ -172,21 +125,6 @@ In `Data_Exploration.qmd` and `Data_Wrangling.qmd`, you had a contributors field
 ## Images
 
 You can also use markdown image syntax instead of `knitr::include_graphics()`. It might be more efficient when rendering since it doesn't require execution [Quarto figures](https://quarto.org/docs/authoring/figures.html) though I haven't tested this. Anyway, it's more aligned with "the Quarto way" and `fig-align` is set to center in `_quarto.yml` so it doesn't need to be repeated for each figure. 
-
-See the syntax differences below:
-
-````
-# From modules/Visualization_Overview.qmd
-
-```{r cartoon-graph,  echo=FALSE, fig.cap='Flowcharts are sometimes, but not always good visualization tools. Source: xkcd.com.', out.width = '60%', fig.align='center', fig.alt='A comic from the website XKCD. It shows an extremely confusing and illogical flowchart which includes a line chart, a battery charging circuit, a resistance diagram, a golden spiral, and an arrow that leads out of the containing box, among other things.'}
-knitr::include_graphics("../media/xkcd-flowcharts.png")
-```
-
-![Flowcharts are sometimes, but not always good visualization tools. Source: xkcd.com.](../media/xkcd-flowcharts.png){width="60%" fig-alt="A comic from the website XKCD. It shows an extremely confusing and illogical flowchart which includes a line chart, a battery charging circuit, a resistance diagram, a golden spiral, and an arrow that leads out of the containing box, among other things."}
-````
-
-**I can adjust these for you, but wanted to check if you would prefer to continue to use knitr::include_graphics().**
-
 
 Note: the global fig-align setting in the yaml applies to figures which Quarto defines as having a label and caption. Supposedly this will get fixed in Quarto 1.4 according to this [issue](https://github.com/quarto-dev/quarto-cli/issues/4315#issuecomment-1444304192). To get around this until the next release, we need to make sure all images have captions OR set fig-align="center" for the individual image that doesn't have a caption.
 
@@ -224,6 +162,5 @@ You create a div with the class `container` then set the iframe class to `video`
 
 ## Accessibility
  
-Accessibility is really important to me so I thought I'd call attention to some of your hyperlink names. Most are great (concise and descriptive) but some are just called [here] which aren't [helpful link names](https://www.a11yproject.com/posts/creating-valid-and-accessible-links/). 
-
+Accessibility is really important to me so I thought I'd call attention to some of your hyperlink names. Most are great (concise and descriptive) but some are just called [here] which aren't [helpful link names](https://www.a11yproject.com/posts/creating-valid-and-accessible-links/)
 

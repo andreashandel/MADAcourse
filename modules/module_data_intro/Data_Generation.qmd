@@ -5,6 +5,6 @@ subtitle: ""
 
 # Overview
 
-Here we go again. I started to write a unit on creating and using synthetic (artificial/fake/simulated) data. Then it got too big again 😁 and I decided to make it [its own module](../module-synthetic-data/synthetic-data-course.qmd), which you can find towards the end of the content list sidebar.
+Here we go again. I started to write a unit on creating and using synthetic (artificial/fake/simulated) data. Then it got too big again 😁 and I decided to make it [its own module](../module-synthetic-data/synthetic-data-overview.qmd), which you can find towards the end of the content list sidebar.
 
 

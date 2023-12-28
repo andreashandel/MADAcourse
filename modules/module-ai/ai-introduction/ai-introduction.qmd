@@ -32,7 +32,7 @@ This idea of connecting individual models to make a bigger, better model should 
 
 Of course, neural networks are complicated. At this point, there are many different versions of NN in use, and understanding them in detail is time-consuming. However, as general user, you don't need to understand all the details. Instead, like for other complex ML models, as long as you know how to use them and evaluate what they return, it is ok to not fully understand their inner workings. Properly training/fitting NN can be tricky, because they generally have many different parameters that need tuning to achieve good performance. Thus a lot of development has gone into methods that allow for efficient tuning/fitting. Fortunately for us as users, those methods have become fairly good such that it is possible to use NN algorithms built by others and generally trust they work well -- similar to us using other models (GLM, trees, SVM, etc.) without having to worry about all the details.
 
-If you want to learn more about neural nets, the [Wikipedia entry](https://en.wikipedia.org/wiki/Artificial_neural_network) is a good place to start. Also check the [AI Resources page](./ai-resources/ai-resources.qmd). 
+If you want to learn more about neural nets, the [Wikipedia entry](https://en.wikipedia.org/wiki/Artificial_neural_network) is a good place to start. Also check the [AI Resources page](../ai-resources/ai-resources.qmd). 
 
 
 
@@ -75,5 +75,5 @@ Since DL/AI usually fit large amounts of data to complex models, time constraint
 
 # Further Resources
 
-See the [AI Resources page](./ai-resources/ai-resources.qmd) for some additional information on various AI topics. 
+See the [AI Resources page](../ai-resources/ai-resources.qmd) for some additional information on various AI topics. 
 

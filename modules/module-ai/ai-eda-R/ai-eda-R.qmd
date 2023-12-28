@@ -24,7 +24,7 @@ It is important to re-iterate from a previous unit: If you allow the AI to "see"
 
 The best solution in that case is to generate synthetic data that looks like your real data, then ask the AI to write code to analyze this synthetic data. Once the AI gives you working code, you can take it off-line and apply it to your real data.
 
-Since synthetic (artificial/fake/simulated) data is very useful for many parts of the data analyis workflow, it is covered in a [separate module](../../module-synthetic-data/synthetic-data-course.qmd). 
+Since synthetic (artificial/fake/simulated) data is very useful for many parts of the data analyis workflow, it is covered in a [separate module](../../module-synthetic-data/synthetic-data-overview.qmd). 
 
 In the following I'm assuming that you have data that can be shared with the AI.
 
@@ -40,7 +40,7 @@ The data frame contains the continuous variables age and BMI, and the categorica
 
 When I typed the above into Bing AI in precise mode, I got [this code](../../../code/bing-eda-example2.R). It's a good start. You can now take these code bits and modify them so they can be applied to your data.
 
-Of course, you can take this further and ask the AI to both generate the data you have in mind, then write EDA code. Basically ask it to write code along the lines of the examples from the [synthetic data module](../../module-synthetic-data/synthetic-data-course.qmd) and EDA code.
+Of course, you can take this further and ask the AI to both generate the data you have in mind, then write EDA code. Basically ask it to write code along the lines of the examples from the [synthetic data module](../../module-synthetic-data/synthetic-data-overview.qmd) and EDA code.
 
 
 
