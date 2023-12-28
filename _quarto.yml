@@ -227,12 +227,23 @@ website:
                file: modules/module-ai/ai-resources/ai-resources.qmd  
           - section: "Synthetic Data"
             contents:
-             - text: "Synthetic Data Introduction"
-               file: modules/module-synthetic-data/synthetic-data-introduction/synthetic-data-introduction.qmd  
-             - text: "Creating new data"
-               file: modules/module-synthetic-data/synthetic-data-new-R/synthetic-data-new-R.qmd  
-            
-            
+             - text: "Synthetic Data Overview"
+               file: modules/module-synthetic-data/synthetic-data-overview.qmd  
+             # - text: "Introduction and Motivation"
+             #   file: modules/module-synthetic-data/synthetic-data-introduction/synthetic-data-introduction.qmd  
+             # - text: "Creating new data"
+             #   file: modules/module-synthetic-data/synthetic-data-new-R/synthetic-data-new-R.qmd  
+             # - text: "Creating new data based on existing data"
+             #   file: modules/module-synthetic-data/synthetic-data-new-existing-R/synthetic-data-new-existing-R.qmd
+             # - text: "Scrambling existing data"
+             #   file: modules/module-synthetic-data/synthetic-data-exisiting-R/synthetic-data-exisiting-R.qmd
+             # - text: "R packages for data creation"
+             #   file: modules/module-synthetic-data/synthetic-data-R-packages/synthetic-data-R-packages.qmd
+             # - text: "Use synthetic data with AI tools"
+             #   file: modules/module-synthetic-data/synthetic-data-AI-tools-R/synthetic-data-AI-tools-R.qmd
+             # - text: "Use synthetic data to test models"
+             #   file: modules/module-synthetic-data/synthetic-data-model-testing-R/synthetic-data-model-testing-R.qmd
+
       - title: "Assessments"
         contents:
             - text: "Assessments Overview"

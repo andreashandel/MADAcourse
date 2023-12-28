@@ -67,7 +67,7 @@ I suggest you follow the guideline of "if in doubt, cite/acknowledge". That mean
 
 Here are some suggestions on how to use the AI tools as efficiently as possible.
 
--   Think carefully about what exactly you want to have done and give the AI instructions that are as detailed as possible.
+-   Think carefully about what exactly you want to have done and give the AI instructions that are as detailed as possible. This is often called **prompt engineering** these days. That's just a fancy word to mean that you should think carefully what you want the AI to do for you, and be as detailed and specific as possible when you ask it to do something.
 
 -   Iterate. Often the first version you get from the AI is not exactly what you want. You can try to ask the AI to rewrite/change/fix things. Or you can edit the code. Then take the code with your manual edits as input to ask the AI to make further changes.
 

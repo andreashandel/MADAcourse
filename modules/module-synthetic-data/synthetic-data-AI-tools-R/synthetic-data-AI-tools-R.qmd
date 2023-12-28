@@ -1,0 +1,44 @@
+---
+title: Using AI tools to generate synthetic data with R
+subtitle: ""
+---
+
+
+# Overview
+In this unit, we explore the use of LLM AI tools to generate synthetic data with `R.
+
+
+# Learning Objectives
+
+* Be able to use AI to generate synthetic data with `R`.
+
+
+# Introduction
+
+While there are `R` packages available that help with the generation of synthetic data - and we will discuss them in a different unit, it is also fairly easy to use basic R functionality to generate simulated data. We'll do a few examples to show how this can be done.
+
+## AI help example
+
+Using AI to generate code that creates synthetic data can be very efficient. Here is an example. I typed the following prompt into ChatGPT 3.5.
+
+:::prompt
+Write R code that generates a dataset of 100 individuals with ages from 18 to 49, BMI values from 15 to 40 and smoking status as yes or no. Assume that age and BMI are uncorrelated. Assume that smokers have a somewhat lower BMI. Then use the patchwork R package to generate a panel of ggplot2 plots. The first panel should show a violin plot with BMI on the y-axis and smoking status on the x-axis. The second panel should show a scatterplot with age on the y-axis and BMI on the x-axis. Add thorough documentation to your code.
+:::
+
+The result was [this fully-working code](./chatgpt-example.R).
+
+Since the AI systems are continuously updated, it is possible that if you type the same prompt into ChatGPT, your code might look slightly differently, but hopefully it is still working.
+
+In my experience, you usually don't quite get what you want on the first try. But it's easy to tell the AI to update the code until it does what you want it to, or at least is close and then you can do the rest by hand. 
+
+
+# Summary
+
+Using the help of AI to write code that generates data can be very useful and speed up things.
+
+
+
+# Further Resources
+
+A lot of this is covered in more detail in the [AI module](../../module-ai/ai-overview.qmd).
+

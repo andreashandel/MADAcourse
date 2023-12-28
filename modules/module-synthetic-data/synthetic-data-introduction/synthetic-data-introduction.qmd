@@ -8,10 +8,10 @@ subtitle: ""
 
 
 # Overview
-In this tutorial, we discuss why you might want to create synthetic (simulated/artificial/fake) data as part of your analysis and what general approaches there are for doing so.
 
-# Goals
-By the end of the tutorial, you should:
+In this unit, we discuss why you might want to create synthetic (simulated/artificial/fake) data as part of your analysis and what general approaches there are for doing so.
+
+# Learning Objectives
 
 * Know about reasons why one might want to use simulated data.
 * Be familiar with some ways to create and use simulated data.
@@ -19,7 +19,7 @@ By the end of the tutorial, you should:
 
 # Introduction
 
-Your goal is generally to analyze some real-world data to answer a question. So what's the point of producing synthatic (also often referred to as simulated or artificial or fake) data? There are several good reasons why this can sometimes be useful.
+Your goal is generally to analyze some real-world data to answer a question. So what's the point of producing synthetic (also often referred to as simulated or artificial or fake) data? There are several good reasons why this can sometimes be useful.
 
 
 # Reasons to use simulated data
@@ -45,7 +45,8 @@ Often, real-world datasets are very messy and require a good bit of time to clea
 
 
 
-# Ways to produce simulated data
+
+# Ways to produce synthetic data
 
 
 ## Make it all up
@@ -53,13 +54,12 @@ Often, real-world datasets are very messy and require a good bit of time to clea
 Completely making up data is the most flexible approach. You can try to produce synthetic versions of the full dataset, or just parts that are of interest. Let's say in the statin-cholesterol example above, you real data set also contains information on the age and sex of the individuals, and if they have any pre-existing heart condition. Maybe in a first pass, you don't want to look at those and just explore the main statin-cholesterol relation. Then you can just simulate data for that part. You can add further information - including simulated characteristics that are not in the original data! - as needed. 
 
 
-
-
 ## Summarize the original data, then re-create
 
 Even if you fully make up your synthetic data, you want it to somewhat resemble the original one. The easiest way is to just glimpse at the variables in the original data and generate new data that looks approximately similar. 
 
 If you want to be a bit more rigorous and get closer to the original data, you can also statistically summarize the original data, then use those summary distributions to generate new data. For instance let's say you find that the cholesterol variable can be well approximated with a normal distribution. If you fit the normal distribution to the data, you can get the mean and standard deviation. Then you can generate synthetic cholesterol data coming from a normal distribution with those estimated mean and standard deviation values. 
+
 
 
 
@@ -80,19 +80,11 @@ It is of course entirely possible to combine the two approaches above. For insta
 
 # Summary
 
-To sum up, important reasons to use synthetic data are:
+Synthetic data can be incredibly useful. You know exactly what patterns, dependencies and parameter values you used as input to generate your data. You can therefore test/validate your code and make sure your analysis approach can recover the original inputs. If it cannot, it means you will also likely have the same problems with your real data (though you might not know it since you can't check).
 
-- Full knowledge of the truth, which can be used for model testing
-- No problems with confidentiality
-- Potentially easier to manipulate
+If things work when fitting your models to your synthetic data, you have increased confidence (though no guarantee!) that you might also get reasonable results when applying your analysis method to the real data.
 
-
-Ways to generate synthetic data are:
-
-- Make it all up
-- Generate data following distributions obtained from the original data
-- Scramble of the original data
-- A mix of these approaches
+Synthetic data also allow you to more easily share what you are doing with colleagues, the public, AI systems, etc. without the risk of breaking confidentiality/privacy.
 
 
 

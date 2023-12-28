@@ -47,25 +47,32 @@ GitHub Copilot is currently free for students with the [GitHub student developer
 
 Once you have Copilot activated, you can use it in R Studio. (It is also possible to use it with other popular editors, such as VS Code, but for this course I will focus on R Studio. If you prefer to code in VS Code, you can install the Copilot plugin).
 
-To get Copilot working in R Studio, follow these [instructions](https://docs.posit.co/ide/user/ide/guide/tools/copilot.html). You might want to leave Copilot indexing unchecked for now. The instruction guide explains what this is. Basically, if you check this, copilot can access a lot of your files. This can lead to confidentiality issues. 
+To get Copilot working in R Studio, follow these [instructions](https://docs.posit.co/ide/user/ide/guide/tools/copilot.html). You might want to leave Copilot indexing unchecked for now. The instruction guide explains what this is. Basically, if you check this, copilot can access all files that are part of your current project. This can lead to confidentiality issues. Therefore, only check it if you are sure that all files in your project are ok being shared with the AI (and possibly make their way to Github/Microsoft/OpenAI servers). 
 
-Once you have co-pilot up and running, you should see it show up in the bottom of your R Studio input window (the top right window where you write code). It will start suggesting things as you type, once you stop for a few seconds. You can set that time in the options.
+Once you have Copilot up and running, you should see it show up in the bottom of your R Studio input window (the top right window where you write code). It will start suggesting things as you type, once you stop for a few seconds. You can set that time in the options.
 
-An introduction to using Copilot can be found in [this video](https://youtu.be/TlzMKSE97MQ?si=Tc3sQ5ZF3RktWsqF) by Thomas Mock from Posit/RStudio. In general, if you want bigger chunks of code, it seems currently better to go straight to ChatGPT. Copilot seems most useful to help you write bits of code as you go along. It can also be useful to help you remember the names of functions and arguments.
+An introduction to using Copilot can be found in [this video](https://youtu.be/TlzMKSE97MQ?si=Tc3sQ5ZF3RktWsqF) by Thomas Mock from Posit/RStudio. In general, if you want bigger chunks of code, it seems currently better to go straight to ChatGPT. Copilot seems most useful to help you write bits of code as you go along. It can also be useful to help you remember the names of functions and arguments. [This blog post](https://github.blog/2023-06-20-how-to-write-better-prompts-for-github-copilot/) provides some additional useful information on how to best use Copilot.
 
 **In general, I recommend you turn off Copilot in RStudio when you are not actively using it.** And before you turn it on, make sure the document you have open, and any other files it might have access to, do not contain information you want to keep private.
 
 
+# Claude/Anthropic
+
+[Anthropic](https://www.anthropic.com/) is another company developing LLM AI tools. Their main AI is called [Claude](https://www.anthropic.com/claude). As for ChatGPT, you can sign up to get a free account. It is apparently not as powerful as ChatGPT. However, it has one nice feature that the free versions of ChatGPT or Bing do not have, namely it lets you upload files. This is useful for data analysis tasks. I'll show an example of that in the [Explore data with AI](../ai-eda-R/ai-eda-R.qmd) unit. 
+
+
 # Other LLM AI
 
-Other companies, such as Google and Anthropic, are also busy creating LLM AIs. I haven't tried them yet to see how well they write code. 
+Other companies, such as Google, are also busy creating LLM AIs. I haven't tried them yet. Once I do, I'll add my impressions. If you are using any other LLM for coding or data analysis tasks and find it useful, please let me know. 
 
 
 # Other tools
 
 It is quite likely that in the future, there will be several LLM AI tools that are used by the majority of users, and then there will be lots of customizations running on top of those. There are already specialized LLM AI tools for layers and doctors and other professions that use ChatGPT under the hood. GitHub CoPilot is such a customization for coding. I expect further tools to keep coming out at a fairly rapid pace.
 
-For instance, as you learned from Thomas Mock's video above, the [`chattr` R package](https://mlverse.github.io/chattr/) is another great way to use ChatGPT from within R. I recommend exploring it.
+For instance, as you learned from Thomas Mock's video above, the [`chattr` R package](https://mlverse.github.io/chattr/) seems like another great way to use ChatGPT from within R. Unfortunately, as of this writing, I haven't been able to get it to work, OpenAI seems to refuse talking to it. If you have better luck, let me know.
+
+I'm also aware of the [chatAI4R](https://kumes.github.io/chatAI4R/) R package, but haven't tried it yet.
 
 As you are probably aware, these AI tools are changing rapidly. I'm writing this in December 2023, you will read this a few months later. It could be that at this point, some new versions of AI tools have come out that are even better. Do explore and if you find some especially promising platform or package, let me know!
 
