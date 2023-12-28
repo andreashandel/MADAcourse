@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.3.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -707,7 +707,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
   <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
   <li><a href="#confidentiality-and-privacy" id="toc-confidentiality-and-privacy" class="nav-link" data-scroll-target="#confidentiality-and-privacy">Confidentiality and Privacy</a></li>
-  <li><a href="#exploratory-data-analyis-eda-of-no-data" id="toc-exploratory-data-analyis-eda-of-no-data" class="nav-link" data-scroll-target="#exploratory-data-analyis-eda-of-no-data">Exploratory data analyis (EDA) of no data</a></li>
+  <li><a href="#exploratory-data-analyis-eda-with-no-data" id="toc-exploratory-data-analyis-eda-with-no-data" class="nav-link" data-scroll-target="#exploratory-data-analyis-eda-with-no-data">Exploratory data analyis (EDA) with no data</a></li>
   <li><a href="#exploratory-data-analyis-eda-with-copy-and-paste" id="toc-exploratory-data-analyis-eda-with-copy-and-paste" class="nav-link" data-scroll-target="#exploratory-data-analyis-eda-with-copy-and-paste">Exploratory data analyis (EDA) with copy and paste</a></li>
   <li><a href="#exploratory-data-analyis-eda-with-file-upload" id="toc-exploratory-data-analyis-eda-with-file-upload" class="nav-link" data-scroll-target="#exploratory-data-analyis-eda-with-file-upload">Exploratory data analyis (EDA) with file upload</a></li>
   <li><a href="#copilot" id="toc-copilot" class="nav-link" data-scroll-target="#copilot">Copilot</a></li>
@@ -772,19 +772,19 @@ ul.task-list li input[type="checkbox"] {
 <p>Since synthetic (artificial/fake/simulated) data is very useful for many parts of the data analyis workflow, it is covered in a <a href="../../../modules/module-synthetic-data/synthetic-data-overview.html">separate module</a>.</p>
 <p>In the following I’m assuming that you have data that can be shared with the AI.</p>
 </section>
-<section id="exploratory-data-analyis-eda-of-no-data" class="level1">
-<h1>Exploratory data analyis (EDA) of no data</h1>
-<p>Ok, this sounds dumb, but it’s that too stupid. Instead of trying to feed the AI your data, you can ask it to generate code that does EDA on hypothetical data. For instance you could provide a prompt like this</p>
+<section id="exploratory-data-analyis-eda-with-no-data" class="level1">
+<h1>Exploratory data analyis (EDA) with no data</h1>
+<p>Ok, this sounds dumb, but it’s not that stupid. Instead of trying to feed the AI your data, you can ask it to generate code that does EDA on hypothetical data. For instance you could provide a prompt like this:</p>
 <div class="prompt">
-<p>Write R code to perform an exploratory data analysis of a data frame called dat. The data frame contains the continuous variables age and BMI, and the categorical variables sex and favorite color. Write code that produces a summary table, univariate plots for each variable, and a bivariate plot of age vs BMI.</p>
+<p>Write R code to perform an exploratory data analysis of a data frame called <code>dat</code>. The data frame contains the continuous variables <code>age</code> and <code>BMI</code>, and the categorical variables <code>sex</code> and <code>favorite color</code>. Write code that produces a summary table, univariate plots for each variable, and a bivariate plot of <code>age</code> versus <code>BMI</code>.</p>
 </div>
-<p>When I typed the above into Bing AI in precise mode, I got <a href="../../../code/bing-eda-example2.R">this code</a>. It’s a good start. You can now take these code bits and modify them so they can be applied to your data.</p>
+<p>When I typed the above into Bing AI in precise mode, I got <a href="../../../code/bing-eda-example2.R">this code</a>. It’s a good start. You can take this code and modify so it can be applied to your data.</p>
 <p>Of course, you can take this further and ask the AI to both generate the data you have in mind, then write EDA code. Basically ask it to write code along the lines of the examples from the <a href="../../../modules/module-synthetic-data/synthetic-data-overview.html">synthetic data module</a> and EDA code.</p>
 </section>
 <section id="exploratory-data-analyis-eda-with-copy-and-paste" class="level1">
 <h1>Exploratory data analyis (EDA) with copy and paste</h1>
-<p>Bing and the free ChatGPT version currently don’t have a way to upload data.</p>
-<p>If you have fairly simple dataset, you can paste the whole thing into the prompt.</p>
+<p>Bing and the free ChatGPT version currently do not provide a way to upload data.</p>
+<p>If you have fairly simple dataset, you can paste it directly into the prompt.</p>
 <p>Here is an example. This dataset comes from the first example in the<br>
 <a href="../../../modules/module-synthetic-data/synthetic-data-new-R/synthetic-data-new-R.html">Generating synthetic data with R</a> unit. I opened the CSV file, and copied the whole thing into the prompt:</p>
 <div class="prompt">
@@ -792,7 +792,7 @@ ul.task-list li input[type="checkbox"] {
 <p>PASTE DATA HERE</p>
 </div>
 <div class="note">
-<p>To get a new line without submitting in your prompts, use <code>Shift + Ctrl/Return</code></p>
+<p>To get a new line in your prompts, use <code>Shift + Ctrl/Return</code> (or whatever the equivalent is on a Mac 😁.)</p>
 </div>
 <p>I received <a href="../../../code/bing-eda-example1.R">this code</a> from the AI. It runs and does a few nice exploratory analyses, such as writing summary tables and making a few plots.</p>
 <p>It would of course be better if I provided much more detailed instructions regarding the types of analyses, and possible even the R packages and functions I want to have. But I think you get the idea. If the data is not too big, you can write your prompt, then copy the data underneath and get code that does EDA on the data.</p>
@@ -812,14 +812,14 @@ ul.task-list li input[type="checkbox"] {
 <p>I tried using Copilot to help with EDA, but it wasn’t very successful. This screenshot shows an example of me trying to get it to produce a scatterplot. It didn’t work, Copilot did not return any suggestion. It did suggest the other lines of code. I’m not sure if I’m just not using Copilot correctly, maybe you’ve got better luck. It doesn’t hurt turning it on and trying to see if it can help you. If you find it useful, let me know so I can update this.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../../../media/copilot-sceenshot.png" class="img-fluid figure-img" alt="A screenshot of some R code showing an attempt to get Copilot to create a scatterplot, with copilot not returning any suggestion."></p>
+<p><img src="../../../media/copilot-screenshot.png" class="img-fluid figure-img" alt="A screenshot of some R code showing an attempt to get Copilot to create a scatterplot, with copilot not returning any suggestion."></p>
 <figcaption class="figure-caption">Copilot coding attempt</figcaption>
 </figure>
 </div>
 </section>
 <section id="chattr-package" class="level1">
 <h1>chattR package</h1>
-<p>Based on the package description, it should be able to write code based on not only the content in the current file, but also by looking into variables in the current environment. So if you have a data frame called <code>dat</code> in your environment, you should be able to ask the AI to write code to analyze it. Unfortunately, so far I haven’t been able to get <code>chattR</code> to talk to OpenAI. I’m not sure if that is not possible on the free plan?</p>
+<p>Based on the package description, it should be able to write code based on not only the content in the current file, but also by looking into variables in the current environment. So if you have a data frame called <code>dat</code> in your environment, you should be able to ask the AI to write code to analyze it. Unfortunately, so far I haven’t been able to get <code>chattR</code> to talk to OpenAI. I think this is because talking to ChatGPT via the API (which is what <code>chattR</code> does) requires a paid account.</p>
 </section>
 <section id="other-options" class="level1">
 <h1>Other options</h1>

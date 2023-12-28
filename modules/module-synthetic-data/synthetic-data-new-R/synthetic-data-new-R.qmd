@@ -7,8 +7,8 @@ subtitle: ""
 
 ```{r, include=FALSE, cache=FALSE}
 #R script that contains code chunks shown below
-knitr::read_chunk('synthetic-data-new-R-example-1-code.R')
-knitr::read_chunk('synthetic-data-new-R-example-2-code.R')
+knitr::read_chunk('../../../code/synthetic-data-new-R-example-1-code.R')
+knitr::read_chunk('../../../code/synthetic-data-new-R-example-2-code.R')
 ```
 
 
@@ -33,7 +33,7 @@ AI tools are very useful for generating synthetic data. In fact, the code in the
 For the first example, we'll generate a simple dataset of some hypothetical clinical trial for some treatment (say, a Cholesterol lowering medication) and its impact on outcomes such as Cholesterol levels and adverse events.
 
 :::note
-It is often useful to go slow and type your own code, or copy and paste the code chunks below and execute one at a time. However, if you are in a hurry, you can find the code for this example in [this file](synthetic-data-new-R-example-1-code.R).
+It is often useful to go slow and type your own code, or copy and paste the code chunks below and execute one at a time. However, if you are in a hurry, you can find the code for this example in [this file](../../../code/synthetic-data-new-R-example-1-code.R).
 :::
 
 :::note
@@ -79,7 +79,7 @@ You could also add further complexities into your synthetic data, for instance y
 
 In this example, we'll generate a dataset that has a more complex structure. We'll generate a dataset that has a longitudinal structure, i.e. repeated measurements over time. We'll also generate a dataset that has a hierarchical structure, i.e. measurements nested within groups.    
 
-We'll walk slowly through the code junks, you can find all the code in one file [here](synthetic-data-new-R-example-2-code.R).
+We'll walk slowly through the code junks, you can find all the code in one file [here](../../../code/synthetic-data-new-R-example-2-code.R).
 
 
 

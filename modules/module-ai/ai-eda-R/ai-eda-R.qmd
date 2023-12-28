@@ -29,16 +29,15 @@ Since synthetic (artificial/fake/simulated) data is very useful for many parts o
 In the following I'm assuming that you have data that can be shared with the AI.
 
 
-# Exploratory data analyis (EDA) of no data
+# Exploratory data analyis (EDA) with no data
 
-Ok, this sounds dumb, but it's that too stupid. Instead of trying to feed the AI your data, you can ask it to generate code that does EDA on hypothetical data. For instance you could provide a prompt like this
+Ok, this sounds dumb, but it's not that stupid. Instead of trying to feed the AI your data, you can ask it to generate code that does EDA on hypothetical data. For instance you could provide a prompt like this:
 
 ::: prompt
-Write R code to perform an exploratory data analysis of a data frame called dat.
-The data frame contains the continuous variables age and BMI, and the categorical variables sex and favorite color. Write code that produces a summary table, univariate plots for each variable, and a bivariate plot of age vs BMI.
+Write R code to perform an exploratory data analysis of a data frame called `dat`. The data frame contains the continuous variables `age` and `BMI`, and the categorical variables `sex` and `favorite color`. Write code that produces a summary table, univariate plots for each variable, and a bivariate plot of `age` versus `BMI`.
 :::
 
-When I typed the above into Bing AI in precise mode, I got [this code](../../../code/bing-eda-example2.R). It's a good start. You can now take these code bits and modify them so they can be applied to your data.
+When I typed the above into Bing AI in precise mode, I got [this code](../../../code/bing-eda-example2.R). It's a good start. You can take this code and modify so it can be applied to your data.
 
 Of course, you can take this further and ask the AI to both generate the data you have in mind, then write EDA code. Basically ask it to write code along the lines of the examples from the [synthetic data module](../../module-synthetic-data/synthetic-data-overview.qmd) and EDA code.
 
@@ -49,9 +48,9 @@ Of course, you can take this further and ask the AI to both generate the data yo
 
 # Exploratory data analyis (EDA) with copy and paste
 
-Bing and the free ChatGPT version currently don't have a way to upload data. 
+Bing and the free ChatGPT version currently do not provide a way to upload data. 
 
-If you have fairly simple dataset, you can paste the whole thing into the prompt.
+If you have fairly simple dataset, you can paste it directly into the prompt.
 
 Here is an example. This dataset comes from the first example in the  
 [Generating synthetic data with R](../../module-synthetic-data/synthetic-data-new-R/synthetic-data-new-R.qmd) unit. I opened the CSV file, and copied the whole thing into the prompt:
@@ -63,7 +62,7 @@ PASTE DATA HERE
 :::
 
 ::: note
-To get a new line without submitting in your prompts, use `Shift + Ctrl/Return`
+To get a new line in your prompts, use `Shift + Ctrl/Return` (or whatever the equivalent is on a Mac 😁.)
 :::
 
 I received [this code](../../../code/bing-eda-example1.R) from the AI. 
@@ -91,11 +90,12 @@ Claude allows you (as of this writing) to upload a maximum of 5 files with 10MB 
 
 I tried using Copilot to help with EDA, but it wasn't very successful. This screenshot shows an example of me trying to get it to produce a scatterplot. It didn't work, Copilot did not return any suggestion. It did suggest the other lines of code. I'm not sure if I'm just not using Copilot correctly, maybe you've got better luck. It doesn't hurt turning it on and trying to see if it can help you. If you find it useful, let me know so I can update this.
 
-![Copilot coding attempt](../../../media/copilot-sceenshot.png){fig-alt="A screenshot of some R code showing an attempt to get Copilot to create a scatterplot, with copilot not returning any suggestion."}
+![Copilot coding attempt](../../../media/copilot-screenshot.png){fig-alt="A screenshot of some R code showing an attempt to get Copilot to create a scatterplot, with copilot not returning any suggestion."}
+
 
 # chattR package
 
-Based on the package description, it should be able to write code based on not only the content in the current file, but also by looking into variables in the current environment. So if you have a data frame called `dat` in your environment, you should be able to ask the AI to write code to analyze it. Unfortunately, so far I haven't been able to get `chattR` to talk to OpenAI. I'm not sure if that is not possible on the free plan?
+Based on the package description, it should be able to write code based on not only the content in the current file, but also by looking into variables in the current environment. So if you have a data frame called `dat` in your environment, you should be able to ask the AI to write code to analyze it. Unfortunately, so far I haven't been able to get `chattR` to talk to OpenAI. I think this is because talking to ChatGPT via the API (which is what `chattR` does) requires a paid account.
 
 
 

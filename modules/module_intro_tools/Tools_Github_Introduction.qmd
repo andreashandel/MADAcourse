@@ -58,11 +58,13 @@ Once you have your GitHub account set up and GitKraken installed, make sure you 
 
 # GitHub developer pack
 
-**I strongly recommend you get the [GitHub student developer pack](https://education.github.com/pack).** This pack gives you a lot of nice free goodies that you might be interested in. I encourage you to explore all the different products and deals. For this class, we definitely want the following:
+**Please get the [GitHub student developer pack](https://education.github.com/pack).** This pack gives you a lot of nice free goodies that you might be interested in. I encourage you to explore all the different products and deals. For this class, we most want the following:
 
 **GitHub Pro account:** This will give you your own free private repositories. We will mostly use public repositories, but there might be times you want to have a private repository, e.g. for data you don't want to be public. Normally, if you want private repositories, you have to pay. But with the student pack (or as an academic), you get them for free.
 
 **GitKraken Pro:** Free GitKraken Pro access. While the free version of GitKraken might work ok for this course, you can't access private repositories with it. Often, being able to use private repositories is useful.
+
+**[GitHub Copilot](https://github.com/features/copilot)**: Which gives you AI support for writing code.
 
 There are a lot of other goodies that come with the student pack. We won't use them in the course, but some might be of interest to you.
 

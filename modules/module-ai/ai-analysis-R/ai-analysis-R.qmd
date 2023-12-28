@@ -1,17 +1,117 @@
 ---
-title: AI tools for fixing code 
+title: AI tools to analyze data 
 subtitle: ""
 ---
 
 
 # Overview
-In this unit, we discuss 
+In this unit, we discuss ways you can use AI to analyze your data, aka fit models to it.
+
 
 # Learning Objectives
-- 
+- Be familiar with ways to fit models to data using AI.
 
 
 # Introduction
+This is really not that much different from the EDA approach. Basically, you have your data and tell the AI to fit some models to it and evaluate them. Here are a few simple examples to give you an idea.
+
+
+# Uploading data to Claude
+
+I'm using the longitudinal drug concentration dataset we created in the [Generating synthetic data with R](../../module-synthetic-data/synthetic-data-new-R/synthetic-data-new-R.qmd) unit. I uploaded it to Claude and gave it this prompt:
+
+
+::: prompt
+Write R code to analyze the data in the attached CSV file.
+Fit a linear model with drug concentration as predictor and cholesterol level as outcome. 
+Also fit a logistic model with drug concentration as predictor and adverse events as outcome.
+For each model, provide model performance diagnostics.
+Use the tidyverse packages for data manipulation tasks, and the tidymodels framework for model fitting.
+Add thorough documentation to your code so it's clear what each line of code does.
+:::
+
+I got [this code back](../../../code/claude-analyze-example1.R), which looked pretty good, but didn't run. So I asked the AI to fix the code with this prompt:
+
+::: prompt
+This code does not work. It produces this error:
+
+Error in augment.model_fit(lm_model) :
+
+argument "new_data" is missing, with no default
+
+Please fix this and any other errors in the code.
+:::
+
+The updated code [looked like this](../../../code/claude-analyze-example2.R). It fixed the first problem with `augment()`, but the `resid()` function returns `NULL` and something about the the specification for the logistic model is also not correct. Of course if I really wanted this to work, I'd ask the AI to keep fixing, and/or intervene manually. Bot for this example I don't care that much if it works fully. The right bits seem to be there.
+
+Instead, I was curious if I can get it to produce some halfway reasonable code for a more complex model. Since this is longitudinal, time-series data, with multiple measurements per patient, a hierarchical approach would be better. Here is an attempt at having Claude write code for a hierarchical Bayesian model. Note that this model is still not a good one since it doesn't really take into account the longitudinal structure, just the grouping within patients. But let's try, with this prompt:
+
+::: prompt
+Write R code to analyze the data in the attached CSV file.
+
+Use the brms package to fit a hierarchical Bayesian linear model with drug concentration as predictor and cholesterol level as outcome, with patient as the grouping. 
+
+For each function call, use explicit notation to specify from which R package the function comes from.
+
+Add thorough documentation to your code so it's clear what each line of code does.
+:::
+
+[Here is the code I got back](../../../code/claude-analyze-example3.R). It looks promising, but again doesn't quite work. Of course I could try to have Claude fix it or fix myself. But I don't feel like it right now, I've got some more content to write 😁. Feel free to send me a working version of the code (or any above) if you decide to fix it!
+
+
+::: note
+If you haven't realized it yet, I think with these examples it is quite clear: To be able to use those tools successfully, you need to know enough to understand what the AI should do, and if what it returns makes sense or not. If things don't run, there is an obvious error. But it is quite possible that the code runs but doesn't actually do the right thing. You only know this if you are familiar with what you want to accomplish. So while these AI tools can speed up coding a lot, they still require you to be an expert on whatever you are working on. Sorry! (Or maybe good, this means instead of not having a job in the near future, you'll likely just have a job that involves you being the master of AI tools, among other skills such as technical and subject matter expertise.)
+:::
+
+
+# Generating data and fitting it
+
+I'm not sure if some of the problems with the code above would not show up if we used the - supposedly better - ChatGPT engine. We can try. Again, it's difficult to feed it data. We could try the copy and paste approach. But instead, I'm trying another approach. I'll give Bing the code that generates the data, then ask it to fit models to that generated data. Here is the prompt:
+
+::: prompt
+The code below produces a data frame called syn_dat2.
+Take the data in that data frame and fit a linear model with drug concentration as predictor and cholesterol level as outcome. 
+Also fit a logistic model with drug concentration as predictor and adverse events as outcome.
+For each model, provide model performance diagnostics.
+Use the tidyverse packages for data manipulation tasks, and the tidymodels framework for model fitting.
+For each function call, use explicit notation to specify from which R package the function comes from.
+Add thorough documentation to your code so it's clear what each line of code does.
+
+COPY AND PASTE [THIS CODE](../../../code/synthetic-data-new-R-example-2-code.R) HERE  
+:::
+
+I fed this to Microsoft Copilot in Precise mode. I also omitted the parts of the code after the data frame has been generated.
+
+[This is what I got back](../../../code/bing-analyze-example1.R). Again looks promising but doesn't work. 
+I then gave it this prompt:
+
+::: prompt
+The code does not work. Please fix it. Also, update it such that the actual R package from which a function comes from is called, not the tidymodels collection of packages.
+:::
+
+The result was code that used the standard `lm()` and `glm()` functions. While ok, that's not what I wanted, I still wanted `tidymodels` syntax, just not the `tidymodels::function` notation. So my next prompt was:
+
+::: prompt
+Change the code above such that instead of using the lm() and glm() functions, it uses the tidymodels set of functions
+:::
+
+[I ended up with this.](../../../code/bing-analyze-example2.R). It makes the same mistake as Claude, not properly turning the adverse event variable into a factor before trying to fit a logistic model. Some other bits also didn't fully work, but I didn't feel like fixing further.
+
+ I think you get the idea. Basically, the AI can produce quite useful bits of code that can speed up things, but it's rarely fully correct and you will always need to check it, and often at the end still manually intervene. I'm sure as time goes by, what you get on the first try will get increasingly better. Still, you need to know what exactly you want and understand if the output makes sense or not.
+
+
+
+
+
+# Going meta - asking the AI to fit an AI model
+
+Well, as you figured out by now an AI model can really be whatever you want it to be. But as we discussed, the most common algorithm for current AI tools and approaches are neural nets. We can of course ask some LLM AI (which is basically a big neural net) to write code that fits a neural net to your data.
+
+There's nothing really new about this, but I just thought it was kinda fun to ask the AI to build more AI, so here we go.
+
+I'm starting with the 
+
+
 
 
 
