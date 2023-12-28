@@ -47,9 +47,11 @@ GitHub Copilot is currently free for students with the [GitHub student developer
 
 Once you have Copilot activated, you can use it in R Studio. (It is also possible to use it with other popular editors, such as VS Code, but for this course I will focus on R Studio. If you prefer to code in VS Code, you can install the Copilot plugin).
 
-To get Copilot working in R Studio, follow these [instructions](https://docs.posit.co/ide/user/ide/guide/tools/copilot.html). You might want to leave Copilot indexing unchecked for now. The instruction guide explains what this is. See the note on confidentiality issues below why you might not want to turn it on. Once you have co-pilot up and running, you should see it show up in the bottom of your R Studio input window (the top right window where you write code). It will start suggesting things as you type, once you stop for a few seconds. You can set that time in the options.
+To get Copilot working in R Studio, follow these [instructions](https://docs.posit.co/ide/user/ide/guide/tools/copilot.html). You might want to leave Copilot indexing unchecked for now. The instruction guide explains what this is. Basically, if you check this, copilot can access a lot of your files. This can lead to confidentiality issues. 
 
-For some more eloquent use of Copilot, see the [video](https://youtu.be/yVq-b5xHmac?si=DPJXXnEoViVFYA1T) by Thomas Mock from Posit/RStudio. It's a bit long, but I highly recommend you watch it. Efficient use of AI in general and Copilot specifically will likely save you a lot of time for the rest of this course!
+Once you have co-pilot up and running, you should see it show up in the bottom of your R Studio input window (the top right window where you write code). It will start suggesting things as you type, once you stop for a few seconds. You can set that time in the options.
+
+An introduction to using Copilot can be found in [this video](https://youtu.be/TlzMKSE97MQ?si=Tc3sQ5ZF3RktWsqF) by Thomas Mock from Posit/RStudio. In general, if you want bigger chunks of code, it seems currently better to go straight to ChatGPT. Copilot seems most useful to help you write bits of code as you go along. It can also be useful to help you remember the names of functions and arguments.
 
 **In general, I recommend you turn off Copilot in RStudio when you are not actively using it.** And before you turn it on, make sure the document you have open, and any other files it might have access to, do not contain information you want to keep private.
 

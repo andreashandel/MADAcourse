@@ -127,16 +127,26 @@ data$bmi <- (data$weight * 0.453592) / (1.75^2) + rnorm(100)
 ```
 :::
 
-That looks better. However, when you try to run it, you'll find that it doesn't work. The problem is that it tries to use the variable `sex` before that data frame is defined. So we need to fix that code. We could of course do it by hand, but we can also see if we can get the AI to fix its own code. Which brings us to the next unit, [read on there](../ai-fix-code/ai-fix-code-R).
-
+That looks better. However, when you try to run it, you'll find that it doesn't work. The problem is that it tries to use the variable `sex` before that data frame is defined. So we need to fix that code. We could of course do it by hand, but we can also see if we can get the AI to fix its own code. Which brings us to the next unit [on using AI to fix code](../ai-fix-code/ai-fix-code-R).
 
 
 # Summary
 
-LLM AI are very helpful at assisting with writing code. You need to know exactly what you want and the more specific your prompt, the better. Rarely do you get exactly what you want on the first try, but iterating is easy and fast.
+LLM AI are very helpful at assisting with writing code. The more you know what you want, and the more specific you can be (which requires some level of subject matter expertise) the better your results. Rarely do you get exactly what you want on the first try, but iterating is easy and fast.
 
-It is usefyul to write down your prompts so can go back to them later (and readers, including your future self, can see what you did).
+The list of tips provided in an earlier unit for general LLM AI use also applies for using it as a coding helper. Here is a version of that list again:
 
+* Be as detailed and specific as possible.
+
+* Iterate. Either only AI based iterations or a mix of manual and AI iterations.
+
+* Try different AI engines or settings or prompt phrasings. 
+
+* Ask the AI to add a lot of comments into the code to explain what each line of code does.
+
+* Break down big tasks into smaller tasks, ask the AI to solve the smaller tasks, then put it together. 
+
+* Write down your prompts so you and others can go back to them later and see what you did.
 
 
 # Further Resources

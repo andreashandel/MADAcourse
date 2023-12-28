@@ -671,7 +671,11 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
   <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
   <li><a href="#confidentiality-and-privacy" id="toc-confidentiality-and-privacy" class="nav-link" data-scroll-target="#confidentiality-and-privacy">Confidentiality and Privacy</a></li>
-  <li><a href="#basic-exploratory-data-analyis-eda" id="toc-basic-exploratory-data-analyis-eda" class="nav-link" data-scroll-target="#basic-exploratory-data-analyis-eda">Basic exploratory data analyis (EDA)</a></li>
+  <li><a href="#exploratory-data-analyis-eda-of-no-data" id="toc-exploratory-data-analyis-eda-of-no-data" class="nav-link" data-scroll-target="#exploratory-data-analyis-eda-of-no-data">Exploratory data analyis (EDA) of no data</a></li>
+  <li><a href="#exploratory-data-analyis-eda-of-simple-data" id="toc-exploratory-data-analyis-eda-of-simple-data" class="nav-link" data-scroll-target="#exploratory-data-analyis-eda-of-simple-data">Exploratory data analyis (EDA) of simple data</a></li>
+  <li><a href="#copilot" id="toc-copilot" class="nav-link" data-scroll-target="#copilot">Copilot</a></li>
+  <li><a href="#using-an-api" id="toc-using-an-api" class="nav-link" data-scroll-target="#using-an-api">Using an API</a></li>
+  <li><a href="#other-options" id="toc-other-options" class="nav-link" data-scroll-target="#other-options">Other options</a></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
   <li><a href="#further-resources" id="toc-further-resources" class="nav-link" data-scroll-target="#further-resources">Further Resources</a></li>
   </ul>
@@ -729,9 +733,42 @@ ul.task-list li input[type="checkbox"] {
 <p>It is important to re-iterate from a previous unit: If you allow the AI to “see” your data, this data might end up on the servers of the company running the AI (ChatGPT, Microsoft, Google) and might be used by them for future training of their models. Therefore, be careful with what you let the AI see. If you are re-analyzing publicly available data, you shouldn’t have to worry. But if the data is in any way confidential, it might not be a good idea to allow the AI to see it.</p>
 <p>The best solution in that case is to generate synthetic data that looks like your real data, then ask the AI to write code to analyze this synthetic data. Once the AI gives you working code, you can take it off-line and apply it to your real data.</p>
 <p>Since synthetic (artificial/fake/simulated) data is very useful for many parts of the data analyis workflow, it is covered in a <a href="../../../modules/module-synthetic-data/synthetic-data-course.html">separate module</a>.</p>
+<p>In the following I’m assuming that you have data that can be shared with the AI.</p>
 </section>
-<section id="basic-exploratory-data-analyis-eda" class="level1">
-<h1>Basic exploratory data analyis (EDA)</h1>
+<section id="exploratory-data-analyis-eda-of-no-data" class="level1">
+<h1>Exploratory data analyis (EDA) of no data</h1>
+<p>Ok, this sounds dumb, but it’s that too stupid. Instead of trying to feed the AI your data, you can ask it to generate code that does EDA on hypothetical data. For instance you could provide a prompt like this</p>
+<div class="prompt">
+<p>Write R code to perform an exploratory data analysis of a data frame called dat. The data frame contains the continuous variables age and BMI, and the categorical variables sex and favorite color. Write code that produces a summary table, univariate plots for each variable, and a bivariate plot of age vs BMI.</p>
+</div>
+<p>When I typed the above into Bing AI in precise mode, I got <a href="../../../code/bing-eda-example2.R">this code</a>. It’s a good start. You can now take these code bits and modify them so they can be applied to your data.</p>
+<p>Of course, you can take this further and ask the AI to both generate the data you have in mind, then write EDA code. Basically ask it to write code along the lines of the examples from the <a href="../../../modules/module-synthetic-data/synthetic-data-course.html">synthetic data module</a> and EDA code.</p>
+</section>
+<section id="exploratory-data-analyis-eda-of-simple-data" class="level1">
+<h1>Exploratory data analyis (EDA) of simple data</h1>
+<p>Bing and the free ChatGPT version currently don’t have a way to upload data.</p>
+<p>If you have fairly simple dataset, you can paste the whole thing into the prompt.</p>
+<p>Here is an example. This dataset comes from the []. I opened the CSV file, and copied the whole thing into the prompt:</p>
+<div class="prompt">
+<p>Perform an exploratory data analysis using R code of the following data set:</p>
+<p>PASTE DATA HERE</p>
+</div>
+<div class="note">
+<p>To get a new line without submitting in your prompts, use <code>Shift + Ctrl/Return</code></p>
+</div>
+<p>I received <a href="../../../code/bing-eda-example1.R">this code</a> from the AI. It runs and does a few nice exploratory analyses, such as writing summary tables and making a few plots.</p>
+<p>It would of course be better if I provided much more detailed instructions regarding the types of analyses, and possible even the R packages and functions I want to have. But I think you get the idea. If the data is not too big, you can write your prompt, then copy the data underneath and get code that does EDA on the data.</p>
+<p>Note that there are character limits. For Bing, the maximum is 4000 as of this writing. If your data is too big, it gets cut off. In the example above, the last few lines of data got cut. I think this is often not a big problem, since the data you supply isn’t the real data anyway. All you want is enough data for the AI to generate EDA code, then you take that code and apply it to your real data later, with AI turned off.</p>
+</section>
+<section id="copilot" class="level1">
+<h1>Copilot</h1>
+</section>
+<section id="using-an-api" class="level1">
+<h1>Using an API</h1>
+</section>
+<section id="other-options" class="level1">
+<h1>Other options</h1>
+<p>The subscription-level access to OpenAI’s GPT engines gives you access to their Advanced Data Analysis tool. This allows you to upload and explore data more easily. I don’t have a subscription so I haven’t tried it yet. But if you are a heavy user of AI for data analysis, this might be worth the cost. <a href="https://www.charterworks.com/how-to-use-chatgpts-advanced-data-analysis-tool/">This article</a> describes the Advanced Data Analysis tool a bit more.</p>
 </section>
 <section id="summary" class="level1">
 <h1>Summary</h1>

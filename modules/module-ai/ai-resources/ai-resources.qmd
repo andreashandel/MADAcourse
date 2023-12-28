@@ -49,6 +49,7 @@ By the end of the unit, you should:
 
 - [Wharton Interactive](https://interactive.wharton.upenn.edu/teaching-with-ai/) is an initiative by Ethan and Lilach Mollick and colleagues at Wharton that - among other things - looks at the use of AI for teaching and learning. The website contains some interesting ideas and links to papers that look further into AI use.
 
+- MIT has a nice collection of [AI learning resources](https://mitsloanedtech.mit.edu/ai/). The focus is on using those tools for teaching/learning.
 
 # AI and Coding
 

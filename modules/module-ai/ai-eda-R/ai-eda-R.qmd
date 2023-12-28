@@ -26,10 +26,68 @@ The best solution in that case is to generate synthetic data that looks like you
 
 Since synthetic (artificial/fake/simulated) data is very useful for many parts of the data analyis workflow, it is covered in a [separate module](../../module-synthetic-data/synthetic-data-course.qmd). 
 
+In the following I'm assuming that you have data that can be shared with the AI.
 
 
-# Basic exploratory data analyis (EDA)
+# Exploratory data analyis (EDA) of no data
 
+Ok, this sounds dumb, but it's that too stupid. Instead of trying to feed the AI your data, you can ask it to generate code that does EDA on hypothetical data. For instance you could provide a prompt like this
+
+::: prompt
+Write R code to perform an exploratory data analysis of a data frame called dat.
+The data frame contains the continuous variables age and BMI, and the categorical variables sex and favorite color. Write code that produces a summary table, univariate plots for each variable, and a bivariate plot of age vs BMI.
+:::
+
+When I typed the above into Bing AI in precise mode, I got [this code](../../../code/bing-eda-example2.R). It's a good start. You can now take these code bits and modify them so they can be applied to your data.
+
+Of course, you can take this further and ask the AI to both generate the data you have in mind, then write EDA code. Basically ask it to write code along the lines of the examples from the [synthetic data module](../../module-synthetic-data/synthetic-data-course.qmd) and EDA code.
+
+
+
+
+
+
+# Exploratory data analyis (EDA) of simple data
+
+Bing and the free ChatGPT version currently don't have a way to upload data. 
+
+If you have fairly simple dataset, you can paste the whole thing into the prompt.
+
+Here is an example. This dataset comes from the 
+[]. I opened the CSV file, and copied the whole thing into the prompt:
+
+::: prompt
+Perform an exploratory data analysis using R code of the following data set:
+
+PASTE DATA HERE
+:::
+
+::: note
+To get a new line without submitting in your prompts, use `Shift + Ctrl/Return`
+:::
+
+I received [this code](../../../code/bing-eda-example1.R) from the AI. 
+It runs and does a few nice exploratory analyses, such as writing summary tables and making a few plots.
+
+It would of course be better if I provided much more detailed instructions regarding the types of analyses, and possible even the R packages and functions I want to have. But I think you get the idea. If the data is not too big, you can write your prompt, then copy the data underneath and get code that does EDA on the data.
+
+Note that there are character limits. For Bing, the maximum is 4000 as of this writing. If your data is too big, it gets cut off. In the example above, the last few lines of data got cut. I think this is often not a big problem, since the data you supply isn't the real data anyway. All you want is enough data for the AI to generate EDA code, then you take that code and apply it to your real data later, with AI turned off.
+
+
+
+# Copilot
+
+
+# Using an API
+
+
+
+
+
+
+# Other options
+
+The subscription-level access to OpenAI's GPT engines gives you access to their Advanced Data Analysis tool. This allows you to upload and explore data more easily. I don't have a subscription so I haven't tried it yet. But if you are a heavy user of AI for data analysis, this might be worth the cost. [This article](https://www.charterworks.com/how-to-use-chatgpts-advanced-data-analysis-tool/) describes the Advanced Data Analysis tool a bit more.
 
 
 
