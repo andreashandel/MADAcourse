@@ -7,7 +7,7 @@ subtitle: ""
 
 ```{r, include=FALSE, cache=FALSE}
 #R script that contains code chunks shown below
-knitr::read_chunk('synthetic-data-existing-R-example-code.R')
+knitr::read_chunk(here::here('code','synthetic-data-existing-R-example-code.R'))
 ```
 
 
@@ -15,7 +15,7 @@ knitr::read_chunk('synthetic-data-existing-R-example-code.R')
 In this tutorial, we discuss how to scramble existing data to make it "new".
 
 
-# Goals
+# Learning Objectives
 
 * Be able to generate scrambled data with `R` based on existing data.
 
@@ -31,15 +31,20 @@ Since you are using exactly the same values for each variable as in the original
 
 However, a problem with such scrambling is that while you preserve the distribution of each variable, you might break associations. For instance, males are generally taller than females. If you randomly scramble both gender and height without taking into account this potential association, you might end up with a dataset that has a distribution of heights among males and females that is the same. Depending on your goals, this might or might not be a problem.
 
+Another drawback of scrambling data is that you can't build associations between variables into the data generating process, so you don't really know what your models should find when they look for patterns. Thus, a big advantage of synthetic data, namely the fact that you know exactly how it was generated, goes away. 
+
+In general, I'm not too big a fan of the scrambling approach, but there might be scenarios where this is what you want/need, therefore we should talk about it.
+
+
 
 ## AI help 
 
-Since you are working with the real data, you probably don't want to sue AI for this, unless your AI tool operates in a secure environment (e.g., fully on your companies' servers). 
+Since you are working with the real data, you probably don't want to use AI for this, unless your AI tool operates in a secure environment (e.g., fully on your companies' servers). 
 
 
 ## Example
 
-Time for a simple example. You can find the code shown below in [this file](synthetic-data-existing-R-exmaple-code.R).
+Time for a simple example. You can find the code shown below in [this file](../../../code/synthetic-data-existing-R-exmaple-code.R).
 
 
 ### Setup
@@ -75,16 +80,49 @@ Next, we take a peek.
 So it looks like these are 735 individuals (rows) and 63 variables (columns). A lot of them have names of symptoms and are coded as Yes/No. Some variables are harder to  understand, for instance without some meta-data/explanation, it is impossible to guess what `TransScore3F` stands for. Hopefully, your data came with some codebook/data dictionary/information sheet that explains what exactly everything means. For this specific data set, you can look through the supplementary materials to learn more. We won't delve into it now, and just pick out a few variables to illustrate the data scrambling process.
 
 
-### Data scrambling
+### Data processing
 
-Let's assume we are interested in just a few of these variables, namely 
+For simplicity, let's assume we are interested in just a few of these variables, namely `ActivityLevel`, `Sneeze`, `Nausea`, and `Vomit`. We'll select those and look at the first 10 entries.
+
+```{r, reduce-data}
+```
 
 
+### Data Scrambling
+
+Now we'll scramble the data. I'm doing this here with a simple loop. I'm looping through each variable, and I sample from the old values without replacement, which basically just rearranges them. There are computationally faster and more concise ways of doing this, but the loop makes it hopefully very clear what's going on.
+
+```{r, scramble-data}
+```
+
+The first 10 entries look different, so that's promising.
+
+### Comparing old and new data 
+
+Now let's see if things worked. First, we summarize both the old and the new data. We should see that they are the same, since we just re-arranged the values across individuals. This is indeed the case.
+
+```{r, compare-data1}
+```
+
+
+We can also look at correlations between variables. Here is where we run into the above-mentioned problems. Correlations that might exist in the original data can be wiped out. We see that here. In the original data, more individuals (approximately 63% + 9%) reported either absence or presence of both nausea and vomiting. In the scrambled data, this dropped to around 58% + 4%. We would expect that these 2 symptoms are somewhat related, and the scrambling removed it. Similarily, the original data showed lower activity levels for those with vomit as symptom. This pattern is gone in the scrambled data.
+
+```{r, compare-data2}
+```
+
+
+That means any statistical conclusions based on the scrambled data are not valid. This kind of data is just useful at testing the overall workflow and making sure everything can run, but one can't conclude anything from it.
+
+It is of course possible to try to scramble while preserving potential correlations, but that gets tricky and at this stage one might maybe just re-create the data based on some of the concepts discussed in the previous unit.
+
+# Summary
+
+Scrambling the original data is generally fairly easy. It can be useful to for sharing with others or some AI system with reduced issues of confidentiality. One can use it to test if the whole analysis workflow runs. However, one cannot test methods since one doesn't know what patterns the models should detect, and any statistical conclusions based on the scrambled data are not very meaningful.
 
 
 # Further Resources
 
-
+The [synthpop R package](https://www.synthpop.org.uk/index.html) might be useful. It doesn't quite preserve the original data, it's more similar to the approach discussed in the unit [Generating synthetic data based on existing data](../synthetic-data-new-existing-R/). But you can get data that is very close to the original, thus might often give you what you wanted to get when you considered the scrambling approach.
 
 
 

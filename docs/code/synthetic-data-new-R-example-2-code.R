@@ -22,6 +22,7 @@
 # Load required packages
 library(dplyr)
 library(ggplot2)
+library(here)
 
 
 ## ---- setup-ex2 --------
@@ -125,5 +126,7 @@ plot(p2)
 
 ## ---- savedata-ex2 --------
 # Save the simulated data to a CSV or Rds file
-write.csv(syn_dat2, "syn_dat2.csv", row.names = FALSE)
-saveRDS(syn_dat2, "syn_dat2.Rds")
+write.csv(syn_dat2, here("data","syn_dat2.csv"), row.names = FALSE)
+# if we wanted an RDS version
+#saveRDS(syn_dat2, here("data","syn_dat2.Rds"))
+

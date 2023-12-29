@@ -69,7 +69,6 @@ ul.task-list li input[type="checkbox"] {
 
 <body class="nav-sidebar docked nav-fixed fullcontent">
 
-
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
@@ -315,12 +314,6 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="../../../modules/module_data_presentation/Visualization_in_R.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Visualization in R</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../modules/module_data_presentation/Tables_in_R.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Tables in R</span></a>
   </div>
 </li>
       </ul>
@@ -707,7 +700,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
   <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a>
   <ul class="collapse">
-  <li><a href="#ai-help-example" id="toc-ai-help-example" class="nav-link" data-scroll-target="#ai-help-example">AI help example</a></li>
+  <li><a href="#a-simple-example" id="toc-a-simple-example" class="nav-link" data-scroll-target="#a-simple-example">A simple example</a></li>
+  <li><a href="#one-more-example" id="toc-one-more-example" class="nav-link" data-scroll-target="#one-more-example">One more example</a></li>
   </ul></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
   <li><a href="#further-resources" id="toc-further-resources" class="nav-link" data-scroll-target="#further-resources">Further Resources</a></li>
@@ -737,7 +731,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2023-12-28</p>
+      <p class="date-modified">2023-12-29</p>
     </div>
   </div>
     
@@ -748,7 +742,7 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="overview" class="level1">
 <h1>Overview</h1>
-<p>In this unit, we explore the use of LLM AI tools to generate synthetic data with `R.</p>
+<p>In this unit, we explore the use of LLM AI tools to generate synthetic data with <code>R</code>.</p>
 </section>
 <section id="learning-objectives" class="level1">
 <h1>Learning Objectives</h1>
@@ -758,21 +752,43 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
-<p>While there are <code>R</code> packages available that help with the generation of synthetic data - and we will discuss them in a different unit, it is also fairly easy to use basic R functionality to generate simulated data. We’ll do a few examples to show how this can be done.</p>
-<section id="ai-help-example" class="level2">
-<h2 class="anchored" data-anchor-id="ai-help-example">AI help example</h2>
+<p>While there are potential confidentiality issues when asking AI to explore/analyze your data, asking it to make up data doesn’t come with any such issues. Thus, this is a task where using AI to write synthetic data generating code can be very useful. A good bit of this overall topic is covered in detail in the <a href="../../../modules/module-ai/ai-overview.html">AI module</a>, but it seemed worth repeating some of it here.</p>
+<section id="a-simple-example" class="level2">
+<h2 class="anchored" data-anchor-id="a-simple-example">A simple example</h2>
 <p>Using AI to generate code that creates synthetic data can be very efficient. Here is an example. I typed the following prompt into ChatGPT 3.5.</p>
 <div class="prompt">
 <p>Write R code that generates a dataset of 100 individuals with ages from 18 to 49, BMI values from 15 to 40 and smoking status as yes or no. Assume that age and BMI are uncorrelated. Assume that smokers have a somewhat lower BMI. Then use the patchwork R package to generate a panel of ggplot2 plots. The first panel should show a violin plot with BMI on the y-axis and smoking status on the x-axis. The second panel should show a scatterplot with age on the y-axis and BMI on the x-axis. Add thorough documentation to your code.</p>
 </div>
-<p>The result was <a href="./chatgpt-example.R">this fully-working code</a>.</p>
+<p>Only the first part is really the data generation bit, but since it’s so quick and easy, I wanted some code that also explores the data so I can see if what it produced is what I had in mind.</p>
+<p>The result was <a href="../../../code/chatgpt-example.R">this fully-working code</a>.</p>
 <p>Since the AI systems are continuously updated, it is possible that if you type the same prompt into ChatGPT, your code might look slightly differently, but hopefully it is still working.</p>
 <p>In my experience, you usually don’t quite get what you want on the first try. But it’s easy to tell the AI to update the code until it does what you want it to, or at least is close and then you can do the rest by hand.</p>
+</section>
+<section id="one-more-example" class="level2">
+<h2 class="anchored" data-anchor-id="one-more-example">One more example</h2>
+<p>It is possible to ask the AI to create more complex data. You might not always get exactly what you want, but it’s often worth a try. I gave this prompt to Mcirosoft Bing/Copilot in precise mode.</p>
+<div class="prompt">
+<p>Write R code that creates data for N=100 individuals. Individuals ages are randomly distributed between 18 and 50 years. Assume that individuals belong to 3 treatment groups: placebo, low dose, and high dose. Individuals in each group receive either no drug, or 100mg of drug or 200mg of drug every week. Drug concentration is measured every other day. Assume that drug concentration follows an exponential decline between doses, with the decay rate being the same for the low dose and high dose groups.</p>
+<p>In addition to drug concentration, cholesterol levels are measured daily. Assume that higher drug concentrations correlate with lower cholesterol levels.</p>
+<p>Create a data frame that contains Patient ID, treatment group, age, time, drug concentration, and cholesterol level.</p>
+<p>For function calls, specify explicitly the package from which the function comes from.</p>
+<p>Add thorough documentation to the code so it is clear what each line of code does.</p>
+</div>
+<p>The code I got back did not quite work, so I provided this prompt:</p>
+<div class="prompt">
+<p>The code above does not work. It gives this error :</p>
+<p>Error in <code>map()</code>: In index: 1. With name: ID. Caused by error in <code>patient$ID</code>:</p>
+<p>Please fix the code. Also add code at the end that plots the raw data for drug concentration as a function of time for all patients, stratified by treatment status. Also plot the mean for each group.</p>
+</div>
+<p><a href="../../../code/bing-synthetic-data-example.R">This is the code I got back</a>.</p>
+<p>The code runs and does some of the things I asked for, but not all. I specified that the drug is given weekly, but the code only contains a single dose at the start. I forgot to tell the AI for how long the data should be simulated. It picked 13 days, which means there should have been 2 doses of drug.</p>
+<p>Of course I could keep talking to the AI, telling it to update things such that dosing is weekly, maybe explicitly say that I want to run for 28 days, fix whatever else might not be quite right (I didn’t check the code too carefully). It’s so quick and easy, there’s no reason not to do a few more iterations and see how close the AI can get to what I want. Eventually, I will likely intervene and finish things off manually.</p>
 </section>
 </section>
 <section id="summary" class="level1">
 <h1>Summary</h1>
-<p>Using the help of AI to write code that generates data can be very useful and speed up things.</p>
+<p>Using the help of AI to write code that generates data can be very useful and speed up things. There are generally no confidentiality/privacy issues, so it’s a good idea to try an AI.</p>
+<p>If you want to get synthetic data that is as close to your real data, you should first do the descriptive analysis of your real data offline, then tell the AI how the synthetic data should be distributed based on what you determined from your real data summaries.</p>
 </section>
 <section id="further-resources" class="level1">
 <h1>Further Resources</h1>

@@ -69,7 +69,6 @@ ul.task-list li input[type="checkbox"] {
 
 <body class="nav-sidebar docked nav-fixed fullcontent">
 
-
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
@@ -315,12 +314,6 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="../../../modules/module_data_presentation/Visualization_in_R.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Visualization in R</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../modules/module_data_presentation/Tables_in_R.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Tables in R</span></a>
   </div>
 </li>
       </ul>
@@ -704,14 +697,13 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
-  <li><a href="#goals" id="toc-goals" class="nav-link" data-scroll-target="#goals">Goals</a></li>
-  <li><a href="#pre-requisites" id="toc-pre-requisites" class="nav-link" data-scroll-target="#pre-requisites">Pre-requisites</a></li>
+  <li><a href="#learning-objectis" id="toc-learning-objectis" class="nav-link" data-scroll-target="#learning-objectis">Learning Objectis</a></li>
   <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a>
   <ul class="collapse">
   <li><a href="#r-packages-to-generate-synthetic-data" id="toc-r-packages-to-generate-synthetic-data" class="nav-link" data-scroll-target="#r-packages-to-generate-synthetic-data">R packages to generate synthetic data</a></li>
+  <li><a href="#some-r-helper-packages" id="toc-some-r-helper-packages" class="nav-link" data-scroll-target="#some-r-helper-packages">Some R helper packages</a></li>
   </ul></li>
   <li><a href="#further-resources" id="toc-further-resources" class="nav-link" data-scroll-target="#further-resources">Further Resources</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
     </div>
@@ -738,7 +730,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2023-12-16</p>
+      <p class="date-modified">2023-12-29</p>
     </div>
   </div>
     
@@ -751,36 +743,34 @@ ul.task-list li input[type="checkbox"] {
 <h1>Overview</h1>
 <p>This unit provides brief introductions of different <code>R</code> packages that can be used to generate synthetic/simulated/artificial/fake data.</p>
 </section>
-<section id="goals" class="level1">
-<h1>Goals</h1>
+<section id="learning-objectis" class="level1">
+<h1>Learning Objectis</h1>
 <ul>
 <li>Be familiar with several R packages that can be used to generate synthetic data.</li>
 </ul>
 </section>
-<section id="pre-requisites" class="level1">
-<h1>Pre-requisites</h1>
-<p>We assume that you have gone through the prior</p>
-</section>
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
-<p>While it is generally not that difficult to write a bit of R code to generate your own data, sometimes it can be useful to reach for dedicated packages. R has a number of such packages.</p>
+<p>While it is generally not that difficult to write a bit of R code to generate your own data, sometimes it can be useful to reach for dedicated packages. R has a number of such packages. This is just a quick summary of some of those packages.</p>
 <section id="r-packages-to-generate-synthetic-data" class="level2">
 <h2 class="anchored" data-anchor-id="r-packages-to-generate-synthetic-data">R packages to generate synthetic data</h2>
 <ul>
 <li><p>The <a href="https://cran.r-project.org/web/packages/coxed/index.html">coxed package</a> allows you - among other things - to generate longitudinal survival (time-to-event) data using its <a href="https://cran.r-project.org/web/packages/coxed/vignettes/simulating_survival_data.html"><code>sim.survdata()</code> function</a>.</p></li>
-<li><p>The <a href="https://pharmaverse.github.io/admiral/index.html">admiral package</a>, which is part of the <a href="https://pharmaverse.org/">pharmaverse</a>, allows users to generate data in <a href="">ADaM format</a>.</p></li>
+<li><p>The <a href="https://pharmaverse.github.io/admiral/index.html">admiral package</a>, which is part of the <a href="https://pharmaverse.org/">pharmaverse</a>, allows users to generate data in <a href="https://www.cdisc.org/standards/foundational/adam">ADaM format</a>. ADaM is a common data format in the pharmaceutical area.</p></li>
+<li><p>The <a href="https://kgoldfeld.github.io/simstudy/">simstudy package</a> allows users to define variables and relations between them, and then have synthetic data generated based on those specifications. It can also create data with potentially complex structures, such as longitudinal or hierarchical data.</p></li>
+<li><p>The <a href="https://www.synthpop.org.uk/">synthpop package</a> can produce synthetic data that is very similar to the original data, including potential patterns/correlations.</p></li>
 </ul>
-<p>simstudy: https://cran.r-project.org/web/packages/simstudy/index.html synthpop: https://cran.r-project.org/web/packages/synthpop/index.html bindata: https://cran.r-project.org/web/packages/bindata/index.html mlbench: https://cran.r-project.org/web/packages/mlbench/index.html simPop: https://cran.r-project.org/web/packages/simPop/index.html simFrame: https://cran.r-project.org/web/packages/simFrame/index.html simmer: https://cran.r-project.org/web/packages/simmer/index.html simLife: https://cran.r-project.org/web/packages/simLife/index.html</p>
+</section>
+<section id="some-r-helper-packages" class="level2">
+<h2 class="anchored" data-anchor-id="some-r-helper-packages">Some R helper packages</h2>
 <ul>
-<li>The <a href="https://cran.r-project.org/web/packages/coxed/index.html">coxed package</a> allows you - among other things - to generate longitudinal survival (time-to-event) data using its <a href="https://cran.r-project.org/web/packages/coxed/vignettes/simulating_survival_data.html"><code>sim.survdata()</code> function</a>.</li>
+<li>The <a href="https://cran.r-project.org/web/views/Distributions.html">CRAN Task View: Probability Distributions</a> lists packages that can be used to generate data following various probability distributions. This can be useful if you want to generate data that has a certain shape/distribution.</li>
 </ul>
 </section>
 </section>
 <section id="further-resources" class="level1">
 <h1>Further Resources</h1>
-</section>
-<section id="references" class="level1">
-<h1>References</h1>
+<p>None that come to mind. If you find other R packages that are useful for generating synthetic data, please let me know.</p>
 
 
 </section>

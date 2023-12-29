@@ -8,45 +8,36 @@ subtitle: ""
 This unit provides brief introductions of different `R` packages that can be used to generate synthetic/simulated/artificial/fake data.
 
 
-# Goals
+# Learning Objectis
 
 * Be familiar with several R packages that can be used to generate synthetic data.
 
-# Pre-requisites
-
-We assume that you have gone through the prior 
 
 # Introduction
 
-While it is generally not that difficult to write a bit of R code to generate your own data, sometimes it can be useful to reach for dedicated packages. R has a number of such packages. 
+While it is generally not that difficult to write a bit of R code to generate your own data, sometimes it can be useful to reach for dedicated packages. R has a number of such packages. This is just a quick summary of some of those packages. 
 
 
 ## R packages to generate synthetic data
 
 * The [coxed package](https://cran.r-project.org/web/packages/coxed/index.html) allows you - among other things - to generate longitudinal survival (time-to-event) data using its [`sim.survdata()` function](https://cran.r-project.org/web/packages/coxed/vignettes/simulating_survival_data.html).
 
-* The [admiral package](https://pharmaverse.github.io/admiral/index.html), which is part of the [pharmaverse](https://pharmaverse.org/), allows users to generate data in [ADaM format]().
+
+* The [admiral package](https://pharmaverse.github.io/admiral/index.html), which is part of the [pharmaverse](https://pharmaverse.org/), allows users to generate data in [ADaM format](https://www.cdisc.org/standards/foundational/adam). ADaM is a common data format in the pharmaceutical area.
+
+* The [simstudy package](https://kgoldfeld.github.io/simstudy/) allows users to define variables and relations between them, and then have synthetic data generated based on those specifications. It can also create data with potentially complex structures, such as longitudinal or hierarchical data.
+
+* The [synthpop package](https://www.synthpop.org.uk/) can produce synthetic data that is very similar to the original data, including potential patterns/correlations. 
 
 
-simstudy: https://cran.r-project.org/web/packages/simstudy/index.html
-synthpop: https://cran.r-project.org/web/packages/synthpop/index.html
-bindata: https://cran.r-project.org/web/packages/bindata/index.html
-mlbench: https://cran.r-project.org/web/packages/mlbench/index.html
-simPop: https://cran.r-project.org/web/packages/simPop/index.html
-simFrame: https://cran.r-project.org/web/packages/simFrame/index.html
-simmer: https://cran.r-project.org/web/packages/simmer/index.html
-simLife: https://cran.r-project.org/web/packages/simLife/index.html
+## Some R helper packages 
 
-
-
-* The [coxed package](https://cran.r-project.org/web/packages/coxed/index.html) allows you - among other things - to generate longitudinal survival (time-to-event) data using its [`sim.survdata()` function](https://cran.r-project.org/web/packages/coxed/vignettes/simulating_survival_data.html).
-
+* The [CRAN Task View: Probability Distributions](https://cran.r-project.org/web/views/Distributions.html) lists packages that can be used to generate data following various probability distributions. This can be useful if you want to generate data that has a certain shape/distribution.
 
 
 # Further Resources
 
-# References
-
+None that come to mind. If you find other R packages that are useful for generating synthetic data, please let me know.
 
 
 

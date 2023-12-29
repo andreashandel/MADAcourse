@@ -8,7 +8,7 @@ library(dplyr)
 library(purrr)
 library(lubridate)
 library(ggplot2)
-
+library(here)
 
 
 ## ---- setup --------
@@ -55,9 +55,9 @@ syn_dat$BloodPressure <- round(runif(n_patients, min = 90, max = 160), 1)
 #syn_dat$Cholesterol <- round(rnorm(n_patients, mean = 200, sd = 30), 1)
 
 # Option 2: Cholesterol is dependent on treatment
-syn_dat$Cholesterol[syn_dat$TreatmentGroup == "A"] <- round(rnorm(sum(syn_dat$TreatmentGroup == "A"), mean = 180, sd = 30), 1)
-syn_dat$Cholesterol[syn_dat$TreatmentGroup == "B"] <- round(rnorm(sum(syn_dat$TreatmentGroup == "B"), mean = 160, sd = 30), 1)
-syn_dat$Cholesterol[syn_dat$TreatmentGroup == "Placebo"] <- round(rnorm(sum(syn_dat$TreatmentGroup == "Placebo"), mean = 200, sd = 30), 1)
+syn_dat$Cholesterol[syn_dat$TreatmentGroup == "A"] <- round(rnorm(sum(syn_dat$TreatmentGroup == "A"), mean = 160, sd = 10), 1)
+syn_dat$Cholesterol[syn_dat$TreatmentGroup == "B"] <- round(rnorm(sum(syn_dat$TreatmentGroup == "B"), mean = 180, sd = 10), 1)
+syn_dat$Cholesterol[syn_dat$TreatmentGroup == "Placebo"] <- round(rnorm(sum(syn_dat$TreatmentGroup == "Placebo"), mean = 200, sd = 10), 1)
 
 # Variable 8: Adverse Event (binary variable, 0 = No, 1 = Yes)
 # Option 1: Adverse events are independent of treatment
@@ -73,8 +73,9 @@ syn_dat$AdverseEvent[syn_dat$TreatmentGroup == "Placebo"] <- purrr::map_int(samp
 head(syn_dat)
 
 # Save the simulated data to a CSV and Rds file
-write.csv(syn_dat, "syn_dat.csv", row.names = FALSE)
-saveRDS(syn_dat, "syn_dat.Rds")
+write.csv(syn_dat, here("data","syn_dat.csv"), row.names = FALSE)
+# if we wanted an RDS version
+#saveRDS(syn_dat, here("data","syn_dat.Rds"))
 
 
 ## ---- checkdata --------
