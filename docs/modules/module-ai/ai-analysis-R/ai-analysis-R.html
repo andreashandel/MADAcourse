@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -708,7 +708,6 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
   <li><a href="#uploading-data-to-claude" id="toc-uploading-data-to-claude" class="nav-link" data-scroll-target="#uploading-data-to-claude">Uploading data to Claude</a></li>
   <li><a href="#generating-data-and-fitting-it" id="toc-generating-data-and-fitting-it" class="nav-link" data-scroll-target="#generating-data-and-fitting-it">Generating data and fitting it</a></li>
-  <li><a href="#going-meta---asking-the-ai-to-fit-an-ai-model" id="toc-going-meta---asking-the-ai-to-fit-an-ai-model" class="nav-link" data-scroll-target="#going-meta---asking-the-ai-to-fit-an-ai-model">Going meta - asking the AI to fit an AI model</a></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
   <li><a href="#further-resources" id="toc-further-resources" class="nav-link" data-scroll-target="#further-resources">Further Resources</a></li>
   </ul>
@@ -782,9 +781,6 @@ ul.task-list li input[type="checkbox"] {
 <p>Add thorough documentation to your code so it’s clear what each line of code does.</p>
 </div>
 <p><a href="../../../code/claude-analyze-example3.R">Here is the code I got back</a>. It looks promising, but again doesn’t quite work. Of course I could try to have Claude fix it or fix myself. But I don’t feel like it right now, I’ve got some more content to write 😁. Feel free to send me a working version of the code (or any above) if you decide to fix it!</p>
-<div class="note">
-<p>If you haven’t realized it yet, I think with these examples it is quite clear: To be able to use those tools successfully, you need to know enough to understand what the AI should do, and if what it returns makes sense or not. If things don’t run, there is an obvious error. But it is quite possible that the code runs but doesn’t actually do the right thing. You only know this if you are familiar with what you want to accomplish. So while these AI tools can speed up coding a lot, they still require you to be an expert on whatever you are working on. Sorry! (Or maybe good, this means instead of not having a job in the near future, you’ll likely just have a job that involves you being the master of AI tools, among other skills such as technical and subject matter expertise.)</p>
-</div>
 </section>
 <section id="generating-data-and-fitting-it" class="level1">
 <h1>Generating data and fitting it</h1>
@@ -804,18 +800,18 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <p><a href="../../../code/bing-analyze-example2.R">I ended up with this.</a>. It makes the same mistake as Claude, not properly turning the adverse event variable into a factor before trying to fit a logistic model. Some other bits also didn’t fully work, but I didn’t feel like fixing further.</p>
 <p>I think you get the idea. Basically, the AI can produce quite useful bits of code that can speed up things, but it’s rarely fully correct and you will always need to check it, and often at the end still manually intervene. I’m sure as time goes by, what you get on the first try will get increasingly better. Still, you need to know what exactly you want and understand if the output makes sense or not.</p>
-</section>
-<section id="going-meta---asking-the-ai-to-fit-an-ai-model" class="level1">
-<h1>Going meta - asking the AI to fit an AI model</h1>
-<p>Well, as you figured out by now an AI model can really be whatever you want it to be. But as we discussed, the most common algorithm for current AI tools and approaches are neural nets. We can of course ask some LLM AI (which is basically a big neural net) to write code that fits a neural net to your data.</p>
-<p>There’s nothing really new about this, but I just thought it was kinda fun to ask the AI to build more AI, so here we go.</p>
-<p>I’m starting with the</p>
+<!-- # Going meta - asking the AI to fit an AI model -->
+<!-- Well, as you figured out by now an AI model can really be whatever you want it to be. But as we discussed, the most common algorithm for current AI tools and approaches are neural nets. We can of course ask some LLM AI (which is basically a big neural net) to write code that fits a neural net to your data. -->
+<!-- There's nothing really new about this, but I just thought it was kinda fun to ask the AI to build more AI, so here we go. -->
+<!-- I'm starting with the  -->
 </section>
 <section id="summary" class="level1">
 <h1>Summary</h1>
+<p>I hope you can see how using AI tools to help with data analysis can potentially save a lot of time. Also, I think these examples make it quite clear: To be able to use those tools successfully, you need to know enough to understand what the AI should do, and if what it returns makes sense or not. If things don’t run, there is an obvious error. But it is quite possible that the code runs but doesn’t actually do the right thing. You only know this if you are familiar with what you want to accomplish. So while these AI tools can speed up coding a lot, they still require you to be an expert on whatever you are working on. Sorry! (Or maybe good, this means instead of not having a job in the near future, you’ll likely just have a job that involves you being the master of AI tools, among other skills such as technical and subject matter expertise.)</p>
 </section>
 <section id="further-resources" class="level1">
 <h1>Further Resources</h1>
+<p>See the <a href="../../../modules/module-ai/ai-resources/ai-resources.html">AI resource unit</a>.</p>
 
 
 </section>

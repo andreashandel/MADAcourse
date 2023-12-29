@@ -29,10 +29,11 @@ That's quick, you can use AI to help, and often that's good enough. But sometime
 
 In that case, you will first want to determine the ranges and distributions of your existing data and then use that information to generate new synthetic data.
 
+Essentially, what you want to do is perform descriptive and explorary analysis on your real data, then use what you found to inform the creation of your synthetic data.
 
 ## AI help 
 
-You probably don't want to feed your real data to the AI. So the first part of summarizing existing data has to be done in a safe/secure space. Once you have good data summaries, you can use AI to generate synthetic data and code as shown in the previous tutorial.
+You probably don't want to feed your real data to the AI. So the first part of summarizing existing data has to be done in a safe/secure space. Once you have good data summaries, you can use AI to generate synthetic data and code.
 
 ## Example
 
@@ -80,7 +81,7 @@ At this stage, it is up to you to decide if you want to try to include correlati
 
 ### Generate data
 
-Now we'll create synthetic data that is similar to the real data.
+Now we'll create synthetic data that is similar to the real data. In this code example, we pull directly from the actual data stored in `dat`. However, you can also save that information into an intermediary object or file (e.g., save the mean and standard deviation of age) and then just use those summary statistics to generate the synthetic data. This prevents for instance issues with confidentiality if you use AI to help write the synthetic data code.
 
 ```{r, make-data}
 ```

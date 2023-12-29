@@ -59,9 +59,6 @@ Add thorough documentation to your code so it's clear what each line of code doe
 [Here is the code I got back](../../../code/claude-analyze-example3.R). It looks promising, but again doesn't quite work. Of course I could try to have Claude fix it or fix myself. But I don't feel like it right now, I've got some more content to write 😁. Feel free to send me a working version of the code (or any above) if you decide to fix it!
 
 
-::: note
-If you haven't realized it yet, I think with these examples it is quite clear: To be able to use those tools successfully, you need to know enough to understand what the AI should do, and if what it returns makes sense or not. If things don't run, there is an obvious error. But it is quite possible that the code runs but doesn't actually do the right thing. You only know this if you are familiar with what you want to accomplish. So while these AI tools can speed up coding a lot, they still require you to be an expert on whatever you are working on. Sorry! (Or maybe good, this means instead of not having a job in the near future, you'll likely just have a job that involves you being the master of AI tools, among other skills such as technical and subject matter expertise.)
-:::
 
 
 # Generating data and fitting it
@@ -102,14 +99,13 @@ Change the code above such that instead of using the lm() and glm() functions, i
 
 
 
+<!-- # Going meta - asking the AI to fit an AI model -->
 
-# Going meta - asking the AI to fit an AI model
+<!-- Well, as you figured out by now an AI model can really be whatever you want it to be. But as we discussed, the most common algorithm for current AI tools and approaches are neural nets. We can of course ask some LLM AI (which is basically a big neural net) to write code that fits a neural net to your data. -->
 
-Well, as you figured out by now an AI model can really be whatever you want it to be. But as we discussed, the most common algorithm for current AI tools and approaches are neural nets. We can of course ask some LLM AI (which is basically a big neural net) to write code that fits a neural net to your data.
+<!-- There's nothing really new about this, but I just thought it was kinda fun to ask the AI to build more AI, so here we go. -->
 
-There's nothing really new about this, but I just thought it was kinda fun to ask the AI to build more AI, so here we go.
-
-I'm starting with the 
+<!-- I'm starting with the  -->
 
 
 
@@ -117,9 +113,13 @@ I'm starting with the
 
 # Summary
 
+I hope you can see how using AI tools to help with data analysis can potentially save a lot of time. Also, I think these examples make it quite clear: To be able to use those tools successfully, you need to know enough to understand what the AI should do, and if what it returns makes sense or not. If things don't run, there is an obvious error. But it is quite possible that the code runs but doesn't actually do the right thing. You only know this if you are familiar with what you want to accomplish. So while these AI tools can speed up coding a lot, they still require you to be an expert on whatever you are working on. Sorry! (Or maybe good, this means instead of not having a job in the near future, you'll likely just have a job that involves you being the master of AI tools, among other skills such as technical and subject matter expertise.)
+
+
 
 # Further Resources
 
+See the [AI resource unit](../ai-resources/ai-resources.qmd).
 
 
 
