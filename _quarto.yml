@@ -135,8 +135,8 @@ website:
                file: modules/module_data_presentation/Visualization_Overview.qmd     
              - text: "Visualization in R"
                file: modules/module_data_presentation/Visualization_in_R.qmd     
-             - text: "Tables in R"
-               file: modules/module_data_presentation/Tables_in_R.qmd     
+            #  - text: "Tables in R"
+            #    file: modules/module_data_presentation/Tables_in_R.qmd     
           - section: "6. Data Exploration"
             contents:
              - text: "Exploring data"
