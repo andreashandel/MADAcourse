@@ -23,7 +23,7 @@ In this unit, we look at a few examples of generating synthetic data with `R.
 
 # Introduction
 
-While there are `R` packages available that help with the generation of synthetic data - and we will discuss them in a different unit, it is also fairly easy to use basic R functionality to generate simulated data. We'll do a few examples to show how this can be done.
+While there are `R` packages available that help with the generation of synthetic data - and we will discuss them in a different unit, it is also fairly easy to use basic `R` functionality to generate simulated data. We'll do a few examples to show how this can be done.
 
 AI tools are very useful for generating synthetic data. In fact, the code in the examples below was partially generated through back and forth with ChatGPT, together with some manual editing. More on using AI to generate data is provided in another unit of this module, and the more general topic of LLM AI tool use for coding is covered in the [AI module](../../module-ai/ai-overview.qmd).
 
@@ -37,10 +37,8 @@ It is often useful to go slow and type your own code, or copy and paste the code
 :::
 
 :::note
-In the code below, you might be wondering what the `dplyr::glimpse()` and similar such notation is about. This notation indicates explicitly from which package the function comes. Once you loaded a package, that's not necessary anymore, just using `glimpse()` would work equally. But it is often nice to quickly see what package a function comes from. Thus, you'll see me use the explicit notation often, though not always. It's a matter of being more explicit versus typing less. I switch back and forth.
+In the code below, you might be wondering what the `dplyr::glimpse()` and similar such notation is about. This notation indicates explicitly from which package the function comes. Once you loaded a package, that's not necessary anymore, just using `glimpse()` would work equally. But it is often nice to quickly see what package a function comes from. An important thing to note is that some packages share function names. In such cases, if a function appears in multiple packages in your environment, `R` will default to using the one from the most recently loaded package. Using explicit notation is a good way to be sure you're using the function you want! Thus, you'll see me use the explicit notation often, though not always. It's typically a matter of being more explicit versus typing less. I switch back and forth.
 :::
-
-
 
 
 ## Setup
@@ -121,13 +119,13 @@ This dataset has a bit more complicated structure than the previous one, but it 
 ```{r, savedata-ex2}
 ```
 
-We are saving the data as CSV and Rds files. CSV files are readable with pretty much any software and thus very portable. Rds files are R-specific, thus not as flexible. The advantage of Rds files is that they are generally smaller, and they retain information about the variables, e.g. if they are factor or numeric variables. Either format works, sometimes one or the other might be better.
+We are saving the data as CSV and Rds files. CSV files are readable with pretty much any software and thus very portable. Rds files are `R`-specific, thus not as flexible. The advantage of Rds files is that they are generally smaller, and they retain information about the variables, e.g. if they are factor or numeric variables. Either format works, sometimes one or the other might be better.
 
 
 
 # Summary
 
-It is fairly easy to generate synthetic data with some basic R commands, and it's even easier if you use some LLM AI tool to help you write the code. 
+It is fairly easy to generate synthetic data with some basic `R` commands, and it's even easier if you use some LLM AI tool to help you write the code. 
 
 Since you generate the data, you can decide what dependencies between variables you want to add, and you can then test your models to see if they can find those patterns. We'll get to that in another unit.
 

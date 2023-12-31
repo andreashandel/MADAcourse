@@ -198,7 +198,7 @@ website:
           - section: "13. Complete Analysis Workflow"
             contents:
              - text: "Complete Data Analysis Workflow"
-               file: modules/module_workflow/Complete_Data_Analysis_Workflow.qmd  
+               file: modules/module_workflow/Complete_data_analysis_workflow.qmd  
              - text: "More Data and Models"
                file: modules/module_workflow/Data_Models_Not_Covered.qmd
              - text: "Open Science"
