@@ -57,7 +57,7 @@ website:
   page-navigation: true # adds previous/next buttons to bottom of page
   navbar:
     pinned: true  # keeps navbar visible when scrolling
-    background: "#81AF8E" # light green from ? in MADA logo
+    background: "#81AF8E" # light green from arrow in MADA logo
     foreground: dark  # dark font color
     logo: media/MADAlogo.png
     left:
