@@ -302,7 +302,7 @@ non-technical and thus beginner-friendly.
 
 # Artificial Intelligence (AI) 
 
-Given the importance and rapid change of AI, I made a [separate resource unit.](../modules/module-ai/ai-resources/ai-resources.qmd)
+Given the importance and rapid change of AI, I made a [separate resource unit.](../content/module-ai/ai-resources/ai-resources.qmd)
 
 
 

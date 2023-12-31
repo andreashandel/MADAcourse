@@ -4,8 +4,14 @@
 // Hyperlinks are based on the primary color
 
 $primary: #4c6e3e;
+$heading: #507059;
 
 /*-- scss:rules --*/
+
+// heading color
+h1, h2, h3, h4, h5, h6 {
+  color: $heading;
+}
 
 // Source code light gray background
 div.sourceCode {
