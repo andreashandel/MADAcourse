@@ -17,12 +17,12 @@ This unit consists of some thoughts and musings about AI and how to best think o
 
 # Introduction
 
-AI, and especially generative AI such as LLM are very new tools. Everyone is still trying to figure out how to use them, what they mean for the future, etc. While one can obviously use these tools without much further thought, it can be helpful to think about them in a conceptual way to have a potentially useful framework of interaction. Below are a few conceptual frameworks that I have heard from others or that I've been thinking about.
+AI, and especially generative AI like LLM are very new tools. Everyone is still trying to figure out how to use them, what they mean for the future, etc. While one can obviously use these tools without much further thought, it can be helpful to think about them in a conceptual way to have a potentially useful framework of interaction. Below are a few conceptual frameworks that I have heard from others or that I've been thinking about.
 
 
 # AI as the intern/1st year graduate
 
-I've heard this concept multiple times by now. The idea is that you should think of LLM AI tools as being good at tasks that an intern, or a new graduate could do without too much training. So asking ChatPGT to solve world hunger is not a good idea. However, asking it to give you a list of countries where malnutrition is the worst and a summary of likely reasons for that, is a task where it will probably produce a result that you can use as starting point for whatever your larger project is. 
+I've heard this concept multiple times by now. The idea is that you should think of LLM AI tools as being good at tasks that an intern, or a new graduate could do without too much training. For example, asking ChatGPT to solve world hunger is not a good idea. However, asking it to give you a list of countries where malnutrition is the worst and a summary of likely reasons for that, is a task where it will probably produce a result that you can use as starting point for whatever your larger project is. 
 
 What that means is that to get the most out of the AI, you should break your tasks into manageable, well-prescribed bits, and ask the AI to tackle each one. The more details and instructions you provide, the more likely you will get something useful.
 

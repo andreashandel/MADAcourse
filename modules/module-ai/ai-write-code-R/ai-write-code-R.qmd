@@ -16,7 +16,7 @@ In this unit, we discuss using LLM AI tools to help write code.
 
 # Introduction
 
-If you write code, there are (at least) two major parts to the effort. First, you have to figure out what exactly you want to accomplish with your code. Second, you need to write a bunch of commands in some programming language of your choice to get what you are hoping to accomplish. 
+If you write code, there are (at least) two major parts to the effort. First, you have to figure out what exactly you want to accomplish with your code. Second, you need to write a bunch of commands in the programming language of your choice to get what you are hoping to accomplish. 
 The first part is generally the intellectually more challenging one, and a step which AI (currently) are not very good at. The second part is generally less hard, but it can be very tedious, especially if you are new to coding or if you need to write a lot of code. AI are getting pretty good at helping with writing code.
 
 I expect that soon, instead of people writing code, most code will be written by AI under the guidance and direction of people. This should eventually lead to much more efficient, and potentially also better code. We aren't quite there yet, but the current AI tools are already quite useful for helping with code tasks, so you should use them.
@@ -47,7 +47,7 @@ As you can see, good prompts are often quite long. It makes sense to write those
 
 You also notice that for the second prompt, I had to know more about the programming language, for instance I had to know that there is a package called `ggplot2` and one called `patchwork`. 
 
-You will find that the more you know in general about a topic, the more useful those AI tools become. That means that you still have to learn some coding (or whatever the topic is) and understand it enough on a big picture level to be able to be useful. But you don't necessarily need to be an expert.
+You will find that the more you know in general about a topic, the more useful those AI tools become. This means that you still have to learn some coding (or whatever the topic is) and understand it enough on a big picture level to be able to be useful. But you don't necessarily need to be an expert.
 
 An analogy I like is that of a composer. A composer needs to know enough about the various instruments of an orchestra to be able to write music for each instrument. But they don't need to be able to play each instrument. Similarly, you need to know enough about coding or whatever the topic is you are working on to _compose_ prompts for the AI and evaluate what it produces, but you don't necessarily need to be an expert coder.
 
@@ -68,7 +68,7 @@ When I fed that to Bing in "precise" mode it produced [this code](../../../code/
 The code runs and produces a figure, but there are problems. Right now, the data is generated assuming each variable is independent of the other. We know that weight is strongly correlated with BMI, since it's part of the equation defining BMI. We also know that males are generally heavier. We can easily fix this. One approach is to update your prompt and make it more explicit, such as: 
 
 ::: prompt
-Write R code that generates a dataset of 100 individuals, half of them female, with ages from 18 to 49, weight from 100 to 500 pounds and BMI from 15 to 35. Assume that males are generally somewhat heavier than females. Also assume thet BMI and weight are positively correlated, based on the definition of BMI. Make a figure that shows weight on the x-axis, BMI on the y-axis, and stratification by sex. Add thorough documentation to the code.
+Write R code that generates a dataset of 100 individuals, half of them female, with ages from 18 to 49, weight from 100 to 500 pounds and BMI from 15 to 35. Assume that males are generally somewhat heavier than females. Also assume that BMI and weight are positively correlated, based on the definition of BMI. Make a figure that shows weight on the x-axis, BMI on the y-axis, and stratification by sex. Add thorough documentation to the code.
 :::
 
 With this updated prompt, I got [this code](../../../code/bing-iterate-example-update1.R), here are the relevant bits:

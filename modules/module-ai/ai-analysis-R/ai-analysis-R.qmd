@@ -42,7 +42,7 @@ argument "new_data" is missing, with no default
 Please fix this and any other errors in the code.
 :::
 
-The updated code [looked like this](../../../code/claude-analyze-example2.R). It fixed the first problem with `augment()`, but the `resid()` function returns `NULL` and something about the the specification for the logistic model is also not correct. Of course if I really wanted this to work, I'd ask the AI to keep fixing, and/or intervene manually. Bot for this example I don't care that much if it works fully. The right bits seem to be there.
+The updated code [looked like this](../../../code/claude-analyze-example2.R). It fixed the first problem with `augment()`, but the `resid()` function returns `NULL` and something about the the specification for the logistic model is also not correct. Of course if I really wanted this to work, I'd ask the AI to keep fixing, and/or intervene manually. But for this example I don't care that much if it works fully. The right bits seem to be there.
 
 Instead, I was curious if I can get it to produce some halfway reasonable code for a more complex model. Since this is longitudinal, time-series data, with multiple measurements per patient, a hierarchical approach would be better. Here is an attempt at having Claude write code for a hierarchical Bayesian model. Note that this model is still not a good one since it doesn't really take into account the longitudinal structure, just the grouping within patients. But let's try, with this prompt:
 

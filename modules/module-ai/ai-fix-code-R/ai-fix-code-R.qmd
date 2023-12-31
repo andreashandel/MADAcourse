@@ -69,11 +69,11 @@ The end result is still not perfect, the difference in weight by sex is too larg
 
 # Manual intervention
 
-The overall goal is to get working code as quickly as possible. The goal is not to have it all AI generated. Therefore, if you reach a stage where you realize it's faster if you just fix the code yourself, go ahead and do so. 
+The overall goal is to get working code as quickly as possible, not to have things completely AI generated. Therefore, if you reach a stage where you realize it's faster if you just fix the code yourself, go ahead and do so. 
 
-That occurs at two stages. The most obvious one is close to the end. The AI has given you code that is very close to what you want, but there are a few issues, either conceptual or coding errors, that are not quite the way they should be, but when you see the code, you immediately know how to make those changes. Then just go ahead and finish things off manually. At that point, you should be able to "turn off" the AI and have working code that you can apply to your project.
+This occurs at two stages. The most obvious one is close to the end. If the AI has given you code that is very close to what you want, but has a few issues (either conceptual or coding errors) that you immediately know how to correct, then just go ahead and finish things off manually. At this point, you should be able to “turn off” the AI and have working code that you can apply to your project.
 
-The other time you might want to intervene manually is if the AI gets stuck. You keep asking it to fix/update, and it just doesn't produce what you want. At this stage, you could go ahead and make some manual adjustments to the code that you know should happen, and then feed the -- maybe still not fully working -- code back to the AI and ask it to update further. 
+Another situation you might want to intervene manually is if the AI gets stuck. For instance, if you have to keep asking the AI to fix/update some code and it still doesn't produce what you want, you could go ahead and make some manual adjustments to the code that you know should happen, and then feed the code, which still may not be fully working, back to the AI and ask it to update further. 
 
 The nature of the AI algorithms is that they can "get stuck" and if you give them a slight change of scenery, they might be able to get unstuck and get you closer to your goal.
 

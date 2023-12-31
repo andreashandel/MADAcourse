@@ -31,7 +31,7 @@ In the following I'm assuming that you have data that can be shared with the AI.
 
 # Exploratory data analyis (EDA) with no data
 
-Ok, this sounds dumb, but it's not that stupid. Instead of trying to feed the AI your data, you can ask it to generate code that does EDA on hypothetical data. For instance you could provide a prompt like this:
+Ok, this sounds dumb, but it's not that stupid. Instead of trying to feed the AI your data, you can ask it to generate code that does EDA on hypothetical data. For instance, you could provide a prompt like this:
 
 ::: prompt
 Write R code to perform an exploratory data analysis of a data frame called `dat`. The data frame contains the continuous variables `age` and `BMI`, and the categorical variables `sex` and `favorite color`. Write code that produces a summary table, univariate plots for each variable, and a bivariate plot of `age` versus `BMI`.
@@ -93,9 +93,9 @@ I tried using Copilot to help with EDA, but it wasn't very successful. This scre
 ![Copilot coding attempt](../../../media/copilot-screenshot.png){fig-alt="A screenshot of some R code showing an attempt to get Copilot to create a scatterplot, with copilot not returning any suggestion."}
 
 
-# chattR package
+# `chattr` package
 
-Based on the package description, it should be able to write code based on not only the content in the current file, but also by looking into variables in the current environment. So if you have a data frame called `dat` in your environment, you should be able to ask the AI to write code to analyze it. Unfortunately, so far I haven't been able to get `chattR` to talk to OpenAI. I think this is because talking to ChatGPT via the API (which is what `chattR` does) requires a paid account.
+Based on the package description, it should be able to write code based on not only the content in the current file, but also by looking into variables in the current environment. So if you have a data frame called `dat` in your environment, you should be able to ask the AI to write code to analyze it. Unfortunately, so far I haven't been able to get `chattr` to talk to OpenAI. I think this is because talking to ChatGPT via the API (which is what `chattr` does) requires a paid account.
 
 
 
