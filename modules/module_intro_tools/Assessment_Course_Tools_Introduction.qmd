@@ -57,7 +57,7 @@ If you got that far, let's create some content.
 
 ### Quarto content creation
 
-**For this part of the task, the [comprehensive Quarto guide](https://quarto.org/docs/guide/) and [the Quarto section of the work-in-progress 2nd edition of *R for Data Science*](https://r4ds.hadley.nz/quarto.html) will likely be useful.**
+**For this part of the task, the [comprehensive Quarto guide](https://quarto.org/docs/guide/) and [the Quarto section of the 2nd edition of *R for Data Science*](https://r4ds.hadley.nz/quarto.html) will likely be useful.**
 
 Open `index.qmd`. This is the main landing page for your website. Change the text however you want to. What you are writing here is Markdown, so now would be a good time to check out some of the Markdown resources and play with them. You will also see at the top of your R Studio window two buttons `Source` and `Visual`. This allows you to switch between editing Markdown in plain format, and using a visual editor. It's a good idea to switch back and forth to start to learn how certain graphical elements look like in plain text formatting. You'll likely be using a mix of visual and source view a lot.
 
@@ -69,7 +69,7 @@ Next, open `aboutme.qmd` and write some text introducing yourself, as follows:
 -   Finally, include a link to a picture/video/website/etc. The linked material should be somehow related to data analysis. Find something that you think is really cool/interesting/weird/etc. Provide a few explanatory sentences.
 -   If you want, feel free to get creative and include other things. You can play with Quarto if you wish to, e.g., you can try to include a table or a video or any other elments you want to explore.
 
-*Every time you make changes and want to see how they look, just save your changes and re-load the website in our browser, it should show you any changes.*
+*If you make changes and want to see how they look, save your changes and rebuild the website. Load/refresh in your browser and it should show any changes.*
 
 ::: note
 This portfolio website and everything you put on there is public. So don't put anything on there that you are not ok with telling the world about.
@@ -118,6 +118,10 @@ Re-open your project with RStudio. Click to open the README.md file. It only con
 Make any other edits you like.
 
 Once done with edits, remember to re-build/re-render your website with Quarto (by clicking 'Render Website' in the `Build` tab) and then committing/pushing your local changes to GitHub (using Gitkraken or another Git client).
+
+::: emphasis
+Once your website is up and running, don't forget to post the link into the `introductions` channel!
+:::
 
 ### General Github workflow
 

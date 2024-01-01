@@ -20,7 +20,7 @@ toc: FALSE
 This is the first time I'm using Discord for the class, previous classes used Slack. I decided to switch since the free version of Slack is very limited. If you find anywhere on this website a mention of Slack, just assume that I mean Discord. Also please let me know so I can fix it. (Or contribute the fix yourself, you'll soon learn how to do that through GitHub).
 :::
 
-The main mode of communication will be through Discord. You should get an email invite to the Discord server for this class. If you haven't received an email by Friday before classes start, or if you added the class late, let me know so I can send you an invite. We won't use eLC, everything is going to happen on Discord or this website. 
+The main mode of communication will be through Discord. You should get an email with an invite to the Discord server for this class. If you haven't received an email by Friday before classes start or can't find the Discord invite link on eLC, let me know. We won't use eLC, everything is going to happen on Discord or this website. 
 
 If you are unfamiliar with Discord, it is essentially a chat/discussion tool (similar to Slack or Teams or...). The main area for the class is called a *server* in Discord. Ours is called **MADA-Spring-2024**. If you use Discord for other purposes, you might be a member of additional servers. Each server has *channels*. Each *channel* corresponds to a topic. The names and descriptions of the different channels should be self-explanatory. 
 
