@@ -17,7 +17,7 @@ set.seed(123)
 n_patients <- 100
 
 ## ---- summarize-data --------
-dat <- readRDS(here::here("content/module-synthetic-data/synthetic-data-new-existing-r/syn-dat.rds"))
+dat <- readRDS(here::here("content/module-synthetic-data/synthetic-data-new-existing-r/syn_dat.rds"))
 skimr::skim(dat)
 gtsummary::tbl_summary(dat, statistic = list(
   all_continuous() ~ "{mean}/{median}/{min}/{max}/{sd}",
@@ -132,6 +132,6 @@ ggplot(syn_dat, aes(x = TreatmentGroup, y = Cholesterol)) +
 
 
 # Save the simulated data to a CSV file
-write.csv(syn_dat, "syn-dat-new.csv", row.names = FALSE)
+write.csv(syn_dat, "syn_dat_new.csv", row.names = FALSE)
 
 

@@ -28,7 +28,7 @@ Write R code that generates a dataset of 100 individuals with ages from 18 to 49
 
 Only the first part is really the data generation bit, but since it's so quick and easy, I wanted some code that also explores the data so I can see if what it produced is what I had in mind.
 
-The result was [this fully-working code](../../../code/chatgpt-example.R).
+The result was [this fully-working code](/code/chatgpt-example.R).
 
 Since the AI systems are continuously updated, it is possible that if you type the same prompt into ChatGPT, your code might look slightly differently, but hopefully it is still working.
 
@@ -67,7 +67,7 @@ Caused by error in `patient$ID`:
 Please fix the code. Also add code at the end that plots the raw data for drug concentration as a function of time for all patients, stratified by treatment status. Also plot the mean for each group.
 :::
 
-[This is the code I got back](../../../code/bing-synthetic-data-example.R).
+[This is the code I got back](/code/bing-synthetic-data-example.R).
 
 The code runs and does some of the things I asked for, but not all. I specified that the drug is given weekly, but the code only contains a single dose at the start. I forgot to tell the AI for how long the data should be simulated. It picked 13 days, which means there should have been 2 doses of drug.
 
@@ -83,5 +83,5 @@ If you want to get synthetic data that is as close to your real data, you should
 
 # Further Resources
 
-A lot of this is covered in more detail in the [AI module](../../module-ai/ai-overview.qmd).
+A lot of this is covered in more detail in the [AI module](/content/module-ai/ai-overview.qmd).
 

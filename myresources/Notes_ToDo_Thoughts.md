@@ -64,7 +64,7 @@ file.rename(files, tolower(files))
 
 -   Update links/references to R4DS 2nd edition instead of 1st.
 
-    -   Did most of them but there isn't a tibble or model chapter in the second edition.
+    -   Did most of them but there isn't a tibble or model chapter in the second edition. `content/module-data-intro/data-types.qmd` now has a broken link since it references the tibble chapter.
 
 -   Continue updating Assessment_Data_Analysis
 
@@ -78,7 +78,7 @@ file.rename(files, tolower(files))
 
 ## Checking links for 404 or other errors
 
-After publishing, I like to run the site url through [Dr Link Check](https://www.drlinkcheck.com/) and fix links accordingly.
+After publishing, I like to run the site url through [Dr Link Check](https://www.drlinkcheck.com/) and fix links accordingly. The report will show you which files contain the broken links.
 
 ## Emojis
 

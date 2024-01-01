@@ -44,7 +44,7 @@ Since you are working with the real data, you probably don't want to use AI for 
 
 ## Example
 
-Time for a simple example. You can find the code shown below in [this file](../../../code/synthetic-data-existing-R-exmaple-code.R).
+Time for a simple example. You can find the code shown below in [this file](/code/synthetic-data-existing-R-example-code.R).
 
 
 ### Setup

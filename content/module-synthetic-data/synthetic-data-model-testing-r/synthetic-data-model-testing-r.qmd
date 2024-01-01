@@ -33,7 +33,7 @@ We will revisit the first example from the [Generating synthetic data with R](..
 
 If we fit a model, we expect to recover these patterns. We can for instance fit a linear model with `Cholesterol` as the outcome and `BloodPressure` and `TreatmentGroup` as predictors.
 
-Here's code to do that (you can again find [the full R script here](../../../code/synthetic-data-model-testing-R.R)).
+Here's code to do that (you can again find [the full R script here](/code/synthetic-data-model-testing-R.R)).
 
 Setting things up
 
