@@ -178,7 +178,7 @@ This syllabus is a general plan, deviations announced to the class by the instru
 
 ## Course Outline
 
-For an outline of the course, please see the [**Course Schedule**](course-Schedule.qmd) document. 
+For an outline of the course, please see the [**Course Schedule**](course-schedule.qmd) document. 
 
 
 ## More Details

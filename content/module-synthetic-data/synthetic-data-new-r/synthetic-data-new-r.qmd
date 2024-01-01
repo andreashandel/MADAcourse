@@ -13,7 +13,7 @@ knitr::read_chunk('../../../code/synthetic-data-new-R-example-2-code.R')
 
 
 # Overview
-In this unit, we look at a few examples of generating synthetic data with `R.
+In this unit, we look at a few examples of generating synthetic data with `R`.
 
 
 # Learning Objectives

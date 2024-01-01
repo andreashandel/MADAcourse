@@ -119,6 +119,10 @@ Make any other edits you like.
 
 Once done with edits, remember to re-build/re-render your website with Quarto (by clicking 'Render Website' in the `Build` tab) and then committing/pushing your local changes to GitHub (using Gitkraken or another Git client).
 
+::: emphasis
+Once your website is up and running, don't forget to post the link into the `introductions` channel!
+:::
+
 ### General Github workflow
 
 In the future, if you work on repositories like this one (or any others), your workflow should be as follows:
