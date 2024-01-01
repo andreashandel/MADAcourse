@@ -18,7 +18,7 @@ library(ggplot2) # for data visualization
 library(tidymodels) # for modeling
 
 # MANUAL ADDITION:
-syn_dat2 <- read.csv(here::here("data","syn_dat2.csv"))
+syn_dat2 <- read.csv(here::here("data","syn-dat2.csv"))
 
 
 # Fit a linear model with drug concentration as predictor and cholesterol level as outcome

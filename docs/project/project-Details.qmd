@@ -150,7 +150,7 @@ To that end, provide the following pieces of information:
     file that comprises the supplementary material. For some idea on how
     this can be structured, you can for instance revisit Brian's project
     we looked at in this
-    [**unit**](../modules/module_data_analysis/Data_Analysis_Motivation.qmd).
+    [**unit**](../content/module-data-analysis/data-analysis-motivation.qmd).
 
 Grading for this part will follow this rubric:
 
@@ -231,7 +231,7 @@ Review**](project-Review.qmd) document.
 
 *A great project would be at the level of Brian McKay's paper example
 you checked out in the [**Motivating Examples
-document**](../modules/module_data_analysis/Data_Analysis_Motivation.qmd),
+document**](../content/module-data-analysis/data-analysis-motivation.qmd),
 or one of the projects on the `Project Examples` page.*
 
 # Part 6

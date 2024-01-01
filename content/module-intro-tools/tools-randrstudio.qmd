@@ -1,0 +1,93 @@
+---
+title: R and RStudio 
+subtitle: ""
+---
+
+# Overview
+
+This is a very quick introduction to R and RStudio, to get you set up and running. We'll go deeper into R and coding later.
+
+# Learning Objectives
+
+-   Know some of the strengths and weaknesses of R.
+-   Have R and Rstudio up and running on your computer.
+-   Know how to install and load R packages.
+
+# About R
+
+Like every programming language, R has its advantages and disadvantages. Feel free to do a web search on that topic, and you will encounter tons of people with tons of opinions. Some of the features that are useful to us are:
+
+-   R is Open Source, FREE, and cross-platform.
+-   R is a "high-level" programming language, relatively easy to learn (compared to Fortran, C, etc.).
+-   R comes with many integrated functions.
+-   R is great for statistics, data analysis, and graphics.
+-   The R Community is very dynamic, helpful and welcoming.
+-   Through R packages, it is easy to get lots of state-of-the-art algorithms.
+-   Documentation and help files for R are generally good.
+
+While we use R in this course, it is not the only option to analyze data. Maybe the most similar to R, and widely used, is Python, which is also free. There is also commercial software that can be used to analyze data (e.g., Matlab, Mathematica, Tableau, SAS, SPSS). Other more general programming languages are suitable for certain types of analyses as well (e.g., C, Fortran, Perl, Java, Julia). Depending on your future needs or jobs, you might have to learn one or several of those additional languages. The good news is that even though those languages are all different, they all share general ways of thinking and structuring code. So once you understand a specific concept (e.g., variables, loops, branching statements or functions), it applies to all those languages. Thus, learning a new programming language is much easier once you already know one. And R is a good one to get started with.
+
+# About RStudio
+
+RStudio is an integrated development environment (IDE) made by the folks from [Posit](https://posit.co/) (formerly the company was also named RStudio, but that changed recently). RStudio is separate from the R programming language. It basically wraps some useful tools around `R` to making writing and running `R` code much easier. RStudio is by far the most commonly used environment for folks who write `R` code, but it is not the only option. There are other IDEs available for `R`, most notably maybe VS Code. In this course, I assume you are using RStudio and instructions are specific for it. But if for some reason you don't want to, you can use a different way to write and run `R` code. You just have to figure out some things on your own.
+
+# Installing R and RStudio
+
+-   If you haven't already, [install R first](https://www.r-project.org/). You can pick any mirror you like. If you already have R installed, make sure it is a fairly recent version, at least version 4.1 or newer. I recommend you upgrade to the most recent version (as of this writing 4.2.2, but if there is a newer one available, use that one).
+-   Once you have R installed, install the free version of [RStudio Desktop](https://www.rstudio.com/products/rstudio/download/). Get the most recent version. If you have an older one already installed, update it.
+
+Installing R and RStudio should be fairly straightforward. If you want detailed instructions, go through this [chapter of IDS](https://rafalab.github.io/dsbook/installing-r-rstudio.html). If things don't work, ask for help on the discussion boards.
+
+I personally only have experience with Windows (and a little bit of Mac), but everything should work on all the standard operating systems (Windows, Mac, and even Linux).
+
+# Installing and loading R packages
+
+Most of the functionality and features in R come in the form of add-on packages. There are tens of thousands of packages available, some big, some small, some well documented, some not. We'll be using many different packages in this course. Of course, you are free to install and use any package you come across for any of the assignments.
+
+The "official" place for packages is the [CRAN website](https://cran.r-project.org/web/packages/available_packages_by_name.html). If you are interested in packages on a specific topic, the [CRAN task views](http://cran.r-project.org/web/views/) provide curated descriptions of packages sorted by topic.
+
+To install a package from CRAN, go to the R prompt at the bottom left of your RStudio session and type `install.packages("PACKAGENAME")`. The figure shows an example where I installed a package called `learnr`. Often, a package needs other packages to work (called dependencies), and they are installed automatically. It usually doesn't matter if you use a single or double quotation mark around the name of the package. Note that R cares about capitalization, so you need to get the upper and lower case exactly right. Otherwise, it won't work.
+
+![Installing an R package. Click on the image to enlarge it.](../../media/installpackagesscreenshot.png){fig-alt="Screenshot of RStudio with the command 'install.packages(learnr)' in the console."}
+
+Try installing a package yourself. Open RStudio. Then go to the R prompt (the `>` symbol) in the lower-left corner and type
+
+```{r packageinstall, eval = FALSE}
+install.packages('DSAIDE')
+```
+
+This installs a package that gives you access to various infectious disease simulation models. We won't do anything with that package in this course, we just install it for practice. If you want to learn more about DSAIDE, take a look at the [package website](https://ahgroup.github.io/DSAIDE/).
+
+If this is the first time you are installing packages, you'll see that a lot of other packages are installed, too. You might get a message about *Installing from source packages that need compilation*. You should generally say **No** to this. If you are on a Windows computer, compilation requires you to have [Rtools installed](https://cran.r-project.org/bin/windows/Rtools/). It's not a bad idea to install Rtools (if you do, make sure you pick the version that matches your `R` version.) But even then, or if you use a Mac or Linux (which have the equivalent of Rtools already pre-installed) sometimes the compilation doesn't work. So if you have a choice, say **No**. (On some Mac/Linux setups, things happen automatically, then just let it run.)
+
+To see which packages are needed by a specific package, e.g. `DSAIDE`, and thus are being installed if not present, type `tools::package_dependencies("DSAIDE")` into the R console. Of course it can be that those packages depend on other packages, so you end up installing even more. At some point, you'll have the most common packages all installed and installing new packages will lead to less overall installing. The package install process generally works well.
+
+In RStudio, you can also install (and update/remove) packages by clicking on the `Packages` tab in the bottom right window.
+
+It is very common these days for packages to be developed on GitHub. It is possible to install packages from Github directly. Those usually contain the latest version of the package, with features that might not be available yet on the CRAN website. Sometimes, in early development stages, a package is only on Github until the developer(s) feel it's good enough for CRAN submission. So installing from Github gives you the latest. The downside is that packages under development can often be buggy and not working right. To install packages from Github, you need to install the `remotes` package and then use the `install_github` function. We won't do that now, but it's quite likely that at one point later in this course we will.
+
+You only need to install a package once, unless you upgrade/re-install R. Once installed, you still need to load the package before you can use it. That has to happen every time you start a new R session. You do that using the `library()` command (an alternative is `require()` but I recommend `library()`). For instance to load the `DSAIDE` package, type
+
+```{r, eval=FALSE}
+library('DSAIDE')
+```
+
+You should see a short message on the screen. Some packages show messages when you load them, and others don't. In this case, the package tells you that you can start using it by typing `dsaidemenu()` into the R console. DSAIDE is a package I wrote that allows you to explore infectious disease models. We won't use it in this class. I'm just using it as an example here since you can use the package without having to write code. Try it briefly, by typing the code below into the R console
+
+```{r, eval=FALSE}
+dsaidemenu()
+```
+
+A menu should open in your browser, from which you can explore different models/apps. Once you are done with DSAIDE, close it.
+
+This was a quick overview of R packages. We'll use a lot of them, so you'll get used to them rather quickly.
+
+# Note about R packages
+
+The quality of R packages varies. In general, if they are on `CRAN` or `bioconductor`, they passed some quality checks. That does however not mean that the functions do the right thing, just that they run. Other packages might be more experimental, and while they might work well, there might also be bugs. In general, packages that are used by many people, packages that involve people who work at R-centric companies (e.g., Posit), and packages that have many developers/contributors and are actively maintained are good signs that it's a stable and reliable package. That said, there are many packages that are developed by a single person and are only available from `GitHub`, and they are still very good packages. Ideally, for a new package, test it and see if it does things stably and correctly. If yes, you can start using it. Just always carefully inspect the results you get to make sure things are reliable. If at some point, you work with R in a non-academic setting and you might use R packages for jobs that need to run reliably for many years to come, choosing packages might be a bit more tricky and require more thought. For an academic/research setting, it's usually ok to use almost any package, as long as it seems reliable and works.
+
+# Learning R Studio
+
+If you are new to R and RStudio and want to learn a bit more, I suggest you skim through this [chapter of *IDS*](https://rafalab.github.io/dsbook/getting-started.html).
+
+While one can use R and do pretty much every task, including all the ones we cover in this class, without using RStudio. However, RStudio is very useful; it has a lot of features that make your R coding life easier. It has become pretty much the default integrated development environment (IDE) for R. Since RStudio has lots of features, it takes time to learn them. A good resource to learn more about RStudio are the [RStudio Essentials](https://resources.rstudio.com/) collection of videos.

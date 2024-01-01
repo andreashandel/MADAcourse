@@ -1,0 +1,92 @@
+---
+title: AI tools for fixing code 
+subtitle: ""
+---
+
+
+# Overview
+In this unit, we discuss using LLM AI tools to help fix code.
+
+
+# Learning Objectives
+
+* Know how to use current LLM AI tools to help fix code.
+
+
+# Introduction
+
+This topic is very similar to the approach for writing code. In that unit, we already discussed how to iteratively update and improve the code. Fixing non-working code is really just another version of asking the AI iteratively to improve things. However, it seemed distinct enough to me that I thought it's worth placing it into a separate unit.
+
+The assumption is that you have some code (likely AI generated, but could also be code you wrote) and need to fix some typos. If the code was generated in the current session, you can just refer to it in your prompt. If the code was generated previously, you will supply the code as part of the prompt. The latter approach is more general, so I'm focusing on that one.
+
+
+# Fixing through iteration
+
+The most basic approach is to just feed the AI non-working code and tell it to fix it.
+Here is an example continued from the non-working code we had at the end of the [AI and code writing unit](../ai-write-code-r/ai-write-code-r.qmd). 
+To mimic a general setting, with code possibly produced earlier or not by the AI, I started a new session with the Bing AI in 'precise' mode and gave it this prompt.
+
+::: prompt
+This code does not work. Please fix it.
+  
+PASTE ALL CODE FROM [THIS FILE](/code/bing-iterate-example-update2.R) HERE.
+:::
+
+Here is what I got back:
+
+::: output
+I see that you’re trying to generate a scatter plot of BMI against weight, stratified by sex. The code you’ve provided seems to be correct. However, the issue might be due to the specific versions of the ggplot2 and dplyr libraries you’re using, or it could be a problem with your R environment.
+
+If you’re getting a specific error message, could you please provide it? That would help me understand the issue better and provide a more accurate solution. If you’re not seeing an error message, could you please describe what’s happening when you say the code doesn’t work? For example, is the plot not displaying as expected, or are the calculations not producing the right results? This additional information will help me assist you more effectively.
+:::
+
+So this didn't work. What's next? One option is to see if another LLM AI can do it. For instance I could try and switch to another mode in Bing (creative or balanced) or try another LLM. I'm not doing this for now, but it might at times be worth giving it a try. What I'll do here is to help the AI (as it suggested) by being more specific about the problem. Here is my updated prompt:
+
+::: prompt
+The code below produces this error message:
+
+Error in eval(ei, envir) : object 'sex' not found
+
+Please fix it.
+
+PASTE ALL CODE FROM [THIS FILE](/code/bing-iterate-example-update2.R) HERE.
+
+:::
+
+With this prompt, I got it to work. The AI gave me this helpful explanation and fully working code
+
+::: output
+The error message you’re seeing is due to the sex variable not being recognized within the ifelse function in your data.frame creation. This is because the sex variable is not yet defined at the time ifelse is called.
+
+You can fix this by first creating the sex variable and then using it in the ifelse function. Here’s the corrected code:
+
+[CODE IS HERE](/code/bing-iterate-example-update3.R)
+:::
+
+The end result is still not perfect, the difference in weight by sex is too large and we might want more scatter. But that can easily be fixed with either further iterations of asking the AI to update the code, or manual interventions. Speaking of manual interventions...
+
+
+
+# Manual intervention
+
+The overall goal is to get working code as quickly as possible, not to have things completely AI generated. Therefore, if you reach a stage where you realize it's faster if you just fix the code yourself, go ahead and do so. 
+
+This occurs at two stages. The most obvious one is close to the end. If the AI has given you code that is very close to what you want, but has a few issues (either conceptual or coding errors) that you immediately know how to correct, then just go ahead and finish things off manually. At this point, you should be able to “turn off” the AI and have working code that you can apply to your project.
+
+Another situation you might want to intervene manually is if the AI gets stuck. For instance, if you have to keep asking the AI to fix/update some code and it still doesn't produce what you want, you could go ahead and make some manual adjustments to the code that you know should happen, and then feed the code, which still may not be fully working, back to the AI and ask it to update further. 
+
+The nature of the AI algorithms is that they can "get stuck" and if you give them a slight change of scenery, they might be able to get unstuck and get you closer to your goal.
+
+
+
+# Summary
+
+As with code writing, for fixing code, being as specific as possible and iterating are key. Usually, if you tell the AI exactly what needs fixing and do a few iterations, you'll get to something that fully works, or is so close that you can quickly finish the rest manually.
+
+
+# Further Resources
+
+See the [AI resource unit](../ai-resources/ai-resources.qmd).
+
+
+

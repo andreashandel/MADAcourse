@@ -1,0 +1,87 @@
+---
+title: Using AI tools to generate synthetic data with R
+subtitle: ""
+---
+
+
+# Overview
+In this unit, we explore the use of LLM AI tools to generate synthetic data with `R`.
+
+
+# Learning Objectives
+
+* Be able to use AI to generate synthetic data with `R`. 
+
+
+# Introduction
+
+While there are potential confidentiality issues when asking AI to explore/analyze your data, asking it to make up data doesn't come with any such issues. Thus, this is a task where using AI to write synthetic data generating code can be very useful. A good bit of this overall topic is covered in detail in the [AI module](../../module-ai/ai-overview.qmd), but it seemed worth repeating some of it here.
+
+
+## A simple example
+
+Using AI to generate code that creates synthetic data can be very efficient. Here is an example. I typed the following prompt into ChatGPT 3.5.
+
+:::prompt
+Write R code that generates a dataset of 100 individuals with ages from 18 to 49, BMI values from 15 to 40 and smoking status as yes or no. Assume that age and BMI are uncorrelated. Assume that smokers have a somewhat lower BMI. Then use the patchwork R package to generate a panel of ggplot2 plots. The first panel should show a violin plot with BMI on the y-axis and smoking status on the x-axis. The second panel should show a scatterplot with age on the y-axis and BMI on the x-axis. Add thorough documentation to your code.
+:::
+
+Only the first part is really the data generation bit, but since it's so quick and easy, I wanted some code that also explores the data so I can see if what it produced is what I had in mind.
+
+The result was [this fully-working code](/code/chatgpt-example.R).
+
+Since the AI systems are continuously updated, it is possible that if you type the same prompt into ChatGPT, your code might look slightly differently, but hopefully it is still working.
+
+In my experience, you usually don't quite get what you want on the first try. But it's easy to tell the AI to update the code until it does what you want it to, or at least is close and then you can do the rest by hand. 
+
+
+## One more example
+
+It is possible to ask the AI to create more complex data. You might not always get exactly what you want, but it's often worth a try. I gave this prompt to Mcirosoft Bing/Copilot in precise mode.
+
+::: prompt
+Write R code that creates data for N=100 individuals. 
+Individuals ages are randomly distributed between 18 and 50 years.
+Assume that individuals belong to 3 treatment groups: placebo, low dose, and high dose.
+Individuals in each group receive either no drug, or 100mg of drug or 200mg of drug every week. Drug concentration is measured every other day. Assume that drug concentration follows an exponential decline between doses, with the decay rate being the same for the low dose and high dose groups.
+
+In addition to drug concentration, cholesterol levels are measured daily. Assume that higher drug concentrations correlate with lower cholesterol levels.
+
+Create a data frame that contains Patient ID, treatment group, age, time, drug concentration, and cholesterol level.
+
+For function calls, specify explicitly the package from which the function comes from.
+
+Add thorough documentation to the code so it is clear what each line of code does.
+:::
+
+The code I got back did not quite work, so I provided this prompt:
+
+::: prompt
+The code above does not work. It gives this error :
+
+Error in `map()`:
+In index: 1.
+With name: ID.
+Caused by error in `patient$ID`:
+
+Please fix the code. Also add code at the end that plots the raw data for drug concentration as a function of time for all patients, stratified by treatment status. Also plot the mean for each group.
+:::
+
+[This is the code I got back](/code/bing-synthetic-data-example.R).
+
+The code runs and does some of the things I asked for, but not all. I specified that the drug is given weekly, but the code only contains a single dose at the start. I forgot to tell the AI for how long the data should be simulated. It picked 13 days, which means there should have been 2 doses of drug.
+
+Of course I could keep talking to the AI, telling it to update things such that dosing is weekly, maybe explicitly say that I want to run for 28 days, fix whatever else might not be quite right (I didn't check the code too carefully). It's so quick and easy, there's no reason not to do a few more iterations and see how close the AI can get to what I want. Eventually, I will likely intervene and finish things off manually.
+
+
+# Summary
+
+Using the help of AI to write code that generates data can be very useful and speed up things. There are generally no confidentiality/privacy issues, so it's a good idea to try an AI.
+
+If you want to get synthetic data that is as close to your real data, you should first do the descriptive analysis of your real data offline, then tell the AI how the synthetic data should be distributed based on what you determined from your real data summaries. 
+
+
+# Further Resources
+
+A lot of this is covered in more detail in the [AI module](/content/module-ai/ai-overview.qmd).
+

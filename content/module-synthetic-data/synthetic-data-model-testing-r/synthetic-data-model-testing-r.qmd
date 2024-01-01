@@ -1,0 +1,100 @@
+---
+title: Use synthetic data to test models
+subtitle: ""
+---
+
+```{r, include=FALSE, cache=FALSE}
+#R scripts that contain code chunks shown below
+knitr::read_chunk('../../../code/synthetic-data-model-testing-R.R')
+knitr::read_chunk('../../../code/synthetic-data-model-testing-R2.R')
+```
+
+
+# Overview
+In this unit, we explore the use of synthetic data to test your models.
+
+
+# Learning Objectives
+
+* Understand the use of synthetic data for testing models.
+* Be able to implement model testing on synthetic data in R.
+
+
+# Introduction
+
+At the beginning of this module, I mentioned that one great use-case of synthetic data is the ability to see if whatever patterns you stuck into the data when you generated it can be recovered by your analysis. If your analysis fails to recover what you built, it means your model is likely not suitable and you need to modify it.
+
+Of course, keep in mind that just because your model can recover the patterns/correlations you stuck into the data doesn't mean it can do the same for the real data, or that any patterns in the real data are the same. However, if you can NOT recover the patterns for your simulated data, it's a strong sign to stop and reconsider your analysis approach. It will very likely also not produce useful results for the real data (but you won't know, since you don't know what processes generated the real data).
+
+
+# An example
+
+We will revisit the first example from the [Generating synthetic data with R](../synthetic-data-new-r/synthetic-data-new-r.qmd) unit. If you don't remember, take a look at the code shown in that unit to see that we created a variable called `BloodPressure` which was randomly distributed, and a variable called `Cholesterol` which varied by treatment group.
+
+If we fit a model, we expect to recover these patterns. We can for instance fit a linear model with `Cholesterol` as the outcome and `BloodPressure` and `TreatmentGroup` as predictors.
+
+Here's code to do that (you can again find [the full R script here](/code/synthetic-data-model-testing-R.R)).
+
+Setting things up
+
+```{r, setup, message=FALSE, warning=FALSE}
+```
+
+We'll do a little bit of processing before fitting
+
+```{r, process-data, message=FALSE, warning=FALSE}
+```
+
+
+Fitting the first model
+
+```{r, fit-model1, message=FALSE, warning=FALSE}
+```
+
+We find what we hope to find. The blood pressure variable shows no noticeable correlation with cholesterol, while treatment group does.
+
+We can explore other models. Here is one with an interaction term between `BloodPressure` and `TreatmentGroup`. We know there is none, since we know how the data was generated. So to test our model, we fit it to confirm that this is what we get:
+
+```{r, fit-model2, message=FALSE, warning=FALSE}
+```
+
+And we do see no evidence for interaction being present. So for this simple example, the model works, namely it recovers the patterns we stuck into the data. This means it might be ok to use this model on our real data.
+
+Let's now look at an example where the model does not properly recover the pattern in the data.
+
+# A failing example
+
+We'll start with the same data as before, but now mess around with it. Specifically, I'm creating a new variable called `Drug` and a new cholesterol variable that depends on drug concentration in a nonlinear manner.
+
+
+```{r, ex2-setup, message=FALSE, warning=FALSE}
+```
+
+
+```{r, ex2-change-data, message=FALSE, warning=FALSE}
+```
+
+```{r, ex2-process-data, message=FALSE, warning=FALSE}
+```
+
+Now we'll fit another linear model, as before. There is a correlation between dose and cholesterol. But it's not linear, and therefore the model doesn't detect it.
+
+```{r, ex2-fit-model1, message=FALSE, warning=FALSE}
+```
+
+It is always possible to try a more complex model to see if there might be patterns that a linear or other simple model can't detect. Here, we are trying a random forest model, which can detect more complicated correlations between predictor variables and output. Random forest models don't produce the standard p-values, but one can look at something called variable importance to see which variables most impact the outcome. And we see that it correctly identifies drug as the most important variable. The other two should really be at zero importance, since they are not correlated with the outcome. But this model is flexible enough to fit to possibly spurious patterns.
+
+```{r, ex2-fit-model2, message=FALSE, warning=FALSE}
+```
+
+The take-home message from this is that our simulated data showed us that a linear model can't pick up the pattern, and we need a different model. 
+
+# Summary
+
+Model testing is one of the most important applications for synthetic data. Since you generated the data and know everything about it, you know exactly what the analysis of the data should find. If your models can't find the right patterns, it means you need to modify your analysis.
+
+
+# Further Resources
+
+
+

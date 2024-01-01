@@ -183,4 +183,4 @@ For an outline of the course, please see the [**Course Schedule**](course-schedu
 
 ## More Details
 
-The *General Information* section and the [**introductory unit**](../modules/module_intro_tools/Introduction_Course.qmd) of this course contains all the logistic details you need to know.
+The *General Information* section and the [**introductory unit**](../content/module-intro-tools/introduction-course.qmd) of this course contains all the logistic details you need to know.
