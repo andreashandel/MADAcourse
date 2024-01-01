@@ -1,12 +1,13 @@
 /*-- scss:defaults --*/
 
-// Got this color from MADA logo
-// Hyperlinks are based on the primary color
-
-$primary: #4c6e3e;
+$link: #307f96;
 $heading: #507059;
 
 /*-- scss:rules --*/
+
+a {
+  color: $link;
+}
 
 // heading color
 h1, h2, h3, h4, h5, h6 {
