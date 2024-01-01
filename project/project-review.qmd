@@ -71,7 +71,7 @@ detailed and in-depth than the part 3 review.**
 
 Follow the instructions provided in the repository to run all code and
 reproduce everything. Review the whole project using this [review
-template](https://raw.githubusercontent.com/andreashandel/MADAcourse/main/project/templatefiles/project-Review_Template.qmd)
+template](https://raw.githubusercontent.com/andreashandel/MADAcourse/main/project/templatefiles/project-review-template.qmd)
 (right-click to download).
 
 Write up a detailed review using and filling out the template. Once you

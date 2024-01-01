@@ -21,12 +21,12 @@ This module covers why and how to generate and use synthetic (also known as simu
 
 The module consists of the following units:
 
-* [Introduction and Motivation](./synthetic-data-introduction/synthetic-data-introduction.html)
-* [Creating new data](./synthetic-data-new-R/synthetic-data-new-R.html)
-* [Creating new data based on existing data](./synthetic-data-new-existing-R/synthetic-data-new-existing-R.html)
-* [Scrambling existing data](./synthetic-data-exisiting-R/synthetic-data-exisiting-R.html)
-* [R packages for data creation](./synthetic-data-R-packages/synthetic-data-R-packages.html)
-* [Use synthetic data with AI tools](./synthetic-data-AI-tools-R/synthetic-data-AI-tools-R.html)
-* [Use synthetic data to test models](./synthetic-data-model-testing-R/synthetic-data-model-testing-R.html)
+* [Introduction and Motivation](./synthetic-data-introduction/synthetic-data-introduction.qmd)
+* [Creating new data](./synthetic-data-new-r/synthetic-data-new-r.qmd)
+* [Creating new data based on existing data](./synthetic-data-new-existing-r/synthetic-data-new-existing-r.qmd)
+* [Scrambling existing data](./synthetic-data-existing-r/synthetic-data-existing-r.qmd)
+* [R packages for data creation](./synthetic-data-r-packages/synthetic-data-r-packages.qmd)
+* [Use synthetic data with AI tools](./synthetic-data-ai-tools-r/synthetic-data-ai-tools-r.qmd)
+* [Use synthetic data to test models](./synthetic-data-model-testing-r/synthetic-data-model-testing-r.qmd)
 
 

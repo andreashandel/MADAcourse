@@ -74,7 +74,7 @@ Use the tidyverse packages for data manipulation tasks, and the tidymodels frame
 For each function call, use explicit notation to specify from which R package the function comes from.
 Add thorough documentation to your code so it's clear what each line of code does.
 
-COPY AND PASTE [THIS CODE](/code/synthetic-data-new-R-example-2-code.R) HERE  
+COPY AND PASTE [THIS CODE](/code/synthetic-data-new-r-example-2-code.R) HERE  
 :::
 
 I fed this to Microsoft Copilot in Precise mode. I also omitted the parts of the code after the data frame has been generated.

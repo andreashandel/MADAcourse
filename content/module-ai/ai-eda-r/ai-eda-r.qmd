@@ -53,7 +53,7 @@ Bing and the free ChatGPT version currently do not provide a way to upload data.
 If you have fairly simple dataset, you can paste it directly into the prompt.
 
 Here is an example. This dataset comes from the first example in the  
-[Generating synthetic data with R](../../module-synthetic-data/synthetic-data-new-R/synthetic-data-new-R.qmd) unit. I opened the CSV file, and copied the whole thing into the prompt:
+[Generating synthetic data with R](/content/module-synthetic-data/synthetic-data-new-r/synthetic-data-new-r.qmd) unit. I opened the CSV file, and copied the whole thing into the prompt:
 
 ::: prompt
 Perform an exploratory data analysis using R code of the following data set:
@@ -81,7 +81,7 @@ The free version of ChatGPT or Bing do not allow upload of files. However, [Clau
 Write R code to perform an exploratory data analysis of the attached CSV file.
 :::
 
-I received [this code](../../../code/claude-eda-example1.R) from the AI. It runs and produces some figures. Of course, as you learned previously, it would be better if I provided a much more specific prompt, saying exactly what kind of tables and figures I want to see as output. But you get the idea. 
+I received [this code](/code/claude-eda-example.R) from the AI. It runs and produces some figures. Of course, as you learned previously, it would be better if I provided a much more specific prompt, saying exactly what kind of tables and figures I want to see as output. But you get the idea. 
 
 Claude allows you (as of this writing) to upload a maximum of 5 files with 10MB each. While that prevents you to perform EDA on very large datasets, it should be enough for many purposes, and is definitely more than the limit for the copy and paste method described above. 
 
@@ -90,7 +90,7 @@ Claude allows you (as of this writing) to upload a maximum of 5 files with 10MB 
 
 I tried using Copilot to help with EDA, but it wasn't very successful. This screenshot shows an example of me trying to get it to produce a scatterplot. It didn't work, Copilot did not return any suggestion. It did suggest the other lines of code. I'm not sure if I'm just not using Copilot correctly, maybe you've got better luck. It doesn't hurt turning it on and trying to see if it can help you. If you find it useful, let me know so I can update this.
 
-![Copilot coding attempt](../../../media/copilot-screenshot.png){fig-alt="A screenshot of some R code showing an attempt to get Copilot to create a scatterplot, with copilot not returning any suggestion."}
+![Copilot coding attempt](/media/copilot-screenshot.png){fig-alt="A screenshot of some R code showing an attempt to get Copilot to create a scatterplot, with copilot not returning any suggestion."}
 
 
 # `chattr` package

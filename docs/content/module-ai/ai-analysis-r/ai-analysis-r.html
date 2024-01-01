@@ -780,7 +780,7 @@ ul.task-list li input[type="checkbox"] {
 <p>I’m not sure if some of the problems with the code above would not show up if we used the - supposedly better - ChatGPT engine. We can try. Again, it’s difficult to feed it data. We could try the copy and paste approach. But instead, I’m trying another approach. I’ll give Bing the code that generates the data, then ask it to fit models to that generated data. Here is the prompt:</p>
 <div class="prompt">
 <p>The code below produces a data frame called syn_dat2. Take the data in that data frame and fit a linear model with drug concentration as predictor and cholesterol level as outcome. Also fit a logistic model with drug concentration as predictor and adverse events as outcome. For each model, provide model performance diagnostics. Use the tidyverse packages for data manipulation tasks, and the tidymodels framework for model fitting. For each function call, use explicit notation to specify from which R package the function comes from. Add thorough documentation to your code so it’s clear what each line of code does.</p>
-<p>COPY AND PASTE <a href="../../../code/synthetic-data-new-R-example-2-code.R">THIS CODE</a> HERE</p>
+<p>COPY AND PASTE <a href="../../../code/synthetic-data-new-r-example-2-code.R">THIS CODE</a> HERE</p>
 </div>
 <p>I fed this to Microsoft Copilot in Precise mode. I also omitted the parts of the code after the data frame has been generated.</p>
 <p><a href="../../../code/bing-analyze-example1.R">This is what I got back</a>. Again looks promising but doesn’t work. I then gave it this prompt:</p>

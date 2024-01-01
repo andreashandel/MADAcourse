@@ -23,7 +23,7 @@ The assumption is that you have some code (likely AI generated, but could also b
 # Fixing through iteration
 
 The most basic approach is to just feed the AI non-working code and tell it to fix it.
-Here is an example continued from the non-working code we had at the end of the [AI and code writing unit](../ai-write-code-R/ai-write-code-R.qmd). 
+Here is an example continued from the non-working code we had at the end of the [AI and code writing unit](../ai-write-code-r/ai-write-code-r.qmd). 
 To mimic a general setting, with code possibly produced earlier or not by the AI, I started a new session with the Bing AI in 'precise' mode and gave it this prompt.
 
 ::: prompt

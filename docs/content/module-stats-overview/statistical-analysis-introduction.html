@@ -747,7 +747,7 @@ ul.task-list li input[type="checkbox"] {
 <p>In this Unit, we will take another look at the whole data analysis process. Here, we focus on the actual (statistical) analysis (which I also call model fitting) component of the data analysis process. A general conceptual understanding is useful before we jump into looking at and applying specific modeling/statistical approaches.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="../../media/vadlo_statistics.png" class="lightbox" title="Source: VALDO.com" data-gallery="quarto-lightbox-gallery-1"><img src="../../media/vadlo_statistics.png" class="img-fluid figure-img" style="width:50.0%" alt="A comic of two scientists standing in front of a lab bench that has electrophoresis gel printouts scattered on it. One says to the other 'Data don't make any sense, we will have to resort to statistics.'"></a></p>
+<p><a href="../../media/vadlo_statistics.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Source: VALDO.com"><img src="../../media/vadlo_statistics.png" class="img-fluid figure-img" style="width:50.0%" alt="A comic of two scientists standing in front of a lab bench that has electrophoresis gel printouts scattered on it. One says to the other 'Data don't make any sense, we will have to resort to statistics.'"></a></p>
 <figcaption class="figure-caption">Source: VALDO.com</figcaption>
 </figure>
 </div>
@@ -780,11 +780,11 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="data-analysis-types" class="level1">
 <h1>Data Analysis Types</h1>
-<p>The following way of categorizing types of data analyses follows <a href="https://leanpub.com/artofdatascience"><em>The Art of Data Science (ADS)</em></a> – specifically, chapter 3. Now might be a good time to give that chapter another quick re-read. A very similar, shortened version of the ADA chapter 3 discussion can be found in <a href="../../media/leek15science.pdf">Jeff Leek and Roger Peng’s article</a>. The following figure from their paper gives a good summary of what follows.</p>
+<p>The following way of categorizing types of data analyses follows <a href="https://leanpub.com/artofdatascience"><em>The Art of Data Science (ADS)</em></a> – specifically, chapter 3. Now might be a good time to give that chapter another quick re-read. A very similar, shortened version of the ADA chapter 3 discussion can be found in <a href="../../references/leek15science.pdf">Jeff Leek and Roger Peng’s article</a>. The following figure from their paper gives a good summary of what follows.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="../../media/data-analysis-chart.jpg" class="lightbox" title="Source: Leek and Peng 2015" data-gallery="quarto-lightbox-gallery-2"><img src="../../media/data-analysis-chart.jpg" class="img-fluid figure-img" alt="Data analysis flow chart with questions that lead to the types of data analysis: causal, mechanistic, inferential, predictive, exploratory, and descriptive."></a></p>
-<figcaption class="figure-caption">Source: <a href="../../media/leek15science.pdf">Leek and Peng 2015</a></figcaption>
+<p><a href="../../media/data-analysis-chart.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Source: Leek and Peng 2015"><img src="../../media/data-analysis-chart.jpg" class="img-fluid figure-img" alt="Data analysis flow chart with questions that lead to the types of data analysis: causal, mechanistic, inferential, predictive, exploratory, and descriptive."></a></p>
+<figcaption class="figure-caption">Source: <a href="../../references/leek15science.pdf">Leek and Peng 2015</a></figcaption>
 </figure>
 </div>
 <p>The most straightforward analysis is a <strong>descriptive</strong> one. At that stage, you process, summarize and present the data, and do not go further. You don’t need to fit any statistical models. A lot of data collected by surveillance systems or government agencies falls into the descriptive category. For most scientific projects, we often start with a descriptive presentation. E.g. <em>Table 1</em> in a study often describes and summarizes the data source. Note that some authors have the bad habit of including model fitting quantities, such as p-values, in a descriptive table. Measures that involve fitting a model (such as p-values), go beyond a descriptive analysis and <a href="https://discourse.datamethods.org/t/reference-collection-to-push-back-against-common-statistical-myths/1787#p-values-in-table-1-of-randomized-trials-2">should therefore generally not be in a descriptive table</a>.</p>
@@ -812,7 +812,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="further-reading" class="level1">
 <h1>Further reading</h1>
 <p>For some additional (as well as overlapping) information to what I wrote, read <a href="https://statlearning.com/">Chapters 1 and 2.1. <em>An Introduction to Statistical Learning</em> (ILS)</a>. You don’t need to work through it in detail and can skip over the math bits if you want to. But do try to get an overall idea of the concepts these chapters are trying to convey. <a href="https://bradleyboehmke.github.io/HOML/">Chapter 1 of <em>HMLR</em></a> is another good source that you should skim through. Again, try to get the main points (which will of course overlap with the text above and the other readings).</p>
-<p>This recent paper <a href="../../media/tredennick21ecology.pdf"><em>A practical guide to selecting models for exploration, inference, and prediction in ecology</em></a> provides a nice discussion of different modeling goals and what approaches one should use. We have not yet discussed some of these approaches, but will soon. You could skim through the paper now, then revisit later once we covered more of the topics discussed in there.</p>
+<p>This recent paper <a href="../../references/tredennick21ecology.pdf"><em>A practical guide to selecting models for exploration, inference, and prediction in ecology</em></a> provides a nice discussion of different modeling goals and what approaches one should use. We have not yet discussed some of these approaches, but will soon. You could skim through the paper now, then revisit later once we covered more of the topics discussed in there.</p>
 
 
 </section>
@@ -1078,7 +1078,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"loop":false,"selector":".lightbox","openEffect":"zoom","closeEffect":"zoom","descPosition":"right"});</script>
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":false,"openEffect":"zoom","descPosition":"right","closeEffect":"zoom"});</script>
 
 
 

@@ -808,7 +808,7 @@ data &lt;- data.frame(
 <div class="prompt">
 <p>Update the code such that males and females are randomly distributed, make sure that males are on average heavier than females, and compute values for BMI as a function of weight with some random variation added.</p>
 </div>
-<p>With this prompt, I got <a href="../../code/bing-iterate-example-update2.R">this further updated code</a>, here are again the relevant bits:</p>
+<p>With this prompt, I got <a href="../../../code/bing-iterate-example-update2.R">this further updated code</a>, here are again the relevant bits:</p>
 <div class="output">
 <pre><code># Generate a dataset of 100 individuals
 data &lt;- data.frame(
@@ -829,7 +829,7 @@ data &lt;- data.frame(
 # Convert weight from pounds to kg (1 pound = 0.453592 kg)
 data$bmi &lt;- (data$weight * 0.453592) / (1.75^2) + rnorm(100)</code></pre>
 </div>
-<p>That looks better. However, when you try to run it, you’ll find that it doesn’t work. The problem is that it tries to use the variable <code>sex</code> before that data frame is defined. So we need to fix that code. We could of course do it by hand, but we can also see if we can get the AI to fix its own code. Which brings us to the next unit <a href="../ai-fix-code/ai-fix-code-R">on using AI to fix code</a>.</p>
+<p>That looks better. However, when you try to run it, you’ll find that it doesn’t work. The problem is that it tries to use the variable <code>sex</code> before that data frame is defined. So we need to fix that code. We could of course do it by hand, but we can also see if we can get the AI to fix its own code. Which brings us to the next unit <a href="../../../content/module-ai/ai-fix-code-r/ai-fix-code-r.html">on using AI to fix code</a>.</p>
 </section>
 <section id="summary" class="level1">
 <h1>Summary</h1>

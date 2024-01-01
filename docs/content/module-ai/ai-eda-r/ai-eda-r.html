@@ -782,7 +782,7 @@ ul.task-list li input[type="checkbox"] {
 <p>Bing and the free ChatGPT version currently do not provide a way to upload data.</p>
 <p>If you have fairly simple dataset, you can paste it directly into the prompt.</p>
 <p>Here is an example. This dataset comes from the first example in the<br>
-<a href="../../module-synthetic-data/synthetic-data-new-R/synthetic-data-new-R.qmd">Generating synthetic data with R</a> unit. I opened the CSV file, and copied the whole thing into the prompt:</p>
+<a href="../../../content/module-synthetic-data/synthetic-data-new-r/synthetic-data-new-r.html">Generating synthetic data with R</a> unit. I opened the CSV file, and copied the whole thing into the prompt:</p>
 <div class="prompt">
 <p>Perform an exploratory data analysis using R code of the following data set:</p>
 <p>PASTE DATA HERE</p>
@@ -800,7 +800,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="prompt">
 <p>Write R code to perform an exploratory data analysis of the attached CSV file.</p>
 </div>
-<p>I received <a href="../../../code/claude-eda-example1.R">this code</a> from the AI. It runs and produces some figures. Of course, as you learned previously, it would be better if I provided a much more specific prompt, saying exactly what kind of tables and figures I want to see as output. But you get the idea.</p>
+<p>I received <a href="../../../code/claude-eda-example.R">this code</a> from the AI. It runs and produces some figures. Of course, as you learned previously, it would be better if I provided a much more specific prompt, saying exactly what kind of tables and figures I want to see as output. But you get the idea.</p>
 <p>Claude allows you (as of this writing) to upload a maximum of 5 files with 10MB each. While that prevents you to perform EDA on very large datasets, it should be enough for many purposes, and is definitely more than the limit for the copy and paste method described above.</p>
 </section>
 <section id="copilot" class="level1">
@@ -808,7 +808,7 @@ ul.task-list li input[type="checkbox"] {
 <p>I tried using Copilot to help with EDA, but it wasn’t very successful. This screenshot shows an example of me trying to get it to produce a scatterplot. It didn’t work, Copilot did not return any suggestion. It did suggest the other lines of code. I’m not sure if I’m just not using Copilot correctly, maybe you’ve got better luck. It doesn’t hurt turning it on and trying to see if it can help you. If you find it useful, let me know so I can update this.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="../../../media/copilot-screenshot.png" class="lightbox" title="Copilot coding attempt" data-gallery="quarto-lightbox-gallery-1"><img src="../../../media/copilot-screenshot.png" class="img-fluid figure-img" alt="A screenshot of some R code showing an attempt to get Copilot to create a scatterplot, with copilot not returning any suggestion."></a></p>
+<p><a href="../../../media/copilot-screenshot.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Copilot coding attempt"><img src="../../../media/copilot-screenshot.png" class="img-fluid figure-img" alt="A screenshot of some R code showing an attempt to get Copilot to create a scatterplot, with copilot not returning any suggestion."></a></p>
 <figcaption class="figure-caption">Copilot coding attempt</figcaption>
 </figure>
 </div>
@@ -1098,7 +1098,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"descPosition":"right","openEffect":"zoom","selector":".lightbox","closeEffect":"zoom","loop":false});</script>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","descPosition":"right","loop":false,"openEffect":"zoom"});</script>
 
 
 

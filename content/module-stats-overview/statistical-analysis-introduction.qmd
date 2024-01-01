@@ -91,11 +91,11 @@ Art of Data Science (ADS)*](https://leanpub.com/artofdatascience) --
 specifically, chapter 3. Now might be a good time to give that chapter
 another quick re-read. A very similar, shortened version of the ADA
 chapter 3 discussion can be found in [Jeff Leek and Roger Peng's
-article](../../media/leek15science.pdf). The following figure from their
+article](/references/leek15science.pdf). The following figure from their
 paper gives a good summary of what follows.
 
 ![Source: [Leek and Peng
-2015](../../media/leek15science.pdf)](../../media/data-analysis-chart.jpg){fig-width="80%"
+2015](/references/leek15science.pdf)](/media/data-analysis-chart.jpg){fig-width="80%"
 fig-alt="Data analysis flow chart with questions that lead to the types of data analysis: causal, mechanistic, inferential, predictive, exploratory, and descriptive."}
 
 The most straightforward analysis is a **descriptive** one. At that
@@ -269,7 +269,7 @@ the other readings).
 
 This recent paper [*A practical guide to selecting models for
 exploration, inference, and prediction in
-ecology*](../../media/tredennick21ecology.pdf) provides a nice
+ecology*](/references/tredennick21ecology.pdf) provides a nice
 discussion of different modeling goals and what approaches one should
 use. We have not yet discussed some of these approaches, but will soon.
 You could skim through the paper now, then revisit later once we covered

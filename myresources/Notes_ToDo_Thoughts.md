@@ -76,6 +76,10 @@ file.rename(files, tolower(files))
 
 # Notes from Quarto conversion by Jadey
 
+## Checking links for 404 or other errors
+
+After publishing, I like to run the site url through [Dr Link Check](https://www.drlinkcheck.com/) and fix links accordingly.
+
 ## Emojis
 
 Quarto allows you to insert emojis without the `emoji` package.
