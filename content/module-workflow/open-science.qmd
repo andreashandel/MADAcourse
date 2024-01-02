@@ -96,15 +96,13 @@ more detail on each of these topics.
 
 Open access publishing is a big topic, but for the purposes of this
 class I will just say that I think you should publish Open Access
-whenever possible. While you're a student at UGA, [our library has a
-fund](https://www.libs.uga.edu/openaccessfund) that can help you with
-this. In the future, it seems likely that any federally funded projects
+whenever possible. In the future, it seems likely that any federally funded projects
 in the US will require an open access fund as part of the budget, as
 publishing OA can often be prohibitively expensive. If you want to learn
 more, check out the [Wikipedia page on Open
 Access](https://en.wikipedia.org/wiki/Open_access), or if you *really*
 want to learn more, see [Peter Suber's book on
-OA](https://dash.harvard.edu/bitstream/handle/1/10752204/9780262517638_Open_Access.pdf).
+OA](https://direct.mit.edu/books/oa-monograph/3754/Open-Access).
 
 The main purpose of this section is to talk about data sharing. Data
 sharing used to be a pretty contentious topic, but fortunately it is
