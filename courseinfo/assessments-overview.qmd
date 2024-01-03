@@ -22,7 +22,7 @@ The quizzes cover the basics and ensure that you have gone through some of the m
 Quizzes are auto-graded on submission based on a simple counting of the right answers. At the end, I'll average across all quizzes. Note that since there are >10 quizzes and all quizzes together count for only a fraction of the total grade, each quiz counts for a small part of your grade. So try to get them as correct and complete as possible, but don't stress out about missing a question here and there.
 
 ::: {.note}
-The link to the website for quiz submission is in the *important-information* Discord channel. Before submitting any quizzes, you need to set up a password by filling the Google Form that was shared with you in the welcome email. The link to the Google Form can also be found in the *important-information* Discord channel.
+The link to the website for quiz submission is in the *important-information* Discord channel. Before submitting any quizzes, you need to set up a user name and password by filling the Google Form that was shared with you in the welcome email. The link to the Google Form can also be found in the *important-information* Discord channel. The submission system becomes available once everyone has submitted their user names/passwords.
 
 Unless otherwise specified, you can submit each quiz once, and it needs to be submitted by the deadline (generally Fridays), otherwise the system will not take your submission.
 :::

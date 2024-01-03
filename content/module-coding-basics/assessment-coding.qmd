@@ -9,13 +9,22 @@ subtitle: ""
 
 Get the quiz sheet for this module from the general [**Assessments**](../../courseinfo/assessments-overview.qmd) page. Fill it in, then submit to the online grading system before the deadline. 
 
+# Discussion
+
+Describe one thing you learned in this module about R that you find rather annoying or confusing or dumb, and one thing about R that you find interesting or cool or awesome.
+
+Then comment/reply to your classmates posts.
+
+
 # Exercise
 
 This project asks you to write code to do a simple data analysis. This also involves group work, and of course GitHub. 
 
 **The first part of the project is due by Wednesday, so your classmate can do their part before the Friday deadline.**
 
-**Since this will be part of your portfolio site, and you already posted a link to that previously, you don't need to post anything, I know where to find it. Therefore there is no exercise Slack channel for this module.**
+::: emphasis
+As a reminder, you are allowed to use AI tools for this - or any other - task in this course. If you do, I suggest you add comments to your R/Quarto files to indicate where and how you used AI.
+:::
 
 ## Group setup
 
@@ -23,7 +32,7 @@ Assign each member in your group an (arbitrary) number (I'm calling them M1, M2,
 
 
 ## Getting started
-Open **your portfolio website project** in RStudio. Then open the file for the coding exercise, `coding_exercise.qmd`.
+Open **your portfolio website project** in RStudio. Then open the file for the coding exercise, `coding-exercise.qmd`.
 
 :::note
 Documenting well is very important! Add lots of comments to your code/file. I suggest that your code should be more than half comments. For every block of code, you have a few lines of comments at the beginning explaining what the code block does, and then each line of code gets its separate line of comment with more details. Comment on both the how and why of your code. This much commentary might seem overkill initially. But as your code gets more complex, it will be very useful. Both your collaborators, and your future self looking at the code you wrote several weeks ago will be incredibly thankful for your comments!
@@ -72,7 +81,7 @@ Write code that assigns only the African countries to a new object/variable call
 Take the `africadata` object and create two new objects  (name them whatever you want), one that contains only `infant_mortality` and `life_expectancy` and one that contains only `population` and `life_expectancy`. You should have two new objects/variables with 2907 rows and two columns. Use the `str`, and `summary` commands to take a look at both.
 
 :::note
-I find it the least confusing to call *things which store values in R* `objects` (e.g., `x` is an object here: `x <- 2 + 2`) and reserve the word `variable` for a data variable, i.e., usually a column. However, it is common in programming to refer to an `object` as a `variable` as well. Because of that, I sometimes use that terminology (inadvertently) too. So if I talk about a variable, you need to determine from the context if I mean a certain variable in the data (e.g. height or weight), or a variable in R (e.g. `x` or `result`) that stores some content.
+I find it the least confusing to call *things which store values in R* `objects` (e.g., `x` is an object here: `x <- 2 + 2`) and reserve the word `variable` for a data variable, i.e., usually a column. However, it is common in programming to also refer to an `object` as a `variable`. Because of that, I sometimes use that terminology (inadvertently) too. So if I talk about a variable, you need to determine from the context if I mean a certain variable in the data (e.g. height or weight), or a variable in R (e.g. `x` or `result`) that stores some content.
 :::
 
 
@@ -102,7 +111,7 @@ Use the `lm` function and fit life expectancy as the outcome, and infant mortali
 
 ## Sending updates to Github
 
-Once you are done with your exercise, re-build your website. Make sure no error messages show up. A preview should show up, check that the page for this exercise looks the way you want it to. Once you are happy with how everything looks, close RStudio. Go to GitKraken, commit your changes, and push to the remote repository. Check your portfolio website online to make sure you can now see the newly created R exercise document (in addition to your previously created `About` page). Of course, at any point, feel free to make further enhancements to your portfolio website.
+Once you are done with your exercise, re-build your portfolio website. Make sure no error messages show up. A preview should show up, check that the page for this exercise looks the way you want it to. Once you are happy with how everything looks, close RStudio. Go to GitKraken, commit your changes, and push to the remote repository. Check your portfolio website online to make sure you can now see the newly created R exercise document (in addition to your previously created `About` page). Of course, at any point, feel free to make further enhancements to your portfolio website.
 
 
 ## Improving each other's work
@@ -110,8 +119,10 @@ Once you are done with your exercise, re-build your website. Make sure no error 
 Once everyone has done their part (by **Wednesday** at the latest), you'll contribute to another group member's project. 
 
 
-# Discussion
 
-Describe one thing you learned in this module about R that you find rather annoying or confusing or dumb, and one thing about R that you find interesting or cool or awesome.
 
-Then comment/reply to your classmates posts.
+::: note
+Since this will be part of your portfolio site, and you already posted a link to that previously, you don't need to post anything, I know where to find it. 
+:::
+
+

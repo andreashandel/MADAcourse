@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -736,7 +736,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2024-01-01</p>
+      <p class="date-modified">2024-01-02</p>
     </div>
   </div>
     
@@ -750,7 +750,7 @@ ul.task-list li input[type="checkbox"] {
 <p>For this unit, we will discuss different types of data and how data type influences the analysis approach.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="../../media/dilbert_wrongdata.gif" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="You might not want to get yourself that kind of data. Source: dilbert.com."><img src="../../media/dilbert_wrongdata.gif" class="img-fluid figure-img" alt="A Dilbert comic strip in three panels. In the first panel, Dilbert's boss says to use the CRS database to size the market, and Dilbert replies 'That data is wrong'. In the second panel, the boss says 'Then use the SIBS database,' to which Dilbert replies, 'That data is also wrong.' In the third and last panel, the boss says 'Can you average them?' and Dilbert replies 'Sure. I can multiply them too.'"></a></p>
+<p><a href="../../media/dilbert_wrongdata.gif" class="lightbox" title="You might not want to get yourself that kind of data. Source: dilbert.com." data-gallery="quarto-lightbox-gallery-1"><img src="../../media/dilbert_wrongdata.gif" class="img-fluid figure-img" alt="A Dilbert comic strip in three panels. In the first panel, Dilbert's boss says to use the CRS database to size the market, and Dilbert replies 'That data is wrong'. In the second panel, the boss says 'Then use the SIBS database,' to which Dilbert replies, 'That data is also wrong.' In the third and last panel, the boss says 'Can you average them?' and Dilbert replies 'Sure. I can multiply them too.'"></a></p>
 <figcaption class="figure-caption">You might not want to get yourself that kind of data. Source: dilbert.com.</figcaption>
 </figure>
 </div>
@@ -824,7 +824,7 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>Matrices:</strong> A matrix is a collection of elements in rows and columns. A matrix can contain only one element type. You can think of a matrix as a collection of <code>horizontal vectors</code> stacked on top of each other or <code>vertical vectors</code> next to each other.</p>
 <p><strong>Data frames:</strong> A data frame has the same shape as a matrix, i.e., it is a collection of elements in rows and columns. The critical difference is that each column of a data frame can contain elements of different types. This makes it ideal for storing data, with each row and observation and each variable in a column, and different columns potentially with different data types. E.g., column 1 could be age and numeric, and column 2 could be gender and be categorical, etc.</p>
 <p><strong>A list:</strong> Lists are the most flexible data types in R. You can combine different elements as in data frames. Further, each element can be of varying length. For instance, you could have the first list element contain a person’s name, the second list element their age, the third their address. You can even have other elements inside lists, for instance, you could have a data frame as a list element containing the names and ages of the person’s parents. Lists are very flexible, and if you get deeper into data analysis, you’ll be working with them. The downside is that because they are more flexible, they can also be a bit more confusing to work with. With enough practice, you’ll figure it out. Also note that almost every function in R that returns something a bit more complicated to you (e.g., the result from a linear fit), returns it as a list.</p>
-<p>Other types of data structures exist; they are often introduced by specific R packages. An important one to know is the <code>tibble</code> which is a type of data frame used in the <code>tidyverse</code>. It is similar, but not exactly like a data frame. You can read more about <code>tibbles</code> <a href="https://tibble.tidyverse.org/">on its package website</a> and in <a href="https://r4ds.hadley.nz/tibbles.html"><em>R4DS</em> chapter 10</a>.</p>
+<p>Other types of data structures exist; they are often introduced by specific R packages. An important one to know is the <code>tibble</code> which is a type of data frame used in the <code>tidyverse</code>. It is similar, but not exactly like a data frame. You can read more about <code>tibbles</code> <a href="https://tibble.tidyverse.org/">on its package website</a>.</p>
 <p>For some more information, you can check out this video by <a href="http://jtleek.com/">Jeff Leek</a> where he talks about the types of data and structures I described above. He also shows some R/coding examples and discusses the important concept of missing values and <code>NA</code>.</p>
 <div class="container">
 <iframe class="video" src="https://www.youtube.com/embed/T9n7j8180GQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
@@ -1107,7 +1107,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"right","openEffect":"zoom","closeEffect":"zoom","loop":false});</script>
+<script>var lightboxQuarto = GLightbox({"descPosition":"right","closeEffect":"zoom","selector":".lightbox","loop":false,"openEffect":"zoom"});</script>
 
 
 

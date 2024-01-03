@@ -3,7 +3,7 @@ title: Assessment - Data Analysis
 subtitle: ""
 ---
 
-## Quiz
+# Quiz
 
 Get the quiz sheet for this module from the general [**Assessments**](../../courseinfo/assessments-overview.qmd) page. Fill it in, then submit to the online grading system before the deadline.
 
@@ -13,27 +13,23 @@ Look online and find an example of a research project that provides (or claims t
 
 Then take a look at a few of your classmates' postings and discuss/comment on what they found. **Do so by the Friday deadline.**
 
-## Exercise
+# Exercise
 
 For this exercise, you will get more GitHub practice and do parts of a very small data analysis. You will start doing group work.
 
 ### Group setup
 
-If you haven't already, find your group. You can find that information in the pinned post in the `announcements` channel. Get in touch with your group members. You will need to exchange GitHub user names. Assign each group member an (arbitrary) number (I'm calling them M1, M2, ...). You will start working in your portfolio repository and finish this part by Wednesday. Then M2 will contribute to M1's repository, M3 will work on M2s, etc. M1 will contribute to the last person in the group (M3/M4/M5, based on the number of people in our group). This way, everyone will work on their own and one other group member's repository.
+Find your fellow group members and organize yourself. You can find group assignments in the `important-information` channel. Get in touch with your group members. You will need to exchange GitHub user names. Assign each group member an (arbitrary) number (I'm calling them M1, M2, ...). You will start working in your portfolio repository and finish this part by Wednesday. Then M2 will contribute to M1's repository, M3 will work on M2s, etc. M1 will contribute to the last person in the group (M3/M4/M5, based on the number of people in our group). This way, everyone will work on their own and one other group member's repository.
 
 **Because there are multiple parts to this exercise, the due dates are adjusted, see below.**
 
 ### Part 1
 
-Take a look inside the `starter-analysis-exercise` folder. You will find files and folders that provide a template for a data analysis.
-
-The Github repository with the full template is called [dataanalyis-template](https://github.com/andreashandel/dataanalysis-template), you'll be using it for your class project later in the course.
-
-Go to the github repository for the [dataanalysis-template](https://github.com/andreashandel/dataanalysis-template) and read the information in the `README.md` file (shown at the bottom of the repository website). You can ignore the bits about `renv`, we are not using that just yet.
+Take a look inside the `starter-analysis-exercise` folder. You will find files and folders that provide a template for a data analysis. This is a simplified version of a Github template called [dataanalyis-template](https://github.com/andreashandel/dataanalysis-template). You'll be using the full template for your class project later in the course. For now, go to the github repository for the [dataanalysis-template](https://github.com/andreashandel/dataanalysis-template) and read the information in the `README.md` file (shown at the bottom of the repository website). You can ignore the bits about `renv`, we are not using that just yet.
 
 Then take a look at the different folders, files, `readme` comments that you find inside the `starter-analysis-exercise` folder. Feel free to run the various R and Quarto scripts. The idea is that you get some familiarity with the whole setup to prepare you for the next steps.
 
-Now go ahead and open the `exampledata.xlsx` file (with Excel or a similar program) and adds 2 more columns to the data. One column should be something numeric, the other can be something consisting of (a few) different categories. As a (boring) example, you could add eye color and waist size. Feel free to come up with more creative attributes/variables to add. Also add descriptions of your new variables to the `Codebook` sheet. Once done, save the new data as **`exampledata2.xlsx`**.
+Now go ahead and open the `exampledata.xlsx` file (with Excel or a similar program) and add 2 more columns to the data. One column should be something numeric, the other can be something consisting of (a few) different categories. As a (boring) example, you could add eye color and waist size. Feel free to come up with more creative attributes/variables to add. Also add descriptions of your new variables to the `Codebook` sheet. Once done, save the new data as **`exampledata2.xlsx`**.
 
 Commit your changes (write a meaningful commit message) and push them to GitHub.com.
 
@@ -43,19 +39,19 @@ Commit your changes (write a meaningful commit message) and push them to GitHub.
 
 Based on the group setup you did above, tell the classmate who will be working on your project that it's ready and where to find it. Assuming you are M1, you would tell M2 that things are ready. At the same time, you should be notified by another classmate that their repository is ready for you (again, if you happen to be M1, it would be the last person in the group, say M4 or M5).
 
-You will work on your classmate's repository using what is called the **Fork and pull-request** workflow. You'll be using that multiple times throughout this class.
+You will work on your classmate's repository using what is called the **fork and pull-request** workflow. You'll be using that multiple times throughout this class.
 
 The basic idea is as follows. First, you make a copy of someone's GitHub repository. In GitHub terminology, that is called doing a *fork* of their repository. You can do that for any public repository.
 
 Next, you implement your improvements in the forked repository. Once you are done, you ask the owner of the original repository to incorporate the updates you made in the fork into their main repository. This last part is called issuing a **pull request**. You are requesting that the other person *pull* your changes into their repository, hence the at times confusing (at least for me) terminology. I prefer to think of them as *merge* requests or *sync* requests, i.e. you are requesting that they merge or sync your changes into their repository. You'll find the terminology *merge request* is used at times. If the person who controls the main repository likes your changes, they will *merge* your fork into the main branch. And just like that, you have contributed to some project becoming better! We will practice this *fork and pull* flow now.
 
-Find the repository of the team member you will contribute to and `Fork` their repository on `Github.com`. Clone it to your local machine, as you have done previously with your own repositories. In fact, this fork is now your own repository, you have it forever, even if the person who owns the original repository deletes theirs.
+Find the repository of the team member you will contribute to and *fork* their repository on `Github.com`. Next, clone it to your local machine, as you have done previously with your own repositories. In fact, this fork is now your own repository, you have it forever, even if the person who owns the original repository deletes theirs.
 
 Go into the `starter-analysis-exercise` folder and look at the `exampledata2.xlsx` file and information in `Codebook` to understand what new variables your classmate created.
 
-Find `processingfile.qmd` inside `/code/processing_code/`, make a copy of the file, call it `processingfile2.qmd`. Update the code in `processingfile2.qmd` such that it now loads the new data file called `exampledata2.xlsx`. Take a look at the new data. Add code to clean the new data as needed. Have the code save the updated data to `processeddata2.rds`.
+Find `processingfile.qmd` inside `/code/processing-code/`, make a copy of the file, call it `processingfile2.qmd`. Update the code in `processingfile2.qmd` such that it now loads the new data file called `exampledata2.xlsx`. Take a look at the new data. Add code to clean the new data as needed. Have the code save the updated data to `processeddata2.rds`.
 
-Next, open `eda.qmd` inside `/code/eda_code/` (EDA stands for exploratory data analysis). Make a copy, add code to the new file that creates a boxplot with the new categorical variable (whatever it is) on the x-axis, and height on the y-axis. Also create a scatterplot with weight on the x-axis and the new numerical variable on the y-axis. Save both figures to files.
+Next, open `eda.qmd` inside `/code/eda-code/` (EDA stands for exploratory data analysis). Make a copy, add code to the new file that creates a boxplot with the new categorical variable (whatever it is) on the x-axis, and height on the y-axis. Also create a scatterplot with weight on the x-axis and the new numerical variable on the y-axis. Save both figures to files.
 
 Once you wrote your code, confirm that it runs without problems and errors, and produces the expected results. Once everything is good, commit and push your changes to the remote. Note that this pushes to **your fork** (i.e. copy) of the repository.
 
@@ -73,15 +69,15 @@ On the main pull request site, you can do various things. If you don't like the 
 
 Once you finished the merging of their updates into your repository online, pull the latest version to your local computer.
 
-Next, find `statistical_analysis.R` inside `/code/analysis_code/`. Make a copy. Edit the code such that it fits a third linear model with `Height` as outcome and the 2 new variables as predictors. Save the result into `resulttable3.rds` into the appropriate results folder.
+Next, find `statistical-analysis.R` inside `/code/analysis-code/`. Make a copy. Edit the code such that it fits a third linear model with `Height` as outcome and the 2 new variables as predictors. Save the result into `resulttable3.rds` into the appropriate results folder.
 
 ::: note
 I'm sure you noticed that we switched from Quarto files to R scripts. I'm doing this to show you that either are fine. Sometimes it's better to combine code and text in one file. Sometimes just having code by itself is easier/better. In any case, you should add lots of comments and documentation to the Quarto or R file.
 :::
 
-Now we are ready to include the new findings. Open `Manuscript.qmd`. Add code to display the two new figures and the new table. Add a few sentences to each to explain what it shows and what it means.
+Now we are ready to include the new findings. Open `starter-analysis-report.qmd` inside the `products/report` folder. Add code to display the two new figures and the new table. Add a few sentences to each to explain what it shows and what it means.
 
-Once all is done, fully rebuild your website. Commit and push your changes. Go to your website URL to make sure the updated page with the new figures included shows up under the Starter Analysis Exercise project entry.
+Once all is done, fully rebuild your portfolio website. Commit and push your changes. Go to your website URL to make sure the updated page with the new figures included shows up under the Starter Analysis Exercise project entry.
 
 **You need to have this done by Friday evening. Since this will be part of your portfolio site, and you already posted a link to that previously, you don't need to post anything, I know where to find it. I will assess both the contribution of the repository owner and the classmate who added to this.**
 

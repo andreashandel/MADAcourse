@@ -6,7 +6,21 @@ Most general comments/thoughts are in the Notes and Thoughts document in the off
 
 -   I'm doing local rendering into the docs folder and syncing/pushing it instead of using gh-pages workflow.
 
-# ToDo
+# Andreas ToDo
+
+
+* Check portfolio template.
+
+Update data analysis template.
+
+Update portfolio template, include data analysis structure in there.
+
+
+
+
+
+
+# Old Todo, some addressed
 
 -   Is there an easier way to do internal referencing to files?
     Having to remember the local structure is unwieldy and fragile.

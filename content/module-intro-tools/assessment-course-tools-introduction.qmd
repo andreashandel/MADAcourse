@@ -17,11 +17,10 @@ Get the quiz sheet for this module from the general [**Assessments**](../../cour
 
 For this first module, you have 2 submission attempts. This allows you to get used to the submission system.
 
-Note that the quiz submission system will only become available once student passwords have been set.
 
 # Discussion
 
-The discussion for this module is all about introductions. For your original post, simply post the URL to the website you will create by doing the exercise below into the `introductions` Discord channel. **Do so by Wednesday 5pm.**
+The discussion for this module is all about getting to know each other. For your original post, complete the Exercise below, then post the URL to the website you createed by doing the exercise below into the `introductions` Discord channel. **Do so by Wednesday 5pm.**
 
 For your replies, visit some of your classmates websites and leave feedback as a reply to their initial post. **Do so by the Friday deadline.**
 
@@ -29,7 +28,7 @@ I hope this will allow you to start getting to know each other, even if only vir
 
 # Exercise
 
-For this exercise, you are asked to do start using Github, R, RStudio, and Quarto to create a website which will become your portfolio for this class. You'll write and post a short personal introduction of yourself.
+For this exercise, you are asked to start using Github, R, RStudio, and Quarto to create a website which will become your portfolio for this class. You'll write and post a short personal introduction of yourself.
 
 ### Workload Note
 
@@ -51,9 +50,14 @@ Next, **clone** the repository (which will be something like `https://github.com
 
 Once your repository is on your local computer, go into the folder and click on `online_portfolio.Rproj`, which should open RStudio. In the bottom right, you'll see a number of files and folders that are part of your repository/project. We'll edit a few of them as described below. The rest you can ignore for now, we'll come back to them in later exercises.
 
-In the top right panel in RStudio, you should see a `Build` tab. Click on it. It should show a `Render website` button, click it. You might get complaints about missing packages, if that's the case, install them. If everything works well, a local preview of your soon-to-be new website should open in your browser.
+In the top right panel in RStudio, you should see a `Build` tab. Click on it. It should show a `Render website` button, click it. You will probably get complaints about missing packages. If that's the case, install them. Once everything works and renders without problems, a local preview of your soon-to-be new website should open in your browser.
 
-If you got that far, let's create some content.
+::: note
+If for some reason, you can't see the `Build` tab in the top-right corner of RStudio, you can alternatively click on the `Terminal` tab (next to the `Console` tab). Type `quarto render` into the terminal and this should build your website (the RStudio button is basically just calling that command.)
+:::
+
+If you can't get this far and can't figure out what's going wrong, ask for help on Discord. 
+Once you got that far, let's create some content.
 
 ### Quarto content creation
 
@@ -72,7 +76,7 @@ Next, open `aboutme.qmd` and write some text introducing yourself, as follows:
 *If you make changes and want to see how they look, save your changes and rebuild the website. Load/refresh in your browser and it should show any changes.*
 
 ::: note
-This portfolio website and everything you put on there is public. So don't put anything on there that you are not ok with telling the world about.
+This portfolio website and everything you put on there is public. So don't put anything on there that you don't want to be publicly known.
 :::
 
 ### Website control

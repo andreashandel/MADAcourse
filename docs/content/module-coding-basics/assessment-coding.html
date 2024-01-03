@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -266,6 +266,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#quiz" id="toc-quiz" class="nav-link active" data-scroll-target="#quiz">Quiz</a></li>
+  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a></li>
   <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise">Exercise</a>
   <ul class="collapse">
   <li><a href="#group-setup" id="toc-group-setup" class="nav-link" data-scroll-target="#group-setup">Group setup</a></li>
@@ -279,7 +280,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#sending-updates-to-github" id="toc-sending-updates-to-github" class="nav-link" data-scroll-target="#sending-updates-to-github">Sending updates to Github</a></li>
   <li><a href="#improving-each-others-work" id="toc-improving-each-others-work" class="nav-link" data-scroll-target="#improving-each-others-work">Improving each other’s work</a></li>
   </ul></li>
-  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a></li>
   </ul>
 </nav>
     </div>
@@ -306,7 +306,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2024-01-01</p>
+      <p class="date-modified">2024-01-02</p>
     </div>
   </div>
     
@@ -319,18 +319,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>Quiz</h1>
 <p>Get the quiz sheet for this module from the general <a href="../../courseinfo/assessments-overview.html"><strong>Assessments</strong></a> page. Fill it in, then submit to the online grading system before the deadline.</p>
 </section>
+<section id="discussion" class="level1">
+<h1>Discussion</h1>
+<p>Describe one thing you learned in this module about R that you find rather annoying or confusing or dumb, and one thing about R that you find interesting or cool or awesome.</p>
+<p>Then comment/reply to your classmates posts.</p>
+</section>
 <section id="exercise" class="level1">
 <h1>Exercise</h1>
 <p>This project asks you to write code to do a simple data analysis. This also involves group work, and of course GitHub.</p>
 <p><strong>The first part of the project is due by Wednesday, so your classmate can do their part before the Friday deadline.</strong></p>
-<p><strong>Since this will be part of your portfolio site, and you already posted a link to that previously, you don’t need to post anything, I know where to find it. Therefore there is no exercise Slack channel for this module.</strong></p>
+<div class="emphasis">
+<p>As a reminder, you are allowed to use AI tools for this - or any other - task in this course. If you do, I suggest you add comments to your R/Quarto files to indicate where and how you used AI.</p>
+</div>
 <section id="group-setup" class="level2">
 <h2 class="anchored" data-anchor-id="group-setup">Group setup</h2>
 <p>Assign each member in your group an (arbitrary) number (I’m calling them M1, M2, …). For this exercise, everyone will first work on their own and finish this part by Wednesday. Then M1 will contribute to M2’s repository, M2 will work on M3, etc. The last person (M3/M4/M5, based on the number of people in our group), will work on M1’s repository. This way, everyone will work on their own and one group member’s repository. Details are given below.</p>
 </section>
 <section id="getting-started" class="level2">
 <h2 class="anchored" data-anchor-id="getting-started">Getting started</h2>
-<p>Open <strong>your portfolio website project</strong> in RStudio. Then open the file for the coding exercise, <code>coding_exercise.qmd</code>.</p>
+<p>Open <strong>your portfolio website project</strong> in RStudio. Then open the file for the coding exercise, <code>coding-exercise.qmd</code>.</p>
 <div class="note">
 <p>Documenting well is very important! Add lots of comments to your code/file. I suggest that your code should be more than half comments. For every block of code, you have a few lines of comments at the beginning explaining what the code block does, and then each line of code gets its separate line of comment with more details. Comment on both the how and why of your code. This much commentary might seem overkill initially. But as your code gets more complex, it will be very useful. Both your collaborators, and your future self looking at the code you wrote several weeks ago will be incredibly thankful for your comments!</p>
 <p>If you write R code, your comments will be lines that start with <code>#</code>. For QUarto or R Markdown files, you can either add comments as Markdown text above/below your code, and/or add comments inside your R code chunks. Both is ideal. R Studio allows you to quickly turn sections of a document into comments or un-comment them (In the <code>Code</code> section of the R Studio menu). That can be useful for turning on/off code during testing, or hiding some parts of text that’s just meant for you but not for the reader.</p>
@@ -366,7 +373,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Write code that assigns only the African countries to a new object/variable called <code>africadata</code>. Run <code>str</code> and <code>summary</code> on the new object you created. You should now have 2907 observations, down from 10545. Depending on how you do this, you might also notice that all the different categories are still kept in the <code>continent</code> (and other) variables, but show 0. R does not automatically remove categories of what in R is called a factor variable (a categorical variable) even if they are empty. We don’t have to worry about that just now, but something to keep in mind, it can sometimes lead to strange behavior.</p>
 <p>Take the <code>africadata</code> object and create two new objects (name them whatever you want), one that contains only <code>infant_mortality</code> and <code>life_expectancy</code> and one that contains only <code>population</code> and <code>life_expectancy</code>. You should have two new objects/variables with 2907 rows and two columns. Use the <code>str</code>, and <code>summary</code> commands to take a look at both.</p>
 <div class="note">
-<p>I find it the least confusing to call <em>things which store values in R</em> <code>objects</code> (e.g., <code>x</code> is an object here: <code>x &lt;- 2 + 2</code>) and reserve the word <code>variable</code> for a data variable, i.e., usually a column. However, it is common in programming to refer to an <code>object</code> as a <code>variable</code> as well. Because of that, I sometimes use that terminology (inadvertently) too. So if I talk about a variable, you need to determine from the context if I mean a certain variable in the data (e.g.&nbsp;height or weight), or a variable in R (e.g.&nbsp;<code>x</code> or <code>result</code>) that stores some content.</p>
+<p>I find it the least confusing to call <em>things which store values in R</em> <code>objects</code> (e.g., <code>x</code> is an object here: <code>x &lt;- 2 + 2</code>) and reserve the word <code>variable</code> for a data variable, i.e., usually a column. However, it is common in programming to also refer to an <code>object</code> as a <code>variable</code>. Because of that, I sometimes use that terminology (inadvertently) too. So if I talk about a variable, you need to determine from the context if I mean a certain variable in the data (e.g.&nbsp;height or weight), or a variable in R (e.g.&nbsp;<code>x</code> or <code>result</code>) that stores some content.</p>
 </div>
 </section>
 <section id="plotting" class="level2">
@@ -388,19 +395,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="sending-updates-to-github" class="level2">
 <h2 class="anchored" data-anchor-id="sending-updates-to-github">Sending updates to Github</h2>
-<p>Once you are done with your exercise, re-build your website. Make sure no error messages show up. A preview should show up, check that the page for this exercise looks the way you want it to. Once you are happy with how everything looks, close RStudio. Go to GitKraken, commit your changes, and push to the remote repository. Check your portfolio website online to make sure you can now see the newly created R exercise document (in addition to your previously created <code>About</code> page). Of course, at any point, feel free to make further enhancements to your portfolio website.</p>
+<p>Once you are done with your exercise, re-build your portfolio website. Make sure no error messages show up. A preview should show up, check that the page for this exercise looks the way you want it to. Once you are happy with how everything looks, close RStudio. Go to GitKraken, commit your changes, and push to the remote repository. Check your portfolio website online to make sure you can now see the newly created R exercise document (in addition to your previously created <code>About</code> page). Of course, at any point, feel free to make further enhancements to your portfolio website.</p>
 </section>
 <section id="improving-each-others-work" class="level2">
 <h2 class="anchored" data-anchor-id="improving-each-others-work">Improving each other’s work</h2>
 <p>Once everyone has done their part (by <strong>Wednesday</strong> at the latest), you’ll contribute to another group member’s project.</p>
-</section>
-</section>
-<section id="discussion" class="level1">
-<h1>Discussion</h1>
-<p>Describe one thing you learned in this module about R that you find rather annoying or confusing or dumb, and one thing about R that you find interesting or cool or awesome.</p>
-<p>Then comment/reply to your classmates posts.</p>
+<div class="note">
+<p>Since this will be part of your portfolio site, and you already posted a link to that previously, you don’t need to post anything, I know where to find it.</p>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
