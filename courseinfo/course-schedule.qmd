@@ -29,7 +29,6 @@ The *Assessments* column lists items that need to be submitted and that will be 
 | Finishing Project                                     | 4/15 -- 4/19            | **project part 5** due Friday 4/21, 5pm                    |
 | Project Reviews                                       | 4/22 -- 4/26            | project reviews due Friday 4/28, 5pm                       |
 | Final project revision                                | 4/29 -- 5/3             | **project part 6** due Friday 5/5, 5pm                     |
-| Module 14 -- AI & deep learning introduction          | none                    | none - this module is optional material                    |
 
 *Note: Withdrawal deadline is Thursday 3/21.*
 

@@ -39,6 +39,19 @@ While AI is very good in doing specific, well-prescribed tasks, it can also be u
 I haven't heard this idea too much, but it seems to me that long-term, AI is going to be a bit like electricity. It's going to be everywhere, it will power a lot of the environment around us, and it will become both more ubiquitous and possibly also more invisible. We use electricity all the time, and we rarely think about it. My guess is that AI will become that way. It will be interesting to watch how we get there. In the early days of electricity, there were fights about AC versus DC and lots of things were tried that didn't work and it took a while before we had a (kinda) functioning electric grid that mostly just works. It will take AI a while. But I think we need to be prepared to have it be part of "everything" in the not-too-distance future.
 
 
+# The composer/conductor and the orchestra
+
+This is another one I haven't seen online, but I'm sure I'm not the first one to think of it. In fact, I asked the LLM (Bing AI in creative mode) to give me its thoughts on this analogy with this prompt:
+
+::: prompt
+Write a half-page paragraph that compares an LLM AI user to a composer or conductor, and the LLM AI tool to an orchestra.
+:::
+
+The returned paragraph was pretty weak and not what I had in mind (try yourself, maybe you get something better). Here is my thought: The AI is a very versatile tool and you can do a lot of things with it, kinda like an orchestra. As a composer or conductor, you don't need to be able to play each instrument of the orchestra. But you do need to know enough about each instrument to compose meaningful instructions as to what everyone should play, and you should know what to expect, so when you tell the trumpets to play a certain tune, you should be able to assess if what they produce is what you have in mind, and correct as needed.
+
+Of course, this analogy goes beyond AI tools. We can say the same about other complex tools, for instance the `R` programming language or a car. You don't need to understand all the details of how these complex systems work under the hood (unless you want to become a full-time programmer or car mechanic), but you do need to know enough to give useful instructions, use them effectively, and critically assess what the machine returns and correct as needed. 
+
+
 # Summary
 
 I'm not sure these thoughts and musings about AI are useful. It helps me to find conceptual frameworks to think about new things. It might help you too. Or not 😁. 
