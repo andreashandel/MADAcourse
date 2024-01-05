@@ -380,7 +380,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-basics/model-fitting-R.qmd" class="sidebar-item-text sidebar-link">
+  <a href="../../content/module-model-basics/model-fitting-r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Fitting Statistical Models in R</span></a>
   </div>
 </li>
@@ -769,7 +769,7 @@ ul.task-list li input[type="checkbox"] {
 <p>I showed the figure below previously. I’m repeating it here as a refresher. The yellow model (straight line), in this example, has too much bias. The model is too simple to capture all the important patterns, and it <strong>underfits</strong> the data. The performance metric (mean square error here) is high for both the training and test/CV data (yellow squares on the left of the right panel.) The green model (very wiggly line) has too much variance. It goes too close to the data used for fitting and doesn’t generalize to new data, it <strong>overfits</strong> the data. This reflects itself in good performance (low MSE) for the train data, but high MSE for the test/CV data (green squares on left of the left panel) In this example, the blue model has the optimal model complexity. It captures the overall pattern in the data, without trying to fit the noise/variability. This manifests itself with the best performance on the test/CV data (blue squares).</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="../../media/islr-fig29.jpg" class="lightbox" title="Bias-variance tradeoff. Source: ISLR." data-gallery="quarto-lightbox-gallery-1"><img src="../../media/islr-fig29.jpg" class="img-fluid figure-img" alt="A scatterplot with two panels. The left panel shows several data points along with a few different models: a straight line, a curve that passes through the middle of the points, and a curve that oscillates frequently to hit many of the points. The right panel shows the MSE of these models against the training data, where the oscillating curve performs best, and also against new data, where the curve which oscillates less frequently performs best."></a></p>
+<p><a href="../../media/islr-fig29.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Bias-variance tradeoff. Source: ISLR."><img src="../../media/islr-fig29.jpg" class="img-fluid figure-img" alt="A scatterplot with two panels. The left panel shows several data points along with a few different models: a straight line, a curve that passes through the middle of the points, and a curve that oscillates frequently to hit many of the points. The right panel shows the MSE of these models against the training data, where the oscillating curve performs best, and also against new data, where the curve which oscillates less frequently performs best."></a></p>
 <figcaption class="figure-caption">Bias-variance tradeoff. Source: ISLR.</figcaption>
 </figure>
 </div>
@@ -1096,7 +1096,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","closeEffect":"zoom","loop":false,"selector":".lightbox","descPosition":"right"});</script>
+<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","loop":false,"descPosition":"right","closeEffect":"zoom","selector":".lightbox"});</script>
 
 
 

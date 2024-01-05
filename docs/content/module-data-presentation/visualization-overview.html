@@ -378,7 +378,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-basics/model-fitting-R.qmd" class="sidebar-item-text sidebar-link">
+  <a href="../../content/module-model-basics/model-fitting-r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Fitting Statistical Models in R</span></a>
   </div>
 </li>
@@ -731,7 +731,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2024-01-02</p>
+      <p class="date-modified">2024-01-05</p>
     </div>
   </div>
     
@@ -745,7 +745,7 @@ ul.task-list li input[type="checkbox"] {
 <p>In this unit, we will discuss visualization (a.k.a. making figures), what they are good for, and how to do them in R.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="../../media/xkcd-flowcharts.png" class="lightbox" title="Flowcharts are sometimes, but not always good visualization tools. Source: xkcd.com." data-gallery="quarto-lightbox-gallery-1"><img src="../../media/xkcd-flowcharts.png" class="img-fluid figure-img" style="width:60.0%" alt="A comic from the website XKCD. It shows an extremely confusing and illogical flowchart which includes a line chart, a battery charging circuit, a resistance diagram, a golden spiral, and an arrow that leads out of the containing box, among other things."></a></p>
+<p><a href="../../media/xkcd-flowcharts.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Flowcharts are sometimes, but not always good visualization tools. Source: xkcd.com."><img src="../../media/xkcd-flowcharts.png" class="img-fluid figure-img" style="width:60.0%" alt="A comic from the website XKCD. It shows an extremely confusing and illogical flowchart which includes a line chart, a battery charging circuit, a resistance diagram, a golden spiral, and an arrow that leads out of the containing box, among other things."></a></p>
 <figcaption class="figure-caption">Flowcharts are sometimes, but not always good visualization tools. Source: xkcd.com.</figcaption>
 </figure>
 </div>
@@ -779,8 +779,8 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="types-of-graphs" class="level1">
 <h1>Types of graphs</h1>
-<p>I am sure you are familiar with different graphs. Some are commonly used and widely overused (e.g., bar plots or pie charts). A nice discussion of bar graphs, why not to use them, and what to use instead can be found in <a href="https://osf.io/bsa46/">OSF’s presentation</a>, with this <a href="https://osf.io/h2q7w/">accompanying document</a> showing how to do it in R.</p>
-<p>others types of graphs are less frequently used (e.g., violin plots or hex bins). Instead of me providing summaries of different plots, read the Directory of Visualizations chapter of the excellent <a href="https://serialmentor.com/dataviz/"><em>Fundamentals of Data Visualization</em></a> book by <a href="https://clauswilke.com/">Claus Wilke</a>. That chapter provides a quick overview of many common and useful plots. Further chapters in his book describe specific types of plots in more detail, and also provide general best practices for making plots. You should definitely read through those sections describing plots that interest you the most. Also, note that all the graphs in his book are made with <code>ggplot2</code> and friends. He doesn’t show any code in the book, but if you dig through the Github repository for the book, you’ll likely be able to find code for specific figures.</p>
+<p>I am sure you are familiar with several common types of graphs, such as scatter plots, boxplots, and bar charts. Many more chart types exist, some are much better at conveying potentially complex information than the simple standard ones. An excellent resources is the <a href="https://www.data-to-viz.com/">From Data to Viz website</a>. It lists a lot of different graphs based on the kind of data you want to plot, and for each graph it gives a brief description and often a link to the <a href="https://r-graph-gallery.com/index.html">R Graph Gallery</a> which shows examples with code. Sometimes you start with data and are looking for the best way to plot it. Other times you see a great graph and want to know what it is called. These 2 websites are great resources for either situation.</p>
+<p>Another great source that provides an overview of different graphs is the <em>Directory of Visualizations</em> chapter of the excellent <a href="https://serialmentor.com/dataviz/"><em>Fundamentals of Data Visualization</em></a> book by <a href="https://clauswilke.com/">Claus Wilke</a>. Further chapters in his book describe specific types of plots in more detail, and also provide general best practices for making plots. If you are interested in specific types of plots and general concepts of visualization, skim through his book.</p>
 </section>
 <section id="further-visualization-resources" class="level1">
 <h1>Further visualization resources</h1>
@@ -1050,7 +1050,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","loop":false,"closeEffect":"zoom","descPosition":"right"});</script>
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":false,"descPosition":"right","closeEffect":"zoom","openEffect":"zoom"});</script>
 
 
 

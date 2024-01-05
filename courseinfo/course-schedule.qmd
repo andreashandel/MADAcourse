@@ -8,7 +8,10 @@ This is the current course schedule for the class. Things might change, so check
 
 The *Assessments* column lists items that need to be submitted and that will be graded. Those are described in more detail in an [**Assessments**](assessments-overview.qmd) page and in the assessment document for each module.
 
-**Unless otherwise specified, the first posting of the discussion is due by end of Wednesday, the discussion replies, the quizzes and exercises are due by end of Friday.**
+::: emphasis
+Unless otherwise specified, the first posting of the discussion is due by end of Wednesday, the discussion replies, the quizzes and exercises are due by end of Friday. Often, the exerises have multiple parts with earlier deadlines.
+:::
+
 
 | **Module Topic**                                      | **Start and end dates** | **Assessments**                                            |
 |-------------------------------------------------------|-------------------------|------------------------------------------------------------|

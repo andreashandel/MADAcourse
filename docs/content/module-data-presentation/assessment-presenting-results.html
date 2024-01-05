@@ -232,15 +232,14 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#quiz" id="toc-quiz" class="nav-link active" data-scroll-target="#quiz">Quiz</a></li>
+  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a></li>
   <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise">Exercise</a>
   <ul class="collapse">
-  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a></li>
   <li><a href="#find-a-graph-to-reproduce" id="toc-find-a-graph-to-reproduce" class="nav-link" data-scroll-target="#find-a-graph-to-reproduce">Find a graph to reproduce</a></li>
   <li><a href="#get-the-data" id="toc-get-the-data" class="nav-link" data-scroll-target="#get-the-data">Get the data</a></li>
-  <li><a href="#re-create-the-original-graph" id="toc-re-create-the-original-graph" class="nav-link" data-scroll-target="#re-create-the-original-graph">Re-create the original graph</a></li>
-  <li><a href="#provide-feedback" id="toc-provide-feedback" class="nav-link" data-scroll-target="#provide-feedback">Provide feedback</a></li>
+  <li><a href="#ask-ai-to-re-create-the-original-graph" id="toc-ask-ai-to-re-create-the-original-graph" class="nav-link" data-scroll-target="#ask-ai-to-re-create-the-original-graph">Ask AI to re-create the original graph</a></li>
+  <li><a href="#create-a-publication-quality-table" id="toc-create-a-publication-quality-table" class="nav-link" data-scroll-target="#create-a-publication-quality-table">Create a publication quality table</a></li>
   </ul></li>
-  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a></li>
   </ul>
 </nav>
     </div>
@@ -267,7 +266,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2024-01-02</p>
+      <p class="date-modified">2024-01-05</p>
     </div>
   </div>
     
@@ -280,47 +279,52 @@ ul.task-list li input[type="checkbox"] {
 <h1>Quiz</h1>
 <p>Get the quiz sheet for this module from the general <a href="../../courseinfo/assessments-overview.html"><strong>Assessments</strong></a> page. Fill it in, then submit to the online grading system before the deadline.</p>
 </section>
+<section id="discussion" class="level1">
+<h1>Discussion</h1>
+<p>Take a look at some of the figures your colleagues created and provide feedback. Hopefully, by looking at the different visualizations and code, you get a good idea for what can be done.</p>
+</section>
 <section id="exercise" class="level1">
 <h1>Exercise</h1>
-<p>For this exercise, you are asked to create (at least) one professional-looking graph and one professional looking table based on data you find online. This exercise will go into your portfolio.</p>
-<p>For motivation take a quick look at <a href="https://simplystatistics.org/posts/2019-08-28-you-can-replicate-almost-any-plot-with-ggplot2/">Rafael Irizarry’s blog post</a> (the author of the IDS book we’ve been using). He shows how one can use R and ggplot to reproduce figures that look very similar to professional ones. You’ll see that it usually doesn’t require that many lines of code to get an outstanding looking figure!</p>
+<p>This week is a break from group/team work, you’ll do this exercise on your own.</p>
+<p>For this exercise, you are asked to create a professional-looking graph and a professional looking table based on data you find online. This exercise will go into your portfolio.</p>
+<p>For motivation take a quick look at <a href="https://simplystatistics.org/posts/2019-08-28-you-can-replicate-almost-any-plot-with-ggplot2/">Rafael Irizarry’s blog post</a> (the author of the IDS book we’ve been using). You don’t need to read the blog post in detail, but skim through it. He shows how one can use R and ggplot to reproduce figures that look very similar to professional ones. You’ll see that it usually doesn’t require that many lines of code to get an outstanding looking figure!</p>
 <p>We’ll try to do that ourselves.</p>
-<section id="setup" class="level2">
-<h2 class="anchored" data-anchor-id="setup">Setup</h2>
-<p>We’ll do a bit of group work again. If you are a group of 4, team up in pairs. If you are a group of 3, do the “circular” pairing again. Everyone should do the visualization and comment on one other person’s exercise (via GitHub Issues as described below).</p>
-<p>Once you determined your partner(s) for this exercise, open your portfolio website project in RStudio. Then open the <code>visualization_exercise.qmd</code> file. We’ll use that file for this exercise.</p>
-</section>
 <section id="find-a-graph-to-reproduce" class="level2">
 <h2 class="anchored" data-anchor-id="find-a-graph-to-reproduce">Find a graph to reproduce</h2>
-<p>Find some interesting graph from a news website. My main suggestion is to look at graphs from <a href="https://fivethirtyeight.com/">FiveThirtyEight</a>. They are known to produce high-quality graphs, and for some of their stories and figures, they also provide the <a href="https://data.fivethirtyeight.com/">original data source</a>.</p>
-<p>Good starting points for a chart from FiveThirtyEight might be their annual summaries of weirdest charts, which you can find here for <a href="https://fivethirtyeight.com/features/the-40-weirdest-and-best-charts-we-made-in-2020/">2020</a>, <a href="https://fivethirtyeight.com/features/the-56-best-and-weirdest-charts-we-made-in-2019/">2019</a>, <a href="https://fivethirtyeight.com/features/the-45-best-and-weirdest-charts-we-made-in-2018/">2018</a>, <a href="https://fivethirtyeight.com/features/the-52-best-and-weirdest-charts-we-made-in-2016/">2016</a>, and <a href="https://fivethirtyeight.com/features/our-47-weirdest-charts-from-2015/">2015</a>. (No, I don’t know why there’s no 2017.)</p>
+<p>Find an interesting graph from a news website. The main requirements are that the original graph must be interesting and good looking (a basic scatter plot is not enough), AND that the graph is freely available online, not behind a pay-wall. Ideally, the data that went into making the graph should be available too. If it is not, you will have to go through the extra step of extracting the data from the graph using tools like <a href="https://datathief.org/">DataThief</a> or <a href="https://automeris.io/WebPlotDigitizer/">WebPlotDigitizer</a>.</p>
+<p>One suggestion is to look at graphs from <a href="https://fivethirtyeight.com/">FiveThirtyEight</a>. They are known to produce high-quality graphs, and for some of their stories and figures, they also provide the <a href="https://data.fivethirtyeight.com/">original data source</a>.</p>
+<p>Good starting points for a chart from FiveThirtyEight might be their annual summaries of weirdest charts, which you can find here for <a href="https://fivethirtyeight.com/features/our-47-weirdest-charts-from-2015/">2015</a>, <a href="https://fivethirtyeight.com/features/the-52-best-and-weirdest-charts-we-made-in-2016/">2016</a>, <a href="https://fivethirtyeight.com/features/the-45-best-and-weirdest-charts-we-made-in-2018/">2018</a>, <a href="https://fivethirtyeight.com/features/the-56-best-and-weirdest-charts-we-made-in-2019/">2019</a>, <a href="https://fivethirtyeight.com/features/the-40-weirdest-and-best-charts-we-made-in-2020/">2020</a>,<br>
+<a href="https://fivethirtyeight.com/features/our-51-best-and-weirdest-charts-of-2021/">2021</a>,<br>
+<a href="https://fivethirtyeight.com/features/best-charts-2022/">2022</a>. (No, I don’t know why there’s no 2017.)</p>
+<p>Or you can go straight to <a href="https://data.fivethirtyeight.com/">their data</a>, and see what graphs they produced with it and find a good one.</p>
 <p>If you can’t find a graph on FiveThirtyEight that you like and would like to reproduce, you are also allowed to check out other major news outlets (USA Today, NY Times, Wall Street Journal, The Guardian, etc.).</p>
-<p>The only requirements are that the original graph must be interesting and good looking (a basic scatterplot is not enough) and freely available online, not behind a paywall.</p>
-<p><em>If you already feel comfortable making graphs with <code>ggplot</code> and want to try something different, feel free to create an interactive graph using one of the many options for that (e.g., Shiny, plotly). You can also recreate a previous static graph and make it interactive (e.g., allowing people to turn on/off specific parts).</em></p>
 </section>
 <section id="get-the-data" class="level2">
 <h2 class="anchored" data-anchor-id="get-the-data">Get the data</h2>
-<p>Once you have a graph you’d like to reproduce, either extract (e.g, read off or some other extraction method) the data right from the graph or find the original data source. If neither is an option, move on to the next graph. Having access to the data is critical.</p>
-<p>Make a new folder in your repository, call it <code>data</code>. Place the data file you found or created inside that folder. If you found it, it will be in whatever format you got. If you made it yourself by extracting it from the original graph, I recommend a CSV file.</p>
+<p>As mentioned, you either need to have the data in a file, or you need to extract it from the graph and place it into a file. I recommend a CSV file.</p>
 </section>
-<section id="re-create-the-original-graph" class="level2">
-<h2 class="anchored" data-anchor-id="re-create-the-original-graph">Re-create the original graph</h2>
-<p>Once you have the data and the original graph, you’ll first need to add a few lines of code to your <code>visualization_exercise.Rmd</code> file to load the data, and if needed, do some cleaning.</p>
-<p>Then write R code to try and get as close as possible to the original graph. You will likely use ggplot2 &amp; friends, but if you want to use base R, lattice or another plotting approach that’s ok too, as long as everything happens with R code. The goal is to put in some effort to get close, but don’t spend an insane amount of time trying to make a perfect copy. A few (maybe 1-4) hours of working on this should suffice. If it still looks a bit different in the end, that’s ok.</p>
-<p>Your final product should be code and explanatory text that shows the original plot and links to its source, then shows your code that re-creates the graph, and finally shows your graph. Also, provide some additional information that helps readers understand how you went about making the plot. For instance, you should provide some additional text describing things you tried that did and didn’t work, or include links to sources from which you took inspiration, adapted your code, etc.</p>
-<p>Once done, re-build your website and make sure that your data visualization exercise shows up nicely. Then, post the link to your online page showing your visualization into the <strong>discussion</strong> channel for this module. Do that by Wednesday.</p>
+<section id="ask-ai-to-re-create-the-original-graph" class="level2">
+<h2 class="anchored" data-anchor-id="ask-ai-to-re-create-the-original-graph">Ask AI to re-create the original graph</h2>
+<p>Ask an AI of your choice (or try several) to re-create the original graph. I’m not sure what the best prompt is. You probably want to feed it the data and instructions on what kind of plot to make. I’m not sure if giving it the original plot, either as uploaded file or as a URL, will help. You can try. You will likely have to go through multiple iterations of asking the AI to update the code/figure.</p>
+<p>You will likely want to use ggplot2 &amp; friends, but if you want to use base R, lattice or another plotting approach that’s ok too, as long as everything happens with R code.</p>
+<div class="note">
+<p>If you already feel comfortable making high-quality graphs with <code>ggplot2</code> and want to try something different, feel free to create an interactive graph using one of the many options for that (e.g., Shiny, plotly). You can also recreate a previous static graph and make it interactive (e.g., allowing people to turn on/off specific parts).</p>
+</div>
+<p>Document your AI prompts in the <code>visualization-exercise.qmd</code> Quarto file. Also show the code that the AI produced. Depending on how many iterations you do, you don’t need to show the code for all intermediate steps.</p>
+<p>As needed, manually edit the code if the AI gets stuck. Try to get as close as possible to the original graph. You should end up with a Quarto file that shows your AI prompts, possibly intermediate code that the AI returned, and finally a fully working bit of code that loads/takes the data and re-produces the original plot. Also display the original plot next/below your reproduction for comparison.</p>
 </section>
-<section id="provide-feedback" class="level2">
-<h2 class="anchored" data-anchor-id="provide-feedback">Provide feedback</h2>
-<p>Once everyone has updated their portfolio website to contain their visualization exercise, find the one from your exercise partner and take a close look. Then go to their repository online and use the GitHub Issues feature to provide feedback on things you noticed that might need fixing, or something that you think could be further improved, or any other thought you have that might help your classmate further improve.</p>
-<p>The person receiving the feedback should look at the Issue, address it, then provide a comment to the Issue and if they think it’s fully addressed, they can close the Issue. Otherwise you can leave it open.</p>
-</section>
-</section>
-<section id="discussion" class="level1">
-<h1>Discussion</h1>
-<p>Take a look at some of the figures your colleagues created (other than the exercise partner you already reviewed), and provide general feedback. Hopefully, by looking at the different visualizations and code, you get a good idea for what can be done.</p>
+<section id="create-a-publication-quality-table" class="level2">
+<h2 class="anchored" data-anchor-id="create-a-publication-quality-table">Create a publication quality table</h2>
+<p>For this part, the easiest approach is to use the same data you used for the graph (or a subset of the data) and create a nice looking table.</p>
+<p>Alternatively, find a good-looking table somewhere online and try to recreate it. Of course, you need all data necessary to re-create the table. Often (but not always) that’s just the numbers in the table.</p>
+<p>Again, start with AI. You can let it decide which R table package to use, or you can specify that as part of your prompt. Use whichever R table package you like. <a href="https://gt.albert-rapp.de/">This tutorial</a> shows how to make nice tables with the <code>gt</code> package. Our group uses <a href="https://ardata-fr.github.io/flextable-book/">flextable</a> a lot.</p>
+<p>No matter what R package you use to make the table, it should look professional, visually pleasing, and nicely convey the information. For inspiration, you can for instance check out <a href="https://community.rstudio.com/c/table-gallery/64">this R table gallery</a>. The R graph gallery also has a <a href="https://r-graph-gallery.com/table.html">section on tables</a>.</p>
+<p>As for the graphs, feel free to make your table interactive.</p>
+<p>Add the code and explanatory text (e.g., your AI prompts) into a new section at the end of your Quarto document. Once this part is finished, you should have working code that generates a nice-looking table.</p>
+<p>Once all done, re-build your website and make sure that your data visualization exercise shows up nicely. Then, post the link to your online page showing your visualization into the <strong>discussion</strong> channel for this module. Do that <strong>by Wednesday</strong> so your classmates can take a look and comment by Friday.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

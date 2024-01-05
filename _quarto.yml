@@ -162,7 +162,7 @@ website:
              - text: "Basic Statistical Models"
                file: content/module-model-basics/basic-statistical-models.qmd
              - text: "Fitting Statistical Models in R"
-               file: content/module-model-basics/model-fitting-R.qmd
+               file: content/module-model-basics/model-fitting-r.qmd
           - section: "9. Evaluating Your Model Fits"
             contents:
              - text: "Model Evaluation Overview"
