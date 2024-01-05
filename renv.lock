@@ -840,6 +840,17 @@
       ],
       "Hash": "fedd9d00c2944ff00a0e2696ccf048ec"
     },
+    "dslabs": {
+      "Package": "dslabs",
+      "Version": "0.7.6",
+      "Source": "Repository",
+      "Repository": "RSPM",
+      "Requirements": [
+        "R",
+        "ggplot2"
+      ],
+      "Hash": "e425a4aa331a2e5dfa0a2eea90db2eac"
+    },
     "dtplyr": {
       "Package": "dtplyr",
       "Version": "1.3.1",

@@ -13,9 +13,9 @@ The *Assessments* column lists items that need to be submitted and that will be 
 | **Module Topic**                                      | **Start and end dates** | **Assessments**                                            |
 |-------------------------------------------------------|-------------------------|------------------------------------------------------------|
 | Module 1 -- Course and tools introduction             | 1/8 -- 1/12             | quiz, exercise (due Wed), discussion                       |
-| Module 2 -- Data analysis introduction                | 1/15 -- 1/19            | quiz, exercise (staggered completion dates), discussion    |
-| Module 3 -- R coding basics                           | 1/22 -- 1/26            | quiz, exercise (first part due Wed), discussion            |
-| Module 4 -- Contemplating, finding and wrangling data | 1/29 -- 2/2             | quiz, exercise (first part due Wed), **project part 1**    |
+| Module 2 -- Data analysis introduction                | 1/15 -- 1/19            | quiz, exercise (staggered due dates), discussion    |
+| Module 3 -- R coding basics                           | 1/22 -- 1/26            | quiz, exercise (staggered due dates), discussion            |
+| Module 4 -- Contemplating, finding and wrangling data | 1/29 -- 2/2             | quiz, exercise (staggered due dates), **project part 1**    |
 | Module 5 -- Visualizing data                          | 2/5 -- 2/9              | quiz, exercise (first part due Wed), discussion            |
 | Module 6 -- Exploring data                            | 2/12 -- 2/16            | quiz, exercise, discussion                                 |
 | Module 7 -- Statistical analysis overview             | 2/19 -- 2/23            | quiz, **project part 2**, discussion                       |

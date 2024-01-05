@@ -9,12 +9,6 @@ Most general comments/thoughts are in the Notes and Thoughts document in the off
 # Andreas ToDo
 
 
-* Check portfolio template.
-
-Update data analysis template.
-
-Update portfolio template, include data analysis structure in there.
-
 
 
 
@@ -49,13 +43,6 @@ Update portfolio template, include data analysis structure in there.
 -   Switch most of the bold text blocks to callouts/divs.
     Add more divs/callout categories as needed.
 
--   Turn mentions of specific pages on main page into links.
-
-    -   ✅ done
-
--   Rename the 'modules' folder to 'content' and adjust links.
-
-    -   ✅ done
 
 -   Try to eventually have consistent naming of folders and files: All lowercase, with dashes as separators https://developers.google.com/style/filenames
 
@@ -80,13 +67,8 @@ file.rename(files, tolower(files))
 
     -   Did most of them but there isn't a tibble or model chapter in the second edition. `content/module-data-intro/data-types.qmd` now has a broken link since it references the tibble chapter.
 
--   Continue updating Assessment_Data_Analysis
-
 -   Write table unit
 
--   Update course_tools_intro assessment
-
--   implement data generation/AI assessment
 
 # Notes from Quarto conversion by Jadey
 

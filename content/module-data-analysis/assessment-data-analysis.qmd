@@ -75,7 +75,11 @@ Next, find `statistical-analysis.R` inside `/code/analysis-code/`. Make a copy. 
 I'm sure you noticed that we switched from Quarto files to R scripts. I'm doing this to show you that either are fine. Sometimes it's better to combine code and text in one file. Sometimes just having code by itself is easier/better. In any case, you should add lots of comments and documentation to the Quarto or R file.
 :::
 
-Now we are ready to include the new findings. Open `starter-analysis-report.qmd` inside the `products/report` folder. Add code to display the two new figures and the new table. Add a few sentences to each to explain what it shows and what it means.
+Now we are ready to include the new findings. Open `starter-analysis-report.qmd` inside the `products/report` folder. 
+
+At the top of the file, add a sentence stating something like **CLASSMATE NAME contributed to this exercise**. This needs to be there for me to be able to grade both your and their contribution.
+
+Next, at the end of the document, add code to display the two new figures and the new table. Add a few sentences to each to explain what it shows and what it means.
 
 Once all is done, fully rebuild your portfolio website. Commit and push your changes. Go to your website URL to make sure the updated page with the new figures included shows up under the Starter Analysis Exercise project entry.
 
