@@ -29,6 +29,7 @@ While it is generally not that difficult to write a bit of R code to generate yo
 
 * The [synthpop package](https://www.synthpop.org.uk/) can produce synthetic data that is very similar to the original data, including potential patterns/correlations. 
 
+* The [mice package](https://amices.org/mice/) is most often used to impute missing data. But one can also use it to generate synthetic data. [This tutorial provides a good introduction](https://www.gerkovink.com/miceVignettes/synthetic/synthetic.html).
 
 ## Some R helper packages 
 
