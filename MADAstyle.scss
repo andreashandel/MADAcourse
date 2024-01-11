@@ -114,7 +114,7 @@ a.thumbnail:hover {
 div.note
 {
     padding: 0.5em;
-    margin: 0.5em 0;
+    margin: 0.5em 0em;
     color: #153e67;
     background-color: #dde8f6;
     border: solid 5px #ecf4ff;
@@ -124,18 +124,18 @@ div.note
 
 div.warning
 {
-    padding: 1em;
-    margin: 1em 0;
+    padding: 0.5em;
+    margin: 0.5em 0em;
     color: #6c1f0e;
     background-color: #ffece7;
-    border: solid 10px #fff4f2;
+    border: solid 5px #fff4f2;
     border-radius: 10px;
 }
 
 div.emphasis
 {
     padding: 0.5em;
-    margin: 0.5em 0;
+    margin: 0.5em 0em;
     color: #145233;
     background-color: #d6f5e6;
     border: solid 5px #33cc80;
@@ -143,11 +143,10 @@ div.emphasis
 
 }
 
-
 div.prompt
 {
     padding: 0.5em;
-    margin: 0.5em 0;
+    margin: 0.5em 0em;
     color: black;
     background-color: #c7dcf2;
     border: solid 5px #0c7ef5;

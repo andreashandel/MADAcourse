@@ -35,6 +35,12 @@ To solve those issues, you should use the [`here` package](https://github.com/r-
 
 However you do things, make sure that for your exercises and especially final project, someone else can clone your repository (or otherwise copy your project if it's not on Github) to their computer and run everything, without having to have exactly your setup of folders.
 
+::: emphasis
+And one more time: Do NOT use absolute paths when you load/save files. For R, use R projects and the `here` package to load/save files relative to the main project directory (which is the folder that contains the `.Rproj` file.) 
+
+And beware of having R projects inside projects. That's a bad idea and can lead to problems.
+:::
+
 # Further Resources
 
 Several efforts to develop further tools to help improve reproducible research within the R system exist. The few I know about are listed below. I have not tried to use any of them, but feel free to try/use them as part of this class.

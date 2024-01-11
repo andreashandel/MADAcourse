@@ -728,7 +728,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2024-01-02</p>
+      <p class="date-modified">2024-01-11</p>
     </div>
   </div>
     
@@ -764,6 +764,10 @@ ul.task-list li input[type="checkbox"] {
 <p>For a short video tutorial, see this <a href="https://www.youtube.com/watch?v=fe6GA200dks">video on relative paths</a>. Note that the video is several years old and he doesn’t use R Projects. <strong>I strongly recommend using R Projects.</strong> By having any project you work on as an R project, relative paths will always be relative to the main directory in which your <code>.Rproj</code> file is located. As long as someone loads the project by clicking on the <code>.Rproj</code> file, and you only use relative paths, things should work well on any computer. While R projects solve most of the problem, some issues remain, e.g.&nbsp;differences of how relative paths are treated in Rmd versus R files.</p>
 <p>To solve those issues, you should use the <a href="https://github.com/r-lib/here"><code>here</code> package</a>, together with R Projects. It helps solve issues with relative paths being dealt with differently in an Rmd file versus an R file versus the console. <a href="https://malco.io/articles/2018-11-05-why-should-i-use-the-here-package-when-i-m-already-using-projects">Malcolm Barrett’s blog post</a> is a great, short explanation of why one should use the <code>here</code> package and how to do it.</p>
 <p>However you do things, make sure that for your exercises and especially final project, someone else can clone your repository (or otherwise copy your project if it’s not on Github) to their computer and run everything, without having to have exactly your setup of folders.</p>
+<div class="emphasis">
+<p>And one more time: Do NOT use absolute paths when you load/save files. For R, use R projects and the <code>here</code> package to load/save files relative to the main project directory (which is the folder that contains the <code>.Rproj</code> file.)</p>
+<p>And beware of having R projects inside projects. That’s a bad idea and can lead to problems.</p>
+</div>
 </section>
 <section id="further-resources" class="level1">
 <h1>Further Resources</h1>

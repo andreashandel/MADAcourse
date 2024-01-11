@@ -5,10 +5,7 @@ subtitle: ""
 
 # Overview
 
-In this module, we will talk a bit about writing code in R. This is
-likely the one unit which will have the greatest diversity in
-pre-existing knowledge. Some of you might already have enough R
-knowledge that this will just be a quick refresher.
+In this module, we will talk a bit about writing code in R. Since this is not a *learning R* class, we can unfortunately only dedicate one module to it, everything else will be *learning by trying/doing*. 
 
 ::: warning
 For those among you who have not used R or any other programming
@@ -43,8 +40,7 @@ listed below and in the
 
 This figure illustrates the journey of learning to write code:
 
-![The journey of learning to code. Source: [Thinkful blog
-post.](https://www.thinkful.com/blog/) Original post is not online anymore. {fig-alt="Graph titled Coding Confidence vs Compentence. The x-axis is Competence and y-axis is confidence. The first peak is called the hand-holding honeymoon, the decline is called the cliff of confusion, the bottom of the decline is called the desert of despair, the beginning of the incline is called the upswing of awesome, and the end of the graph is the highest peak that says Job Ready."}
+![The journey of learning to code. Source: https://www.thinkful.com/blog/. Original post is not online anymore.](../../media/learning-to-code.jpg){fig-alt="Graph titled Coding Confidence vs Compentence. The x-axis is Competence and y-axis is confidence. The first peak is called the hand-holding honeymoon, the decline is called the cliff of confusion, the bottom of the decline is called the desert of despair, the beginning of the incline is called the upswing of awesome, and the end of the graph is the highest peak that says Job Ready."}
 
 My goal is that during this course, you will reach the beginning of the
 *upswing of awesome*, at least when it comes to being able to use R to
@@ -77,23 +73,6 @@ course, or anything else you find. (If you find something not listed
 that is really useful, feel free to share!) Of course, AI tools can also be very helpful, but to use them well you do need to know some coding yourself.
 
 
-
-::: note
-There are two ways of assigning something to an object in R, one
-can write `x <- 2` or `x = 2` and often (but not always) you can use
-either. People argue about which way to do it. In the RStudio tutorial,
-they do it the first way. If you are completely new to programming, I
-recommend the first version, i.e. `x <- 2`. The problem is that most
-other programming languages do it the second way, so if you learned to
-code in another language first (like I did), it's more natural to write
-`x = 2`. It's your choice. Just be aware that both notations exist. When
-I write code, I usually do a mix (without any logic to it). In R, you
-can also write this in the opposite direction, i.e. `2 -> x`. If you are
-new to programming this isn't generally recommended, but some online R
-personalities will assign variables this way.*
-:::
-
-
 # More R coding
 
 We only focus explicitly on R coding in this module. That is obviously
@@ -103,7 +82,8 @@ side*. I understand this will be a challenge. Don't hesitate to seek
 help. The [Posit Recipes](https://posit.cloud/learn/recipes) cover many
 of the coding related topics we will use in this course, so go through
 any and all resources you find useful whenever you are able (or when you
-need to know).
+need to know). I also strongly encourage AI tools and StackOverflow and other online resources, which Google will help you find fairly easily.
+
 
 # Getting help
 
@@ -123,8 +103,7 @@ xkcd.com.](../../media/xkcd_wisdom_of_the_ancients.png){width="90%"
 fig-alt="An xkcd comic of a stick figure shaking a computer screen saying 'Who were you, denvercoder9? What did you see?!'. Outside the the box, it says 'Never have I felt so close to another soul. And yet so helplessly alone as when I Google an error and there's one result. A thread by someone with the same problem and no answer last posted in 2003."}
 
 In those rare cases when you cannot find information online that helps
-you figure out your problem, feel free to ask for help. The *Resources*
-document describes various ways to get help.
+you figure out your problem, feel free to ask for help. 
 
 A great source for answers is asking questions online. Sometimes, people
 complain that replies to questions they ask online are unfriendly or
@@ -159,11 +138,23 @@ out this video by Roger Peng.
 <iframe class="video" src="https://www.youtube.com/embed/ZFaWxxzouCY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 :::
 
-Asking AI for help can often faster and more efficient than trying to find the answer via Google/StackOverflow. So make use of AI tools to help you get to working code quickly.
+Asking AI for help can often faster and more efficient than trying to find the answer via Google/StackOverflow. So it's a good first stop, and if the AI is not helpful, move on to other sources.
 
-::: note
-As you continue on your coding journey, keep in mind: **The great thing
-about programming is that you can't really "break" things too much. In
+# Some further comments
+
+As you continue on your coding journey, keep in mind: The great thing
+about programming is that you (usually) can't really "break" things too much. In
 the worst case you get an error message. So experiment and try out
-anything you like!**
-:::
+anything you like!
+
+R has a bunch of quirks. You'll likely encounter a number of them. A common one is that there are two ways of assigning something to an object. One
+can write `x <- 2` or `x = 2` and often (but not always) you can use
+either. People argue about which way to do it. You'll see both versions used frequently. If you are completely new to programming, I
+recommend the first version, i.e. `x <- 2`. The problem is that most
+other programming languages do it the second way, so if you learned to
+code in another language first (like I did), it's more natural to write
+`x = 2`. It's your choice. Just be aware that both notations exist. When
+I write code, I usually do a mix (without any logic to it). That's of course a bad idea, so don't do what I do, instead try to pick one way or the other and stick with it.
+
+More confusion: In R, you can also write this in the opposite direction, i.e. `2 -> x`. This is unususal coding style and I recommend avoiding it. Just know that it exists too.
+

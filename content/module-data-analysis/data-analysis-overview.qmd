@@ -51,14 +51,16 @@ Any of these different approaches for coming up with a good data-question match 
 
 By fiddling with the data or adjusting data and question, you are using what is sometimes called *investigator's degrees of freedom* or less kindly, *data dredging* or *data torturing*. Essentially, if you fiddle with your data and question long enough, you will eventually find something *statistically significant*. You cannot interpret this in the same way as a *statistically significant* result obtained by pre-specifying the question, collecting data specifically to answer the question, and analyzing the data to answer the initial question.
 
-[538's website provides a nice example](https://projects.fivethirtyeight.com/p-hacking/) of a setting where you can adjust your question and data **in a very reasonable way** and "show" *in a statistically significant way* whatever you want to show.
+538's website provides a nice example called [Hack Your Way To Scientific Glory]](https://projects.fivethirtyeight.com/p-hacking/) that illustrates how you can adjust your question and data **in very reasonable ways** so you can get **whatever statistically significant result you want**. This is researchers' degrees of freedom in action, and the main reason why p-values are most often meaningless.
 
-**That doesn't mean you can't do and publish interesting work based on such a secondary data analysis approach!** But it does mean that whatever you find should be considered preliminary: hypothesis generating, not hypothesis testing. In some sense, statistical measures such as *p*-values are meaningless in this context. Unfortunately, to get published, you often need to include those. It's a sad state of affairs that a lot of published work comes with junk statistics. It will take a good bit of time (if it ever happens), before things become more reasonable (and we will get rid of *p*-values).
+**That doesn't mean you can't do and publish interesting work based on such a secondary data analysis approach!** But it does mean that whatever you find should be considered preliminary: hypothesis generating, not hypothesis testing. 
+
+Again, unless you fully pre-specify your hypothesis and your exact analysis plan (which is almost never done outside of clinical trials that seek regularory approvel), statistical measures such as *p*-values are laregely meaningless. Unfortunately, to get published, you often need to include those. It's a sad state of affairs that a lot of published work comes with junk statistics. It will take a good bit of time (if it ever happens), before things become more reasonable (and we will get rid of *p*-values in most situations).
 
 For some more thoughts on this topic, read chapters 1-3 of [*The Art of Data Science (ADS)*](https://leanpub.com/artofdatascience). It is a *pay what you want* book with a minimum price of *zero*, which means you can get it for free (note that the book + video bundle has a non-zero minimum price). Chapter 2 has a figure similar to the one above.
 
 ::: note
-While I am generally in favor of supporting creators of books (or other content) and thus paying for their products, in this case since I'm making you get/read the book, and also since students have very limited budgets, I think it is entirely acceptable to get the book for free.
+While I am generally in favor of supporting creators of books (or other content) and thus paying for their products, in this case since I'm making you get/read the book, and also since students have very limited budgets, I think it is entirely acceptable for you to get the book for free.
 :::
 
 # Getting and loading data
