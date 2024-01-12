@@ -15,7 +15,7 @@ the actual statistical analysis.
 While there were separate modules for *finding and wrangling* and
 *visualizing* data, I want to remind you of this diagram:
 
-![Data analysis workflow](../../media/analysis-workflow.png){width="60%"
+![Data analysis workflow](/media/analysis-workflow.png){width="60%"
 fig-alt="Double sided arrow points between Question and Data with the text 'Match needed' above the arrow. A spiral moves from Load, to Clean, to Explore, to Process. Below the spiral an arrow points from Model to Report. An rounded arrow points from Model and Report back up to the spiral with the word Repeat."}
 
 Different data-analysis related tasks rarely happen in a linear
@@ -106,9 +106,8 @@ statistical literacy, even among PhD holders, is still sad...
 Data chapters (4 and 5) in [*The Art of Data science
 (ADS)*](https://leanpub.com/artofdatascience) book*.* We looked at that
 book previously. You don't need to work/code along. But if you want to,
-see the [**Some practice section of the Data Analysis
-Overview**](../module-data-analysis/data-analysis-overview.qmd#sec-some-practice)
-page for some details on how to do it.
+see the *Some practice* section of the [Data Analysis
+Overview page](/content/module-data-analysis/data-analysis-overview.qmd) for some details on how to do it.
 
 Also go through the rather short EDA tutorial which is part of the
 [Visualize Data Posit Recipes](https://posit.cloud/learn/recipes).
