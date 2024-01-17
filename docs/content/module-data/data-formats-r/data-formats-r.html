@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Andreas Handel">
 <meta name="description" content="Modern Applied Data Analysis (MADA) course">
 
-<title>MADA Course - Types of Data</title>
+<title>MADA Course - Data formats in R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -43,9 +43,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script src="../../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="../../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -274,14 +271,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../content/module-data/data-types-complex/data-types-complex.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Complex data types</span></a>
+  <a href="../../../content/module-data/data-types-basic/data-types-basic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Basic data types</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../content/module-data/data-structures/data-structures.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Data structures</span></a>
+  <a href="../../../content/module-data/data-types-complex/data-types-complex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Complex data types</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -624,12 +621,6 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../content/module-workflow/data-models-not-covered.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">More Data and Models</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../../../content/module-workflow/open-science.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Open Science</span></a>
   </div>
@@ -719,9 +710,6 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
   <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives">Objectives</a></li>
-  <li><a href="#what-is-data" id="toc-what-is-data" class="nav-link" data-scroll-target="#what-is-data">What is data</a></li>
-  <li><a href="#types-of-variables" id="toc-types-of-variables" class="nav-link" data-scroll-target="#types-of-variables">Types of Variables</a></li>
-  <li><a href="#analysis-approaches-based-on-data" id="toc-analysis-approaches-based-on-data" class="nav-link" data-scroll-target="#analysis-approaches-based-on-data">Analysis approaches based on data</a></li>
   <li><a href="#working-with-different-data-types-in-r" id="toc-working-with-different-data-types-in-r" class="nav-link" data-scroll-target="#working-with-different-data-types-in-r">Working with different data types in R</a>
   <ul class="collapse">
   <li><a href="#basic-data-types" id="toc-basic-data-types" class="nav-link" data-scroll-target="#basic-data-types">Basic data types</a></li>
@@ -736,7 +724,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Types of Data</h1>
+<h1 class="title">Data formats in R</h1>
 </div>
 
 
@@ -754,7 +742,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2024-01-12</p>
+      <p class="date-modified">2024-01-16</p>
     </div>
   </div>
     
@@ -765,58 +753,14 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="overview" class="level1">
 <h1>Overview</h1>
-<p>For this unit, we will discuss different types of data and how data type influences the analysis approach.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="../../media/dilbert_wrongdata.gif" class="lightbox" title="You might not want to get yourself that kind of data. Source: dilbert.com." data-gallery="quarto-lightbox-gallery-1"><img src="../../media/dilbert_wrongdata.gif" class="img-fluid figure-img" alt="A Dilbert comic strip in three panels. In the first panel, Dilbert's boss says to use the CRS database to size the market, and Dilbert replies 'That data is wrong'. In the second panel, the boss says 'Then use the SIBS database,' to which Dilbert replies, 'That data is also wrong.' In the third and last panel, the boss says 'Can you average them?' and Dilbert replies 'Sure. I can multiply them too.'"></a></p>
-<figcaption class="figure-caption">You might not want to get yourself that kind of data. Source: dilbert.com.</figcaption>
-</figure>
-</div>
+<p>For this unit, we will briefly discuss different types of variables and data formats in R.</p>
 </section>
 <section id="objectives" class="level1">
 <h1>Objectives</h1>
 <ul>
-<li>Understand different types of data</li>
-<li>Know that different data types require different analysis approaches</li>
-<li>Know different base data types in R and how to deal with them</li>
-<li>Know about important data structures in R and how to deal with them</li>
+<li>Be familiar with the main data formats in R</li>
+<li>Know advantages and disadvantages of different R data/variable formats</li>
 </ul>
-</section>
-<section id="what-is-data" class="level1">
-<h1>What is data</h1>
-<p>Broadly speaking, we can define data as anything that (potentially) contains information. Data can be images, sound, video, text, or a combination of any of these. You most likely encounter data in spreadsheets, with observations as rows and variables as columns. However, data is getting much more varied and complex. Data from fitness devices such as Fitbits, Tweets, Facebook posts, purchasing behavior, movement, etc. are all streams of data that can contain useful information.</p>
-<p>The kind of data determines the amount of processing that needs to be done before analysis. Somehow you need to turn your data into something that you can analyze. While analysis of images, video, and text is undoubtedly interesting, it is not the focus of this course. But you are still welcome to use such sources of data for your project.</p>
-<p><strong>In this course, we focus on the data source that you are most likely to encounter in your analyses. And that data source is quite likely the “(messy) spreadsheet” type, containing bits of information collected on individuals.</strong> You are of course welcome to play around with other data types during this course, e.g.&nbsp;for your course project.</p>
-<p>If you want to hear someone else’s definition and explanation of what data is, you can watch this video by <a href="http://jtleek.com/">Jeff Leek</a>.</p>
-<div class="container">
-<iframe class="video" src="https://www.youtube.com/embed/sRArT81TVEM" frameborder="0" allowfullscreen="">
-</iframe>
-</div>
-</section>
-<section id="types-of-variables" class="level1">
-<h1>Types of Variables</h1>
-<p>We usually refer to pieces of data/information (e.g., gender and age) as variables. Different types of variables exist, and depending on the type, the analysis will be different. The main categories are:</p>
-<p><strong>Quantitative:</strong> This data type, also called <em>interval</em> data, generally allows one to do certain mathematical operations, e.g., subtraction or addition. Different subcategories exist:</p>
-<ul>
-<li>Continuous: Can, in principle, be any number. Examples are height, weight, age, etc.</li>
-<li>Discrete: Can only take discrete (integer) values, e.g., the number of siblings a person has.</li>
-<li>Fraction/Proportion: Continuous, but between 0-1.</li>
-<li>Sometimes other special forms (e.g., only positive, only in some range).</li>
-<li>A special case of quantitative data is <em>ratio</em> data. Data measured on a ratio scale have all the properties of interval data, and in addition, the zero value is a “true zero”. That is, a value of zero represents an actual minimum possible variable. For example, mass and distance are ratio data. Multiplying and dividing ratio scale data makes sense (e.g.&nbsp;a 2 kilogram pumpkin has twice the mass of a 1 kilogram pumpkin).</li>
-</ul>
-<p><strong>Qualitative:</strong> Broadly speaking, qualitative data are those that do not allow one to perform any mathematical operations such as subtraction or addition. Qualitative data which has no intrinsic order is also caled <em>nominal</em> (scale) data. Types of such data are:</p>
-<ul>
-<li>Descriptive: e.g., free text data from participant interviews.</li>
-<li>Categorical: e.g., hair color, ethnicity. No ordering is possible. A special and common case of categorical is data with 2 categories, e.g., yes/no, dead/alive, diseased/healthy.</li>
-</ul>
-<p><strong>Ordinal:</strong> This is usually considered a type of categorical variable, but it is worth thinking about it as something on its own. Ordinal data fall in between being strictly quantitative or strictly qualitative. For instance, if a question asks a person to rank their level of a pain on a scale from 1-10, a 7 is clearly higher than a 6, and a 6 higher than a 5. But it’s unclear if the difference between 5 and 6 is the same as 6 and 7. Thus it is not clear if one can do operations like subtraction (to get a difference of 1 in each case). Another example is level of education, which a survey might collect in categories of ‘no high school’, ‘high school’, ‘some college’, ‘college degree’, ‘graduate degree’. We could code that with numbers 1-5, and in some sense these items are ordered, but it’s unclear if one is justified in considering the difference between ‘high school (2)’ and ‘some college (3)’ the same as ‘some college (3)’ and ‘college degree (4)’.</p>
-</section>
-<section id="analysis-approaches-based-on-data" class="level1">
-<h1>Analysis approaches based on data</h1>
-<p>The type of variables will influence the analysis approach. That’s especially true for the outcomes of interest, less so for the independent, predictor variables.</p>
-<p>Methods applied to quantitative outcomes are usually referred to as <strong>regression approaches</strong>, with different variants depending on the subtype (e.g., linear regression for continuous, Poisson regression for discrete). Methods applied to categorical outcomes are usually referred to as <strong>classification approaches.</strong><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> If you have an ordinal outcome, you can use <a href="https://en.wikipedia.org/wiki/Ordinal_regression"><strong>ordinal regression</strong></a>. Alternatively, you can treat the outcome as unordered categorical or as continuous (depending on how you code them, i.e., in R as a factor or numeric). There are no rules as to when it is ok to treat an ordinal variable as fully quantitative. It is often done but needs to be justified. You can always treat it as categorical, but then you lose some information, namely the ordering.</p>
-<p>In the machine learning literature, <em>supervised</em> learning refers to cases when we have a specific outcome of interest. This kind of data is most common. For data where there is no clear outcome, analysis methods are usually referred to as clustering approaches and are also called <em>unsupervised</em> learning methods.</p>
-<p>We will discuss and apply some of those methods in more detail when we begin our discussion of analysis methods.</p>
 </section>
 <section id="working-with-different-data-types-in-r" class="level1">
 <h1>Working with different data types in R</h1>
@@ -858,13 +802,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 </section>
 
-
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
-
-<ol>
-<li id="fn1"><p>Logistic regression, which you might be familiar, is used for classification. However, the underlying model predicts a quantitative outcome (a value between 0 and 1 usually interpreted as a probability), which is then binned to make categorical predictions.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -1125,7 +1063,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","openEffect":"zoom","selector":".lightbox","descPosition":"right","loop":false});</script>
 
 
 

@@ -131,10 +131,10 @@ website:
             contents:
               - text: "Data Overview"
                 file: content/module-data/data-overview.qmd  
+              - text: Basic data types
+                file: content/module-data/data-types-basic/data-types-basic.qmd
               - text: Complex data types
                 file: content/module-data/data-types-complex/data-types-complex.qmd
-              - text: Data structures
-                file: content/module-data/data-structures/data-structures.qmd
               - text: Data storage formats
                 file: content//module-data/data-storage-formats/data-storage-formats.qmd
               - text: Data formats in R
@@ -233,8 +233,6 @@ website:
             contents:
              - text: "Complete Data Analysis Workflow"
                file: content/module-workflow/complete-data-analysis-workflow.qmd  
-             - text: "More Data and Models"
-               file: content/module-workflow/data-models-not-covered.qmd
              - text: "Open Science"
                file: content/module-workflow/open-science.qmd
           - section: "AI"

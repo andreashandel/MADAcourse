@@ -7,7 +7,7 @@ subtitle: ""
 # Overview
 You need data to do a data analysis - surprise! 
 
-This module discusses data. What it is, where to get it, what to do with it prior to analysis.
+This module discusses data. What it is, where to get it, how to load and store it, and some other basics of that sort.
 
 # Learning Objectives
 
@@ -22,7 +22,6 @@ The module consists of the following units:
 
 * [Basic data types](./data-types-basic/data-types-basic.qmd)
 * [Complex data types](./data-types-complex/data-types-complex.qmd)
-* [Data structures](./data-structures/data-structures.qmd)
 * [Data storage formats](./data-storage-formats/data-storage-formats.qmd)
 * [Data formats in R](./data-formats-r/data-formats-r.qmd)
 * [The data generation process](./data-generation-process/data-generation-process.qmd)

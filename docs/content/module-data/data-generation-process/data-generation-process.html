@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Andreas Handel">
 <meta name="description" content="Modern Applied Data Analysis (MADA) course">
 
-<title>MADA Course - Making Data</title>
+<title>MADA Course - Thinking about data generation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -271,14 +271,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../content/module-data/data-types-complex/data-types-complex.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Complex data types</span></a>
+  <a href="../../../content/module-data/data-types-basic/data-types-basic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Basic data types</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../content/module-data/data-structures/data-structures.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Data structures</span></a>
+  <a href="../../../content/module-data/data-types-complex/data-types-complex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Complex data types</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -621,12 +621,6 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../content/module-workflow/data-models-not-covered.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">More Data and Models</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../../../content/module-workflow/open-science.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Open Science</span></a>
   </div>
@@ -715,6 +709,22 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#data-generation-processes" id="toc-data-generation-processes" class="nav-link" data-scroll-target="#data-generation-processes">Data generation processes</a>
+  <ul class="collapse">
+  <li><a href="#randomness" id="toc-randomness" class="nav-link" data-scroll-target="#randomness">Randomness</a></li>
+  <li><a href="#measurements" id="toc-measurements" class="nav-link" data-scroll-target="#measurements">Measurements</a></li>
+  <li><a href="#interactions" id="toc-interactions" class="nav-link" data-scroll-target="#interactions">Interactions</a></li>
+  </ul></li>
+  <li><a href="#data-structures" id="toc-data-structures" class="nav-link" data-scroll-target="#data-structures">Data structures</a>
+  <ul class="collapse">
+  <li><a href="#hierarchical-data" id="toc-hierarchical-data" class="nav-link" data-scroll-target="#hierarchical-data">Hierarchical data</a></li>
+  <li><a href="#time-series-data" id="toc-time-series-data" class="nav-link" data-scroll-target="#time-series-data">Time-series data</a></li>
+  <li><a href="#spatial-data" id="toc-spatial-data" class="nav-link" data-scroll-target="#spatial-data">Spatial data</a></li>
+  <li><a href="#network-data" id="toc-network-data" class="nav-link" data-scroll-target="#network-data">Network data</a></li>
+  </ul></li>
+  <li><a href="#further-resources" id="toc-further-resources" class="nav-link" data-scroll-target="#further-resources">Further resources</a></li>
   </ul>
 </nav>
     </div>
@@ -723,7 +733,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Making Data</h1>
+<h1 class="title">Thinking about data generation</h1>
 </div>
 
 
@@ -741,7 +751,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2024-01-12</p>
+      <p class="date-modified">2024-01-16</p>
     </div>
   </div>
     
@@ -752,7 +762,57 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="overview" class="level1">
 <h1>Overview</h1>
-<p>Here we go again. I started to write a unit on creating and using synthetic (artificial/fake/simulated) data. Then it got too big again 😁 and I decided to make it <a href="../module-synthetic-data/synthetic-data-overview.qmd">its own module</a>, which you can find towards the end of the content list sidebar.</p>
+<p>We are generally in the business of analyzing data, not generating it (but see the <em>synthetic data</em> content). Nevertheless, it is very important to think about the processes that generated the data you are trying to analyze.</p>
+</section>
+<section id="learning-objectives" class="level1">
+<h1>Learning Objectives</h1>
+<ul>
+<li>Understand why it’s important to think of the data generation process</li>
+<li>Be familiar with common features and structures in data</li>
+</ul>
+</section>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+</section>
+<section id="data-generation-processes" class="level1">
+<h1>Data generation processes</h1>
+<p>Every dataset is generated by processes that can often be very complex. At times, seemingly similar data is generated by different processes. For instance, most of the text you read in this course was written by a single person. In contrast, a lot of the text you read in Wikipedia was co-authored and co-edited by many individuals. Thus, while both are pieces of text, the processes that generated them are different. Often, this difference in processes is reflected in patterns in the data, and needs to be accounted for.</p>
+<section id="randomness" class="level2">
+<h2 class="anchored" data-anchor-id="randomness">Randomness</h2>
+</section>
+<section id="measurements" class="level2">
+<h2 class="anchored" data-anchor-id="measurements">Measurements</h2>
+</section>
+<section id="interactions" class="level2">
+<h2 class="anchored" data-anchor-id="interactions">Interactions</h2>
+</section>
+</section>
+<section id="data-structures" class="level1">
+<h1>Data structures</h1>
+<p>Depending on the processes that generate the data, it is common for data to have certain structures. Thinking about those structures, and as suitable accounting for them in your analyses, is important. The following paragraphs describe a few important types of structure you likely encounter often. Of course, combinations of structures are always possible.</p>
+<section id="hierarchical-data" class="level2">
+<h2 class="anchored" data-anchor-id="hierarchical-data">Hierarchical data</h2>
+<p>This type of data is actually quite common. A hierarchy (also at times called multi-level or nesting structure) occurs when there is some type of grouping inherent. For instance, if you analyze heart attacks from different hospitals, there might be systematic differences between hospitals that are worth taking into account. You can then build models that take that into account. I think there is a strong case to be made that one should often start with a hierarchical modeling approach, and only drop it if one is convinced that there are no systematic differences in the data. Unfortunately, such hierarchical models are still a little bit harder to implement, and often a lot harder to understand and interpret. For such models, a Bayesian framework is often very useful. A good introductory resource for hierarchical modeling, and especially how to do it with <code>R</code>, is <a href="https://xcelab.net/rm/statistical-rethinking/"><em>Statistical Rethinking</em></a> (the second half of the book). The new edition of <em>R4DS</em> has a chapter on <a href="https://r4ds.hadley.nz/rectangling.html">working with hierarchical data</a> (but does not cover the fitting/analysis part.) There is also a CRAN Task view that lists <a href="https://cran.r-project.org/web/views/MixedModels.html">R packages relevant to hierarchical modeling</a>.</p>
+</section>
+<section id="time-series-data" class="level2">
+<h2 class="anchored" data-anchor-id="time-series-data">Time-series data</h2>
+<p>Time series are a specialized data type that are autocorrelated, and we can therefore get better predictions by using specialized models that take this data structure into account. A good resource is the free textbook <a href="https://otexts.com/fpp3/"><em>Forecasting: Principles and Practice</em></a> and a lot of the other work by <a href="https://robjhyndman.com/">Rob Hyndman</a>.</p>
+<p>A very useful set of tools to allow times-series work in R is the set of packages called the <a href="https://tidyverts.org/"><code>tidyverts</code></a>. The <a href="https://business-science.github.io/modeltime/"><code>modeltime</code></a> <code>R</code> package allows one to use the <code>tidymodels</code> framework to analyze time-series data.</p>
+<p>CRAN also has a <a href="https://cran.r-project.org/web/views/TimeSeries.html">Task View for <em>Time Series Analysis</em>.</a> (A <em>Task View</em> on CRAN is a site that tries to combine and summarize various R packages for a specific topic). Another task view that deals with longitudinal/time-series data is the <a href="https://cran.r-project.org/web/views/Survival.html"><em>Survival Analysis</em> Task View</a>.</p>
+</section>
+<section id="spatial-data" class="level2">
+<h2 class="anchored" data-anchor-id="spatial-data">Spatial data</h2>
+<p>Like time series data, spatial data also feature autocorrelation, but typically in two dimensions. (i.e., latitude and longitude.) Spatiotemporal data, typically collected as repeated measurements of spatial data over time, is also somewhat common. One could also have an elevation coordinate and have 3D (or even 4D spatiotemporal data) spatial data, but most analyses focus on 2D spatial autocorrelation structures.</p>
+<p>While there is (to my knowledge) no current way to fit specific spatial models in <code>tidymodels</code> (i.e.&nbsp;no <code>modeltime</code> analogue), one can use spatial resampling through the <a href="https://spatialsample.tidymodels.org/"><code>spatialsample</code></a> package, which provides resampling methods that take spatial autocorrelation into account.</p>
+<p>You can find a community-curated list of resources for spatial data in <a href="https://www.bigbookofr.com/geospatial.html"><em>The Big Book of R</em></a> or in the <a href="https://cran.r-project.org/web/views/Spatial.html"><em>Spatial Data</em> CRAN task view</a>.</p>
+</section>
+<section id="network-data" class="level2">
+<h2 class="anchored" data-anchor-id="network-data">Network data</h2>
+<p>At times, units of data you collect might be connected in a network.</p>
+</section>
+</section>
+<section id="further-resources" class="level1">
+<h1>Further resources</h1>
 
 
 </section>
