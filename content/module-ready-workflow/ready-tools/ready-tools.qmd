@@ -1,0 +1,48 @@
+---
+title: Tools for a READy workflow
+subtitle: ""
+---
+
+# Overview
+
+This unit covers some tools that can help with a READy workflow.
+
+
+# Learning Objectives
+
+- 
+
+# Introduction
+
+
+
+# Quarto
+
+
+
+
+# Jupyter notebooks
+
+
+
+# Other tools
+
+In general, any software tool you use that allows you to document each step - usually in the form of code and comments - should allow others to reproduce your results. Many common software packages and languages such as Mathematica, Julia,  
+
+
+
+# Hall of shame
+
+There is a long list of software that is commonly used for research and data analysis, but which one should stay away from. This encompasses any software that does not contain a full documentation of all steps taken to allow reproducibility. **Excel** and similar spreadsheet software are a major problem. If you make a change to data in an Excel file and save it, there is usually no track record of what happened. Therefore, any data processing that happens with Excel is not reproducible. Statistical software that relies on graphical user interfaces (GUI), such as e.g. **Graphpad Prism** or **SPSS** are equally problematic. Some software records the commands you perform through a GUI and you can save those at the end. This does allow for reproducibility. But if that step is missing or not implemented, the analysis is again not reproducible.
+
+
+
+
+
+
+
+
+# Summary
+
+
+# Further Resources

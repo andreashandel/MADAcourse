@@ -1,13 +1,13 @@
 ---
-title: Open Science and Reproducible Research
+title: Open Research
 subtitle: ""
-authors: [Zane Billings, Andreas Handel]
 ---
+
 
 # Overview
 
-In this unit, we'll talk a bit more about reproducible research, and how
-that fits into the much larger concept of "open science."
+This unit provides an introduction to the concept of open research/science.
+
 
 # Learning Objectives
 
@@ -15,41 +15,13 @@ that fits into the much larger concept of "open science."
 -   Explain what makes research reproducible and/or replicable
 -   Know what FAIR data standards are
 
+
 # Introduction
 
-Way back at the [**beginning of the
-course**](../module-intro-tools/tools-reproducibility.qmd), we briefly
-discussed reproducibility. Throughout the course, we emphasized the
-importance to do analyses in a reproducible (and thus generally
-automated/scripted) manner. In this module, we'll discuss a bit more
-what reproducible research means and entails, current trends towards
-open science, and why you pretty much need to have a solid grasp on
-reproducible research strategies in the future.
+While READy principles and openness are not necessarily the same, they are often connected.
 
-# Federal open science requirements
+The idea is that if you provide others access to your data, code and other components of analysis - the **open** part - it is generally only useful if this is done in a **READy** framework. Otherwise, it might become close to impossible for others to reproduce and further build on your work.
 
-While the concepts of reproducible research and open science have been
-around for a while, they have recently increased in prominence. Several
-US government organizations have said that [2023 is the Year of Open
-Science](https://www.earthdata.nasa.gov/news/year-of-open-science), and
-a recent Office of Science and Technology Policy
-[memo](https://www.whitehouse.gov/ostp/news-updates/2022/08/25/ostp-issues-guidance-to-make-federally-funded-research-freely-available-without-delay/)
-has recommended that all federal agencies take serious steps towards
-open science practices (more on what exactly this means later).
-
-Federal agencies like the NIH have been requiring data sharing and
-public releases of papers (on PMC) for some time now, but these
-recommended measures are even stronger, and in my opinion, a very
-positive direction for science. It is quite likely that if you work with
-federal funding in the near future, you will be required to share your
-data and code publicly as soon as you decide to publish. The exact
-implementation of these protocols hasn't been determined yet (nor has
-the degree to which these recommendations will be formally implemented),
-but the writing is on the wall, so to speak.
-
-**It is easier for you to get comfortable with reproducible research
-methods and open science now, rather than scrambling to learn it in the
-future!**
 
 # The general idea of open science
 
@@ -88,9 +60,31 @@ the OSTP, which is pretty comprehensive:
 > security and privacy, and fostering collaborations, reproducibility,
 > and equity."
 
-Open science is like spaghetti sauce--it has a lot of ingredients that
-have to be cooked together to get the best flavor. Let's go into a bit
-more detail on each of these topics.
+
+# Federal open science requirements
+
+While the concepts of reproducible research and open science have been
+around for a while, they have recently increased in prominence. Several
+US government organizations have said that [2023 is the Year of Open
+Science](https://www.earthdata.nasa.gov/news/year-of-open-science), and
+a recent Office of Science and Technology Policy
+[memo](https://www.whitehouse.gov/ostp/news-updates/2022/08/25/ostp-issues-guidance-to-make-federally-funded-research-freely-available-without-delay/)
+has recommended that all federal agencies take serious steps towards
+open science practices (more on what exactly this means later).
+
+Federal agencies like the NIH have been requiring data sharing and
+public releases of papers (on PMC) for some time now, but these
+recommended measures are even stronger, and in my opinion, a very
+positive direction for science. It is quite likely that if you work with
+federal funding in the near future, you will be required to share your
+data and code publicly as soon as you decide to publish. The exact
+implementation of these protocols hasn't been determined yet (nor has
+the degree to which these recommendations will be formally implemented),
+but the writing is on the wall, so to speak.
+
+**It is easier for you to get comfortable with reproducible research
+methods and open science now, rather than scrambling to learn it in the
+future!**
 
 # Accessibility and FAIR data
 
@@ -150,34 +144,7 @@ time, it is possible to share de-identified data without confidentiality
 problems. Hopefully, the near future will make data sharing much more
 common and also easier.
 
-# Reproducibility (and replicability too)
 
-We discussed **reproducibility** in [our previous
-reading](../module-intro-tools/tools-reproducibility.qmd), revisit it if
-you need a refresher. In one sentence, *your research is reproducible if
-another scientist can repeat your methods on your data and get the same
-results.* That is, someone else can take your code and data, rerun all
-your code, and get the same answers that you got in your paper.
-
-An important and related issue is **replicability** ---- you've probably
-heard of the "replication crisis" in science. If not, see for instance
-this [Wikipedia page](https://en.wikipedia.org/wiki/Replication_crisis).
-In one sentence, *your research is replicable if someone else can follow
-your methods and materials to collect new data, analyze their data, and
-get similar results*. Of course in social and semi-social sciences (like
-epidemiology), when your results often depend on the target population
-of interest and are expected to vary over time, replicability can be a
-bit more nuanced than in an experimental field, where experiments should
-pretty much control for anything that you aren't interested in.
-
-Note that replicability is somewhat related to the analysis topic of
-generalizability/portability we discussed. The difference is that we
-focused on analysis approaches that would lead to replicable
-modeling/analysis results using other data sources. More broadly, one
-wants to be able to replicate overall findings if one were to repeat the
-full study, including collection of new data. This is important, but for
-purposes of analysis, the data is considered given, and the focus is on
-reproducibility/replicability of the data analysis part.
 
 # Inclusivity
 
@@ -232,14 +199,21 @@ it might soon get hard to publish work or get funding. It's less of a
 "benefit" and more of an "avoid the penalties" thing, but regardless, it
 is an important practical consideration.
 
-# Further reading
 
-Everything we discussed throughout this course, and this short
-introduction, hopefully conveyed the message that Open Science is an
-important topic to think about and strive toward. The importance of the
-topic has been increasing in recent years. It is useful to stay somewhat
-informed. Here are a few places you can find more open science
-resources.
+
+# Openness and standards
+
+Some further things to pay attention are the use of open standards (open data standards, open-source software), recording of software versions used, time-stamping data, and setting a random number seed in your code.
+
+
+
+# Summary
+
+While open research is not the same as READy principles, there is a lot of overlap. 
+With the increasing requirements for research (data as well as code) to be made openly accessible and FAIR, it is important to ensure your analyses are done in a way that it is easy to publicly share your results and for others to build on it. The READy principles will ensure this is the case.
+
+
+# Further Resources
 
 -   The Center for Open Science, a nonprofit dedicated to promoting open
     science practices and community change, maintains a
@@ -252,3 +226,5 @@ resources.
     [(2)](https://www.americanscientist.org/article/the-statistical-crisis-in-science)
 -   [FOSTER](https://www.fosteropenscience.eu/) is a European
     organization with a set of free courses on open science principles.
+
+

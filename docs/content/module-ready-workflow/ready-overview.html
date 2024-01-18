@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.3.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Andreas Handel">
 <meta name="description" content="Modern Applied Data Analysis (MADA) course">
 
-<title>MADA Course - Open Science and Reproducible Research</title>
+<title>MADA Course - Reproducible, efficient, automated, and documented (READy) workflows</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,8 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../content/module-ai/ai-overview.html" rel="next">
-<link href="../../content/module-workflow/complete-data-analysis-workflow.html" rel="prev">
+<link href="../../content/module-ready-workflow/ready-introduction/ready-introduction.html" rel="next">
+<link href="../../content/module-data-analysis/data-analysis-overview.html" rel="prev">
 <link href="../../media/MADAlogo.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -43,9 +43,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -128,7 +125,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../content/module-workflow/complete-data-analysis-workflow.html">13. Complete Analysis Workflow</a></li><li class="breadcrumb-item"><a href="../../content/module-workflow/open-science.html">Open Science</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../content/module-ready-workflow/ready-overview.html">2B. READy workflows</a></li><li class="breadcrumb-item"><a href="../../content/module-ready-workflow/ready-overview.html">READy workflow overview</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -208,7 +205,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
- <span class="menu-text">2. Data Analysis Introduction</span></a>
+ <span class="menu-text">2A. Data Analysis Introduction</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -226,23 +223,76 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Data Analysis Overview</span></a>
   </div>
 </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">2B. READy workflows</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-data-analysis/data-analysis-structure.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Data Analysis Structure</span></a>
+  <a href="../../content/module-ready-workflow/ready-overview.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">READy workflow overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/module-ready-workflow/ready-introduction/ready-introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">READy introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/module-ready-workflow/ready-organization/ready-organization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Project organization</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/module-ready-workflow/ready-project-management/ready-project-management.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Project management</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/module-ready-workflow/ready-software-management/ready-software-management.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Software management</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/module-ready-workflow/ready-documentation/ready-documentation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Project documentation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/module-ready-workflow/ready-tools/ready-tools.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tools for a READy workflow</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/module-ready-workflow/ready-open/ready-open.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Open research</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
  <span class="menu-text">3. R Coding Basics</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../content/module-coding-basics/rcoding-basics.html" class="sidebar-item-text sidebar-link">
@@ -259,13 +309,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
  <span class="menu-text">4A. All about Data</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../content/module-data/data-overview.html" class="sidebar-item-text sidebar-link">
@@ -306,13 +356,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
  <span class="menu-text">4B. Synthetic Data</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../content/module-synthetic-data/synthetic-data-overview.html" class="sidebar-item-text sidebar-link">
@@ -365,13 +415,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false">
  <span class="menu-text">5. Data Processing</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../content/module-data-processing/data-processing-overview.html" class="sidebar-item-text sidebar-link">
@@ -388,13 +438,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false">
  <span class="menu-text">6. Presenting Data and Results</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../content/module-data-presentation/presenting-results-overview.html" class="sidebar-item-text sidebar-link">
@@ -417,13 +467,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false">
  <span class="menu-text">7. Statistical Analysis Overview</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../content/module-stats-overview/statistical-analysis-introduction.html" class="sidebar-item-text sidebar-link">
@@ -440,13 +490,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false">
  <span class="menu-text">8. Fitting Basic Statistical Models</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../content/module-model-basics/basic-statistical-models.html" class="sidebar-item-text sidebar-link">
@@ -463,13 +513,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="false">
  <span class="menu-text">9. Evaluating Your Model Fits</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../content/module-model-evaluation/model-evaluation-overview.html" class="sidebar-item-text sidebar-link">
@@ -504,13 +554,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="false">
  <span class="menu-text">10. Improving Your Model Fits</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../content/module-model-improvement/model-improvement-overview.html" class="sidebar-item-text sidebar-link">
@@ -545,13 +595,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" aria-expanded="false">
  <span class="menu-text">11. Machine Learning Models I</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../content/module-model-ml-1/ml-models-overview.html" class="sidebar-item-text sidebar-link">
@@ -580,13 +630,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" aria-expanded="false">
  <span class="menu-text">12. Machine Learning Models II</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../content/module-model-ml-2/svm-models.html" class="sidebar-item-text sidebar-link">
@@ -609,36 +659,30 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" aria-expanded="false">
  <span class="menu-text">13. Complete Analysis Workflow</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../content/module-workflow/complete-data-analysis-workflow.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Complete Data Analysis Workflow</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../content/module-workflow/open-science.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Open Science</span></a>
-  </div>
-</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" aria-expanded="false">
  <span class="menu-text">AI</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-16" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../content/module-ai/ai-overview.html" class="sidebar-item-text sidebar-link">
@@ -713,14 +757,7 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#federal-open-science-requirements" id="toc-federal-open-science-requirements" class="nav-link" data-scroll-target="#federal-open-science-requirements">Federal open science requirements</a></li>
-  <li><a href="#the-general-idea-of-open-science" id="toc-the-general-idea-of-open-science" class="nav-link" data-scroll-target="#the-general-idea-of-open-science">The general idea of open science</a></li>
-  <li><a href="#accessibility-and-fair-data" id="toc-accessibility-and-fair-data" class="nav-link" data-scroll-target="#accessibility-and-fair-data">Accessibility and FAIR data</a></li>
-  <li><a href="#reproducibility-and-replicability-too" id="toc-reproducibility-and-replicability-too" class="nav-link" data-scroll-target="#reproducibility-and-replicability-too">Reproducibility (and replicability too)</a></li>
-  <li><a href="#inclusivity" id="toc-inclusivity" class="nav-link" data-scroll-target="#inclusivity">Inclusivity</a></li>
-  <li><a href="#practical-considerations" id="toc-practical-considerations" class="nav-link" data-scroll-target="#practical-considerations">Practical considerations</a></li>
-  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further reading</a></li>
+  <li><a href="#content" id="toc-content" class="nav-link" data-scroll-target="#content">Content</a></li>
   </ul>
 </nav>
     </div>
@@ -729,7 +766,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Open Science and Reproducible Research</h1>
+<h1 class="title">Reproducible, efficient, automated, and documented (READy) workflows</h1>
 </div>
 
 
@@ -737,9 +774,8 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     <div>
-    <div class="quarto-title-meta-heading">Authors</div>
+    <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Zane Billings </p>
              <p>Andreas Handel </p>
           </div>
   </div>
@@ -748,7 +784,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2024-01-02</p>
+      <p class="date-modified">2024-01-18</p>
     </div>
   </div>
     
@@ -759,93 +795,25 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="overview" class="level1">
 <h1>Overview</h1>
-<p>In this unit, we’ll talk a bit more about reproducible research, and how that fits into the much larger concept of “open science.”</p>
+<p>This module covers different aspects and topics related to data analysis projects done in a reproducible, efficient, automated, and documented (READy) manner.</p>
 </section>
 <section id="learning-objectives" class="level1">
 <h1>Learning Objectives</h1>
 <ul>
-<li>Understand the general idea of open science</li>
-<li>Explain what makes research reproducible and/or replicable</li>
-<li>Know what FAIR data standards are</li>
+<li>Know different components of a reproducible, efficient, automated, and documented (READy) workflow and approaches to implementing it.</li>
 </ul>
 </section>
-<section id="introduction" class="level1">
-<h1>Introduction</h1>
-<p>Way back at the <a href="../../content/module-intro-tools/tools-reproducibility.html"><strong>beginning of the course</strong></a>, we briefly discussed reproducibility. Throughout the course, we emphasized the importance to do analyses in a reproducible (and thus generally automated/scripted) manner. In this module, we’ll discuss a bit more what reproducible research means and entails, current trends towards open science, and why you pretty much need to have a solid grasp on reproducible research strategies in the future.</p>
-</section>
-<section id="federal-open-science-requirements" class="level1">
-<h1>Federal open science requirements</h1>
-<p>While the concepts of reproducible research and open science have been around for a while, they have recently increased in prominence. Several US government organizations have said that <a href="https://www.earthdata.nasa.gov/news/year-of-open-science">2023 is the Year of Open Science</a>, and a recent Office of Science and Technology Policy <a href="https://www.whitehouse.gov/ostp/news-updates/2022/08/25/ostp-issues-guidance-to-make-federally-funded-research-freely-available-without-delay/">memo</a> has recommended that all federal agencies take serious steps towards open science practices (more on what exactly this means later).</p>
-<p>Federal agencies like the NIH have been requiring data sharing and public releases of papers (on PMC) for some time now, but these recommended measures are even stronger, and in my opinion, a very positive direction for science. It is quite likely that if you work with federal funding in the near future, you will be required to share your data and code publicly as soon as you decide to publish. The exact implementation of these protocols hasn’t been determined yet (nor has the degree to which these recommendations will be formally implemented), but the writing is on the wall, so to speak.</p>
-<p><strong>It is easier for you to get comfortable with reproducible research methods and open science now, rather than scrambling to learn it in the future!</strong></p>
-</section>
-<section id="the-general-idea-of-open-science" class="level1">
-<h1>The general idea of open science</h1>
-<p>There are many ways of defining and describing “open science”.</p>
-<p>If you search online for “what is open science,” you will likely find various conceptual diagrams and descriptions. The papers <a href="https://bmcmedresmethodol.biomedcentral.com/articles/10.1186/s12874-021-01304-y"><em>Open science saves lives: lessons from the COVID-19 pandemic</em></a> and <a href="https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2020EA001562"><em>From Open Data to Open Science</em></a> provide pretty good conceptual discussions of open science, but I think the best of schematic summary is from <a href="https://www.earthdata.nasa.gov/esds/open-science/oss-for-eso-workshops">NASA</a>.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="../../media/open-science.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Source: NASA"><img src="../../media/open-science.jpg" class="img-fluid figure-img" style="width:50.0%" alt="A circular graphic with 'open science' in the center, showing several components of open science around it ([source](https://www.earthdata.nasa.gov/esds/open-science/oss-for-eso-workshops))."></a></p>
-<figcaption class="figure-caption">Source: <a href="https://www.earthdata.nasa.gov/esds/open-science/oss-for-eso-workshops">NASA</a></figcaption>
-</figure>
-</div>
-<p>NASA defines three components that are central to open science.</p>
-<ol type="1">
-<li>Accessible – your research process and results need to be transparent. Open access, FAIR data, and code sharing all fall into this.</li>
-<li>Reproducible – other people should be able to get the same results as you, and you should strive to make reusable products.</li>
-<li>Inclusive – if your research is only accessible and reproducible for relatively well-off scientists at major institutions in the USA, it’s still not really open 🙂.</li>
-</ol>
-<p>If you want a formal definition of “open science,” here’s the one from the OSTP, which is pretty comprehensive:</p>
-<blockquote class="blockquote">
-<p>“The principle and practice of making research products and processes available to all, while respecting diverse cultures, maintaining security and privacy, and fostering collaborations, reproducibility, and equity.”</p>
-</blockquote>
-<p>Open science is like spaghetti sauce–it has a lot of ingredients that have to be cooked together to get the best flavor. Let’s go into a bit more detail on each of these topics.</p>
-</section>
-<section id="accessibility-and-fair-data" class="level1">
-<h1>Accessibility and FAIR data</h1>
-<p>Open access publishing is a big topic, but for the purposes of this class I will just say that I think you should publish Open Access whenever possible. In the future, it seems likely that any federally funded projects in the US will require an open access fund as part of the budget, as publishing OA can often be prohibitively expensive. If you want to learn more, check out the <a href="https://en.wikipedia.org/wiki/Open_access">Wikipedia page on Open Access</a>, or if you <em>really</em> want to learn more, see <a href="https://direct.mit.edu/books/oa-monograph/3754/Open-Access">Peter Suber’s book on OA</a>.</p>
-<p>The main purpose of this section is to talk about data sharing. Data sharing used to be a pretty contentious topic, but fortunately it is more normalized now than it has ever been before, and thanks to NIH (and other agency mandates), it will likely be a normal part of science before too long.</p>
-<p>Of course just dumping messy data without any documentation into a depository is not great for accessibility and reproducibility. As some of you noticed during this course, even data from the CDC or other reputable organizations is often very poorly formatted and does not have a lot of metadata or documentation to help you out. To somewhat solve this issue, the FAIR data standards was created. FAIR stands for:</p>
-<ol type="1">
-<li><strong>F</strong>indable: when someone goes to your paper or project, they should be able to easily get to the data source.</li>
-<li><strong>A</strong>ccessible: users need to be able to access the data, and data are stored in a way that users can feasibly get them.</li>
-<li><strong>I</strong>nteroperable: data should be in standardized formats, using standard vocabulary. You should be specific if your data is derived from another dataset or if the user will need other related datasets.</li>
-<li><strong>R</strong>eusable: data should be documented and version-controlled when you release it, with clear descriptions of what information is contained in the data, who can use the data, and for what purposes.</li>
-</ol>
-<p>The FAIR standard was originally described in this <a href="https://www.nature.com/articles/sdata201618">2016 publication</a>. Another great resource is the <a href="https://www.go-fair.org/fair-principles/">GO FAIR initiative</a>. It is worth taking a short look at both these resources.</p>
-<p>Of course dealing with things like data use agreements and individual privacy is paramount, so 100% achieving these goals all the time is not feasible. Sometimes you might need to use <a href="https://en.wikipedia.org/wiki/Synthetic_data">synthetic data</a> based on your real data, or remove certain information from your data to protect privacy, or require a data use agreement before you can distribute the data to individuals. We should strive for data to be as FAIR as possible, but protecting individual privacy is equally important!</p>
-<p>In general, a lot of authors still hide behind “I can’t share my data, it’s confidential” as an excuse for not having to share. Most of the time, it is possible to share de-identified data without confidentiality problems. Hopefully, the near future will make data sharing much more common and also easier.</p>
-</section>
-<section id="reproducibility-and-replicability-too" class="level1">
-<h1>Reproducibility (and replicability too)</h1>
-<p>We discussed <strong>reproducibility</strong> in <a href="../../content/module-intro-tools/tools-reproducibility.html">our previous reading</a>, revisit it if you need a refresher. In one sentence, <em>your research is reproducible if another scientist can repeat your methods on your data and get the same results.</em> That is, someone else can take your code and data, rerun all your code, and get the same answers that you got in your paper.</p>
-<p>An important and related issue is <strong>replicability</strong> —- you’ve probably heard of the “replication crisis” in science. If not, see for instance this <a href="https://en.wikipedia.org/wiki/Replication_crisis">Wikipedia page</a>. In one sentence, <em>your research is replicable if someone else can follow your methods and materials to collect new data, analyze their data, and get similar results</em>. Of course in social and semi-social sciences (like epidemiology), when your results often depend on the target population of interest and are expected to vary over time, replicability can be a bit more nuanced than in an experimental field, where experiments should pretty much control for anything that you aren’t interested in.</p>
-<p>Note that replicability is somewhat related to the analysis topic of generalizability/portability we discussed. The difference is that we focused on analysis approaches that would lead to replicable modeling/analysis results using other data sources. More broadly, one wants to be able to replicate overall findings if one were to repeat the full study, including collection of new data. This is important, but for purposes of analysis, the data is considered given, and the focus is on reproducibility/replicability of the data analysis part.</p>
-</section>
-<section id="inclusivity" class="level1">
-<h1>Inclusivity</h1>
-<p>The topic of inclusivity in data science is heavily tied into the idea of data ethics – critical thinking about the potential results and consequences of the products we create is crucial in data science. Many of you have some public health training, and are therefore likely familiar with the <a href="https://www.hhs.gov/ohrp/regulations-and-policy/belmont-report/index.html">Belmont Report</a>.</p>
-<p>Regardless of your scientific background, when working with data (especially human subjects data), the guiding principles of respect for persons, beneficence, and justice should be critical considerations for all of our research.</p>
-<p>For some additional reading on inclusivity and data science ethics, see for instance these resources:</p>
+<section id="content" class="level1">
+<h1>Content</h1>
+<p>The module consists of the following units:</p>
 <ul>
-<li>Elaine O Nsoesie, Sandro Galea, Towards better Data Science to address racial bias and health equity, PNAS Nexus, Volume 1, Issue 3, July 2022, pgac120, https://doi.org/10.1093/pnasnexus/pgac120</li>
-<li>O’Neil, Cathy. Weapons of math destruction. Crown, 2016. ISBN: 978-0553418811.</li>
-<li>Noble, Safiya Umoja. Algorithms of Oppression: How Search Engines Reinforce Racism. NYU Press, 2018. ISBN: 978-1479837243.</li>
-<li><a href="https://datapractices.org/manifesto/" class="uri">https://datapractices.org/manifesto/</a></li>
-<li>Floridi L, Taddeo M. What is data ethics?. Philos Trans A Math Phys Eng Sci. 2016;374(2083):20160360. doi:10.1098/rsta.2016.0360</li>
-</ul>
-</section>
-<section id="practical-considerations" class="level1">
-<h1>Practical considerations</h1>
-<p>It is all nice and good to tell people that their data needs to be FAIR, and that their science needs to be open. But the question is, why do it? Most people might agree that there are societal benefits. For instance having a resource like GenBank for genetic sequences has allowed many scientists beyond those who created the original sequence to use the data and answer important scientific questions. However, there generally need to also be benefits for individuals to entice them to spend time following Open Science standards. This is happening increasingly. On one hand, tools to do research in an Open Science framework are getting increasingly better. For instance the whole <code>R</code> + <code>Quarto</code> framework we’ve been using in class makes it rather easy to do things automated and reproducible. Many other similar tools and resources are becoming available. Another potential benefit of Open Science is increased visibility. If others can use your data and models, they will likely cite your work. They might even want to collaborate with you. It seems for those individuals who are good at sharing, the benefits outweigh the perceived risks (such as “being scooped”). And the final, ever increasing “benefit” is that publishers and funding agencies increasingly require it. So if you don’t follow Open Science standards, it might soon get hard to publish work or get funding. It’s less of a “benefit” and more of an “avoid the penalties” thing, but regardless, it is an important practical consideration.</p>
-</section>
-<section id="further-reading" class="level1">
-<h1>Further reading</h1>
-<p>Everything we discussed throughout this course, and this short introduction, hopefully conveyed the message that Open Science is an important topic to think about and strive toward. The importance of the topic has been increasing in recent years. It is useful to stay somewhat informed. Here are a few places you can find more open science resources.</p>
-<ul>
-<li>The Center for Open Science, a nonprofit dedicated to promoting open science practices and community change, maintains a <a href="https://www.cos.io/blog">blog</a> with several thought provoking readings.</li>
-<li>Statistician Andrew Gelman sometimes writes about open science, mostly from a statistical perspective and has some nice comments on replication. <a href="http://www.stat.columbia.edu/~gelman/research/published/ChanceEthics14.pdf">(1)</a> <a href="https://www.americanscientist.org/article/the-statistical-crisis-in-science">(2)</a></li>
-<li><a href="https://www.fosteropenscience.eu/">FOSTER</a> is a European organization with a set of free courses on open science principles.</li>
+<li><p><a href="../../content/module-ready-workflow/ready-introduction/ready-introduction.html">Introduction to READy</a></p></li>
+<li><p><a href="../../content/module-ready-workflow/ready-organization/ready-organization.html">Project organization</a></p></li>
+<li><p><a href="../../content/module-ready-workflow/ready-project-management/ready-project-management.html">Project management</a></p></li>
+<li><p><a href="../../content/module-ready-workflow/ready-software-management/ready-software-management.html">Software management</a></p></li>
+<li><p><a href="../../content/module-ready-workflow/ready-documentation/ready-documentation.html">Project documentation</a></p></li>
+<li><p><a href="../../content/module-ready-workflow/ready-tools/ready-tools.html">READy tools</a></p></li>
+<li><p><a href="../../content/module-ready-workflow/ready-open/ready-open.html">Open science</a></p></li>
 </ul>
 
 
@@ -1101,18 +1069,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../content/module-workflow/complete-data-analysis-workflow.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Complete Data Analysis Workflow</span>
+      <a href="../../content/module-data-analysis/data-analysis-overview.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Data Analysis Overview</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../content/module-ai/ai-overview.html" class="pagination-link">
-        <span class="nav-page-text">AI Overview</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../content/module-ready-workflow/ready-introduction/ready-introduction.html" class="pagination-link">
+        <span class="nav-page-text">READy introduction</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","closeEffect":"zoom","loop":false,"descPosition":"right"});</script>
 
 
 

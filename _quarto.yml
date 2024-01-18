@@ -113,14 +113,30 @@ website:
                 file: content/module-intro-tools/tools-reference-management.qmd
               - text: "Guidance and Tips for R/RStudio/GitHub"
                 file: content/module-intro-tools/tools-tips-guidance.qmd
-          - section: "2. Data Analysis Introduction"
+          - section: "2A. Data Analysis Introduction"
             contents:
               - text: "Motivating Examples"
                 file: content/module-data-analysis/data-analysis-motivation.qmd
               - text: "Data Analysis Overview"
                 file: content/module-data-analysis/data-analysis-overview.qmd     
-              - text: "Data Analysis Structure"
-                file: content/module-data-analysis/data-analysis-structure.qmd     
+          - section: "2B. READy workflows"
+            contents:
+              - text: "READy workflow overview"
+                file: content/module-ready-workflow/ready-overview.qmd
+              - text: "READy introduction"
+                file: content/module-ready-workflow/ready-introduction/ready-introduction.qmd     
+              - text: "Project organization"
+                file: content/module-ready-workflow/ready-organization/ready-organization.qmd     
+              - text: "Project management"
+                file: content/module-ready-workflow/ready-project-management/ready-project-management.qmd     
+              - text: "Software management"
+                file: content/module-ready-workflow/ready-software-management/ready-software-management.qmd     
+              - text: "Project documentation"
+                file: content/module-ready-workflow/ready-documentation/ready-documentation.qmd     
+              - text: "Tools for a READy workflow"
+                file: content/module-ready-workflow/ready-tools/ready-tools.qmd     
+              - text: "Open research"
+                file: content/module-ready-workflow/ready-open/ready-open.qmd     
           - section: "3. R Coding Basics"
             contents:
               - text: "R Coding Basics"
@@ -233,8 +249,6 @@ website:
             contents:
              - text: "Complete Data Analysis Workflow"
                file: content/module-workflow/complete-data-analysis-workflow.qmd  
-             - text: "Open Science"
-               file: content/module-workflow/open-science.qmd
           - section: "AI"
             contents:
              - text: "AI Overview"

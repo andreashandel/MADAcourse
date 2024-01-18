@@ -12,7 +12,7 @@ This module covers different aspects and topics related to data analysis project
 
 # Learning Objectives
 
-* Be aware of ways to use AI with R.
+* Know different components of a reproducible, efficient, automated, and documented (READy) workflow and approaches to implementing it. 
 
 
 # Content
@@ -23,8 +23,13 @@ The module consists of the following units:
 
 * [Project organization](./ready-organization/ready-organization.qmd)
 
-* [Project management](./ready-organization/ready-project-management.qmd)
+* [Project management](./ready-project-management/ready-project-management.qmd)
 
-* [Software management](./ready-organization/ready-software-management.qmd)
+* [Software management](./ready-software-management/ready-software-management.qmd)
 
-* [Project documentation](./ready-organization/ready-documentation.qmd)
+* [Project documentation](./ready-documentation/ready-documentation.qmd)
+
+* [READy tools](./ready-tools/ready-tools.qmd)
+
+* [Open science](./ready-open/ready-open.qmd)
+
