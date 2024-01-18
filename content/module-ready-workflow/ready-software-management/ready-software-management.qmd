@@ -1,0 +1,41 @@
+---
+title: Software management
+subtitle: ""
+---
+
+# Overview
+
+For this unit, we will discuss ways to make sure your software is managed in such a way that it allows future reproducibility. 
+
+
+# Learning Objectives
+
+- Be familiar with approaches to software management.
+- Know the advantages and disadvantages of different approaches.
+
+
+# Introduction
+
+
+
+# Virtual environments
+
+
+# 
+
+
+# R package management
+
+## `renv` 
+
+
+
+## Other
+
+Metworkx MPN
+
+
+# Summary
+
+
+# Further Resources

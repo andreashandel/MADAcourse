@@ -1,0 +1,41 @@
+---
+title: Project collaboration and tracking
+subtitle: ""
+---
+
+# Overview
+
+For this unit, we will discuss ways to make sure working collaboratively on a project is efficient and that project progress is tracked.
+
+
+# Learning Objectives
+
+- 
+
+# Introduction
+
+
+
+# Git/GitHub
+
+
+## File sizes
+
+
+
+## Confidentiality
+
+By default, GitHub repositories are public. For any data analysis project, it is probably good practice to start with a private repository, so you can have potentially confidential information in the repo. You can add collaborators to the private repository. This way only those individuals who you want to give access will be able to see, and potentially contribute to the project.
+
+Eventually, to ensure your project is publicly reproducible, you want to share some version of the data and the code. Be aware that if you make a repository public, others can also see the full history. This can be important if you want to make your final results public - after you made sure everything is anonymous enough for sharing. If at any time you worked in the repository with the full dataset and tracked it, others can go back in your GitHub/Git history and see it. The best option is likely to start a new public repository and copy only the elements you want to share into that repository, while keeping your original repository private.
+
+
+# SVN
+
+
+
+
+# Summary
+
+
+# Further Resources

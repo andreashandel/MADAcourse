@@ -1,0 +1,50 @@
+---
+title: Storing and Loading data
+subtitle: ""
+---
+
+# Overview
+
+For this unit, we will discuss different common formats for storing data.
+
+
+# Learning Objectives
+
+- Be familiar with common data storage formats.
+- Know the advantages and disadvantages of different data storage formats.
+
+
+# Open formats
+
+It is generally a good idea to store your data in a format that is widely readable by most software.
+
+
+## Text
+
+Plain text is the most portable and easy to use format. Most code, no matter what the programming language is, is written and stored as text. The Quarto files you have been working on are also text. Text can be read by any text editor and can be modified easily. The major disadvantage is that it's not that suitable for storing potentially complex data.
+
+
+## CSV
+
+The CSV (comma-separated values) format is really just a text format that's very well suited for rectangular, spreadsheet-type data. In a CSV, you have rows and columns, of entries, 
+
+
+# Proprietary formats
+
+
+## Excel
+
+
+
+## SAS/SPSS/STATA/etc.
+
+Most commercial software has its own format of storing code and data.
+
+
+
+## Databases
+
+
+
+
+
