@@ -1,5 +1,5 @@
 ---
-title: Project collaboration and tracking
+title: Project Management
 subtitle: ""
 ---
 
@@ -10,10 +10,23 @@ For this unit, we will discuss ways to make sure working collaboratively on a pr
 
 # Learning Objectives
 
-- 
+- Know why tracking a project is useful
+- Be familiar with Git/GitHub for project tracking
+
 
 # Introduction
 
+While the term _Project Management_ is very broad, here I only mean management of your actual files and folders. Time- and people-management, which are obviously very important components of any project, are beyond the scope of this unit.
+
+It is generally useful to have some software that can record and track your progress.
+This is useful even if you are the only one working on a project, since it allows you to 
+to go back in history to older versions of the project. Thus, if you made some changes that you don't like, or accidentally deleted some files, you can revery back.
+
+These tracking tools become even more important if you work with collaborators. You want to avoid editing the same files at the same time and it should be clear who did what. Without a tracking system, this is hard to do. 
+
+There are different tools available to track your progress. They are often known as version control systems (coming from the versions of code in software development, where those tools originated.)
+
+We'll only consider a few of those systems. Wikipedia [has a long list](https://en.wikipedia.org/wiki/List_of_version-control_software) if you are interested in further such tools.
 
 
 # Git/GitHub
@@ -22,7 +35,6 @@ Git/GitHub is a very common method of working collaboratively on projects.
 A prior unit provides [a brief introduction to Git/GitHub](/content/module-intro-tools/tools-github-introduction.qmd). 
 
 The following only mentions (again) some topics worth keeping in mind when using Git/GitHub for data analysis work.
-
 
 
 ## File sizes
@@ -41,12 +53,27 @@ Therefore, for most data analysis projects, it is probably good practice to star
 Eventually, to ensure your project is publicly reproducible, you want to share some version of the data and the code. Be aware that if you make a repository public, others can also see the full history. This can be important if you want to make your final results public - after you made sure everything is anonymous enough for sharing. If at any time you worked in the repository with the full dataset and tracked it, others can go back in your GitHub/Git history and see it. The best option is likely to start a new public repository and copy only the elements you want to share into that repository, while keeping your original repository private.
 
 
-# SVN
+## Gitlab & others
+
+As mentioned above, the underlying software is called Git, GitHub is essentially a hosting platform (owned by Microsoft). GitHub is the most popular Git hosting platform, but not the only one. A few alternatives are [Gitlab](https://about.gitlab.com/), [Bitbucket](https://bitbucket.org/) and [others](https://www.wearedevelopers.com/magazine/top-github-alternatives). While there are some differences between these platforms, as long as the underlying system is `Git`, the workflows are very comparable.
 
 
+# Subversion & others
+
+[Subversion (SVN)](https://subversion.apache.org/) is an alternative to `Git`. Since it is a different underlying tool to manage your project - not just another hosting platform - there are differences between `Git` and `SVN` that require getting used to. Depending on the level of use, differences might seem small (just different terms for procedures, e.g., instead of `git pull` you do `svn update`), but as you dig deeper, differences in approach can become more substantial.
+
+Yet other tools exist, e.g., [Mercurial](https://www.mercurial-scm.org/), [Fossil](https://www2.fossil-scm.org/home/doc/trunk/www/index.wiki) and [more](). 
+
+In my opinion, since Git/GitHub are very common, have good documentation and user-friendly clients, most of the time those are probably your best choice. If you really get into working with large data files and need ways to track them, it might be worth looking around a bit. E.g., SVN often works better with large files.
 
 
 # Summary
 
+You want to use some tool that tracks your project. This is useful for solo work since you can revert, and very useful for teamwork. Git/GitHub is the most common tool to use for such tracking purposes. Others exist but you likely might not need to consider them.
+
 
 # Further Resources
+
+There's a lot of information out there on version control in general, and more specifically Git and GitHub. [The version control article on Wikipedia](https://en.wikipedia.org/wiki/Version_control) is a good starting point for learning some more of the concepts. The [GitHub documentation](https://docs.github.com/en) has a lot of great resources for working with Git and GitHub, at varying levels of difficulty.    
+
+

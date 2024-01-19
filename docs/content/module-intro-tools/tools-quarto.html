@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.4.545">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -49,7 +49,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -58,6 +64,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -71,9 +78,9 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a href="../../index.html" class="navbar-brand navbar-brand-logo">
     <img src="../../media/MADAlogo.png" alt="" class="navbar-logo">
     </a>
@@ -88,53 +95,53 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../courseinfo/course-overview.html" rel="" target="">
- <span class="menu-text">General Information</span></a>
+    <a class="nav-link" href="../../courseinfo/course-overview.html"> 
+<span class="menu-text">General Information</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../../content/content-overview.html" rel="" target="" aria-current="page">
- <span class="menu-text">Content</span></a>
+    <a class="nav-link active" href="../../content/content-overview.html" aria-current="page"> 
+<span class="menu-text">Content</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../courseinfo/assessments-overview.html" rel="" target="">
- <span class="menu-text">Assessments</span></a>
+    <a class="nav-link" href="../../courseinfo/assessments-overview.html"> 
+<span class="menu-text">Assessments</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../project/project-overview.html" rel="" target="">
- <span class="menu-text">Project</span></a>
+    <a class="nav-link" href="../../project/project-overview.html"> 
+<span class="menu-text">Project</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../resources/resources-overview.html" rel="" target="">
- <span class="menu-text">Resources</span></a>
+    <a class="nav-link" href="../../resources/resources-overview.html"> 
+<span class="menu-text">Resources</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/andreashandel/MADAcourse" rel="" target=""><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/andreashandel/MADAcourse"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../content/module-intro-tools/introduction-course.html">1. Course and Tools Introduction</a></li><li class="breadcrumb-item"><a href="../../content/module-intro-tools/tools-reproducibility.html">Reproducibility, Quarto &amp; Co</a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../content/module-intro-tools/introduction-course.html">1. Course and Tools Introduction</a></li><li class="breadcrumb-item"><a href="../../content/module-intro-tools/tools-quarto.html">Quarto &amp; Co</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
     </div>
   </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
@@ -178,8 +185,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-intro-tools/tools-reproducibility.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Reproducibility, Quarto &amp; Co</span></a>
+  <a href="../../content/module-intro-tools/tools-quarto.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Quarto &amp; Co</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -237,7 +244,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../content/module-ready-workflow/ready-overview.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">READy workflow overview</span></a>
+ <span class="menu-text">READy workflows overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -748,7 +755,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -758,16 +765,20 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
   <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#quarto-and-r-markdown-for-reproducible-analysis" id="toc-quarto-and-r-markdown-for-reproducible-analysis" class="nav-link" data-scroll-target="#quarto-and-r-markdown-for-reproducible-analysis">Quarto and R Markdown for reproducible analysis</a></li>
+  <li><a href="#quarto-overview" id="toc-quarto-overview" class="nav-link" data-scroll-target="#quarto-overview">Quarto overview</a></li>
+  <li><a href="#markdown" id="toc-markdown" class="nav-link" data-scroll-target="#markdown">Markdown</a></li>
+  <li><a href="#literate-programming" id="toc-literate-programming" class="nav-link" data-scroll-target="#literate-programming">Literate programming</a></li>
   <li><a href="#getting-started-with-quarto" id="toc-getting-started-with-quarto" class="nav-link" data-scroll-target="#getting-started-with-quarto">Getting started with Quarto</a></li>
-  <li><a href="#other-reproducibility-tips" id="toc-other-reproducibility-tips" class="nav-link" data-scroll-target="#other-reproducibility-tips">Other reproducibility tips</a></li>
+  <li><a href="#quarto-versus-r-markdown" id="toc-quarto-versus-r-markdown" class="nav-link" data-scroll-target="#quarto-versus-r-markdown">Quarto versus R Markdown</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#further-resources" id="toc-further-resources" class="nav-link" data-scroll-target="#further-resources">Further Resources</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../content/module-intro-tools/introduction-course.html">1. Course and Tools Introduction</a></li><li class="breadcrumb-item"><a href="../../content/module-intro-tools/tools-quarto.html">Quarto &amp; Co</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Quarto &amp; Co</h1>
 </div>
@@ -794,7 +805,9 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
+
 </header>
+
 
 <section id="overview" class="level1">
 <h1>Overview</h1>
@@ -809,28 +822,44 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
+<p>Quarto is <a href="https://quarto.org/">(according to its website)</a> <em>An open-source scientific and technical publishing system</em>. Quarto is developed by the same company (posit) that develops RStudio. It therefore has very nice integration with R code - but also supports other code, such as Python and Julia. It uses Markdown as the format to write text in.</p>
 </section>
-<section id="quarto-and-r-markdown-for-reproducible-analysis" class="level1">
-<h1>Quarto and R Markdown for reproducible analysis</h1>
-<p>R Markdown is still around and functional. For instance, this course website is written in R Markdown and <a href="https://github.com/andreashandel/MADAcourse">lives on GitHub</a>. But in my opinion, Quarto is the future. We’ll therefore focus on using it. Eventually I’ll switch all my materials over to Quarto. The good thing is that the transition is easy.</p>
-<p>The idea behind Quarto is that you have a system that allows you to combine code with text and simple formatting to easily and reproducibly turn them into a lot of different output formats, e.g., HTML, PDF, Word, or slides. You can apply layout and styling to those documents, which is done separately from the content. This means you can quickly switch between outputs. Quarto calls <a href="https://quarto.org/docs/get-started/hello/rstudio.html#how-it-works">various other pieces of software</a> to - almost magically - turn text and code input into a variety of different output formats. The good thing is, you generally don’t need to care what goes on under the hood, it all happens (almost always) smoothly behind the scenes.</p>
-<p>The input (for us) into a Quarto document are <code>R</code> code and Markdown text. Markdown is a simple way of formatting text to get some reasonably nice layouts with minimal effort. If you have no experience with Markdown, I suggest you go through this nice, short <a href="https://www.markdowntutorial.com/">interactive tutorial</a>. A good reference to look up formatting for Markdown until you have it memorized is this <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">online cheat sheet</a>.</p>
-<p><strong>Quarto and R Markdown Note:</strong> Quarto is fairly new. It didn’t exist yet last time I taught the course. I’m switching to Quarto because I think it’s the future. But you might still find me talking about R Markdown in some places. If you do, let me know so I can update. In general, either R Markdown or Quarto will do the job, but Quarto is the future, so it’s best to use/learn it.</p>
+<section id="quarto-overview" class="level1">
+<h1>Quarto overview</h1>
+<p>The idea behind Quarto is that you have a system that allows you to combine code with text and simple formatting to easily create various useful outputs, such as html files (websites and presentation slides), word and pdf documents (manuscripts and reports), and more.</p>
+<p>You can apply layout and styling to those documents, which is done separately from the content. This means you can quickly switch between outputs. Quarto calls <a href="https://quarto.org/docs/get-started/hello/rstudio.html#how-it-works">various other pieces of software</a> to - almost magically - turn text and code input into a variety of different output formats. The good thing is, you generally don’t need to care what goes on under the hood, it all happens (almost always) smoothly behind the scenes.</p>
+</section>
+<section id="markdown" class="level1">
+<h1>Markdown</h1>
+<p>The text inside a Quarto document is markdown. Markdown is a simple way of writing text with some formatting. Markdown is a simple way of formatting text to get some reasonably nice layouts with minimal effort. It’s a bit like HTML code (or TeX/LaTeX if you are familiar with that), inasmuch as it combines plain text with instructions for formatting it. Markdown is simpler than HTML or LaTeX.</p>
+<p>If you have no experience with Markdown, I suggest you go through this nice, short <a href="https://www.markdowntutorial.com/">interactive tutorial</a>. A good reference to look up formatting for Markdown until you have it memorized is this <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">online cheat sheet</a>.</p>
+<p>The fact that markdown is mainly plain text means you can edit it with any text editor, you can easily track changes, and also turn the text into different output formats.</p>
+</section>
+<section id="literate-programming" class="level1">
+<h1>Literate programming</h1>
+<p>You can write pure markdown text documents in Quarto that do not contain any code (like this document you are reading). But things become very powerful once you combine text with code in a fairly automated manner, which is the main idea behind Quarto.</p>
+<p>This concept behind combining text with code is often referred to as literate programming. It has been around for a while, Quarto is the currently best and most feature-rich implementation of this concept.</p>
 </section>
 <section id="getting-started-with-quarto" class="level1">
 <h1>Getting started with Quarto</h1>
-<p>The whole Quarto system is already incredibly flexible and powerful (and continues to grow). Because it is very feature rich and you can do a ton, trying to read all about it does not make much sense. The best is a <em>learn it as you need it</em> approach. The <a href="https://quarto.org/">Quarto website</a> has great documentation, you’ll likely be going there often.</p>
-<p>To get started, follow the <a href="https://quarto.org/docs/get-started/">get started guide</a> on the Quarto website. Install Quarto and - if you haven’t already - R Studio. Then go through the 3 starter tutorials. There is already a lot going on in those tutorials, and there is no need to memorize it. The point is to get an idea of what you can do and play around a bit. You’ll repeatedly be coming back to the Quarto documentation as you try to figure out how to do specific things. So if some of the material in the tutorials is not quite clear on your first pass-through, that’s ok. Just get an overall idea and play around so you feel comfortable. You’ll be using Quarto in the exercise (and pretty much all the time from now on).</p>
-<!-- One great thing about R Markdown is that it's well documented. The [R Studio R Markdown site](https://rmarkdown.rstudio.com/) and the [R Markdown book](https://bookdown.org/yihui/rmarkdown/) are great resources. Another good source targeted at scientists is the online book [R Markdown for Scientists](https://rmd4sci.njtierney.com/). RStudio also has an R Markdown cheat sheet in their [collection of very useful cheat sheets](https://www.rstudio.com/resources/cheatsheets/). -->
-<!-- Since developing knitr and R Markdown, [Yihui Xie](https://yihui.name/en/) and colleagues have developed several other versions of the tool. There is [bookdown](https://bookdown.org/yihui/bookdown/) which lets you nicely add references and write full books and scientific manuscripts (see the research example in the introductory lesson and a list of books written in bookdown on the [bookdown website](https://bookdown.org/)) and [blogdown](https://bookdown.org/yihui/blogdown/) which lets you make webpages (see e.g. [my group webpage which is done that way](http://handelgroup.uga.edu/)).  -->
-<!-- Some good sources that you might want to glimpse at are the chapters in the _Communicate_ section of the [R for Data Science book](http://r4ds.had.co.nz/index.html) and the beginning chapters of the [R Markdown book](https://bookdown.org/yihui/rmarkdown/). There's also the newer [R Markdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/), which is a good _how do I do X_ resource. -->
-<!-- Again, you don't need to read these materials in much detail, but if you are new to R Markdown, try to get enough information so you understand what it's all about and how to get started. The way you learn R Markdown is by having a specific task you want to accomplish or a product you want to produce, and then look at various of the above listed documents to figure out how to do it. You'll get plenty of practice throughout this course. project. -->
+<p>The whole Quarto system is very flexible and powerful (and continues to grow). Because it is very feature rich and you can do a ton, trying to read all about it does not make much sense. The best is a <em>learn it as you need it</em> approach. The <a href="https://quarto.org/">Quarto website</a> has great documentation, you’ll likely be going there often.</p>
+<p>To get started, follow the <a href="https://quarto.org/docs/get-started/">get started guide</a> on the Quarto website. Install Quarto and - if you haven’t already - R Studio. (Note that current versions of R Studio have Quarto integrated, but it’s not always the latest version, so doing a separate install of the latest Quarto version is not a bad idea.)</p>
+<p>Then go through the very nice <a href="https://quarto.org/docs/get-started/hello/rstudio.html">Getting Started with Quarto tutorial</a>. The main point is to get an idea of what you can do and play around a bit. You’ll repeatedly be coming back to the Quarto documentation as you try to figure out how to do specific things. So if some of the material in the tutorials is not quite clear on your first pass-through, that’s ok. Just get an overall idea and play around so you feel comfortable.</p>
 </section>
-<section id="other-reproducibility-tips" class="level1">
-<h1>Other reproducibility tips</h1>
-<p>We’ll cover that more later, but it is important to not do things that only work on your computer but not on others. The most important and frequent mistake I see is someone using a local path. If you load data from <code>C:\Users\myname\mydata</code> then it won’t work for me. Always load/save data relative to the project folder. The <a href="https://here.r-lib.org/"><code>here</code> R package</a> and its associated <code>here()</code> command in R is very useful. You’ll see it show up and you should use it.</p>
-<p>Another good idea is to start your R code with <code>use_blank_slate()</code> from the <a href="https://usethis.r-lib.org/"><code>usethis</code> R package</a>.</p>
-<p>For some more background on this, see the <a href="https://www.tidyverse.org/blog/2017/12/workflow-vs-script/"><code>tidyverse</code> article</a> by Jenny Bryan, co-author of both the <code>here</code> and <code>usethis</code> packages.</p>
+<section id="quarto-versus-r-markdown" class="level1">
+<h1>Quarto versus R Markdown</h1>
+<p>Quarto is the more powerful successor of <a href="https://rmarkdown.rstudio.com/">R Markdown</a>. R Markdown is still around and functional. However, most effort is going into implementing new features for Quarto, and it is already much more full-featured compared to R Markdown.</p>
+<p>Occasionally, you might still need to use R Markdown, and you will find a lot of online information for R Markdown. Quarto and R Markdown are very similar, so often what works in one will also work in the other.</p>
+</section>
+<section id="summary" class="level1">
+<h1>Summary</h1>
+<p>Quarto is a powerful, flexible framework that allows you to perform data analysis and other scientific and technical projects in a very automated, reproducible setup.</p>
+</section>
+<section id="further-resources" class="level1">
+<h1>Further Resources</h1>
+<ul>
+<li>The R4DS book has a <a href="https://r4ds.hadley.nz/quarto">Quarto chapter</a>.</li>
+</ul>
 
 
 </section>
@@ -915,10 +944,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/andreashandel\.github\.io\/MADAcourse\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -928,8 +974,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -942,6 +997,125 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -985,6 +1159,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1010,6 +1185,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1067,35 +1268,22 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       });
     }
   }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var filterRegex = new RegExp("https:\/\/andreashandel\.github\.io\/MADAcourse\/");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-          // target, if specified
-          link.setAttribute("target", "_blank");
-      }
-    }
 });
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../content/module-intro-tools/tools-github-r-workflow.html" class="pagination-link">
+      <a href="../../content/module-intro-tools/tools-github-r-workflow.html" class="pagination-link  aria-label=" github="" and="" r="" workflow"="">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">GitHub and R Workflow</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../content/module-intro-tools/tools-ai.html" class="pagination-link">
+      <a href="../../content/module-intro-tools/tools-ai.html" class="pagination-link" aria-label="AI Tools">
         <span class="nav-page-text">AI Tools</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 

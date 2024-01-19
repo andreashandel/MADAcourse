@@ -29,7 +29,7 @@ The module consists of the following units:
 
 * [Project documentation](./ready-documentation/ready-documentation.qmd)
 
-* [READy tools](./ready-tools/ready-tools.qmd)
+* [Tools for a READy workflow](./ready-tools/ready-tools.qmd)
 
-* [Open science](./ready-open/ready-open.qmd)
+* [Open research](./ready-open/ready-open.qmd)
 

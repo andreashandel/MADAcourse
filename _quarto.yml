@@ -38,10 +38,8 @@ format:
       sidebar-width: 300px # widens the sidebar so most module names fit on one line
       body-width: 900px # widens body content
       
-# lightbox extension
-# https://github.com/quarto-ext/lightbox
-filters:
-  - lightbox
+# lightbox figures
+# https://quarto.org/docs/output-formats/html-lightbox-figures.html
 lightbox:
   desc-position: right  # position of description
   match: auto # give all images lightbox treatment
@@ -105,8 +103,8 @@ website:
                 file: content/module-intro-tools/tools-github-introduction.qmd
               - text: "GitHub and R Workflow"
                 file: content/module-intro-tools/tools-github-r-workflow.qmd
-              - text: "Reproducibility, Quarto & Co"
-                file: content/module-intro-tools/tools-reproducibility.qmd
+              - text: "Quarto & Co"
+                file: content/module-intro-tools/tools-quarto.qmd
               - text: "AI Tools"
                 file: content/module-intro-tools/tools-ai.qmd
               - text: "Reference Management"
@@ -121,7 +119,7 @@ website:
                 file: content/module-data-analysis/data-analysis-overview.qmd     
           - section: "2B. READy workflows"
             contents:
-              - text: "READy workflow overview"
+              - text: "READy workflows overview"
                 file: content/module-ready-workflow/ready-overview.qmd
               - text: "READy introduction"
                 file: content/module-ready-workflow/ready-introduction/ready-introduction.qmd     

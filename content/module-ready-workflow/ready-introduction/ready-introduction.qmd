@@ -5,7 +5,7 @@ subtitle: ""
 
 # Overview
 
-This unit provides an overview of the ideas for a data analysis that follows reproducible, efficient, automated, and documented (READy) principles.
+This unit provides an overview of the ideas for a data analysis that follows reproducible, efficient, automated, and documented (READy) workflow principles.
 
 
 # Learning Objectives
@@ -15,9 +15,12 @@ This unit provides an overview of the ideas for a data analysis that follows rep
 
 # Introduction
 
-The concept of reproducible research or what I call here more generally the READy workflow, is becoming increasingly important. This unit provides a few general ideas on the topic, with further units going into more detail on specific aspects that can help you to perform READy analyses. 
+The concept of reproducible research or what I call here more generally the READy workflow[^1], is becoming increasingly important. This unit provides a few general ideas on the topic, with further units going into more detail on specific aspects that can help you to perform READy analyses. 
 
-![Not a good example of reproducibility.](../../media/amiracleoccurs.gif){fig-alt="Comic of two people in front of a chalkboard that has mathematical equations and the phrase 'then a miracle occurs' between equations. The person pointing at that phrase says 'I think you should be more explicit here in step two.'"}
+[^1]: READy is an acronym I invented. If you look around online, you'll find lots of discussions on the topic of reproducible or automated data analysis, and why documentation is important, but you'll likely not find anything calling it READy.
+
+
+![Not a good example of reproducibility.](/media/amiracleoccurs.gif){fig-alt="Comic of two people in front of a chalkboard that has mathematical equations and the phrase 'then a miracle occurs' between equations. The person pointing at that phrase says 'I think you should be more explicit here in step two.'"}
 
 
 
@@ -30,7 +33,7 @@ get the same (or similar, taking into account some random variation) results*.
 
 Unfortunately, it is often the case these days that results can't be replicated/reproduced by independent investigators/labs. Sometimes, even the same labs can't reproduce their previous findings. You have probably heard about the (supposed) [*Reproducibility/Replication Crisis*](https://en.wikipedia.org/wiki/Replication_crisis) in science. If not, do a quick online search, you'll find lots of articles saying there is an increasing problem, while others saying that it's not getting worse, we are just detecting more. While sometimes there is fraud, most often there are more benign reasons preventing reproducibility.
 
-This video provides a short discussion of some of the current problems with reproducibility in science:
+This video provides a short discussion of some of the problems with reproducibility/replicability in science:
 
 ::: container
 <iframe class="video" src="https://www.youtube.com/embed/VcgO2v3JjCU" frameborder="0" allowfullscreen></iframe>
@@ -43,7 +46,7 @@ The term replicability is generally applied to a full study, including the data 
 
 To make a fully reproducible analysis, you have to provide all the data and code, and the generation of results (figures and tables) needs to be fully automated. The scientific community is moving toward more reproducibility and transparency (e.g., mandating public access to data, computer code, etc.). An increasing number of funding agencies and journals require access to data and code.
 
-While there is a strong movement toward *Open Access*, providing all the data is not always possible. However, the full automation of data processing, analysis, and result generation is always possible.
+While there is a strong movement toward *Open Access*, providing all the data is not always possible. However, the full automation of data processing, analysis, and result generation is almost always possible.
 
 In this video, [Roger Peng](http://www.biostat.jhsph.edu/~rpeng/) goes into some more details of the concept of reproducible research:
 
@@ -77,11 +80,9 @@ A reproducible analysis should also be *practically reproducible*, not just *the
 
 
 
-
-
-
-
 # Summary
+
+While the READy concept might seem a bit strange, and maybe also sounds like a lot of work, you will quickly discover that in the long run, it saves you time and makes your analysis more robust and reliable. A READy-type approach is also more and more required, not just in industry or by agencies such as the FDA, but increasingly by federal funders of research such as NIH or NSF.
 
 
 # Further Resources

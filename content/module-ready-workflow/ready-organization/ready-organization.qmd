@@ -48,18 +48,20 @@ Another consideration is computational time. For simple projects, your code will
 
 ## Setting file and folder paths
 
-A common problem is the use of paths that are specific only to the user's computer and do not work on someone else's machine. Do not set paths or load files from paths that only exist on your machine! Instead, you should only use *relative* paths. A *relative* path is a file path that is relative to some directory. So loading a file from location `C:/myusername/mydesktop/myproject/data/rawdata.csv` is a bad idea, because someone else will not have that setup. They will have a different user name, they might be on a Mac or Linux machine, they might have different names for their hard drives, etc. 
+It is important to ensure that everything can be reproduced not just on your computer, but on the systems of others.
 
-Instead, you should load data relative to your main project directory. So for instance reference `data/rawdata.csv` and use a tool that automatically looks for that folder inside your project folder (here, `myproject`). With this, as long as someone else has a copy of your project and its subfolders, everything should work, no matter where they store your project. 
+A common problem that prevents others to reproduce your work is the use of paths that are specific to only your computer. Do not set paths or load files from paths that only exist on your machine! Instead, you should only use *relative* paths. A *relative* path is a file path that is relative to some directory. 
+
+As an example, loading a file from location `C:/myusername/mydesktop/myproject/data/rawdata.csv` is a bad idea, because someone else will not have that setup. They will have a different user name, they might be on a Mac or Linux machine, they might have different names for their hard drives, etc. 
+
+Instead, you should load data relative to your main project directory. So for instance reference `data/rawdata.csv` and use a tool that automatically looks for that folder inside your project folder (in this example, `myproject`). With this, as long as someone else has a copy of your project and its subfolders, everything should work, no matter where they store your project. 
 
 For nice video tutorial, see this [video on relative versus absolute paths](https://youtu.be/Onq0ue5o_uo?si=Ul98wuxnhDntr5Hr). The setting for this is development of websites, instead of data analysis. So he talks about `html` files, but that doesn't really matter, everything that is explained about the paths applies in general.
 
 
-
 ## `here` R package
 
-For `R`, there is the [`here` package](https://github.com/r-lib/here). It works nicely with R projects. If you use the `here` command to load a file, it always looks for the file relative to the main project directory. So you can load a file with a command like `dat <- read.csv(here::here('data','rawdata,csv'))`. [Malcolm Barrett's blog post](https://malco.io/articles/2018-11-05-why-should-i-use-the-here-package-when-i-m-already-using-projects) is a great, short explanation of why one should use the `here` package and how to do it.
-
+The [`here` R package](https://here.r-lib.org/) and its associated `here()` command in R is very useful for working with paths and loading/saving files.  It works nicely with R projects. If you use the `here` command to load a file, it always looks for the file relative to the main project directory. So you can load a file with a command like `dat <- read.csv(here::here('data','rawdata,csv'))`. [Malcolm Barrett's blog post](https://malco.io/articles/2018-11-05-why-should-i-use-the-here-package-when-i-m-already-using-projects) is a great, short explanation of why one should use the `here` package and how to do it.
 
 
 # Summary
@@ -78,7 +80,7 @@ And beware of having R projects inside projects. That's a bad idea and can lead 
 # Further Resources
 
 
--   For some more useful information on structuring your project see [What They Forgot to Teach You About R](https://rstats.wtf/), which is a collection of notes - some more complete than others - by [Jenny Bryan](https://jennybryan.org/) and co-authors.
+-   For some more useful information on structuring your project see [What They Forgot to Teach You About R](https://rstats.wtf/), which is a collection of notes - some more complete than others - by [Jenny Bryan](https://jennybryan.org/) and co-authors. Jenny Brian also has [a shorter blog post](https://www.tidyverse.org/blog/2017/12/workflow-vs-script/) on more or less the same topic.
 
 - I created a public Github repository called [dataanalyis-template](https://github.com/andreashandel/dataanalysis-template) which is meant as a template for doing a data analysis project. It has different folders for organizing your project. Various `README` files are provided to explain what each folder should contain. The template also contains several example files to show how the whole project workflow (or any data analysis workflow for that matter) can work. This is, of course, only one way to structure things. You are welcome to figure out your own setup and structure. 
 
