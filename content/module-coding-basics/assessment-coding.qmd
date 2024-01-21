@@ -125,7 +125,7 @@ Part 2 is due by **Thursday**.
 
 ## Adding to each other's work
 
-Once everyone has done their first part (by **Wednesday** at the latest), you'll contribute to another group member's project. As previously, find your classmates' portfolio repository and fork it, then clone to your local computer.
+Once you've done your first part, you'll contribute to another group member's project. As previously, find your classmates' portfolio repository and fork it, then clone to your local computer.
 
 Open the repository. Remember to always do that by clicking on the `.Rproj` file in the main folder, which should open the project/repository in RStudio. Once you have the repository open, find the file for this exercise `coding-exercise.qmd`. Open it, make sure it runs/renders. Then add your part at the bottom of the file. 
 
