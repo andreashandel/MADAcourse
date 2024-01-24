@@ -1954,7 +1954,7 @@
     "href": "content/module-coding-basics/assessment-coding.html#part-1",
     "title": "Assessment - R Coding Basics",
     "section": "Part 1",
-    "text": "Part 1\nPart 1 is due by Wednesday.",
+    "text": "Part 1\nPart 1 is due by Tuesday.",
     "crumbs": [
       "Assessments",
       "3. R Coding Basics"
@@ -2053,7 +2053,7 @@
     "href": "content/module-coding-basics/assessment-coding.html#part-2",
     "title": "Assessment - R Coding Basics",
     "section": "Part 2",
-    "text": "Part 2\nPart 2 is due by Thursday evening.",
+    "text": "Part 2\nPart 2 is due by Thursday.",
     "crumbs": [
       "Assessments",
       "3. R Coding Basics"
@@ -2064,7 +2064,7 @@
     "href": "content/module-coding-basics/assessment-coding.html#adding-to-each-others-work",
     "title": "Assessment - R Coding Basics",
     "section": "Adding to each other’s work",
-    "text": "Adding to each other’s work\nOnce everyone has done their first part (by Wednesday at the latest), you’ll contribute to another group member’s project. As previously, find your classmates’ portfolio repository and fork it, then clone to your local computer.\nOpen the repository. Remember to always do that by clicking on the .Rproj file in the main folder, which should open the project/repository in RStudio. Once you have the repository open, find the file for this exercise coding-exercise.qmd. Open it, make sure it runs/renders. Then add your part at the bottom of the file.\nStart off by adding a comment that says something like This section contributed by YOURNAME. This needs to be there for me to be able to grade your contribution.",
+    "text": "Adding to each other’s work\nOnce you’ve done your first part, you’ll contribute to another group member’s project. As previously, find your classmates’ portfolio repository and fork it, then clone to your local computer.\nOpen the repository. Remember to always do that by clicking on the .Rproj file in the main folder, which should open the project/repository in RStudio. Once you have the repository open, find the file for this exercise coding-exercise.qmd. Open it, make sure it runs/renders. Then add your part at the bottom of the file.\nStart off by adding a comment that says something like This section contributed by YOURNAME. This needs to be there for me to be able to grade your contribution.",
     "crumbs": [
       "Assessments",
       "3. R Coding Basics"
@@ -2480,7 +2480,7 @@
     "href": "content/module-data/assessment-data.html#overview",
     "title": "Assessment - All about Data",
     "section": "Overview",
-    "text": "Overview\nYou have two main options for the exercise this week:\n\nOption 1: Try your hand at a bit of an exploration of some complex data type.\nOption 2: Generate and explore synthetic data.\n\nFor either option, I expect well-documented code and lots of explanatory text in the Quarto document.",
+    "text": "Overview\nYou have two main options for the exercise this week:\n\nOption 1: Try your hand at a bit of an exploration of some complex data type.\nOption 2: Generate and explore synthetic data.\n\nFor either option, I expect well-documented code and lots of explanatory text in the Quarto document.\nWhile this is an open-ended exercise and there are no specific requirements as to what you need to produce, I expect more than just a single figure or 10 lines of code. Since you are getting better each week, it should definitely be more comprehensive than last week’s exercise 😁.",
     "crumbs": [
       "Assessments",
       "4. All about Data"
@@ -2502,7 +2502,7 @@
     "href": "content/module-data/assessment-data.html#option-1",
     "title": "Assessment - All about Data",
     "section": "Option 1",
-    "text": "Option 1\nFind some data that falls into the categories described in the Complex data types unit. It could be some text or images or video or audio or any other complex data. Basically anything that’s not rectangular data with rows as observations and columns as variables.\nThen look for some suitable R packages that allow you to explore the data. You don’t need to do any statistical analysis at this stage. Focus on loading the data, processing as needed, and then do some descriptive/exploratory analysis, e.g. by making plots or tables or… Basically anything that you can think of.\nWhile this is open-ended and there are no specific requirements as to what you need to produce, I expect more than just a single figure. Since you are getting better each week, it should definitely be more comprehensive than last week’s exercise 😁.",
+    "text": "Option 1\nFind some data that falls into the categories described in the Complex data types unit. It could be some text or images or video or audio or any other complex data. Basically anything that’s not rectangular data with rows as observations and columns as variables.\nThen look for some suitable R packages that allow you to explore the data. You don’t need to do any statistical analysis at this stage. Focus on loading the data, processing as needed, and then do some descriptive/exploratory analysis, e.g. by making plots or tables or… Basically anything that you can think of.",
     "crumbs": [
       "Assessments",
       "4. All about Data"
@@ -2513,7 +2513,7 @@
     "href": "content/module-data/assessment-data.html#option-2",
     "title": "Assessment - All about Data",
     "section": "Option 2",
-    "text": "Option 2\nWrite code that generates a synthetic dataset. This dataset should have multiple variables, and there should be some associations between variables.\nThen write code that explores the data by making plots or tables to confirm that your synthetic data is what you expect it to be.\nCONTINUE HERE",
+    "text": "Option 2\nWrite code that generates a synthetic dataset. This dataset should have multiple variables, and there should be some associations between variables.\nThen write code that explores the data by making plots or tables to confirm that your synthetic data is what you expect it to be.\nThen fit a few simple models to the data. For instance use the lm or glm functions to fit a linear or logistic model. Make sure your model can recover the associations you built into the data. Explore if and how different models might be able to capture the patterns you see.\nTake some inspiration from the examples shown in the Synthetic Data module.",
     "crumbs": [
       "Assessments",
       "4. All about Data"

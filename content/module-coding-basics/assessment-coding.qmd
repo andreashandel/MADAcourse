@@ -20,7 +20,7 @@ Then comment/reply to your classmates posts.
 
 This project asks you to write code to do a simple data analysis. This also involves group work, and of course GitHub. 
 
-**The first part of the project is due by Wednesday, so your classmate can do their part before the Friday deadline.**
+**This exercise has staggered due dates, see below.**
 
 ::: emphasis
 As a reminder, you are allowed to use AI tools for this - or any other - task in this course. If you do, I suggest you add comments to your R/Quarto files to indicate where and how you used AI.
@@ -33,7 +33,7 @@ As in the previous exercise, assign each member in your group an (arbitrary) num
 
 ## Part 1
 
-Part 1 is due by **Wednesday**.
+Part 1 is due by **Tuesday**.
 
 
 ## Getting started
@@ -120,12 +120,12 @@ Once you are done with your exercise, re-build your portfolio website. Make sure
 
 ## Part 2
 
-Part 2 is due by **Thursday evening**.
+Part 2 is due by **Thursday**.
 
 
 ## Adding to each other's work
 
-Once everyone has done their first part (by **Wednesday** at the latest), you'll contribute to another group member's project. As previously, find your classmates' portfolio repository and fork it, then clone to your local computer.
+Once you've done your first part, you'll contribute to another group member's project. As previously, find your classmates' portfolio repository and fork it, then clone to your local computer.
 
 Open the repository. Remember to always do that by clicking on the `.Rproj` file in the main folder, which should open the project/repository in RStudio. Once you have the repository open, find the file for this exercise `coding-exercise.qmd`. Open it, make sure it runs/renders. Then add your part at the bottom of the file. 
 
