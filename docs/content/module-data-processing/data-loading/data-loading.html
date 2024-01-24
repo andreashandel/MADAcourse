@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.545">
+<meta name="generator" content="quarto-1.4.547">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Andreas Handel">
 <meta name="description" content="Modern Applied Data Analysis (MADA) course">
 
-<title>MADA Course - Finding and Getting Data</title>
+<title>MADA Course - Title</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,6 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../../">
+<link href="../../../content/module-data-processing/outliers/outliers.html" rel="next">
+<link href="../../../content/module-data-processing/data-processing-introduction/data-processing-introduction.html" rel="prev">
 <link href="../../../media/MADAlogo.png" rel="icon" type="image/png">
 <script src="../../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
@@ -72,7 +74,7 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-sidebar docked nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -97,7 +99,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">General Information</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../content/content-overview.html"> 
+    <a class="nav-link active" href="../../../content/content-overview.html" aria-current="page"> 
 <span class="menu-text">Content</span></a>
   </li>  
   <li class="nav-item">
@@ -125,10 +127,671 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../content/module-data-processing/data-processing-overview.html">5. Data Processing</a></li><li class="breadcrumb-item"><a href="../../../content/module-data-processing/data-loading/data-loading.html">Data loading</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/content-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Content Overview</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
+ <span class="menu-text">1. Course and Tools Introduction</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-intro-tools/introduction-course.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Course Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-intro-tools/tools-randrstudio.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R and Rstudio</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-intro-tools/tools-github-introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">GitHub Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-intro-tools/tools-github-r-workflow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">GitHub and R Workflow</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-intro-tools/tools-quarto.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quarto &amp; Co</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-intro-tools/tools-ai.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">AI Tools</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-intro-tools/tools-reference-management.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Reference Management</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-intro-tools/tools-tips-guidance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Guidance and Tips for R/RStudio/GitHub</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+ <span class="menu-text">2A. Data Analysis Introduction</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-data-analysis/data-analysis-motivation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Motivating Examples</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-data-analysis/data-analysis-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Analysis Overview</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+ <span class="menu-text">2B. READy workflows</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-ready-workflow/ready-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">READy workflows overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-ready-workflow/ready-introduction/ready-introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">READy introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-ready-workflow/ready-organization/ready-organization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Project organization</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-ready-workflow/ready-project-management/ready-project-management.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Project management</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-ready-workflow/ready-software-management/ready-software-management.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Software management</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-ready-workflow/ready-documentation/ready-documentation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Project documentation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-ready-workflow/ready-tools/ready-tools.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tools for a READy workflow</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-ready-workflow/ready-open/ready-open.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Open research</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+ <span class="menu-text">3. R Coding Basics</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-coding-basics/rcoding-basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R Coding Basics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-coding-basics/rcoding-tidyverse.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tidyverse and Friends</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+ <span class="menu-text">4A. All about Data</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-data/data-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-data/data-types-basic/data-types-basic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Basic data types</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-data/data-types-complex/data-types-complex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Complex data types</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-data/data-storage-formats/data-storage-formats.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data storage formats</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-data/data-formats-r/data-formats-r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data formats in R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-data/data-generation-process/data-generation-process.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The data generation process</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
+ <span class="menu-text">4B. Synthetic Data</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-synthetic-data/synthetic-data-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Synthetic Data Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-synthetic-data/synthetic-data-introduction/synthetic-data-introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction and Motivation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-synthetic-data/synthetic-data-new-r/synthetic-data-new-r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Creating new data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-synthetic-data/synthetic-data-new-existing-r/synthetic-data-new-existing-r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Creating new data based on existing data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-synthetic-data/synthetic-data-existing-r/synthetic-data-existing-r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Scrambling existing data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-synthetic-data/synthetic-data-r-packages/synthetic-data-r-packages.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R packages for data creation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-synthetic-data/synthetic-data-ai-tools-r/synthetic-data-ai-tools-r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Use synthetic data with AI tools</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-synthetic-data/synthetic-data-model-testing-r/synthetic-data-model-testing-r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Use synthetic data to test models</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true">
+ <span class="menu-text">5. Data Processing</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-data-processing/data-processing-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Processing Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-data-processing/data-processing-introduction/data-processing-introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Processing Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-data-processing/data-loading/data-loading.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Data loading</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-data-processing/outliers/outliers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dealing with outliers</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-data-processing/missing-data/missing-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dealing with missing data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-data-processing/censored-data/censored-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dealing with censored data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-data-processing/feature-engineering/feature-engineering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Creating new data/variables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-data-processing/merging-data/merging-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Merging data</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false">
+ <span class="menu-text">6. Presenting Data and Results</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-data-presentation/presenting-results-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presenting Results Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-data-presentation/visualization-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Visualization Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-data-presentation/visualization-in-r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Visualization in R</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false">
+ <span class="menu-text">7. Statistical Analysis Overview</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-stats-overview/statistical-analysis-introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Statistical Analysis Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-stats-overview/statistical-terminology.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Some Statistical Model Fitting Terminology</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false">
+ <span class="menu-text">8. Fitting Basic Statistical Models</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-model-basics/basic-statistical-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Basic Statistical Models</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-model-basics/model-fitting-r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fitting Statistical Models in R</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="false">
+ <span class="menu-text">9. Evaluating Your Model Fits</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-model-evaluation/model-evaluation-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model Evaluation Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-model-evaluation/model-evaluation-performance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model Performance Evaluation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-model-evaluation/model-evaluation-overfitting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model Performance &amp; Overfitting</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-model-evaluation/model-evaluation-diagnostics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model Diagostics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-model-evaluation/model-evaluation-uncertainty.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model Uncertainty</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="false">
+ <span class="menu-text">10. Improving Your Model Fits</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-model-improvement/model-improvement-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Improving Model Fits Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-model-improvement/model-improvement-data-processing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Pre-Processing Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-model-improvement/model-improvement-subset-selection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Subset Selection</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-model-improvement/model-improvement-regularization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Regularization</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-model-improvement/model-improvement-tuning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model Tuning</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" aria-expanded="false">
+ <span class="menu-text">11. Machine Learning Models I</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-model-ml-1/ml-models-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ML Models Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-model-ml-1/polynomial-spline-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Polynomial and Spline Models</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-model-ml-1/decision-trees.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Decision Trees</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-model-ml-1/many-tree-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Many-Tree Models</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" aria-expanded="false">
+ <span class="menu-text">12. Machine Learning Models II</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-model-ml-2/svm-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Support Vector Machine Models</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-model-ml-2/da-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Discriminant Analysis Models</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-model-ml-2/more-ml-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Some More ML models</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" aria-expanded="false">
+ <span class="menu-text">13. Complete Analysis Workflow</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-workflow/complete-data-analysis-workflow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Complete Data Analysis Workflow</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" aria-expanded="false">
+ <span class="menu-text">AI</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-16" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-ai/ai-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">AI Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-ai/ai-introduction/ai-introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction to AI</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-ai/ai-llm-introduction/ai-llm-introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction to LLM AI tools</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-ai/ai-conceptual/ai-conceptual.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">AI Concepts</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-ai/ai-tools/ai-tools.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Current AI Tools</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-ai/ai-write-code-r/ai-write-code-r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Write code with AI</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-ai/ai-fix-code-r/ai-fix-code-r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fix code with AI</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-ai/ai-eda-r/ai-eda-r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Explore data with AI</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-ai/ai-analysis-r/ai-analysis-r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Analyze data with AI</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-ai/ai-resources/ai-resources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">AI Resources</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -136,21 +799,20 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
-  <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives">Objectives</a></li>
-  <li><a href="#data-sources" id="toc-data-sources" class="nav-link" data-scroll-target="#data-sources">Data Sources</a></li>
-  <li><a href="#data-to-dos" id="toc-data-to-dos" class="nav-link" data-scroll-target="#data-to-dos">Data to-dos</a></li>
-  <li><a href="#data-import-in-r" id="toc-data-import-in-r" class="nav-link" data-scroll-target="#data-import-in-r">Data import in R</a></li>
-  <li><a href="#checking-the-data" id="toc-checking-the-data" class="nav-link" data-scroll-target="#checking-the-data">Checking the data</a></li>
-  <li><a href="#examples-of-data-import" id="toc-examples-of-data-import" class="nav-link" data-scroll-target="#examples-of-data-import">Examples of data import</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#topic-1" id="toc-topic-1" class="nav-link" data-scroll-target="#topic-1">Topic 1</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#further-resources" id="toc-further-resources" class="nav-link" data-scroll-target="#further-resources">Further Resources</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../content/module-data-processing/data-processing-overview.html">5. Data Processing</a></li><li class="breadcrumb-item"><a href="../../../content/module-data-processing/data-loading/data-loading.html">Data loading</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Finding and Getting Data</h1>
+<h1 class="title">Title</h1>
 </div>
 
 
@@ -168,7 +830,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2024-01-23</p>
+      <p class="date-modified">2024-01-24</p>
     </div>
   </div>
     
@@ -181,63 +843,25 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="overview" class="level1">
 <h1>Overview</h1>
-<p>For this unit, we will discuss where to find data and how to get different types of data into R.</p>
+<p>For this unit, we will discuss</p>
 </section>
-<section id="objectives" class="level1">
-<h1>Objectives</h1>
+<section id="learning-objectives" class="level1">
+<h1>Learning Objectives</h1>
 <ul>
-<li>Know ways of acquiring data</li>
-<li>Be familiar with some important online sources for data</li>
-<li>Understand how to get data into R</li>
+<li>Be familiar with</li>
 </ul>
 </section>
-<section id="data-sources" class="level1">
-<h1>Data Sources</h1>
-<p>An obvious way to get data to answer whatever question you have is to collect it yourself. This can lead to high-quality data tailored to the question you have. It is also likely expensive and time-consuming to acquire. If you do decide to collect data, it is a good idea to sketch out planned analyses as carefully as possible. It would be annoying if you forgot to obtain a piece of information that you later decided was crucial. The gold standard of data collection in human research are clinical trials that want FDA approval. These trials have to pre-register the question(s), the analysis plan, and the data collection plan. This approach means everything is run at a high level of rigor and quality. Even if you do not try to get FDA approval with your study, precisely specifying the analyses you plan to run is the best practice and will minimize <em>p</em>-hacking and other sources of bias (if you are unfamiliar with the term p-hacking, see e.g., the <strong>Pitfalls</strong> section on the <a href="../../../resources/resources-general.html"><strong>General Resources</strong></a> page). Unfortunately, pre-registration is still very uncommon in most areas of research, and often not feasible.</p>
-<p>If you cannot or do not want to collect data yourself, you could instead team up with someone who does. The advantage of working directly with a data collector is that you have a subject matter expert as a collaborator, and you can ask them questions.</p>
-<p>Data that is publicly available, or that you can get after requesting it and being approved by the data owner, constitutes the largest pool of data these days. Going this route gives you access to a lot of different datasets. The drawback is that the data was not collected to answer your specific question, and there is usually nobody you can ask for clarification. Also, the quality of such data varies. As more and more data is collected on almost every aspect of our world, these sources of data keep increasing. It is hard to keep track of places to get (good) data. I have been trying to collect a few sources of data on this <a href="https://andreashandel.github.io/research-and-teaching-resources/">website I maintain with various links to resources</a>, among them is a list with links to various data sources. There are likely tons of other good data sources. The tricky bit is sometimes getting the data and understanding enough about what the data is and how it was collected to allow for reasonable analysis.</p>
-<p>You might have already, or will soon notice that there are datasets that come with R, and even more with R packages. For instance, this <a href="https://vincentarelbundock.github.io/Rdatasets/datasets.html">page lists what is likely only a small fraction</a>. There is even a <a href="https://www.reddit.com/r/datasets/">Reddit group dedicated to R datasets</a>. The good and the bad about datasets that come with R packages is that they are often fairly clean/tidy. That’s unfortunately not how most “real world” datasets look like. Getting dirty and messy datasets and wrangling them into a form that is suitable for statistical analysis is part of most workflows and often takes a lot of time. If you are lucky, you might get or find a dataset that is already fairly clean and use it to answer an actual question of interest. Most of the time however, this does not happen and you need to spend a good bit of time getting your data into the right shape.</p>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
 </section>
-<section id="data-to-dos" class="level1">
-<h1>Data to-dos</h1>
-<p>No matter the source, you should try to get the data <em>as raw</em> as possible so that you can be in control of as many cleaning and processing steps as possible. That is (a bit) more work for you, but it gives you more flexibility to decide what to do with the data as you process it. If for instance, you get data with age in years, you can leave it as is, or decide to categorize it as young/old. Categorizing is generally a bad idea, but we’ll talk about that later. If you get data in an already processed form and someone already did this categorization for you, you cannot choose.</p>
-<p>Wherever you get data from, document it as much as possible. When did you get it? Where and how? Did it come with other meta-information, e.g., a codebook? Where is it? Are there other things about the data that one should know about? Write down everything in some document.</p>
-<p>Treat the raw data as you would a very fragile object. Ideally, do not touch it. Do not edit it. You want to only <strong>read</strong> the data into R, even if it is in a bad format, and then apply fixes/cleaning in R. If this is not possible, and you need to make edits to the data in whatever format you got it (e.g., Excel, SAS), <strong>make a copy of the data files and place those copies in a separate folder, AND ONLY EDIT THOSE COPIES. Also, write down the edits you made.</strong></p>
-<p>A large portion of data is entered and stored in spreadsheets, such as Excel. If you collaborate with others who produce and enter the data, especially if it is a frequent collaboration, having a discussion with them about best practices for data entry and storage could potentially save you a lot of time. If this is a situation you find yourself in, I recommend you read, and then ask your collaborators to read and implement the excellent paper <a href="../../..\references/broman18amstat.pdf"><em>Data Organization in Spreadsheets</em></a> by Broman and Woo.</p>
+<section id="topic-1" class="level1">
+<h1>Topic 1</h1>
 </section>
-<section id="data-import-in-r" class="level1">
-<h1>Data import in R</h1>
-<p>Several functions in base R can be used for data import. (For example, <code>read.table()</code> or its variants is enough for many projects.) Some packages further expand the functionality for importing data into R. Since data come in so many types and forms, we will not be able to cover all of it. We will only look at a few examples. I am providing links to resources to get you started importing different kinds of data. If you have data of different type, Google is your friend 😄.</p>
-<p>Here are some of the most prominent ones:</p>
-<ul>
-<li>The <a href="https://readr.tidyverse.org/index.html"><code>readr</code> package</a> is great first choice for importing CSV and similar spreadsheet type data. For some more introductory material on the <code>readr</code> package, see <a href="https://r4ds.hadley.nz/data-import.html">chapter 11 of <em>R4DS</em></a>. It can often guess the right way to import data, even if it is slightly messy. But always check! It’s a good first choice for CSV/TSV/text style data.</li>
-<li><code>readr</code> is not suitable for data in Excel format, for that use the <a href="https://readxl.tidyverse.org/"><code>readxl</code> package</a>.</li>
-<li>For dealing with Google sheets, the <a href="https://googlesheets4.tidyverse.org/"><code>googlesheets4</code> package</a> can be used.</li>
-<li>The <a href="https://haven.tidyverse.org/"><code>haven</code> package</a> is good for dealing with SPSS, SAS and Stata data.</li>
-<li>For reading in various online data forms, e.g., XML and JSON, see the <a href="https://www.tidyverse.org/packages/">Import section</a> on the <code>tidyverse</code> packages site.</li>
-<li>The folks from Posit/RStudio but together a useful <a href="https://github.com/rstudio/cheatsheets/blob/master/data-import.pdf">data import cheat sheet</a>, which is worth checking out.</li>
-</ul>
-<p>The packages I listed above are all from the <code>tidyverse</code>. There are many more packages with additional functionality, e.g., for reading in large data fast.</p>
-<p>To learn some more, you can check out the <a href="https://rafalab.github.io/dsbook/importing-data.html">Importing Data chapter in <em>IDS</em></a>. The <a href="https://rafalab.github.io/dsbook/web-scraping.html">Web Scraping chapter in <em>IDS</em></a> provides additional information on how to pull online data into R.</p>
+<section id="summary" class="level1">
+<h1>Summary</h1>
 </section>
-<section id="checking-the-data" class="level1">
-<h1>Checking the data</h1>
-<p>If you are lucky, your data reads in properly on the 1st try. Often, that is not the case. Getting data into R in such a form that you can start using it often requires a few tries.</p>
-<p>Sometimes, the data might not load at all. You will get an error message and then have to figure out what to do to get the data into R. In some cases, you might not be able to get the data into R without editing it in its native format. For instance, reading proprietary data (e.g., SAS or Excel) doesn’t always work too well. In those instances, it is sometimes better to export the data from those programs as a comma-separated or tab-separated values file (CSV/TSV) and then read it into R.</p>
-<p>Another example is if you get an Excel spreadsheet where the person used color to code some information. You might need to fix that and recode the color in the spreadsheet before reading it in. If you need to, make edits on the <strong>copies of</strong> the raw data until it is in a form that you can load into R.</p>
-<p>If the data loads, it might do so with or without error or warning messages. In either case, you will want to look at the data to make sure what you expected to be there is there. Check if the data has the right number of rows and columns. Do other quick checks to ensure things look good enough to start working with the data. The <code>str</code> command is handy for that, as is <code>glimpse</code> from the <code>dplyr</code> package. As long as everything is there, no matter how messy, you are ok and can now use R to clean up and explore the data, which we will cover next.</p>
-</section>
-<section id="examples-of-data-import" class="level1">
-<h1>Examples of data import</h1>
-<p>If you want to see a few examples of live-coding which show how to read data into R, you can check out these videos by Jeff Leek.</p>
-<div class="container">
-<iframe class="video" src="https://www.youtube.com/embed/z7pOxe6dDG0" frameborder="0" allowfullscreen="">
-</iframe>
-</div>
-<div class="container">
-<iframe class="video" src="https://www.youtube.com/embed/7lE7lzwC_NY" frameborder="0" allowfullscreen="">
-</iframe>
-</div>
+<section id="further-resources" class="level1">
+<h1>Further Resources</h1>
 
 
 </section>
@@ -648,6 +1272,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../../content/module-data-processing/data-processing-introduction/data-processing-introduction.html" class="pagination-link  aria-label=" data="" processing="" introduction"="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Data Processing Introduction</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../../content/module-data-processing/outliers/outliers.html" class="pagination-link" aria-label="Dealing with outliers">
+        <span class="nav-page-text">Dealing with outliers</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 
 

@@ -44,6 +44,9 @@ Most commercial software has its own format of storing code and data.
 
 ## Databases
 
+# Summary
+
+# Further Resources
 
 
 

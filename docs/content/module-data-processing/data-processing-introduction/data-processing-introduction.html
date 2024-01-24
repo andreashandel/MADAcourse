@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.545">
+<meta name="generator" content="quarto-1.4.547">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Andreas Handel">
 <meta name="description" content="Modern Applied Data Analysis (MADA) course">
 
-<title>MADA Course - Exploring Data</title>
+<title>MADA Course - Processing Data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../../">
-<link href="../../../content/module-data-presentation/presenting-results-overview.html" rel="next">
+<link href="../../../content/module-data-processing/data-loading/data-loading.html" rel="next">
 <link href="../../../content/module-data-processing/data-processing-overview.html" rel="prev">
 <link href="../../../media/MADAlogo.png" rel="icon" type="image/png">
 <script src="../../../site_libs/quarto-html/quarto.js"></script>
@@ -444,6 +444,42 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Data Processing Introduction</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-data-processing/data-loading/data-loading.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data loading</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-data-processing/outliers/outliers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dealing with outliers</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-data-processing/missing-data/missing-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dealing with missing data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-data-processing/censored-data/censored-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dealing with censored data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-data-processing/feature-engineering/feature-engineering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Creating new data/variables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-data-processing/merging-data/merging-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Merging data</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -778,7 +814,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../content/module-data-processing/data-processing-overview.html">5. Data Processing</a></li><li class="breadcrumb-item"><a href="../../../content/module-data-processing/data-processing-introduction/data-processing-introduction.html">Data Processing Introduction</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Exploring Data</h1>
+<h1 class="title">Processing Data</h1>
 </div>
 
 
@@ -797,7 +833,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2024-01-23</p>
+      <p class="date-modified">2024-01-24</p>
     </div>
   </div>
     
@@ -814,7 +850,7 @@ ul.task-list li input[type="checkbox"] {
 <p>While there were separate modules for <em>finding and wrangling</em> and <em>visualizing</em> data, I want to remind you of this diagram:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="../../..\media/analysis-workflow.png" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1" title="Data analysis workflow"><img src="../../..\media/analysis-workflow.png" class="img-fluid figure-img" style="width:60.0%" alt="Double sided arrow points between Question and Data with the text 'Match needed' above the arrow. A spiral moves from Load, to Clean, to Explore, to Process. Below the spiral an arrow points from Model to Report. An rounded arrow points from Model and Report back up to the spiral with the word Repeat."></a></p>
+<p><a href="../../..\media/analysis-workflow.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1" title="Data analysis workflow"><img src="../../..\media/analysis-workflow.png" class="img-fluid figure-img" style="width:60.0%" alt="Double sided arrow points between Question and Data with the text 'Match needed' above the arrow. A spiral moves from Load, to Clean, to Explore, to Process. Below the spiral an arrow points from Model to Report. An rounded arrow points from Model and Report back up to the spiral with the word Repeat."></a></p>
 <figcaption>Data analysis workflow</figcaption>
 </figure>
 </div>
@@ -1265,13 +1301,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../../content/module-data-presentation/presenting-results-overview.html" class="pagination-link" aria-label="Presenting Results Overview">
-        <span class="nav-page-text">Presenting Results Overview</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../../content/module-data-processing/data-loading/data-loading.html" class="pagination-link" aria-label="Data loading">
+        <span class="nav-page-text">Data loading</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","loop":false,"descPosition":"right","closeEffect":"zoom","selector":".lightbox"});
+<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","selector":".lightbox","descPosition":"right","closeEffect":"zoom","loop":false});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

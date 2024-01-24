@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.545">
+<meta name="generator" content="quarto-1.4.547">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -444,6 +444,42 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Data Processing Introduction</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/module-data-processing/data-loading/data-loading.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data loading</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/module-data-processing/outliers/outliers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dealing with outliers</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/module-data-processing/missing-data/missing-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dealing with missing data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/module-data-processing/censored-data/censored-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dealing with censored data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/module-data-processing/feature-engineering/feature-engineering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Creating new data/variables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/module-data-processing/merging-data/merging-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Merging data</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -830,7 +866,7 @@ ul.task-list li input[type="checkbox"] {
 <p>This figure illustrates the journey of learning to write code:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="../../media/learning-to-code.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1" title="The journey of learning to code. Source: https://www.thinkful.com/blog/. Original post is not online anymore."><img src="../../media/learning-to-code.jpg" class="img-fluid figure-img" alt="Graph titled Coding Confidence vs Compentence. The x-axis is Competence and y-axis is confidence. The first peak is called the hand-holding honeymoon, the decline is called the cliff of confusion, the bottom of the decline is called the desert of despair, the beginning of the incline is called the upswing of awesome, and the end of the graph is the highest peak that says Job Ready."></a></p>
+<p><a href="../../media/learning-to-code.jpg" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1" title="The journey of learning to code. Source: https://www.thinkful.com/blog/. Original post is not online anymore."><img src="../../media/learning-to-code.jpg" class="img-fluid figure-img" alt="Graph titled Coding Confidence vs Compentence. The x-axis is Competence and y-axis is confidence. The first peak is called the hand-holding honeymoon, the decline is called the cliff of confusion, the bottom of the decline is called the desert of despair, the beginning of the incline is called the upswing of awesome, and the end of the graph is the highest peak that says Job Ready."></a></p>
 <figcaption>The journey of learning to code. Source: https://www.thinkful.com/blog/. Original post is not online anymore.</figcaption>
 </figure>
 </div>
@@ -853,7 +889,7 @@ ul.task-list li input[type="checkbox"] {
 <p>If you have a problem with your code, it’s likely someone else had the same/similar problem before you and asked a question (and probably got an answer). So search the web, and you’ll find something useful most of the time.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="../../media/xkcd_wisdom_of_the_ancients.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" data-glightbox="description: .lightbox-desc-2" title="Fortunately rare for R. Source: xkcd.com."><img src="../../media/xkcd_wisdom_of_the_ancients.png" class="img-fluid figure-img" style="width:90.0%" alt="An xkcd comic of a stick figure shaking a computer screen saying 'Who were you, denvercoder9? What did you see?!'. Outside the the box, it says 'Never have I felt so close to another soul. And yet so helplessly alone as when I Google an error and there's one result. A thread by someone with the same problem and no answer last posted in 2003."></a></p>
+<p><a href="../../media/xkcd_wisdom_of_the_ancients.png" class="lightbox" data-glightbox="description: .lightbox-desc-2" data-gallery="quarto-lightbox-gallery-2" title="Fortunately rare for R. Source: xkcd.com."><img src="../../media/xkcd_wisdom_of_the_ancients.png" class="img-fluid figure-img" style="width:90.0%" alt="An xkcd comic of a stick figure shaking a computer screen saying 'Who were you, denvercoder9? What did you see?!'. Outside the the box, it says 'Never have I felt so close to another soul. And yet so helplessly alone as when I Google an error and there's one result. A thread by someone with the same problem and no answer last posted in 2003."></a></p>
 <figcaption>Fortunately rare for R. Source: xkcd.com.</figcaption>
 </figure>
 </div>
@@ -1300,7 +1336,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","loop":false,"selector":".lightbox","closeEffect":"zoom","descPosition":"right"});
+<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","selector":".lightbox","loop":false,"descPosition":"right","closeEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

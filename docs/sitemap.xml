@@ -2,418 +2,438 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/resources/resources-overview.html</loc>
-    <lastmod>2023-12-22T19:01:38.656Z</lastmod>
+    <lastmod>2023-12-22T18:07:22.227Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/resources/resources-general.html</loc>
-    <lastmod>2024-01-02T13:22:24.277Z</lastmod>
+    <lastmod>2024-01-01T21:36:47.995Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/project/templatefiles/project-review-template.html</loc>
-    <lastmod>2023-12-22T19:01:38.647Z</lastmod>
+    <lastmod>2023-12-14T16:14:30.156Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/project/project-overview.html</loc>
-    <lastmod>2023-12-22T19:01:38.639Z</lastmod>
+    <lastmod>2023-12-22T17:59:09.258Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/project/project-details.html</loc>
-    <lastmod>2024-01-02T13:22:24.277Z</lastmod>
+    <lastmod>2024-01-01T21:36:47.992Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/courseinfo/course-syllabus.html</loc>
-    <lastmod>2024-01-02T13:22:22.876Z</lastmod>
+    <lastmod>2024-01-01T21:37:47.791Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/courseinfo/course-overview.html</loc>
-    <lastmod>2024-01-02T13:22:22.876Z</lastmod>
+    <lastmod>2024-01-01T21:36:46.809Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/courseinfo/assessments-overview.html</loc>
-    <lastmod>2024-01-24T02:45:09.972Z</lastmod>
+    <lastmod>2024-01-24T14:43:38.693Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-workflow/assessment-complete-workflow.html</loc>
-    <lastmod>2024-01-02T13:22:22.876Z</lastmod>
+    <lastmod>2024-01-01T21:36:46.779Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-synthetic-data/synthetic-data-overview.html</loc>
-    <lastmod>2024-01-02T13:22:22.868Z</lastmod>
+    <lastmod>2024-01-01T21:36:46.735Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-synthetic-data/synthetic-data-new-existing-r/synthetic-data-new-existing-r.html</loc>
-    <lastmod>2024-01-02T13:22:22.868Z</lastmod>
+    <lastmod>2024-01-01T21:36:46.723Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-synthetic-data/synthetic-data-introduction/synthetic-data-introduction.html</loc>
-    <lastmod>2024-01-02T13:22:22.843Z</lastmod>
+    <lastmod>2024-01-01T21:36:46.687Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-synthetic-data/synthetic-data-ai-tools-r/synthetic-data-ai-tools-r.html</loc>
-    <lastmod>2024-01-02T13:22:22.843Z</lastmod>
+    <lastmod>2024-01-01T21:36:46.674Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-stats-overview/statistical-analysis-introduction.html</loc>
-    <lastmod>2024-01-02T13:22:22.843Z</lastmod>
+    <lastmod>2024-01-01T21:36:46.607Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-ready-workflow/ready-tools/ready-tools.html</loc>
-    <lastmod>2024-01-24T02:45:09.971Z</lastmod>
+    <lastmod>2024-01-24T14:43:43.064Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-ready-workflow/ready-project-management/ready-project-management.html</loc>
-    <lastmod>2024-01-24T02:45:09.968Z</lastmod>
+    <lastmod>2024-01-24T14:43:43.063Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-ready-workflow/ready-organization/ready-organization.html</loc>
-    <lastmod>2024-01-24T02:45:09.967Z</lastmod>
+    <lastmod>2024-01-24T14:43:38.691Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-ready-workflow/ready-introduction/ready-introduction.html</loc>
-    <lastmod>2024-01-24T02:45:09.951Z</lastmod>
+    <lastmod>2024-01-24T14:43:43.062Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-model-ml-2/svm-models.html</loc>
-    <lastmod>2024-01-02T13:22:22.843Z</lastmod>
+    <lastmod>2024-01-01T21:36:46.542Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-model-ml-2/da-models.html</loc>
-    <lastmod>2024-01-02T13:22:22.827Z</lastmod>
+    <lastmod>2024-01-01T21:36:46.541Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-model-ml-1/polynomial-spline-models.html</loc>
-    <lastmod>2024-01-02T13:22:22.812Z</lastmod>
+    <lastmod>2024-01-01T21:36:46.495Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-model-ml-1/many-tree-models.html</loc>
-    <lastmod>2024-01-02T13:22:22.796Z</lastmod>
+    <lastmod>2024-01-01T21:36:46.494Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-model-ml-1/assessment-ml-models-1.html</loc>
-    <lastmod>2024-01-02T13:22:22.768Z</lastmod>
+    <lastmod>2024-01-01T21:36:46.492Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-model-improvement/model-improvement-subset-selection.html</loc>
-    <lastmod>2024-01-02T13:22:22.749Z</lastmod>
+    <lastmod>2024-01-01T21:36:46.479Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-model-improvement/model-improvement-overview.html</loc>
-    <lastmod>2024-01-02T13:22:22.749Z</lastmod>
+    <lastmod>2024-01-01T21:36:46.477Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-model-improvement/assessment-model-improvement.html</loc>
-    <lastmod>2024-01-02T13:22:22.738Z</lastmod>
+    <lastmod>2024-01-01T21:36:46.476Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-model-evaluation/model-evaluation-performance.html</loc>
-    <lastmod>2024-01-02T13:22:22.717Z</lastmod>
+    <lastmod>2024-01-01T21:36:46.441Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-model-evaluation/model-evaluation-overfitting.html</loc>
-    <lastmod>2024-01-02T13:22:22.701Z</lastmod>
+    <lastmod>2024-01-01T21:36:46.425Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-model-evaluation/assessment-model-evaluation.html</loc>
-    <lastmod>2024-01-02T13:22:22.685Z</lastmod>
+    <lastmod>2024-01-01T21:36:46.397Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-model-basics/basic-statistical-models.html</loc>
-    <lastmod>2024-01-02T13:22:22.670Z</lastmod>
+    <lastmod>2024-01-01T21:36:46.369Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-intro-tools/tools-tips-guidance.html</loc>
-    <lastmod>2024-01-02T13:22:22.670Z</lastmod>
+    <lastmod>2024-01-01T21:36:46.360Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-intro-tools/tools-randrstudio.html</loc>
-    <lastmod>2024-01-02T13:22:22.655Z</lastmod>
+    <lastmod>2024-01-01T21:36:46.327Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-intro-tools/tools-github-r-workflow.html</loc>
-    <lastmod>2024-01-02T13:22:22.655Z</lastmod>
+    <lastmod>2024-01-01T21:36:46.326Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-intro-tools/tools-ai.html</loc>
-    <lastmod>2024-01-02T13:22:22.655Z</lastmod>
+    <lastmod>2024-01-01T21:36:46.317Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-intro-tools/assessment-course-tools-introduction.html</loc>
-    <lastmod>2024-01-02T21:10:36.606Z</lastmod>
+    <lastmod>2024-01-10T16:13:27.759Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-data/data-types-basic/data-types-basic.html</loc>
-    <lastmod>2024-01-24T02:45:09.934Z</lastmod>
+    <lastmod>2024-01-24T14:43:38.689Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-data/data-overview.html</loc>
-    <lastmod>2024-01-24T02:45:09.893Z</lastmod>
+    <lastmod>2024-01-24T14:43:38.688Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-data/data-formats-r/data-formats-r.html</loc>
-    <lastmod>2024-01-24T02:45:09.893Z</lastmod>
+    <lastmod>2024-01-24T14:43:38.702Z</lastmod>
   </url>
   <url>
-    <loc>https://andreashandel.github.io/MADAcourse/content/module-data-processing/data-wrangling/data-wrangling.html</loc>
-    <lastmod>2024-01-24T02:45:09.893Z</lastmod>
+    <loc>https://andreashandel.github.io/MADAcourse/content/module-data-processing/outliers/outliers.html</loc>
+    <lastmod>2024-01-24T15:27:38.882Z</lastmod>
+  </url>
+  <url>
+    <loc>https://andreashandel.github.io/MADAcourse/content/module-data-processing/merging-data/merging-data.html</loc>
+    <lastmod>2024-01-24T15:27:38.882Z</lastmod>
+  </url>
+  <url>
+    <loc>https://andreashandel.github.io/MADAcourse/content/module-data-processing/data-wrangling.html</loc>
+    <lastmod>2024-01-24T14:43:38.688Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-data-processing/data-processing-introduction/data-processing-introduction.html</loc>
-    <lastmod>2024-01-24T02:45:09.818Z</lastmod>
+    <lastmod>2024-01-24T15:37:24.612Z</lastmod>
   </url>
   <url>
-    <loc>https://andreashandel.github.io/MADAcourse/content/module-data-processing/assessment-data-processing.html</loc>
-    <lastmod>2024-01-24T02:45:09.818Z</lastmod>
-  </url>
-  <url>
-    <loc>https://andreashandel.github.io/MADAcourse/content/module-data-presentation/visualization-in-r.html</loc>
-    <lastmod>2024-01-05T19:41:45.845Z</lastmod>
-  </url>
-  <url>
-    <loc>https://andreashandel.github.io/MADAcourse/content/module-data-presentation/presenting-results-overview.html</loc>
-    <lastmod>2024-01-02T13:22:22.621Z</lastmod>
-  </url>
-  <url>
-    <loc>https://andreashandel.github.io/MADAcourse/content/module-data-analysis/data-analysis-structure.html</loc>
-    <lastmod>2024-01-24T02:45:09.818Z</lastmod>
-  </url>
-  <url>
-    <loc>https://andreashandel.github.io/MADAcourse/content/module-data-analysis/data-analysis-motivation.html</loc>
-    <lastmod>2024-01-11T16:42:33.729Z</lastmod>
-  </url>
-  <url>
-    <loc>https://andreashandel.github.io/MADAcourse/content/module-coding-basics/rcoding-tidyverse.html</loc>
-    <lastmod>2024-01-11T22:41:56.985Z</lastmod>
-  </url>
-  <url>
-    <loc>https://andreashandel.github.io/MADAcourse/content/module-coding-basics/assessment-coding.html</loc>
-    <lastmod>2024-01-24T02:43:14.303Z</lastmod>
-  </url>
-  <url>
-    <loc>https://andreashandel.github.io/MADAcourse/content/module-ai/ai-tools/ai-tools.html</loc>
-    <lastmod>2024-01-02T13:22:22.583Z</lastmod>
-  </url>
-  <url>
-    <loc>https://andreashandel.github.io/MADAcourse/content/module-ai/ai-overview.html</loc>
-    <lastmod>2024-01-02T13:22:22.583Z</lastmod>
-  </url>
-  <url>
-    <loc>https://andreashandel.github.io/MADAcourse/content/module-ai/ai-introduction/ai-introduction.html</loc>
-    <lastmod>2024-01-02T13:22:22.583Z</lastmod>
-  </url>
-  <url>
-    <loc>https://andreashandel.github.io/MADAcourse/content/module-ai/ai-eda-r/ai-eda-r.html</loc>
-    <lastmod>2024-01-02T13:22:22.583Z</lastmod>
-  </url>
-  <url>
-    <loc>https://andreashandel.github.io/MADAcourse/content/module-ai/ai-analysis-r/ai-analysis-r.html</loc>
-    <lastmod>2024-01-02T13:22:22.573Z</lastmod>
-  </url>
-  <url>
-    <loc>https://andreashandel.github.io/MADAcourse/content/content-overview.html</loc>
-    <lastmod>2024-01-02T13:22:22.573Z</lastmod>
-  </url>
-  <url>
-    <loc>https://andreashandel.github.io/MADAcourse/content/module-ai/ai-conceptual/ai-conceptual.html</loc>
-    <lastmod>2024-01-03T16:38:22.030Z</lastmod>
-  </url>
-  <url>
-    <loc>https://andreashandel.github.io/MADAcourse/content/module-ai/ai-fix-code-r/ai-fix-code-r.html</loc>
-    <lastmod>2024-01-02T13:22:22.583Z</lastmod>
-  </url>
-  <url>
-    <loc>https://andreashandel.github.io/MADAcourse/content/module-ai/ai-llm-introduction/ai-llm-introduction.html</loc>
-    <lastmod>2024-01-02T13:22:22.583Z</lastmod>
-  </url>
-  <url>
-    <loc>https://andreashandel.github.io/MADAcourse/content/module-ai/ai-resources/ai-resources.html</loc>
-    <lastmod>2024-01-02T13:22:22.583Z</lastmod>
-  </url>
-  <url>
-    <loc>https://andreashandel.github.io/MADAcourse/content/module-ai/ai-write-code-r/ai-write-code-r.html</loc>
-    <lastmod>2024-01-02T13:22:22.589Z</lastmod>
-  </url>
-  <url>
-    <loc>https://andreashandel.github.io/MADAcourse/content/module-coding-basics/rcoding-basics.html</loc>
-    <lastmod>2024-01-11T17:57:01.319Z</lastmod>
-  </url>
-  <url>
-    <loc>https://andreashandel.github.io/MADAcourse/content/module-data-analysis/assessment-data-analysis.html</loc>
-    <lastmod>2024-01-05T14:06:38.806Z</lastmod>
-  </url>
-  <url>
-    <loc>https://andreashandel.github.io/MADAcourse/content/module-data-analysis/data-analysis-overview.html</loc>
-    <lastmod>2024-01-16T13:51:11.057Z</lastmod>
-  </url>
-  <url>
-    <loc>https://andreashandel.github.io/MADAcourse/content/module-data-presentation/assessment-presenting-results.html</loc>
-    <lastmod>2024-01-05T20:41:33.951Z</lastmod>
-  </url>
-  <url>
-    <loc>https://andreashandel.github.io/MADAcourse/content/module-data-presentation/tables-in-r.html</loc>
-    <lastmod>2024-01-24T02:45:09.818Z</lastmod>
+    <loc>https://andreashandel.github.io/MADAcourse/content/module-data-processing/censored-data/censored-data.html</loc>
+    <lastmod>2024-01-24T15:27:38.882Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-data-presentation/visualization-overview.html</loc>
-    <lastmod>2024-01-05T19:39:24.753Z</lastmod>
+    <lastmod>2024-01-10T16:13:27.758Z</lastmod>
+  </url>
+  <url>
+    <loc>https://andreashandel.github.io/MADAcourse/content/module-data-presentation/tables-in-r.html</loc>
+    <lastmod>2024-01-24T14:43:38.686Z</lastmod>
+  </url>
+  <url>
+    <loc>https://andreashandel.github.io/MADAcourse/content/module-data-presentation/assessment-presenting-results.html</loc>
+    <lastmod>2024-01-10T16:13:27.757Z</lastmod>
+  </url>
+  <url>
+    <loc>https://andreashandel.github.io/MADAcourse/content/module-data-analysis/data-analysis-overview.html</loc>
+    <lastmod>2024-01-17T12:38:51.820Z</lastmod>
+  </url>
+  <url>
+    <loc>https://andreashandel.github.io/MADAcourse/content/module-data-analysis/assessment-data-analysis.html</loc>
+    <lastmod>2024-01-10T16:13:27.755Z</lastmod>
+  </url>
+  <url>
+    <loc>https://andreashandel.github.io/MADAcourse/content/module-coding-basics/rcoding-basics.html</loc>
+    <lastmod>2024-01-11T18:43:41.219Z</lastmod>
+  </url>
+  <url>
+    <loc>https://andreashandel.github.io/MADAcourse/content/module-ai/ai-write-code-r/ai-write-code-r.html</loc>
+    <lastmod>2024-01-01T21:36:46.145Z</lastmod>
+  </url>
+  <url>
+    <loc>https://andreashandel.github.io/MADAcourse/content/module-ai/ai-resources/ai-resources.html</loc>
+    <lastmod>2024-01-01T21:36:46.143Z</lastmod>
+  </url>
+  <url>
+    <loc>https://andreashandel.github.io/MADAcourse/content/module-ai/ai-llm-introduction/ai-llm-introduction.html</loc>
+    <lastmod>2024-01-01T21:36:46.136Z</lastmod>
+  </url>
+  <url>
+    <loc>https://andreashandel.github.io/MADAcourse/content/module-ai/ai-fix-code-r/ai-fix-code-r.html</loc>
+    <lastmod>2024-01-01T21:36:46.115Z</lastmod>
+  </url>
+  <url>
+    <loc>https://andreashandel.github.io/MADAcourse/content/module-ai/ai-conceptual/ai-conceptual.html</loc>
+    <lastmod>2024-01-10T16:13:27.753Z</lastmod>
+  </url>
+  <url>
+    <loc>https://andreashandel.github.io/MADAcourse/content/content-overview.html</loc>
+    <lastmod>2024-01-01T21:36:46.104Z</lastmod>
+  </url>
+  <url>
+    <loc>https://andreashandel.github.io/MADAcourse/content/module-ai/ai-analysis-r/ai-analysis-r.html</loc>
+    <lastmod>2024-01-01T21:36:46.105Z</lastmod>
+  </url>
+  <url>
+    <loc>https://andreashandel.github.io/MADAcourse/content/module-ai/ai-eda-r/ai-eda-r.html</loc>
+    <lastmod>2024-01-01T21:36:46.115Z</lastmod>
+  </url>
+  <url>
+    <loc>https://andreashandel.github.io/MADAcourse/content/module-ai/ai-introduction/ai-introduction.html</loc>
+    <lastmod>2024-01-01T21:36:46.125Z</lastmod>
+  </url>
+  <url>
+    <loc>https://andreashandel.github.io/MADAcourse/content/module-ai/ai-overview.html</loc>
+    <lastmod>2024-01-01T21:36:46.137Z</lastmod>
+  </url>
+  <url>
+    <loc>https://andreashandel.github.io/MADAcourse/content/module-ai/ai-tools/ai-tools.html</loc>
+    <lastmod>2024-01-01T21:36:46.144Z</lastmod>
+  </url>
+  <url>
+    <loc>https://andreashandel.github.io/MADAcourse/content/module-coding-basics/assessment-coding.html</loc>
+    <lastmod>2024-01-24T14:43:43.061Z</lastmod>
+  </url>
+  <url>
+    <loc>https://andreashandel.github.io/MADAcourse/content/module-coding-basics/rcoding-tidyverse.html</loc>
+    <lastmod>2024-01-11T18:56:06.725Z</lastmod>
+  </url>
+  <url>
+    <loc>https://andreashandel.github.io/MADAcourse/content/module-data-analysis/data-analysis-motivation.html</loc>
+    <lastmod>2024-01-11T18:43:41.228Z</lastmod>
+  </url>
+  <url>
+    <loc>https://andreashandel.github.io/MADAcourse/content/module-data-analysis/data-analysis-structure.html</loc>
+    <lastmod>2024-01-24T14:43:38.689Z</lastmod>
+  </url>
+  <url>
+    <loc>https://andreashandel.github.io/MADAcourse/content/module-data-presentation/presenting-results-overview.html</loc>
+    <lastmod>2024-01-01T21:36:46.243Z</lastmod>
+  </url>
+  <url>
+    <loc>https://andreashandel.github.io/MADAcourse/content/module-data-presentation/visualization-in-r.html</loc>
+    <lastmod>2024-01-10T16:13:27.758Z</lastmod>
+  </url>
+  <url>
+    <loc>https://andreashandel.github.io/MADAcourse/content/module-data-processing/assessment-data-processing.html</loc>
+    <lastmod>2024-01-24T14:43:43.061Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-data-processing/data-loading/data-loading.html</loc>
-    <lastmod>2024-01-24T02:45:09.818Z</lastmod>
+    <lastmod>2024-01-24T15:27:38.882Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-data-processing/data-processing-overview.html</loc>
-    <lastmod>2024-01-24T02:45:09.893Z</lastmod>
+    <lastmod>2024-01-24T15:30:29.979Z</lastmod>
+  </url>
+  <url>
+    <loc>https://andreashandel.github.io/MADAcourse/content/module-data-processing/feature-engineering/feature-engineering.html</loc>
+    <lastmod>2024-01-24T15:27:38.882Z</lastmod>
+  </url>
+  <url>
+    <loc>https://andreashandel.github.io/MADAcourse/content/module-data-processing/missing-data/missing-data.html</loc>
+    <lastmod>2024-01-24T15:39:31.353Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-data/assessment-data.html</loc>
-    <lastmod>2024-01-24T02:45:09.893Z</lastmod>
+    <lastmod>2024-01-24T14:43:43.062Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-data/data-generation-process/data-generation-process.html</loc>
-    <lastmod>2024-01-24T02:45:09.893Z</lastmod>
+    <lastmod>2024-01-24T14:43:38.532Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-data/data-storage-formats/data-storage-formats.html</loc>
-    <lastmod>2024-01-24T02:45:09.909Z</lastmod>
+    <lastmod>2024-01-24T15:26:40.375Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-data/data-types-complex/data-types-complex.html</loc>
-    <lastmod>2024-01-24T02:45:09.951Z</lastmod>
+    <lastmod>2024-01-24T14:43:38.690Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-intro-tools/introduction-course.html</loc>
-    <lastmod>2024-01-02T13:22:22.637Z</lastmod>
+    <lastmod>2024-01-01T21:36:46.317Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-intro-tools/tools-github-introduction.html</loc>
-    <lastmod>2024-01-02T13:22:22.655Z</lastmod>
+    <lastmod>2024-01-01T21:37:04.676Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-intro-tools/tools-quarto.html</loc>
-    <lastmod>2024-01-24T02:45:09.951Z</lastmod>
+    <lastmod>2024-01-24T14:43:38.690Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-intro-tools/tools-reference-management.html</loc>
-    <lastmod>2024-01-02T13:22:22.660Z</lastmod>
+    <lastmod>2024-01-01T21:36:46.328Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-model-basics/assessment-fitting-basic-models.html</loc>
-    <lastmod>2024-01-02T13:22:22.670Z</lastmod>
+    <lastmod>2024-01-01T21:36:46.368Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-model-basics/model-fitting-r.html</loc>
-    <lastmod>2024-01-02T13:22:22.685Z</lastmod>
+    <lastmod>2024-01-01T21:36:46.369Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-model-evaluation/model-evaluation-diagnostics.html</loc>
-    <lastmod>2024-01-02T13:22:22.685Z</lastmod>
+    <lastmod>2024-01-01T21:36:46.398Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-model-evaluation/model-evaluation-overview.html</loc>
-    <lastmod>2024-01-02T13:22:22.701Z</lastmod>
+    <lastmod>2024-01-01T21:36:46.425Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-model-evaluation/model-evaluation-uncertainty.html</loc>
-    <lastmod>2024-01-02T13:22:22.735Z</lastmod>
+    <lastmod>2024-01-01T21:36:46.441Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-model-improvement/model-improvement-data-processing.html</loc>
-    <lastmod>2024-01-02T13:22:22.738Z</lastmod>
+    <lastmod>2024-01-01T21:36:46.477Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-model-improvement/model-improvement-regularization.html</loc>
-    <lastmod>2024-01-02T13:22:22.749Z</lastmod>
+    <lastmod>2024-01-01T21:36:46.478Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-model-improvement/model-improvement-tuning.html</loc>
-    <lastmod>2024-01-02T13:22:22.768Z</lastmod>
+    <lastmod>2024-01-01T21:36:46.480Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-model-ml-1/decision-trees.html</loc>
-    <lastmod>2024-01-02T13:22:22.768Z</lastmod>
+    <lastmod>2024-01-01T21:36:46.493Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-model-ml-1/ml-models-overview.html</loc>
-    <lastmod>2024-01-02T13:22:22.812Z</lastmod>
+    <lastmod>2024-01-01T21:36:46.494Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-model-ml-2/assessment-ml-models-2.html</loc>
-    <lastmod>2024-01-02T13:22:22.812Z</lastmod>
+    <lastmod>2024-01-01T21:36:46.540Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-model-ml-2/more-ml-models.html</loc>
-    <lastmod>2024-01-02T13:22:22.827Z</lastmod>
+    <lastmod>2024-01-01T21:36:46.541Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-ready-workflow/ready-documentation/ready-documentation.html</loc>
-    <lastmod>2024-01-24T02:45:09.951Z</lastmod>
+    <lastmod>2024-01-24T14:43:43.062Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-ready-workflow/ready-open/ready-open.html</loc>
-    <lastmod>2024-01-24T02:45:09.967Z</lastmod>
+    <lastmod>2024-01-24T14:43:43.063Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-ready-workflow/ready-overview.html</loc>
-    <lastmod>2024-01-24T02:45:09.968Z</lastmod>
+    <lastmod>2024-01-24T14:43:38.691Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-ready-workflow/ready-software-management/ready-software-management.html</loc>
-    <lastmod>2024-01-24T02:45:09.972Z</lastmod>
+    <lastmod>2024-01-24T14:43:43.063Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-stats-overview/assessment-statistical-analysis.html</loc>
-    <lastmod>2024-01-02T13:22:22.843Z</lastmod>
+    <lastmod>2024-01-01T21:36:46.606Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-stats-overview/statistical-terminology.html</loc>
-    <lastmod>2024-01-02T13:22:22.843Z</lastmod>
+    <lastmod>2024-01-01T21:36:46.673Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-synthetic-data/synthetic-data-existing-r/synthetic-data-existing-r.html</loc>
-    <lastmod>2024-01-02T13:22:22.843Z</lastmod>
+    <lastmod>2024-01-01T21:36:46.675Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-synthetic-data/synthetic-data-model-testing-r/synthetic-data-model-testing-r.html</loc>
-    <lastmod>2024-01-02T13:22:22.849Z</lastmod>
+    <lastmod>2024-01-01T21:36:46.688Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-synthetic-data/synthetic-data-new-r/synthetic-data-new-r.html</loc>
-    <lastmod>2024-01-02T13:22:22.868Z</lastmod>
+    <lastmod>2024-01-01T21:37:07.449Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-synthetic-data/synthetic-data-r-packages/synthetic-data-r-packages.html</loc>
-    <lastmod>2024-01-09T01:24:51.581Z</lastmod>
+    <lastmod>2024-01-10T16:13:27.760Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-workflow/complete-data-analysis-workflow.html</loc>
-    <lastmod>2024-01-02T13:22:22.876Z</lastmod>
+    <lastmod>2024-01-01T21:36:46.779Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/courseinfo/course-communication.html</loc>
-    <lastmod>2024-01-02T13:22:22.876Z</lastmod>
+    <lastmod>2024-01-01T21:37:45.085Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/courseinfo/course-schedule.html</loc>
-    <lastmod>2024-01-24T02:45:09.972Z</lastmod>
+    <lastmod>2024-01-24T14:43:43.069Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/index.html</loc>
-    <lastmod>2024-01-02T13:22:24.277Z</lastmod>
+    <lastmod>2024-01-01T22:00:39.196Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/project/project-examples.html</loc>
-    <lastmod>2023-12-22T19:01:38.631Z</lastmod>
+    <lastmod>2023-12-14T16:14:30.013Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/project/project-review.html</loc>
-    <lastmod>2024-01-02T13:22:24.277Z</lastmod>
+    <lastmod>2024-01-01T21:36:47.993Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/resources/resources-course.html</loc>
-    <lastmod>2024-01-02T13:22:24.277Z</lastmod>
+    <lastmod>2024-01-01T21:36:47.994Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/resources/resources-glossary.html</loc>
-    <lastmod>2023-12-22T19:01:38.656Z</lastmod>
+    <lastmod>2023-12-14T16:14:30.161Z</lastmod>
   </url>
 </urlset>

@@ -178,7 +178,19 @@ website:
              - text: "Data Processing Overview"
                file: content/module-data-processing/data-processing-overview.qmd  
              - text: "Data Processing Introduction"
-               file: content/module-data-processing/data-processing-introduction/data-processing-introduction.qmd  
+               file: content/module-data-processing/data-processing-introduction/data-processing-introduction.qmd
+             - text: "Data loading"
+               file: content/module-data-processing/data-loading/data-loading.qmd
+             - text: "Dealing with outliers"
+               file: content/module-data-processing/outliers/outliers.qmd
+             - text: "Dealing with missing data"
+               file: content/module-data-processing/missing-data/missing-data.qmd
+             - text: "Dealing with censored data"
+               file: content/module-data-processing/censored-data/censored-data.qmd
+             - text: "Creating new data/variables"
+               file: content/module-data-processing/feature-engineering/feature-engineering.qmd
+             - text: "Merging data"
+               file: content/module-data-processing//merging-data/merging-data.qmd
           - section: "6. Presenting Data and Results"
             contents:
              - text: "Presenting Results Overview"

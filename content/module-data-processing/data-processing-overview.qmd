@@ -23,7 +23,11 @@ The module consists of the following units:
 
 * [Data processing introduction](./data-processing-introduction/data-processing-introduction.qmd)
 * [Data loading](./data-loading/data-loading.qmd)
-* [Dealing with outliers]()
-* [Dealing with missing data]()
-* [Creating new data/variables]()
+* [Dealing with outliers](./outliers/outliers.qmd)
+* [Dealing with missing data](./missing-data/missing-data.qmd)
+* [Dealing with censored data](./censored-data/censored-data.qmd)
+* [Creating new data/variables](./feature-engineering/feature-engineering.qmd)
+* [Merging data](./merging-data/merging-data.qmd)
+
+<!-- * [Dealing with censored data]() -->
 
