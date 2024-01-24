@@ -201,9 +201,9 @@ is an important practical consideration.
 
 
 
-# Openness and standards
+<!-- # Openness and standards -->
 
-Some further things to pay attention are the use of open standards (open data standards, open-source software), recording of software versions used, time-stamping data, and setting a random number seed in your code.
+<!-- Some further things to pay attention are the use of open standards (open data standards, open-source software), recording of software versions used, time-stamping data, and setting a random number seed in your code. -->
 
 
 

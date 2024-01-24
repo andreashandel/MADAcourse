@@ -53,7 +53,7 @@ Therefore, for most data analysis projects, it is probably good practice to star
 Eventually, to ensure your project is publicly reproducible, you want to share some version of the data and the code. Be aware that if you make a repository public, others can also see the full history. This can be important if you want to make your final results public - after you made sure everything is anonymous enough for sharing. If at any time you worked in the repository with the full dataset and tracked it, others can go back in your GitHub/Git history and see it. The best option is likely to start a new public repository and copy only the elements you want to share into that repository, while keeping your original repository private.
 
 
-## Gitlab & others
+# Gitlab & others
 
 As mentioned above, the underlying software is called Git, GitHub is essentially a hosting platform (owned by Microsoft). GitHub is the most popular Git hosting platform, but not the only one. A few alternatives are [Gitlab](https://about.gitlab.com/), [Bitbucket](https://bitbucket.org/) and [others](https://www.wearedevelopers.com/magazine/top-github-alternatives). While there are some differences between these platforms, as long as the underlying system is `Git`, the workflows are very comparable.
 

@@ -765,13 +765,12 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
   <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#virtual-environments" id="toc-virtual-environments" class="nav-link" data-scroll-target="#virtual-environments">Virtual environments</a></li>
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
   <li><a href="#r-package-management" id="toc-r-package-management" class="nav-link" data-scroll-target="#r-package-management">R package management</a>
   <ul class="collapse">
-  <li><a href="#renv" id="toc-renv" class="nav-link" data-scroll-target="#renv"><code>renv</code></a></li>
-  <li><a href="#other" id="toc-other" class="nav-link" data-scroll-target="#other">Other</a></li>
+  <li><a href="#r-package-renv" id="toc-r-package-renv" class="nav-link" data-scroll-target="#r-package-renv">R package <code>renv</code></a></li>
+  <li><a href="#renv-alternatives" id="toc-renv-alternatives" class="nav-link" data-scroll-target="#renv-alternatives"><code>renv</code> alternatives</a></li>
   </ul></li>
+  <li><a href="#virtual-environments-and-docker" id="toc-virtual-environments-and-docker" class="nav-link" data-scroll-target="#virtual-environments-and-docker">Virtual environments and Docker</a></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
   <li><a href="#further-resources" id="toc-further-resources" class="nav-link" data-scroll-target="#further-resources">Further Resources</a></li>
   </ul>
@@ -800,7 +799,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2024-01-18</p>
+      <p class="date-modified">2024-01-23</p>
     </div>
   </div>
     
@@ -824,28 +823,48 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
-</section>
-<section id="virtual-environments" class="level1">
-<h1>Virtual environments</h1>
-</section>
-<section id="section" class="level1">
-<h1></h1>
+<p>New versions of software are released regularly. While differences are often minor, sometimes they are not and the software might change enough to make code that previously worked not work anymore - or produce different results. This breaks reproducibility.</p>
+<p>Similarly, software might differ slightly based on the environment where it is run (e.g., Windows or Mac or Linux). This can again lead to problems with reproducibility.</p>
+<p>The goal of software management is to ensure that someone can fairly easily reproduce your analysis, even if that is several years in the future on a computer and operating system that is different from yours.</p>
+<p>There are different approaches to trying to manage software, ranging from more focused to very comprehensive. With that come various levels of complexity, both for the person setting up the software management tools (that would be you as the data analyst) and for the person trying to replicate an analysis (that would be you as consumer of someone else’s analysis).</p>
+<p>The following briefly discusses some approaches to software management, starting from the more focused and simpler and going to more complex ones.</p>
 </section>
 <section id="r-package-management" class="level1">
 <h1>R package management</h1>
-<section id="renv" class="level2">
-<h2 class="anchored" data-anchor-id="renv"><code>renv</code></h2>
+<p>While R itself is fairly stable and rarely changes in a way that would lead to non-working code, <em>R packages</em> tend to change a lot. Authors often improve package functions and in that process sometimes break previously working code.</p>
+<p>To ensure everything is reproducible, you want to make sure someone can run your code with the same versions of R packages that you used originally. This is where the <code>renv</code> package comes in.</p>
+<section id="r-package-renv" class="level2">
+<h2 class="anchored" data-anchor-id="r-package-renv">R package <code>renv</code></h2>
+<p>The <a href="https://rstudio.github.io/renv/index.html"><code>renv</code> package</a> (renv stands for <strong>re</strong>producible <strong>env</strong>ironments) is a tool that allows you to install all packages you use for a given project as part of that project. It records the packages and exactly which version of the package is used. If you then give your project to someone else, they can install these exact versions of the packages on their machine, and therefore ensure that they are using the same versions you did.</p>
+<p>Note that this only holds for R packages, not R itself. But again, R doesn’t change that rapidly, so even if you run something under a newer or older version of R, most of the time it is not much of a problem.</p>
+<p>Because reproducibility issues related to outdated packages are quite common, it is a good idea to use <code>renv</code> for all your data analysis projects. Once you got the hang of it, it is fairly easy to use. The <code>renv</code> website <a href="https://rstudio.github.io/renv/articles/renv.html">has a good tutorial</a>.</p>
 </section>
-<section id="other" class="level2">
-<h2 class="anchored" data-anchor-id="other">Other</h2>
-<p>Metworkx MPN</p>
+<section id="renv-alternatives" class="level2">
+<h2 class="anchored" data-anchor-id="renv-alternatives"><code>renv</code> alternatives</h2>
+<p>There is a package called <code>packrat</code>. It’s basically the older version of <code>renv</code> and not as good. There is also a package called <a href="https://github.com/milesmcbain/capsule"><code>capsule</code></a>, which is supposed to be an <code>renv</code> alternative. I have no experience with it.</p>
+<p>Posit (formerly R Studio) has the <a href="https://packagemanager.posit.co/client/#/">Posit package manager</a>, which is an alternative to <code>renv</code>. It’s more powerful, but also more complex and not free.</p>
+<p>There are further, more specialized options. For instance the company Metrum Research Group has a tool called the <a href="https://kb.metworx.com/Users/Managing_R_Packages/r-package-management/">Metrum Package Network</a>. It is also fairly complex and not recommended for individual use.</p>
+<p>Basically, at the time of this writing, <code>renv</code> is pretty much the only useful option for individuals working on projects and wanting to manage R packages.</p>
 </section>
+</section>
+<section id="virtual-environments-and-docker" class="level1">
+<h1>Virtual environments and Docker</h1>
+<p>If you want to go a step further and make sure not just the R packages, but also the version of R and possibly other software components remain consistent, you can use what is often referred to as a virtual environment. Basically, you create a bundle of software that contains “everything” needed to run your code. <a href="https://www.docker.com/">Docker</a> is such a tool to do that.</p>
+<p>It is possible and recommended to combine <code>renv</code> and Docker, see for instance <a href="https://rstudio.github.io/renv/articles/docker.html">these instructions on the <code>renv</code> website</a> or <a href="https://appsilon.com/renv-with-docker/">this tutorial</a>. Here is another, fairly accessible <a href="https://eliocamp.github.io/codigo-r/en/2021/08/docker-renv/">Docker tutorial for R</a>.</p>
+<p>Posit has a detailed, but technical <a href="https://solutions.posit.co/envs-pkgs/environments/docker/">description of Docker for R</a>.</p>
+<p>Be warned that using Docker can be confusing if you don’t have a lot of general computer/IT knowledge. A lot of Docker concepts and commands come from the Unix/Linux world.</p>
+<p>Docker is not the only approach to trying to achieve full reproducibility and consistency. Virtual machines are another common approach, and there are different types. <a href="https://aws.amazon.com/compare/the-difference-between-docker-vm/">This article</a> provides a nice comparison and pointers to further reading.</p>
 </section>
 <section id="summary" class="level1">
 <h1>Summary</h1>
+<p>Managing your software to make sure everything is reproducible can be tricky. In some settings, e.g.&nbsp;heavily regulated industries such as Pharma or Finance, having fully reproducible and managed software environments is critical. Some type of virtualization or containerization is very common in many companies. For scientists and research projects, a less comprehensive approach is usually fine.</p>
+<p>For any serious research project, you should at minimum manage your packages with a tool such as <code>renv</code>. If you want to go the extra step, you can use tools such as <code>Docker</code>. They are more comprehensive, but also more complex and potentially harder to use by the end-user.</p>
 </section>
 <section id="further-resources" class="level1">
 <h1>Further Resources</h1>
+<ul>
+<li>The <a href="https://rocker-project.org/">Rocker project</a> maintains useful Docker images for different R installations.</li>
+</ul>
 
 
 </section>

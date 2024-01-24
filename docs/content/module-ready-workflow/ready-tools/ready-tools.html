@@ -765,8 +765,11 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
   <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#version-control-software" id="toc-version-control-software" class="nav-link" data-scroll-target="#version-control-software">Version control software</a></li>
   <li><a href="#quarto" id="toc-quarto" class="nav-link" data-scroll-target="#quarto">Quarto</a></li>
-  <li><a href="#jupyter-notebooks" id="toc-jupyter-notebooks" class="nav-link" data-scroll-target="#jupyter-notebooks">Jupyter notebooks</a></li>
+  <li><a href="#jupyter" id="toc-jupyter" class="nav-link" data-scroll-target="#jupyter">Jupyter</a></li>
+  <li><a href="#sweave-and-such" id="toc-sweave-and-such" class="nav-link" data-scroll-target="#sweave-and-such">Sweave and such</a></li>
+  <li><a href="#pipeline-tools" id="toc-pipeline-tools" class="nav-link" data-scroll-target="#pipeline-tools">Pipeline tools</a></li>
   <li><a href="#other-tools" id="toc-other-tools" class="nav-link" data-scroll-target="#other-tools">Other tools</a></li>
   <li><a href="#hall-of-shame" id="toc-hall-of-shame" class="nav-link" data-scroll-target="#hall-of-shame">Hall of shame</a></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
@@ -797,7 +800,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2024-01-18</p>
+      <p class="date-modified">2024-01-23</p>
     </div>
   </div>
     
@@ -815,31 +818,53 @@ ul.task-list li input[type="checkbox"] {
 <section id="learning-objectives" class="level1">
 <h1>Learning Objectives</h1>
 <ul>
-<li></li>
+<li>Be familiar with some tools that can help with a READy workflow.</li>
 </ul>
 </section>
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
+<p>There are many different ways to make a data analysis READy. The following is a brief discussion of some common tools.</p>
+</section>
+<section id="version-control-software" class="level1">
+<h1>Version control software</h1>
+<p>Version control software, such as Git/GitHub, is used for tracking project changes and is discussed in the <a href="../../../content/module-ready-workflow/ready-project-management/ready-project-management.html">Project Management</a> unit.</p>
 </section>
 <section id="quarto" class="level1">
 <h1>Quarto</h1>
+<p>Quarto is tool that allows for easy scientific writing in a reproducible manner, by seamlessly integrating code with text. Quarto is further discussed in the <a href="../../../content/module-intro-tools/tools-quarto.html">Quarto unit</a>.</p>
 </section>
-<section id="jupyter-notebooks" class="level1">
-<h1>Jupyter notebooks</h1>
+<section id="jupyter" class="level1">
+<h1>Jupyter</h1>
+<p><a href="https://jupyter.org/">Jupyter</a> is another platform that supports combining code with text. I’m not very familiar with it. As far as I understand it, it doesn’t support the generation of different outputs that Quarto does. Since Quarto supports the same languages as Jupyter, I am not sure what the advantages are of using Jupyter. There might be some 😁.</p>
+</section>
+<section id="sweave-and-such" class="level1">
+<h1>Sweave and such</h1>
+<p>There are some older tools, such as <a href="https://en.wikipedia.org/wiki/Sweave"><code>Sweave</code></a> that can also help in reproducible work. In my opinion they are made essentially obsolete by Quarto.</p>
+</section>
+<section id="pipeline-tools" class="level1">
+<h1>Pipeline tools</h1>
+<p>Quarto and similar programs generally chain together a series of commands to get from the initial result to the final product. For instance for a Quarto file, when you render it, it first runs any code, then processes the markdown file, then turns it into the final product.</p>
+<p>More generally, tools that allow you to automatically run such chains of steps are often referred to as pipeline tools. In R, there is the <a href="https://books.ropensci.org/targets/"><code>targets</code></a> package. Outside of R, Unix/Linux type systems support <a href="https://www.gnu.org/software/make/"><code>Make</code></a>, which lets you combine multiple steps into often complicated workflows. If you find yourself needing a workflow that executes multiple different steps that go beyond what Quarto can execute, the <code>targets</code> package might be worth checking out.</p>
 </section>
 <section id="other-tools" class="level1">
 <h1>Other tools</h1>
-<p>In general, any software tool you use that allows you to document each step - usually in the form of code and comments - should allow others to reproduce your results. Many common software packages and languages such as Mathematica, Julia,</p>
+<p>In general, any software tool you use that allows you to document each step - usually in the form of code and comments - should allow others to reproduce your results. Many common software packages and languages such as Mathematica, Matlab, Julia, Python, etc. allow you to add documentation to your code and therefore support reproducibility.</p>
 </section>
 <section id="hall-of-shame" class="level1">
 <h1>Hall of shame</h1>
-<p>There is a long list of software that is commonly used for research and data analysis, but which one should stay away from. This encompasses any software that does not contain a full documentation of all steps taken to allow reproducibility. <strong>Excel</strong> and similar spreadsheet software are a major problem. If you make a change to data in an Excel file and save it, there is usually no track record of what happened. Therefore, any data processing that happens with Excel is not reproducible. Statistical software that relies on graphical user interfaces (GUI), such as e.g.&nbsp;<strong>Graphpad Prism</strong> or <strong>SPSS</strong> are equally problematic. Some software records the commands you perform through a GUI and you can save those at the end. This does allow for reproducibility. But if that step is missing or not implemented, the analysis is again not reproducible.</p>
+<p>There is a long list of software that is commonly used for research and data analysis, but which one should stay away from. This encompasses any software that does not contain a full documentation of all steps taken to allow reproducibility.</p>
+<p><strong>Excel</strong> and similar spreadsheet software is a major culprit. If you make a change to data in an Excel file and save it, there is usually no track record of what happened. Therefore, any data processing that happens with Excel is not reproducible.</p>
+<p>Statistical and data analysis software that relies on graphical user interfaces (GUI), such as e.g.&nbsp;<strong>Graphpad Prism</strong> or <strong>SPSS</strong> are equally problematic. Some of these software tools can record the commands you perform through a GUI and you can save those at the end. This does allow for reproducibility. But if that step is missing or not implemented, the analysis is again not reproducible.</p>
+<p>Similarly, any software to produce graphics by hand (e.g., <strong>Photoshop</strong>) should not be used. It is ok to use it make schematics, but not to edit any results.</p>
+<p>Similarly, results tables should be generated automatically and not produced by copying and pasting numbers from one location to another. Again, that means no <strong>Excel</strong>.</p>
 </section>
 <section id="summary" class="level1">
 <h1>Summary</h1>
+<p>There are many useful tools that help you implement a READy workflow. The important part is that things are scripted, automated and repeatable, as well as documented. Any tools that support such a workflow are useful. Stay away from tools that require manual steps.</p>
 </section>
 <section id="further-resources" class="level1">
 <h1>Further Resources</h1>
+<p>None at the moment. Let me know if you come across any good ones that describe further tools.</p>
 
 
 </section>

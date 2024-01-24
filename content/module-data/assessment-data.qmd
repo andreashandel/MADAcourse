@@ -1,5 +1,5 @@
 ---
-title: Assessment - Data Finding and Wrangling
+title: Assessment - All about Data 
 subtitle: ""
 ---
 
@@ -20,106 +20,52 @@ Submission of part 1 is due. **Submit a link with a URL to your project reposito
 
 # Exercise
 
-This exercise lets you do a bit of data loading and wrangling. And of course more group work and GitHub.
+This exercise is a solo exercise. It's a _choose your own adventure_. 
 
-**The first part of the exercise is due by Wednesday, so your classmate can do their part before the Friday deadline.**
+## Overview
 
-**Since this will be part of your portfolio site, and you already posted a link to that previously, you don't need to post anything, I know where to find it. Therefore there is no exercise Slack channel for this module.**
+You have two main options for the exercise this week:
+
+* Option 1: Try your hand at a bit of an exploration of some complex data type.
+* Option 2: Generate and explore synthetic data.
+
+For either option, I expect well-documented code and lots of explanatory text in the Quarto document.
+
+While this is an open-ended exercise and there are no specific requirements as to what you need to produce, I expect more than just a single figure or 10 lines of code. Since you are getting better each week, it should definitely be more comprehensive than last week's exercise 😁.
+
 
 ## Setup
 
-We'll also use the same group setup as last week. Assign each member in your group an (arbitrary) number (I'm calling them M1, M2, ...). The order should be different than last week so you get to interact with a different group member. Everyone will first work on their own and finish their first part by Wednesday. Then M1 will contribute to M2's repository, M2 will work on M3, etc. The last person, will work on M1's repository. This way, everyone will work on their own and one group member's repository.
-
-## Part 1
-
-Part 1 is due by Wednesday.
-
-## Finding Data
-
-Previously, you did a quick exploration of a dataset that came with an R package (`gapminder` data inside `dslabs` package). A lot of datasets can be found inside R packages. For instance, this [page lists what is likely only a small fraction](https://vincentarelbundock.github.io/Rdatasets/datasets.html). There is even a [Reddit group dedicated to R datasets](https://www.reddit.com/r/datasets/). The good and the bad about datasets that come with R packages is that they are often fairly clean/tidy. That's unfortunately not how most "real world" datasets look like. Getting dirty and messy datasets and wrangling them into a form that is suitable for statistical analysis is part of most workflows and often takes a lot of time. We'll start practicing this here by getting data that might or might not be very clean.
-
-Go to the CDC's data website at <https://data.cdc.gov/>. Browse through the site and identify a dataset of interest.
-
-Which dataset you choose is up to you. I suggest you pick a dataset that has at least 100 observations with 5 different variables, and a mix of continuous and categorical ones. Often, 5 variables means 5 columns. That would be the case in properly formatted data. However, some of the data provided by the CDC is rather poorly formatted. For instance [CDC's dataset on traumatic brain injury](https://data.cdc.gov/Traumatic-Brain-Injury-/Rates-of-TBI-related-Deaths-by-Age-Group-United-St/nq6q-szvs) has the same variable (age) in separate columns, and it is also discretized. As we'll discuss, these are two really bad things you can do to your data, so I recommend staying away from such datasets. There are plenty on that website, so I'm sure you'll find one that is suitable and interesting to you.
+This exercise doesn't have an existing folder in your portfolio. Make a new folder, call it `data-exercise`. Copy one of the existing Quarto files into that new folder (e.g., the one called `tidytuesday-exercise.qmd`), rename it to `data-exercise.qmd` and open it (make sure you open your portfolio by clicking on your R project file, then open the Quarto file inside R Studio).
 
 
-## Getting the data
+## Option 1
 
-To get the dataset you selected, it is easiest if you download the file to your computer and place it inside your portfolio repository. Note that in general, you should  make each data analysis (or other) project its own GitHub repository, and always use a structure like the one provided in the `Data Analysis Template` (or something similar). However, for this small exercise and for logistic reasons, you'll use your portfolio/website repository, and just a single folder. Make a new folder called `dataanalysis-exercise` inside your portfolio repository. Place the data into that folder.
+Find some data that falls into the categories described in the _Complex data types_ unit. It could be some text or images or video or audio or any other complex data. Basically anything that's not rectangular data with rows as observations and columns as variables. 
 
-
-::: warning
-Remember that GitHub doesn't like large files. So if you pick a large data file (\>50MB), first place it somewhere outside your repository, then reduce it by e.g., writing some R code that selects only a portion of the data. Once it's small enough, you can place it into the GitHub repository.
-:::
-
-::: note
-While you should be able to find data for direct download from the CDC website, sometimes you need to write a bit of code to pull data from a source. This is usually done through an API. R has packages that make this relatively easy. If you ever encounter that situation, search online for instructions. Google/Stackoverflow are your friends to figure out what commands you need to write).
-:::
-
-## Exploring the data
-
-Now, write code that explores the data. 
-Add a new Quarto document called `dataanalysis-exercise.qmd` to the folder you just created.
-
-Start by providing a brief description of the data, where you got it, what it contains. Also add a link to the source.
-
-Then write code that reads/loads the data. As needed, process the data (e.g., if there are weird symbols in the data, or missing values coded as `999` or anything of that sort, write code to fix it.) If your dataset has a lot of variables, pick a few of them (at least 5).
-
-Once you have the data processed and cleaned, perform some exploratory/descriptive analysis on this cleaned dataset. Make some summary tables, produce some figures. Try to summarize each variable in a way that it can be described by a distribution. For instance if you have a categorical variable, show what % are in each category. If you have a continuous variable, make a plot to see if it's approximately normal, then try to summarize it to determine its mean and standard deviation.
-
-The idea is that your descriptive analysis will provide enough information for your classmate to make synthetic data that looks similar, along the lines discussed in the synthetic data module.
-
-Remember to add both text to your Quarto file and comments into your code to explain what you are doing.
-
-In a final step, update the `_quarto.yml` file and include a menu item for "Data Analysis Exercise" pointing to the new file. Follow the format of the existing entries. Remember to be very careful about the right amount of empty space. Re-create your website and make sure it all works and the new project shows up on the website.
+Then look for some suitable R packages that allow you to explore the data. You don't need to do any statistical analysis at this stage. Focus on loading the data, processing as needed, and then do some descriptive/exploratory analysis, e.g. by making plots or tables or... Basically anything that you can think of.
 
 
-## A new GitHub workflow
 
-If everything works as expected, commit and push your changes to GitHub. Instead of using the fork + pull-request workflow we've tried a few times, we'll explore a different collaborative approach. In this approach, you and your collaborator work on the same repository. To that end, you need to add your classmate as collaborator. Go to Github.com, find your portfolio repository, go to `Settings`, then `Collaborators`. Choose `Add Collaborator` and add your classmate. Your classmate should receive an invitation, which they need to accept. With this, they are now able to directly push and pull to your repository, without them needing to create a fork. (You can remove them after this exercise if you don't want them to be able to continue having write access to your repository).   
+## Option 2
 
-To avoid any conflicts, once your classmate takes over, you shouldn't continue making changes to the repository.
+Write code that generates a synthetic dataset. This dataset should have multiple variables, and there should be some associations between variables.
 
-## Part 2
+Then write code that explores the data by making plots or tables to confirm that your synthetic data is what you expect it to be.
 
-Part 2 is due by Friday.
+Then fit a few simple models to the data. For instance use the `lm` or `glm` functions to fit a linear or logistic model. Make sure your model can recover the associations you built into the data. Explore if and how different models might be able to capture the patterns you see.
 
-
-## Joining and cloning the GitHub repository
-
-You should have received an invitation to be a collaborator on your classmate's repository. Accept it, then clone the repository to your local computer. 
-
-Find the `dataanalysis-exercise.qmd` file. At the bottom, write a comment that says something like **This section contributed by YOURNAME.** This needs to be there for me to be able to grade your contribution.
+Take some inspiration from the examples shown in the [Synthetic Data module](/content/module-synthetic-data/synthetic-data-overview.qmd).
 
 
-## Making synthetic data 
+## Wrap-up
 
-Take a look at the descriptive analysis your classmate did. 
+Once you got your exercise done, you need to add it to your website. To that end, open the `_quarto.yml` file. In the section that says `menu` and lists several of your projects, add lines at a `-text:` and `file:` entry that points to your new folder/file. **Be careful to have exactly the same number of empty spaces as all the other lines.**
 
-Next, produce a new synthetic data set with the same structure as their cleaned/processed data. You are encouraged to use some LLM AI tools to help write the code. If you do, specify in the Quarto document or as comments the AI prompts you are using. 
+While you are in that file, if you haven't done so, update other parts, e.g. such as the title and the github URL. See the instructions for the first exercise if you need a reminder.
 
-Write code that produces synthetic data, then summarizes/explores the data with a few tables and figures similar to those made by your classmate for the original data. 
-
-Add comments in the code and text into the Quarto document to explain what you did and how close your synthetic data is compared to the original data.
-
-Make sure everything works and the website renders ok. 
-
-## Finishing the GitHub workflow
-
-Once all is done and works, commit, push to GitHub. Note that you are now directly pushing to the original repo. This is easier, you don't need to do a pull request (PR). It's also a bit more dangerous, since you could potentially create conflicts if the main repository owner or other collaborators work on the repository at the same time. 
-
-::: note
-Some more comments on GitHub workflows:
-
-In general, if you work closely with someone on a project, it might make sense to add them as collaborator, and as needed coordinate with them to avoid merge conflicts. Otherwise, telling someone to contribute by forking and sending a pull request is the safer approach, and you have control if you want to accept their changes or not.
-
-There is yet another common way to use GitHub, namely collaborators working in the same repository, but with different branches. Think of a branch like a fork, but it happens inside the repository. Work can occur independently on branches, and at some point one can merge branches. This allows people to work in a single repository, but minimizes possible merge conflicts. This approach is standard for larger projects with many collaborators. For this class, we won't use branches, but note that they are useful and commonly used.
-:::
+Once all done, render your website to make sure everything looks ok and your new exercise shows up. Once things looks fine on your local computer, push your updates to GitHub and check that they also look ok online.
 
 
-## Part 3
-
-The original repository owner doesn't really need to do anything. What their classmate added hopefully works and shows up on the website. You still might want to check to make sure that everything is ok. 
-
-**Since this will be part of your portfolio site, and you already posted a link to that previously, you don't need to post anything, I know where to find it. I will assess both the original contribution and the addition made by the second person.**
+**Since this will be part of your portfolio site, and you already posted a link to that previously, you don't need to post anything, I know where to find it.**
 
