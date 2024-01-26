@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.547">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Andreas Handel">
 <meta name="description" content="Modern Applied Data Analysis (MADA) course">
 
-<title>MADA Course - Title</title>
+<title>MADA Course - Dealing with outliers</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,8 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../../">
-<link href="../../../content/module-data-processing/missing-data/missing-data.html" rel="next">
-<link href="../../../content/module-data-processing/data-loading/data-loading.html" rel="prev">
+<link href="../../../content/module-data-processing/feature-engineering/feature-engineering.html" rel="next">
+<link href="../../../content/module-data-processing/missing-data/missing-data.html" rel="prev">
 <link href="../../../media/MADAlogo.png" rel="icon" type="image/png">
 <script src="../../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
@@ -449,20 +449,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../content/module-data-processing/outliers/outliers.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Dealing with outliers</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../../../content/module-data-processing/missing-data/missing-data.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Dealing with missing data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../content/module-data-processing/censored-data/censored-data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Dealing with censored data</span></a>
+  <a href="../../../content/module-data-processing/outliers/outliers.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Dealing with outliers</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -506,6 +500,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Visualization in R</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-data-presentation/tables-in-r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tables in R</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -527,6 +527,12 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="../../../content/module-stats-overview/statistical-terminology.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Some Statistical Model Fitting Terminology</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-stats-overview/descriptive-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Descriptive and preliminary analysis</span></a>
   </div>
 </li>
       </ul>
@@ -801,7 +807,10 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
   <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#topic-1" id="toc-topic-1" class="nav-link" data-scroll-target="#topic-1">Topic 1</a></li>
+  <li><a href="#finding-outliers" id="toc-finding-outliers" class="nav-link" data-scroll-target="#finding-outliers">Finding outliers</a></li>
+  <li><a href="#removing-outliers" id="toc-removing-outliers" class="nav-link" data-scroll-target="#removing-outliers">Removing outliers</a></li>
+  <li><a href="#replacing-outliers" id="toc-replacing-outliers" class="nav-link" data-scroll-target="#replacing-outliers">Replacing outliers</a></li>
+  <li><a href="#modeling-with-outliers" id="toc-modeling-with-outliers" class="nav-link" data-scroll-target="#modeling-with-outliers">Modeling with outliers</a></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
   <li><a href="#further-resources" id="toc-further-resources" class="nav-link" data-scroll-target="#further-resources">Further Resources</a></li>
   </ul>
@@ -812,7 +821,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../content/module-data-processing/data-processing-overview.html">5. Data Processing</a></li><li class="breadcrumb-item"><a href="../../../content/module-data-processing/outliers/outliers.html">Dealing with outliers</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Title</h1>
+<h1 class="title">Dealing with outliers</h1>
 </div>
 
 
@@ -830,7 +839,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2024-01-24</p>
+      <p class="date-modified">2024-01-26</p>
     </div>
   </div>
     
@@ -843,25 +852,47 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="overview" class="level1">
 <h1>Overview</h1>
-<p>For this unit, we will discuss</p>
+<p>For this unit, we will discuss how to deal with outliers and generally ‘strange’ values in your data.</p>
 </section>
 <section id="learning-objectives" class="level1">
 <h1>Learning Objectives</h1>
 <ul>
-<li>Be familiar with</li>
+<li>Be familiar with the concept of outliers.</li>
+<li>Know what to do with outliers and other strange values.</li>
 </ul>
 </section>
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
+<p>It is not uncommon to have values in your data that are <em>strange</em>. It could be that someone at data entry made a mistake. Or your codebook doesn’t properly explain the entries. Other times, it could be <em>real</em> data that is just an outlier. It can be hard to decide if a value is <em>strange but real</em> or a mistake.</p>
+<p>Dealing with such entries is a judgment call. The best approach is to have a pre-written analysis plan that explains exactly what to do in any such cases. Outside of clinical trials seeking FDA approval, that pretty much never happens. We usually have to decide what to do with strange entries when we run into them. Some good rules are to be consistent, fully document and explain what you do, and if you are able, do it <em>both ways</em> (e.g.&nbsp;do the analysis with the values as they are, and then again with them removed). Of course <em>both ways</em> can quickly turn into <em>a million different ways</em> and at some point, you probably have to stop. However, trying it more than one way can be reassuring if you get pretty much the same answer each time. If you do not get similar results, then you have to be more careful and should describe in your report/paper in detail why and how different approaches to your data cleaning lead to different results.</p>
 </section>
-<section id="topic-1" class="level1">
-<h1>Topic 1</h1>
+<section id="finding-outliers" class="level1">
+<h1>Finding outliers</h1>
+<p>There is not clear definition of what an outlier is. Generally speaking, it’s a value that is far away from the majority of the values. If one assumed a distribution for the data, one could define an outlier statistically, e.g., every value that is some standard deviations away from the mean could be considered an outlier. In practice, we generally don’t know the distribution from which the data is a sample, and defining any kind of cut-off for outliers is also fairly arbitrary. Therefore, a more case-by-case approach is usually best.</p>
+<p>A great tool to find outliers is with figures. If you plot the raw data, and some values are far away from others, they deserve further inspection and might be considered outliers.</p>
+<p>Once you have identified outliers, you should try to determine if you think that strange value is obviously (or at least very likely) a wrong entry, or if it could be real, just unusual. Based on this, you might deal with the value differently. Some approaches for dealing with outliers are described next.</p>
+</section>
+<section id="removing-outliers" class="level1">
+<h1>Removing outliers</h1>
+<p>One option is to remove any observation that contains a variable with an outlier. This is usually straightfoward. It is in some sense similar to removing observations with missing values. The problem is that this leads to less data you can analyze, and if the outliers were real - just strange - data, you might get biased estimates.</p>
+</section>
+<section id="replacing-outliers" class="level1">
+<h1>Replacing outliers</h1>
+<p>Instead of removing data with outliers, you could try to replace the outliers with something that makes more sense. This is similar to imputation for missing data, and you can use the same approaches.</p>
+</section>
+<section id="modeling-with-outliers" class="level1">
+<h1>Modeling with outliers</h1>
+<p>You can also decide to leave the outliers in the data. You can run your standard models. However, some common models will give the outliers a lot of importance, and therefore a few outliers can skew your results. In this case, you can use statistical methods that are not influenced by outliers as much. Those are sometimes called robust methods. We’ll revisit some of those when we get to the statistical analysis and modeling modules.</p>
 </section>
 <section id="summary" class="level1">
 <h1>Summary</h1>
+<p>It is likely that your data has some <em>strange values</em> (outliers). Take a close look at them, then come up with a plan. If possible, try things multiple ways (also called doing a sensitivity analysis) and report results from the different versions you tried. Hopefully, you’ll find that how you deal with outliers doesn’t matter much.</p>
 </section>
 <section id="further-resources" class="level1">
 <h1>Further Resources</h1>
+<ul>
+<li><a href="https://www.tandfonline.com/doi/pdf/10.1198/000313006X150182">Finney 2012</a> provides a nice further discussion regarding outliers. It’s very non-technical (no equations) and easy to read.</li>
+</ul>
 
 
 </section>
@@ -1274,13 +1305,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../../content/module-data-processing/data-loading/data-loading.html" class="pagination-link  aria-label=" data="" loading"="">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Data loading</span>
+      <a href="../../../content/module-data-processing/missing-data/missing-data.html" class="pagination-link  aria-label=" dealing="" with="" missing="" data"="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Dealing with missing data</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../../content/module-data-processing/missing-data/missing-data.html" class="pagination-link" aria-label="Dealing with missing data">
-        <span class="nav-page-text">Dealing with missing data</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../../content/module-data-processing/feature-engineering/feature-engineering.html" class="pagination-link" aria-label="Creating new data/variables">
+        <span class="nav-page-text">Creating new data/variables</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

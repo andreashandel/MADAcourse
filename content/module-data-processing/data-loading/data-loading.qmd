@@ -1,27 +1,77 @@
 ---
-title: Title
+title: Loading data into R
 subtitle: ""
 ---
 
 # Overview
 
-For this unit, we will discuss 
+For this unit, we will briefly discuss how to load your data into R.
 
 
 # Learning Objectives
 
-- Be familiar with 
+- Be familiar with ways to get data into R.
+- Know best practices for loading data.
 
 
 # Introduction
 
-# Topic 1
+No matter the source, you need to your data into your favorite data analysis system (in our case, that will be R). Sometimes, you get data in a format that can be read in easily, e.g., a comma-separated CSV file without any strange formatting that messes up the import. At other times, you might get data in a collection of terribly formatted Excel spreadsheets, or you get it by scraping data from some online source. The following sections discuss a few common ways of getting data into R.
+
+
+
+# Loading spreadsheet data
+
+Quite often, you'll have data in Excel or another spreadsheet format. 
+
+Base R has different functions to read CSV and similarly formatted data, e.g. `read.csv()` or `read.delim()`. Those are ok to use, but in general I recommend using similar functions from the [`readr` package](https://readr.tidyverse.org/), such as `read_csv`. Those functions tend to often be more robust and flexible. 
+
+For Excel data, the [`readxl` package](https://readxl.tidyverse.org/) is a good option. For most spreadsheet/tabular formats, you'll likely find an R package that can read the data.
+
+
+# Proprietary formats
+
+A lot of software packages, such as SAS, SPSS or Graphpad Prism, have their own proprietary format. If you get data that has that format, you need to find a way to get it into R. 
+
+For SAS, SPSS and STATA files, there is the [`haven` package](https://haven.tidyverse.org/) which lets you read them into R easily. For other file formats, you need to see if someone wrote an R package that can load them.
+
+Sometimes there's no tool/package to read that proprietary format. Then you need to ask the person who gave you the software to save it in a different format, or if you have access to the proprietary software, load the data in that software and save it in a format you can read.
+
+
+
+
+# Loading R data
+
+Sometimes, the data already comes in R format. There are essentially just two formats, `Rds` and `Rda`. For differences between those two formats, [see e.g. this article](http://www.sthda.com/english/wiki/saving-data-into-r-data-format-rds-and-rdata). Those are easily loaded with the `readRDS()` or `load()`.
+
+
+# Processing data outside of R
+
+As much as possible, you should never directly edit your raw data in some software that isn't scripted/reproducible (e.g., Excel). If you can, load the raw data into R and do all cleaning inside R with code, so everything is automatically reproducible and documented. Sometimes, you might need to edit the files in the format you got before you are even able to load them into R. For instance, sometimes an Excel spreadsheet is so messy that you can't even properly get it into R without first doing some cleanup in Excel.
+
+In those cases, you might have to make modifications in a software other than R. If you can’t directly read the data into R and need to make some changes before, **make copies of your raw data files and only edit those copies**. Also, write down and document all the edits you made.
+
+
+# Checking data
+
+It is important that once you loaded your data, you do a quick check to make sure it looks as expected. For instance if you expect N observations and M variables, make sure that is what you get. Those checks are simple but important. You don't want to start processing the data unless you know it looks as you expect it to look once loaded. 
+
+Also, if you load a data frame, sometimes the variables don't have the format you expect them. For instance, it is common that a variable that is a factor is loaded as text. Recoding this is then part of the data processing task.
+
+
+# Saving data
+
+At some point in your pipeline - possibly more than once - you might want to save your data or results. That is useful if you have different scripts that perform different tasks. For instance your processing script might save the cleaned data. If you plan on sharing that data, a common format such as CSV might be best. If you plan on only loading it again with another R script, then an R format like `Rds` or `Rda` might be suitable, as it preserves some meta-information (e.g., a variable coded as a factor will keep that information, while if you save it as CSV it will become text and once you load it you have to re-code it again as factor).
 
 
 # Summary 
 
+In general, loading data into R is not too hard. At times, you might get especially messy data and you need to do a few extra steps to get it into R.
+
+
 # Further Resources
 
+* The [Loading and Saving Data in R](https://rstudio-education.github.io/hopr/dataio.html) chapter of Hands-On Programming with R has some additional discussions.
 
 
 

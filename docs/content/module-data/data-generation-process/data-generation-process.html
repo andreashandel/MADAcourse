@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.547">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -449,20 +449,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../content/module-data-processing/outliers/outliers.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Dealing with outliers</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../../../content/module-data-processing/missing-data/missing-data.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Dealing with missing data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../content/module-data-processing/censored-data/censored-data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Dealing with censored data</span></a>
+  <a href="../../../content/module-data-processing/outliers/outliers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dealing with outliers</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -506,6 +500,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Visualization in R</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-data-presentation/tables-in-r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tables in R</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -527,6 +527,12 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="../../../content/module-stats-overview/statistical-terminology.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Some Statistical Model Fitting Terminology</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-stats-overview/descriptive-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Descriptive and preliminary analysis</span></a>
   </div>
 </li>
       </ul>
@@ -801,19 +807,11 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
   <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#data-generation-processes" id="toc-data-generation-processes" class="nav-link" data-scroll-target="#data-generation-processes">Data generation processes</a>
-  <ul class="collapse">
   <li><a href="#randomness" id="toc-randomness" class="nav-link" data-scroll-target="#randomness">Randomness</a></li>
   <li><a href="#measurements" id="toc-measurements" class="nav-link" data-scroll-target="#measurements">Measurements</a></li>
   <li><a href="#interactions" id="toc-interactions" class="nav-link" data-scroll-target="#interactions">Interactions</a></li>
-  </ul></li>
-  <li><a href="#data-structures" id="toc-data-structures" class="nav-link" data-scroll-target="#data-structures">Data structures</a>
-  <ul class="collapse">
-  <li><a href="#hierarchical-data" id="toc-hierarchical-data" class="nav-link" data-scroll-target="#hierarchical-data">Hierarchical data</a></li>
-  <li><a href="#time-series-data" id="toc-time-series-data" class="nav-link" data-scroll-target="#time-series-data">Time-series data</a></li>
-  <li><a href="#spatial-data" id="toc-spatial-data" class="nav-link" data-scroll-target="#spatial-data">Spatial data</a></li>
-  <li><a href="#network-data" id="toc-network-data" class="nav-link" data-scroll-target="#network-data">Network data</a></li>
-  </ul></li>
+  <li><a href="#data-structures" id="toc-data-structures" class="nav-link" data-scroll-target="#data-structures">Data structures</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
   <li><a href="#further-resources" id="toc-further-resources" class="nav-link" data-scroll-target="#further-resources">Further resources</a></li>
   </ul>
 </nav>
@@ -841,7 +839,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2024-01-24</p>
+      <p class="date-modified">2024-01-26</p>
     </div>
   </div>
     
@@ -865,46 +863,34 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
+<p>Every dataset is generated by processes that can often be very complex. At times, seemingly similar data is generated by different processes. For instance, most of the text you read in this course was written by a single person. In contrast, a lot of the text you read in Wikipedia was co-authored and co-edited by many individuals. Thus, while both are pieces of text, the processes that generated them are different. Often, this difference in processes is reflected in patterns in the data, and needs to be accounted for. For any kind of analysis you do, it is useful to think about the likely processes that generated the data. This can influence your analysis approach.</p>
 </section>
-<section id="data-generation-processes" class="level1">
-<h1>Data generation processes</h1>
-<p>Every dataset is generated by processes that can often be very complex. At times, seemingly similar data is generated by different processes. For instance, most of the text you read in this course was written by a single person. In contrast, a lot of the text you read in Wikipedia was co-authored and co-edited by many individuals. Thus, while both are pieces of text, the processes that generated them are different. Often, this difference in processes is reflected in patterns in the data, and needs to be accounted for.</p>
-<section id="randomness" class="level2">
-<h2 class="anchored" data-anchor-id="randomness">Randomness</h2>
+<section id="randomness" class="level1">
+<h1>Randomness</h1>
+<p>Many natural processes that lead to the generation of data have some inherent randomness associated with them. For instance if you want to analyze the effect of a drug on some health outcome, you expect to see variation among individuals. Some of the variation is due to individual characteristics (e.g., age, weight), but some variation is likely <em>random</em>. While one could discuss if true randomness exists, for the purpose of pretty much any analysis, randomness just means anything that can’t be measured in our system and that fluctuates randomly and contributes to variation. Being aware of which processes might be affected by more or less of such random variation is important. In the worst case, if you have too much random variation, it might swamp your signal and you won’t see any meaningful pattern in your data.</p>
 </section>
-<section id="measurements" class="level2">
-<h2 class="anchored" data-anchor-id="measurements">Measurements</h2>
+<section id="measurements" class="level1">
+<h1>Measurements</h1>
+<p>Measurements that lead to data always have inherent limitations. For instance if you use a scale to measure someone’s weight, it might only report it to one decimal place. Similarly, if your scale has a minimum and maximum value it can record, anything that is ligher and heavier than that value will not produce a numeric result, just an indication that it’s too light (the scale might show zero) or too heavy (the scale might show some error message or the maximum value). It is important to consider these kind of measurement limitations and account for them if possible.</p>
 </section>
-<section id="interactions" class="level2">
-<h2 class="anchored" data-anchor-id="interactions">Interactions</h2>
-</section>
+<section id="interactions" class="level1">
+<h1>Interactions</h1>
+<p>Often, the components in our system of interest interact. The simplest interaction is a direct one between a predictor and an outcome. Say you give some kind of cancer drug to a patient and see if it reduces the size of their tumor. This is often the scientific question of interest. However, there might be other factors interacting with the variables of interest. For instance the drug might induce some immune response which could either help or hinder the ability of the drug to shrink the tumor. Let’s say the immune system synergistically helps the drug reduce the tumor in individuals that have blood type A-pos and it hinders the drug in everyone else. These might be important aspects that - if you know them - need to inform your model.</p>
+<p>The whole field of causal modeling tries to - among other things - get at such sitations and help you devise the best analysis approach given what you know or assume about the system. It’s worth learning causal modeling, but we can’t cover it in this class.</p>
 </section>
 <section id="data-structures" class="level1">
 <h1>Data structures</h1>
-<p>Depending on the processes that generate the data, it is common for data to have certain structures. Thinking about those structures, and as suitable accounting for them in your analyses, is important. The following paragraphs describe a few important types of structure you likely encounter often. Of course, combinations of structures are always possible.</p>
-<section id="hierarchical-data" class="level2">
-<h2 class="anchored" data-anchor-id="hierarchical-data">Hierarchical data</h2>
-<p>This type of data is actually quite common. A hierarchy (also at times called multi-level or nesting structure) occurs when there is some type of grouping inherent. For instance, if you analyze heart attacks from different hospitals, there might be systematic differences between hospitals that are worth taking into account. You can then build models that take that into account. I think there is a strong case to be made that one should often start with a hierarchical modeling approach, and only drop it if one is convinced that there are no systematic differences in the data. Unfortunately, such hierarchical models are still a little bit harder to implement, and often a lot harder to understand and interpret. For such models, a Bayesian framework is often very useful. A good introductory resource for hierarchical modeling, and especially how to do it with <code>R</code>, is <a href="https://xcelab.net/rm/statistical-rethinking/"><em>Statistical Rethinking</em></a> (the second half of the book). The new edition of <em>R4DS</em> has a chapter on <a href="https://r4ds.hadley.nz/rectangling.html">working with hierarchical data</a> (but does not cover the fitting/analysis part.) There is also a CRAN Task view that lists <a href="https://cran.r-project.org/web/views/MixedModels.html">R packages relevant to hierarchical modeling</a>.</p>
+<p>Depending on the processes that generate the data, it is common for data to have certain structures. Thinking about those structures, and as suitable accounting for them in your analyses, is important. The <em>Complex Data</em> unit discussed some important structure such as temporal/spatial/hierarchical. These structures will likely determine the details of your modeling approach, since you will likely want to use models that account for such structures.</p>
 </section>
-<section id="time-series-data" class="level2">
-<h2 class="anchored" data-anchor-id="time-series-data">Time-series data</h2>
-<p>Time series are a specialized data type that are autocorrelated, and we can therefore get better predictions by using specialized models that take this data structure into account. A good resource is the free textbook <a href="https://otexts.com/fpp3/"><em>Forecasting: Principles and Practice</em></a> and a lot of the other work by <a href="https://robjhyndman.com/">Rob Hyndman</a>.</p>
-<p>A very useful set of tools to allow times-series work in R is the set of packages called the <a href="https://tidyverts.org/"><code>tidyverts</code></a>. The <a href="https://business-science.github.io/modeltime/"><code>modeltime</code></a> <code>R</code> package allows one to use the <code>tidymodels</code> framework to analyze time-series data.</p>
-<p>CRAN also has a <a href="https://cran.r-project.org/web/views/TimeSeries.html">Task View for <em>Time Series Analysis</em>.</a> (A <em>Task View</em> on CRAN is a site that tries to combine and summarize various R packages for a specific topic). Another task view that deals with longitudinal/time-series data is the <a href="https://cran.r-project.org/web/views/Survival.html"><em>Survival Analysis</em> Task View</a>.</p>
-</section>
-<section id="spatial-data" class="level2">
-<h2 class="anchored" data-anchor-id="spatial-data">Spatial data</h2>
-<p>Like time series data, spatial data also feature autocorrelation, but typically in two dimensions. (i.e., latitude and longitude.) Spatiotemporal data, typically collected as repeated measurements of spatial data over time, is also somewhat common. One could also have an elevation coordinate and have 3D (or even 4D spatiotemporal data) spatial data, but most analyses focus on 2D spatial autocorrelation structures.</p>
-<p>While there is (to my knowledge) no current way to fit specific spatial models in <code>tidymodels</code> (i.e.&nbsp;no <code>modeltime</code> analogue), one can use spatial resampling through the <a href="https://spatialsample.tidymodels.org/"><code>spatialsample</code></a> package, which provides resampling methods that take spatial autocorrelation into account.</p>
-<p>You can find a community-curated list of resources for spatial data in <a href="https://www.bigbookofr.com/geospatial.html"><em>The Big Book of R</em></a> or in the <a href="https://cran.r-project.org/web/views/Spatial.html"><em>Spatial Data</em> CRAN task view</a>.</p>
-</section>
-<section id="network-data" class="level2">
-<h2 class="anchored" data-anchor-id="network-data">Network data</h2>
-<p>At times, units of data you collect might be connected in a network.</p>
-</section>
+<section id="summary" class="level1">
+<h1>Summary</h1>
+<p>Occasionally, you might do an analysis that tries to explicitly model (some of) the processes that lead to the observed data. More often, you will want to discover patterns and you don’t directly care about the processes that led to the data. Nevertheless, thinking about them is important since it might influence the way you go about analyzing the data, the specific questions you might try to answer, and the conclusions you can draw from your analysis. Therefore, as a good analyst, you want to understand as much as possible about the system and processes that led to the data you are analyzing.</p>
 </section>
 <section id="further-resources" class="level1">
 <h1>Further resources</h1>
+<ul>
+<li>A great source for causal modeling, and statistics in general, is Richard McElreath’s <a href="https://github.com/rmcelreath/stat_rethinking_2024">online course</a> - some of the materials are free, though his book is not.</li>
+</ul>
 
 
 </section>

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.547">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -452,20 +452,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../content/module-data-processing/outliers/outliers.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Dealing with outliers</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../../../content/module-data-processing/missing-data/missing-data.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Dealing with missing data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../content/module-data-processing/censored-data/censored-data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Dealing with censored data</span></a>
+  <a href="../../../content/module-data-processing/outliers/outliers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dealing with outliers</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -509,6 +503,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Visualization in R</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-data-presentation/tables-in-r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tables in R</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -530,6 +530,12 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="../../../content/module-stats-overview/statistical-terminology.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Some Statistical Model Fitting Terminology</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-stats-overview/descriptive-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Descriptive and preliminary analysis</span></a>
   </div>
 </li>
       </ul>
@@ -803,9 +809,11 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
-  <li><a href="#descriptive-analysis" id="toc-descriptive-analysis" class="nav-link" data-scroll-target="#descriptive-analysis">Descriptive analysis</a></li>
-  <li><a href="#preliminaryexploratory-statistical-analysis" id="toc-preliminaryexploratory-statistical-analysis" class="nav-link" data-scroll-target="#preliminaryexploratory-statistical-analysis">Preliminary/exploratory statistical analysis</a></li>
-  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further reading</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#data-processing-tasks" id="toc-data-processing-tasks" class="nav-link" data-scroll-target="#data-processing-tasks">Data processing tasks</a></li>
+  <li><a href="#data-processing-and-exploratory-data-analysis-eda" id="toc-data-processing-and-exploratory-data-analysis-eda" class="nav-link" data-scroll-target="#data-processing-and-exploratory-data-analysis-eda">Data processing and exploratory data analysis (EDA)</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#further-resources" id="toc-further-resources" class="nav-link" data-scroll-target="#further-resources">Further resources</a></li>
   </ul>
 </nav>
     </div>
@@ -833,7 +841,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2024-01-24</p>
+      <p class="date-modified">2024-01-26</p>
     </div>
   </div>
     
@@ -846,41 +854,49 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="overview" class="level1">
 <h1>Overview</h1>
-<p>In this unit, we will continue the topic of dealing with data prior to the actual statistical analysis.</p>
-<p>While there were separate modules for <em>finding and wrangling</em> and <em>visualizing</em> data, I want to remind you of this diagram:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="../../..\media/analysis-workflow.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1" title="Data analysis workflow"><img src="../../..\media/analysis-workflow.png" class="img-fluid figure-img" style="width:60.0%" alt="Double sided arrow points between Question and Data with the text 'Match needed' above the arrow. A spiral moves from Load, to Clean, to Explore, to Process. Below the spiral an arrow points from Model to Report. An rounded arrow points from Model and Report back up to the spiral with the word Repeat."></a></p>
-<figcaption>Data analysis workflow</figcaption>
-</figure>
-</div>
-<p>Different data-analysis related tasks rarely happen in a linear sequence. Instead there is a general stage before statistical analysis where you <em>mess</em> with your data (that’s a technical term 😁) to get ready for the main formal analysis. And often, as you start that formal analysis, you’ll have to go back and do some more cleaning/exploration.</p>
+<p>This unit provides a brief introduction to the topic of data processing.</p>
 </section>
 <section id="learning-objectives" class="level1">
 <h1>Learning Objectives</h1>
 <ul>
-<li>Learn how to explore your data</li>
-<li>Become familiar with preliminary analyses</li>
+<li>Be familiar with the topic of data processing</li>
+<li>Understand the importance of proper processing for data analysis</li>
 </ul>
 </section>
-<section id="descriptive-analysis" class="level1">
-<h1>Descriptive analysis</h1>
-<p>Before any statistical analysis, you should summarize and describe your data. Only some of that will end up in a finished product (e.g., a paper or a report), but it’s important that you do it thoroughly and exhaustively to ensure you fully understand your data and thus know what statistical approaches are and are not appropriate.</p>
-<p>Descriptive analyses generally consist of making tables and figures that explore and summarize the data. Generally, you start with one variable at a time, and likely focus on the most important ones first. That means first you look at your outcomes of interest, then your main predictors/exposures of interest, then as much as feasible at all other variables. For continuous variables, you can use summary statistics (e.g., the <code>summary</code> command in R) or histograms (e.g.&nbsp;the <code>hist</code> command). For categorical variables, you can look at tables (e.g.&nbsp;the <code>table</code> command) or barplots (e.g.&nbsp;the <code>barplot</code> command). The idea is to see if anything unusual or interesting is going on. You might notice problems with the data (e.g., a person with a negative weight) that need cleaning. You might find that you have a categorical variable with a lot of categories that contain only a few entries and only a few categories with a lot of entries (e.g., religion could be such a variable). You might want to flag that for further processing (we’ll talk about that in the next unit).</p>
-<p>Once you’ve explored each variable by itself, you can start looking at combinations. For instance plots with each outcome of interest on the y-axis and each main predictor on the x-axis could be of interest. Depending on the type of variable for the outcome or predictor (continuous, categorical, etc.), you might want different types of plots, as discussed in the visualization module. Tables are possible too.</p>
-<p>Further figures of interest might be correlation plots which show correlations between all predictors in your data and might indicate potential issues you need to address before fitting statistical models. For instance if you have height, weight, and BMI in your data, you know that BMI does not have independent information (it’s a combination of height and weight), and thus these variables are perfectly correlated. Many – though not all – statistical models don’t like such strongly correlated variables, so you might need to decide to remove some strongly correlated data beforehand. We’ll talk about that more.</p>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>I want to remind you of this diagram:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../../..\media/analysis-workflow.png" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1" title="Data analysis workflow"><img src="../../..\media/analysis-workflow.png" class="img-fluid figure-img" style="width:60.0%" alt="Double sided arrow points between Question and Data with the text 'Match needed' above the arrow. A spiral moves from Load, to Clean, to Explore, to Process. Below the spiral an arrow points from Model to Report. An rounded arrow points from Model and Report back up to the spiral with the word Repeat."></a></p>
+<figcaption>Data analysis workflow</figcaption>
+</figure>
+</div>
+<p>Different data-analysis related tasks rarely happen in a linear sequence. Instead there is a general stage before statistical analysis where you <em>mess</em> with your data (that’s a technical term 😁) to get ready for the main formal analysis. And often, as you start that formal analysis, you’ll have to go back and do some more cleaning/exploration.</p>
+<p>While one can distinguish the different tasks of <strong>Cleaning</strong>, <strong>Exploring</strong> and <strong>Processing</strong>, one can also more generally think of them as all being a part of data processing. Alternative terms often used instead of <em>processing</em> are data <em>wrangling</em> or <em>tidying</em>. <em>Cleaning</em>, <em>munging</em>.</p>
+<p><strong>As with any part of the data analysis process, processing should be automated, reproducible, and well-documented. No “fixing by hand”!</strong></p>
 </section>
-<section id="preliminaryexploratory-statistical-analysis" class="level1">
-<h1>Preliminary/exploratory statistical analysis</h1>
-<p>Sometimes, it is useful to start running some simple models on your data. Sometimes, such models will become part of the main analysis, but often they are just used to help explore the data. For instance if you have two continuous variables and make a scatterplot, adding a linear regression line through the data might be helpful to see if there is a pattern. That is easily done if you make your figure with <code>ggplot2</code>, as you can just add a stats geom to it.</p>
-<p>You could also explore your data by running simple bivariate statistical models, e.g.&nbsp;by fitting each predictor individually to the outcome of interest. We won’t talk much about standard regression approaches in this class, but I’m sure you are familiar with standard statistical tests that can be applied to two variables, depending on the types of variables (linear regression, t-test, etc.).</p>
-<p><strong>A note of caution: It is ok (in my opinion) to use standard statistical tests and readouts (e.g., p-values) to guide main model choices and as suitable, to report them in a final product. It is however <em>only</em> ok to interpret p-values in the hypothesis testing sense if you predefined the hypothesis and the full data generation and analysis protocol. Outside a clinical trial, that’s almost never done, thus pretty much any reported p-value you see in the literature is improperly used/interpreted.</strong> Everyone does it, and pretty much everyone does it wrong. The state of affairs when it comes to statistical literacy, even among PhD holders, is still sad…</p>
+<section id="data-processing-tasks" class="level1">
+<h1>Data processing tasks</h1>
+<p>Almost all datasets require some processing before they are in a format that can be used with statistical models. It is a generally acknowledged fact that for any data analysis, the majority of time is likely spent in the data processing and exploration steps before the main model fitting. Some folks suggest that this processing part is as much as 80% of the time spent on the whole project. In my experience, this is about right.</p>
+<p>While every dataset is different, there are certain tasks that are common. Those involve missing data, recoding variables, and dealing with outliers. Further ones are merging and reshaping of the data. We will discuss some of them in further units.</p>
 </section>
-<section id="further-reading" class="level1">
-<h1>Further reading</h1>
-<p>(Re)read the Exploratory Data Analysis and Using Models to Explore Your Data chapters (4 and 5) in <a href="https://leanpub.com/artofdatascience"><em>The Art of Data science (ADS)</em></a> book<em>.</em> We looked at that book previously. You don’t need to work/code along. But if you want to, see the <em>Some practice</em> section of the <a href="../../../content/module-data-analysis/data-analysis-overview.html">Data Analysis Overview page</a> for some details on how to do it.</p>
-<p>Also go through the rather short EDA tutorial which is part of the <a href="https://posit.cloud/learn/recipes">Visualize Data Posit Recipes</a>.</p>
-<p>The whole <a href="https://r4ds.hadley.nz/"><em>R4DS</em> book</a> focuses on the early stages of data analysis, including exploration. There is whole section called Explore and a chapter called Exploratory Data Analysis (EDA). I like this sentence from the beginning of their chapter: <em>E</em>DA is not a formal process with a strict set of rules. More than anything, EDA is a state of mind. That’s a very good way to put it. Skim through that chapter of <em>R4DS</em> (it’s very similar to the Posit EDA Recipe). And of course the rest of the book also provides lots of useful information on that topic.</p>
+<section id="data-processing-and-exploratory-data-analysis-eda" class="level1">
+<h1>Data processing and exploratory data analysis (EDA)</h1>
+<p>As you process your data, you need to explore your data to figure out what needs processing. As such, exploratory data analysis (EDA) and processing data generally go together.</p>
+<p>EDA generally relies on making figures and tables, and we’ll talk about that in a separate module. There is no clear definition for exploratory analysis. Beyond figures and tables, it can sometimes involve simple statistical computations, for instance you might compute correlations among predictors.</p>
+<p>You can think of EDA as any process that happens before you start building and fitting your main models. Again, it often happens concurrently with the processing of the data.</p>
+</section>
+<section id="summary" class="level1">
+<h1>Summary</h1>
+<p>Data processing is a major and crucial part of any data analysis project. It can be tedious, but with practice and good tools, you might even reach a point where you enjoy the process somewhat 😁.</p>
+</section>
+<section id="further-resources" class="level1">
+<h1>Further resources</h1>
+<ul>
+<li><p>Chapters 4 and 5 of <a href="https://leanpub.com/artofdatascience"><em>The Art of Data science (ADS)</em></a> discuss some processing and exploration tasks and examples. if you want to work along, see the <em>Some practice</em> section of the <a href="../../../content/module-data-analysis/data-analysis-overview.html">Data Analysis Overview page</a> for some details on how to do it.</p></li>
+<li><p>The whole <a href="https://r4ds.hadley.nz/"><em>R4DS</em> book</a> focuses on the early stages of data analysis, including processing and exploration. Definitely keep checking this book if you are looking for more information on a specific topic.</p></li>
+</ul>
 
 
 <div class="hidden" aria-hidden="true">
@@ -1307,7 +1323,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","selector":".lightbox","descPosition":"right","closeEffect":"zoom","loop":false});
+<script>var lightboxQuarto = GLightbox({"loop":false,"openEffect":"zoom","selector":".lightbox","descPosition":"right","closeEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

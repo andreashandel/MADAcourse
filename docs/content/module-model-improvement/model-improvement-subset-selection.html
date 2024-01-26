@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.547">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -481,20 +481,14 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-data-processing/outliers/outliers.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Dealing with outliers</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../../content/module-data-processing/missing-data/missing-data.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Dealing with missing data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-data-processing/censored-data/censored-data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Dealing with censored data</span></a>
+  <a href="../../content/module-data-processing/outliers/outliers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dealing with outliers</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -538,6 +532,12 @@ window.Quarto = {
  <span class="menu-text">Visualization in R</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/module-data-presentation/tables-in-r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tables in R</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -559,6 +559,12 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="../../content/module-stats-overview/statistical-terminology.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Some Statistical Model Fitting Terminology</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/module-stats-overview/descriptive-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Descriptive and preliminary analysis</span></a>
   </div>
 </li>
       </ul>
@@ -871,7 +877,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2024-01-01</p>
+      <p class="date-modified">2024-01-24</p>
     </div>
   </div>
     
@@ -900,7 +906,7 @@ window.Quarto = {
 <p>I showed the figure below previously. I’m repeating it here as a refresher. The yellow model (straight line), in this example, has too much bias. The model is too simple to capture all the important patterns, and it <strong>underfits</strong> the data. The performance metric (mean square error here) is high for both the training and test/CV data (yellow squares on the left of the right panel.) The green model (very wiggly line) has too much variance. It goes too close to the data used for fitting and doesn’t generalize to new data, it <strong>overfits</strong> the data. This reflects itself in good performance (low MSE) for the train data, but high MSE for the test/CV data (green squares on left of the left panel) In this example, the blue model has the optimal model complexity. It captures the overall pattern in the data, without trying to fit the noise/variability. This manifests itself with the best performance on the test/CV data (blue squares).</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="../../media/islr-fig29.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1" title="Bias-variance tradeoff. Source: ISLR."><img src="../../media/islr-fig29.jpg" class="img-fluid figure-img" alt="A scatterplot with two panels. The left panel shows several data points along with a few different models: a straight line, a curve that passes through the middle of the points, and a curve that oscillates frequently to hit many of the points. The right panel shows the MSE of these models against the training data, where the oscillating curve performs best, and also against new data, where the curve which oscillates less frequently performs best."></a></p>
+<p><a href="../../media/islr-fig29.jpg" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1" title="Bias-variance tradeoff. Source: ISLR."><img src="../../media/islr-fig29.jpg" class="img-fluid figure-img" alt="A scatterplot with two panels. The left panel shows several data points along with a few different models: a straight line, a curve that passes through the middle of the points, and a curve that oscillates frequently to hit many of the points. The right panel shows the MSE of these models against the training data, where the oscillating curve performs best, and also against new data, where the curve which oscillates less frequently performs best."></a></p>
 <figcaption>Bias-variance tradeoff. Source: ISLR.</figcaption>
 </figure>
 </div>
@@ -1388,7 +1394,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","closeEffect":"zoom","loop":false,"descPosition":"right","selector":".lightbox"});
+<script>var lightboxQuarto = GLightbox({"descPosition":"right","closeEffect":"zoom","loop":false,"openEffect":"zoom","selector":".lightbox"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

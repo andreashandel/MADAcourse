@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.547">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Andreas Handel">
 <meta name="description" content="Modern Applied Data Analysis (MADA) course">
 
-<title>MADA Course - Title</title>
+<title>MADA Course - Merging data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -449,20 +449,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../content/module-data-processing/outliers/outliers.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Dealing with outliers</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../../../content/module-data-processing/missing-data/missing-data.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Dealing with missing data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../content/module-data-processing/censored-data/censored-data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Dealing with censored data</span></a>
+  <a href="../../../content/module-data-processing/outliers/outliers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dealing with outliers</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -506,6 +500,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Visualization in R</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-data-presentation/tables-in-r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tables in R</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -527,6 +527,12 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="../../../content/module-stats-overview/statistical-terminology.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Some Statistical Model Fitting Terminology</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-stats-overview/descriptive-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Descriptive and preliminary analysis</span></a>
   </div>
 </li>
       </ul>
@@ -801,7 +807,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
   <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#topic-1" id="toc-topic-1" class="nav-link" data-scroll-target="#topic-1">Topic 1</a></li>
+  <li><a href="#merging-in-r" id="toc-merging-in-r" class="nav-link" data-scroll-target="#merging-in-r">Merging in R</a></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
   <li><a href="#further-resources" id="toc-further-resources" class="nav-link" data-scroll-target="#further-resources">Further Resources</a></li>
   </ul>
@@ -812,7 +818,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../content/module-data-processing/data-processing-overview.html">5. Data Processing</a></li><li class="breadcrumb-item"><a href="../../../content/module-data-processing/merging-data/merging-data.html">Merging data</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Title</h1>
+<h1 class="title">Merging data</h1>
 </div>
 
 
@@ -830,7 +836,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2024-01-24</p>
+      <p class="date-modified">2024-01-26</p>
     </div>
   </div>
     
@@ -843,25 +849,33 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="overview" class="level1">
 <h1>Overview</h1>
-<p>For this unit, we will discuss</p>
+<p>For this unit, we will discuss merging of different data sets.</p>
 </section>
 <section id="learning-objectives" class="level1">
 <h1>Learning Objectives</h1>
 <ul>
-<li>Be familiar with</li>
+<li>Be familiar with the idea of merging data.</li>
+<li>Know how to do merging in R.</li>
 </ul>
 </section>
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
+<p>It is not uncommon that your raw data comes in more than one file. It could be multiple spreadsheets of a single study, or it could be different datasets from different sources (e.g., a dataset on asthma cases combined with a different data source that records air pollution levels). Often, the most interesting questions need to be answered by combining data from different sources. If you have multiple data sets, you will likely need to combine the data.</p>
 </section>
-<section id="topic-1" class="level1">
-<h1>Topic 1</h1>
+<section id="merging-in-r" class="level1">
+<h1>Merging in R</h1>
+<p>The <code>dplyr</code> package has a great set of <code>_join()</code> functions that let you do different types of joining of data.</p>
+<p>Often, before you can merge, you might need to reshape the data so the structure of the data you are about to merge is consistent. The <a href="https://tidyr.tidyverse.org/"><code>tidyr</code> package</a> and especially the <code>pivot_longer()</code> and <code>pivot_wider()</code> functions are very useful for that.</p>
 </section>
 <section id="summary" class="level1">
 <h1>Summary</h1>
+<p>If you have only a single dataset, you generally don’t need to merge data.</p>
 </section>
 <section id="further-resources" class="level1">
 <h1>Further Resources</h1>
+<ul>
+<li>For an alternative package that can help with merging, especially large data, see the <a href="http://r-datatable.com"><code>data.table</code> package</a>.</li>
+</ul>
 
 
 </section>

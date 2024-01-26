@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.547">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -449,20 +449,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../content/module-data-processing/outliers/outliers.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Dealing with outliers</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../../../content/module-data-processing/missing-data/missing-data.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Dealing with missing data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../content/module-data-processing/censored-data/censored-data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Dealing with censored data</span></a>
+  <a href="../../../content/module-data-processing/outliers/outliers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dealing with outliers</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -506,6 +500,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Visualization in R</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-data-presentation/tables-in-r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tables in R</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -527,6 +527,12 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="../../../content/module-stats-overview/statistical-terminology.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Some Statistical Model Fitting Terminology</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-stats-overview/descriptive-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Descriptive and preliminary analysis</span></a>
   </div>
 </li>
       </ul>
@@ -800,8 +806,7 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#complex-data-types" id="toc-complex-data-types" class="nav-link" data-scroll-target="#complex-data-types">Complex data types</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a>
   <ul class="collapse">
   <li><a href="#text" id="toc-text" class="nav-link" data-scroll-target="#text">Text</a></li>
   <li><a href="#audio" id="toc-audio" class="nav-link" data-scroll-target="#audio">Audio</a></li>
@@ -809,7 +814,12 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#video" id="toc-video" class="nav-link" data-scroll-target="#video">Video</a></li>
   <li><a href="#genetics-and--omics-data" id="toc-genetics-and--omics-data" class="nav-link" data-scroll-target="#genetics-and--omics-data">Genetics and -omics data</a></li>
   <li><a href="#big-data" id="toc-big-data" class="nav-link" data-scroll-target="#big-data">Big data</a></li>
+  <li><a href="#hierarchical-data" id="toc-hierarchical-data" class="nav-link" data-scroll-target="#hierarchical-data">Hierarchical data</a></li>
+  <li><a href="#longitudinaltime-series-data" id="toc-longitudinaltime-series-data" class="nav-link" data-scroll-target="#longitudinaltime-series-data">Longitudinal/Time-series data</a></li>
+  <li><a href="#spatial-data" id="toc-spatial-data" class="nav-link" data-scroll-target="#spatial-data">Spatial data</a></li>
   </ul></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#further-resources" id="toc-further-resources" class="nav-link" data-scroll-target="#further-resources">Further Resources</a></li>
   </ul>
 </nav>
     </div>
@@ -836,7 +846,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2024-01-24</p>
+      <p class="date-modified">2024-01-26</p>
     </div>
   </div>
     
@@ -863,10 +873,7 @@ ul.task-list li input[type="checkbox"] {
 <p>Our focus is on the analysis of what is sometimes called <em>tabular</em> or <em>rectangular</em> data. We have observations (individual units of data) generally as rows, and variables (outcome and predictors) as columns.</p>
 <p>Such data is still the most common type of data, especially in biomedical and life sciences. However, more complex types of data are rapidly increasing in frequency and importance. If the data has a different structure, it will usually require different, specialized analysis approaches.</p>
 <p>The good news is that most of the general concepts of data analysis and modeling apply to any type of data. The difference is often in the processing of the data, and the exact way data and models are combined.</p>
-<p>Doing analyses of such complex data is beyond the scope of the course. Nevertheless, it is worth to briefly cover different types of data.</p>
-</section>
-<section id="complex-data-types" class="level1">
-<h1>Complex data types</h1>
+<p>Doing analyses of such complex data is beyond the main scope of the course. Nevertheless, it is worth to briefly cover different important types of data. Note that some of these types are not mutually exclusive, for instance video data is always in some sense</p>
 <section id="text" class="level2">
 <h2 class="anchored" data-anchor-id="text">Text</h2>
 <p>Working with and analyzing larger sections of text is becoming increasingly important. Complex and powerful AI tools (e.g., ChatGPT) have become rather good at working with text. The analysis of text often goes by the term <em>natural language processing</em>. Such text analysis will continue to increase in importance, given the increasing data streams of that type. If you are interested in doing full analyses of text data, the <a href="https://juliasilge.github.io/tidytext/"><code>tidytext</code> R package</a> and the <a href="https://www.tidytextmining.com/"><em>Text mining with R</em> book</a> are great resources. A short introduction to this topic is the <a href="https://rafalab.github.io/dsbook/text-mining.html">Text Mining chapter (27) of <em>IDS</em></a>.</p>
@@ -899,9 +906,36 @@ ul.task-list li input[type="checkbox"] {
 <p>Generally, big data is stored somewhere in a database. <a href="https://en.wikipedia.org/wiki/SQL">SQL type databases</a> are most common. You then want to access that database in a form that allows you to perform your analysis. There are different ways of dealing with big data. Most methods are general and apply independent of the programming language you use. <a href="https://rviews.rstudio.com/2019/07/17/3-big-data-strategies-for-r/">This article</a> describes a few general approaches and explains how they can be implemented in R. <a href="https://rstudio.com/resources/webinars/working-with-big-data-in-r/">This webinar</a> gives a bit more information and a nice description of the overall setup for big data. As you learn in that tutorial, R is often used together with other software to analyze big data. A tool that is often used for big data analysis is <a href="http://spark.apache.org/">Spark</a>. For R, there is the <a href="https://spark.rstudio.com/">sparklyr package</a>, which allows one to nicely interface with Spark.</p>
 <p>In general, when you work with big data, you will have to carefully look at the data, the type of database it is stored, and the analysis goals. Based on that, you should use a stack of tools that allows analysis. The <a href="https://cran.r-project.org/web/views/Databases.html">Databases task view</a> gives a good overview of different R packages for specific types of databases. You will use R for your analysis, and R will then interface with other software. This interface is usually fairly seamless.</p>
 <p>Big data is commonly modeled using complex models, such as machine-learning or AI algorithms. The reason for that is that those models are very powerful but need a lot of data. Thus, if you have big data, you can use them. That said, you can analyze big data with any model you want, including simple GLM or similar such models.</p>
-
-
 </section>
+<section id="hierarchical-data" class="level2">
+<h2 class="anchored" data-anchor-id="hierarchical-data">Hierarchical data</h2>
+<p>This type of data is actually quite common. A hierarchy (also at times called multi-level or nesting structure) occurs when there is some type of grouping inherent. For instance, if you analyze heart attacks from different hospitals, there might be systematic differences between hospitals that are worth taking into account. You can then build models that take that into account. I think there is a strong case to be made that one should often start with a hierarchical modeling approach, and only drop it if one is convinced that there are no systematic differences in the data. Unfortunately, such hierarchical models are still a little bit harder to implement, and often a lot harder to understand and interpret. For such models, a Bayesian framework is often very useful. A good introductory resource for hierarchical modeling, and especially how to do it with <code>R</code>, is <a href="https://xcelab.net/rm/statistical-rethinking/"><em>Statistical Rethinking</em></a> (the second half of the book). The new edition of <em>R4DS</em> has a chapter on <a href="https://r4ds.hadley.nz/rectangling.html">working with hierarchical data</a> (but does not cover the fitting/analysis part.) There is also a CRAN Task view that lists <a href="https://cran.r-project.org/web/views/MixedModels.html">R packages relevant to hierarchical modeling</a>.</p>
+</section>
+<section id="longitudinaltime-series-data" class="level2">
+<h2 class="anchored" data-anchor-id="longitudinaltime-series-data">Longitudinal/Time-series data</h2>
+<p>Longitudinal or time series are a specialized data type that are autocorrelated, and we can therefore get better predictions by using specialized models that take this data structure into account. A good resource is the free textbook <a href="https://otexts.com/fpp3/"><em>Forecasting: Principles and Practice</em></a> and a lot of the other work by <a href="https://robjhyndman.com/">Rob Hyndman</a>.</p>
+<p>A very useful set of tools to allow times-series work in R is the set of packages called the <a href="https://tidyverts.org/"><code>tidyverts</code></a>. The <a href="https://business-science.github.io/modeltime/"><code>modeltime</code></a> <code>R</code> package allows one to use the <code>tidymodels</code> framework to analyze time-series data.</p>
+<p>CRAN also has a <a href="https://cran.r-project.org/web/views/TimeSeries.html">Task View for <em>Time Series Analysis</em>.</a> (A <em>Task View</em> on CRAN is a site that tries to combine and summarize various R packages for a specific topic). Another task view that deals with longitudinal/time-series data is the <a href="https://cran.r-project.org/web/views/Survival.html"><em>Survival Analysis</em> Task View</a>.</p>
+</section>
+<section id="spatial-data" class="level2">
+<h2 class="anchored" data-anchor-id="spatial-data">Spatial data</h2>
+<p>Like time series data, spatial data also feature autocorrelation, but typically in two dimensions. (i.e., latitude and longitude.) Spatiotemporal data, typically collected as repeated measurements of spatial data over time, is also somewhat common. One could also have an elevation coordinate and have 3D (or even 4D spatiotemporal data) spatial data, but most analyses focus on 2D spatial autocorrelation structures.</p>
+<p>While there is (to my knowledge) no current way to fit specific spatial models in <code>tidymodels</code> (i.e.&nbsp;no <code>modeltime</code> analogue), one can use spatial resampling through the <a href="https://spatialsample.tidymodels.org/"><code>spatialsample</code></a> package, which provides resampling methods that take spatial autocorrelation into account.</p>
+<!-- ## Network data -->
+<!-- At times, units of data you collect might be connected in a network.  -->
+</section>
+</section>
+<section id="summary" class="level1">
+<h1>Summary</h1>
+<p>The amount and variety of data available for analysis keeps increasing. As data get more complex, the analysis approaches become more specialized and often complex as well. While this requires additional learning of specialized tools, a lot of the fundamentals covered in this course still apply.</p>
+</section>
+<section id="further-resources" class="level1">
+<h1>Further Resources</h1>
+<ul>
+<li>You can find a community-curated list of resources for spatial data in <a href="https://www.bigbookofr.com/geospatial.html"><em>The Big Book of R</em></a> or in the <a href="https://cran.r-project.org/web/views/Spatial.html"><em>Spatial Data</em> CRAN task view</a>.</li>
+</ul>
+
+
 </section>
 
 </main> <!-- /main -->

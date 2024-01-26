@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.547">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -449,20 +449,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../content/module-data-processing/outliers/outliers.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Dealing with outliers</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../../../content/module-data-processing/missing-data/missing-data.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Dealing with missing data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../content/module-data-processing/censored-data/censored-data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Dealing with censored data</span></a>
+  <a href="../../../content/module-data-processing/outliers/outliers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dealing with outliers</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -506,6 +500,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Visualization in R</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-data-presentation/tables-in-r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tables in R</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -527,6 +527,12 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="../../../content/module-stats-overview/statistical-terminology.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Some Statistical Model Fitting Terminology</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-stats-overview/descriptive-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Descriptive and preliminary analysis</span></a>
   </div>
 </li>
       </ul>
@@ -808,7 +814,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#numeric-value" id="toc-numeric-value" class="nav-link" data-scroll-target="#numeric-value">Numeric value</a></li>
   <li><a href="#dates-and-times" id="toc-dates-and-times" class="nav-link" data-scroll-target="#dates-and-times">Dates and times</a></li>
   </ul></li>
-  <li><a href="#complex-data-types-in-r" id="toc-complex-data-types-in-r" class="nav-link" data-scroll-target="#complex-data-types-in-r">Complex data types in R</a>
+  <li><a href="#compound-data-structures-in-r" id="toc-compound-data-structures-in-r" class="nav-link" data-scroll-target="#compound-data-structures-in-r">Compound data structures in R</a>
   <ul class="collapse">
   <li><a href="#vectors" id="toc-vectors" class="nav-link" data-scroll-target="#vectors">Vectors</a></li>
   <li><a href="#matrices" id="toc-matrices" class="nav-link" data-scroll-target="#matrices">Matrices</a></li>
@@ -816,6 +822,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#lists" id="toc-lists" class="nav-link" data-scroll-target="#lists">Lists</a></li>
   <li><a href="#other-data-structures" id="toc-other-data-structures" class="nav-link" data-scroll-target="#other-data-structures">Other data structures</a></li>
   </ul></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
   <li><a href="#further-resources" id="toc-further-resources" class="nav-link" data-scroll-target="#further-resources">Further resources</a></li>
   </ul>
 </nav>
@@ -843,7 +850,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2024-01-24</p>
+      <p class="date-modified">2024-01-26</p>
     </div>
   </div>
     
@@ -899,9 +906,9 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </section>
 </section>
-<section id="complex-data-types-in-r" class="level1">
-<h1>Complex data types in R</h1>
-<p>The basic data types in R are usually combined into larger objects. The following briefly describes the most important ones of these more complex data structures.</p>
+<section id="compound-data-structures-in-r" class="level1">
+<h1>Compound data structures in R</h1>
+<p>The basic data types in R are usually combined into larger objects. The following briefly describes the most important ones of these data structures.</p>
 <section id="vectors" class="level2">
 <h2 class="anchored" data-anchor-id="vectors">Vectors</h2>
 <p>Vectors are a simple collection of elements in a single row or column. In R, the easiest way to create vectors is with the <code>concatenate</code> command, <code>c()</code>. An example is <code>x1 &lt;- c(3,12,5)</code>. A single vector can contain only one element type (e.g., all characters or all numeric). If you try to mix and match, everything ends up as a character. Type the command for <code>x1</code> and <code>x2 &lt;- c(6, 5, 'h')</code> into R and apply the <code>class()</code> command to both <code>x1</code> and <code>x2</code> and note the difference.</p>
@@ -922,6 +929,10 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="other-data-structures">Other data structures</h2>
 <p>The ones described above are the most important ones, but there are many others. Often, specific R packages come with their own structures. You are usually told how to use specific data structures, and there are generally versions of the structures just described.</p>
 </section>
+</section>
+<section id="summary" class="level1">
+<h1>Summary</h1>
+<p>Every programming language has certain types of “containers” in which you can store data. They might be called differently in different languages, but they often look the same. For data analysis in <code>R</code> the most important types are data frames (and it’s cousin, the tibble) and lists. And of course all the basic data structures, which are generally the building blocks of your data frames and lists.</p>
 </section>
 <section id="further-resources" class="level1">
 <h1>Further resources</h1>

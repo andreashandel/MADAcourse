@@ -65,9 +65,9 @@ Excel is notoriously bad at storing dates. It has some internal format that's di
 :::
 
 
-# Complex data types in R
+# Compound data structures in R
 
-The basic data types in R are usually combined into larger objects. The following briefly describes the most important ones of these more complex data structures.
+The basic data types in R are usually combined into larger objects. The following briefly describes the most important ones of these data structures.
 
 ## Vectors 
 
@@ -86,6 +86,11 @@ Lists are the most flexible data types in R. You can combine different elements 
 
 ## Other data structures
 The ones described above are the most important ones, but there are many others. Often, specific R packages come with their own structures. You are usually told how to use specific data structures, and there are generally versions of the structures just described.
+
+
+# Summary
+
+Every programming language has certain types of "containers" in which you can store data. They might be called differently in different languages, but they often look the same. For data analysis in `R` the most important types are data frames (and it's cousin, the tibble) and lists. And of course all the basic data structures, which are generally the building blocks of your data frames and lists.
 
 
 # Further resources

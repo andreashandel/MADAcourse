@@ -15,7 +15,9 @@ For this unit, we will discuss
 
 # Introduction
 
-# Topic 1
+
+Sometimes data are censored, i.e., you know that the value is "X or greater/less" but not the exact value. This is common in longitudinal (survival or similar) data. It is also common in experimental data, where you might have a measurement procedure with lower or upper limits of detection. The way to deal with censored data depends on what kind of censored data you have, and what you want to do with it. In R, packages that are used to analyse survival data, e.g. the [`survival` package](https://github.com/therneau/survival), can deal with some censored data. Otherwise, you will likely need to google around to figure out how you should deal with the censored data scenario you have and how to do it in R.
+
 
 
 # Summary 

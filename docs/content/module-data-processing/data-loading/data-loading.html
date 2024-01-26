@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.547">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Andreas Handel">
 <meta name="description" content="Modern Applied Data Analysis (MADA) course">
 
-<title>MADA Course - Title</title>
+<title>MADA Course - Loading data into R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../../">
-<link href="../../../content/module-data-processing/outliers/outliers.html" rel="next">
+<link href="../../../content/module-data-processing/missing-data/missing-data.html" rel="next">
 <link href="../../../content/module-data-processing/data-processing-introduction/data-processing-introduction.html" rel="prev">
 <link href="../../../media/MADAlogo.png" rel="icon" type="image/png">
 <script src="../../../site_libs/quarto-html/quarto.js"></script>
@@ -449,20 +449,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../content/module-data-processing/outliers/outliers.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Dealing with outliers</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../../../content/module-data-processing/missing-data/missing-data.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Dealing with missing data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../content/module-data-processing/censored-data/censored-data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Dealing with censored data</span></a>
+  <a href="../../../content/module-data-processing/outliers/outliers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dealing with outliers</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -506,6 +500,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Visualization in R</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-data-presentation/tables-in-r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tables in R</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -527,6 +527,12 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="../../../content/module-stats-overview/statistical-terminology.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Some Statistical Model Fitting Terminology</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/module-stats-overview/descriptive-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Descriptive and preliminary analysis</span></a>
   </div>
 </li>
       </ul>
@@ -801,7 +807,12 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
   <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#topic-1" id="toc-topic-1" class="nav-link" data-scroll-target="#topic-1">Topic 1</a></li>
+  <li><a href="#loading-spreadsheet-data" id="toc-loading-spreadsheet-data" class="nav-link" data-scroll-target="#loading-spreadsheet-data">Loading spreadsheet data</a></li>
+  <li><a href="#proprietary-formats" id="toc-proprietary-formats" class="nav-link" data-scroll-target="#proprietary-formats">Proprietary formats</a></li>
+  <li><a href="#loading-r-data" id="toc-loading-r-data" class="nav-link" data-scroll-target="#loading-r-data">Loading R data</a></li>
+  <li><a href="#processing-data-outside-of-r" id="toc-processing-data-outside-of-r" class="nav-link" data-scroll-target="#processing-data-outside-of-r">Processing data outside of R</a></li>
+  <li><a href="#checking-data" id="toc-checking-data" class="nav-link" data-scroll-target="#checking-data">Checking data</a></li>
+  <li><a href="#saving-data" id="toc-saving-data" class="nav-link" data-scroll-target="#saving-data">Saving data</a></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
   <li><a href="#further-resources" id="toc-further-resources" class="nav-link" data-scroll-target="#further-resources">Further Resources</a></li>
   </ul>
@@ -812,7 +823,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../content/module-data-processing/data-processing-overview.html">5. Data Processing</a></li><li class="breadcrumb-item"><a href="../../../content/module-data-processing/data-loading/data-loading.html">Data loading</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Title</h1>
+<h1 class="title">Loading data into R</h1>
 </div>
 
 
@@ -830,7 +841,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2024-01-24</p>
+      <p class="date-modified">2024-01-26</p>
     </div>
   </div>
     
@@ -843,25 +854,58 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="overview" class="level1">
 <h1>Overview</h1>
-<p>For this unit, we will discuss</p>
+<p>For this unit, we will briefly discuss how to load your data into R.</p>
 </section>
 <section id="learning-objectives" class="level1">
 <h1>Learning Objectives</h1>
 <ul>
-<li>Be familiar with</li>
+<li>Be familiar with ways to get data into R.</li>
+<li>Know best practices for loading data.</li>
 </ul>
 </section>
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
+<p>No matter the source, you need to your data into your favorite data analysis system (in our case, that will be R). Sometimes, you get data in a format that can be read in easily, e.g., a comma-separated CSV file without any strange formatting that messes up the import. At other times, you might get data in a collection of terribly formatted Excel spreadsheets, or you get it by scraping data from some online source. The following sections discuss a few common ways of getting data into R.</p>
 </section>
-<section id="topic-1" class="level1">
-<h1>Topic 1</h1>
+<section id="loading-spreadsheet-data" class="level1">
+<h1>Loading spreadsheet data</h1>
+<p>Quite often, you’ll have data in Excel or another spreadsheet format.</p>
+<p>Base R has different functions to read CSV and similarly formatted data, e.g.&nbsp;<code>read.csv()</code> or <code>read.delim()</code>. Those are ok to use, but in general I recommend using similar functions from the <a href="https://readr.tidyverse.org/"><code>readr</code> package</a>, such as <code>read_csv</code>. Those functions tend to often be more robust and flexible.</p>
+<p>For Excel data, the <a href="https://readxl.tidyverse.org/"><code>readxl</code> package</a> is a good option. For most spreadsheet/tabular formats, you’ll likely find an R package that can read the data.</p>
+</section>
+<section id="proprietary-formats" class="level1">
+<h1>Proprietary formats</h1>
+<p>A lot of software packages, such as SAS, SPSS or Graphpad Prism, have their own proprietary format. If you get data that has that format, you need to find a way to get it into R.</p>
+<p>For SAS, SPSS and STATA files, there is the <a href="https://haven.tidyverse.org/"><code>haven</code> package</a> which lets you read them into R easily. For other file formats, you need to see if someone wrote an R package that can load them.</p>
+<p>Sometimes there’s no tool/package to read that proprietary format. Then you need to ask the person who gave you the software to save it in a different format, or if you have access to the proprietary software, load the data in that software and save it in a format you can read.</p>
+</section>
+<section id="loading-r-data" class="level1">
+<h1>Loading R data</h1>
+<p>Sometimes, the data already comes in R format. There are essentially just two formats, <code>Rds</code> and <code>Rda</code>. For differences between those two formats, <a href="http://www.sthda.com/english/wiki/saving-data-into-r-data-format-rds-and-rdata">see e.g.&nbsp;this article</a>. Those are easily loaded with the <code>readRDS()</code> or <code>load()</code>.</p>
+</section>
+<section id="processing-data-outside-of-r" class="level1">
+<h1>Processing data outside of R</h1>
+<p>As much as possible, you should never directly edit your raw data in some software that isn’t scripted/reproducible (e.g., Excel). If you can, load the raw data into R and do all cleaning inside R with code, so everything is automatically reproducible and documented. Sometimes, you might need to edit the files in the format you got before you are even able to load them into R. For instance, sometimes an Excel spreadsheet is so messy that you can’t even properly get it into R without first doing some cleanup in Excel.</p>
+<p>In those cases, you might have to make modifications in a software other than R. If you can’t directly read the data into R and need to make some changes before, <strong>make copies of your raw data files and only edit those copies</strong>. Also, write down and document all the edits you made.</p>
+</section>
+<section id="checking-data" class="level1">
+<h1>Checking data</h1>
+<p>It is important that once you loaded your data, you do a quick check to make sure it looks as expected. For instance if you expect N observations and M variables, make sure that is what you get. Those checks are simple but important. You don’t want to start processing the data unless you know it looks as you expect it to look once loaded.</p>
+<p>Also, if you load a data frame, sometimes the variables don’t have the format you expect them. For instance, it is common that a variable that is a factor is loaded as text. Recoding this is then part of the data processing task.</p>
+</section>
+<section id="saving-data" class="level1">
+<h1>Saving data</h1>
+<p>At some point in your pipeline - possibly more than once - you might want to save your data or results. That is useful if you have different scripts that perform different tasks. For instance your processing script might save the cleaned data. If you plan on sharing that data, a common format such as CSV might be best. If you plan on only loading it again with another R script, then an R format like <code>Rds</code> or <code>Rda</code> might be suitable, as it preserves some meta-information (e.g., a variable coded as a factor will keep that information, while if you save it as CSV it will become text and once you load it you have to re-code it again as factor).</p>
 </section>
 <section id="summary" class="level1">
 <h1>Summary</h1>
+<p>In general, loading data into R is not too hard. At times, you might get especially messy data and you need to do a few extra steps to get it into R.</p>
 </section>
 <section id="further-resources" class="level1">
 <h1>Further Resources</h1>
+<ul>
+<li>The <a href="https://rstudio-education.github.io/hopr/dataio.html">Loading and Saving Data in R</a> chapter of Hands-On Programming with R has some additional discussions.</li>
+</ul>
 
 
 </section>
@@ -1279,8 +1323,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../../content/module-data-processing/outliers/outliers.html" class="pagination-link" aria-label="Dealing with outliers">
-        <span class="nav-page-text">Dealing with outliers</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../../content/module-data-processing/missing-data/missing-data.html" class="pagination-link" aria-label="Dealing with missing data">
+        <span class="nav-page-text">Dealing with missing data</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -40,7 +40,7 @@ Instead of removing rows and columns (observations and variables) until you have
 
 # Feature engineering
 
-As the [creating new data/variables](./feature-engineering/feature-engineering.qmd) unit discusses, it is possible to create new variables/data from the existing ones. This can sometimes help with missing values.
+As the [creating new data/variables](../feature-engineering/feature-engineering.qmd) unit discusses, it is possible to create new variables/data from the existing ones. This can sometimes help with missing values.
 
 For instance, you could create new variables/predictors/features with less missing. As an example, if you have data that records if a person drinks beer (yes/no), wine (yes/no), or hard liquor (yes/no) and each of those variables has some missing, maybe you can create a new variable labeled *any alcohol* and code it as yes/no. If a person has a *yes* for at least one of the 3 original variables, they would be coded as *yes* in the new one. If they have all *no*, they would be coded as *no*. For anyone left, you do need to decide what to do with missing values in the original variables, i.e. if you interpret them as *yes* or *no*. You could either stick with one, e.g. if you had some additional knowledge that suggests anyone who doesn't have that value recorded is more likely a *no*. For categorical data, you could also treat missing values as their own category (this can be useful when missingness provides information about the value of the response). 
 
@@ -68,6 +68,8 @@ Often, it's good to do things more than one way and show that your findings are 
 
 
 # Further Resources
+
+* There is a [chapter on missing data](https://bookdown.org/max/FES/handling-missing-data.html) in the book _Feature Engineering and Selection: A Practical Approach for Predictive Models_.
 
 
 

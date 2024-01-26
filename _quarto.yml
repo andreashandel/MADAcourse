@@ -181,12 +181,12 @@ website:
                file: content/module-data-processing/data-processing-introduction/data-processing-introduction.qmd
              - text: "Data loading"
                file: content/module-data-processing/data-loading/data-loading.qmd
-             - text: "Dealing with outliers"
-               file: content/module-data-processing/outliers/outliers.qmd
              - text: "Dealing with missing data"
                file: content/module-data-processing/missing-data/missing-data.qmd
-             - text: "Dealing with censored data"
-               file: content/module-data-processing/censored-data/censored-data.qmd
+             # - text: "Dealing with censored data"
+             #   file: content/module-data-processing/censored-data/censored-data.qmd
+             - text: "Dealing with outliers"
+               file: content/module-data-processing/outliers/outliers.qmd
              - text: "Creating new data/variables"
                file: content/module-data-processing/feature-engineering/feature-engineering.qmd
              - text: "Merging data"
@@ -199,14 +199,16 @@ website:
                file: content/module-data-presentation/visualization-overview.qmd     
              - text: "Visualization in R"
                file: content/module-data-presentation/visualization-in-r.qmd     
-            #  - text: "Tables in R"
-            #    file: content/module-data-presentation/Tables-in-R.qmd     
+             - text: "Tables in R"
+               file: content/module-data-presentation/tables-in-r.qmd
           - section: "7. Statistical Analysis Overview"
             contents:
              - text: "Statistical Analysis Introduction"
                file: content/module-stats-overview/statistical-analysis-introduction.qmd     
              - text: "Some Statistical Model Fitting Terminology"
                file: content/module-stats-overview/statistical-terminology.qmd     
+             - text: "Descriptive and preliminary analysis"
+               file: content/module-stats-overview/descriptive-analysis.qmd     
           - section: "8. Fitting Basic Statistical Models"
             contents:
              - text: "Basic Statistical Models"
