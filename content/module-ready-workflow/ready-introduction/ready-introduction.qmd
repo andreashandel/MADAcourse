@@ -5,17 +5,18 @@ subtitle: ""
 
 # Overview
 
-This unit provides an overview of the ideas for a data analysis that follows reproducible, efficient, automated, and documented (READy) workflow principles.
+This unit provides an overview of the ideas for a data analysis that follows Reproducible, Efficient, Automated, and Documented (READy) workflow principles.
 
 
 # Learning Objectives
 
-- Know the concept and importance of reproducible research
+- Understand the concept of reproducible research
+- Understand the importance of reproducible research for modern science
 
 
 # Introduction
 
-The concept of reproducible research or what I call here more generally the READy workflow[^1], is becoming increasingly important. This unit provides a few general ideas on the topic, with further units going into more detail on specific aspects that can help you to perform READy analyses. 
+The concept of reproducible research, or what I call here more generally the READy workflow[^1], is becoming increasingly important. This unit provides a few general ideas on the topic, with further units going into more detail on specific aspects that can help you to perform READy analyses. 
 
 [^1]: READy is an acronym I invented. If you look around online, you'll find lots of discussions on the topic of reproducible or automated data analysis, and why documentation is important, but you'll likely not find anything calling it READy.
 
@@ -29,7 +30,7 @@ The concept of reproducible research or what I call here more generally the READ
 A hallmark of proper scientific research is that findings can be replicated and/or reproduced. The terms **reproduciblity** and **replicability** are sometimes used interchangably, sometimes they are considered slightly distinct.
 
 If they are differentiated, **replicability** is generally considered broader. In one sentence, *your research is replicable if someone else can follow your methods and materials to collect new data, analyze their data, and
-get the same (or similar, taking into account some random variation) results*. 
+get the same results*  (or similar results, taking random variation into account). 
 
 Unfortunately, it is often the case these days that results can't be replicated/reproduced by independent investigators/labs. Sometimes, even the same labs can't reproduce their previous findings. You have probably heard about the (supposed) [*Reproducibility/Replication Crisis*](https://en.wikipedia.org/wiki/Replication_crisis) in science. If not, do a quick online search, you'll find lots of articles saying there is an increasing problem, while others saying that it's not getting worse, we are just detecting more. While sometimes there is fraud, most often there are more benign reasons preventing reproducibility.
 

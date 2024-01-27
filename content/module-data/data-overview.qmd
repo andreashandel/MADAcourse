@@ -5,7 +5,7 @@ subtitle: ""
 
 
 # Overview
-You need data to do a data analysis - surprise! 
+You need data to do a data analysis --- surprise! 
 
 This module discusses data. What it is, where to get it, how to load and store it, and some other basics of that sort.
 
@@ -13,8 +13,7 @@ This module discusses data. What it is, where to get it, how to load and store i
 
 * Be familiar with basic data types.
 * Be aware of data structure.
-* Know how to work with data formats in R.
-* 
+* Know how to work with various data formats in R.
 
 # Content
 

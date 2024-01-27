@@ -28,14 +28,14 @@ Many natural processes that lead to the generation of data have some inherent ra
 
 # Measurements
 
-Measurements that lead to data always have inherent limitations. For instance if you use a scale to measure someone's weight, it might only report it to one decimal place. Similarly, if your scale has a minimum and maximum value it can record, anything that is ligher and heavier than that value will not produce a numeric result, just an indication that it's too light (the scale might show zero) or too heavy (the scale might show some error message or the maximum value). It is important to consider these kind of measurement limitations and account for them if possible. 
+Measurements that lead to data always have inherent limitations. For instance if you use a scale to measure someone's weight, it might only report it to one decimal place. Similarly, if your scale has a minimum and maximum value it can record, anything that is lighter and heavier than that value will not produce a numeric result, just an indication that it's too light (the scale might show zero) or too heavy (the scale might show some error message or the maximum value). It is important to consider these kind of measurement limitations and account for them if possible. 
 
 
 # Interactions
 
-Often, the components in our system of interest interact. The simplest interaction is a direct one between a predictor and an outcome. Say you give some kind of cancer drug to a patient and see if it reduces the size of their tumor. This is often the scientific question of interest. However, there might be other factors interacting with the variables of interest. For instance the drug might induce some immune response which could either help or hinder the ability of the drug to shrink the tumor. Let's say the immune system synergistically helps the drug reduce the tumor in individuals that have blood type A-pos and it hinders the drug in everyone else. These might be important aspects that - if you know them - need to inform your model. 
+Often, the components in our system of interest interact. The simplest interaction is a direct one between a predictor and an outcome. Say you give some kind of cancer drug to a patient and see if it reduces the size of their tumor. This is often the scientific question of interest. However, there might be other factors interacting with the variables of interest. For instance the drug might induce some immune response which could either help or hinder the ability of the drug to shrink the tumor. Let's say the immune system synergistically helps the drug reduce the tumor in individuals that have blood type A-positive and it hinders the drug in everyone else. These might be important aspects that --- if you know them --- need to inform your model. 
 
-The whole field of causal modeling tries to - among other things - get at such sitations and help you devise the best analysis approach given what you know or assume about the system. It's worth learning causal modeling, but we can't cover it in this class.
+The whole field of causal modeling tries to - among other things - get at such situations and help you devise the best analysis approach given what you know or assume about the system. It's worth learning causal modeling, but we can't cover it in this class.
 
 
 

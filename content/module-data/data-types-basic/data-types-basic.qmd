@@ -26,9 +26,9 @@ The kind of data determines the amount of processing that needs to be done befor
 
 # Basic types of data 
 
-For scientific data, the discrete pieces of data/information (e.g., gender and age) are usually referred to as variables. A variable is essentially measurements of one quantity, and data is generally made up of collections of variables.
+For scientific data, the discrete pieces of data/information (e.g., gender and age) are usually referred to as variables. A variable is essentially measurements of one quantity, and data is generally made up of multiple of variables.
 
-As such, variables form the basic building blocks of a lot of data. Different types of variables exist, and depending on the type, the analysis will be different. The main categories are 
+As such, variables form the basic building blocks of a lot of data. Different types of variables exist, and depending on the type, the analysis will be different. The main categories are quantitative, qualitative, and ordinal variables.
 
 ## Quantitative variables
 
@@ -46,22 +46,23 @@ A special case of quantitative data is *ratio* data. Data measured on a ratio sc
 
 Broadly speaking, qualitative variables are those that do not allow one to perform any mathematical operations such as subtraction or addition. Qualitative data which has no intrinsic order is also called *nominal* (scale) data. Types of such data are:
 
--   Descriptive: e.g., free text data from participant interviews.
--   Categorical: e.g., hair color, ethnicity. No ordering is possible. A special and common case of categorical is data with 2 categories, e.g., yes/no, dead/alive, diseased/healthy.
+-   Descriptive: e.g., free text data from participant interviews. This data typically has very different values for each individual and requires extra steps to aggregate into something that can be analyzed.
+-   Categorical: e.g., hair color, ethnicity. No ordering is possible. These are also called polytomous variables.
+-   Dichotomous: A special and common case of categorical data is data with exactly 2 categories, e.g., yes/no, dead/alive, diseased/healthy, exposed/unexposed. These are also commonly called binary variables.
 
 
 ## Ordinal variables 
 
-This data type is usually considered a type of categorical variable, but it is worth thinking about it as something on its own. Ordinal data fall in between being strictly quantitative or strictly qualitative. For instance, if a question asks a person to rank their level of a pain on a scale from 1-10, a 7 is clearly higher than a 6, and a 6 higher than a 5. But it's unclear if the difference between 5 and 6 is the same as 6 and 7. Thus it is not clear if one can do operations like subtraction (to get a difference of 1 in each case). Another example is level of education, which a survey might collect in categories of 'no high school', 'high school', 'some college', 'college degree', 'graduate degree'. We could code that with numbers 1-5, and in some sense these items are ordered, but it's unclear if one is justified in considering the difference between 'high school (2)' and 'some college (3)' the same as 'some college (3)' and 'college degree (4)'.
+This data type is usually considered a type of categorical variable, but it is worth thinking about it as something on its own. Ordinal data fall in between being strictly quantitative or strictly qualitative. For instance, if a question asks a person to rank their level of a pain on a scale from 1-10, a 7 is clearly higher than a 6, and a 6 higher than a 5. But it's unclear if the difference between 5 and 6 is the same as 6 and 7. Thus it is not clear if one can do operations like subtraction (to get a difference of 1 in each case). Another example is level of education, which a survey might collect in categories of 'no high school', 'high school', 'some college', 'college degree', 'graduate degree'. We could code that with numbers 1-5, and in some sense these items are ordered, but it's unclear if one is justified in considering the difference between 'high school (2)' and 'some college (3)' the same as 'some college (3)' and 'college degree (4)'. Typically ordinal data is more complicated to deal with than purely qualitative or quantitative data.
 
 
 # Analysis approaches based on data
 
 The type of variables will influence the analysis approach. That's especially true for the outcomes of interest, less so for the independent, predictor variables.
 
-Methods applied to quantitative outcomes are usually referred to as **regression approaches**, with different variants depending on the subtype (e.g., linear regression for continuous, Poisson regression for discrete). Methods applied to categorical outcomes are usually referred to as **classification approaches.**[^1] If you have an ordinal outcome, you can use [**ordinal regression**](https://en.wikipedia.org/wiki/Ordinal_regression). Alternatively, you can treat the outcome as unordered categorical or as continuous (depending on how you code them, i.e., in R as a factor or numeric). There are no rules as to when it is ok to treat an ordinal variable as fully quantitative. It is often done but needs to be justified. You can always treat it as categorical, but then you lose some information, namely the ordering.
+Methods applied to quantitative outcomes are usually referred to as **regression approaches**, with different variants depending on the subtype (e.g., linear regression for continuous, Poisson regression for counts). Methods applied to categorical outcomes are usually referred to as **classification approaches.**[^1] If you have an ordinal outcome, you can use [**ordinal regression**](https://en.wikipedia.org/wiki/Ordinal_regression). Alternatively, you can treat the outcome as unordered categorical or as continuous (depending on how you code them, i.e., in R as a factor or numeric). There are no rules as to when it is ok to treat an ordinal variable as fully quantitative. It is often done but needs to be justified. You can always treat it as categorical, but then you lose some information, namely the ordering.
 
-[^1]: Logistic regression, which you might be familiar, is used for classification. However, the underlying model predicts a quantitative outcome (a value between 0 and 1 usually interpreted as a probability), which is then binned to make categorical predictions.
+[^1]: Logistic regression, which you might be familiar, is used for classification. However, the underlying model predicts a quantitative outcome (a value between 0 and 1 usually interpreted as a probability), which is then binned to make categorical predictions. This is true of many, but not all, classification approaches.
 
 In the machine learning literature, *supervised* learning refers to cases when we have a specific outcome of interest. This kind of data is most common. For data where there is no clear outcome, analysis methods are usually referred to as clustering approaches and are also called *unsupervised* learning methods.
 

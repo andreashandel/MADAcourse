@@ -45,9 +45,11 @@ Commenting also helps you think clearly about what you are doing. If you end up 
 
 # Summary
 
-Document everything. A lot. Others and your future self will thank you.
+Document everything. A lot. Others and your future self will thank you. Remember to documentation **how** your code works and also **why** you wrote the code you did.
 
 
 # Further Resources
 
-None at the moment. Let me know if you have any good ones on this topic.
+* The organization *Write the Docs* has a [website](https://www.writethedocs.org/) with many resources, including a brief [guide for beginners](https://www.writethedocs.org/guide/writing/beginners-guide-to-docs/).
+* Google's [developer documentation style guide](https://developers.google.com/style) is a very comprehensive free resource.
+* You might be interested in the idea of **documentation driven development (DDD)** (see i.a. [this blog post](https://unicorn-utterances.com/posts/documentation-driven-development)), which is the idea that you should write down what your code will do, how a user will do each task, and how the code will internally do what it is supposed to *before you even write the code down*. It is a somewhat trendy philosophy that is maybe not 100% practical but will result in good (and often revised) documentation, by forcing you to do the thinking critically about how your code should work instead of just trying things.
