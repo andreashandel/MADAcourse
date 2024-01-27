@@ -31,6 +31,9 @@ Then take a look at the different folders, files, `readme` comments that you fin
 
 Now go ahead and open the `exampledata.xlsx` file (with Excel or a similar program) and add 2 more columns to the data. One column should be something numeric, the other can be something consisting of (a few) different categories. As a (boring) example, you could add eye color and waist size. Feel free to come up with more creative attributes/variables to add. Also add descriptions of your new variables to the `Codebook` sheet. Once done, save the new data as **`exampledata2.xlsx`**.
 
+Then open the `starter-analysis-report.qmd` file, find the _Description of data and data source_ section and add a few sentences explaining what you added to the data sheet.
+
+
 Commit your changes (write a meaningful commit message) and push them to GitHub.com.
 
 **You need to have this done by Tuesday evening.**
