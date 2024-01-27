@@ -16,24 +16,32 @@ For this unit, we will discuss different common formats for storing data.
 
 # Open formats
 
-It is generally a good idea to store your data in a format that is widely readable by most software.
+Generally, you should store your data in a format that is readable by many
+common software programs.
 
 
 ## Text
 
 Plain text is the most portable and easy to use format. Most code, no matter what the programming language is, is written and stored as text. The Quarto files you have been working on are also text. Text can be read by any text editor and can be modified easily. The major disadvantage is that it's not that suitable for storing potentially complex data.
 
+Fixed-width files are an important special case of plain text data, which are
+becoming more rare as time goes on, but that you may still run into. These files have a set length for each variable (so column one may be 8 characters long, column 2 may be 3 characters long, etc.), so they are easy for the computer to read, but you will need to use an appropriate function and set the widths. While fixed width files are usable in most programs, we do not recommend them because they are (generally) more annoying to work with than other options.
 
-## CSV
+## CSV (and delimited formats)
 
 The CSV (comma-separated values) format is really just a text format that's very well suited for rectangular, spreadsheet-type data. In a CSV, you have rows and columns of entries, and the entries are separated by commas. CSV files are easily readable by most software. If you are storing information that contains commas as part of the values (e.g., if you are storing text in some columns), CSV files can be problematic. TSV files, which stands for tab-separated values, are a variation that uses a tab instead of a comma to separate entries, thus sometimes being more robust. Semicolons are also sometimes used to separate values.
 
+In general these files are called "delimited" formats, and the separator character (comma for CSV, tab for TSV) is called the "delimiter". A special case is space-delimited files, which are typically saved in DAT or TXT file types instead of a specialized format.
+
+Delimited storage formats are likely the most common data-sharing format, and are a good, all-purpose way to share data files across platforms.
 
 ## Compressed data
 
 While CSV and text files are very easily readable formats, one major disadvantage of those files is that they can get relatively large. They don't store information in the most efficient manner. CSV files also can't store meta-information, for instance the fact that some variable encodes a date. In a CSV file, it's all just text.
 
 There are formats that are more space-efficient and can preserve some meta-information. Examples are the `Rds` and `Rda` formats in R. For differences between those two formats, [see e.g. this article](http://www.sthda.com/english/wiki/saving-data-into-r-data-format-rds-and-rdata). The disadvantage of this and similar formats is that they require specific software to read the data. As long as the data format and software needed is open and free, it's not that big of an issue, though sometimes it can hinder portability.
+
+Formats like `parquet` and `Arrow` invented by Apache for their [Arrow](https://arrow.apache.org/) software are also very efficient and have become quite common in industry recently. The [Arrow `R` package](https://arrow.apache.org/docs/r/index.html) is a fairly intuitive interface for these file formats if you come across them in your data science work.
 
 
 ## Other open formats

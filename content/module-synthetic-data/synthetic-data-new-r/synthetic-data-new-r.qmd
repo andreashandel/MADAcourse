@@ -33,7 +33,7 @@ AI tools are very useful for generating synthetic data. In fact, the code in the
 For the first example, we'll generate a simple dataset of some hypothetical clinical trial for some treatment (say, a Cholesterol lowering medication) and its impact on outcomes such as Cholesterol levels and adverse events.
 
 :::note
-It is often useful to go slow and type your own code, or copy and paste the code chunks below and execute one at a time. However, if you are in a hurry, you can find the code for this example in [this file](/code/synthetic-data-new-R-example-1-code.R).
+It is often useful to go slow and type your own code, or copy and paste the code chunks below and execute one at a time. Note that typing out the code yourself rather than pasting can help improve your muscle memory and retention of what you're doing! However, if you are in a hurry, you can find the code for this example in [this file](/code/synthetic-data-new-R-example-1-code.R).
 :::
 
 :::note

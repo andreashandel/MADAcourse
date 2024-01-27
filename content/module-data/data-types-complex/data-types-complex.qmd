@@ -48,12 +48,15 @@ Of course, with the rise of text-based LLM AI tools and similar such offerings, 
 
 Audio recordings can contain text/speech, or other sound. In the former case, models need to be applied to transform audio into text. After that, any text analysis tool can be used. If the audio does not contain text, one likely wants to apply other analyses. For instance one might want to detect if a certain sound is present, such as the sound of a fire alarm going off. This generally requires partitioning and transforming the audio into pieces that can be turned into some form of numeric variables and analyzed.
 
-Audio also has a time-series structure that needs to be taken into account when analyzing it. 
+Audio also has a time-series structure that needs to be taken into account when analyzing it.
+
+Audio data is a subfield of **signal processing**, which is a field of math and statistics that also can be applied to analyze
+data from optical heart rate monitors and chemical spectroscopy data, among other things.
 
 
 ## Images
 
-For analysis purposes, one can think of an image is essentially a matrix of pixels, with each pixel having color and intensity values. This large amount of - usually very structured - data needs to be processed.
+For analysis purposes, one can think of an image is essentially a matrix of pixels, with each pixel having color and intensity values. This large amount of - usually very structured --- data needs to be processed.
 
 Images are generally converted into multiple matrices of values for
 different pixels of an image. For instance, one could divide an image
@@ -63,7 +66,7 @@ each of size 100x100. One would then perform operations on those values.
 As you can imagine, that quickly leads to fairly large amounts of data.
 These days, most successful image analysis is done using some form of
 **neural nets**, which are generally considered an **artificial
-intelligence (AI)** method (but recall that ML and AI terminology is
+intelligence (AI)** method. (But recall that ML and AI terminology is
 somewhat fuzzy. The general current usage is that AI are a type of ML,
 specifically the neural net type.)
 
@@ -125,16 +128,53 @@ understand and interpret. For such models, a Bayesian framework is often
 very useful. A good introductory resource for hierarchical modeling, and
 especially how to do it with `R`, is [*Statistical
 Rethinking*](https://xcelab.net/rm/statistical-rethinking/) (the second
-half of the book). The new edition of *R4DS* has a chapter on [working
-with hierarchical data](https://r4ds.hadley.nz/rectangling.html) (but
-does not cover the fitting/analysis part.) There is also a CRAN Task
+half of the book). There is also a CRAN Task
 view that lists [R packages relevant to hierarchical
 modeling](https://cran.r-project.org/web/views/MixedModels.html).
 
+Another term you might hear is **recursively nested data**. While this type of data *is* a type of hierarchical data, when we discuss
+hierarchical data we often think about nested in terms of statistical clusters.
+Computer scientists and web developers often use hierarchical data for storage and data transfer purposes, and often call it recursively nested data instead.
+
+Recursively nested data has become extremely common on the
+internet the past few years, and is essentially the *lingua franca* of APIs.
+While statisticians often store hierarchical data in one or more rectangular
+data sets, recursively nested data is stored in recursive lists, which are not always symmetrical. For example, consider the following
+list of [Cars in Jay Leno's Garage](https://cars.usnews.com/cars-trucks/features/jay-lenos-car-collection).
+
+- Mazda Miata
+  * Year: 1996
+  * Original MSRP: $18450
+  * Color: Red
+  * Convertible: True
+- Chevrolet Volt
+  * Year: 2011
+  * Original MSRP: $4100
+  * Color: Steel Metallic
+  * Interior: Black
+  * Convertible: False
+  * Hybrid: True
+- Etc.
+
+While we can imagine a world where this data is stored in a rectangular format
+(see `mtcars` for example), we would have to do some processing to get it in
+that format, and we would have to decide what to do for the fields that are not
+shared across all the entries. These data can also have lists nested within
+lists (nested within lists, to very high levels of list-recursion), which can be
+more challenging to "rectangle" (that is, convert to a rectangular format).
+
+Data stored in this format is usually stored in
+[JSON](https://en.wikipedia.org/wiki/JSON) or
+[XML](https://en.wikipedia.org/wiki/XML) formats, which can be read into `R`
+using the [`rjson`](https://cran.r-project.org/web/packages/rjson/) or
+[`xml2`](https://xml2.r-lib.org/) packages, among others. The new edition of
+*R4DS* has a chapter on [working with hierarchical and recursively nested data
+data](https://r4ds.hadley.nz/rectangling.html) (but does not cover the
+fitting/analysis part). The [`repurrrsive`](https://github.com/jennybc/repurrrsive) package, by Jenny Brian, contains some examples of this type of data.
 
 ## Longitudinal/Time-series data
 
-Longitudinal or time series are a specialized data type that are autocorrelated, and we
+Longitudinal or time series are a specialized data type that are autocorrelated (i.e., each measurement is correlated with at least one measurement that came before it), and we
 can therefore get better predictions by using specialized models that
 take this data structure into account. A good resource is the free
 textbook [*Forecasting: Principles and
@@ -153,6 +193,13 @@ Analysis*.](https://cran.r-project.org/web/views/TimeSeries.html) (A
 various R packages for a specific topic). Another task view that deals
 with longitudinal/time-series data is the [*Survival Analysis* Task
 View](https://cran.r-project.org/web/views/Survival.html).
+
+Note that, somewhat confusingly, longitudinal data are common in epidemiology,
+and despite being measured over time, "time-series methods" are not usually
+appropriate. Time-series and forecasting methods are mainly appropriate for
+data where the times are *dense*, which means many time points are measured
+somewhat close together. The term "longitudinal data" (also called *panel data* in some fields) is most commonly used to refer to *sparse* data collected over time,
+where each study unit is only measured a handful of times which may be spread apart. Most cohort studies therefore fall into this *longitudinal* framework, not into a *time series* framework. The hierarchical (or mixed effects) methods discussed earlier are typically more appropriate for this type of data.
 
 
 ## Spatial data

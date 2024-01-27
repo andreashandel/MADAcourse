@@ -11,7 +11,7 @@ For this unit, we will discuss ways to make sure working collaboratively on a pr
 # Learning Objectives
 
 - Know why tracking a project is useful
-- Be familiar with Git/GitHub for project tracking
+- Be able to use basic features of Git/GitHub for version control
 
 
 # Introduction
@@ -20,7 +20,7 @@ While the term _Project Management_ is very broad, here I only mean management o
 
 It is generally useful to have some software that can record and track your progress.
 This is useful even if you are the only one working on a project, since it allows you to 
-to go back in history to older versions of the project. Thus, if you made some changes that you don't like, or accidentally deleted some files, you can revery back.
+to go back in history to older versions of the project. Thus, if you made some changes that you don't like, or accidentally deleted some files, you can revert back.
 
 These tracking tools become even more important if you work with collaborators. You want to avoid editing the same files at the same time and it should be clear who did what. Without a tracking system, this is hard to do. 
 
@@ -39,9 +39,10 @@ The following only mentions (again) some topics worth keeping in mind when using
 
 ## File sizes
 
-GitHub has a problem with large files. Anything above around 100MB can lead to very slow syncing and sometimes outright failure. Unfortunately, once you have a failed attempt to sync a large file, it can be quite tricky to fix the repository to work again. Therefore **keep large (\>100MB) files out of your GitHub repositories.** If you have to work with such files, try to reduce them first before placing into the GitHub repository. As alternative, place those files in another sync service (e.g. Dropbox, OneDrive, GoogleDrive) and load them from there.
+GitHub has a problem with large files. Anything above 100MB will lead to a failure which is annoying and tricky to resolve. In general, files above 50mb will work, be will be slow and give you a warning. Unfortunately, once you have a failed attempt to sync a large file, it can be quite tricky to fix the repository to work again. Therefore **keep large (\>100MB) files out of your GitHub repositories.** If you have to work with such files, try to reduce them first before placing into the GitHub repository. As alternative, place those files in another sync service (e.g. Dropbox, OneDrive, GoogleDrive) and load them from there. Fortunately, there are some nice R packages that can usually make retrieving those files reproducible, even if they are in a file syncing service outside of your repo. Finally, your overall repo must be less than 5GB in size, so consider storing your huge data files and audio/video files somewhere else.
 
-There is an option to have larger files with GitHub using Git Large File Storage. This can be a bit tricky, if you think it's worth trying, see [the documentation here](https://docs.github.com/en/repositories/working-with-files/managing-large-files).
+There is an option to have larger files with GitHub using Git Large File Storage. This can be a bit tricky, if you think it's worth trying, see [the documentation here](https://docs.github.com/en/repositories/working-with-files/managing-large-files). GitHub Pro users (including students using the Student Developer Kit) have
+free access to limited LFS features.
 
 
 ## Confidentiality
@@ -55,21 +56,21 @@ Eventually, to ensure your project is publicly reproducible, you want to share s
 
 # Gitlab & others
 
-As mentioned above, the underlying software is called Git, GitHub is essentially a hosting platform (owned by Microsoft). GitHub is the most popular Git hosting platform, but not the only one. A few alternatives are [Gitlab](https://about.gitlab.com/), [Bitbucket](https://bitbucket.org/) and [others](https://www.wearedevelopers.com/magazine/top-github-alternatives). While there are some differences between these platforms, as long as the underlying system is `Git`, the workflows are very comparable.
+As mentioned above, the underlying software is called Git. GitHub is essentially a hosting platform (owned by Microsoft). GitHub is the most popular Git hosting platform, but not the only one. A few alternatives are [Gitlab](https://about.gitlab.com/), [Bitbucket](https://bitbucket.org/) and [others](https://www.wearedevelopers.com/magazine/top-github-alternatives). While there are some differences between these platforms, as long as the underlying system is `Git`, the workflows are comparable.
 
 
 # Subversion & others
 
 [Subversion (SVN)](https://subversion.apache.org/) is an alternative to `Git`. Since it is a different underlying tool to manage your project - not just another hosting platform - there are differences between `Git` and `SVN` that require getting used to. Depending on the level of use, differences might seem small (just different terms for procedures, e.g., instead of `git pull` you do `svn update`), but as you dig deeper, differences in approach can become more substantial.
 
-Yet other tools exist, e.g., [Mercurial](https://www.mercurial-scm.org/), [Fossil](https://www2.fossil-scm.org/home/doc/trunk/www/index.wiki) and [more](). 
+Yet other tools exist, e.g., [Mercurial](https://www.mercurial-scm.org/), [Fossil](https://www2.fossil-scm.org/home/doc/trunk/www/index.wiki) and [more]().
 
 In my opinion, since Git/GitHub are very common, have good documentation and user-friendly clients, most of the time those are probably your best choice. If you really get into working with large data files and need ways to track them, it might be worth looking around a bit. E.g., SVN often works better with large files.
 
 
 # Summary
 
-You want to use some tool that tracks your project. This is useful for solo work since you can revert, and very useful for teamwork. Git/GitHub is the most common tool to use for such tracking purposes. Others exist but you likely might not need to consider them.
+You want to use some tool that tracks your project. This is useful for solo work since you can revert, and very useful for teamwork. Git/GitHub is the most common tool to use for such tracking purposes. Others exist but you likely do not need to consider them.
 
 
 # Further Resources

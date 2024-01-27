@@ -53,14 +53,14 @@ Write code that generates a synthetic dataset. This dataset should have multiple
 
 Then write code that explores the data by making plots or tables to confirm that your synthetic data is what you expect it to be.
 
-Then fit a few simple models to the data. For instance use the `lm` or `glm` functions to fit a linear or logistic model. Make sure your model can recover the associations you built into the data. Explore if and how different models might be able to capture the patterns you see.
+Then fit a few simple models to the data. For instance, use the `lm` or `glm` functions to fit a linear or logistic model. Make sure your model can recover the associations you built into the data. Explore if and how different models might be able to capture the patterns you see.
 
 Take some inspiration from the examples shown in the [Synthetic Data module](/content/module-synthetic-data/synthetic-data-overview.qmd).
 
 
 ## Wrap-up
 
-Once you got your exercise done, you need to add it to your website. To that end, open the `_quarto.yml` file. In the section that says `menu` and lists several of your projects, add lines at a `-text:` and `file:` entry that points to your new folder/file. **Be careful to have exactly the same number of empty spaces as all the other lines.**
+Once you got your exercise done, you need to add it to your website. To that end, open the `_quarto.yml` file. In the section that says `menu` and lists several of your projects, add lines at a `-text:` and `file:` entry that points to your new folder/file. **Be careful to have exactly the same number of empty spaces at the beginning of the line as all the other lines.**
 
 While you are in that file, if you haven't done so, update other parts, e.g. such as the title and the github URL. See the instructions for the first exercise if you need a reminder.
 

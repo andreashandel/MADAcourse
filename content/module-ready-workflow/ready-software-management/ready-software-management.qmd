@@ -16,9 +16,9 @@ For this unit, we will discuss ways to make sure your software is managed in suc
 
 # Introduction
 
-New versions of software are released regularly. While differences are often minor, sometimes they are not and the software might change enough to make code that previously worked not work anymore - or produce different results. This breaks reproducibility.
+New versions of software are released regularly. While differences are often minor, sometimes they are not and the software might change enough to make code that previously worked not work anymore --- or produce different results. This breaks reproducibility.
 
-Similarly, software might differ slightly based on the environment where it is run (e.g., Windows or Mac or Linux). This can again lead to problems with reproducibility. 
+Similarly, software might differ slightly based on the environment where it is run (e.g., Windows or MacOS or Linux). This can again lead to problems with reproducibility. 
 
 The goal of software management is to ensure that someone can fairly easily reproduce your analysis, even if that is several years in the future on a computer and operating system that is different from yours.
 
@@ -34,7 +34,7 @@ While R itself is fairly stable and rarely changes in a way that would lead to n
 To ensure everything is reproducible, you want to make sure someone can run your code with the same versions of R packages that you used originally. This is where the `renv` package comes in.
 
 ## R package `renv` 
-The [`renv` package](https://rstudio.github.io/renv/index.html) (renv stands for  **re**producible **env**ironments) is a tool that allows you to install all packages you use for a given project as part of that project. It records the packages and exactly which version of the package is used. If you then give your project to someone else, they can install these exact versions of the packages on their machine, and therefore ensure that they are using the same versions you did. 
+The [`renv` package](https://rstudio.github.io/renv/index.html) (renv stands for  **r**eproducible **env**ironments) is a tool that allows you to install all packages you use for a given project as part of that project. It records the packages and exactly which version of the package is used. If you then give your project to someone else, they can install these exact versions of the packages on their machine, and therefore ensure that they are using the same versions you did. 
 
 Note that this only holds for R packages, not R itself. But again, R doesn't change that rapidly, so even if you run something under a newer or older version of R, most of the time it is not much of a problem.
 
