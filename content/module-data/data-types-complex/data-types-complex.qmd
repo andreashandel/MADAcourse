@@ -40,18 +40,15 @@ great resources. A short introduction to this topic is the [Text Mining
 chapter (27) of
 *IDS*](https://rafalab.github.io/dsbook/text-mining.html).
 
-Of course, with the rise of text-based LLM AI tools and similar such offerings, this whole area of data analysis has grown very large on its own. If you want to really dig deep into this, check out some of the course and training offerings from [].
+Of course, with the rise of text-based LLM AI tools and similar such offerings, this whole area of data analysis has grown very large on its own. If you want to really dig deep into this, check out some of the course and training offerings from [DeepLearning.AI](https://www.deeplearning.ai/).
 
 
 
 ## Audio
 
-Audio recordings can contain text/speech, or other sound. In the former case, models need to be applied to transform audio into text. After that, any text analysis tool can be used. If the audio does not contain text, one likely wants to apply other analyses. For instance one might want to detect if a certain sound is present, such as the sound of a fire alarm going off. This generally requires partitioning and transforming the audio into pieces that can be turned into some form of numeric variables and analyzed.
+Audio recordings can contain text/speech, or other sound. In the former case, models need to be applied to transform audio into text. After that, any text analysis tool can be used. If the audio does not contain text, one likely wants to apply other analyses. For instance one might want to detect if a certain sound is present, such as the sound of a fire alarm going off. This generally requires partitioning and transforming the audio into pieces that can be turned into some form of numeric variables and analyzed. Audio has a time-series structure that needs to be taken into account when analyzing it.
 
-Audio also has a time-series structure that needs to be taken into account when analyzing it.
-
-Audio data is a subfield of **signal processing**, which is a field of math and statistics that also can be applied to analyze
-data from optical heart rate monitors and chemical spectroscopy data, among other things.
+<!-- Audio data is a subfield of **signal processing**, which is a field of math and statistics that also can be applied to analyze data from optical heart rate monitors and chemical spectroscopy data, among other things. -->
 
 
 ## Images
@@ -137,9 +134,9 @@ hierarchical data we often think about nested in terms of statistical clusters.
 Computer scientists and web developers often use hierarchical data for storage and data transfer purposes, and often call it recursively nested data instead.
 
 Recursively nested data has become extremely common on the
-internet the past few years, and is essentially the *lingua franca* of APIs.
+internet the past few years, and is essentially the default data format of APIs.
 While statisticians often store hierarchical data in one or more rectangular
-data sets, recursively nested data is stored in recursive lists, which are not always symmetrical. For example, consider the following
+data sets, recursively nested data is stored in recursive lists. For example, consider the following
 list of [Cars in Jay Leno's Garage](https://cars.usnews.com/cars-trucks/features/jay-lenos-car-collection).
 
 - Mazda Miata
@@ -172,6 +169,8 @@ using the [`rjson`](https://cran.r-project.org/web/packages/rjson/) or
 data](https://r4ds.hadley.nz/rectangling.html) (but does not cover the
 fitting/analysis part). The [`repurrrsive`](https://github.com/jennybc/repurrrsive) package, by Jenny Brian, contains some examples of this type of data.
 
+
+
 ## Longitudinal/Time-series data
 
 Longitudinal or time series are a specialized data type that are autocorrelated (i.e., each measurement is correlated with at least one measurement that came before it), and we
@@ -199,7 +198,7 @@ and despite being measured over time, "time-series methods" are not usually
 appropriate. Time-series and forecasting methods are mainly appropriate for
 data where the times are *dense*, which means many time points are measured
 somewhat close together. The term "longitudinal data" (also called *panel data* in some fields) is most commonly used to refer to *sparse* data collected over time,
-where each study unit is only measured a handful of times which may be spread apart. Most cohort studies therefore fall into this *longitudinal* framework, not into a *time series* framework. The hierarchical (or mixed effects) methods discussed earlier are typically more appropriate for this type of data.
+where each study unit is only measured a handful of times which may be spread apart. Most cohort studies therefore fall into this *longitudinal* framework, not into a *time series* framework. 
 
 
 ## Spatial data

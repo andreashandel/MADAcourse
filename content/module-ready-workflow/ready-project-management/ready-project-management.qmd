@@ -63,7 +63,7 @@ As mentioned above, the underlying software is called Git. GitHub is essentially
 
 [Subversion (SVN)](https://subversion.apache.org/) is an alternative to `Git`. Since it is a different underlying tool to manage your project - not just another hosting platform - there are differences between `Git` and `SVN` that require getting used to. Depending on the level of use, differences might seem small (just different terms for procedures, e.g., instead of `git pull` you do `svn update`), but as you dig deeper, differences in approach can become more substantial.
 
-Yet other tools exist, e.g., [Mercurial](https://www.mercurial-scm.org/), [Fossil](https://www2.fossil-scm.org/home/doc/trunk/www/index.wiki) and [more]().
+Yet other tools exist, e.g., [Mercurial](https://www.mercurial-scm.org/) and [Fossil](https://www2.fossil-scm.org/home/doc/trunk/www/index.wiki), though they are not very widely used.
 
 In my opinion, since Git/GitHub are very common, have good documentation and user-friendly clients, most of the time those are probably your best choice. If you really get into working with large data files and need ways to track them, it might be worth looking around a bit. E.g., SVN often works better with large files.
 

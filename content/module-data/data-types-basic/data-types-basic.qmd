@@ -39,7 +39,7 @@ This data type, also called *interval* data, generally allows one to do certain 
 -   Fraction/Proportion: Continuous, but between 0-1.
 -   Sometimes other special forms (e.g., only positive, only in some range).
 
-A special case of quantitative data is *ratio* data. Data measured on a ratio scale have all the properties of interval data, and in addition, the zero value is a "true zero". That is, a value of zero represents an actual minimum possible variable. For example, mass and distance are ratio data. Multiplying and dividing ratio scale data makes sense (e.g. a 2 kilogram pumpkin has twice the mass of a 1 kilogram pumpkin).
+<!-- A special case of quantitative data is *ratio* data. Data measured on a ratio scale have all the properties of interval data, and in addition, the zero value is a "true zero". That is, a value of zero represents an actual minimum possible variable. For example, mass and distance are ratio data. Multiplying and dividing ratio scale data makes sense (e.g. a 2 kilogram pumpkin has twice the mass of a 1 kilogram pumpkin). -->
 
 
 ## Qualitative variables
