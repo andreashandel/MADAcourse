@@ -44,9 +44,8 @@ Most general comments/thoughts are in the Notes and Thoughts document in the off
     Add more divs/callout categories as needed.
 
 
--   Try to eventually have consistent naming of folders and files: All lowercase, with dashes as separators https://developers.google.com/style/filenames
-
-    -   ✅ done, used the below code to rename everything. Then manually edited the yml with the find and replace feature.
+-   Consistent naming of folders and files: All lowercase, with dashes as separators https://developers.google.com/style/filenames
+Way to rename:
 
 ```         
 files <- fs::dir_ls("content", recurse = TRUE)
@@ -62,10 +61,6 @@ file.rename(files, tolower(files))
 -   Wrap all AI prompts in the files inside the ::: prompt div
 
 -   Eventually, each unit should have these sections: \# Overview \# Learning Objectives \# Introduction \# Topic 1 \## Subtopic 1 \## Subtopic 2 \# Topic 2 \## Subtopic 1 ... \# Summary \# Further Resources
-
--   Update links/references to R4DS 2nd edition instead of 1st.
-
-    -   Did most of them but there isn't a tibble or model chapter in the second edition. `content/module-data-intro/data-types.qmd` now has a broken link since it references the tibble chapter.
 
 -   Write table unit
 

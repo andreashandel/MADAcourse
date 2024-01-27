@@ -1,0 +1,79 @@
+---
+title: Basic types of data
+subtitle: ""
+---
+
+# Overview
+
+For this unit, we will discuss basic data types that you will come across frequently.
+
+
+# Learning Objectives
+
+- Understand different types of data
+- Be familiar with common, basic types of data
+- Understand that different data types require different analysis approaches
+
+
+# Introduction
+
+Broadly speaking, we can define data as anything that (potentially) contains information. Data can be images, sound, video, text, or a combination of any of these. 
+
+You most likely encounter data in spreadsheets, with observations as rows and variables as columns. However, data is getting much more varied and complex. Data from fitness devices such as Fitbits, Tweets, Facebook posts, purchasing behavior, movement, etc. are all streams of data that can contain useful information.
+
+The kind of data determines the amount of processing that needs to be done before analysis. Somehow you need to turn your data into something that you can analyze.
+
+
+# Basic types of data 
+
+For scientific data, the discrete pieces of data/information (e.g., gender and age) are usually referred to as variables. A variable is essentially measurements of one quantity, and data is generally made up of multiple of variables.
+
+As such, variables form the basic building blocks of a lot of data. Different types of variables exist, and depending on the type, the analysis will be different. The main categories are quantitative, qualitative, and ordinal variables.
+
+## Quantitative variables
+
+This data type, also called *interval* data, generally allows one to do certain mathematical operations, e.g., subtraction or addition. Different subcategories exist:
+
+-   Continuous: Can, in principle, be any number. Examples are height, weight, age, etc.
+-   Discrete: Can only take discrete (integer) values, e.g., the number of siblings a person has.
+-   Fraction/Proportion: Continuous, but between 0-1.
+-   Sometimes other special forms (e.g., only positive, only in some range).
+
+<!-- A special case of quantitative data is *ratio* data. Data measured on a ratio scale have all the properties of interval data, and in addition, the zero value is a "true zero". That is, a value of zero represents an actual minimum possible variable. For example, mass and distance are ratio data. Multiplying and dividing ratio scale data makes sense (e.g. a 2 kilogram pumpkin has twice the mass of a 1 kilogram pumpkin). -->
+
+
+## Qualitative variables
+
+Broadly speaking, qualitative variables are those that do not allow one to perform any mathematical operations such as subtraction or addition. Qualitative data which has no intrinsic order is also called *nominal* (scale) data. Types of such data are:
+
+-   Descriptive: e.g., free text data from participant interviews. This data typically has very different values for each individual and requires extra steps to aggregate into something that can be analyzed.
+-   Categorical: e.g., hair color, ethnicity. No ordering is possible. These are also called polytomous variables.
+-   Dichotomous: A special and common case of categorical data is data with exactly 2 categories, e.g., yes/no, dead/alive, diseased/healthy, exposed/unexposed. These are also commonly called binary variables.
+
+
+## Ordinal variables 
+
+This data type is usually considered a type of categorical variable, but it is worth thinking about it as something on its own. Ordinal data fall in between being strictly quantitative or strictly qualitative. For instance, if a question asks a person to rank their level of a pain on a scale from 1-10, a 7 is clearly higher than a 6, and a 6 higher than a 5. But it's unclear if the difference between 5 and 6 is the same as 6 and 7. Thus it is not clear if one can do operations like subtraction (to get a difference of 1 in each case). Another example is level of education, which a survey might collect in categories of 'no high school', 'high school', 'some college', 'college degree', 'graduate degree'. We could code that with numbers 1-5, and in some sense these items are ordered, but it's unclear if one is justified in considering the difference between 'high school (2)' and 'some college (3)' the same as 'some college (3)' and 'college degree (4)'. Typically ordinal data is more complicated to deal with than purely qualitative or quantitative data.
+
+
+# Analysis approaches based on data
+
+The type of variables will influence the analysis approach. That's especially true for the outcomes of interest, less so for the independent, predictor variables.
+
+Methods applied to quantitative outcomes are usually referred to as **regression approaches**, with different variants depending on the subtype (e.g., linear regression for continuous, Poisson regression for counts). Methods applied to categorical outcomes are usually referred to as **classification approaches.**[^1] If you have an ordinal outcome, you can use [**ordinal regression**](https://en.wikipedia.org/wiki/Ordinal_regression). Alternatively, you can treat the outcome as unordered categorical or as continuous (depending on how you code them, i.e., in R as a factor or numeric). There are no rules as to when it is ok to treat an ordinal variable as fully quantitative. It is often done but needs to be justified. You can always treat it as categorical, but then you lose some information, namely the ordering.
+
+[^1]: Logistic regression, which you might be familiar, is used for classification. However, the underlying model predicts a quantitative outcome (a value between 0 and 1 usually interpreted as a probability), which is then binned to make categorical predictions. This is true of many, but not all, classification approaches.
+
+In the machine learning literature, *supervised* learning refers to cases when we have a specific outcome of interest. This kind of data is most common. For data where there is no clear outcome, analysis methods are usually referred to as clustering approaches and are also called *unsupervised* learning methods.
+
+We will discuss and apply some of those methods in more detail when we begin our discussion of analysis methods.
+
+
+# Further resources
+
+If you want to hear someone else's definition and explanation of what data is, you can watch this video by [Jeff Leek](http://jtleek.com/).
+
+::: container
+<iframe class="video" src="https://www.youtube.com/embed/sRArT81TVEM" frameborder="0" allowfullscreen></iframe>
+:::
+

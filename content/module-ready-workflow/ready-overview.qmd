@@ -1,0 +1,35 @@
+---
+title: Reproducible, efficient, automated, and documented (READy) workflows
+subtitle: ""
+---
+
+
+# Overview
+This module covers different aspects and topics related to data analysis projects done in a reproducible, efficient, automated, and documented (READy) manner.
+
+
+
+
+# Learning Objectives
+
+* Know different components of a reproducible, efficient, automated, and documented (READy) workflow and approaches to implementing it. 
+
+
+# Content
+
+The module consists of the following units:
+
+* [Introduction to READy](./ready-introduction/ready-introduction.qmd)
+
+* [Project organization](./ready-organization/ready-organization.qmd)
+
+* [Project management](./ready-project-management/ready-project-management.qmd)
+
+* [Software management](./ready-software-management/ready-software-management.qmd)
+
+* [Project documentation](./ready-documentation/ready-documentation.qmd)
+
+* [Tools for a READy workflow](./ready-tools/ready-tools.qmd)
+
+* [Open research](./ready-open/ready-open.qmd)
+

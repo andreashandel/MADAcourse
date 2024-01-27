@@ -38,10 +38,8 @@ format:
       sidebar-width: 300px # widens the sidebar so most module names fit on one line
       body-width: 900px # widens body content
       
-# lightbox extension
-# https://github.com/quarto-ext/lightbox
-filters:
-  - lightbox
+# lightbox figures
+# https://quarto.org/docs/output-formats/html-lightbox-figures.html
 lightbox:
   desc-position: right  # position of description
   match: auto # give all images lightbox treatment
@@ -105,39 +103,95 @@ website:
                 file: content/module-intro-tools/tools-github-introduction.qmd
               - text: "GitHub and R Workflow"
                 file: content/module-intro-tools/tools-github-r-workflow.qmd
-              - text: "Reproducibility, Quarto & Co"
-                file: content/module-intro-tools/tools-reproducibility.qmd
+              - text: "Quarto & Co"
+                file: content/module-intro-tools/tools-quarto.qmd
               - text: "AI Tools"
                 file: content/module-intro-tools/tools-ai.qmd
               - text: "Reference Management"
                 file: content/module-intro-tools/tools-reference-management.qmd
               - text: "Guidance and Tips for R/RStudio/GitHub"
                 file: content/module-intro-tools/tools-tips-guidance.qmd
-          - section: "2. Data Analysis Introduction"
+          - section: "2A. Data Analysis Introduction"
             contents:
               - text: "Motivating Examples"
                 file: content/module-data-analysis/data-analysis-motivation.qmd
               - text: "Data Analysis Overview"
                 file: content/module-data-analysis/data-analysis-overview.qmd     
-              - text: "Data Analysis Structure"
-                file: content/module-data-analysis/data-analysis-structure.qmd     
+          - section: "2B. READy workflows"
+            contents:
+              - text: "READy workflows overview"
+                file: content/module-ready-workflow/ready-overview.qmd
+              - text: "READy introduction"
+                file: content/module-ready-workflow/ready-introduction/ready-introduction.qmd     
+              - text: "Project organization"
+                file: content/module-ready-workflow/ready-organization/ready-organization.qmd     
+              - text: "Project management"
+                file: content/module-ready-workflow/ready-project-management/ready-project-management.qmd     
+              - text: "Software management"
+                file: content/module-ready-workflow/ready-software-management/ready-software-management.qmd     
+              - text: "Project documentation"
+                file: content/module-ready-workflow/ready-documentation/ready-documentation.qmd     
+              - text: "Tools for a READy workflow"
+                file: content/module-ready-workflow/ready-tools/ready-tools.qmd     
+              - text: "Open research"
+                file: content/module-ready-workflow/ready-open/ready-open.qmd     
           - section: "3. R Coding Basics"
             contents:
               - text: "R Coding Basics"
                 file: content/module-coding-basics/rcoding-basics.qmd     
               - text: "Tidyverse and Friends"
                 file: content/module-coding-basics/rcoding-tidyverse.qmd     
-          - section: "4. Contemplating, Finding and Wrangling Data"
+          - section: "4A. All about Data"
             contents:
-              - text: "Data Types"
-                file: content/module-data-intro/data-types.qmd     
-              - text: "Finding Data"
-                file: content/module-data-intro/data-finding.qmd     
-              - text: "Making Data"
-                file: content/module-data-intro/data-generation.qmd     
-              - text: "Data Wrangling"
-                file: content/module-data-intro/data-wrangling.qmd     
-          - section: "5. Presenting Data and Results"
+              - text: "Data Overview"
+                file: content/module-data/data-overview.qmd  
+              - text: Basic data types
+                file: content/module-data/data-types-basic/data-types-basic.qmd
+              - text: Complex data types
+                file: content/module-data/data-types-complex/data-types-complex.qmd
+              - text: Data storage formats
+                file: content//module-data/data-storage-formats/data-storage-formats.qmd
+              - text: Data formats in R
+                file: content//module-data/data-formats-r/data-formats-r.qmd
+              - text: The data generation process
+                file: content//module-data/data-generation-process/data-generation-process.qmd
+          - section: "4B. Synthetic Data"
+            contents:
+             - text: "Synthetic Data Overview"
+               file: content/module-synthetic-data/synthetic-data-overview.qmd  
+             - text: "Introduction and Motivation"
+               file: content/module-synthetic-data/synthetic-data-introduction/synthetic-data-introduction.qmd
+             - text: "Creating new data"
+               file: content/module-synthetic-data/synthetic-data-new-r/synthetic-data-new-r.qmd
+             - text: "Creating new data based on existing data"
+               file: content/module-synthetic-data/synthetic-data-new-existing-r/synthetic-data-new-existing-r.qmd
+             - text: "Scrambling existing data"
+               file: content/module-synthetic-data/synthetic-data-existing-r/synthetic-data-existing-r.qmd
+             - text: "R packages for data creation"
+               file: content/module-synthetic-data/synthetic-data-r-packages/synthetic-data-r-packages.qmd
+             - text: "Use synthetic data with AI tools"
+               file: content/module-synthetic-data/synthetic-data-ai-tools-r/synthetic-data-ai-tools-r.qmd
+             - text: "Use synthetic data to test models"
+               file: content/module-synthetic-data/synthetic-data-model-testing-r/synthetic-data-model-testing-r.qmd
+          - section: "5. Data Processing"
+            contents:
+             - text: "Data Processing Overview"
+               file: content/module-data-processing/data-processing-overview.qmd  
+             - text: "Data Processing Introduction"
+               file: content/module-data-processing/data-processing-introduction/data-processing-introduction.qmd
+             - text: "Data loading"
+               file: content/module-data-processing/data-loading/data-loading.qmd
+             - text: "Dealing with missing data"
+               file: content/module-data-processing/missing-data/missing-data.qmd
+             # - text: "Dealing with censored data"
+             #   file: content/module-data-processing/censored-data/censored-data.qmd
+             - text: "Dealing with outliers"
+               file: content/module-data-processing/outliers/outliers.qmd
+             - text: "Creating new data/variables"
+               file: content/module-data-processing/feature-engineering/feature-engineering.qmd
+             - text: "Merging data"
+               file: content/module-data-processing//merging-data/merging-data.qmd
+          - section: "6. Presenting Data and Results"
             contents:
              - text: "Presenting Results Overview"
                file: content/module-data-presentation/presenting-results-overview.qmd     
@@ -145,18 +199,16 @@ website:
                file: content/module-data-presentation/visualization-overview.qmd     
              - text: "Visualization in R"
                file: content/module-data-presentation/visualization-in-r.qmd     
-            #  - text: "Tables in R"
-            #    file: content/module-data-presentation/Tables-in-R.qmd     
-          - section: "6. Data Exploration"
-            contents:
-             - text: "Exploring data"
-               file: content/module-data-exploration/data-exploration.qmd     
+             - text: "Tables in R"
+               file: content/module-data-presentation/tables-in-r.qmd
           - section: "7. Statistical Analysis Overview"
             contents:
              - text: "Statistical Analysis Introduction"
                file: content/module-stats-overview/statistical-analysis-introduction.qmd     
              - text: "Some Statistical Model Fitting Terminology"
                file: content/module-stats-overview/statistical-terminology.qmd     
+             - text: "Descriptive and preliminary analysis"
+               file: content/module-stats-overview/descriptive-analysis.qmd     
           - section: "8. Fitting Basic Statistical Models"
             contents:
              - text: "Basic Statistical Models"
@@ -209,10 +261,6 @@ website:
             contents:
              - text: "Complete Data Analysis Workflow"
                file: content/module-workflow/complete-data-analysis-workflow.qmd  
-             - text: "More Data and Models"
-               file: content/module-workflow/data-models-not-covered.qmd
-             - text: "Open Science"
-               file: content/module-workflow/open-science.qmd
           - section: "AI"
             contents:
              - text: "AI Overview"
@@ -235,24 +283,7 @@ website:
                file: content/module-ai/ai-analysis-r/ai-analysis-r.qmd  
              - text: "AI Resources"
                file: content/module-ai/ai-resources/ai-resources.qmd  
-          - section: "Synthetic Data"
-            contents:
-             - text: "Synthetic Data Overview"
-               file: content/module-synthetic-data/synthetic-data-overview.qmd  
-             - text: "Introduction and Motivation"
-               file: content/module-synthetic-data/synthetic-data-introduction/synthetic-data-introduction.qmd
-             - text: "Creating new data"
-               file: content/module-synthetic-data/synthetic-data-new-r/synthetic-data-new-r.qmd
-             - text: "Creating new data based on existing data"
-               file: content/module-synthetic-data/synthetic-data-new-existing-r/synthetic-data-new-existing-r.qmd
-             - text: "Scrambling existing data"
-               file: content/module-synthetic-data/synthetic-data-existing-r/synthetic-data-existing-r.qmd
-             - text: "R packages for data creation"
-               file: content/module-synthetic-data/synthetic-data-r-packages/synthetic-data-r-packages.qmd
-             - text: "Use synthetic data with AI tools"
-               file: content/module-synthetic-data/synthetic-data-ai-tools-r/synthetic-data-ai-tools-r.qmd
-             - text: "Use synthetic data to test models"
-               file: content/module-synthetic-data/synthetic-data-model-testing-r/synthetic-data-model-testing-r.qmd
+
 
       - title: "Assessments"
         contents:
@@ -264,12 +295,12 @@ website:
               file: content/module-data-analysis/assessment-data-analysis.qmd
             - text: "3. R Coding Basics"
               file: content/module-coding-basics/assessment-coding.qmd
-            - text: "4. Contemplating, Finding and Wrangling Data"
-              file: content/module-data-intro/assessment-data-finding-wrangling.qmd
-            - text: "5. Presenting Data and Results"
+            - text: "4. All about Data"
+              file: content/module-data/assessment-data.qmd
+            - text: "5. Processing Data"
+              file: content/module-data-processing/assessment-data-processing.qmd
+            - text: "6. Presenting Data and Results"
               file: content/module-data-presentation/assessment-presenting-results.qmd
-            - text: "6. Data Exploration"
-              file: content/module-data-exploration/assessment-exploration.qmd
             - text: "7. Statistical Analysis Overview"
               file: content/module-stats-overview/assessment-statistical-analysis.qmd
             - text: "8. Fitting Basic Statistical Models"

@@ -1,0 +1,33 @@
+---
+title: Processing data 
+subtitle: ""
+---
+
+
+# Overview
+While statistical analysis is important and cool, you will spend the majority of time with your data in the pre-analysis stages. 
+
+Estimates are that for any real-world analysis, up to 80% is spent getting the data into the right stage to do the actual statistical model fitting. This module focuses on those 80%.
+
+
+# Learning Objectives
+
+* Be familiar with the concept of data wrangling.
+* Know what to do with missing data.
+* Know how to handle outliers.
+* Be aware of feature engineering.
+
+# Content
+
+The module consists of the following units:
+
+* [Data processing introduction](./data-processing-introduction/data-processing-introduction.qmd)
+* [Data loading](./data-loading/data-loading.qmd)
+* [Dealing with missing data](./missing-data/missing-data.qmd)
+* [Dealing with outliers](./outliers/outliers.qmd)
+<!-- * [Dealing with censored data](./censored-data/censored-data.qmd) -->
+* [Creating new data/variables](./feature-engineering/feature-engineering.qmd)
+* [Merging data](./merging-data/merging-data.qmd)
+
+<!-- * [Dealing with censored data]() -->
+

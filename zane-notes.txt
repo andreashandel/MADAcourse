@@ -1,0 +1,25 @@
+4b
+
+* In general though, I think the code sections in this part might be quite difficult for some of the students in the class to understand with their current level of R knowledge. I think it ideally needs a more detailed explaination at least one time of (e.g. in the "creating new data" module) what you're doing when you do that sampling stuff, and how that generates data that follows certain assumptions. This comes after the model on documentation too :).
+
+* Your code also regularly goes over the 80 character margin so has to side scroll in the web viewer, which I find annoying, but I know that is one of my personal hobgoblins that does not affect everyone else the same way.
+
+* You seem to have a lot of code in here that looks like purrr::map_int(code_that_makes_a_vector, as.integer). Since as.integer() is vectorized, you don't need that purrr part, it just makes it harder to read.
+
+* Similar in "creating new data based on existing data" you say some stuff like "looks like a normal distribution and uniform distribution should work well" which *I* think is a reasonable statement and I know what you mean. But I think for this class you really need to slow down and add some more explanations like you are explaining to a kid. A not-insignificant group of these students probably heard of a normal distribution vaguely but never heard of a uniform distribution before. I know it's a grad class so we should expect them to be able to google it and understand, but I don't think so.
+
+* I know I just wrote a mini rant about taking things slow, but I also think somewhere it's worth mentioning at least that you can generate data based on existing data using these kind of distributional fits and assumptions, but you can also do it nonparametrically, e.g. MICE-RF which is pretty old now, or the super flashy and exciting GANs. I know you mention mice in the tools page, but there's no mention of nonparametric methods in the explanation part.
+
+* Also I think any time you get that ggplot message about histogram bins, you need to set the histogram bin number or width, we don't want to accidentally promote bad data vis practices in the course materials. (ggplot is especially bad for this cause they randomly decided on 30 where base R histograms at least try to guess a good binwidth, using even their crappy rule is better than always 30.) I also think any time the position isn't set to "identity" for a histogram it is at best confusing and at worst misleading...I think it is likely that some students we've had/have find it difficult to interpret a non-multicolored histogram.
+
+* At some point we should likely add alt text to the figures in this section. I didn't do it yet because I think it is a bit of work that is largely performative since we've never had any students ask about it, but we never know who from the internet is going to look at the materials I guess.
+
+* Data scrambling section: this one is a useless comment that doesn't matter at all, but I thought I'd say it anyways :). It is technically faster and better to sample the indices instead of the data frame column, and can be done in the sample amount of code:
+dat_sc[,n] <- dat[sample.int(Nobs, size = Nobs, replace = FALSE), n]
+or whatever you have to change to get that to work. Of course for this code,
+that literally makes no difference at all, which is why this is an annoying
+and pedantic comment.
+
+* In the further resources on scrambling data, you say synthpop might be useful -- I agree with your comment in that footer than synthpop should probably be mentioned in the generating new data from existing data page instead, because it does that instead of scrambling.
+
+* Model testing module: I know this is before the metrics page, so I don't think any metrics are important. But I think a plot that shows the actual simulated trend and the RF predictions (maybe as red points) on top would be more helpful for understanding that the VIP. Also, further resources section is blank, you typically put in "Nothing yet" as a placeholder.

@@ -1,0 +1,55 @@
+---
+title: Project documentation
+subtitle: ""
+---
+
+# Overview
+
+For this unit, we will discuss why and how to document the different parts of your project.
+
+
+# Learning Objectives
+
+- Know why documenting everything is essential.
+- Know ways to efficiently document different aspects of your project.
+
+
+# Introduction
+
+If you do not explain the why, what and how of your project, it is essentially impossible for someone else to understand what's going on. They might be able to technically reproduce what you did by running code in the order you specified, but they will unlikely be able to understand what' going on in enough detail to be useful to them.
+
+Thus, any practically meaningful reproducibility attempt requires ample documentation.
+
+
+# Document your project, folder and files 
+
+Together with a good structure for your project, you should provide documentation to orient users. The easiest way is to have readme text files. Plain `.txt` text files or simple`.md` Markdown files are best. There should be one for the overall project, and then as suitable for individual folders. Those files don't need to be too detailed, but should explain what is to be found where, and what different files contain/do.
+
+An important bit is to keep those readme files updated. If your documentation talks about files and folders that don't exist because you renamed or deleted them, it is confusing. So if you do major (or even minor) updates, take a few seconds to update your readme files too. Definitely make sure they are up to date before you share it with others, e.g. collaborators or reviewers or readers.
+
+# Document your process
+
+In addition to explaining your structure and the basics of your files, you should document what you are doing. This is in some sense the equivalent to a lab notebook. Some of this information might later make it into a finished product, but most of it might not. An ideal format for documenting is text that can be formatted somewhat, such as the markdown format. Quarto is excellent since it allows you to combine your code with documentation in a seamless manner.
+
+This documentation should explain why you are doing what you are doing, and what you are thinking as you look at results, plots, etc. 
+
+
+# Document your code
+
+There is overlap between documenting your process and your code, but they are not the same. For instance you might write some commentary explaining that you deal with missing values by removing a few variables that contain mostly missing values, and for the remaining variables, remove any observations that has at least one missing. This would be the general explanation. Then you write code to do that. It is generally useful to document each line of code to explain what it does. This might seem like too much. But trust me, it helps. Code can get complicated, something that was obvious to you when you wrote it will not be in a few weeks, or will not be clear to someone else. Therefore, a good rule of thumb is that your code should be 50% or more comments. Each line of code can use a comment, and then have additional blocks of comment to explain what certain chunks of code are doing.
+
+There is almost never too much documentation in code, but there certainly often is not enough.
+
+Commenting also helps you think clearly about what you are doing. If you end up with code that might not have enough comments, you could also try to ask some AI tool to add comments for you. 
+
+
+# Summary
+
+Document everything. A lot. Others and your future self will thank you. Remember to documentation **how** your code works and also **why** you wrote the code you did.
+
+
+# Further Resources
+
+* The organization *Write the Docs* has a [website](https://www.writethedocs.org/) with many resources, including a brief [guide for beginners](https://www.writethedocs.org/guide/writing/beginners-guide-to-docs/).
+* Google's [developer documentation style guide](https://developers.google.com/style) is a very comprehensive free resource.
+* You might be interested in the idea of **documentation driven development (DDD)** (see i.a. [this blog post](https://unicorn-utterances.com/posts/documentation-driven-development)), which is the idea that you should write down what your code will do, how a user will do each task, and how the code will internally do what it is supposed to *before you even write the code down*. It is a somewhat trendy philosophy that is maybe not 100% practical but will result in good (and often revised) documentation, by forcing you to do the thinking critically about how your code should work instead of just trying things.

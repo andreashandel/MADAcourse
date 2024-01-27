@@ -1,0 +1,91 @@
+---
+title: Project organization
+subtitle: ""
+---
+
+# Overview
+
+For this unit, we will discuss general principles for organizing your project in a READy way.
+
+
+# Learning Objectives
+
+- Be able to set up a structure for a READy analysis.
+
+
+# Introduction
+
+While there is no single best way of structuring your project, there are many bad ways that make your work much harder. A bit of thought at the beginning when you set things up will make it much easier for you and collaborators once you get going. The following are some general guidelines for setting up your project that can help make your analysis as smooth and efficient as possible.
+
+
+## Project structure
+
+You want to set up your analysis in such a way that it makes sense to you and others and allows for a good and efficient workflow. The main components of your analysis will be data, code, results (tables, figures, etc.) and products (reports, interactive apps, slides, etc.). 
+
+Your project could be a Github repository --- [a good idea](../ready-project-management/ready-project-management.qmd) --- or not. If you use a software that supports the concept of projects, you should use it. For instance in `R`, R projects are defined by having a folder structure with an `.Rproj` file at the top level. Most of the time making use of such project support is recommended.
+
+By having any project you work on as an `R` project, relative paths will always be relative to the main directory in which your `.Rproj` file is located. As long as someone loads the project by clicking on the `.Rproj` file, and you only use relative paths, things should work well on any computer. 
+
+
+
+
+## Folder structure
+
+In general, the different components of your project should be mapped to folders inside your main project folder.
+
+Inside your folders, you can have subfolders, e.g., separate folders for figures and tables. Or you could have subfolders for different types of analyses. There is no one correct way to set up things, but you should think of a logical and consistent structure before you start your project.
+
+
+## File structure 
+
+You will want different files that do specific tasks. You'll likely have files that contain data in raw and processed form, scripts with code (such as `.R` files), scripts with results (such as Quarto `.qmd` files), files that contain images, files that contain the content for tables, etc.
+
+The number and type of scripts and other files depends on your project and your preference. In general, keeping things modular is useful. If you had one file that did the analysis and created a report, that would be ok for a small project. But then if you wanted to make a set of slides based on your results, you'll have to find a way to include the code in those slides. It would be easier to have code produce and save results such as figures, which can then be included in both a report/manuscript and slides.
+
+Another consideration is computational time. For simple projects, your code will likely run fast. Once your analyses or data become large, parts of your code might run very long. You will then want to structure your scripts such that the computationally-intensive part is only run when absolutely needed. You definitely want to avoid a scenario where you have to wait minutes or hours as you play around with a figure to make it look the way you want. A good way to split this is to have files/code that does the various pieces (cleaning, processing, exploratory analysis, etc.) that happen before your main analysis (and usually run fairly quickly), then have one or multiple scripts that perform the - potentially computationally expensive - main analysis and save the outcomes from that analysis, and then further scripts that take these results and turn them into good-looking figures and tables. Finally, you'll have one or a few files that produce manuscripts or reports in an automated fashion by pulling in the different results you generated. 
+
+
+
+## Setting file and folder paths
+
+It is important to ensure that everything can be reproduced not just on your computer, but on the systems of others.
+
+A common problem that prevents others to reproduce your work is the use of paths that are specific to only your computer. Do not set paths or load files from paths that only exist on your machine! Instead, you should only use *relative* paths. A *relative* path is a file path that is relative to some directory. 
+
+As an example, loading a file from location `C:/myusername/mydesktop/myproject/data/rawdata.csv` is a bad idea, because someone else will not have that setup. They will have a different user name, they might be on a Mac or Linux machine, they might have different names for their hard drives, etc. 
+
+Instead, you should load data relative to your main project directory. So for instance reference `data/rawdata.csv` and use a tool that automatically looks for that folder inside your project folder (in this example, `myproject`). With this, as long as someone else has a copy of your project and its subfolders, everything should work, no matter where they store your project. 
+
+For nice video tutorial, see this [video on relative versus absolute paths](https://youtu.be/Onq0ue5o_uo?si=Ul98wuxnhDntr5Hr). The setting for this is development of websites, instead of data analysis. So he talks about `html` files, but that doesn't really matter, everything that is explained about the paths applies in general.
+
+
+## `here` R package
+
+The [`here` R package](https://here.r-lib.org/) and its associated `here()` command in R is very useful for working with paths and loading/saving files.  It works nicely with R projects. If you use the `here` command to load a file, it always looks for the file relative to the main project directory. So you can load a file with a command like `dat <- read.csv(here::here('data','rawdata,csv'))`. [Malcolm Barrett's blog post](https://malco.io/articles/2018-11-05-why-should-i-use-the-here-package-when-i-m-already-using-projects) is a great, short explanation of why one should use the `here` package and how to do it.
+
+
+# Summary
+
+The detailed setup for your project will depend on the details of your project, the types of data, the analyses you plan on doing, and the software tools you will be using.  
+
+Figure out what setup works best for you and your specific scenario. However you set up the details, make sure there is a logical structure that is easily understandable/reproducible for a reader (or your colleague, PI, your future self,...). Also make sure everything is set up in a way that it does not depend on the specifics of your local computer. 
+
+::: emphasis
+And one more time: Do NOT use absolute paths when you load/save files. For R, use R projects and the `here` package to load/save files relative to the main project directory (which is the folder that contains the `.Rproj` file.) 
+
+And beware of having R projects inside projects. That's a bad idea and can lead to problems.
+:::
+
+
+# Further Resources
+
+
+-   For some more useful information on structuring your project see [What They Forgot to Teach You About R](https://rstats.wtf/), which is a collection of notes - some more complete than others - by [Jenny Bryan](https://jennybryan.org/) and co-authors. Jenny Brian also has [a shorter blog post](https://www.tidyverse.org/blog/2017/12/workflow-vs-script/) on more or less the same topic.
+
+- I created a public Github repository called [dataanalyis-template](https://github.com/andreashandel/dataanalysis-template) which is meant as a template for doing a data analysis project. It has different folders for organizing your project. Various `README` files are provided to explain what each folder should contain. The template also contains several example files to show how the whole project workflow (or any data analysis workflow for that matter) can work. This is, of course, only one way to structure things. You are welcome to figure out your own setup and structure. 
+
+
+::: note
+While there is no substitute for clear thinking and being careful in your analysis, things such as having a clear structure can help with this. The importance of good structure to help you achieve optimal results is well appreciated in many contexts outside of data analysis. For a short discussion of this, see [Seth Godin's article](https://seths.blog/2018/11/quality-and-effort/). For a more in-depth discussion of this idea, the [*Checklist Manifesto* by Atul Gawande](http://atulgawande.com/book/the-checklist-manifesto/) is a great read.
+:::
+

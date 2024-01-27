@@ -2,7 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
+<<<<<<< HEAD
 <meta name="generator" content="quarto-1.4.545">
+=======
+<meta name="generator" content="quarto-1.4.549">
+>>>>>>> content-reorg
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -31,8 +35,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../content/module-coding-basics/rcoding-basics.html" rel="next">
-<link href="../../content/module-data-analysis/data-analysis-overview.html" rel="prev">
 <link href="../../media/MADAlogo.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -74,7 +76,7 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-sidebar docked nav-fixed fullcontent">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -99,7 +101,11 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">General Information</span></a>
   </li>  
   <li class="nav-item">
+<<<<<<< HEAD
     <a class="nav-link active" href="../../content/content-overview.html" aria-current="page"> 
+=======
+    <a class="nav-link" href="../../content/content-overview.html"> 
+>>>>>>> content-reorg
 <span class="menu-text">Content</span></a>
   </li>  
   <li class="nav-item">
@@ -127,6 +133,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+<<<<<<< HEAD
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -137,10 +144,13 @@ ul.task-list li input[type="checkbox"] {
         </a>
     </div>
   </nav>
+=======
+>>>>>>> content-reorg
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+<<<<<<< HEAD
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
@@ -697,17 +707,15 @@ ul.task-list li input[type="checkbox"] {
     </div>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+=======
+>>>>>>> content-reorg
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
-  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
-  <li><a href="#overall-project-structure" id="toc-overall-project-structure" class="nav-link" data-scroll-target="#overall-project-structure">Overall project structure</a></li>
-  <li><a href="#how-to-structure-your-analysis" id="toc-how-to-structure-your-analysis" class="nav-link" data-scroll-target="#how-to-structure-your-analysis">How to structure your analysis</a></li>
-  <li><a href="#setting-paths" id="toc-setting-paths" class="nav-link" data-scroll-target="#setting-paths">Setting paths</a></li>
+  <li><a href="#setting-paths" id="toc-setting-paths" class="nav-link active" data-scroll-target="#setting-paths">Setting paths</a></li>
   <li><a href="#further-resources" id="toc-further-resources" class="nav-link" data-scroll-target="#further-resources">Further Resources</a></li>
   </ul>
 </nav>
@@ -735,7 +743,11 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
+<<<<<<< HEAD
       <p class="date-modified">2024-01-21</p>
+=======
+      <p class="date-modified">2024-01-24</p>
+>>>>>>> content-reorg
     </div>
   </div>
     
@@ -746,6 +758,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<<<<<<< HEAD
 <section id="overview" class="level1">
 <h1>Overview</h1>
 <p>In this unit, we’ll discuss how to structure a data analysis to make it as efficient as possible.</p>
@@ -767,28 +780,13 @@ ul.task-list li input[type="checkbox"] {
 <p>Another consideration is computational time. For simple projects, your code will likely run fast. Once your analysis or data become large, parts of your code might run very long. You will then want to structure your scripts such that the computationally-intensive part is only run when absolutely needed. You definitely want to avoid a scenario where you have to wait minutes or hours as you play around with a figure to make it look the way you want.</p>
 <p>As an example, and hopefully useful guide for your class project, I created a public Github repository called <a href="https://github.com/andreashandel/dataanalysis-template">dataanalyis-template</a> which is meant as a template for doing a data analysis project. It has different folders for organizing your project. Various <code>README</code> files are provided to explain what each folder should contain. The template also contains several example files to show how the whole project workflow (or any data analysis workflow for that matter) can work. This is, of course, only one way to structure things. You are welcome to figure out your own setup and structure. Overall, figure out what setup works best for you, while keeping in mind that it should be easily understandable/reproducible for a reader (or your colleague, PI,…). You’ll be exploring this template as part of the exercise.</p>
 </section>
+=======
+>>>>>>> content-reorg
 <section id="setting-paths" class="level1">
 <h1>Setting paths</h1>
-<p>One problem that I encounter <strong>every time</strong> I teach a course like this is the use of paths that are specific only to the user’s computer and do not work on someone else’s machine. Do not set paths or load files from paths that only exist on your machine! Instead, you should only use <em>relative</em> paths. A <em>relative</em> path is a file path that is relative to some directory. So what should <strong>not</strong> be part of your code is the command <code>setwd()</code> (because your working directory is likely different from everyone else) or anything that involves a full path name (e.g.&nbsp;<code>C:/myusername/mydesktop/myfolder/</code>) since nobody you share the code with will have that folder.</p>
-<p>For a short video tutorial, see this <a href="https://www.youtube.com/watch?v=fe6GA200dks">video on relative paths</a>. Note that the video is several years old and he doesn’t use R Projects. <strong>I strongly recommend using R Projects.</strong> By having any project you work on as an R project, relative paths will always be relative to the main directory in which your <code>.Rproj</code> file is located. As long as someone loads the project by clicking on the <code>.Rproj</code> file, and you only use relative paths, things should work well on any computer. While R projects solve most of the problem, some issues remain, e.g.&nbsp;differences of how relative paths are treated in Rmd versus R files.</p>
-<p>To solve those issues, you should use the <a href="https://github.com/r-lib/here"><code>here</code> package</a>, together with R Projects. It helps solve issues with relative paths being dealt with differently in an Rmd file versus an R file versus the console. <a href="https://malco.io/articles/2018-11-05-why-should-i-use-the-here-package-when-i-m-already-using-projects">Malcolm Barrett’s blog post</a> is a great, short explanation of why one should use the <code>here</code> package and how to do it.</p>
-<p>However you do things, make sure that for your exercises and especially final project, someone else can clone your repository (or otherwise copy your project if it’s not on Github) to their computer and run everything, without having to have exactly your setup of folders.</p>
-<div class="emphasis">
-<p>And one more time: Do NOT use absolute paths when you load/save files. For R, use R projects and the <code>here</code> package to load/save files relative to the main project directory (which is the folder that contains the <code>.Rproj</code> file.)</p>
-<p>And beware of having R projects inside projects. That’s a bad idea and can lead to problems.</p>
-</div>
 </section>
 <section id="further-resources" class="level1">
 <h1>Further Resources</h1>
-<p>Several efforts to develop further tools to help improve reproducible research within the R system exist. The few I know about are listed below. I have not tried to use any of them, but feel free to try/use them as part of this class.</p>
-<ul>
-<li>For some more useful information on structuring your project such that it has a good, reproducible workflow, see chapters 1-3 in this <a href="https://whattheyforgot.org/">collection of (incomplete) notes</a> by <a href="https://jennybryan.org/">Jenny Bryan</a> and <a href="https://www.jimhester.com/">Jim Hester</a>.</li>
-<li>The <a href="https://github.com/nikkrieger/projects"><code>projects</code> R package</a> - meant to provide a framework for rather sophisticated projects.</li>
-<li><a href="https://ropensci.org/commcalls/2019-07-30/">R Open Science Reproducibility Discussion</a> - website with links to various resources related to reproducibility in R.</li>
-</ul>
-<div class="note">
-<p>While there is no substitute for clear thinking and being careful in your analysis, things such as having a clear structure can help with this. The importance of good structure to help you achieve optimal results is well appreciated in many contexts. For a short discussion of this, see <a href="https://seths.blog/2018/11/quality-and-effort/">Seth Godin’s article</a>. For a more in-depth discussion of this idea, the <a href="http://atulgawande.com/book/the-checklist-manifesto/"><em>Checklist Manifesto</em> by Atul Gawande</a> is a great read.</p>
-</div>
 
 
 </section>
@@ -1199,6 +1197,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<<<<<<< HEAD
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../../content/module-data-analysis/data-analysis-overview.html" class="pagination-link  aria-label=" data="" analysis="" overview"="">
@@ -1211,6 +1210,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>
   </div>
 </nav>
+=======
+>>>>>>> content-reorg
 </div> <!-- /content -->
 
 

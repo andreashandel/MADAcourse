@@ -1,0 +1,63 @@
+---
+title: Dealing with outliers
+subtitle: ""
+---
+
+# Overview
+
+For this unit, we will discuss how to deal with outliers and generally 'strange' values in your data.
+
+
+# Learning Objectives
+
+- Be familiar with the concept of outliers.
+- Know what to do with outliers and other strange values. 
+
+
+# Introduction
+
+It is not uncommon to have values in your data that are *strange*. It could be that someone at data entry made a mistake. Or your codebook doesn't properly explain the entries. Other times, it could be *real* data that is just an outlier. It can be hard to decide if a value is *strange but real* or a mistake. 
+
+Dealing with such entries is a judgment call. The best approach is to have a pre-written analysis plan that explains exactly what to do in any such cases. Outside of clinical trials seeking FDA approval, that pretty much never happens. We usually have to decide what to do with strange entries when we run into them. Some good rules are to be consistent, fully document and explain what you do, and if you are able, do it *both ways* (e.g. do the analysis with the values as they are, and then again with them removed). Of course *both ways* can quickly turn into *a million different ways* and at some point, you probably have to stop. However, trying it more than one way can be reassuring if you get pretty much the same answer each time. If you do not get similar results, then you have to be more careful and should describe in your report/paper in detail why and how different approaches to your data cleaning lead to different results.
+
+
+# Finding outliers
+
+There is not clear definition of what an outlier is. Generally speaking, it's a value that is far away from the majority of the values. If one assumed a distribution for the data, one could define an outlier statistically, e.g., every value that is some standard deviations away from the mean could be considered an outlier. In practice, we generally don't know the distribution from which the data is a sample, and defining any kind of cut-off for outliers is also fairly arbitrary. Therefore, a more case-by-case approach is usually best.
+
+A great tool to find outliers is with figures. If you plot the raw data, and some values are far away from others, they deserve further inspection and might be considered outliers.
+
+Once you have identified outliers, you should try to determine if you think that strange value is obviously (or at least very likely) a wrong entry, or if it could be real, just unusual. Based on this, you might deal with the value differently. Some approaches for dealing with outliers are described next.
+
+
+# Removing outliers
+
+One option is to remove any observation that contains a variable with an outlier. This is usually straightfoward. It is in some sense similar to removing observations with missing values. The problem is that this leads to less data you can analyze, and if the outliers were real - just strange - data, you might get biased estimates. 
+
+
+
+# Replacing outliers
+
+Instead of removing data with outliers, you could try to replace the outliers with something that makes more sense. This is similar to imputation for missing data, and you can use the same approaches.
+
+
+
+# Modeling with outliers
+
+You can also decide to leave the outliers in the data. You can run your standard models. However, some common models will give the outliers a lot of importance, and therefore a few outliers can skew your results. In this case, you can use statistical methods that are not influenced by outliers as much. Those are sometimes called robust methods. We'll revisit some of those when we get to the statistical analysis and modeling modules.
+
+
+
+# Summary 
+
+It is likely that your data has some _strange values_ (outliers). Take a close look at them, then come up with a plan. If possible, try things multiple ways (also called doing a sensitivity analysis) and report results from the different versions you tried. Hopefully, you'll find that how you deal with outliers doesn't matter much.
+
+
+
+# Further Resources
+
+* [Finney 2012](https://www.tandfonline.com/doi/pdf/10.1198/000313006X150182) provides a nice further discussion regarding outliers. It's very non-technical (no equations) and easy to read.
+
+
+
+

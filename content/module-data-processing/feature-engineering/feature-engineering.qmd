@@ -1,0 +1,51 @@
+---
+title: Feature engineering
+subtitle: ""
+---
+
+# Overview
+
+For this unit, we will discuss the idea of creating new variables from existing ones. This is often called _Feature Engineering_.
+
+
+# Learning Objectives
+
+- Be familiar with the concept of feature engineering.
+- Know ways to do feature engineering.
+
+
+# Introduction
+
+At times, it might be useful to process your variables into new ones. If those new variables are created in a smart way, they can potentially improve your model performance. 
+Here, we discuss a few ways you might want to process your data.
+
+
+
+# Combining categories
+
+At times, you might have categorical variables with many categories, and a lot of them have only a few observations. This can make the modeling process problematic. In that case, you might want to consider combining certain categories into larger ones. For instance, if you have a variable for jobs which has many different values, it might make sense to group the jobs into categories (e.g., manual labor, clerical,..). You need to report what you did so readers can decide if this is a reasonable approach. Sometimes you might also want to group all minor categories into an "other" category. For instance if you have a dataset of nicotine users, your main categories might be cigarettes, cigars, chewing, vaping and everything else (whatever that might be, I don't know) could be "other". Note that maybe the way I'm grouping things here is really dumb. That shows that I'm not an expert on smoking. You can let the data decide the grouping by looking at numbers in each category, but there is no substitute for some level of expert topical knowledge.
+
+
+# Creating new variables I
+
+Sometimes, it makes sense to create entirely new variables. Say you have height and weight of individuals. You can use those to create a new variable, BMI = weight / height^2 (in the metric system). It might then make sense to use this new variable, BMI, in your model, instead of weight and height (if you use all, you'll get strong correlations and model fit will probably be not as good). The creation of new variables in this manner is guided by your expert knowledge of the system.
+
+
+# Creating new variables II
+
+In addition to the expert-guided creation of new variables, it is also possible to use statistical approaches to come up with variables. This is a common approach in areas where there are many variables, e.g., in the -omics field where one often has 100s or 1000s of measurements, such as genes, for potentially not a lot of individuals. In those cases, approaches such as Principal Component Analysis can be useful. We'll get to this in a later module. 
+
+
+
+# Summary 
+
+It is not always necessary to do much feature engineering. But sometimes it can help with the analysis and modeling task and it is worth at least thinking about it, even if you end up deciding that you don't need it for your project.
+
+
+
+# Further Resources
+
+* The book [Feature Engineering and Selection: A Practical Approach for Predictive Models](https://bookdown.org/max/FES/) covers this whole topic in a lot more detail. It uses R.
+
+
+

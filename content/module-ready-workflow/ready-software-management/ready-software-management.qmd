@@ -1,0 +1,78 @@
+---
+title: Software management
+subtitle: ""
+---
+
+# Overview
+
+For this unit, we will discuss ways to make sure your software is managed in such a way that it allows future reproducibility. 
+
+
+# Learning Objectives
+
+- Be familiar with approaches to software management.
+- Know the advantages and disadvantages of different approaches.
+
+
+# Introduction
+
+New versions of software are released regularly. While differences are often minor, sometimes they are not and the software might change enough to make code that previously worked not work anymore --- or produce different results. This breaks reproducibility.
+
+Similarly, software might differ slightly based on the environment where it is run (e.g., Windows or MacOS or Linux). This can again lead to problems with reproducibility. 
+
+The goal of software management is to ensure that someone can fairly easily reproduce your analysis, even if that is several years in the future on a computer and operating system that is different from yours.
+
+There are different approaches to trying to manage software, ranging from more focused to very comprehensive. With that come various levels of complexity, both for the person setting up the software management tools (that would be you as the data analyst) and for the person trying to replicate an analysis (that would be you as consumer of someone else's analysis).
+
+The following briefly discusses some approaches to software management, starting from the more focused and simpler and going to more complex ones. 
+
+
+# R package management
+
+While R itself is fairly stable and rarely changes in a way that would lead to non-working code, _R packages_ tend to change a lot. Authors often improve package functions and in that process sometimes break previously working code. 
+
+To ensure everything is reproducible, you want to make sure someone can run your code with the same versions of R packages that you used originally. This is where the `renv` package comes in.
+
+## R package `renv` 
+The [`renv` package](https://rstudio.github.io/renv/index.html) (renv stands for  **r**eproducible **env**ironments) is a tool that allows you to install all packages you use for a given project as part of that project. It records the packages and exactly which version of the package is used. If you then give your project to someone else, they can install these exact versions of the packages on their machine, and therefore ensure that they are using the same versions you did. 
+
+Note that this only holds for R packages, not R itself. But again, R doesn't change that rapidly, so even if you run something under a newer or older version of R, most of the time it is not much of a problem.
+
+Because reproducibility issues related to outdated packages are quite common, it is a good idea to use `renv` for all your data analysis projects. Once you got the hang of it, it is fairly easy to use. The `renv` website [has a good tutorial](https://rstudio.github.io/renv/articles/renv.html).
+
+
+## `renv` alternatives
+There is a package called `packrat`. It's basically the older version of `renv` and not as good. There is also a package called [`capsule`](https://github.com/milesmcbain/capsule), which is supposed to be an `renv` alternative. I have no experience with it.
+
+Posit (formerly R Studio) has the [Posit package manager](https://packagemanager.posit.co/client/#/), which is an alternative to `renv`. It's more powerful, but also more complex and not free.
+
+There are further, more specialized options. For instance the company Metrum Research Group has a tool called the [Metrum Package Network](https://kb.metworx.com/Users/Managing_R_Packages/r-package-management/). It is also fairly complex and not recommended for individual use.
+
+Basically, at the time of this writing, `renv` is pretty much the only useful option for individuals working on projects and wanting to manage R packages.
+
+
+# Virtual environments and Docker
+
+If you want to go a step further and make sure not just the R packages, but also the version of R and possibly other software components remain consistent, you can use what is often referred to as a virtual environment. Basically, you create a bundle of software that contains "everything" needed to run your code. [Docker](https://www.docker.com/) is such a tool to do that. 
+
+It is possible and recommended to combine `renv` and Docker, see for instance [these instructions on the `renv` website](https://rstudio.github.io/renv/articles/docker.html) or [this tutorial](https://appsilon.com/renv-with-docker/). Here is another, fairly accessible [Docker tutorial for R](https://eliocamp.github.io/codigo-r/en/2021/08/docker-renv/).
+
+Posit has a detailed, but technical [description of Docker for R](https://solutions.posit.co/envs-pkgs/environments/docker/).
+
+Be warned that using Docker can be confusing if you don't have a lot of general computer/IT knowledge. A lot of Docker concepts and commands come from the Unix/Linux world.
+
+Docker is not the only approach to trying to achieve full reproducibility and consistency. Virtual machines are another common approach, and there are different types. [This article](https://aws.amazon.com/compare/the-difference-between-docker-vm/
+) provides a nice comparison and pointers to further reading.  
+
+
+# Summary
+
+Managing your software to make sure everything is reproducible can be tricky. In some settings, e.g. heavily regulated industries such as Pharma or Finance, having fully reproducible and managed software environments is critical. Some type of virtualization or containerization is very common in many companies. For scientists and research projects, a less comprehensive approach is usually fine. 
+
+For any serious research project, you should at minimum manage your packages with a tool such as `renv`. If you want to go the extra step, you can use tools such as `Docker`. They are more comprehensive, but also more complex and potentially harder to use by the end-user.
+
+
+# Further Resources
+
+- The [Rocker project](https://rocker-project.org/) maintains useful Docker images for different R installations.
+

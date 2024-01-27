@@ -1,0 +1,42 @@
+---
+title: Merging data
+subtitle: ""
+---
+
+# Overview
+
+For this unit, we will discuss merging of different data sets.
+
+
+# Learning Objectives
+
+- Be familiar with the idea of merging data.
+- Know how to do merging in R.
+
+
+# Introduction
+
+It is not uncommon that your raw data comes in more than one file. It could be multiple spreadsheets of a single study, or it could be different datasets from different sources (e.g., a dataset on asthma cases combined with a different data source that records air pollution levels). Often, the most interesting questions need to be answered by combining data from different sources. If you have multiple data sets, you will likely need to combine the data.
+
+
+
+# Merging in R
+
+The `dplyr` package has a great set of `_join()` functions that let you do different types of joining of data. 
+
+Often, before you can merge, you might need to reshape the data so the structure of the data you are about to merge is consistent. The [`tidyr` package](https://tidyr.tidyverse.org/) and especially the `pivot_longer()` and `pivot_wider()` functions are very useful for that.
+
+
+
+
+# Summary 
+
+If you have only a single dataset, you generally don't need to merge data.
+
+
+# Further Resources
+
+* For an alternative package that can help with merging, especially large data, see the [`data.table` package](http://r-datatable.com).
+
+
+
