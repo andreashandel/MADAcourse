@@ -926,7 +926,7 @@ window.Quarto = {
 <p>In this unit, we will discuss how to make publication-ready tables of data in <code>R</code>, and when making tables is appropriate (compared to visualizations).</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="../../media/xkcd-every-data-table.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1" title="Some data are best in tables…but that means we have to learn how to make footnotes too."><img src="../../media/xkcd-every-data-table.png" class="img-fluid figure-img" style="width:80.0%" alt="A comic from the website XKCD. It shows a list of years with scribbles beside each year to represent some kind of data. The years 2020 and 2021 both have symbols indicating they are associated with footnotes containign extra explanations. The caption reads 'every data table from now on.'"></a></p>
+<p><a href="../../media/xkcd-every-data-table.png" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1" title="Some data are best in tables…but that means we have to learn how to make footnotes too."><img src="../../media/xkcd-every-data-table.png" class="img-fluid figure-img" style="width:80.0%" alt="A comic from the website XKCD. It shows a list of years with scribbles beside each year to represent some kind of data. The years 2020 and 2021 both have symbols indicating they are associated with footnotes containign extra explanations. The caption reads 'every data table from now on.'"></a></p>
 <figcaption>Some data are best in tables…but that means we have to learn how to make footnotes too.</figcaption>
 </figure>
 </div>
@@ -963,10 +963,10 @@ window.Quarto = {
 </section>
 <section id="tables-with-complex-formats" class="level2">
 <h2 class="anchored" data-anchor-id="tables-with-complex-formats">Tables with complex formats</h2>
-<p>HTML is the most flexible format for generating tables. Any table you can see on the internet is made with HTML (and sometimes CSS and JavaScript). R has many packages for generating HTML tables, including the easy-to-use <a href="https://cran.r-project.org/web/packages/kableExtra/index.html"><code>kableExtra</code></a>, which has multiple resources <a href="https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html">(1)</a> <a href="https://bookdown.org/yihui/rmarkdown-cookbook/kableextra.html">(2)</a> <a href="https://haozhu233.github.io/kableExtra/.">(3)</a> The <code>kableExtra</code> package is basically an extension of <code>kable</code> to have a lot of <code>Extra</code> features for making nicer tables. HTML has the special power to generate <strong>interactive tables</strong> using packages like [<code>DT</code>] and [<code>Reactable</code>].</p>
-<p>If you are using a PDF format (common in math, physics, theoretical statistics and other math-heavy fields), you can write LaTeX code directly in Quarto, which means you can write tables using any of the LaTeX packages you want. The <code>kableExtra</code> package is also <a href="https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_pdf.pdf">specifically compatible with LaTeX</a>.</p>
+<p>HTML is the most flexible format for generating tables. Any table you can see on the internet is made with HTML (and sometimes CSS and JavaScript). R has many packages for generating HTML tables, including the easy-to-use <a href="https://cran.r-project.org/web/packages/kableExtra/index.html"><code>kableExtra</code></a>. The <code>kableExtra</code> package is basically an extension of <code>kable</code> to have a lot of <code>Extra</code> features for making nicer tables. HTML has the special power to generate <strong>interactive tables</strong> using packages like [<code>DT</code>] and [<code>Reactable</code>].</p>
+<p>If you are using a PDF format (common in math, physics, theoretical statistics and other math-heavy fields), you can write LaTeX code directly in Quarto, which means you can write tables using any of the LaTeX packages you want. The <code>kableExtra</code> package is also compatible with LaTeX.</p>
 <p>Word is the most complicated format, and in Epidemiology the most common. Many table packages do not work with Word, or have limited functionality. In my experience, the best package for word output is <a href="https://ardata-fr.github.io/flextable-book/"><code>flextable</code></a>, which was designed by the creator of the <a href="https://cran.r-project.org/web/packages/officer/index.html"><code>officer</code></a> package specifically to work with Word outputs. Any table making package that outputs raw Markdown should be compatible with Word output. Quarto specifically will <strong>attempt to convert any HTML tables into the correct output format</strong>. What this means in real life is that many HTML tables will work in Word output, but if they are too complicated they may not look how you expect, or may not work. As an alternative, I also know several researchers who like <a href="https://hughjonesd.github.io/huxtable/"><code>huxtable</code></a>, although I personally prefer <code>flextable</code>.</p>
-<p>The package <a href="https://dmurdoch.github.io/tables/"><code>tables</code></a> deserves an honorable mention as (one of) the oldest table-making package on CRAN. If you want to generate an HTML, LaTeX, or plain text table, or use a table for further calculations in <code>R</code>, <code>tables</code> can probably do it. However, this package is very old and in my opinion is quite difficult to learn and quite clunky to use – the interface is (unsurprinsingly) quite old-fashioned and different from tidyverse-style code. A relatively new addition to the tablemaking scene is <a href="[https://vincentarelbundock.github.io/tinytable/]"><code>tinytable</code></a>. The <code>tinytable</code> package provides a modern interface for <code>tables</code> and notably has very few dependencies, which can be helpful for reproducibility.</p>
+<p>The package <a href="https://dmurdoch.github.io/tables/"><code>tables</code></a> deserves an honorable mention as (one of) the oldest table-making package on CRAN. If you want to generate an HTML, LaTeX, or plain text table, or use a table for further calculations in <code>R</code>, <code>tables</code> can probably do it. However, this package is very old and in my opinion is quite difficult to learn and quite clunky to use – the interface is (unsurprinsingly) quite old-fashioned and different from tidyverse-style code. A relatively new addition to the tablemaking scene is <a href="https://vincentarelbundock.github.io/tinytable/"><code>tinytable</code></a>. The <code>tinytable</code> package provides a modern interface for <code>tables</code> and notably has very few dependencies, which can be helpful for reproducibility.</p>
 </section>
 <section id="modern-table-packages" class="level2">
 <h2 class="anchored" data-anchor-id="modern-table-packages">“Modern” table packages</h2>
@@ -1090,23 +1090,23 @@ window.Quarto = {
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>iris <span class="sc">|&gt;</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  gtsummary<span class="sc">::</span><span class="fu">tbl_summary</span>(<span class="at">by =</span> Species)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="kisbxbtyce" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#kisbxbtyce table {
+<div id="slrsgqcrmg" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#slrsgqcrmg table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#kisbxbtyce thead, #kisbxbtyce tbody, #kisbxbtyce tfoot, #kisbxbtyce tr, #kisbxbtyce td, #kisbxbtyce th {
+#slrsgqcrmg thead, #slrsgqcrmg tbody, #slrsgqcrmg tfoot, #slrsgqcrmg tr, #slrsgqcrmg td, #slrsgqcrmg th {
   border-style: none;
 }
 
-#kisbxbtyce p {
+#slrsgqcrmg p {
   margin: 0;
   padding: 0;
 }
 
-#kisbxbtyce .gt_table {
+#slrsgqcrmg .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1132,12 +1132,12 @@ window.Quarto = {
   border-left-color: #D3D3D3;
 }
 
-#kisbxbtyce .gt_caption {
+#slrsgqcrmg .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#kisbxbtyce .gt_title {
+#slrsgqcrmg .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1149,7 +1149,7 @@ window.Quarto = {
   border-bottom-width: 0;
 }
 
-#kisbxbtyce .gt_subtitle {
+#slrsgqcrmg .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1161,7 +1161,7 @@ window.Quarto = {
   border-top-width: 0;
 }
 
-#kisbxbtyce .gt_heading {
+#slrsgqcrmg .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1173,13 +1173,13 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#kisbxbtyce .gt_bottom_border {
+#slrsgqcrmg .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#kisbxbtyce .gt_col_headings {
+#slrsgqcrmg .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1194,7 +1194,7 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#kisbxbtyce .gt_col_heading {
+#slrsgqcrmg .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1214,7 +1214,7 @@ window.Quarto = {
   overflow-x: hidden;
 }
 
-#kisbxbtyce .gt_column_spanner_outer {
+#slrsgqcrmg .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1226,15 +1226,15 @@ window.Quarto = {
   padding-right: 4px;
 }
 
-#kisbxbtyce .gt_column_spanner_outer:first-child {
+#slrsgqcrmg .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#kisbxbtyce .gt_column_spanner_outer:last-child {
+#slrsgqcrmg .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#kisbxbtyce .gt_column_spanner {
+#slrsgqcrmg .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1246,11 +1246,11 @@ window.Quarto = {
   width: 100%;
 }
 
-#kisbxbtyce .gt_spanner_row {
+#slrsgqcrmg .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#kisbxbtyce .gt_group_heading {
+#slrsgqcrmg .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1276,7 +1276,7 @@ window.Quarto = {
   text-align: left;
 }
 
-#kisbxbtyce .gt_empty_group_heading {
+#slrsgqcrmg .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1291,15 +1291,15 @@ window.Quarto = {
   vertical-align: middle;
 }
 
-#kisbxbtyce .gt_from_md > :first-child {
+#slrsgqcrmg .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#kisbxbtyce .gt_from_md > :last-child {
+#slrsgqcrmg .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#kisbxbtyce .gt_row {
+#slrsgqcrmg .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1318,7 +1318,7 @@ window.Quarto = {
   overflow-x: hidden;
 }
 
-#kisbxbtyce .gt_stub {
+#slrsgqcrmg .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1331,7 +1331,7 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#kisbxbtyce .gt_stub_row_group {
+#slrsgqcrmg .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1345,15 +1345,15 @@ window.Quarto = {
   vertical-align: top;
 }
 
-#kisbxbtyce .gt_row_group_first td {
+#slrsgqcrmg .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#kisbxbtyce .gt_row_group_first th {
+#slrsgqcrmg .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#kisbxbtyce .gt_summary_row {
+#slrsgqcrmg .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1363,16 +1363,16 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#kisbxbtyce .gt_first_summary_row {
+#slrsgqcrmg .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#kisbxbtyce .gt_first_summary_row.thick {
+#slrsgqcrmg .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#kisbxbtyce .gt_last_summary_row {
+#slrsgqcrmg .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1382,7 +1382,7 @@ window.Quarto = {
   border-bottom-color: #D3D3D3;
 }
 
-#kisbxbtyce .gt_grand_summary_row {
+#slrsgqcrmg .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1392,7 +1392,7 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#kisbxbtyce .gt_first_grand_summary_row {
+#slrsgqcrmg .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1402,7 +1402,7 @@ window.Quarto = {
   border-top-color: #D3D3D3;
 }
 
-#kisbxbtyce .gt_last_grand_summary_row_top {
+#slrsgqcrmg .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1412,11 +1412,11 @@ window.Quarto = {
   border-bottom-color: #D3D3D3;
 }
 
-#kisbxbtyce .gt_striped {
+#slrsgqcrmg .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#kisbxbtyce .gt_table_body {
+#slrsgqcrmg .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1425,7 +1425,7 @@ window.Quarto = {
   border-bottom-color: #D3D3D3;
 }
 
-#kisbxbtyce .gt_footnotes {
+#slrsgqcrmg .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1439,7 +1439,7 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#kisbxbtyce .gt_footnote {
+#slrsgqcrmg .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1448,7 +1448,7 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#kisbxbtyce .gt_sourcenotes {
+#slrsgqcrmg .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1462,7 +1462,7 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#kisbxbtyce .gt_sourcenote {
+#slrsgqcrmg .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1470,63 +1470,63 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#kisbxbtyce .gt_left {
+#slrsgqcrmg .gt_left {
   text-align: left;
 }
 
-#kisbxbtyce .gt_center {
+#slrsgqcrmg .gt_center {
   text-align: center;
 }
 
-#kisbxbtyce .gt_right {
+#slrsgqcrmg .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#kisbxbtyce .gt_font_normal {
+#slrsgqcrmg .gt_font_normal {
   font-weight: normal;
 }
 
-#kisbxbtyce .gt_font_bold {
+#slrsgqcrmg .gt_font_bold {
   font-weight: bold;
 }
 
-#kisbxbtyce .gt_font_italic {
+#slrsgqcrmg .gt_font_italic {
   font-style: italic;
 }
 
-#kisbxbtyce .gt_super {
+#slrsgqcrmg .gt_super {
   font-size: 65%;
 }
 
-#kisbxbtyce .gt_footnote_marks {
+#slrsgqcrmg .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#kisbxbtyce .gt_asterisk {
+#slrsgqcrmg .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#kisbxbtyce .gt_indent_1 {
+#slrsgqcrmg .gt_indent_1 {
   text-indent: 5px;
 }
 
-#kisbxbtyce .gt_indent_2 {
+#slrsgqcrmg .gt_indent_2 {
   text-indent: 10px;
 }
 
-#kisbxbtyce .gt_indent_3 {
+#slrsgqcrmg .gt_indent_3 {
   text-indent: 15px;
 }
 
-#kisbxbtyce .gt_indent_4 {
+#slrsgqcrmg .gt_indent_4 {
   text-indent: 20px;
 }
 
-#kisbxbtyce .gt_indent_5 {
+#slrsgqcrmg .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -2232,7 +2232,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"right","closeEffect":"zoom","loop":false,"openEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"right","openEffect":"zoom","closeEffect":"zoom","loop":false});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
