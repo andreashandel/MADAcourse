@@ -31,7 +31,7 @@ You have two main options for the exercise this week:
 
 For either option, I expect well-documented code and lots of explanatory text in the Quarto document.
 
-While this is an open-ended exercise and there are no specific requirements as to what you need to produce, I expect more than just a single figure or 10 lines of code. Since you are getting better each week, it should definitely be more comprehensive than last week's exercise 😁.
+While this is an open-ended exercise and there are no specific requirements as to what you need to produce, I expect more than just a single figure or 10 lines of code. Since you are getting better each week, it should definitely be at least as comprehensive as last week's exercise 😁.
 
 
 ## Setup
