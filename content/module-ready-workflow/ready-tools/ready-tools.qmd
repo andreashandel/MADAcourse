@@ -35,9 +35,7 @@ Quarto is tool that allows for easy scientific writing in a reproducible manner,
 
 # Pluto
 
-For the Julia programming language, there is [Pluto](Pluto.jl), which has similarities to Jupyter and Quarto. Again, I don't have experience with it, so can't say what -- if any -- advantages it has over Quarto. But if you do some coding in Julia, it might be worth checking out.
-
-
+For the Julia programming language, there is [Pluto.jl](https://plutojl.org/), which has similarities to Jupyter and Quarto. Again, I don't have experience with it, so can't say what -- if any -- advantages it has over Quarto. But if you do some coding in Julia, it might be worth checking out.
 
 
 # Sweave and such

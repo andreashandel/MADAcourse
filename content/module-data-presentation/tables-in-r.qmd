@@ -87,7 +87,7 @@ should work with Quarto regardless of the output format you use.
 HTML is the most flexible format for generating tables. Any table you can
 see on the internet is made with HTML (and sometimes CSS and JavaScript). R has
 many packages for generating HTML tables, including the easy-to-use
-[`kableExtra`](https://cran.r-project.org/web/packages/kableExtra/index.html), which has multiple resources [(1)](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html) [(2)](https://bookdown.org/yihui/rmarkdown-cookbook/kableextra.html) [(3)](https://haozhu233.github.io/kableExtra/.) The `kableExtra` package
+[`kableExtra`](https://cran.r-project.org/web/packages/kableExtra/index.html). The `kableExtra` package
 is basically an extension of `kable` to have a lot of `Extra` features for
 making nicer tables. HTML has the special power to generate **interactive
 tables** using packages like [`DT`] and [`Reactable`].
@@ -95,8 +95,7 @@ tables** using packages like [`DT`] and [`Reactable`].
 If you are using a PDF format (common in math, physics, theoretical statistics
 and other math-heavy fields), you can write LaTeX code directly in Quarto,
 which means you can write tables using any of the LaTeX packages you want.
-The `kableExtra` package is also
-[specifically compatible with LaTeX](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_pdf.pdf).
+The `kableExtra` package is also compatible with LaTeX.
 
 Word is the most complicated format, and in Epidemiology the most common. Many
 table packages do not work with Word, or have limited functionality. In my
@@ -116,7 +115,7 @@ calculations in `R`, `tables` can probably do it. However, this package is
 very old and in my opinion is quite difficult to learn and quite clunky to
 use -- the interface is (unsurprinsingly) quite old-fashioned and different
 from tidyverse-style code. A relatively new addition to the tablemaking scene
-is [`tinytable`]([https://vincentarelbundock.github.io/tinytable/]). The `tinytable` package provides a modern interface for `tables` and
+is [`tinytable`](https://vincentarelbundock.github.io/tinytable/). The `tinytable` package provides a modern interface for `tables` and
 notably has very few dependencies, which can be helpful for reproducibility.
 
 ## "Modern" table packages

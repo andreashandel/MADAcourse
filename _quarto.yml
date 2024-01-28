@@ -1,12 +1,13 @@
 project:
   type: website
-  output-dir: docs
+#  output-dir: docs
   preview: 
     port: 3434 # preview at http://localhost:3434/
   render: 
     - "*.qmd" # render all .qmd files
     - "!myresources/" # don't render anything in this folder
     - "!renv/"
+    - "!files/" #those should be as they are
   resources: "*.xlsx" # include quizsheets in _site
 
 execute: 

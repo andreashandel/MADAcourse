@@ -53,7 +53,7 @@ ideas on what to do and how to do things.
 -   Follow the instructions provided in the repository to run all code
     and reproduce everything.
 -   Use the simple grading rubric shown in the part 3 section of the
-    [**Project Details**](project-Details.qmd#sec-part-3) document.
+    [**Project Details**](/project/project-Details.qmd) document.
 -   Submit your review by filing one (or several) GitHub Issues in the
     project repository. Provide any feedback you think your classmate(s)
     might find useful to help them further improve their project and
@@ -71,7 +71,7 @@ detailed and in-depth than the part 3 review.**
 
 Follow the instructions provided in the repository to run all code and
 reproduce everything. Review the whole project using this [review
-template](https://raw.githubusercontent.com/andreashandel/MADAcourse/main/project/templatefiles/project-review-template.qmd)
+template](/files/project-review-template.qmd)
 (right-click to download).
 
 Write up a detailed review using and filling out the template. Once you

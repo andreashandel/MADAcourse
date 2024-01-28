@@ -169,14 +169,14 @@ submission.
     to see that you deliver what you were supposed to and got the
     project to the requested stage.
 -   Your classmates will provide peer-review feedback on parts 3 and 5.
-    Details on that is provided in the [**Project Review**](project-Review.qmd) document.
+    Details on that is provided in the [**Project Review**](/project/project-Review.qmd) document.
 -   Part 6 is the final submission.
 
 The initial submissions and peer reviews make up 40% of the project
 grade. The final submission counts for the remaining 60%.
 
 **More details on what exactly is expected and how it is assessed is
-provided in the [**Project Details**](project-Details.qmd) document.
+provided in the [**Project Details**](/project/project-Details.qmd) document.
 
 # Project communications
 
