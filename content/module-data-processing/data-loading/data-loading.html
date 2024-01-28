@@ -71,6 +71,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -841,7 +870,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2024-01-27</p>
+      <p class="date-modified">2024-01-28</p>
     </div>
   </div>
     
@@ -870,18 +899,18 @@ ul.task-list li input[type="checkbox"] {
 <section id="loading-spreadsheet-data" class="level1">
 <h1>Loading spreadsheet data</h1>
 <p>Quite often, you’ll have data in Excel or another spreadsheet format.</p>
-<p>Base R has different functions to read CSV and similarly formatted data, e.g.&nbsp;<code>read.csv()</code> or <code>read.delim()</code>. Those are ok to use, but in general I recommend using similar functions from the <a href="https://readr.tidyverse.org/"><code>readr</code> package</a>, such as <code>read_csv</code>. Those functions tend to often be more robust and flexible.</p>
+<p>Base R has different functions to read CSV and similarly formatted data, e.g.&nbsp;<code>read.csv()</code> or <code>read.delim()</code>. Those are ok to use, but in general I recommend using similar functions from the <a href="https://readr.tidyverse.org/"><code>readr</code> package</a>, such as <code>read_csv()</code>. Those functions are more flexible and usually more robust.</p>
 <p>For Excel data, the <a href="https://readxl.tidyverse.org/"><code>readxl</code> package</a> is a good option. For most spreadsheet/tabular formats, you’ll likely find an R package that can read the data.</p>
 </section>
 <section id="proprietary-formats" class="level1">
 <h1>Proprietary formats</h1>
-<p>A lot of software packages, such as SAS, SPSS or Graphpad Prism, have their own proprietary format. If you get data that has that format, you need to find a way to get it into R.</p>
+<p>A lot of software packages, such as SAS, SPSS, or Graphpad Prism, have their own proprietary format. If you get data that has that format, you need to find a way to get it into R.</p>
 <p>For SAS, SPSS and STATA files, there is the <a href="https://haven.tidyverse.org/"><code>haven</code> package</a> which lets you read them into R easily. For other file formats, you need to see if someone wrote an R package that can load them.</p>
 <p>Sometimes there’s no tool/package to read that proprietary format. Then you need to ask the person who gave you the software to save it in a different format, or if you have access to the proprietary software, load the data in that software and save it in a format you can read.</p>
 </section>
 <section id="loading-r-data" class="level1">
 <h1>Loading R data</h1>
-<p>Sometimes, the data already comes in R format. There are essentially just two formats, <code>Rds</code> and <code>Rda</code>. For differences between those two formats, <a href="http://www.sthda.com/english/wiki/saving-data-into-r-data-format-rds-and-rdata">see e.g.&nbsp;this article</a>. Those are easily loaded with the <code>readRDS()</code> or <code>load()</code>.</p>
+<p>Sometimes, the data already comes in R format. There are essentially just two formats, <code>Rds</code> and <code>Rda</code>. For differences between those two formats, <a href="http://www.sthda.com/english/wiki/saving-data-into-r-data-format-rds-and-rdata">see e.g.&nbsp;this article</a>. Those are easily loaded with the functions <code>readRDS()</code> (or <code>readr::read_rds()</code> which is basically the same) or <code>load()</code>.</p>
 </section>
 <section id="processing-data-outside-of-r" class="level1">
 <h1>Processing data outside of R</h1>
@@ -890,12 +919,12 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="checking-data" class="level1">
 <h1>Checking data</h1>
-<p>It is important that once you loaded your data, you do a quick check to make sure it looks as expected. For instance if you expect N observations and M variables, make sure that is what you get. Those checks are simple but important. You don’t want to start processing the data unless you know it looks as you expect it to look once loaded.</p>
+<p>It is important that once you’ve loaded your data, you do a quick check to make sure it looks as expected. For instance if you expect <span class="math inline">\(N\)</span> observations and <span class="math inline">\(M\)</span> variables, make sure that is what you get. Those checks are simple but important. You don’t want to start processing the data unless you know it looks as you expect it to look once loaded.</p>
 <p>Also, if you load a data frame, sometimes the variables don’t have the format you expect them. For instance, it is common that a variable that is a factor is loaded as text. Recoding this is then part of the data processing task.</p>
 </section>
 <section id="saving-data" class="level1">
 <h1>Saving data</h1>
-<p>At some point in your pipeline - possibly more than once - you might want to save your data or results. That is useful if you have different scripts that perform different tasks. For instance your processing script might save the cleaned data. If you plan on sharing that data, a common format such as CSV might be best. If you plan on only loading it again with another R script, then an R format like <code>Rds</code> or <code>Rda</code> might be suitable, as it preserves some meta-information (e.g., a variable coded as a factor will keep that information, while if you save it as CSV it will become text and once you load it you have to re-code it again as factor).</p>
+<p>At some point in your pipeline — possibly more than once — you might want to save your data or results. That is useful if you have different scripts that perform different tasks. For instance your processing script might save the cleaned data. If you plan on sharing that data, a common format such as CSV might be best. If you plan on only loading it again with another R script, then an R format like <code>Rds</code> or <code>Rda</code> might be suitable, as it preserves some meta-information (e.g., a variable coded as a factor will keep that information, while if you save it as CSV it will become text and once you load it you have to re-code it again as factor).</p>
 </section>
 <section id="summary" class="level1">
 <h1>Summary</h1>

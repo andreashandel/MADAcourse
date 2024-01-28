@@ -811,6 +811,7 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#charactersstrings" id="toc-charactersstrings" class="nav-link" data-scroll-target="#charactersstrings">Characters/strings</a></li>
   <li><a href="#factors" id="toc-factors" class="nav-link" data-scroll-target="#factors">Factors</a></li>
+  <li><a href="#logicals" id="toc-logicals" class="nav-link" data-scroll-target="#logicals">Logicals</a></li>
   <li><a href="#numeric-value" id="toc-numeric-value" class="nav-link" data-scroll-target="#numeric-value">Numeric value</a></li>
   <li><a href="#dates-and-times" id="toc-dates-and-times" class="nav-link" data-scroll-target="#dates-and-times">Dates and times</a></li>
   <li><a href="#special-data-types" id="toc-special-data-types" class="nav-link" data-scroll-target="#special-data-types">Special data types</a></li>
@@ -851,7 +852,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2024-01-27</p>
+      <p class="date-modified">2024-01-28</p>
     </div>
   </div>
     
@@ -890,7 +891,10 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="factors">Factors</h2>
 <p>Factors is the name that R gives to categorical variables. They can be ordered/ordinal or not. You need to make sure variables that should be coded as a factor are, and that those that shouldn’t be aren’t. For instance, you might have a variable with entries of 0, 1, and 2. Those could be numeric values, e.g., the number of siblings a person has. Or it could be a factor coding for 3 types of ethnicity (unordered), or 3 levels of socioeconomic status (ordered). You need to make sure it is coded as factor or numeric, based on what you know about the variable. An excellent package to work with factors is the <a href="https://forcats.tidyverse.org/"><code>forcats</code> package</a>.</p>
 <p>To learn some more about factors, you might want to go through the <a href="https://r4ds.hadley.nz/factors.html">Factors chapter of <em>R4DS</em></a>, and do the exercises. Factors are the most complicated basic data format, so it is worth spending extra time making sure you understand a bit how factors work.</p>
-<p><strong>Logical:</strong> You can think of a logical variable as a type of categorical variable with 2 categories, TRUE and FALSE. Alternatively, in R, 0 is interpreted as FALSE and 1 as TRUE (and vice versa). You will use those logical values often when checking your data, e.g., if you want to see if your variable <code>x</code> is greater than 5, then the R command <code>x &gt; 5</code> will return either TRUE or FALSE, based on the value of <code>x</code>.</p>
+</section>
+<section id="logicals" class="level2">
+<h2 class="anchored" data-anchor-id="logicals">Logicals</h2>
+<p>You can think of a logical variable as a type of categorical variable with 2 categories, TRUE and FALSE. Alternatively, in R, 0 is interpreted as FALSE and 1 as TRUE (and vice versa). R will sometimes treat logicals as numbers, and sometimes as categorical variables, so it is often more straightforward to code these variables as either numeric or categorical to be safe. You will use those logical values often when checking your data, e.g., if you want to see if your variable <code>x</code> is greater than 5, then the R command <code>x &gt; 5</code> will return either TRUE or FALSE, based on the value of <code>x</code>.</p>
 </section>
 <section id="numeric-value" class="level2">
 <h2 class="anchored" data-anchor-id="numeric-value">Numeric value</h2>
@@ -909,12 +913,12 @@ ul.task-list li input[type="checkbox"] {
 <section id="special-data-types" class="level2">
 <h2 class="anchored" data-anchor-id="special-data-types">Special data types</h2>
 <p>R has several symbols that represent a special type of object. Here’s a quick summary.</p>
-<p><code>TRUE</code> and <code>FALSE</code> are words that are interpreted as logical values. R also allows you to use 0 and 1 as logical (1=TRUE, 0=FALSE) but that can be confusing.</p>
+<p><code>TRUE</code> and <code>FALSE</code> are words that are interpreted as logical values. The abbreviations <code>T</code> and <code>F</code> are also treated as logical values (so you should avoid overwriting those names). R also allows you to use 0 and 1 as logical (1=TRUE, 0=FALSE) but that can be confusing.</p>
 <p><code>NA</code> (not available) is R’s default way of encoding a missing value. If something is missing, you can’t do useful things with it. For instance if you have this vector <code>x1 &lt;- c(1,3,NA)</code> and try to do <code>mean(x1)</code>, you get NA again. For some functions, there is an ignore setting, e.g.&nbsp;<code>mean(x1, na.rm=TRUE)</code> removes the NA, then takes the mean. You can check if you have <code>NA</code> with <code>is.na(x1)</code>. You’ll likely encounter <code>NA</code> frequently in your data analysis, and you need to be careful when you try to perform operations in the presence of <code>NA</code>.</p>
-<p><code>Inf</code> and <code>-Inf</code> can also show up when you do numerical operations, for instance divide by zero. If you perform further mathematical operations with infinity, you almost always end up with infinity again. Generally, if you end up with one of those, it’s an indication that you did some mathematical operation that you probably shouldn’t be doing (commonly divide by zero).</p>
-<p><code>NaN</code> (not a number) happens when you do some mathematical operation that can’t be resolved to any number or infinity. For instance of you do <code>0/0</code> you’ll get <code>NaN</code>. Like <code>Inf</code>, <code>NaN</code> will generally mess up any further computations, so if you encounter it you should figure out where it came from and figure out a fix.</p>
+<p><code>Inf</code> and <code>-Inf</code> can also show up when you do numerical operations, for instance divide by zero. If you perform further mathematical operations with infinity, you almost always end up with infinity again. Generally, if you end up with one of those, it’s an indication that you did some mathematical operation that you probably shouldn’t be doing (commonly divide by zero, or log of a negative number).</p>
+<p><code>NaN</code> (Not a Number) happens when you do some mathematical operation that can’t be resolved to any number or infinity. For instance if you do <code>0/0</code> you’ll get <code>NaN</code>. Like <code>Inf</code>, <code>NaN</code> will generally mess up any further computations, so if you encounter it you should figure out where it came from and figure out a fix.</p>
 <p><code>NULL</code> indicates something that exists but is empty. For instance if you want to set up a new list object to hold some future results, but want to start it empty, you can do <code>x &lt;- list(NULL)</code>. And then you can later add elements to that list. You’ll likely not need to care too much about <code>NULL</code> initially, but if you start writing more code it is often a useful object.</p>
-<p>For most of these special objects, there are functions <code>is.</code> that let you check. For instance <code>is.nan(x)</code> will tell you if any element in <code>x</code> contains <code>NaN</code>.</p>
+<p>For most of these special objects, there are functions <code>is()</code> and <code>is.*()</code>, where <code>*</code> is a specific data type, that let you check. For instance <code>is.nan(x)</code> will tell you if any element in <code>x</code> contains <code>NaN</code>.</p>
 </section>
 </section>
 <section id="compound-data-structures-in-r" class="level1">
@@ -922,7 +926,7 @@ ul.task-list li input[type="checkbox"] {
 <p>The basic data types in R are usually combined into larger objects. The following briefly describes the most important ones of these data structures.</p>
 <section id="vectors" class="level2">
 <h2 class="anchored" data-anchor-id="vectors">Vectors</h2>
-<p>Vectors are a simple collection of elements in a single row or column. In R, the easiest way to create vectors is with the <code>concatenate</code> command, <code>c()</code>. An example is <code>x1 &lt;- c(3,12,5)</code>. A single vector can contain only one element type (e.g., all characters or all numeric). If you try to mix and match, everything ends up as a character. Type <code>x1 &lt;- c(3,12,5)</code> and <code>x2 &lt;- c(6, 5, 'h')</code> into R and apply the <code>class()</code> command to both <code>x1</code> and <code>x2</code> and note the difference. It is worth mentioning that vectors can be of length 1. For instance if you define <code>x3 &lt;- 1</code> and then check it with <code>is(x3)</code> you’ll see that is is classified as a numeric vector – of length 1, which you can find out with <code>length(x3)</code>.</p>
+<p>Vectors are a simple collection of elements in a single row or column. In R, the easiest way to create vectors is with the <code>concatenate</code> command, <code>c()</code>. An example is <code>x1 &lt;- c(3,12,5)</code>. A single vector can contain only one element type (e.g., all characters or all numeric). If you try to mix and match, everything ends up as a character. Type <code>x1 &lt;- c(3,12,5)</code> and <code>x2 &lt;- c(6, 5, 'h')</code> into R and apply the <code>class()</code> command to both <code>x1</code> and <code>x2</code> and note the difference. It is worth mentioning that vectors can be of length 1. (Unlike some other languages, there is no separate concept of a <em>scalar</em> in R, a <em>scalar</em> is just a length one vector.) For instance if you define <code>x3 &lt;- 1</code> and then check it with <code>is(x3)</code> you’ll see that is is classified as a numeric vector — of length 1, which you can find out with <code>length(x3)</code>.</p>
 </section>
 <section id="matrices" class="level2">
 <h2 class="anchored" data-anchor-id="matrices">Matrices</h2>
