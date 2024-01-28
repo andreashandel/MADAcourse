@@ -224,10 +224,10 @@ To that end, provide the following pieces of information:
 -   Meta-data explaining your data as needed.
 -   Everything very well documented and polished as much as possible.
 
-Check the [**Project Review Template**](templatefiles/project-review-template.qmd) file to see how this
+Check the [**Project Review Template**](/files/project-review-template.qmd) file to see how this
 submission will be assessed by your peers. I will not grade this part
 but it will be assessed by your peers, as described in the [**Project
-Review**](project-Review.qmd) document.
+Review**](/project/project-Review.qmd) document.
 
 *A great project would be at the level of Brian McKay's paper example
 you checked out in the [**Motivating Examples
