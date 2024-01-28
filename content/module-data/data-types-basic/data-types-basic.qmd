@@ -32,7 +32,9 @@ As such, variables form the basic building blocks of a lot of data. Different ty
 
 ## Quantitative variables
 
-This data type, also called *interval* data, generally allows one to do certain mathematical operations, e.g., subtraction or addition. Different subcategories exist:
+This data type, sometimes called *interval* scale data, generally allows one to do certain mathematical operations, e.g., subtraction or addition. Some quantiative variables are also *ratio* scale data, which means they have a true zero, or lowest value --- for these data, multiplying, dividing, and taking ratios makes sense.
+
+Different subcategories exist:
 
 -   Continuous: Can, in principle, be any number. Examples are height, weight, age, etc.
 -   Discrete: Can only take discrete (integer) values, e.g., the number of siblings a person has.

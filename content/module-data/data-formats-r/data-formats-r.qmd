@@ -41,7 +41,9 @@ Factors is the name that R gives to categorical variables. They can be ordered/o
 
 To learn some more about factors, you might want to go through the [Factors chapter of *R4DS*](https://r4ds.hadley.nz/factors.html), and do the exercises. Factors are the most complicated basic data format, so it is worth spending extra time making sure you understand a bit how factors work.
 
-**Logical:** You can think of a logical variable as a type of categorical variable with 2 categories, TRUE and FALSE. Alternatively, in R, 0 is interpreted as FALSE and 1 as TRUE (and vice versa). You will use those logical values often when checking your data, e.g., if you want to see if your variable `x` is greater than 5, then the R command `x > 5` will return either TRUE or FALSE, based on the value of `x`.
+## Logicals
+
+You can think of a logical variable as a type of categorical variable with 2 categories, TRUE and FALSE. Alternatively, in R, 0 is interpreted as FALSE and 1 as TRUE (and vice versa). R will sometimes treat logicals as numbers, and sometimes as categorical variables, so it is often more straightforward to code these variables as either numeric or categorical to be safe. You will use those logical values often when checking your data, e.g., if you want to see if your variable `x` is greater than 5, then the R command `x > 5` will return either TRUE or FALSE, based on the value of `x`.
 
 
 ## Numeric value
@@ -68,17 +70,17 @@ Excel is notoriously bad at storing dates. It has some internal format that's di
 
 R has several symbols that represent a special type of object. Here's a quick summary.
 
-`TRUE` and `FALSE` are words that are interpreted as logical values. R also allows you to use 0 and 1 as logical (1=TRUE, 0=FALSE) but that can be confusing.
+`TRUE` and `FALSE` are words that are interpreted as logical values. The abbreviations `T` and `F` are also treated as logical values (so you should avoid overwriting those names). R also allows you to use 0 and 1 as logical (1=TRUE, 0=FALSE) but that can be confusing.
 
 `NA` (not available) is R's default way of encoding a missing value. If something is missing, you can't do useful things with it. For instance if you have this vector `x1 <- c(1,3,NA)` and try to do `mean(x1)`, you get NA again. For some functions, there is an ignore setting, e.g. `mean(x1, na.rm=TRUE)` removes the NA, then takes the mean. You can check if you have `NA` with `is.na(x1)`. You'll likely encounter `NA` frequently in your data analysis, and you need to be careful when you try to perform operations in the presence of `NA`.
 
-`Inf` and `-Inf` can also show up when you do numerical operations, for instance divide by zero. If you perform further mathematical operations with infinity, you almost always end up with infinity again. Generally, if you end up with one of those, it's an indication that you did some mathematical operation that you probably shouldn't be doing (commonly divide by zero).
+`Inf` and `-Inf` can also show up when you do numerical operations, for instance divide by zero. If you perform further mathematical operations with infinity, you almost always end up with infinity again. Generally, if you end up with one of those, it's an indication that you did some mathematical operation that you probably shouldn't be doing (commonly divide by zero, or log of a negative number).
 
-`NaN` (not a number) happens when you do some mathematical operation that can't be resolved to any number or infinity. For instance of you do `0/0` you'll get `NaN`. Like `Inf`, `NaN` will generally mess up any further computations, so if you encounter it you should figure out where it came from and figure out a fix.
+`NaN` (Not a Number) happens when you do some mathematical operation that can't be resolved to any number or infinity. For instance if you do `0/0` you'll get `NaN`. Like `Inf`, `NaN` will generally mess up any further computations, so if you encounter it you should figure out where it came from and figure out a fix.
 
 `NULL` indicates something that exists but is empty. For instance if you want to set up a new list object to hold some future results, but want to start it empty, you can do `x <- list(NULL)`. And then you can later add elements to that list. You'll likely not need to care too much about `NULL` initially, but if you start writing more code it is often a useful object.
 
-For most of these special objects, there are functions `is.` that let you check. For instance `is.nan(x)` will tell you if any element in `x` contains `NaN`. 
+For most of these special objects, there are functions `is()` and `is.*()`, where `*` is a specific data type, that let you check. For instance `is.nan(x)` will tell you if any element in `x` contains `NaN`. 
 
 
 # Compound data structures in R
@@ -87,7 +89,7 @@ The basic data types in R are usually combined into larger objects. The followin
 
 ## Vectors 
 
-Vectors are a simple collection of elements in a single row or column. In R, the easiest way to create vectors is with the `concatenate` command, `c()`. An example is `x1 <- c(3,12,5)`. A single vector can contain only one element type (e.g., all characters or all numeric). If you try to mix and match, everything ends up as a character. Type `x1 <- c(3,12,5)` and `x2 <- c(6, 5, 'h')` into R and apply the `class()` command to both `x1` and `x2` and note the difference. It is worth mentioning that vectors can be of length 1. For instance if you define `x3 <- 1` and then check it with `is(x3)` you'll see that is is classified as a numeric vector -- of length 1, which you can find out with `length(x3)`.
+Vectors are a simple collection of elements in a single row or column. In R, the easiest way to create vectors is with the `concatenate` command, `c()`. An example is `x1 <- c(3,12,5)`. A single vector can contain only one element type (e.g., all characters or all numeric). If you try to mix and match, everything ends up as a character. Type `x1 <- c(3,12,5)` and `x2 <- c(6, 5, 'h')` into R and apply the `class()` command to both `x1` and `x2` and note the difference. It is worth mentioning that vectors can be of length 1. (Unlike some other languages, there is no separate concept of a *scalar* in R, a *scalar* is just a length one vector.) For instance if you define `x3 <- 1` and then check it with `is(x3)` you'll see that is is classified as a numeric vector --- of length 1, which you can find out with `length(x3)`.
 
 ## Matrices
 A matrix is a collection of elements in rows and columns. A matrix can contain only one element type. You can think of a matrix as a collection of `horizontal vectors` stacked on top of each other or `vertical vectors` next to each other.

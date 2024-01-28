@@ -24,14 +24,14 @@ No matter the source, you need to your data into your favorite data analysis sys
 
 Quite often, you'll have data in Excel or another spreadsheet format. 
 
-Base R has different functions to read CSV and similarly formatted data, e.g. `read.csv()` or `read.delim()`. Those are ok to use, but in general I recommend using similar functions from the [`readr` package](https://readr.tidyverse.org/), such as `read_csv`. Those functions tend to often be more robust and flexible. 
+Base R has different functions to read CSV and similarly formatted data, e.g. `read.csv()` or `read.delim()`. Those are ok to use, but in general I recommend using similar functions from the [`readr` package](https://readr.tidyverse.org/), such as `read_csv()`. Those functions are more flexible and usually more robust.
 
 For Excel data, the [`readxl` package](https://readxl.tidyverse.org/) is a good option. For most spreadsheet/tabular formats, you'll likely find an R package that can read the data.
 
 
 # Proprietary formats
 
-A lot of software packages, such as SAS, SPSS or Graphpad Prism, have their own proprietary format. If you get data that has that format, you need to find a way to get it into R. 
+A lot of software packages, such as SAS, SPSS, or Graphpad Prism, have their own proprietary format. If you get data that has that format, you need to find a way to get it into R. 
 
 For SAS, SPSS and STATA files, there is the [`haven` package](https://haven.tidyverse.org/) which lets you read them into R easily. For other file formats, you need to see if someone wrote an R package that can load them.
 
@@ -42,7 +42,7 @@ Sometimes there's no tool/package to read that proprietary format. Then you need
 
 # Loading R data
 
-Sometimes, the data already comes in R format. There are essentially just two formats, `Rds` and `Rda`. For differences between those two formats, [see e.g. this article](http://www.sthda.com/english/wiki/saving-data-into-r-data-format-rds-and-rdata). Those are easily loaded with the `readRDS()` or `load()`.
+Sometimes, the data already comes in R format. There are essentially just two formats, `Rds` and `Rda`. For differences between those two formats, [see e.g. this article](http://www.sthda.com/english/wiki/saving-data-into-r-data-format-rds-and-rdata). Those are easily loaded with the functions `readRDS()` (or `readr::read_rds()` which is basically the same) or `load()`.
 
 
 # Processing data outside of R
@@ -54,14 +54,14 @@ In those cases, you might have to make modifications in a software other than R.
 
 # Checking data
 
-It is important that once you loaded your data, you do a quick check to make sure it looks as expected. For instance if you expect N observations and M variables, make sure that is what you get. Those checks are simple but important. You don't want to start processing the data unless you know it looks as you expect it to look once loaded. 
+It is important that once you've loaded your data, you do a quick check to make sure it looks as expected. For instance if you expect $N$ observations and $M$ variables, make sure that is what you get. Those checks are simple but important. You don't want to start processing the data unless you know it looks as you expect it to look once loaded. 
 
 Also, if you load a data frame, sometimes the variables don't have the format you expect them. For instance, it is common that a variable that is a factor is loaded as text. Recoding this is then part of the data processing task.
 
 
 # Saving data
 
-At some point in your pipeline - possibly more than once - you might want to save your data or results. That is useful if you have different scripts that perform different tasks. For instance your processing script might save the cleaned data. If you plan on sharing that data, a common format such as CSV might be best. If you plan on only loading it again with another R script, then an R format like `Rds` or `Rda` might be suitable, as it preserves some meta-information (e.g., a variable coded as a factor will keep that information, while if you save it as CSV it will become text and once you load it you have to re-code it again as factor).
+At some point in your pipeline --- possibly more than once --- you might want to save your data or results. That is useful if you have different scripts that perform different tasks. For instance your processing script might save the cleaned data. If you plan on sharing that data, a common format such as CSV might be best. If you plan on only loading it again with another R script, then an R format like `Rds` or `Rda` might be suitable, as it preserves some meta-information (e.g., a variable coded as a factor will keep that information, while if you save it as CSV it will become text and once you load it you have to re-code it again as factor).
 
 
 # Summary 

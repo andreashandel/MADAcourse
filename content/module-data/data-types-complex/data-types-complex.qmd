@@ -130,7 +130,7 @@ view that lists [R packages relevant to hierarchical
 modeling](https://cran.r-project.org/web/views/MixedModels.html).
 
 Another term you might hear is **recursively nested data**. While this type of data *is* a type of hierarchical data, when we discuss
-hierarchical data we often think about nested in terms of statistical clusters.
+hierarchical data we often think about nesting in terms of statistical clusters.
 Computer scientists and web developers often use hierarchical data for storage and data transfer purposes, and often call it recursively nested data instead.
 
 Recursively nested data has become extremely common on the

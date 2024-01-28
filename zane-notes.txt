@@ -1,3 +1,8 @@
+2b
+
+* Ready tools page -- there's a Note callout at the bottom with no content inside.
+
+
 4b
 
 * In general though, I think the code sections in this part might be quite difficult for some of the students in the class to understand with their current level of R knowledge. I think it ideally needs a more detailed explaination at least one time of (e.g. in the "creating new data" module) what you're doing when you do that sampling stuff, and how that generates data that follows certain assumptions. This comes after the model on documentation too :).
@@ -14,7 +19,7 @@
 
 * At some point we should likely add alt text to the figures in this section. I didn't do it yet because I think it is a bit of work that is largely performative since we've never had any students ask about it, but we never know who from the internet is going to look at the materials I guess.
 
-* Data scrambling section: this one is a useless comment that doesn't matter at all, but I thought I'd say it anyways :). It is technically faster and better to sample the indices instead of the data frame column, and can be done in the sample amount of code:
+* Data scrambling section: this one is a useless comment that doesn't matter at all, but I thought I'd say it anyways :). It is technically faster and better to sample the indices instead of the data frame column, and can be done in the same amount of code:
 dat_sc[,n] <- dat[sample.int(Nobs, size = Nobs, replace = FALSE), n]
 or whatever you have to change to get that to work. Of course for this code,
 that literally makes no difference at all, which is why this is an annoying
@@ -23,3 +28,9 @@ and pedantic comment.
 * In the further resources on scrambling data, you say synthpop might be useful -- I agree with your comment in that footer than synthpop should probably be mentioned in the generating new data from existing data page instead, because it does that instead of scrambling.
 
 * Model testing module: I know this is before the metrics page, so I don't think any metrics are important. But I think a plot that shows the actual simulated trend and the RF predictions (maybe as red points) on top would be more helpful for understanding that the VIP. Also, further resources section is blank, you typically put in "Nothing yet" as a placeholder.
+
+Module 5
+* Data loading: Does GraphPad Prism have a proprietary data format? I didn't
+think so.
+* Outliers -- added a setntence to the beginning of finding outliers section covering the standard definition that most students learn. I think it's worth mentioning that this specific limit is arbitrary, but remove if you want.
+* I guess the outliers/missing data/feature engineering/merging sections still need some beefing up, but not sure what you alreayd have in the works.

@@ -39,7 +39,7 @@ While one can distinguish the different tasks of **Cleaning**, **Exploring** and
 
 # Data processing tasks
 
-Almost all datasets require some processing before they are in a format that can be used with statistical models. It is a generally acknowledged fact that for any data analysis, the majority of time is likely spent in the data processing and exploration steps before the main model fitting. Some folks suggest that this processing part is as much as 80% of the time spent on the whole project. In my experience, this is about right.
+Almost all datasets require some processing before they are in a format that can be used with statistical models. For any data analysis, the majority of time is likely spent in the data processing and exploration steps before the main model fitting. Some folks suggest that this processing part is as much as 80% of the time spent on the whole project. In my experience, this is about right.
 
 
 While every dataset is different, there are certain tasks that are common. Those involve missing data, recoding variables, and dealing with outliers. Further ones are merging and reshaping of the data. We will discuss some of them in further units.
@@ -47,7 +47,7 @@ While every dataset is different, there are certain tasks that are common. Those
 
 # Data processing and exploratory data analysis (EDA)
 
-As you process your data, you need to explore your data to figure out what needs processing. As such, exploratory data analysis (EDA) and processing data generally go together. 
+As you process your data, you need to explore your data to figure out what needs processing. As such, exploratory data analysis (EDA) and data processing generally go together. 
 
 EDA generally relies on making figures and tables, and we'll talk about that in a separate module. There is no clear definition for exploratory analysis. Beyond figures and tables, it can sometimes involve simple statistical computations, for instance you might compute correlations among predictors. 
 
