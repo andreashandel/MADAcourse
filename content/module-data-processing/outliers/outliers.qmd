@@ -23,7 +23,11 @@ Dealing with such entries is a judgment call. The best approach is to have a pre
 
 # Finding outliers
 
-There is not clear definition of what an outlier is. Generally speaking, it's a value that is far away from the majority of the values. If one assumed a distribution for the data, one could define an outlier statistically, e.g., every value that is some standard deviations away from the mean could be considered an outlier. In practice, we generally don't know the distribution from which the data is a sample, and defining any kind of cut-off for outliers is also fairly arbitrary. Therefore, a more case-by-case approach is usually best.
+In introductory statistics classes, students are often taught arbitrary rules
+for finding outliers to remove. Typically they learn to remove all points
+outside of the limits of 1.5 times the interquartile range (IQR). However, there is no clear definition of what an outlier is.
+
+Generally speaking, an outlier is a date value that is far away from the majority of the other values of a variable or dataset. If one assumed a distribution for the data, one could define an outlier statistically, e.g., every value that is some standard deviations away from the mean could be considered an outlier. In practice, we generally don't know the distribution from which the data is a sample, and defining any kind of cut-off for outliers is also fairly arbitrary. Therefore, a more case-by-case approach is usually best.
 
 A great tool to find outliers is with figures. If you plot the raw data, and some values are far away from others, they deserve further inspection and might be considered outliers.
 
@@ -44,7 +48,7 @@ Instead of removing data with outliers, you could try to replace the outliers wi
 
 # Modeling with outliers
 
-You can also decide to leave the outliers in the data. You can run your standard models. However, some common models will give the outliers a lot of importance, and therefore a few outliers can skew your results. In this case, you can use statistical methods that are not influenced by outliers as much. Those are sometimes called robust methods. We'll revisit some of those when we get to the statistical analysis and modeling modules.
+You can also decide to leave the outliers in the data. You can run your standard models. However, some common models will give the outliers a lot of importance, and therefore a few outliers can skew your results. In this case, you can use statistical methods that are not influenced by outliers as much. Those are sometimes called robust methods (although this term confusingly has many different meanings; not all things called robust methods are about dealing with outliers). We'll revisit some of those when we get to the statistical analysis and modeling modules.
 
 
 

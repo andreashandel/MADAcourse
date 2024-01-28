@@ -16,7 +16,7 @@ For this unit, we will discuss missing data and what to do about it.
 
 # Introduction
 
-In almost any dataset, there are some missing entries. Data can be missing for different reasons. It could have not been asked/recorded, the person refused to provide it, the variable is not applicable (e.g. for a non-smoker, the variable "number of cigarettes per day" might be left blank.) It is important to understand why data are missing and form an action plan based on that. 
+In almost any dataset, there are some missing entries. Data can be missing for different reasons. It could have not been asked/recorded, the person refused to provide it, the variable is not applicable (e.g. for a non-smoker, the variable "number of cigarettes per day" might be left blank.) Understanding why data are missing is important, so we can form an action plan based on that. 
 
 There are different ways to deal with missing data, here are some common ones.
 
@@ -30,7 +30,7 @@ Another option is to remove all variables with missing data from further analysi
 
 Another option is to use a combination of removing variables and observations. You could start removing variables with missing values above some threshold, e.g. any variable that has more than 10% or 20% (or some value you pick) missing. There is no rule for this, and you need to justify it. Then once all variables with missing values above some threshold are removed, you remove any remaining observations that still contain missing data. This mix of removing variables and observations might preserve the most amount of data.
 
-There are two problems when removing data. One is the obvious fact that you lose data, and thus statistical power. The other problem is if the data are not missing at random. In that case, by removing those observations with missing data, you introduce bias into your dataset. Again, it is important to understand why and how data are missing so you can have an understanding of potential problems such as introducing bias.
+There are two problems when removing data. One is the obvious fact that you lose data, and thus statistical power. The other problem is if the data are not missing completely at random. In that case, by removing those observations with missing data, you introduce bias into your dataset. Again, it is important to understand why and how data are missing so you can have an understanding of potential problems such as introducing bias.
 
 
 # Impute missing data

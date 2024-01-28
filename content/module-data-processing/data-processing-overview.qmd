@@ -7,7 +7,7 @@ subtitle: ""
 # Overview
 While statistical analysis is important and cool, you will spend the majority of time with your data in the pre-analysis stages. 
 
-Estimates are that for any real-world analysis, up to 80% is spent getting the data into the right stage to do the actual statistical model fitting. This module focuses on those 80%.
+Estimates are that for any real-world analysis, up to 80% of your time is spent getting the data ready to do the actual statistical model fitting. This module focuses on that 80%.
 
 
 # Learning Objectives
