@@ -1,6 +1,3 @@
-2b
-
-* Ready tools page -- there's a Note callout at the bottom with no content inside.
 
 
 4b
@@ -29,8 +26,11 @@ and pedantic comment.
 
 * Model testing module: I know this is before the metrics page, so I don't think any metrics are important. But I think a plot that shows the actual simulated trend and the RF predictions (maybe as red points) on top would be more helpful for understanding that the VIP. Also, further resources section is blank, you typically put in "Nothing yet" as a placeholder.
 
+
 Module 5
 * Data loading: Does GraphPad Prism have a proprietary data format? I didn't
-think so.
-* Outliers -- added a setntence to the beginning of finding outliers section covering the standard definition that most students learn. I think it's worth mentioning that this specific limit is arbitrary, but remove if you want.
-* I guess the outliers/missing data/feature engineering/merging sections still need some beefing up, but not sure what you alreayd have in the works.
+think so. 
+YES, PRISM FILE FORMAT, WHICH MY IMMUNOLOGY COLLEAGUES TRY TO SEND ME AND I KEEP REFUSING
+
+* I guess the outliers/missing data/feature engineering/merging sections still need some beefing up, but not sure what you alreayd have in the works. 
+I HAVE NOTHING ELSE IN THE WORKS CURRENTLY. AGREE, A LOT OF THOSE NEED BEEFING UP.

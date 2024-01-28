@@ -70,9 +70,6 @@ Similarly, any software to produce graphics by hand (e.g., **Photoshop**) should
 
 Similarly, results tables should be generated automatically and not produced by copying and pasting numbers from one location to another. Again, that means no **Excel**.
 
-::: Note
-:::
-
 
 # Summary
 
