@@ -258,13 +258,11 @@ Hopefully this should demonstrate to you why we can't just make tables of summar
 statistics. **Making visualizations is essential for good data science!** If you
 don't believe that after one example, take a look at the [Datasaurus Dozen](https://www.research.autodesk.com/publications/same-stats-different-graphs/) as well!
 
+
 # Further resources
 
 * [This post](https://datavizuniverse.substack.com/p/navigating-the-table-jungle) has examples of a lot of these table packages.
-* There's a book called *Show Me the Numbers* by Stephen Few which describes best
-practices for table designs. It is not free so not recommended for this course, but
-you can read a summary of it [here](https://www.datarocks.co.nz/post/data-viz-bookshelf_show-me-the-numbers-stephen-few).
 * If you want to read a paper about making tables, I recommend Bartram L et al., *Untidy Data: The Unreasonable Effectiveness of Tables* (2021); [https://doi.org/10.1109/TVCG.2021.3114830](https://doi.org/10.1109/TVCG.2021.3114830). There are a few others but this is the only one I've personally read that was very useful.
 * The Epidemiologist R Handbook has a nice [section on tables](https://epirhandbook.com/en/descriptive-tables.html).
 * The Bookdown book also has a [section on tables](https://bookdown.org/yihui/rmarkdown-cookbook/table-other.html).
-* The packages we discuss here are based on personal opinion. If you find any other table packages to be especially helpful, please let us know!
+* Tables are important in the pharma industry and for reports submitted to agencies like the FDA. The [Tables in Clinical Trials with R](https://rconsortium.github.io/rtrs-wg/) book has a lot of good information on that topic.

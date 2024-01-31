@@ -351,6 +351,7 @@ Given the importance and rapid change of AI, I made a [separate resource unit.](
     providing more novice-friendly help files for important `tidyverse`
     functions. If you struggle with the default help file for a
     function, check out this package.
+-   [ R Programming 101](https://www.youtube.com/@RProgramming101) is a YouTube channel with R tutorials that students have found useful.
 
 # Git/GitHub
 
