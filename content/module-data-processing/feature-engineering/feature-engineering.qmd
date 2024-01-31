@@ -47,5 +47,5 @@ It is not always necessary to do much feature engineering. But sometimes it can 
 
 * The book [Feature Engineering and Selection: A Practical Approach for Predictive Models](https://bookdown.org/max/FES/) covers this whole topic in a lot more detail. It uses R.
 
-
+* [Feature Engineering A-Z](https://feaz-book.com/) is another book that focuses on feature engineering. It comes with some R code examples.
 
