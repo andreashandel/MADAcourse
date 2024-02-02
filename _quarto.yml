@@ -210,25 +210,35 @@ website:
                file: content/module-stats-overview/statistical-terminology.qmd     
              - text: "Descriptive and preliminary analysis"
                file: content/module-stats-overview/descriptive-analysis.qmd     
-          - section: "8. Fitting Basic Statistical Models"
+          - section: "8. Model Fitting"
             contents:
-             - text: "Basic Statistical Models"
-               file: content/module-model-basics/basic-statistical-models.qmd
-             - text: "Fitting Statistical Models in R"
-               file: content/module-model-basics/model-fitting-r.qmd
-          - section: "9. Evaluating Your Model Fits"
+             - text: "Model Fitting Overview"
+               file: content/model-fitting/model-fitting-overview.qmd  
+             - text: "Model Fitting Introduction"
+               file: content/model-fitting/model-fitting-introduction/model-fitting-introduction.qmd  
+             - text: "Fitting Basic Models"
+               file: content/model-fitting/basic-statistical-models/basic-statistical-models.qmd
+             - text: "Model evaluation"
+               file: content/model-fitting/model-evaluation/model-evaluation.qmd
+             - text: "Fitting Models in R"
+               file: content/model-fitting/model-fitting-r/model-fitting-r.qmd
+          - section: "9. Model Assessment"
             contents:
-             - text: "Model Evaluation Overview"
-               file: content/module-model-evaluation/model-evaluation-overview.qmd     
-             - text: "Model Performance Evaluation"
-               file: content/module-model-evaluation/model-evaluation-performance.qmd     
-             - text: "Model Performance & Overfitting"
-               file: content/module-model-evaluation/model-evaluation-overfitting.qmd     
-             - text: "Model Diagostics"
-               file: content/module-model-evaluation/model-evaluation-diagnostics.qmd     
-             - text: "Model Uncertainty"
-               file: content/module-model-evaluation/model-evaluation-uncertainty.qmd     
-          - section: "10. Improving Your Model Fits"
+             - text: "Model Assessment Overview"
+               file: content/model-assessment/model-assessment-overview.qmd     
+             - text: "Model Assessment Introduction"
+               file: content/model-assessment/model-assessment-introduction/model-assessment-introduction.qmd     
+             - text: "Biology-based assessment"
+               file: content/model-assessment/biology-based-assessment/biology-based-assessment.qmd     
+             - text: "Model evaluation with external data"
+               file: content/model-assessment/external-data-assessment/external-data-assessment.qmd     
+             - text: "Model evaluation with Information Criteria"
+               file: content/model-assessment/information-criteria-assessment/information-criteria-assessment.qmd     
+             - text: "Model diagnostics"
+               file: content/model-assessment/diagnostics-assessment/diagnostics-assessment.qmd     
+             - text: "Model uncertainty"
+               file: content/model-assessment/uncertainty-assessment/uncertainty-assessment.qmd     
+          - section: "10. Model Improvement"
             contents:
              - text: "Improving Model Fits Overview"
                file: content/module-model-improvement/model-improvement-overview.qmd     
@@ -304,10 +314,10 @@ website:
               file: content/module-data-presentation/assessment-presenting-results.qmd
             - text: "7. Statistical Analysis Overview"
               file: content/module-stats-overview/assessment-statistical-analysis.qmd
-            - text: "8. Fitting Basic Statistical Models"
-              file: content/module-model-basics/assessment-fitting-basic-models.qmd
-            - text: "9. Evaluating Your Model Fits"
-              file: content/module-model-evaluation/assessment-model-evaluation.qmd
+            - text: "8. Model Fitting"
+              file: content/model-fitting/assessment-model-fitting.qmd
+            - text: "9. Model Assessment"
+              file: content/model-assessment/assessment-model-assessment.qmd
             - text: "10. Improving Your Model Fits"
               file: content/module-model-improvement/assessment-model-improvement.qmd
             - text: "11. Machine Learning Models I"
