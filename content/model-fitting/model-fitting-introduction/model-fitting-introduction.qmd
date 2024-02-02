@@ -1,0 +1,65 @@
+---
+title: "Model fitting introduction"
+#subtitle: "More info here if needed"
+date: 2024-02-01
+date-modified: last-modified
+---
+
+
+# Overview
+This unit provides a brief introduction and overview to the topic of fitting models to data.
+
+
+
+# Learning Objectives
+
+* Understand the general concept of model fitting.
+
+
+# Introduction
+
+Doing a data analysis involves much more than fitting models to data. In fact, a majority of time will likely be spent on tasks other than implementing and running model fits. Often, the steps that are necessary to get the data into a shape ready for analysis take up the majority of the time and effort.
+
+That said, the process of fitting models to data, also called the statistical analysis, is at the heart of almost every data analysis.
+
+The question then is: What does it actually mean when we say we fit models to data, and how do we go about it in the right way?
+
+The following sections provide brief introductions to specific topics, which will be revisited in more detail in further units.
+
+
+# Be aware of the goal
+
+During all steps of your data analysis, you should have a clear goal in mind. Why are you doing what you are doing? What are you trying to learn? Without a clear goal (such as testing a hypothesis, or predicting outcomes), you might end up with a statistical/model-fitting approach that is not in fact suitable for what you are trying to accomplish. Therefore, at each step of the analysis, and especially when you are engaged in model fitting, you need to be clear about your goals.
+
+
+# Be clear about the metrics
+
+Similar, but not the same as the overall goals is to be clear about the metric that you want to use to evaluate your model. Not only do you need to specify the outcome(s) you are most interested in, and how to quantify them, you will also need to specify how you compare these outcomes reported in the data with what your model predicts. This needs to be put into quantitative form and if you choose the wrong metric, you might not answer the question you actually want to answer.
+
+
+# Decide on a framework
+
+In classical statistics, there are two main frameworks, Bayesian and frequentist[^1]. One could maybe call Machine Learning yet another framework that is often neither properly frequentist or Bayesian. You will have to decide on the approach you want to use (or, if you are an overachiever, you can do it in more than one framework). Ideally, the approach should be dictated by the setting and question, and you should choose the best approach given your goals. In practice, other factors come into play, such that your skills and familiarity with a certain approach, what colleagues/clients/bosses want, what computational resources you have available, etc. While I personally prefer the Bayesian framework, I think in the end there are many other places in the analysis that are more important than picking the framework. Still, you should think about it and once you have a specific framework, be aware that this is the one you chose. So if you say operate in a frequentist framework and then switch to talking about predictions (an very common occurence in the scientific literature), you are likely mis-interpreting your own analysis.
+
+
+[^1] And for some unexplicable, dumb reason, it is convention to capitalize Bayesian but not frequentist.
+
+
+# Decide on the tools
+
+Together with the framework, you also need to pick your favorite, or most suitable, analysis software. This is generally not that important, as long as you choose a software that can do what you want it to do. General-purpose languages such as R, Python or Julia are most often great choices. Sometimes, you might want to use more specialized software. The important part is that the software allows a READy workflow.
+
+
+
+
+# Summary
+
+
+
+
+# Further Resources
+
+
+
+
+

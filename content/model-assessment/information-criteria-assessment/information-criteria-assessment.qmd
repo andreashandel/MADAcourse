@@ -1,0 +1,33 @@
+---
+title: "Information criteria based model assessment"
+#subtitle: "More info here if needed"
+date: 2024-01-25
+date-modified: last-modified
+---
+
+# Overview
+
+This unit discusses the idea of assessing a model based on expert knowledge.
+
+
+# Learning Objectives
+
+* Be able to do X.
+
+
+# Introduction
+
+Subject-matter expertise
+
+# Main section 1
+
+## Subsection 1
+
+# Summary
+
+# Further Resources
+
+
+
+
+
