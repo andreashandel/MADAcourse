@@ -49,7 +49,7 @@ Way to rename:
 
 ```         
 files <- fs::dir_ls("content", recurse = TRUE)
-file.rename(files, stringr::str_replace_all(files, pattern = "_", "-"))
+file.rename(files, stringr::str_replace_all(files, pattern = "-R", "-r"))
 files <- fs::dir_ls("content", recurse = TRUE)
 file.rename(files, tolower(files))
 ```
