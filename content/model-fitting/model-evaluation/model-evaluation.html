@@ -7,9 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Andreas Handel">
+<meta name="dcterms.date" content="2024-01-25">
 <meta name="description" content="Modern Applied Data Analysis (MADA) course">
 
-<title>MADA Course - Model Performance Evaluation</title>
+<title>MADA Course - Performance assessment</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -25,24 +26,27 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<link href="../../content/module-model-evaluation/model-evaluation-overfitting.html" rel="next">
-<link href="../../content/module-model-evaluation/model-evaluation-overview.html" rel="prev">
-<link href="../../media/MADAlogo.png" rel="icon" type="image/png">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../content/model-fitting/model-fitting-r/model-fitting-r.html" rel="next">
+<link href="../../../content/model-fitting/basic-statistical-models/basic-statistical-models.html" rel="prev">
+<link href="../../../media/MADAlogo.png" rel="icon" type="image/png">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -110,10 +114,10 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../media/MADAlogo.png" alt="" class="navbar-logo">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../media/MADAlogo.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">MADA Course</span>
     </a>
   </div>
@@ -124,23 +128,23 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../courseinfo/course-overview.html"> 
+    <a class="nav-link" href="../../../courseinfo/course-overview.html"> 
 <span class="menu-text">General Information</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../../content/content-overview.html" aria-current="page"> 
+    <a class="nav-link active" href="../../../content/content-overview.html" aria-current="page"> 
 <span class="menu-text">Content</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../courseinfo/assessments-overview.html"> 
+    <a class="nav-link" href="../../../courseinfo/assessments-overview.html"> 
 <span class="menu-text">Assessments</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../project/project-overview.html"> 
+    <a class="nav-link" href="../../../project/project-overview.html"> 
 <span class="menu-text">Project</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../resources/resources-overview.html"> 
+    <a class="nav-link" href="../../../resources/resources-overview.html"> 
 <span class="menu-text">Resources</span></a>
   </li>  
 </ul>
@@ -161,7 +165,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../content/module-model-evaluation/model-evaluation-overview.html">9. Evaluating Your Model Fits</a></li><li class="breadcrumb-item"><a href="../../content/module-model-evaluation/model-evaluation-performance.html">Model Performance Evaluation</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../content/model-fitting/model-fitting-overview.html">8. Model Fitting</a></li><li class="breadcrumb-item"><a href="../../../content/model-fitting/model-evaluation/model-evaluation.html">Model evaluation</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -175,7 +179,7 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/content-overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/content-overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Content Overview</span></a>
   </div>
 </li>
@@ -190,49 +194,49 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-intro-tools/introduction-course.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-intro-tools/introduction-course.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Course Introduction</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-intro-tools/tools-randrstudio.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-intro-tools/tools-randrstudio.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R and Rstudio</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-intro-tools/tools-github-introduction.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-intro-tools/tools-github-introduction.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">GitHub Introduction</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-intro-tools/tools-github-r-workflow.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-intro-tools/tools-github-r-workflow.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">GitHub and R Workflow</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-intro-tools/tools-quarto.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-intro-tools/tools-quarto.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Quarto &amp; Co</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-intro-tools/tools-ai.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-intro-tools/tools-ai.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">AI Tools</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-intro-tools/tools-reference-management.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-intro-tools/tools-reference-management.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Reference Management</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-intro-tools/tools-tips-guidance.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-intro-tools/tools-tips-guidance.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Guidance and Tips for R/RStudio/GitHub</span></a>
   </div>
 </li>
@@ -249,13 +253,13 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-data-analysis/data-analysis-motivation.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-data-analysis/data-analysis-motivation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Motivating Examples</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-data-analysis/data-analysis-overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-data-analysis/data-analysis-overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data Analysis Overview</span></a>
   </div>
 </li>
@@ -272,49 +276,49 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-ready-workflow/ready-overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-ready-workflow/ready-overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">READy workflows overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-ready-workflow/ready-introduction/ready-introduction.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-ready-workflow/ready-introduction/ready-introduction.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">READy introduction</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-ready-workflow/ready-organization/ready-organization.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-ready-workflow/ready-organization/ready-organization.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Project organization</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-ready-workflow/ready-project-management/ready-project-management.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-ready-workflow/ready-project-management/ready-project-management.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Project management</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-ready-workflow/ready-software-management/ready-software-management.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-ready-workflow/ready-software-management/ready-software-management.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Software management</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-ready-workflow/ready-documentation/ready-documentation.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-ready-workflow/ready-documentation/ready-documentation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Project documentation</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-ready-workflow/ready-tools/ready-tools.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-ready-workflow/ready-tools/ready-tools.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Tools for a READy workflow</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-ready-workflow/ready-open/ready-open.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-ready-workflow/ready-open/ready-open.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Open research</span></a>
   </div>
 </li>
@@ -331,13 +335,13 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-coding-basics/rcoding-basics.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-coding-basics/rcoding-basics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R Coding Basics</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-coding-basics/rcoding-tidyverse.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-coding-basics/rcoding-tidyverse.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Tidyverse and Friends</span></a>
   </div>
 </li>
@@ -354,37 +358,37 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-data/data-overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-data/data-overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-data/data-types-basic/data-types-basic.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-data/data-types-basic/data-types-basic.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Basic data types</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-data/data-types-complex/data-types-complex.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-data/data-types-complex/data-types-complex.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Complex data types</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-data/data-storage-formats/data-storage-formats.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-data/data-storage-formats/data-storage-formats.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data storage formats</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-data/data-formats-r/data-formats-r.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-data/data-formats-r/data-formats-r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data formats in R</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-data/data-generation-process/data-generation-process.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-data/data-generation-process/data-generation-process.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">The data generation process</span></a>
   </div>
 </li>
@@ -401,49 +405,49 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-synthetic-data/synthetic-data-overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-synthetic-data/synthetic-data-overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Synthetic Data Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-synthetic-data/synthetic-data-introduction/synthetic-data-introduction.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-synthetic-data/synthetic-data-introduction/synthetic-data-introduction.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction and Motivation</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-synthetic-data/synthetic-data-new-r/synthetic-data-new-r.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-synthetic-data/synthetic-data-new-r/synthetic-data-new-r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Creating new data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-synthetic-data/synthetic-data-new-existing-r/synthetic-data-new-existing-r.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-synthetic-data/synthetic-data-new-existing-r/synthetic-data-new-existing-r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Creating new data based on existing data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-synthetic-data/synthetic-data-existing-r/synthetic-data-existing-r.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-synthetic-data/synthetic-data-existing-r/synthetic-data-existing-r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Scrambling existing data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-synthetic-data/synthetic-data-r-packages/synthetic-data-r-packages.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-synthetic-data/synthetic-data-r-packages/synthetic-data-r-packages.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R packages for data creation</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-synthetic-data/synthetic-data-ai-tools-r/synthetic-data-ai-tools-r.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-synthetic-data/synthetic-data-ai-tools-r/synthetic-data-ai-tools-r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Use synthetic data with AI tools</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-synthetic-data/synthetic-data-model-testing-r/synthetic-data-model-testing-r.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-synthetic-data/synthetic-data-model-testing-r/synthetic-data-model-testing-r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Use synthetic data to test models</span></a>
   </div>
 </li>
@@ -460,43 +464,43 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-data-processing/data-processing-overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-data-processing/data-processing-overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data Processing Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-data-processing/data-processing-introduction/data-processing-introduction.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-data-processing/data-processing-introduction/data-processing-introduction.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data Processing Introduction</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-data-processing/data-loading/data-loading.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-data-processing/data-loading/data-loading.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data loading</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-data-processing/missing-data/missing-data.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-data-processing/missing-data/missing-data.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Dealing with missing data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-data-processing/outliers/outliers.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-data-processing/outliers/outliers.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Dealing with outliers</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-data-processing/feature-engineering/feature-engineering.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-data-processing/feature-engineering/feature-engineering.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Creating new data/variables</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-data-processing/merging-data/merging-data.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-data-processing/merging-data/merging-data.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Merging data</span></a>
   </div>
 </li>
@@ -513,25 +517,25 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-data-presentation/presenting-results-overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-data-presentation/presenting-results-overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Presenting Results Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-data-presentation/visualization-overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-data-presentation/visualization-overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Visualization Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-data-presentation/visualization-in-r.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-data-presentation/visualization-in-r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Visualization in R</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-data-presentation/tables-in-r.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-data-presentation/tables-in-r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Tables in R</span></a>
   </div>
 </li>
@@ -548,19 +552,19 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-stats-overview/statistical-analysis-introduction.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-stats-overview/statistical-analysis-introduction.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Statistical Analysis Introduction</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-stats-overview/statistical-terminology.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-stats-overview/statistical-terminology.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Some Statistical Model Fitting Terminology</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-stats-overview/descriptive-analysis.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-stats-overview/descriptive-analysis.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Descriptive and preliminary analysis</span></a>
   </div>
 </li>
@@ -568,64 +572,94 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false">
- <span class="menu-text">8. Fitting Basic Statistical Models</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false" aria-label="Toggle section">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="true">
+ <span class="menu-text">8. Model Fitting</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-basics/basic-statistical-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Basic Statistical Models</span></a>
+  <a href="../../../content/model-fitting/model-fitting-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model Fitting Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-basics/model-fitting-r.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Fitting Statistical Models in R</span></a>
+  <a href="../../../content/model-fitting/model-fitting-introduction/model-fitting-introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model Fitting Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/model-fitting/basic-statistical-models/basic-statistical-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fitting Basic Models</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/model-fitting/model-evaluation/model-evaluation.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Model evaluation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/model-fitting/model-fitting-r/model-fitting-r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fitting Models in R</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="true">
- <span class="menu-text">9. Evaluating Your Model Fits</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="true" aria-label="Toggle section">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="false">
+ <span class="menu-text">9. Model Assessment</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-evaluation/model-evaluation-overview.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Model Evaluation Overview</span></a>
+  <a href="../../../content/model-assessment/model-assessment-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model Assessment Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-evaluation/model-evaluation-performance.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Model Performance Evaluation</span></a>
+  <a href="../../../content/model-assessment/model-assessment-introduction/model-assessment-introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model Assessment Introduction</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-evaluation/model-evaluation-overfitting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Model Performance &amp; Overfitting</span></a>
+  <a href="../../../content/model-assessment/biology-based-assessment/biology-based-assessment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Biology-based assessment</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-evaluation/model-evaluation-diagnostics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Model Diagostics</span></a>
+  <a href="../../../content/model-assessment/external-data-assessment/external-data-assessment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model evaluation with external data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-evaluation/model-evaluation-uncertainty.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Model Uncertainty</span></a>
+  <a href="../../../content/model-assessment/information-criteria-assessment/information-criteria-assessment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model evaluation with Information Criteria</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/model-assessment/diagnostics-assessment/diagnostics-assessment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model diagnostics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/model-assessment/uncertainty-assessment/uncertainty-assessment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model uncertainty</span></a>
   </div>
 </li>
       </ul>
@@ -633,7 +667,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="false">
- <span class="menu-text">10. Improving Your Model Fits</span></a>
+ <span class="menu-text">10. Model Improvement</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -641,31 +675,31 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-improvement/model-improvement-overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-model-improvement/model-improvement-overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Improving Model Fits Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-improvement/model-improvement-data-processing.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-model-improvement/model-improvement-data-processing.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Pre-Processing Data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-improvement/model-improvement-subset-selection.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-model-improvement/model-improvement-subset-selection.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Subset Selection</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-improvement/model-improvement-regularization.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-model-improvement/model-improvement-regularization.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Regularization</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-improvement/model-improvement-tuning.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-model-improvement/model-improvement-tuning.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Model Tuning</span></a>
   </div>
 </li>
@@ -682,25 +716,25 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-ml-1/ml-models-overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-model-ml-1/ml-models-overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">ML Models Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-ml-1/polynomial-spline-models.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-model-ml-1/polynomial-spline-models.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Polynomial and Spline Models</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-ml-1/decision-trees.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-model-ml-1/decision-trees.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Decision Trees</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-ml-1/many-tree-models.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-model-ml-1/many-tree-models.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Many-Tree Models</span></a>
   </div>
 </li>
@@ -717,19 +751,19 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-ml-2/svm-models.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-model-ml-2/svm-models.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Support Vector Machine Models</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-ml-2/da-models.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-model-ml-2/da-models.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Discriminant Analysis Models</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-ml-2/more-ml-models.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-model-ml-2/more-ml-models.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Some More ML models</span></a>
   </div>
 </li>
@@ -746,7 +780,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-workflow/complete-data-analysis-workflow.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-workflow/complete-data-analysis-workflow.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Complete Data Analysis Workflow</span></a>
   </div>
 </li>
@@ -763,61 +797,61 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-16" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-ai/ai-overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-ai/ai-overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">AI Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-ai/ai-introduction/ai-introduction.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-ai/ai-introduction/ai-introduction.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction to AI</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-ai/ai-llm-introduction/ai-llm-introduction.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-ai/ai-llm-introduction/ai-llm-introduction.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction to LLM AI tools</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-ai/ai-conceptual/ai-conceptual.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-ai/ai-conceptual/ai-conceptual.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">AI Concepts</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-ai/ai-tools/ai-tools.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-ai/ai-tools/ai-tools.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Current AI Tools</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-ai/ai-write-code-r/ai-write-code-r.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-ai/ai-write-code-r/ai-write-code-r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Write code with AI</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-ai/ai-fix-code-r/ai-fix-code-r.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-ai/ai-fix-code-r/ai-fix-code-r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Fix code with AI</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-ai/ai-eda-r/ai-eda-r.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-ai/ai-eda-r/ai-eda-r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Explore data with AI</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-ai/ai-analysis-r/ai-analysis-r.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-ai/ai-analysis-r/ai-analysis-r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Analyze data with AI</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-ai/ai-resources/ai-resources.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-ai/ai-resources/ai-resources.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">AI Resources</span></a>
   </div>
 </li>
@@ -833,7 +867,10 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#model-performance" id="toc-model-performance" class="nav-link" data-scroll-target="#model-performance">Model performance</a></li>
   <li><a href="#the-costlossobjective-function" id="toc-the-costlossobjective-function" class="nav-link" data-scroll-target="#the-costlossobjective-function">The cost/loss/objective function</a></li>
   <li><a href="#costlossobjective-functions-for-continuous-outcomes" id="toc-costlossobjective-functions-for-continuous-outcomes" class="nav-link" data-scroll-target="#costlossobjective-functions-for-continuous-outcomes">Cost/loss/objective functions for continuous outcomes</a>
   <ul class="collapse">
@@ -849,16 +886,17 @@ window.Quarto = {
   </ul></li>
   <li><a href="#custom-cost-functionsmetrics" id="toc-custom-cost-functionsmetrics" class="nav-link" data-scroll-target="#custom-cost-functionsmetrics">Custom cost functions/metrics</a></li>
   <li><a href="#likelihood-approach" id="toc-likelihood-approach" class="nav-link" data-scroll-target="#likelihood-approach">Likelihood approach</a></li>
-  <li><a href="#further-materials" id="toc-further-materials" class="nav-link" data-scroll-target="#further-materials">Further materials</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#further-resources" id="toc-further-resources" class="nav-link" data-scroll-target="#further-resources">Further Resources</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../content/module-model-evaluation/model-evaluation-overview.html">9. Evaluating Your Model Fits</a></li><li class="breadcrumb-item"><a href="../../content/module-model-evaluation/model-evaluation-performance.html">Model Performance Evaluation</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../content/model-fitting/model-fitting-overview.html">8. Model Fitting</a></li><li class="breadcrumb-item"><a href="../../../content/model-fitting/model-evaluation/model-evaluation.html">Model evaluation</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Model Performance Evaluation</h1>
+<h1 class="title">Performance assessment</h1>
 </div>
 
 
@@ -872,11 +910,17 @@ window.Quarto = {
           </div>
   </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">2024-01-25</p>
+    </div>
+  </div>
   
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2024-01-27</p>
+      <p class="date-modified">2024-02-01</p>
     </div>
   </div>
     
@@ -887,25 +931,53 @@ window.Quarto = {
 </header>
 
 
+<section id="overview" class="level1">
+<h1>Overview</h1>
+<p>This unit discusses the idea of assessing a model based on its performance. This is a general overview, additional units will go into more details of specific ways to assess performance.</p>
 <div class="note">
-<p>Up to now, I have not shown much math or equations. Below, you will encounter some. The equations are fairly simple and I’m sure you’ll be able to follow once you spend a few minutes to think through them. Most often, there are functions in R that compute all those quantities for you. But sometimes, you will have to compute a few of them yourself. It is therefore good to know their definitions. Once you do, you realize that you can simply compute them yourself with just a few lines of R code. Again, most often you won’t need to do that, but sometimes it is useful to have that ability and know how to do it.</p>
+<p>I use the term performance here in a narrow sense, you will realize how I define it as you go through this unit.</p>
 </div>
+</section>
+<section id="learning-objectives" class="level1">
+<h1>Learning Objectives</h1>
+<ul>
+<li>Understand the concept of model performance.</li>
+<li>Be aware of different common metrics to assess model performance.</li>
+</ul>
+<div class="note">
+<p>This unit contains some equations showing explicit definitions for a few common performance measures. They are fairly simple and I’m sure you’ll be able to follow once you spend a few minutes to think through them. If you don’t like reading equations, you should be able to just jump over them and still understand what is going on. Most often, your software will do all computations for you. But sometimes it doesn’t. It is therefore good to know a bit how common performance measures are defined. Once you do, you realize that you can simply compute them yourself with just a few lines of R code.</p>
+</div>
+</section>
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
-<p>When you fit a model, e.g., a linear model using <code>lm()</code> in R (either directly, or calling it through some other package, such as <code>parsnip</code> or <code>tidymodels</code>), what exactly happens? What does it mean when we ask the computer to <em>fit a model</em>? Think about what’s going on for a minute.</p>
-<p>What <code>lm()</code> or similar functions do is vary the parameters of a model until the model predicted outcomes are as close as possible to the actual observed outcomes in the data. Let’s say you want to fit a multivariable linear model like this one, where you want to fit some outcome <span class="math inline">\(Y\)</span> given some predictor variables <span class="math inline">\(X_i\)</span> (e.g.&nbsp;fitting/predicting weight of a person, given their height and age). The model equation will look like this:</p>
+<p>When you fit a model (e.g., a linear model or logistic model) to data, what exactly happens? What does it mean when we ask the computer to <em>fit a model</em>? Think about what’s going on for a minute.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="assessment-cartoon.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="assessment-cartoon.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" alt="A comic of a person holding a clipboard asking another person 'How hard - on a scale of one to ten?' to which the other responds 'The way I feel is hard to quantify!'"></a></p>
+</figure>
+</div>
+</section>
+<section id="model-performance" class="level1">
+<h1>Model performance</h1>
+<p>What your fit a model to data, your computer varies the parameters of your model to improve model performance, until there is no more performance improvement possible.</p>
+<p>We generally want a well-performing model to be one that captures the main patterns in the data as closely as possible.</p>
+<p>To provide a specific example, let’s say you want to fit a multivariable linear model to some outcome <span class="math inline">\(Y\)</span> given some predictor variables <span class="math inline">\(X_i\)</span> (e.g.&nbsp;fitting/predicting weight of a person, given their height and age). The model equation will look like this:</p>
 <p><span class="math display">\[Y_m=b_0 + b_1X_1 + b_2X_2 + \ldots + b_n X_n.\]</span></p>
-<p>When you ask the computer to fit this model, it will guess some values of the coefficients <em>b<sub>i</sub></em> and then vary them (in a smart way) until the predicted <em>Y<sub>m</sub></em> (often also called <span class="math inline">\(\hat{y}\)</span> or <span class="math inline">\(\hat{Y}\)</span>) from the model are as close as possible to the actual data values <em>Y<sub>d</sub></em> (often also just called <span class="math inline">\(y\)</span> or <span class="math inline">\(Y\)</span>).</p>
-<p>This procedure for fitting models is very general and applies to any kind of model, as well as both continuous and categorical outcomes. What changes between problems and approaches is how exactly the fitting routine goes about varying the parameters (something we won’t discuss in this course), and how we define <em>closeness</em> between data and model outcomes. The latter is a scientific choice, and you need to specify it when you fit models.</p>
+<p>When you ask the computer to fit this model, it will guess some values of the coefficients <em>b<sub>i</sub></em> and then vary them (in a smart way)[^1] until the predicted <em>Y<sub>m</sub></em> (often also called <span class="math inline">\(\hat{y}\)</span> or <span class="math inline">\(\hat{Y}\)</span>) from the model are as close as possible to the actual data values <em>Y<sub>d</sub></em> (often also just called <span class="math inline">\(y\)</span> or <span class="math inline">\(Y\)</span>).</p>
+<p>[^1] This business of <em>varying the model in a smart way until you find the best one</em> is an example of what’s called <a href="https://en.wikipedia.org/wiki/Mathematical_optimization">optimization</a>. Developing routines that can quickly, efficiently, and reliably find the optimum is a huge area, and depending on the model and data you are trying to fit, having smart algorithms to do the optimization can be very challenging. You can make a whole career just working on optimization topics. Fortunately, for most purposes, we can generally use existing software and rely on their built-in optimizers.</p>
+<p>The overall procedure of adjusting model details until you get a model that capture the patterns in the data as best as it can, and has the highest possible performance, is very general and applies to any kind of model, as well as both continuous and categorical outcomes.</p>
+<p>What is important that for each scenario, model performance is clearly defined. What you mean by <em>model being close to data</em> or <em>model capturing the pattern in the data</em> needs to be to specified such that your algorithm can compute a number that it can try to optimize - the performance measure.</p>
+<p>It is important to be aware that the choice of the performance measure is a scientific choice. You need to specify it based on your knowledge of the system and the question you want to answer. While there are very common performance measures, which we will discuss next, it is important that you do think about what it is you are actually asking your model to do and what you optimize when you fit data.</p>
 </section>
 <section id="the-costlossobjective-function" class="level1">
 <h1>The cost/loss/objective function</h1>
-<p>For the computer to perform the routine of <em>vary model parameters to get the model as close to the data as possible</em>, we have to quantify this closeness (or difference) between model and data. To do so, we define some function of both model predictions (<em>Y<sub>m</sub></em>) and measured/data (<em>Y<sub>d</sub></em>) outcomes. This function goes by different names, but the terms most commonly used are <strong>cost function</strong> or <a href="https://en.wikipedia.org/wiki/Loss_function"><strong>loss function</strong></a>. In more general math or stats context, this is also called an <strong>objective function.</strong> Other names are common in different areas of science, see e.g., those listed in the linked Wikipedia article. Another term that is used by <code>tidymodels</code> is simply <strong>metric</strong>; this term is somewhat more common in machine learning situations. The <code>yardstick</code> package from <code>tidymodels</code> is all about such metrics. I will interchangeably use cost, lost, and objective function, as well as metric, so just be aware that they all mean the same thing: a function that is used to measure how close the model predictions are to the data.</p>
+<p>To specify a performance measure we want to optimize, we need to define some function of both model predictions (<em>Y<sub>m</sub></em>) and measured/data (<em>Y<sub>d</sub></em>) outcomes. This function goes by different names, but the terms most commonly used are <strong>cost function</strong> or <a href="https://en.wikipedia.org/wiki/Loss_function"><strong>loss function</strong></a>. In more general math or stats context, this is also called an <strong>objective function.</strong> Other names are common in different areas of science, see e.g., those listed in the linked Wikipedia article.</p>
+<p>Another term is simply <strong>metric</strong>. I’m also calling it generically <strong>performance measure</strong> here. I often interchangeably use these terms, so just be aware that they mean the same thing: a function that is used to measure how close the model predictions are to the data.</p>
 <p>The convention is to set up the problem such that larger discrepancies between model and data lead to a larger numerical value of this function. Then our goal is to minimize the objective function, which means minimizing the difference between the data and the model predictions. (Occasionally, problems are set up to maximize this function. You can always change it into a minimization problem by e.g., taking the inverse or adding a minus sign.)</p>
 <p>In equation form, we have in the general case: <span class="math display">\[C = f(Y_m,Y_d).\]</span></p>
 <p>The <span class="math inline">\(Y_m\)</span> are all the predictions made by the model for the outcome, and the <span class="math inline">\(Y_d\)</span> are the actual outcomes from the data. If you have <span class="math inline">\(N\)</span> observations, you will have <span class="math inline">\(N\)</span> pairs of <span class="math inline">\(Y_m\)</span> and <span class="math inline">\(Y_d\)</span> and then you need to specify some function, <em>f</em>, that uses all those values to compute a single value to measure your performance. The different types of functions, <em>f</em>, depend on the type of data and other considerations. Once you define <em>f</em>, this is the performance metric which quantifies how well a given model fits the data.</p>
-<p>When you do a single model fit, e.g., using <code>lm()</code>, the computer calculates <em>f</em> for different values of the parameters, <em>b<sub>i</sub></em>, until it finds the ones that produce the best (i.e., minimum) value of <em>C</em>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<p>Similarly, if you fit two different models (e.g., a linear model with 3 predictor variables, and another one with 5), you can use the value of <em>C</em> to compare model performance (with some important caveats, which we will discuss shortly).</p>
+<p>When you do a single model fitting step, the computer calculates <em>f</em> for different values of the parameters, <em>b<sub>i</sub></em>. In general, it repeats this for different values of the model parameters until it finds the ones that produce the best (i.e., minimum) value of <em>C</em>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>Similarly, if you fit two different models (e.g., a linear model with 3 predictor variables, and another one with 5), you can use the value of <em>C</em> to compare model performance. We’ll get into that in more detail in further units.</p>
 </section>
 <section id="costlossobjective-functions-for-continuous-outcomes" class="level1">
 <h1>Cost/loss/objective functions for continuous outcomes</h1>
@@ -924,7 +996,7 @@ window.Quarto = {
 </section>
 <section id="coefficient-of-determination" class="level2">
 <h2 class="anchored" data-anchor-id="coefficient-of-determination">Coefficient of determination</h2>
-<p>An equivalent alternative to SSR is to use a quantity called <a href="https://en.wikipedia.org/wiki/Coefficient_of_determination">Coefficient of determination</a>, or more commonly <span class="math inline">\(R^2\)</span> (R-squared). This quantity is defined as <span class="math display">\[1-RSS/TSS\]</span> where RSS is the residual sum of square introduced above and TSS is the <a href="https://en.wikipedia.org/wiki/Total_sum_of_squares">total sum of squares</a>. The latter is defined as</p>
+<p>An equivalent alternative to SSR is to use a quantity called <a href="https://en.wikipedia.org/wiki/Coefficient_of_determination">Coefficient of determination</a>, or more commonly <span class="math inline">\(R^2\)</span> (R-squared). This quantity is defined as <span class="math display">\[1-rSS/TSS\]</span> where RSS is the residual sum of square introduced above and TSS is the <a href="https://en.wikipedia.org/wiki/Total_sum_of_squares">total sum of squares</a>. The latter is defined as</p>
 <p><span class="math display">\[TSS =  \sum_i (Y_{av} - Y_d^i)^2\]</span></p>
 <p>where <span class="math inline">\(Y_{av}\)</span> is the mean of the data. Therefore, the equation for <span class="math inline">\(R^2\)</span> is</p>
 <p><span class="math display">\[R^2 = 1-  \frac{\sum_i (Y_m^i - Y_d^i)^2}{\sum_i (Y_{av} - Y_d^i)^2}\]</span></p>
@@ -936,7 +1008,8 @@ window.Quarto = {
 <p>An alternative to least squares is to penalize not with the distance <em>squared</em>, but <em>linearly</em> with the (absolute) distance. This metric is called <strong>(mean) absolute error</strong> or <a href="https://en.wikipedia.org/wiki/Least_absolute_deviations"><strong>(least) absolute deviation</strong></a>, and the model is</p>
 <p><span class="math display">\[C = f(Y_m,Y_d) = \sum_i |Y_m^i - Y_d^i|\]</span></p>
 <p>This approach can be useful if the data contains outliers (that are real, and one can’t justify removing them during cleaning). With a squared distance penalty, outliers have a strong impact on the model fit. With a linear penalty, such outliers carry less weight. Because of this, the linear difference approach is sometimes called a robust estimation.</p>
-<p>Robust estimation methos such as MAE and many others often require the use of specialized R packages. A large number of R packages exist that allow fitting this way, see e.g., the <a href="https://cran.r-project.org/web/views/Robust.html">CRAN Robust Task View</a>. The <code>yardstick</code> package as the metric <code>mae()</code> which computes the mean absolute error.</p>
+<p>Robust estimation methods such as MAE and many others often require the use of specialized software or packages that provide this functionality.</p>
+<p>R packages. A large number of R packages exist that allow fitting this way, see e.g., the <a href="https://cran.r-project.org/web/views/Robust.html">CRAN Robust Task View</a>. The <code>yardstick</code> package as the metric <code>mae()</code> which computes the mean absolute error.</p>
 <p>Another way to define <em>f</em> is with step functions. The idea is that as long as model and data are within some distance, the penalty is zero. Once model and data differ by some threshold, a penalty is given, e.g., a fixed value or a linear or quadratic penalty. Such types of schemes to define <em>f</em> are common in the class of models called Support Vector Machines, which we will look at later in the course.</p>
 <p>Some other metrics are implemented in <code>yardstick</code>. You can check out other metric types in this <a href="https://yardstick.tidymodels.org/articles/metric-types.html"><code>yardstick</code> article</a>. For instance there is one called <code>huber_loss()</code> which is a combination of least squares and absolute error.</p>
 <p>No matter what scheme you choose, it might at times be useful to weigh data points. In the examples given above, each model-data pair was given the same importance. Sometimes it might be that you have some data points that should carry more weight. A common case is if you have measurements not on the individual level but some aggregate level. As an example, assume you have a fraction of heart attacks among all patients for some time period in different hospitals, and you want to fit that fraction. You don’t know the number of people who had heart attacks, only the fraction. But you do know something about the total number of beds each hospital has. You could then argue that hospitals with more beds have more patients and thus likely more heart attacks, and therefore the data from larger hospitals should get more weight, and you could e.g., multiply each term in the sum by bed size. Note that this is a scientific decision based on your expert knowledge of the data. Almost all fitting routines allow you to provide weights for your data and you can then perform <em>weighted least squares</em> (or a weighted version of whatever other approaches you choose). <code>tidymodels</code> has some support for <a href="https://www.tidyverse.org/blog/2022/05/case-weights/">weighted fitting</a>.</p>
@@ -980,8 +1053,12 @@ window.Quarto = {
 <p>The most general approach to defining the cost/loss function, <em>f</em>, is the likelihood approach. Using this approach, which underlies a lot of modern statistics, both frequentist and Bayesian approaches, you start by explicitly specifying a model/distribution for the data (both deterministic and probability parts). As an example, you might postulate that expected number of cases of Cholera in a given month depends linearly on the monthly amount of rainfall (deterministic component) and that the actual/measured number of cases are Poisson distributed (probability component). Both the deterministic and probabilistic components of your model have parameters. You write down (or simulate) the likelihood and then run some optimization routine which varies parameters until it found the optimal result (maximum of the likelihood, or more commonly the minimum of the log-likelihood).</p>
 <p>Using the Likelihood is the most general and flexible approach to model fitting and for more complex problems, often the only feasible approach. It applies to any kind of outcome, and you can specify any model you want. Unfortunately, it is generally more complicated and often requires more custom-written code (though a lot more user-friendly R packages have become available in recent times). We can’t get much into likelihood-based fitting in this course. For more information, I recommend <a href="https://ms.mcmaster.ca/~bolker/emdbook/">Ben Bolker’s book <em>Ecological Models and Data in R</em></a> as a good starting point for (mostly frequentists) Likelihood fitting approaches. Another book that introduces the ideas from a Bayesian perspective is <a href="https://xcelab.net/rm/statistical-rethinking/"><em>Statistical Rethinking</em></a>. Unfortunately, neither book is freely available online (as far as I’m aware). If you know of any good introductory books that teach model fitting using likelihood approaches with R, please let me know.</p>
 </section>
-<section id="further-materials" class="level1">
-<h1>Further materials</h1>
+<section id="summary" class="level1">
+<h1>Summary</h1>
+<p>Without a full specification of your model performance criterion (objective function), you can’t fit a model to data. While there are common standards that people use without much thinking (e.g., least squares optimization), it is generally important to ensure that what you optimize is what you actually care about.</p>
+</section>
+<section id="further-resources" class="level1">
+<h1>Further Resources</h1>
 <p>If you want to get some more intuition with fitting a continuous outcome, go through this <a href="https://shiny.ovpr.uga.edu/modelperformance/">interactive tutorial</a>.</p>
 <p>The <a href="https://bradleyboehmke.github.io/HOML/process.html#model-eval">Model Evaluation section of <em>HMLR</em></a> lists and describes various performance metrics. The <a href="https://www.tmwr.org/performance.html">Performance chapter of <em>Tidy Modeling with R</em></a> also discusses different performance metrics.</p>
 <p><a href="https://www.statlearning.com/">Chapter 2 of <em>ISLR</em></a>, which you already looked at previously, also discusses the topic of performance, and several other issues we are discussing in this module. Now, or once you are finished with the other readings of this module, might be good time to revisit that chapter.</p>
@@ -993,7 +1070,7 @@ window.Quarto = {
 <div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
-<li id="fn1"><p>Technically, for <code>lm()</code> and some other simple models, it is possible to find the best parameter values other than by ‘trial and error’, but for many other models, this is more or less what is happening. Developing routines that can quickly, efficiently, and reliably find the optimum value of a function (here the minimum of <em>C</em>) is part of the large field of <a href="https://en.wikipedia.org/wiki/Mathematical_optimization">optimization</a>. Fortunately, for our purposes, we can let the different functions in R do this task without us having to worry too much about how the optimal value is determined. However, for more advanced analyses, the built-in optimizers sometimes do not work. In that case, I recommend using the <code>nloptr</code> package - but we won’t need it in this course.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Technically, for some simple models, it is possible to find the best parameter values other than by ‘trial and error’, but for many other models, this is more or less what is happening.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1403,17 +1480,42 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../content/module-model-evaluation/model-evaluation-overview.html" class="pagination-link  aria-label=" model="" evaluation="" overview"="">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Model Evaluation Overview</span>
+      <a href="../../../content/model-fitting/basic-statistical-models/basic-statistical-models.html" class="pagination-link  aria-label=" fitting="" basic="" models"="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Fitting Basic Models</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../content/module-model-evaluation/model-evaluation-overfitting.html" class="pagination-link" aria-label="Model Performance &amp; Overfitting">
-        <span class="nav-page-text">Model Performance &amp; Overfitting</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../../content/model-fitting/model-fitting-r/model-fitting-r.html" class="pagination-link" aria-label="Fitting Models in R">
+        <span class="nav-page-text">Fitting Models in R</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","loop":false,"closeEffect":"zoom","selector":".lightbox","descPosition":"right"});
+window.onload = () => {
+  lightboxQuarto.on('slide_before_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    const href = trigger.getAttribute('href');
+    if (href !== null) {
+      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+      if (imgEl !== null) {
+        const srcAttr = imgEl.getAttribute("src");
+        if (srcAttr && srcAttr.startsWith("data:")) {
+          slideConfig.href = srcAttr;
+        }
+      }
+    } 
+  });
+
+  lightboxQuarto.on('slide_after_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    if (window.Quarto?.typesetMath) {
+      window.Quarto.typesetMath(slideNode);
+    }
+  });
+
+};
+          </script>
 
 
 

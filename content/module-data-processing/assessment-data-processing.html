@@ -194,20 +194,20 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-basics/assessment-fitting-basic-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">8. Fitting Basic Statistical Models</span></a>
+  <a href="../../content/model-fitting/assessment-model-fitting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8. Model Fitting</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-evaluation/assessment-model-evaluation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">9. Evaluating Your Model Fits</span></a>
+  <a href="../../content/model-assessment/assessment-model-assessment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">9. Model Assessment</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../content/module-model-improvement/assessment-model-improvement.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">10. Improving Your Model Fits</span></a>
+ <span class="menu-text">10. Model Improvment</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -280,7 +280,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2024-01-27</p>
+      <p class="date-modified">2024-02-03</p>
     </div>
   </div>
     
@@ -297,7 +297,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="discussion" class="level1">
 <h1>Discussion</h1>
-<p>No discussion assignment this week. Instead, submit project part 1.</p>
+<p>How has your experience with AI tools for this course been so far? What have you found helpful, what doesn’t seem to work? Any cool tools, tricks, resources you found? Write an initial post by Wednesday, then comment on and learn from each other by Friday.</p>
 </section>
 <section id="exercise" class="level1">
 <h1>Exercise</h1>
@@ -320,7 +320,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="getting-the-data" class="level2">
 <h2 class="anchored" data-anchor-id="getting-the-data">Getting the data</h2>
-<p>To get the dataset you selected, it is easiest if you download the file to your computer and place it inside your portfolio repository. Note that in general, you should make each data analysis (or other) project its own GitHub repository, and always use a structure like the one provided in the <code>Data Analysis Template</code> (or something similar). However, for this small exercise and for logistic reasons, you’ll use your portfolio/website repository, and just a single folder. Make a new folder called <code>dataanalysis-exercise</code> inside your portfolio repository. Place the data into that folder.</p>
+<p>To get the dataset you selected, it is easiest if you download the file to your computer and place it inside your portfolio repository. Note that in general, you should make each data analysis (or other) project its own GitHub repository, and always use a structure like the one provided in the <code>Data Analysis Template</code> (or something similar). However, for this small exercise and for logistic reasons, you’ll use your portfolio/website repository, and just a single folder. Make a new folder called <code>cdcdata-exercise</code> inside your portfolio repository. Place the data into that folder.</p>
 <div class="warning">
 <p>Remember that GitHub doesn’t like large files. So if you pick a large data file (&gt;50MB), first place it somewhere outside your repository, then reduce it by e.g., writing some R code that selects only a portion of the data. Once it’s small enough, you can place it into the GitHub repository.</p>
 </div>
@@ -330,7 +330,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="exploring-the-data" class="level2">
 <h2 class="anchored" data-anchor-id="exploring-the-data">Exploring the data</h2>
-<p>Now, write code that explores the data. Add a new Quarto document called <code>dataanalysis-exercise.qmd</code> to the folder you just created.</p>
+<p>Now, write code that explores the data. Add a new Quarto document called <code>cdcdata-exercise.qmd</code> to the folder you just created.</p>
 <p>Start by providing a brief description of the data, where you got it, what it contains. Also add a link to the source.</p>
 <p>Then write code that reads/loads the data. As needed, process the data (e.g., if there are weird symbols in the data, or missing values coded as <code>999</code> or anything of that sort, write code to fix it.) If your dataset has a lot of variables, pick a few of them (at least 5).</p>
 <p>Once you have the data processed and cleaned, perform some exploratory/descriptive analysis on this cleaned dataset. Make some summary tables, produce some figures. Try to summarize each variable in a way that it can be described by a distribution. For instance if you have a categorical variable, show what % are in each category. If you have a continuous variable, make a plot to see if it’s approximately normal, then try to summarize it to determine its mean and standard deviation.</p>
@@ -350,7 +350,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="joining-and-cloning-the-github-repository" class="level2">
 <h2 class="anchored" data-anchor-id="joining-and-cloning-the-github-repository">Joining and cloning the GitHub repository</h2>
 <p>You should have received an invitation to be a collaborator on your classmate’s repository. Accept it, then clone the repository to your local computer.</p>
-<p>Find the <code>dataanalysis-exercise.qmd</code> file. At the bottom, write a comment that says something like <strong>This section contributed by YOURNAME.</strong> This needs to be there for me to be able to grade your contribution.</p>
+<p>Find and open the <code>cdcdata-exercise.qmd</code> file. At the bottom, write a comment that says something like <strong>This section contributed by YOURNAME.</strong> This needs to be there for me to be able to grade your contribution.</p>
 </section>
 <section id="making-synthetic-data" class="level2">
 <h2 class="anchored" data-anchor-id="making-synthetic-data">Making synthetic data</h2>
@@ -362,7 +362,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="finishing-the-github-workflow" class="level2">
 <h2 class="anchored" data-anchor-id="finishing-the-github-workflow">Finishing the GitHub workflow</h2>
-<p>Once all is done and works, commit, push to GitHub. Note that you are now directly pushing to the original repo. This is easier, you don’t need to do a pull request (PR). It’s also a bit more dangerous, since you could potentially create conflicts if the main repository owner or other collaborators work on the repository at the same time.</p>
+<p>Once all is done and works, commit, push to GitHub. ** Note that you are now directly pushing to the original repo which is owned by your classmate.** This is easier, you don’t need to do fork and pull request (PR). <strong>It’s also more dangerous</strong>, since you could potentially mess up your classmate’s repo. So make sure things work before committing and pushing.</p>
 <div class="note">
 <p>Some more comments on GitHub workflows:</p>
 <p>In general, if you work closely with someone on a project, it might make sense to add them as collaborator, and as needed coordinate with them to avoid merge conflicts. Otherwise, telling someone to contribute by forking and sending a pull request is the safer approach, and you have control if you want to accept their changes or not.</p>

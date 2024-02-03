@@ -7,9 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Andreas Handel">
+<meta name="dcterms.date" content="2024-01-25">
 <meta name="description" content="Modern Applied Data Analysis (MADA) course">
 
-<title>MADA Course - Model Evaluation Overview</title>
+<title>MADA Course - Model uncertainty assessment</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -25,27 +26,27 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<link href="../../content/module-model-evaluation/model-evaluation-performance.html" rel="next">
-<link href="../../content/module-model-basics/model-fitting-r.html" rel="prev">
-<link href="../../media/MADAlogo.png" rel="icon" type="image/png">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../content/module-model-improvement/model-improvement-overview.html" rel="next">
+<link href="../../../content/model-assessment/diagnostics-assessment/diagnostics-assessment.html" rel="prev">
+<link href="../../../media/MADAlogo.png" rel="icon" type="image/png">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -84,10 +85,10 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../media/MADAlogo.png" alt="" class="navbar-logo">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../media/MADAlogo.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">MADA Course</span>
     </a>
   </div>
@@ -98,23 +99,23 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../courseinfo/course-overview.html"> 
+    <a class="nav-link" href="../../../courseinfo/course-overview.html"> 
 <span class="menu-text">General Information</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../../content/content-overview.html" aria-current="page"> 
+    <a class="nav-link active" href="../../../content/content-overview.html" aria-current="page"> 
 <span class="menu-text">Content</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../courseinfo/assessments-overview.html"> 
+    <a class="nav-link" href="../../../courseinfo/assessments-overview.html"> 
 <span class="menu-text">Assessments</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../project/project-overview.html"> 
+    <a class="nav-link" href="../../../project/project-overview.html"> 
 <span class="menu-text">Project</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../resources/resources-overview.html"> 
+    <a class="nav-link" href="../../../resources/resources-overview.html"> 
 <span class="menu-text">Resources</span></a>
   </li>  
 </ul>
@@ -135,7 +136,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../content/module-model-evaluation/model-evaluation-overview.html">9. Evaluating Your Model Fits</a></li><li class="breadcrumb-item"><a href="../../content/module-model-evaluation/model-evaluation-overview.html">Model Evaluation Overview</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../content/model-assessment/model-assessment-overview.html">9. Model Assessment</a></li><li class="breadcrumb-item"><a href="../../../content/model-assessment/uncertainty-assessment/uncertainty-assessment.html">Model uncertainty</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -149,7 +150,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/content-overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/content-overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Content Overview</span></a>
   </div>
 </li>
@@ -164,49 +165,49 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-intro-tools/introduction-course.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-intro-tools/introduction-course.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Course Introduction</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-intro-tools/tools-randrstudio.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-intro-tools/tools-randrstudio.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R and Rstudio</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-intro-tools/tools-github-introduction.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-intro-tools/tools-github-introduction.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">GitHub Introduction</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-intro-tools/tools-github-r-workflow.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-intro-tools/tools-github-r-workflow.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">GitHub and R Workflow</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-intro-tools/tools-quarto.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-intro-tools/tools-quarto.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Quarto &amp; Co</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-intro-tools/tools-ai.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-intro-tools/tools-ai.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">AI Tools</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-intro-tools/tools-reference-management.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-intro-tools/tools-reference-management.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Reference Management</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-intro-tools/tools-tips-guidance.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-intro-tools/tools-tips-guidance.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Guidance and Tips for R/RStudio/GitHub</span></a>
   </div>
 </li>
@@ -223,13 +224,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-data-analysis/data-analysis-motivation.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-data-analysis/data-analysis-motivation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Motivating Examples</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-data-analysis/data-analysis-overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-data-analysis/data-analysis-overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data Analysis Overview</span></a>
   </div>
 </li>
@@ -246,49 +247,49 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-ready-workflow/ready-overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-ready-workflow/ready-overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">READy workflows overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-ready-workflow/ready-introduction/ready-introduction.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-ready-workflow/ready-introduction/ready-introduction.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">READy introduction</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-ready-workflow/ready-organization/ready-organization.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-ready-workflow/ready-organization/ready-organization.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Project organization</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-ready-workflow/ready-project-management/ready-project-management.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-ready-workflow/ready-project-management/ready-project-management.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Project management</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-ready-workflow/ready-software-management/ready-software-management.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-ready-workflow/ready-software-management/ready-software-management.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Software management</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-ready-workflow/ready-documentation/ready-documentation.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-ready-workflow/ready-documentation/ready-documentation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Project documentation</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-ready-workflow/ready-tools/ready-tools.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-ready-workflow/ready-tools/ready-tools.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Tools for a READy workflow</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-ready-workflow/ready-open/ready-open.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-ready-workflow/ready-open/ready-open.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Open research</span></a>
   </div>
 </li>
@@ -305,13 +306,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-coding-basics/rcoding-basics.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-coding-basics/rcoding-basics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R Coding Basics</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-coding-basics/rcoding-tidyverse.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-coding-basics/rcoding-tidyverse.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Tidyverse and Friends</span></a>
   </div>
 </li>
@@ -328,37 +329,37 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-data/data-overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-data/data-overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-data/data-types-basic/data-types-basic.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-data/data-types-basic/data-types-basic.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Basic data types</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-data/data-types-complex/data-types-complex.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-data/data-types-complex/data-types-complex.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Complex data types</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-data/data-storage-formats/data-storage-formats.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-data/data-storage-formats/data-storage-formats.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data storage formats</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-data/data-formats-r/data-formats-r.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-data/data-formats-r/data-formats-r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data formats in R</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-data/data-generation-process/data-generation-process.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-data/data-generation-process/data-generation-process.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">The data generation process</span></a>
   </div>
 </li>
@@ -375,49 +376,49 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-synthetic-data/synthetic-data-overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-synthetic-data/synthetic-data-overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Synthetic Data Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-synthetic-data/synthetic-data-introduction/synthetic-data-introduction.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-synthetic-data/synthetic-data-introduction/synthetic-data-introduction.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction and Motivation</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-synthetic-data/synthetic-data-new-r/synthetic-data-new-r.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-synthetic-data/synthetic-data-new-r/synthetic-data-new-r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Creating new data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-synthetic-data/synthetic-data-new-existing-r/synthetic-data-new-existing-r.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-synthetic-data/synthetic-data-new-existing-r/synthetic-data-new-existing-r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Creating new data based on existing data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-synthetic-data/synthetic-data-existing-r/synthetic-data-existing-r.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-synthetic-data/synthetic-data-existing-r/synthetic-data-existing-r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Scrambling existing data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-synthetic-data/synthetic-data-r-packages/synthetic-data-r-packages.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-synthetic-data/synthetic-data-r-packages/synthetic-data-r-packages.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R packages for data creation</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-synthetic-data/synthetic-data-ai-tools-r/synthetic-data-ai-tools-r.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-synthetic-data/synthetic-data-ai-tools-r/synthetic-data-ai-tools-r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Use synthetic data with AI tools</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-synthetic-data/synthetic-data-model-testing-r/synthetic-data-model-testing-r.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-synthetic-data/synthetic-data-model-testing-r/synthetic-data-model-testing-r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Use synthetic data to test models</span></a>
   </div>
 </li>
@@ -434,43 +435,43 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-data-processing/data-processing-overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-data-processing/data-processing-overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data Processing Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-data-processing/data-processing-introduction/data-processing-introduction.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-data-processing/data-processing-introduction/data-processing-introduction.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data Processing Introduction</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-data-processing/data-loading/data-loading.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-data-processing/data-loading/data-loading.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data loading</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-data-processing/missing-data/missing-data.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-data-processing/missing-data/missing-data.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Dealing with missing data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-data-processing/outliers/outliers.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-data-processing/outliers/outliers.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Dealing with outliers</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-data-processing/feature-engineering/feature-engineering.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-data-processing/feature-engineering/feature-engineering.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Creating new data/variables</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-data-processing/merging-data/merging-data.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-data-processing/merging-data/merging-data.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Merging data</span></a>
   </div>
 </li>
@@ -487,25 +488,25 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-data-presentation/presenting-results-overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-data-presentation/presenting-results-overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Presenting Results Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-data-presentation/visualization-overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-data-presentation/visualization-overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Visualization Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-data-presentation/visualization-in-r.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-data-presentation/visualization-in-r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Visualization in R</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-data-presentation/tables-in-r.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-data-presentation/tables-in-r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Tables in R</span></a>
   </div>
 </li>
@@ -522,19 +523,19 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-stats-overview/statistical-analysis-introduction.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-stats-overview/statistical-analysis-introduction.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Statistical Analysis Introduction</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-stats-overview/statistical-terminology.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-stats-overview/statistical-terminology.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Some Statistical Model Fitting Terminology</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-stats-overview/descriptive-analysis.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-stats-overview/descriptive-analysis.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Descriptive and preliminary analysis</span></a>
   </div>
 </li>
@@ -543,7 +544,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false">
- <span class="menu-text">8. Fitting Basic Statistical Models</span></a>
+ <span class="menu-text">8. Model Fitting</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -551,14 +552,32 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-basics/basic-statistical-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Basic Statistical Models</span></a>
+  <a href="../../../content/model-fitting/model-fitting-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model Fitting Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-basics/model-fitting-r.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Fitting Statistical Models in R</span></a>
+  <a href="../../../content/model-fitting/model-fitting-introduction/model-fitting-introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model Fitting Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/model-fitting/basic-statistical-models/basic-statistical-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fitting Basic Models</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/model-fitting/model-evaluation/model-evaluation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model evaluation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/model-fitting/model-fitting-r/model-fitting-r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fitting Models in R</span></a>
   </div>
 </li>
       </ul>
@@ -566,7 +585,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="true">
- <span class="menu-text">9. Evaluating Your Model Fits</span></a>
+ <span class="menu-text">9. Model Assessment</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -574,32 +593,44 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-evaluation/model-evaluation-overview.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Model Evaluation Overview</span></a>
+  <a href="../../../content/model-assessment/model-assessment-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model Assessment Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-evaluation/model-evaluation-performance.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Model Performance Evaluation</span></a>
+  <a href="../../../content/model-assessment/model-assessment-introduction/model-assessment-introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model Assessment Introduction</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-evaluation/model-evaluation-overfitting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Model Performance &amp; Overfitting</span></a>
+  <a href="../../../content/model-assessment/biology-based-assessment/biology-based-assessment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Biology-based assessment</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-evaluation/model-evaluation-diagnostics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Model Diagostics</span></a>
+  <a href="../../../content/model-assessment/external-data-assessment/external-data-assessment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model evaluation with external data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-evaluation/model-evaluation-uncertainty.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Model Uncertainty</span></a>
+  <a href="../../../content/model-assessment/information-criteria-assessment/information-criteria-assessment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model evaluation with Information Criteria</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/model-assessment/diagnostics-assessment/diagnostics-assessment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model diagnostics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/model-assessment/uncertainty-assessment/uncertainty-assessment.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Model uncertainty</span></a>
   </div>
 </li>
       </ul>
@@ -607,7 +638,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="false">
- <span class="menu-text">10. Improving Your Model Fits</span></a>
+ <span class="menu-text">10. Model Improvement</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -615,31 +646,31 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-improvement/model-improvement-overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-model-improvement/model-improvement-overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Improving Model Fits Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-improvement/model-improvement-data-processing.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-model-improvement/model-improvement-data-processing.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Pre-Processing Data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-improvement/model-improvement-subset-selection.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-model-improvement/model-improvement-subset-selection.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Subset Selection</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-improvement/model-improvement-regularization.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-model-improvement/model-improvement-regularization.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Regularization</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-improvement/model-improvement-tuning.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-model-improvement/model-improvement-tuning.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Model Tuning</span></a>
   </div>
 </li>
@@ -656,25 +687,25 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-ml-1/ml-models-overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-model-ml-1/ml-models-overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">ML Models Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-ml-1/polynomial-spline-models.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-model-ml-1/polynomial-spline-models.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Polynomial and Spline Models</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-ml-1/decision-trees.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-model-ml-1/decision-trees.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Decision Trees</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-ml-1/many-tree-models.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-model-ml-1/many-tree-models.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Many-Tree Models</span></a>
   </div>
 </li>
@@ -691,19 +722,19 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-ml-2/svm-models.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-model-ml-2/svm-models.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Support Vector Machine Models</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-ml-2/da-models.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-model-ml-2/da-models.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Discriminant Analysis Models</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-ml-2/more-ml-models.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-model-ml-2/more-ml-models.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Some More ML models</span></a>
   </div>
 </li>
@@ -720,7 +751,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-workflow/complete-data-analysis-workflow.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-workflow/complete-data-analysis-workflow.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Complete Data Analysis Workflow</span></a>
   </div>
 </li>
@@ -737,61 +768,61 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-16" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-ai/ai-overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-ai/ai-overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">AI Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-ai/ai-introduction/ai-introduction.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-ai/ai-introduction/ai-introduction.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction to AI</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-ai/ai-llm-introduction/ai-llm-introduction.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-ai/ai-llm-introduction/ai-llm-introduction.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction to LLM AI tools</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-ai/ai-conceptual/ai-conceptual.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-ai/ai-conceptual/ai-conceptual.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">AI Concepts</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-ai/ai-tools/ai-tools.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-ai/ai-tools/ai-tools.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Current AI Tools</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-ai/ai-write-code-r/ai-write-code-r.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-ai/ai-write-code-r/ai-write-code-r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Write code with AI</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-ai/ai-fix-code-r/ai-fix-code-r.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-ai/ai-fix-code-r/ai-fix-code-r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Fix code with AI</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-ai/ai-eda-r/ai-eda-r.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-ai/ai-eda-r/ai-eda-r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Explore data with AI</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-ai/ai-analysis-r/ai-analysis-r.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-ai/ai-analysis-r/ai-analysis-r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Analyze data with AI</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-ai/ai-resources/ai-resources.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-ai/ai-resources/ai-resources.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">AI Resources</span></a>
   </div>
 </li>
@@ -810,15 +841,37 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
   <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#common-uncertainty-estimates" id="toc-common-uncertainty-estimates" class="nav-link" data-scroll-target="#common-uncertainty-estimates">Common uncertainty estimates</a>
+  <ul class="collapse">
+  <li><a href="#confidence-interval" id="toc-confidence-interval" class="nav-link" data-scroll-target="#confidence-interval">Confidence interval</a></li>
+  <li><a href="#prediction-interval" id="toc-prediction-interval" class="nav-link" data-scroll-target="#prediction-interval">Prediction interval</a></li>
+  <li><a href="#credible-interval" id="toc-credible-interval" class="nav-link" data-scroll-target="#credible-interval">Credible interval</a></li>
+  <li><a href="#posterior-prediction-interval" id="toc-posterior-prediction-interval" class="nav-link" data-scroll-target="#posterior-prediction-interval">Posterior prediction interval</a></li>
+  </ul></li>
+  <li><a href="#model-performance-uncertainty" id="toc-model-performance-uncertainty" class="nav-link" data-scroll-target="#model-performance-uncertainty">Model performance uncertainty</a></li>
+  <li><a href="#model-parameter-uncertainty" id="toc-model-parameter-uncertainty" class="nav-link" data-scroll-target="#model-parameter-uncertainty">Model parameter uncertainty</a></li>
+  <li><a href="#computing-uncertainty-intervals" id="toc-computing-uncertainty-intervals" class="nav-link" data-scroll-target="#computing-uncertainty-intervals">Computing uncertainty intervals</a>
+  <ul class="collapse">
+  <li><a href="#parametric-methods" id="toc-parametric-methods" class="nav-link" data-scroll-target="#parametric-methods">Parametric methods</a></li>
+  <li><a href="#bootstrapping" id="toc-bootstrapping" class="nav-link" data-scroll-target="#bootstrapping">Bootstrapping</a></li>
+  </ul></li>
+  <li><a href="#other-uncertainty-measures" id="toc-other-uncertainty-measures" class="nav-link" data-scroll-target="#other-uncertainty-measures">Other uncertainty measures</a>
+  <ul class="collapse">
+  <li><a href="#sem" id="toc-sem" class="nav-link" data-scroll-target="#sem">SEM</a></li>
+  <li><a href="#sd" id="toc-sd" class="nav-link" data-scroll-target="#sd">SD</a></li>
+  <li><a href="#p-values" id="toc-p-values" class="nav-link" data-scroll-target="#p-values">P-values</a></li>
+  </ul></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#further-resources" id="toc-further-resources" class="nav-link" data-scroll-target="#further-resources">Further Resources</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../content/module-model-evaluation/model-evaluation-overview.html">9. Evaluating Your Model Fits</a></li><li class="breadcrumb-item"><a href="../../content/module-model-evaluation/model-evaluation-overview.html">Model Evaluation Overview</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../content/model-assessment/model-assessment-overview.html">9. Model Assessment</a></li><li class="breadcrumb-item"><a href="../../../content/model-assessment/uncertainty-assessment/uncertainty-assessment.html">Model uncertainty</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Model Evaluation Overview</h1>
+<h1 class="title">Model uncertainty assessment</h1>
 </div>
 
 
@@ -832,11 +885,17 @@ ul.task-list li input[type="checkbox"] {
           </div>
   </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">2024-01-25</p>
+    </div>
+  </div>
   
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2024-01-27</p>
+      <p class="date-modified">2024-02-01</p>
     </div>
   </div>
     
@@ -849,36 +908,92 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="overview" class="level1">
 <h1>Overview</h1>
-<p>In this module, we will discuss how one can assess the quality of different models, and what aspects of model quality one needs to consider.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="../../media/assessment-cartoon.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="../../media/assessment-cartoon.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" alt="A comic of a person holding a clipboard asking another person 'How hard - on a scale of one to ten?' to which the other responds 'The way I feel is hard to quantify!'"></a></p>
-</figure>
-</div>
+<p>This unit discusses model uncertainty, how to compute and and how to assess it.</p>
 </section>
 <section id="learning-objectives" class="level1">
 <h1>Learning Objectives</h1>
 <ul>
-<li>Learn how to determine different aspects of model quality</li>
-<li>Become familiar with different types of model performance metrics</li>
-<li>Become able to choose the right assessment metric for your problem</li>
-<li>Learn what model uncertainty is and how to compute it</li>
-<li>Become familiar with model diagnostics</li>
+<li>Understand that any model results are associated with uncertainty.</li>
+<li>Be able to determine model uncertainty.</li>
+<li>Consider uncertainty when assessing models.</li>
 </ul>
 </section>
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
-<p>If we fit any kind of statistical model to data, we need to determine the quality of a fit somehow. How do we know one model is <em>better</em> than another? How do we know any given model is <em>good</em>? These questions, i.e., what model is <em>better</em> among a group of models, and if a model is <em>good</em> (even the best among a group of awful models can be a bad model!) have multiple parts to them, only some of which can be answered by statistics. Others are judgment calls.</p>
-<p>There is no single way to define quality. Instead, multiple factors should be considered. Here are some important aspects to think about:</p>
-<ul>
-<li>Model performance: How well do the predictions from the model compare to the actual data?</li>
-<li>Model complexity: How easy or hard is it to understand the model? How fast does it run? How robust is it to violations of the assumptions you made?</li>
-<li>Model uncertainty: How much uncertainty is associated with the predictions made by the model?</li>
-<li>Model misspecification: How much systematic deviation is there between model predictions and actual data?</li>
-</ul>
-<p>We will discuss these different ways one can assess model quality in this module.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="smbc-sample-size.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1" title="A study with n=1 has large uncertainty. Source: SMBC."><img src="smbc-sample-size.png" class="img-fluid figure-img" style="width:40.0%" alt="A cartoon from the webcomic 'Saturday Morning Breakfast Cereal.' The comic shows a man with round glasses sitting in an armchair next to a small girl. He is holding a book, and saying 'After nineteen additional trials, of course, the results were shown to be anomalous.' The caption reads The Tortoise And The Hare is actually a fable about small sample sizes."></a></p>
+<figcaption>A study with n=1 has large uncertainty. Source: <a href="https://www.smbc-comics.com/comic/2014-09-17/">SMBC</a>.</figcaption>
+</figure>
+</div>
+<p>Every estimate you obtain from your model comes with a certain amount of uncertainty. It is hard (one could say impossible) to make sense of any result that does not also report uncertainty. For instance if you know that your (or someone else’s) analysis showed that a drug improves some relevant biological outcome by 20%, what does it mean? If the</p>
+<p>Quantifying uncertainty is an important part of model evaluation. During model building and selection, we are not only interested in some point estimate of model performance (e.g., average RMSE), but would often also like to know how that performance measure is distributed and how it differs between models. For instance, we might have 2 classification models, one with an average accuracy (obtained through CV) of 70%, while the other has 80%. It looks like we should go with model 2, right? But what if we also knew that the range of accuracy values (for different repeats of the CV) is 65% - 75% for model 1, and it is 45% - 95% for model 2. Which model do we prefer? We might still prefer model 2, but there is also an argument that we might want to go with model 1, which has better performance at the lower bound. Without knowing the distribution of performance measures, we can only make limited decisions.</p>
+</section>
+<section id="common-uncertainty-estimates" class="level1">
+<h1>Common uncertainty estimates</h1>
+<p>Different parts of our model can have uncertainty. There can be uncertainty in parameter estimates, there can be uncertainty in outcome estimates. We might want to quantify the uncertainty of the average of our data, or we might want to quantify uncertainty for specific predictions.</p>
+<p>Those uncertainties are are related but not the same. Unfortunately, it is quite common to find messy uncertainty reporting in the literature, and <a href="">even experts have a hard time interpreting uncertainty</a>.</p>
+<p>In the following, we discuss a few common ways to quantify uncertainty.</p>
+<section id="confidence-interval" class="level2">
+<h2 class="anchored" data-anchor-id="confidence-interval">Confidence interval</h2>
+</section>
+<section id="prediction-interval" class="level2">
+<h2 class="anchored" data-anchor-id="prediction-interval">Prediction interval</h2>
+<p>If we are interested in model predictions, we generally also want to know how much uncertainty is associated with those predictions. For continuous outcomes, computing prediction intervals gives an idea of the uncertainty in our predictions. As for parameter uncertainty, some <code>R</code> functions have built-in methods to compute prediction intervals, or you can use the bootstrap approach.</p>
+<p>Prediction intervals are not the same as confidence intervals. The latter quantifies the uncertainty in model parameters, e.g., the <em>b<sub>i</sub></em> in a regression model. Since those <em>b<sub>i</sub></em> have uncertainty, the model predictions for the <em>expected</em> observation has uncertainty. However, each real observation has additional scatter around the expected value. This additional uncertainty needs to be factored in when trying to make predictions for individual outcomes. As such, prediction intervals are wider than confidence intervals.</p>
+<p>It is unfortunately common that papers report confidence intervals, but the authors and/or readers think of them as prediction intervals. This leads to overly confident statements about the performance of the model.</p>
+</section>
+<section id="credible-interval" class="level2">
+<h2 class="anchored" data-anchor-id="credible-interval">Credible interval</h2>
+</section>
+<section id="posterior-prediction-interval" class="level2">
+<h2 class="anchored" data-anchor-id="posterior-prediction-interval">Posterior prediction interval</h2>
+</section>
+</section>
+<section id="model-performance-uncertainty" class="level1">
+<h1>Model performance uncertainty</h1>
+<p>If we perform cross-validation, (often repeated), we get multiple estimates for model performance based on the test set performance. For instance, in 10-fold CV 10 times repeated, we get 100 values for the model performance metric (e.g., RMSE). We can look at the distribution of those RMSE. While the standard approach is to pick a model with lower mean RMSE (or other performance measures), that doesn’t have to be the case. We might prefer one with a somewhat higher mean but less variance, as in the example above. Or we could pick a model with a “small enough” RMSE that makes the model less complex, e.g.&nbsp;including less predictors (what “small enough” means has to be defined by you). To that end, looking at distributions of model performance is useful.</p>
+</section>
+<section id="model-parameter-uncertainty" class="level1">
+<h1>Model parameter uncertainty</h1>
+<p>At times, we might be interested in knowing the uncertainty of the model parameters. This will also give us the uncertainty in the predicted <em>expected</em> values of the model. Both of those quantities, uncertainty in parameters and model expectations can be quantified with <strong>confidence intervals.</strong> (Or the Bayesian equivalent of <strong>credible intervals</strong>).</p>
+<p>Some functions in R, e.g.&nbsp;<code>lm()</code> have a built-in command to compute confidence intervals. For more complex models or approaches, such built-in functions might not exist. A general approach to produce confidence or prediction intervals is with a sampling method that is very similar in spirit to cross-validation, namely by performing <strong>bootstrapping.</strong></p>
+</section>
+<section id="computing-uncertainty-intervals" class="level1">
+<h1>Computing uncertainty intervals</h1>
+<section id="parametric-methods" class="level2">
+<h2 class="anchored" data-anchor-id="parametric-methods">Parametric methods</h2>
+</section>
+<section id="bootstrapping" class="level2">
+<h2 class="anchored" data-anchor-id="bootstrapping">Bootstrapping</h2>
+<p>The idea for bootstrapping is fairly straightforward. Bootstrapping tries to imitate a scenario in which you repeated your study and collected new data. Instead of having actual new data, the idea is that the existing data is sampled to form a new “dataset”, which is then fit. Sampling is performed <em>with replacement</em> to obtain a sample the size of the original dataset. Some observations now show up more than once, and some do not show up. For each such sample, you fit your model and estimate parameters. You will thus get a distribution of parameter estimates. From those distributions, you can compute confidence intervals, e.g., the usual 95% interval. For each fit, you can also predict outcomes and thus obtain a distribution of prediction outcomes (see next).</p>
+<p>Like cross-validation, the bootstrap method is very general and can be applied to pretty much any problem. If your data has a specific structure, you can adjust the sampling approach (e.g., if you have observations from different locations, you might want to sample with replacement for each location.) Limitations for the bootstrap are that you need a decent amount of data for it to work well, and since you are repeating this sampling procedure many times, the procedure can take a while to run.</p>
+</section>
+</section>
+<section id="other-uncertainty-measures" class="level1">
+<h1>Other uncertainty measures</h1>
+<section id="sem" class="level2">
+<h2 class="anchored" data-anchor-id="sem">SEM</h2>
+</section>
+<section id="sd" class="level2">
+<h2 class="anchored" data-anchor-id="sd">SD</h2>
+</section>
+<section id="p-values" class="level2">
+<h2 class="anchored" data-anchor-id="p-values">P-values</h2>
+<p>So what about the <strong>p-value</strong>? This quantity doesn’t measure uncertainty directly, though it is in some way related to it. p-values are sometimes useful for hypothesis testing. But in my opinion, p-values are overused, generally not too meaningful, and can most often be skipped (though sometimes one needs them just to make reviewers happy). I’m thus not talking about them further.</p>
+</section>
+</section>
+<section id="summary" class="level1">
+<h1>Summary</h1>
+</section>
+<section id="further-resources" class="level1">
+<h1>Further Resources</h1>
+<p>Bootstrapping is discussed in the <a href="https://statlearning.com/">Resampling Methods chapter of <em>ISLR</em></a> and <a href="https://rafalab.github.io/dsbook/cross-validation.html">the Cross Validation chapter of <em>IDS</em></a>. The other topics are covered in various places in the different course materials we’ve been using, but again not in any full chapters/sections. So if you have suggestions for good resources, let me know.</p>
 
 
+<div class="hidden" aria-hidden="true">
+<span class="glightbox-desc lightbox-desc-1">A study with n=1 has large uncertainty. Source: <a href="https://www.smbc-comics.com/comic/2014-09-17/">SMBC</a>.</span>
+</div>
 </section>
 
 </main> <!-- /main -->
@@ -1289,18 +1404,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../content/module-model-basics/model-fitting-r.html" class="pagination-link  aria-label=" fitting="" statistical="" models="" in="" r"="">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Fitting Statistical Models in R</span>
+      <a href="../../../content/model-assessment/diagnostics-assessment/diagnostics-assessment.html" class="pagination-link  aria-label=" model="" diagnostics"="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Model diagnostics</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../content/module-model-evaluation/model-evaluation-performance.html" class="pagination-link" aria-label="Model Performance Evaluation">
-        <span class="nav-page-text">Model Performance Evaluation</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../../content/module-model-improvement/model-improvement-overview.html" class="pagination-link" aria-label="Improving Model Fits Overview">
+        <span class="nav-page-text">Improving Model Fits Overview</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","loop":false,"selector":".lightbox","closeEffect":"zoom","descPosition":"right"});
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","openEffect":"zoom","descPosition":"right","loop":false});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

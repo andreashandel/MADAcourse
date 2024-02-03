@@ -9,7 +9,7 @@
 <meta name="author" content="Andreas Handel">
 <meta name="description" content="Modern Applied Data Analysis (MADA) course">
 
-<title>MADA Course - Model Diagnostics</title>
+<title>MADA Course - Basic Statistical Models</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -25,24 +25,27 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<link href="../../content/module-model-evaluation/model-evaluation-uncertainty.html" rel="next">
-<link href="../../content/module-model-evaluation/model-evaluation-overfitting.html" rel="prev">
-<link href="../../media/MADAlogo.png" rel="icon" type="image/png">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../content/model-fitting/model-evaluation/model-evaluation.html" rel="next">
+<link href="../../../content/model-fitting/model-fitting-introduction/model-fitting-introduction.html" rel="prev">
+<link href="../../../media/MADAlogo.png" rel="icon" type="image/png">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -110,10 +113,10 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../media/MADAlogo.png" alt="" class="navbar-logo">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../media/MADAlogo.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">MADA Course</span>
     </a>
   </div>
@@ -124,23 +127,23 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../courseinfo/course-overview.html"> 
+    <a class="nav-link" href="../../../courseinfo/course-overview.html"> 
 <span class="menu-text">General Information</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../../content/content-overview.html" aria-current="page"> 
+    <a class="nav-link active" href="../../../content/content-overview.html" aria-current="page"> 
 <span class="menu-text">Content</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../courseinfo/assessments-overview.html"> 
+    <a class="nav-link" href="../../../courseinfo/assessments-overview.html"> 
 <span class="menu-text">Assessments</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../project/project-overview.html"> 
+    <a class="nav-link" href="../../../project/project-overview.html"> 
 <span class="menu-text">Project</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../resources/resources-overview.html"> 
+    <a class="nav-link" href="../../../resources/resources-overview.html"> 
 <span class="menu-text">Resources</span></a>
   </li>  
 </ul>
@@ -161,7 +164,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../content/module-model-evaluation/model-evaluation-overview.html">9. Evaluating Your Model Fits</a></li><li class="breadcrumb-item"><a href="../../content/module-model-evaluation/model-evaluation-diagnostics.html">Model Diagostics</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../content/model-fitting/model-fitting-overview.html">8. Model Fitting</a></li><li class="breadcrumb-item"><a href="../../../content/model-fitting/basic-statistical-models/basic-statistical-models.html">Fitting Basic Models</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -175,7 +178,7 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/content-overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/content-overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Content Overview</span></a>
   </div>
 </li>
@@ -190,49 +193,49 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-intro-tools/introduction-course.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-intro-tools/introduction-course.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Course Introduction</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-intro-tools/tools-randrstudio.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-intro-tools/tools-randrstudio.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R and Rstudio</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-intro-tools/tools-github-introduction.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-intro-tools/tools-github-introduction.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">GitHub Introduction</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-intro-tools/tools-github-r-workflow.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-intro-tools/tools-github-r-workflow.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">GitHub and R Workflow</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-intro-tools/tools-quarto.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-intro-tools/tools-quarto.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Quarto &amp; Co</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-intro-tools/tools-ai.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-intro-tools/tools-ai.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">AI Tools</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-intro-tools/tools-reference-management.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-intro-tools/tools-reference-management.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Reference Management</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-intro-tools/tools-tips-guidance.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-intro-tools/tools-tips-guidance.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Guidance and Tips for R/RStudio/GitHub</span></a>
   </div>
 </li>
@@ -249,13 +252,13 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-data-analysis/data-analysis-motivation.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-data-analysis/data-analysis-motivation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Motivating Examples</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-data-analysis/data-analysis-overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-data-analysis/data-analysis-overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data Analysis Overview</span></a>
   </div>
 </li>
@@ -272,49 +275,49 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-ready-workflow/ready-overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-ready-workflow/ready-overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">READy workflows overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-ready-workflow/ready-introduction/ready-introduction.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-ready-workflow/ready-introduction/ready-introduction.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">READy introduction</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-ready-workflow/ready-organization/ready-organization.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-ready-workflow/ready-organization/ready-organization.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Project organization</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-ready-workflow/ready-project-management/ready-project-management.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-ready-workflow/ready-project-management/ready-project-management.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Project management</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-ready-workflow/ready-software-management/ready-software-management.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-ready-workflow/ready-software-management/ready-software-management.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Software management</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-ready-workflow/ready-documentation/ready-documentation.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-ready-workflow/ready-documentation/ready-documentation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Project documentation</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-ready-workflow/ready-tools/ready-tools.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-ready-workflow/ready-tools/ready-tools.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Tools for a READy workflow</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-ready-workflow/ready-open/ready-open.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-ready-workflow/ready-open/ready-open.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Open research</span></a>
   </div>
 </li>
@@ -331,13 +334,13 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-coding-basics/rcoding-basics.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-coding-basics/rcoding-basics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R Coding Basics</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-coding-basics/rcoding-tidyverse.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-coding-basics/rcoding-tidyverse.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Tidyverse and Friends</span></a>
   </div>
 </li>
@@ -354,37 +357,37 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-data/data-overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-data/data-overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-data/data-types-basic/data-types-basic.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-data/data-types-basic/data-types-basic.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Basic data types</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-data/data-types-complex/data-types-complex.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-data/data-types-complex/data-types-complex.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Complex data types</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-data/data-storage-formats/data-storage-formats.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-data/data-storage-formats/data-storage-formats.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data storage formats</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-data/data-formats-r/data-formats-r.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-data/data-formats-r/data-formats-r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data formats in R</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-data/data-generation-process/data-generation-process.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-data/data-generation-process/data-generation-process.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">The data generation process</span></a>
   </div>
 </li>
@@ -401,49 +404,49 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-synthetic-data/synthetic-data-overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-synthetic-data/synthetic-data-overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Synthetic Data Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-synthetic-data/synthetic-data-introduction/synthetic-data-introduction.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-synthetic-data/synthetic-data-introduction/synthetic-data-introduction.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction and Motivation</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-synthetic-data/synthetic-data-new-r/synthetic-data-new-r.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-synthetic-data/synthetic-data-new-r/synthetic-data-new-r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Creating new data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-synthetic-data/synthetic-data-new-existing-r/synthetic-data-new-existing-r.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-synthetic-data/synthetic-data-new-existing-r/synthetic-data-new-existing-r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Creating new data based on existing data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-synthetic-data/synthetic-data-existing-r/synthetic-data-existing-r.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-synthetic-data/synthetic-data-existing-r/synthetic-data-existing-r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Scrambling existing data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-synthetic-data/synthetic-data-r-packages/synthetic-data-r-packages.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-synthetic-data/synthetic-data-r-packages/synthetic-data-r-packages.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R packages for data creation</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-synthetic-data/synthetic-data-ai-tools-r/synthetic-data-ai-tools-r.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-synthetic-data/synthetic-data-ai-tools-r/synthetic-data-ai-tools-r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Use synthetic data with AI tools</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-synthetic-data/synthetic-data-model-testing-r/synthetic-data-model-testing-r.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-synthetic-data/synthetic-data-model-testing-r/synthetic-data-model-testing-r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Use synthetic data to test models</span></a>
   </div>
 </li>
@@ -460,43 +463,43 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-data-processing/data-processing-overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-data-processing/data-processing-overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data Processing Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-data-processing/data-processing-introduction/data-processing-introduction.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-data-processing/data-processing-introduction/data-processing-introduction.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data Processing Introduction</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-data-processing/data-loading/data-loading.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-data-processing/data-loading/data-loading.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data loading</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-data-processing/missing-data/missing-data.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-data-processing/missing-data/missing-data.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Dealing with missing data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-data-processing/outliers/outliers.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-data-processing/outliers/outliers.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Dealing with outliers</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-data-processing/feature-engineering/feature-engineering.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-data-processing/feature-engineering/feature-engineering.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Creating new data/variables</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-data-processing/merging-data/merging-data.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-data-processing/merging-data/merging-data.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Merging data</span></a>
   </div>
 </li>
@@ -513,25 +516,25 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-data-presentation/presenting-results-overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-data-presentation/presenting-results-overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Presenting Results Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-data-presentation/visualization-overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-data-presentation/visualization-overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Visualization Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-data-presentation/visualization-in-r.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-data-presentation/visualization-in-r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Visualization in R</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-data-presentation/tables-in-r.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-data-presentation/tables-in-r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Tables in R</span></a>
   </div>
 </li>
@@ -548,19 +551,19 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-stats-overview/statistical-analysis-introduction.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-stats-overview/statistical-analysis-introduction.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Statistical Analysis Introduction</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-stats-overview/statistical-terminology.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-stats-overview/statistical-terminology.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Some Statistical Model Fitting Terminology</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-stats-overview/descriptive-analysis.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-stats-overview/descriptive-analysis.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Descriptive and preliminary analysis</span></a>
   </div>
 </li>
@@ -568,64 +571,94 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false">
- <span class="menu-text">8. Fitting Basic Statistical Models</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false" aria-label="Toggle section">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="true">
+ <span class="menu-text">8. Model Fitting</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-basics/basic-statistical-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Basic Statistical Models</span></a>
+  <a href="../../../content/model-fitting/model-fitting-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model Fitting Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-basics/model-fitting-r.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Fitting Statistical Models in R</span></a>
+  <a href="../../../content/model-fitting/model-fitting-introduction/model-fitting-introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model Fitting Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/model-fitting/basic-statistical-models/basic-statistical-models.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Fitting Basic Models</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/model-fitting/model-evaluation/model-evaluation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model evaluation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/model-fitting/model-fitting-r/model-fitting-r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fitting Models in R</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="true">
- <span class="menu-text">9. Evaluating Your Model Fits</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="true" aria-label="Toggle section">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="false">
+ <span class="menu-text">9. Model Assessment</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-evaluation/model-evaluation-overview.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Model Evaluation Overview</span></a>
+  <a href="../../../content/model-assessment/model-assessment-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model Assessment Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-evaluation/model-evaluation-performance.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Model Performance Evaluation</span></a>
+  <a href="../../../content/model-assessment/model-assessment-introduction/model-assessment-introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model Assessment Introduction</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-evaluation/model-evaluation-overfitting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Model Performance &amp; Overfitting</span></a>
+  <a href="../../../content/model-assessment/biology-based-assessment/biology-based-assessment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Biology-based assessment</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-evaluation/model-evaluation-diagnostics.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Model Diagostics</span></a>
+  <a href="../../../content/model-assessment/external-data-assessment/external-data-assessment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model evaluation with external data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-evaluation/model-evaluation-uncertainty.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Model Uncertainty</span></a>
+  <a href="../../../content/model-assessment/information-criteria-assessment/information-criteria-assessment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model evaluation with Information Criteria</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/model-assessment/diagnostics-assessment/diagnostics-assessment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model diagnostics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/model-assessment/uncertainty-assessment/uncertainty-assessment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model uncertainty</span></a>
   </div>
 </li>
       </ul>
@@ -633,7 +666,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="false">
- <span class="menu-text">10. Improving Your Model Fits</span></a>
+ <span class="menu-text">10. Model Improvement</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -641,31 +674,31 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-improvement/model-improvement-overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-model-improvement/model-improvement-overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Improving Model Fits Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-improvement/model-improvement-data-processing.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-model-improvement/model-improvement-data-processing.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Pre-Processing Data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-improvement/model-improvement-subset-selection.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-model-improvement/model-improvement-subset-selection.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Subset Selection</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-improvement/model-improvement-regularization.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-model-improvement/model-improvement-regularization.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Regularization</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-improvement/model-improvement-tuning.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-model-improvement/model-improvement-tuning.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Model Tuning</span></a>
   </div>
 </li>
@@ -682,25 +715,25 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-ml-1/ml-models-overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-model-ml-1/ml-models-overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">ML Models Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-ml-1/polynomial-spline-models.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-model-ml-1/polynomial-spline-models.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Polynomial and Spline Models</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-ml-1/decision-trees.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-model-ml-1/decision-trees.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Decision Trees</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-ml-1/many-tree-models.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-model-ml-1/many-tree-models.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Many-Tree Models</span></a>
   </div>
 </li>
@@ -717,19 +750,19 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-ml-2/svm-models.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-model-ml-2/svm-models.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Support Vector Machine Models</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-ml-2/da-models.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-model-ml-2/da-models.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Discriminant Analysis Models</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-ml-2/more-ml-models.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-model-ml-2/more-ml-models.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Some More ML models</span></a>
   </div>
 </li>
@@ -746,7 +779,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-workflow/complete-data-analysis-workflow.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-workflow/complete-data-analysis-workflow.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Complete Data Analysis Workflow</span></a>
   </div>
 </li>
@@ -763,61 +796,61 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-16" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-ai/ai-overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-ai/ai-overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">AI Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-ai/ai-introduction/ai-introduction.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-ai/ai-introduction/ai-introduction.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction to AI</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-ai/ai-llm-introduction/ai-llm-introduction.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-ai/ai-llm-introduction/ai-llm-introduction.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction to LLM AI tools</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-ai/ai-conceptual/ai-conceptual.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-ai/ai-conceptual/ai-conceptual.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">AI Concepts</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-ai/ai-tools/ai-tools.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-ai/ai-tools/ai-tools.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Current AI Tools</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-ai/ai-write-code-r/ai-write-code-r.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-ai/ai-write-code-r/ai-write-code-r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Write code with AI</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-ai/ai-fix-code-r/ai-fix-code-r.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-ai/ai-fix-code-r/ai-fix-code-r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Fix code with AI</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-ai/ai-eda-r/ai-eda-r.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-ai/ai-eda-r/ai-eda-r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Explore data with AI</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-ai/ai-analysis-r/ai-analysis-r.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-ai/ai-analysis-r/ai-analysis-r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Analyze data with AI</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-ai/ai-resources/ai-resources.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/module-ai/ai-resources/ai-resources.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">AI Resources</span></a>
   </div>
 </li>
@@ -833,25 +866,25 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#null-model-comparisons" id="toc-null-model-comparisons" class="nav-link" data-scroll-target="#null-model-comparisons">Null model comparisons</a></li>
-  <li><a href="#single-predictor-comparisons" id="toc-single-predictor-comparisons" class="nav-link" data-scroll-target="#single-predictor-comparisons">Single predictor comparisons</a></li>
-  <li><a href="#observed-versus-predicted-values" id="toc-observed-versus-predicted-values" class="nav-link" data-scroll-target="#observed-versus-predicted-values">Observed versus predicted values</a></li>
-  <li><a href="#residuals" id="toc-residuals" class="nav-link" data-scroll-target="#residuals">Residuals</a></li>
-  <li><a href="#data-simulation" id="toc-data-simulation" class="nav-link" data-scroll-target="#data-simulation">Data simulation</a></li>
-  <li><a href="#sensitivity-analysis" id="toc-sensitivity-analysis" class="nav-link" data-scroll-target="#sensitivity-analysis">Sensitivity analysis</a></li>
-  <li><a href="#model-interpretation" id="toc-model-interpretation" class="nav-link" data-scroll-target="#model-interpretation">Model Interpretation</a></li>
-  <li><a href="#other-checks" id="toc-other-checks" class="nav-link" data-scroll-target="#other-checks">Other checks</a></li>
-  <li><a href="#further-learning" id="toc-further-learning" class="nav-link" data-scroll-target="#further-learning">Further learning</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#simple-models-for-continuous-outcomes-regression" id="toc-simple-models-for-continuous-outcomes-regression" class="nav-link" data-scroll-target="#simple-models-for-continuous-outcomes-regression">Simple models for continuous outcomes (regression)</a></li>
+  <li><a href="#simple-models-for-categorical-outcomes-classification" id="toc-simple-models-for-categorical-outcomes-classification" class="nav-link" data-scroll-target="#simple-models-for-categorical-outcomes-classification">Simple models for categorical outcomes (classification)</a></li>
+  <li><a href="#generalized-linear-models" id="toc-generalized-linear-models" class="nav-link" data-scroll-target="#generalized-linear-models">Generalized linear models</a></li>
+  <li><a href="#knn---another-simple-model-worth-mentioning" id="toc-knn---another-simple-model-worth-mentioning" class="nav-link" data-scroll-target="#knn---another-simple-model-worth-mentioning">KNN - another simple model worth mentioning</a></li>
+  <li><a href="#simple-models-for-no-outcomes" id="toc-simple-models-for-no-outcomes" class="nav-link" data-scroll-target="#simple-models-for-no-outcomes">Simple models for no outcomes</a></li>
+  <li><a href="#the-zoo-of-statistical-tests" id="toc-the-zoo-of-statistical-tests" class="nav-link" data-scroll-target="#the-zoo-of-statistical-tests">The zoo of statistical tests</a></li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further reading</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../content/module-model-evaluation/model-evaluation-overview.html">9. Evaluating Your Model Fits</a></li><li class="breadcrumb-item"><a href="../../content/module-model-evaluation/model-evaluation-diagnostics.html">Model Diagostics</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../content/model-fitting/model-fitting-overview.html">8. Model Fitting</a></li><li class="breadcrumb-item"><a href="../../../content/model-fitting/basic-statistical-models/basic-statistical-models.html">Fitting Basic Models</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Model Diagnostics</h1>
+<h1 class="title">Basic Statistical Models</h1>
 </div>
 
 
@@ -880,64 +913,80 @@ window.Quarto = {
 </header>
 
 
+<section id="overview" class="level1">
+<h1>Overview</h1>
+<p>In this unit, we will discuss a few basic models, and explore how to apply them to data in R. This will set the stage for later, more in-depths explorations of statistical model concepts.</p>
+</section>
+<section id="learning-objectives" class="level1">
+<h1>Learning Objectives</h1>
+<ul>
+<li>Learn about several types of basic models.</li>
+<li>Understand the relation between basic models and statistical tests.</li>
+</ul>
+</section>
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
-<p>In the previous units, we discussed a way to evaluate model quality by looking at <strong>performance</strong> based on some cost function/metric we defined. While this is an important component of the model building and choosing process, one needs to go further.</p>
-<p>The absolute value of a model’s performance is not always very meaningful. Is an RMSE of 3.2 good? Is 90% accuracy a good model? We can’t say without knowing something about the system and looking more closely.</p>
-<p>Performing a detailed model diagnosis often increases our understanding of the data/model/analysis, and can help us figure out how to fix or improve the model. The following sections briefly describe some checks you can do to evaluate the quality of your model further.</p>
+<p>There are lots of models out there, too many to cover in much detail. In this module, we will briefly discuss some of the most common and basic ones, and then explore them.</p>
+<p>In further modules, we will look at several more complex models. Most of the time, you do not understand every detail of a model. You need to understand enough about how the model works, its strengths and limitations, and to determine if a certain model is useful for a given situation or not.</p>
+<p>In this course, you will get a very cursory introduction to several different models. If you happen to work on a problem where you think a certain kind of model might be useful, you will then want to revisit that model and learn some more, so you can ensure you are using the right model and are using it properly.</p>
 </section>
-<section id="null-model-comparisons" class="level1">
-<h1>Null model comparisons</h1>
-<p>You should always compare your models to a “dumb” null/baseline model. A null model for a continuous outcome would be one that always predicts the mean. That is it uses no information from the predictor variables. For categorical outcomes, a null model would always predict the most common category, without using any information about predictor variables. If your more complicated model can’t beat such a null model (based on the performance metric you chose), you need to question what your model is good for. Remember that the metric is important. A null model with, e.g., high accuracy might not be as good as a different model with lower accuracy. Recall the example of the brain cancer.</p>
-<p>In <code>tidymodels</code>, you can use the <code>null_model()</code> function to compute the performance for a null/base model.</p>
+<section id="simple-models-for-continuous-outcomes-regression" class="level1">
+<h1>Simple models for continuous outcomes (regression)</h1>
+<p>The most common model type applied to continuous outcomes is a linear regression model. This model is covered in many of the course materials we have been using (and of course other places).</p>
+<p>If you are new to regression models, a good place to start are the <a href="https://r4ds.hadley.nz/index.html">chapters in the Model section of <em>R4DS</em></a>. I recommend you code along as you go through those chapters, or at least read through the code to make sure you understand what is going on.</p>
+<p>Another good overview and introduction, at a slightly more abstract level, is given in the <a href="https://statlearning.com/">Linear Regression chapter in <em>ISLR</em></a>. You should read through this chapter in at least enough detail to get the big picture ideas. Depending on your interest and willingness to look at equations, try to follow along with the math as well. But the important part is to understand the overall ideas.</p>
+<p>If you want further discussion of the linear model – and see it applied to baseball data – check out the <a href="https://rafalab.github.io/dsbook/linear-models.html">Linear Models chapter of <em>IDS</em></a>. In this chapter, the author also discusses a few important concepts like <strong>confounding</strong> and <strong>regression to the mean.</strong></p>
+<p>But wait, there is more! Yet another discussion of linear models is in the <a href="https://bradleyboehmke.github.io/HOML/linear-regression.html">Linear Regression chapter in <em>HMLR</em></a>.</p>
+<p>As you can tell, this is such a fundamental type of model and is thus covered in a lot of resources. Definitely check the R4DS source, skim through ISLR, then take a look at the other ones I list here or any other source you find and like (let me know if you found a nice free one so I can add it to the resources list). Make sure you read and learn enough about these models that you feel comfortable understanding conceptually what they are used for and how they work.</p>
 </section>
-<section id="single-predictor-comparisons" class="level1">
-<h1>Single predictor comparisons</h1>
-<p>Before building and fitting a big model, it is useful to look at the different predictors individually. (Or if you have too many, at least at some you think are important.)</p>
-<p>To that end, you can perform bi-variable analyses, fitting models that each only contain a single predictor and evaluate the model performance (ideally using cross-validation) of such single-predictor models. You should definitely do that for the predictor(s) that are of main interest.</p>
-<p>Once you start fitting your larger models, you can compare those to your single predictor models. Conceptually, if you only look at the performance on the data used to build the model, your multi-predictor model always performs better or at least as good as your single predictor models, which in turn should perform at least as well as your null model. If that is not the case, it means something went wrong in the analysis. Of course, now that you are aware of overfitting, you know that if you evaluate your models through cross-validation, the bigger multi-variable model does not always perform better.</p>
-<p>As an example, if you want to predict mortality and you have a model (say a logistic model with outcome of 5-year mortality yes/no) that includes as predictors diet, exercise, BMI, gender and age, and such a model performs as well as a model with only age, it means that including those additional variables does not add to model performance.</p>
+<section id="simple-models-for-categorical-outcomes-classification" class="level1">
+<h1>Simple models for categorical outcomes (classification)</h1>
+<p>For categorical outcomes, at least those with 2 categories (also called binary or dichotomous outcomes), logistic regression is the most common approach. Logistic regression has a bit of an unfortunate name since it is used for <strong>classification</strong> even though we call it a <strong>regression</strong> model. It is actually a regression model, since logistic regression predicts a numeric value between 0 and 1, which is the probability of having the outcome or not. We then usually (but not always) decide that 0.5 is the cut-off, and call any probability below as 0/not present/no and above that as 1/present/yes. Just keep in mind that logistic regression is usually used for classification problems.</p>
+<p>To learn about logistic regression, or refresh your knowledge if you have previously been exposed to those models, read through the <a href="https://bradleyboehmke.github.io/HOML/logistic-regression.html">Logistic Regression chapter in <em>HMLR</em></a>. This reading goes into maybe more detail than you want or need at this point. So just make sure you go through it to get the main points of what logistic models are all about. We’ll come back to some of the other topics discussed there later.</p>
+<p>Logistic models are also covered in the <a href="https://statlearning.com/">Classification chapter in <em>ISLR</em></a>. Read through the first part of this chapter in enough detail to get the overall concepts. You can also go through the sections following the <em>logistic regression</em> section to learn about some additional methods for classification. We’ll revisit some of those types of models later.</p>
+<p>Of course, you can also find lots of additional resources online describing logistic regression models. If you find a good one, let me know.</p>
 </section>
-<section id="observed-versus-predicted-values" class="level1">
-<h1>Observed versus predicted values</h1>
-<p>Once you have a model with good performance, you want to inspect their actual predictions. For continuous outcomes, you can plot observed (data) versus predicted (model) outcomes. For a (hypothetical) perfect model, all points are along the 45-degree line. You don’t actually want them all on the line since this suggests overfitting. Some scatter along the line is expected and “healthy”. However, you want to look for systematic deviations from this line, as it suggests potential problems, i.e., it likely means your model is <em>biased</em> and is not flexible enough to capture important patterns still found in the data (i.e., your model is underfitting). In that case, you will want to try different models. Similarly, for categorical outcomes, you can look at the confusion matrix to see if there are lots of FN or FP, which might suggest the model gets certain categories systematically wrong.</p>
+<section id="generalized-linear-models" class="level1">
+<h1>Generalized linear models</h1>
+<p>Both linear and logistic models belong to a class of models called <a href="https://en.wikipedia.org/wiki/Generalized_linear_model">generalized linear models (GLM)</a>. Those types of models allow you to fit outcomes of specific types, for instance, if you have outcomes that are counts (integers), you can use Poisson regression, or if you have continuous outcomes that are all positive, you could use a Gamma regression.</p>
+<p>GLMs all have the same structure: namely there is a linear combination of predictor variables (e.g., <span class="math inline">\(b_1*age + b_2*height\)</span>) and those are connected to the outcome through what is called a <strong>link function</strong>.</p>
+<p>GLM are very commonly used. Among GLM, linear and logistic regression models are by far the most commonly used ones. Other models that assume specific distributions of the outcome, e.g.&nbsp;a Poisson distribution, can be accommodated by choosing the appropriate <em>link function</em>, which connects a linear combination of predictor variables with the outcome. GLM models are fast and easy to fit (using e.g.&nbsp;the <code>glm</code> function in R), fairly easy to interpret, and often provide performance that is hard to improve upon with more complicated models, especially if the data is on the small side. To prevent overfitting, variable/feature selection or regularization approaches are often used. GLM assume a specific relation between predictors and outcome (e.g.&nbsp;linear, logistic) and as such might not perform well on data that does not show the assumed pattern.</p>
+<p>At the end of the <a href="https://statlearning.com/">Classification chapter in <em>ISLR</em></a>, there is a nice brief discussion of GLMs, I suggest you read through that in enough depth to get the overall ideas, but there is no need to go through all the math.</p>
 </section>
-<section id="residuals" class="level1">
-<h1>Residuals</h1>
-<p>Instead of (or in addition to) plotting observed versus predicted for continuous outcomes, you can plot the difference between the two. These differences are called the residuals. What you are looking for is a cloud of points with no discernible pattern. If there is a pattern (e.g., an overall skew, or more points above the 0 y-axes than below), it again suggests that there is still some pattern/signal in the data that the model didn’t capture.</p>
+<section id="knn---another-simple-model-worth-mentioning" class="level1">
+<h1>KNN - another simple model worth mentioning</h1>
+<p>Another model that you might have already encountered (e.g., in the ISLR reading) is one called <em>k</em>-nearest neighbors (KNN). The idea is very simple: For any new observation, you compare the values of the predictor variables with those in your data. You then predict the outcome of the new observation to be the average of the outcomes of the K observations whose predictors most closely resemble the predictors of the new observation.</p>
+<p>As an example for a continuous outcome (regression), if you want to predict <em>height</em> as the outcome and you have <em>age</em> and <em>weight</em> as the predictors, you would take an observation, look at the <em>age</em> and <em>weight</em> values for that observation/individual and compare to the <em>K</em> individuals in your dataset with the closest values (we won’t go into detail how “close” is defined). Then you take the average <em>height</em> of those <em>K</em> closest individuals and that’s your prediction for the new observation.</p>
+<p>The same idea can be applied to categorical outcomes (classification). Say you wanted to predict <em>sex</em> instead of <em>height</em>. You again looked at the <em>K</em> individuals whose predictor values (here <em>age</em> and <em>weight</em>) are closest, and use the majority to predict the outcome for the new observation. (Say <em>K</em>=5, and 3 of the 5 closest individuals are male. Then you would predict the new observation to be male.)</p>
+<p>KNN often perform well, but they are not very “portable”. For other models, once you trained/fit a model, you can “take it with you” and apply the model to new data, leaving the old data you used for model building behind. KNN are a somewhat strange since <em>the data is the model</em>. All the data is used to predict new observations by comparing them to existing ones and predicting outcomes based on closeness of predictor variables. Which means you always need to have the data to predict new outcomes, often making it not too useful in practice. You also don’t learn too much in terms of inferential insight. Still, it is a useful model to know about, and it works for both continuous and categorical outcomes. It is also commonly used for imputation of missing values. In that situation, you treat the predictor you want to impute as the outcome and use the remaining predictors as the data. KNN are described in the <a href="https://bradleyboehmke.github.io/HOML/knn.html">K-Nearest Neighbors chapter in <em>HMLR</em></a> and also show up in <a href="https://statlearning.com/">chapters 2 and 3 of <em>ISLR</em></a> and the <a href="https://rafalab.github.io/dsbook/">Cross-validation and Examples of Algorithms chapters of <em>IDS</em></a>. Take a look at any of those resources if you want to learn a bit more about KNN.</p>
 </section>
-<section id="data-simulation" class="level1">
-<h1>Data simulation</h1>
-<p>One of the best general approaches toward testing models is to simulate data and fit the model to the simulated data. You know what you used to generate the fake data, so you know what the model should return. For instance if you simulate data for the linear model <span class="math display">\[Y=b_0 + b_1X_1 + b_2X_2\]</span> (and add a bit of noise on top), and you chose <em>b<sub>0</sub></em>=<em>b<sub>1</sub></em>=<em>b<sub>2</sub></em>=2, then when you fit such a linear model to this simulated data, those are the values for the coefficients you expect to get back (not quite, since you added a bit of noise, but they shouldn’t be far off). If you can’t get out what you stuck in, you have a problem. Most likely, it means you are over-fitting, and more than one combination of parameter values is giving almost the same performance measure, and the model can’t differentiate. You should then either get more data or make your model simpler.</p>
-<p>This approach of simulating data is a very useful general approach. You should always consider if it is an option for your specific data and question and use it if possible. The more complex your model becomes, the more useful this type of diagnosis is. It can however at times be difficult if you use a model for which it is not clear how the mapping of inputs to outcomes works (e.g.&nbsp;a complex machine learning model). Even then, if you make some data where say one predictor is strongly correlated with the outcome, and another one is only noise, then your model should properly predict that this is the case.</p>
+<section id="simple-models-for-no-outcomes" class="level1">
+<h1>Simple models for no outcomes</h1>
+<p>As we discussed previously, if you have an outcome variable, your data is called <strong>labeled data</strong> and the methods you use are called <strong>supervised</strong> methods/models. Such data with one (or several) outcome variable(s) are most common. But as previously discussed, sometimes you might have data without clear outcomes (<strong>unlabeled data</strong>) and you still want to determine if there is some pattern in your data. This calls for <strong>unsupervised</strong> methods.</p>
+<p>There isn’t really one single, standard go-to method for unsupervised learning – in contrast to the very common linear and logistic models for supervised learning. There are often used methods, such as <strong>Principal Component Analysis (PCA)</strong> (which falls into a larger group of methods called <strong>dimensionality reduction</strong> methods) and a group of methods called <strong>clustering methods</strong> (the most common among these are probably <em>k</em>-means clustering and hierarchical clustering). Since most of you will work on labeled data using supervised methods most of the time, we won’t go much into unsupervised methods. If you want to learn a bit more, check out for instance the <a href="https://statlearning.com/">Unsupervised Learning chapter of <em>ISLR</em></a>. There are also <a href="https://bradleyboehmke.github.io/HOML/">chapters on PCA and different types of clustering in <em>HMLR</em></a>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../../media/xkcd_k_means_clustering_2x.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1" title="Choosing K is an important task. 3 sometimes works. Source: xkcd.com."><img src="../../media/xkcd_k_means_clustering_2x.png" class="img-fluid figure-img" style="width:50.0%" alt="xkcd comic with person pointing a poster and saying 'Our analysis shows that there are three kinds of people in the world: those who use k-means clustering with k=3, and two other types whose qualitative interpretation is unclear."></a></p>
+<figcaption>Choosing K is an important task. 3 sometimes works. Source: xkcd.com.</figcaption>
+</figure>
+</div>
 </section>
-<section id="sensitivity-analysis" class="level1">
-<h1>Sensitivity analysis</h1>
-<p>Sometimes you have observations that might have a strong impact on the model, i.e., without those observations, the best fitting model would look quite different. If you decided that those points are <em>real</em> (i.e., not data entry or other mistakes), you might want to run the model both with those data points present and absent to investigate how results might change. Similarly, you might make decisions along the data cleaning path (e.g., to remove all observations with missing values, or instead remove some variables with lots of missing) which could affect results. Performing analyses in multiple ways to see how these decisions affect outcomes is useful. If you find that the overall results stay the same, it instills confidence in the robustness of your findings. If in contrast, different decisions lead to different answers, it might point to something worth investigating further.</p>
-<p>Since you are learning to set up your analysis in a fully automated way, doing such additional analyses is fairly painless. Often it just requires a small adjustment in code and waiting for the additional analysis to run.</p>
-<p>Note that sometimes the term <a href="https://en.wikipedia.org/wiki/Sensitivity_analysis">sensitivity analysis</a> is used to imply in a more limited approach, namely just the exploration of the impact of model parameters on the outcomes. However, in the more broader sense of the word, it is the exploration how changes in the analysis pipeline (different subsets of data, different modeling assumptions, etc.) might or might not impact the results.</p>
+<section id="the-zoo-of-statistical-tests" class="level1">
+<h1>The zoo of statistical tests</h1>
+<p>In some of your (bio)statistics classes, you likely came across a variety of statistical tests, e.g., <em>t</em>-test, Wilcoxon, Kruskal-Wallis, and others from the huge collection of tests. Each test makes certain assumptions and is most adequate for certain types of data. For instance you might remember hearing about parametric tests (which are most applicable if the underlying data has a certain distribution, usually a normal distribution) and non-parametric tests, which make fewer assumptions about the distribution of the data, but don’t have quite the same statistical power. Those more traditional statistical tests certainly have their uses (though are quite often overused and misused). We just don’t have time to cover them.</p>
+<p>Pretty much all of those tests have equivalent formulations as multivariable models (either a GLM type as described here, or others that we’ll cover later). The advantage of more general models, such as GLM, is that they easily allow for as many predictor variables as you want to add. Also, once you understand the general setup of GLM (and other models), this understanding transfers to other methods. For statistical tests, they are often taught as “if the data look like this, then test like that” without any underlying fundamental and transferable understanding. Overall, I am not a big fan of the way many intro (bio)stats courses are still taught these days.</p>
+<p>Because of that, and since this course is about <strong>modern</strong> data analysis, we will not cover any classical statistical tests and instead start with multivariable, GLM-type models and then move on to more complex/modern machine learning models.</p>
+<p>If you never thought about the relation between classical statistical tests and GLM-type models, you might want to check out <a href="https://lindeloev.github.io/tests-as-linear/"><em>Common statistical tests are linear models</em></a> by <a href="https://lindeloev.net/">Jonas Kristoffer Lindeløv</a> which explains the relation between the two in a good bit of detail. <a href="https://steverxd.github.io/Stat_tests/"><em>Statistical tests as linear models</em></a> by <a href="https://stevedoogue.netlify.app/">Steve Doogue</a> is also good, it is based on the original text by Lindeløv and covers some topics in more detail. Both resources show examples in R, and have links to further materials. At some point in your career as a data analyst, you might need to use or interpret classical statistical tests, and having a general idea that they can map to GLM-type and other models might be helpful.</p>
 </section>
-<section id="model-interpretation" class="level1">
-<h1>Model Interpretation</h1>
-<p>A nice feature of using subset selection or LASSO with GLMs, or fitting a single tree, is that the algorithm decides which predictor variables are important, and throws out the remaining ones. For the ones that stay in the model, we can look at the coefficients in front of each predictor variable, or look at the final tree/decision diagram, to assess the importance of individual predictor variables on the outcome. This provides an easy way to understand <em>how</em> specific variables influence the outcome.</p>
-<p>Those simple approaches are not available anymore for more complex models. With complex models, we generally give up interpretability in exchange for better performance. However, we ideally want both. The last several years have seen a good amount of development to come up with methods that allow one to peek inside the black box, i.e.&nbsp;to understand why and how a complex model makes its predictions, and what the role of specific predictor variables is on the outcome. This area is generally called <em>interpretable machine learning</em>.</p>
-<p>There’s no point in me repeating what others have already said (much better than I could) 😃, therefore, instead of me writing more on this, please take a look at <a href="https://christophm.github.io/interpretable-ml-book/">chapters 2 and 3 of the <em>Interpretable Machine Learning (IML)</em> book</a>, which gives a very nice introduction on this topic. As you can tell by the title, the whole book is about interpretation of machine learning methods, and is a great resource.</p>
-<p>For a shorter, but also great resource, check out <a href="https://bradleyboehmke.github.io/HOML/iml.html">chapter 16 of <em>HMLR</em></a>, which provides both a quick introduction and overview to the topic, and lists and illustrates the use of several R packages to do various interpretation tasks.</p>
-<p>Another good introduction is <a href="https://www.tmwr.org/explain.html">chapter 18 of <em>Tidy Modeling with R</em></a>.</p>
-<p>As models get more complex, making sense of them will increase in importance. Even if you are mainly interested in predictive performance and less on understanding your system, it is a good idea to investigate your model in some detail. You might often figure out things that can help further increase model performance. Also, without understanding at least to some extent how complex models make their predictions, the potential for unnoticed bias increases. A good example of this can be found in this <a href="https://science.sciencemag.org/content/366/6464/447">very recent Science paper</a> which describes racial bias in a machine learning model that tries to predict healthcare needs of patients. See also <a href="https://science.sciencemag.org/content/366/6464/421">Ruha Benjamin’s commentary</a> on the article. Thus, this area of interpreting results from complex models will likely see much development in the near future, hopefully leading to models that are both powerful (and thus likely complex) and interpretable.</p>
-<p>Given how easy it is to apply some of these methods to your models, I recommend that if you decide to use a somewhat complex model (or even a not-so complex one), you should always do at least some analyses that probe the model, e.g.&nbsp;perform a variable importance analysis and related investigations as described in the references above.</p>
-</section>
-<section id="other-checks" class="level1">
-<h1>Other checks</h1>
-<p>Many fitting functions return useful information as output (which you can read with the <code>summary</code> or similar commands). Take a close look. If you thought you had 200 data points but your fitting function result states that N=180, it means the function might have dropped observations with missing values without warning you (<code>R</code> unfortunately does things like that at times). By carefully reading/plotting model returns, you can diagnose your model and catch problems.</p>
-<p>If you get <em>strange</em> results (either unexpectedly bad or unexpectedly good), look carefully. As you know, most often things that are too good to be true are in fact not true. Bugs (either of the coding or thinking type) in any step of your analysis can lead to strange results.</p>
-<p>If at any time during your analysis, you get warning messages, you need to investigate them carefully. Sometimes it is ok to ignore warning messages in R <strong>but only after you know precisely what they mean and why they happen!</strong>. Frequently, warning messages indicate you are doing something you shouldn’t be doing and can lead to wrong results.</p>
-</section>
-<section id="further-learning" class="level1">
-<h1>Further learning</h1>
-<p>In addition to the sources mentioned above, other good reads are the <a href="https://www.tmwr.org/performance.html">Judging Model Effectiveness</a> and <a href="https://www.tmwr.org/trust.html">When Should You Trust Your Predictions?</a> chapters of <em>TMWR</em>.</p>
+<section id="further-reading" class="level1">
+<h1>Further reading</h1>
+<p><a href="https://statlearning.com/">Chapters 3 and 4 of <em>ISL</em></a> discuss linear and logistic models. So do <a href="https://bradleyboehmke.github.io/HOML/">chapters 4 and 5 of <em>HMLR</em></a>.</p>
+<p>For another source that discusses almost all the models just mentioned, each one very briefly, see the <a href="https://rafalab.github.io/dsbook/examples-of-algorithms.html">Examples of Algorithms chapter in <em>IDS</em></a>.</p>
 
 
+<div class="hidden" aria-hidden="true">
+<span class="glightbox-desc lightbox-desc-1">Choosing K is an important task. 3 sometimes works. Source: xkcd.com.</span>
+</div>
 </section>
 
 </main> <!-- /main -->
@@ -1348,17 +1397,42 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../content/module-model-evaluation/model-evaluation-overfitting.html" class="pagination-link  aria-label=" model="" performance="" &amp;="" overfitting"="">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Model Performance &amp; Overfitting</span>
+      <a href="../../../content/model-fitting/model-fitting-introduction/model-fitting-introduction.html" class="pagination-link  aria-label=" model="" fitting="" introduction"="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Model Fitting Introduction</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../content/module-model-evaluation/model-evaluation-uncertainty.html" class="pagination-link" aria-label="Model Uncertainty">
-        <span class="nav-page-text">Model Uncertainty</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../../content/model-fitting/model-evaluation/model-evaluation.html" class="pagination-link" aria-label="Model evaluation">
+        <span class="nav-page-text">Model evaluation</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","closeEffect":"zoom","descPosition":"right","loop":false,"selector":".lightbox"});
+window.onload = () => {
+  lightboxQuarto.on('slide_before_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    const href = trigger.getAttribute('href');
+    if (href !== null) {
+      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+      if (imgEl !== null) {
+        const srcAttr = imgEl.getAttribute("src");
+        if (srcAttr && srcAttr.startsWith("data:")) {
+          slideConfig.href = srcAttr;
+        }
+      }
+    } 
+  });
+
+  lightboxQuarto.on('slide_after_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    if (window.Quarto?.typesetMath) {
+      window.Quarto.typesetMath(slideNode);
+    }
+  });
+
+};
+          </script>
 
 
 
