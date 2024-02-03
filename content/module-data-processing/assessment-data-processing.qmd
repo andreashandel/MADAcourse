@@ -10,7 +10,7 @@ Get the quiz sheet for this module from the general [**Assessments**](../../cour
 
 # Discussion
 
-No discussion assignment this week. Instead, submit project part 1.
+
 
 
 # Exercise
@@ -40,7 +40,7 @@ Which dataset you choose is up to you. I suggest you pick a dataset that has at 
 
 ## Getting the data
 
-To get the dataset you selected, it is easiest if you download the file to your computer and place it inside your portfolio repository. Note that in general, you should  make each data analysis (or other) project its own GitHub repository, and always use a structure like the one provided in the `Data Analysis Template` (or something similar). However, for this small exercise and for logistic reasons, you'll use your portfolio/website repository, and just a single folder. Make a new folder called `dataanalysis-exercise` inside your portfolio repository. Place the data into that folder.
+To get the dataset you selected, it is easiest if you download the file to your computer and place it inside your portfolio repository. Note that in general, you should  make each data analysis (or other) project its own GitHub repository, and always use a structure like the one provided in the `Data Analysis Template` (or something similar). However, for this small exercise and for logistic reasons, you'll use your portfolio/website repository, and just a single folder. Make a new folder called `cdcdata-exercise` inside your portfolio repository. Place the data into that folder.
 
 
 ::: warning
@@ -54,7 +54,7 @@ While you should be able to find data for direct download from the CDC website, 
 ## Exploring the data
 
 Now, write code that explores the data. 
-Add a new Quarto document called `dataanalysis-exercise.qmd` to the folder you just created.
+Add a new Quarto document called `cdcdata-exercise.qmd` to the folder you just created.
 
 Start by providing a brief description of the data, where you got it, what it contains. Also add a link to the source.
 
@@ -84,7 +84,7 @@ Part 2 is due by Friday.
 
 You should have received an invitation to be a collaborator on your classmate's repository. Accept it, then clone the repository to your local computer. 
 
-Find the `dataanalysis-exercise.qmd` file. At the bottom, write a comment that says something like **This section contributed by YOURNAME.** This needs to be there for me to be able to grade your contribution.
+Find and open the `cdcdata-exercise.qmd` file. At the bottom, write a comment that says something like **This section contributed by YOURNAME.** This needs to be there for me to be able to grade your contribution.
 
 
 ## Making synthetic data 
@@ -101,7 +101,7 @@ Make sure everything works and the website renders ok.
 
 ## Finishing the GitHub workflow
 
-Once all is done and works, commit, push to GitHub. Note that you are now directly pushing to the original repo. This is easier, you don't need to do a pull request (PR). It's also a bit more dangerous, since you could potentially create conflicts if the main repository owner or other collaborators work on the repository at the same time. 
+Once all is done and works, commit, push to GitHub. ** Note that you are now directly pushing to the original repo which is owned by your classmate.** This is easier, you don't need to do fork and pull request (PR). **It's also more dangerous**, since you could potentially mess up your classmate's repo. So make sure things work before committing and pushing. 
 
 ::: note
 Some more comments on GitHub workflows:
