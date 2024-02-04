@@ -9,7 +9,7 @@
 <meta name="author" content="Andreas Handel">
 <meta name="description" content="Modern Applied Data Analysis (MADA) course">
 
-<title>MADA Course - Presenting Results Overview</title>
+<title>MADA Course - Presentation Overview</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../content/module-data-presentation/visualization-overview.html" rel="next">
+<link href="../../content/module-data-presentation/visualization-introduction.html" rel="next">
 <link href="../../content/module-data-processing/merging-data/merging-data.html" rel="prev">
 <link href="../../media/MADAlogo.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
@@ -490,7 +490,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-data-presentation/visualization-overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../../content/module-data-presentation/visualization-introduction.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Visualization Overview</span></a>
   </div>
 </li>
@@ -836,6 +836,7 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
   <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives">Objectives</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
   <li><a href="#main-ways-to-present-results" id="toc-main-ways-to-present-results" class="nav-link" data-scroll-target="#main-ways-to-present-results">Main ways to present results</a>
   <ul class="collapse">
   <li><a href="#figures" id="toc-figures" class="nav-link" data-scroll-target="#figures">Figures</a></li>
@@ -844,6 +845,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#automating-figure-and-table-generation" id="toc-automating-figure-and-table-generation" class="nav-link" data-scroll-target="#automating-figure-and-table-generation">Automating figure and table generation</a></li>
   <li><a href="#recommended-workflow" id="toc-recommended-workflow" class="nav-link" data-scroll-target="#recommended-workflow">Recommended workflow</a></li>
   <li><a href="#figures-tables-and-ai" id="toc-figures-tables-and-ai" class="nav-link" data-scroll-target="#figures-tables-and-ai">Figures, Tables and AI</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
   <li><a href="#further-resources" id="toc-further-resources" class="nav-link" data-scroll-target="#further-resources">Further resources</a></li>
   </ul>
 </nav>
@@ -853,7 +855,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../content/module-data-presentation/presenting-results-overview.html">6. Presenting Data and Results</a></li><li class="breadcrumb-item"><a href="../../content/module-data-presentation/presenting-results-overview.html">Presenting Results Overview</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Presenting Results Overview</h1>
+<h1 class="title">Presentation Overview</h1>
 </div>
 
 
@@ -871,7 +873,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2024-01-27</p>
+      <p class="date-modified">2024-02-03</p>
     </div>
   </div>
     
@@ -885,7 +887,6 @@ ul.task-list li input[type="checkbox"] {
 <section id="overview" class="level1">
 <h1>Overview</h1>
 <p>In this unit, we will discuss the main ways to show your data and results and discuss some ways to do that efficiently.</p>
-<p>By results, I mean any descriptive or statistical analysis you might have done for your data. For instance if you summarize your data in a table to show the percentage of individuals that do/don’t know how to write code in common programming languages, you generated a result and are presenting it. Similarly, if you fit multiple models and compute their cross-validated performance (you don’t yet need to know what this is) and want compare model performance, this would be another result you’ll want to show either as a plot or table.</p>
 </section>
 <section id="objectives" class="level1">
 <h1>Objectives</h1>
@@ -893,6 +894,10 @@ ul.task-list li input[type="checkbox"] {
 <li>Be familiar with the main ways to present results.</li>
 <li>Learn how to generate figures and tables in an automated manner.</li>
 </ul>
+</section>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>At some stage during your project, you’ll want to communicate what you did and found to others. This can be in the form of a peer-reviewed paper, a report, a presentation, a website, or any other mode of delivery. In most cases, the core of what you’ll communicate will be in the form of figures/graphs and tables, accompanied by text. Here, we’ll briefly talk about figures/graphs (I’ll use the words interchangably) and tables.</p>
 </section>
 <section id="main-ways-to-present-results" class="level1">
 <h1>Main ways to present results</h1>
@@ -914,9 +919,9 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="recommended-workflow" class="level1">
 <h1>Recommended workflow</h1>
-<p>It is generally a good idea to have code (R scripts) that generate figures and tables separate from the rest of your workflow. The reason is that to make high-quality figures and tables, you’ll likely iterate a lot. You don’t want to re-run your full analysis every time you update a figure. Similarly, you don’t want to have to re-create your downstream products (manuscripts, presentations, etc.) every time you update figures and tables.</p>
+<p>It is generally a good idea to have code that generates figures and tables separate from the rest of your workflow. The reason is that to make high-quality figures and tables, you’ll likely iterate a lot. You don’t want to re-run your full analysis every time you update a figure. Similarly, you don’t want to have to re-create your downstream products (manuscripts, presentations, etc.) every time you update figures and tables.</p>
 <p>A good way is to structure your workflow such that you have code which generates the results for your figures and tables and saves them as <code>Rds</code> or <code>CSV</code> or similar files.</p>
-<p>Then you’ll have some R scripts that load the results from those files, produce figures or tables, and save those figures and tables.</p>
+<p>Then you’ll have additional code/scripts that load the results from those files, produce figures or tables, and save those figures and tables.</p>
 <p>Finally, you’ll have your main products, such as your report/manuscript/presentation which will load the figures and tables and include them in the final product.</p>
 <p>This way, you can update your figures and tables without having to re-run your full analysis. You can also update your final products without having to re-run your analysis or figure/table generation code. This is a very efficient workflow.</p>
 </section>
@@ -927,9 +932,15 @@ ul.task-list li input[type="checkbox"] {
 <p>Then use AI to generate a figure or table that looks good. It is quite likely that the first try won’t be great. The good thing is that you can keep telling the AI to update things as often as you like. For instance you can just type at the prompt “update the code such that it uses a color-blind friendly color scheme and also increase the width of the lines by 50%”. This is much faster than searching online for an example of how to do it and copy and paste it over. It is possible that the AI will get you all the way. If not, you can always do the last few tweaks manually.</p>
 <p>In general, using AI tools to make figures and tables can save a lot of time.</p>
 </section>
+<section id="summary" class="level1">
+<h1>Summary</h1>
+<p>Figures and tables are the most important components of communicating findings. Good figures and tables will make your message come through, bad figures and tables will confuse the reader and you’ll be ignored. Automating figure and table generation in a READy framework is important. It improves reliability and speed.</p>
+</section>
 <section id="further-resources" class="level1">
 <h1>Further resources</h1>
-<p>The additional units in this module go into more depth for figure and table generation. See also the <a href="../../resources/resources-general.html"><strong>General Resources</strong></a> page for some additional sources.</p>
+<ul>
+<li>In the pharma space, this topic is known as <em>tables, listings, and graphs (TLG)</em> and the folks behind the pharmaverse collected <a href="https://pharmaverse.org/e2eclinical/tlg/">a bunch of R packages</a> to help with TLG generation.</li>
+</ul>
 
 
 </section>
@@ -1347,7 +1358,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../content/module-data-presentation/visualization-overview.html" class="pagination-link" aria-label="Visualization Overview">
+      <a href="../../content/module-data-presentation/visualization-introduction.html" class="pagination-link" aria-label="Visualization Overview">
         <span class="nav-page-text">Visualization Overview</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>

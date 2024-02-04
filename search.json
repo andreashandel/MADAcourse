@@ -1450,8 +1450,8 @@
     "text": "Overview\nFor this unit, we will discuss\n\n\nLearning Objectives\n\nBe familiar with\n\n\n\nIntroduction\nSometimes data are censored, i.e., you know that the value is “X or greater/less” but not the exact value. This is common in longitudinal (survival or similar) data. It is also common in experimental data, where you might have a measurement procedure with lower or upper limits of detection. The way to deal with censored data depends on what kind of censored data you have, and what you want to do with it. In R, packages that are used to analyse survival data, e.g. the survival package, can deal with some censored data. Otherwise, you will likely need to google around to figure out how you should deal with the censored data scenario you have and how to do it in R.\n\n\nSummary\n\n\nFurther Resources"
   },
   {
-    "objectID": "content/module-data-presentation/visualization-overview.html",
-    "href": "content/module-data-presentation/visualization-overview.html",
+    "objectID": "content/module-data-presentation/visualization-introduction.html",
+    "href": "content/module-data-presentation/visualization-introduction.html",
     "title": "Visualization Overview",
     "section": "",
     "text": "Overview\nIn this unit, we will discuss visualization (a.k.a. making figures), what they are good for, and how to do them in R.\n\n\n\nFlowcharts are sometimes, but not always good visualization tools. Source: xkcd.com.\n\n\n\n\nObjectives\n\nUnderstand when and how to use graphs.\nBecome familiar with major types of graphs and when to use them.\nLearn how to implement high-quality graphs in R.\n\n\n\nMotivating Examples\nThe topic of visualization is enormous, and impossible to cover thoroughly in a week (like pretty much any topic we talk about in this course 😃). To get you started, the two following TED talks provide some examples of interesting and inspiring data visualizations.\nIn the first video Mona Chalabi talks about good ways to present data and statistics and how good graphs can help in understanding.\n\n\n\n\nIn the second video Chris Jordan discusses how one can take abstract facts and make them much more tangible through visualization.\n\n\n\n\nIf you are interested, you can find more interesting talks on visualization in this TED topics site and this TED Studies collection.\n\n\nVisualization uses\nFigures and graphs are useful at any stage of your analysis. Use them early to explore your data, to get an idea for what you have, to figure out what cleaning you might need to do, and to check what analysis approaches might be useful. Use visualizations once you have done your analysis to check your results and interpret them. Use them at the end to communicate your results. While tables can be useful tools of communication as well, they tend to be much harder to understand and are – in my opinion – overused in science. Good figures are, most of the time, easier to understand and a more effective way to look at data.\n\n\nTypes of graphs\nI am sure you are familiar with several common types of graphs, such as scatter plots, boxplots, and bar charts. Many more chart types exist, some are much better at conveying potentially complex information than the simple standard ones. An excellent resources is the From Data to Viz website. It lists a lot of different graphs based on the kind of data you want to plot, and for each graph it gives a brief description and often a link to the R Graph Gallery which shows examples with code. Sometimes you start with data and are looking for the best way to plot it. Other times you see a great graph and want to know what it is called. These 2 websites are great resources for either situation.\nAnother great source that provides an overview of different graphs is the Directory of Visualizations chapter of the excellent Fundamentals of Data Visualization book by Claus Wilke. Further chapters in his book describe specific types of plots in more detail, and also provide general best practices for making plots. If you are interested in specific types of plots and general concepts of visualization, skim through his book.\n\n\nFurther visualization resources\nSee the General Resources page for some additional sources.\n\n\n\nFlowcharts are sometimes, but not always good visualization tools. Source: xkcd.com.",
@@ -2555,9 +2555,9 @@
   {
     "objectID": "content/module-data-presentation/presenting-results-overview.html",
     "href": "content/module-data-presentation/presenting-results-overview.html",
-    "title": "Presenting Results Overview",
+    "title": "Presentation Overview",
     "section": "",
-    "text": "In this unit, we will discuss the main ways to show your data and results and discuss some ways to do that efficiently.\nBy results, I mean any descriptive or statistical analysis you might have done for your data. For instance if you summarize your data in a table to show the percentage of individuals that do/don’t know how to write code in common programming languages, you generated a result and are presenting it. Similarly, if you fit multiple models and compute their cross-validated performance (you don’t yet need to know what this is) and want compare model performance, this would be another result you’ll want to show either as a plot or table.",
+    "text": "In this unit, we will discuss the main ways to show your data and results and discuss some ways to do that efficiently.",
     "crumbs": [
       "Content",
       "6. Presenting Data and Results",
@@ -2567,7 +2567,7 @@
   {
     "objectID": "content/module-data-presentation/presenting-results-overview.html#figures",
     "href": "content/module-data-presentation/presenting-results-overview.html#figures",
-    "title": "Presenting Results Overview",
+    "title": "Presentation Overview",
     "section": "Figures",
     "text": "Figures\nA well-done figure is able to convey a lot of complex information in an intuitive and understandable format. On the flip side, a poorly thought-out figure can be utterly confusing even if it is presenting something simple. Worse, figures can easily be (ab)used to mislead the reader. Your goal is to make sure that your figures are great-looking, easy to understand and not misleading. We’ll go over some more details relating to figures in subsequent units.",
     "crumbs": [
@@ -2579,7 +2579,7 @@
   {
     "objectID": "content/module-data-presentation/presenting-results-overview.html#tables",
     "href": "content/module-data-presentation/presenting-results-overview.html#tables",
-    "title": "Presenting Results Overview",
+    "title": "Presentation Overview",
     "section": "Tables",
     "text": "Tables\nTables allow you to easily present summaries of your data. Many epidemiological and other papers have a Table 1 which summarizes the data by its characteristics. For instance if you had a human cohort, this summary table will likely list the number and percentages or ranges of individuals based on gender, age, BMI, smoking status, etc.\nTables are also often used to present results of your data analysis. In my opinion, figures are often better, but if the results are simple or there are a lot of numbers that need to be shown, tables can work better at times. We’ll go over some more details on how to generate tables in R in a subsequent unit.",
     "crumbs": [
