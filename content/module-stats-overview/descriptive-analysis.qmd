@@ -17,7 +17,7 @@ For this unit, we will discuss descriptive and simple, preliminary statistical a
 
 # Introduction
 
-You usually,
+You usually want to analyze your data with one or several models that are tailored to the question you are trying to address. These models might often include multiple variables and are potentially complex. Instead of starting with those complex models, it is often a good idea to summarize the data and fit simple models to it to gain a better understanding of what to expect from your full analysis.
 
 
 # Descriptive analysis
@@ -95,8 +95,12 @@ statistical literacy, even among PhD holders, is still sad...
 
 # Summary 
 
+While your eventual goal is likely to use tailored, potentially complex models for your analysis, you should always explore the data through a descriptive analysis and fitting of simple (e.g. bi-variate) models. The insights gained doing so will help you refine your main models.
+
+
+
 # Further Resources
 
-
+* Both the IDS and R4DS books provide good coverage of descriptive and simple analyses.
 
 

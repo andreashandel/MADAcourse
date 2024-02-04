@@ -1,5 +1,5 @@
 ---
-title: "Performance assessment"
+title: "Model performance metrics"
 #subtitle: "More info here if needed"
 date: 2024-01-25
 date-modified: last-modified
@@ -7,10 +7,10 @@ date-modified: last-modified
 
 # Overview
 
-This unit discusses the idea of assessing a model based on its performance. This is a general overview, additional units will go into more details of specific ways to assess performance.
+This unit discusses the idea of assessing a model based on its performance through some metric. 
 
 ::: note
-I use the term performance here in a narrow sense, you will realize how I define it as you go through this unit.
+I use the term model performance here in a narrow sense, quantified through some metric. 
 :::
 
 # Learning Objectives
@@ -42,20 +42,20 @@ $$Y_m=b_0 + b_1X_1 + b_2X_2 + \ldots + b_n X_n.$$
 
 When you ask the computer to fit this model, it will guess some values of the coefficients *b~i~* and then vary them (in a smart way)[^1] until the predicted *Y~m~* (often also called $\hat{y}$ or $\hat{Y}$) from the model are as close as possible to the actual data values *Y~d~* (often also just called $y$ or $Y$).
 
-[^1] This business of _varying the model in a smart way until you find the best one_ is an example of what's called [optimization](https://en.wikipedia.org/wiki/Mathematical_optimization). Developing routines that can quickly, efficiently, and reliably find the optimum is a huge area, and depending on the model and data you are trying to fit, having smart algorithms to do the optimization can be very challenging. You can make a whole career just working on optimization topics. Fortunately, for most purposes, we can generally use existing software and rely on their built-in optimizers.
+[^1]: This business of _varying the model in a smart way until you find the best one_ is an example of what's called [optimization](https://en.wikipedia.org/wiki/Mathematical_optimization). Developing routines that can quickly, efficiently, and reliably find the optimum is a huge area, and depending on the model and data you are trying to fit, having smart algorithms to do the optimization can be very challenging. You can make a whole career just working on optimization topics. Fortunately, for most purposes, we can generally use existing software and rely on their built-in optimizers.
 
 
 The overall procedure of adjusting model details until you get a model that capture the patterns in the data as best as it can, and has the highest possible performance, is very general and applies to any kind of model, as well as both continuous and categorical outcomes. 
 
-What is important that for each scenario, model performance is clearly defined. What you mean by _model being close to data_ or _model capturing the pattern in the data_ needs to be to specified such that your algorithm can compute a number that it can try to optimize - the performance measure.
+What is important that for each scenario, model performance is clearly defined. What you mean by _model being close to data_ or _model capturing the pattern in the data_ needs to be to specified such that your algorithm can compute a number that it can try to optimize - the performance metric.
 
-It is important to be aware that the choice of the performance measure is a scientific choice. You need to specify it based on your knowledge of the system and the question you want to answer. While there are very common performance measures, which we will discuss next, it is important that you do think about what it is you are actually asking your model to do and what you optimize when you fit data.
+It is important to be aware that the choice of the performance metric is a scientific choice. You need to specify it based on your knowledge of the system and the question you want to answer. While there are very common performance measures, which we will discuss next, it is important that you do think about what it is you are actually asking your model to do and what you optimize when you fit data.
 
 
 
 # The cost/loss/objective function
 
-To specify a performance measure we want to optimize, we need to define some function of both model predictions (*Y~m~*) and measured/data (*Y~d~*) outcomes. This function goes by different names, but the terms most commonly used are **cost function** or [**loss function**](https://en.wikipedia.org/wiki/Loss_function). In more general math or stats context, this is also called an **objective function.** Other names are common in different areas of science, see e.g., those listed in the linked Wikipedia article. 
+To specify a performance metric/measure we want to optimize, we need to define some function of both model predictions (*Y~m~*) and measured data (*Y~d~*) outcomes. This function goes by different names, but the terms most commonly used are **cost function** or [**loss function**](https://en.wikipedia.org/wiki/Loss_function). In more general math or stats context, this is also called an **objective function.** Other names are common in different areas of science, see e.g., those listed in the linked Wikipedia article. 
 
 Another term is simply **metric**. I'm also calling it generically **performance measure** here. I often interchangeably use these terms, so just be aware that they mean the same thing: a function that is used to measure how close the model predictions are to the data.
 
@@ -63,11 +63,11 @@ The convention is to set up the problem such that larger discrepancies between m
 
 In equation form, we have in the general case: $$C = f(Y_m,Y_d).$$
 
-The $Y_m$ are all the predictions made by the model for the outcome, and the $Y_d$ are the actual outcomes from the data. If you have $N$ observations, you will have $N$ pairs of $Y_m$ and $Y_d$ and then you need to specify some function, *f*, that uses all those values to compute a single value to measure your performance. The different types of functions, *f*, depend on the type of data and other considerations. Once you define *f*, this is the performance metric which quantifies how well a given model fits the data.
+The $Y_m$ are all the predictions made by the model for the outcome, and the $Y_d$ are the actual outcomes from the data. You need to specify some function, *f*, that uses all those values to compute a single value to measure your performance. The different types of functions, *f*, depend on the type of data and other considerations. Once you define *f*, this is the performance metric which quantifies how well a given model fits the data.
 
-When you do a single model fitting step, the computer calculates *f* for different values of the parameters, *b~i~*. In general, it repeats this for different values of the model parameters until it finds the ones that produce the best (i.e., minimum) value of *C*.[^2]
+When you do a single model fitting step, the computer calculates *f* for different values of the parameters, *b~i~*. In general, it repeats this for different values of the model parameters until it finds the ones that produce the best (i.e., minimum) value of *C*.[^FIT]
 
-[^2]: Technically, for some simple models, it is possible to find the best parameter values other than by 'trial and error', but for many other models, this is more or less what is happening. 
+[^FIT]: Technically, for some simple models, it is possible to find the best parameter values other than by 'trial and error', but for many other models, this is more or less what is happening. 
 
 Similarly, if you fit two different models (e.g., a linear model with 3 predictor variables, and another one with 5), you can use the value of *C* to compare model performance. We'll get into that in more detail in further units.
 
@@ -84,7 +84,7 @@ You will often see a variation where one divides by the sample size, i.e. $C$ wi
 
 $$C = \frac{1}{N} \sum_i (Y_m^i - Y_d^i)^2$$
 
-This is called [mean squared error](https://en.wikipedia.org/wiki/Mean_squared_error). Other names of exist of course.
+This is called [**mean squared error (MSE)**](https://en.wikipedia.org/wiki/Mean_squared_error). Of course, other names exist.
 
 Dividing by the sample size has the advantage of allowing you to compare values across samples of different size from the same dataset (but it doesn't really work for comparing across different datasets). For instance if you compare model performance on training and test data (to be discussed shortly), and each has different sample size, you need to make sure you standardize by it.
 
@@ -98,7 +98,13 @@ which is called the root mean squared error (RMSE). The advantage of taking the 
 
 ## Coefficient of determination
 
-An equivalent alternative to SSR is to use a quantity called [Coefficient of determination](https://en.wikipedia.org/wiki/Coefficient_of_determination), or more commonly $R^2$ (R-squared). This quantity is defined as $$1-rSS/TSS$$ where RSS is the residual sum of square introduced above and TSS is the [total sum of squares](https://en.wikipedia.org/wiki/Total_sum_of_squares). The latter is defined as
+An equivalent alternative to SSR is to use a quantity called [Coefficient of determination](https://en.wikipedia.org/wiki/Coefficient_of_determination), or more commonly $R^2$ (R-squared). This quantity is defined as 
+$$R^2 = 1-RSS/TSS$$ 
+where RSS is the residual sum of square introduced above and TSS is the [total sum of squares](https://en.wikipedia.org/wiki/Total_sum_of_squares).[^SST] 
+
+[^SST]: Also called SST, sum of squares total.
+
+The latter is defined as
 
 $$TSS =  \sum_i (Y_{av} - Y_d^i)^2$$
 
@@ -112,19 +118,19 @@ Least squares fitting is simple and frequently used. A lot of standard routines 
 
 ## Beyond least squares
 
-An alternative to least squares is to penalize not with the distance *squared*, but *linearly* with the (absolute) distance. This metric is called **(mean) absolute error** or [**(least) absolute deviation**](https://en.wikipedia.org/wiki/Least_absolute_deviations), and the model is
+An alternative to least squares is to penalize not with the distance *squared*, but *linearly* with the (absolute) distance. This metric is called **(mean) absolute error (MAE)** or [**(least) absolute deviation**](https://en.wikipedia.org/wiki/Least_absolute_deviations), and the model is
 
 $$C = f(Y_m,Y_d) = \sum_i |Y_m^i - Y_d^i|$$
 
 This approach can be useful if the data contains outliers (that are real, and one can't justify removing them during cleaning). With a squared distance penalty, outliers have a strong impact on the model fit. With a linear penalty, such outliers carry less weight. Because of this, the linear difference approach is sometimes called a robust estimation.
 
-Robust estimation methods such as MAE and many others often require the use of specialized software or packages that provide this functionality. 
+Robust estimation methods such as MAE are not as common as least squares, but most software has support for it. For instance, there are multiple packages in R that support MAE and other robust fitting methods. 
 
-R packages. A large number of R packages exist that allow fitting this way, see e.g., the [CRAN Robust Task View](https://cran.r-project.org/web/views/Robust.html). The `yardstick` package as the metric `mae()` which computes the mean absolute error.
+You might wonder why we don't just use those robust methods all the time, just to be safe. There are fundamental statistical reasons why optimizing the MSE is often more aligned with the question we want to address, so you should switch to a robust method only after you thought about it and decided it's the right approach for your specific scenario. You can also always do it both ways and compare results to get an idea of the potential influence on your results from the outliers. Doing things more than one way -- and of course reporting each approach you tried -- is generally a great idea. This is often called performing a sensitivy analysis.
+
 
 Another way to define *f* is with step functions. The idea is that as long as model and data are within some distance, the penalty is zero. Once model and data differ by some threshold, a penalty is given, e.g., a fixed value or a linear or quadratic penalty. Such types of schemes to define *f* are common in the class of models called Support Vector Machines, which we will look at later in the course.
 
-Some other metrics are implemented in `yardstick`. You can check out other metric types in this [`yardstick` article](https://yardstick.tidymodels.org/articles/metric-types.html). For instance there is one called `huber_loss()` which is a combination of least squares and absolute error.
 
 No matter what scheme you choose, it might at times be useful to weigh data points. In the examples given above, each model-data pair was given the same importance. Sometimes it might be that you have some data points that should carry more weight. A common case is if you have measurements not on the individual level but some aggregate level. As an example, assume you have a fraction of heart attacks among all patients for some time period in different hospitals, and you want to fit that fraction. You don't know the number of people who had heart attacks, only the fraction. But you do know something about the total number of beds each hospital has. You could then argue that hospitals with more beds have more patients and thus likely more heart attacks, and therefore the data from larger hospitals should get more weight, and you could e.g., multiply each term in the sum by bed size. Note that this is a scientific decision based on your expert knowledge of the data. Almost all fitting routines allow you to provide weights for your data and you can then perform *weighted least squares* (or a weighted version of whatever other approaches you choose). `tidymodels` has some support for [weighted fitting](https://www.tidyverse.org/blog/2022/05/case-weights/).
 
@@ -187,6 +193,7 @@ The [Model Evaluation section of *HMLR*](https://bradleyboehmke.github.io/HOML/p
 
 [Chapter 2 of *ISLR*](https://www.statlearning.com/), which you already looked at previously, also discusses the topic of performance, and several other issues we are discussing in this module. Now, or once you are finished with the other readings of this module, might be good time to revisit that chapter.
 
+The `yardstick` package from the `tidymodels` framework is all about metrics and has support for a large number of them. You can check out other metric types in this [`yardstick` article](https://yardstick.tidymodels.org/articles/metric-types.html). 
 
 
 

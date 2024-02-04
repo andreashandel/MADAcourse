@@ -21,13 +21,10 @@ find it based on your part 1 submission.
 
 # Discussion
 
-Find some paper online that does a data analysis. Explain what types of
+Find a scientific paper of your choice online that does a data analysis. Explain what types of
 analyses the authors did (based on the categories described in this
 module). Also discuss what the (stated or not stated) objective of the
-paper/study was, if the authors used the right analysis, and if they
-interpreted/presented their results properly. If you think they didn't
-do their analysis right or present their results correctly, make
-suggestions for what they should have done.
+paper/study was. Comment on if you think the authors performed the right analysis given their goals, and state your opinion if they interpreted/presented their results properly. If you think they didn't do their analysis right or didn't present/interpret their results correctly, make suggestions for what they should have done.
 
 You don't need to go into modeling details, a big picture description is
 enough. For instance if the authors clearly did a secondary analysis

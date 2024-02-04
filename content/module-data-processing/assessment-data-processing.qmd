@@ -10,12 +10,12 @@ Get the quiz sheet for this module from the general [**Assessments**](../../cour
 
 # Discussion
 
-
+How has your experience with AI tools for this course been so far? What have you found helpful, what doesn't seem to work? Any cool tools, tricks, resources you found? Write an initial post by Wednesday, then comment on and learn from each other by Friday.
 
 
 # Exercise
 
-This exercise lets you do a bit of data loading and wrangling. And of course more group work and GitHub.
+This exercise lets you do a bit of data loading and wrangling. You'll also work together through GitHub again.
 
 **The first part of the exercise is due by Wednesday, so your classmate can do their part before the Friday deadline.**
 
@@ -23,7 +23,7 @@ This exercise lets you do a bit of data loading and wrangling. And of course mor
 
 ## Setup
 
-We'll also use the same group setup as last week. Assign each member in your group an (arbitrary) number (I'm calling them M1, M2, ...). The order should be different than last week so you get to interact with a different group member. Everyone will first work on their own and finish their first part by Wednesday. Then M1 will contribute to M2's repository, M2 will work on M3, etc. The last person, will work on M1's repository. This way, everyone will work on their own and one group member's repository.
+We'll also use the familiar group setup. Check the group assignment to make sure you know who else is in your group for this week. Assign each member in your group an (arbitrary) number (I'm calling them M1, M2, ...). The order should be different than before so you get to interact with a different group member. Everyone will first work on their own repository. Then M1 will contribute to M2's repository, M2 will work on M3, etc. The last person, will work on M1's repository. This way, everyone will work on their own and one group member's repository.
 
 ## Part 1
 
@@ -31,7 +31,7 @@ Part 1 is due by Wednesday.
 
 ## Finding Data
 
-Previously, you did a quick exploration of a dataset that came with an R package (`gapminder` data inside `dslabs` package). A lot of datasets can be found inside R packages. For instance, this [page lists what is likely only a small fraction](https://vincentarelbundock.github.io/Rdatasets/datasets.html). There is even a [Reddit group dedicated to R datasets](https://www.reddit.com/r/datasets/). The good and the bad about datasets that come with R packages is that they are often fairly clean/tidy. That's unfortunately not how most "real world" datasets look like. Getting dirty and messy datasets and wrangling them into a form that is suitable for statistical analysis is part of most workflows and often takes a lot of time. We'll start practicing this here by getting data that might or might not be very clean.
+Previously, you did a quick exploration of a dataset that came with an R package (`gapminder` data inside `dslabs` package). A lot of datasets can be found inside R packages. For instance, this [page lists what is likely only a small fraction](https://vincentarelbundock.github.io/Rdatasets/datasets.html). The good and the bad about datasets that come with R packages is that they are often fairly clean/tidy. That's unfortunately not how most "real world" datasets look like. Getting dirty and messy datasets and wrangling them into a form that is suitable for statistical analysis is part of most workflows and often takes a lot of time. We'll start practicing this here by getting data that might or might not be very clean.
 
 Go to the CDC's data website at <https://data.cdc.gov/>. Browse through the site and identify a dataset of interest.
 
@@ -73,7 +73,7 @@ In a final step, update the `_quarto.yml` file and include a menu item for "Data
 
 If everything works as expected, commit and push your changes to GitHub. Instead of using the fork + pull-request workflow we've tried a few times, we'll explore a different collaborative approach. In this approach, you and your collaborator work on the same repository. To that end, you need to add your classmate as collaborator. Go to Github.com, find your portfolio repository, go to `Settings`, then `Collaborators`. Choose `Add Collaborator` and add your classmate. Your classmate should receive an invitation, which they need to accept. With this, they are now able to directly push and pull to your repository, without them needing to create a fork. (You can remove them after this exercise if you don't want them to be able to continue having write access to your repository).   
 
-To avoid any conflicts, once your classmate takes over, you shouldn't continue making changes to the repository.
+To avoid any potential merge conflicts, once your classmate takes over, you shouldn't make further changes to the repository.
 
 ## Part 2
 
@@ -82,7 +82,7 @@ Part 2 is due by Friday.
 
 ## Joining and cloning the GitHub repository
 
-You should have received an invitation to be a collaborator on your classmate's repository. Accept it, then clone the repository to your local computer. 
+You should have received an invitation to be a collaborator on your classmate's repository. Accept it, then directly clone (**not fork**) the repository to your local computer. 
 
 Find and open the `cdcdata-exercise.qmd` file. At the bottom, write a comment that says something like **This section contributed by YOURNAME.** This needs to be there for me to be able to grade your contribution.
 
@@ -101,7 +101,7 @@ Make sure everything works and the website renders ok.
 
 ## Finishing the GitHub workflow
 
-Once all is done and works, commit, push to GitHub. ** Note that you are now directly pushing to the original repo which is owned by your classmate.** This is easier, you don't need to do fork and pull request (PR). **It's also more dangerous**, since you could potentially mess up your classmate's repo. So make sure things work before committing and pushing. 
+Once all is done and works, commit, push to GitHub. **Note that you are now directly pushing to the original repo which is owned by your classmate.** This is easier, you don't need to do fork and pull request (PR). **It's also more dangerous**, since you could potentially mess up your classmate's repo. So make sure things work before committing and pushing. 
 
 ::: note
 Some more comments on GitHub workflows:

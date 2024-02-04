@@ -70,7 +70,7 @@ As we discussed previously, if you have an outcome variable, your data is called
 
 There isn't really one single, standard go-to method for unsupervised learning -- in contrast to the very common linear and logistic models for supervised learning. There are often used methods, such as **Principal Component Analysis (PCA)** (which falls into a larger group of methods called **dimensionality reduction** methods) and a group of methods called **clustering methods** (the most common among these are probably *k*-means clustering and hierarchical clustering). Since most of you will work on labeled data using supervised methods most of the time, we won't go much into unsupervised methods. If you want to learn a bit more, check out for instance the [Unsupervised Learning chapter of *ISLR*](https://statlearning.com/). There are also [chapters on PCA and different types of clustering in *HMLR*](https://bradleyboehmke.github.io/HOML/).
 
-![Choosing K is an important task. 3 sometimes works. Source: xkcd.com.](../../media/xkcd_k_means_clustering_2x.png){width="50%" fig-alt="xkcd comic with person pointing a poster and saying 'Our analysis shows that there are three kinds of people in the world: those who use k-means clustering with k=3, and two other types whose qualitative interpretation is unclear."}
+![Choosing K is an important task. 3 sometimes works. Source: xkcd.com.](xkcd_k_means_clustering_2x.png){width="50%" fig-alt="xkcd comic with person pointing a poster and saying 'Our analysis shows that there are three kinds of people in the world: those who use k-means clustering with k=3, and two other types whose qualitative interpretation is unclear."}
 
 # The zoo of statistical tests
 

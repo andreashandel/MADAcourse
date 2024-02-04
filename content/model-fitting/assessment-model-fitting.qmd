@@ -7,9 +7,19 @@ subtitle: ""
 
 Get the quiz sheet for this module from the general [**Assessments**](../../courseinfo/assessments-overview.qmd) page. Fill it in, then submit to the online grading system before the deadline.
 
+
+# Discussion
+
+Write a post in this week's discussion channel that answers this question:
+
+Which major new insight did you gain from this week's topic (or any topic related to model fitting you got exposed to over the last few weeks) and how will that maybe affect your analyses in the future? And what point(s) do you find rather confusing about the model fitting material we covered so far?
+
+Post by Wednesday, then reply to each other by Friday. See if you can help each other reduce any existing confusion. 
+
+
 # Exercise
 
-We'll practice a bit of model fitting using the `tidymodels` framework. Of course, some wrangling tasks are likely part as well. This is another solo exercise. We'll eventually get back to group work, I promise 😃.
+We'll practice a bit of model fitting using the `tidymodels` framework. Of course, some wrangling tasks are likely part as well. This is another solo exercise. 
 
 ## Setup
 
@@ -115,10 +125,3 @@ Recompile your full portfolio website. If everything works, you should see a new
 
 **Since this is part of your portfolio site, you don't need to post anything, I know where to find it. Therefore there is no exercise Slack channel for this module.**
 
-# Discussion
-
-Write a post in this week's discussion channel that answers this question:
-
-Which major new insight did you gain from this week's topic (or any topic related to model fitting you got exposed to over the last few weeks) and how will that maybe affect your analyses in the future? And what point(s) do you find rather confusing about the model fitting material we covered so far?
-
-Post by Wednesday, then reply to each other by Friday. See if you can help each other reduce any existing confusion. I'll be participating too, of course!

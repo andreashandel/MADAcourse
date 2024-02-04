@@ -57,7 +57,7 @@ You can expand and resize the columns/rows of the Excel file so you can make sur
 
 ## Exercises
 
-**The exercises are the most important component of the course!** The material we cover in this class can only be learned by doing it yourself. As such, the focus is really on the exercises (i.e. the homework), with the readings and videos mainly meant to help you find and learn the material you need to do the exercises.
+**The exercises -- together with the project -- are the most important component of the course!** The material we cover in this class can only be learned by doing it yourself. As such, the focus is really on the exercises (i.e. the homework), with the readings and videos mainly meant to help you find and learn the material you need to do the exercises.
 
 Because the exercises are so important, they are usually quite in-depth and also often time-consuming. Plan accordingly. For each exercise, I will provide detailed instructions that hopefully make it clear what you need to do. 
 

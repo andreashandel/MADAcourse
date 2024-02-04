@@ -1,5 +1,5 @@
 ---
-title: Presenting Results Overview
+title: Presentation Overview
 subtitle: ""
 ---
 
@@ -7,12 +7,19 @@ subtitle: ""
 
 In this unit, we will discuss the main ways to show your data and results and discuss some ways to do that efficiently.
 
-By results, I mean any descriptive or statistical analysis you might have done for your data. For instance if you summarize your data in a table to show the percentage of individuals that do/don't know how to write code in common programming languages, you generated a result and are presenting it. Similarly, if you fit multiple models and compute their cross-validated performance (you don't yet need to know what this is) and want compare model performance, this would be another result you'll want to show either as a plot or table.
 
 # Objectives
 
 -   Be familiar with the main ways to present results.
 -   Learn how to generate figures and tables in an automated manner.
+
+
+
+# Introduction
+
+At some stage during your project, you'll want to communicate what you did and found to others. This can be in the form of a peer-reviewed paper, a report, a presentation, a website, or any other mode of delivery. In most cases, the core of what you'll communicate will be in the form of figures/graphs and tables, accompanied by text. Here, we'll briefly talk about figures/graphs (I'll use the words interchangably) and tables.
+
+
 
 # Main ways to present results
 
@@ -36,11 +43,11 @@ There are several reasons to have tables and figures generated automatically. Fi
 
 # Recommended workflow
 
-It is generally a good idea to have code (R scripts) that generate figures and tables separate from the rest of your workflow. The reason is that to make high-quality figures and tables, you'll likely iterate a lot. You don't want to re-run your full analysis every time you update a figure. Similarly, you don't want to have to re-create your downstream products (manuscripts, presentations, etc.) every time you update figures and tables.
+It is generally a good idea to have code that generates figures and tables separate from the rest of your workflow. The reason is that to make high-quality figures and tables, you'll likely iterate a lot. You don't want to re-run your full analysis every time you update a figure. Similarly, you don't want to have to re-create your downstream products (manuscripts, presentations, etc.) every time you update figures and tables.
 
 A good way is to structure your workflow such that you have code which generates the results for your figures and tables and saves them as `Rds` or `CSV` or similar files.
 
-Then you'll have some R scripts that load the results from those files, produce figures or tables, and save those figures and tables.
+Then you'll have additional code/scripts that load the results from those files, produce figures or tables, and save those figures and tables.
 
 Finally, you'll have your main products, such as your report/manuscript/presentation which will load the figures and tables and include them in the final product.
 
@@ -56,6 +63,14 @@ Then use AI to generate a figure or table that looks good. It is quite likely th
 
 In general, using AI tools to make figures and tables can save a lot of time.
 
+
+# Summary
+
+Figures and tables are the most important components of communicating findings. Good figures and tables will make your message come through, bad figures and tables will confuse the reader and you'll be ignored. Automating figure and table generation in a READy framework is important. It improves reliability and speed.
+
+
 # Further resources
 
-The additional units in this module go into more depth for figure and table generation. See also the [**General Resources**](../../resources/resources-general.qmd) page for some additional sources.
+* In the pharma space, this topic is known as _tables, listings, and graphs (TLG)_ and the folks behind the pharmaverse collected [a bunch of R packages](https://pharmaverse.org/e2eclinical/tlg/) to help with TLG generation.
+
+

@@ -197,7 +197,7 @@ website:
              - text: "Presenting Results Overview"
                file: content/module-data-presentation/presenting-results-overview.qmd     
              - text: "Visualization Overview"
-               file: content/module-data-presentation/visualization-overview.qmd     
+               file: content/module-data-presentation/visualization-introduction.qmd     
              - text: "Visualization in R"
                file: content/module-data-presentation/visualization-in-r.qmd     
              - text: "Tables in R"
@@ -218,7 +218,7 @@ website:
                file: content/model-fitting/model-fitting-introduction/model-fitting-introduction.qmd  
              - text: "Fitting Basic Models"
                file: content/model-fitting/basic-statistical-models/basic-statistical-models.qmd
-             - text: "Model evaluation"
+             - text: "Model performance metrics"
                file: content/model-fitting/model-evaluation/model-evaluation.qmd
              - text: "Fitting Models in R"
                file: content/model-fitting/model-fitting-r/model-fitting-r.qmd
