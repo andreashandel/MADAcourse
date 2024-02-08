@@ -22,7 +22,7 @@ lateness.
 **The main objective for part 1 is to describe data and question in
 enough detail that I can assess if the planned project is feasible.**
 
-Use the `Manuscript.qmd` file. Remove or replace the template
+Use the `manuscript.qmd` file. Remove or replace the template
 information. Add your proposed project title and your name(s).
 
 To that end, provide the following pieces of information:
@@ -146,11 +146,9 @@ To that end, provide the following pieces of information:
     focused, so don't produce page-long raw R output or a ton of
     exploratory figures or similar things. The main results of your
     analysis should be in this manuscript. Any further explorations and
-    results (figures and tables) should go into a separate Rmarkdown
-    file that comprises the supplementary material. For some idea on how
-    this can be structured, you can for instance revisit Brian's project
-    we looked at in this
-    [**unit**](../content/module-data-analysis/data-analysis-motivation.qmd).
+    results (figures and tables) should go into a separate Quarto
+    file that comprises the supplementary material. 
+
 
 Grading for this part will follow this rubric:
 
@@ -162,7 +160,7 @@ Grading for this part will follow this rubric:
 | Absent                | (Almost) everything of submission is missing                               | 0         |
 
 *This part of your project will be assessed by some of your classmates.
-See the [**Project Review**](project-Review.qmd) document for more details.*
+See the [**Project Review**](project-review.qmd) document for more details.*
 
 # Part 4
 
@@ -229,10 +227,7 @@ submission will be assessed by your peers. I will not grade this part
 but it will be assessed by your peers, as described in the [**Project
 Review**](/project/project-Review.qmd) document.
 
-*A great project would be at the level of Brian McKay's paper example
-you checked out in the [**Motivating Examples
-document**](../content/module-data-analysis/data-analysis-motivation.qmd),
-or one of the projects on the `Project Examples` page.*
+*A strong project would be at the level of one of the projects on the `Project Examples` page.*
 
 # Part 6
 

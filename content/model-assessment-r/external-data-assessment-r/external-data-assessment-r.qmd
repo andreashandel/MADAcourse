@@ -1,0 +1,36 @@
+---
+title: "External data based model assessment with R"
+#subtitle: "More info here if needed"
+date: 2024-02-08
+date-modified: last-modified
+---
+
+# Overview
+
+This unit discusses how to do cross-validation and similar approaches using R.
+
+
+# Learning Objectives
+
+* Understand the concept of overfitting.
+* Know that a model should generally be assessed by its performance with independent data.
+
+
+# Introduction
+
+We previously discussed cross-validation and train/test splitting from a conceptual level.
+Here' well be looking at some examples on how to implement these in R.
+
+We'll focus on the `tidymodels` set of packages.
+
+
+To do the train/test split in R, you can use the [`rsample` package](https://rsample.tidymodels.org/) which is part of `tidymodels`.
+
+Cross-validation works for most situations and is quite robust. It is also fairly easy to implement. In R, the `tidymodels` framework allows for easy CV, and we'll make use of that. 
+
+
+
+
+# Summary
+
+# Further Resources

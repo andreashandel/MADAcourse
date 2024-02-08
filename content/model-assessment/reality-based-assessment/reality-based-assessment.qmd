@@ -78,4 +78,31 @@ Always perform critical comparisons of your models with reality. If something do
 None that I can think of ATM. Let me know if you have any suitable ones.
 
 
+# Test yourself
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the questions
+q1 <- "A more detailed model is always better than one that contains less details."
+q2 <- "There is a single right type of model for every problem, and if you don't get it exactly right, you are screwed."
+q3 <- "Which of the following is NOT an important factor when considering model complexity?"
+
+# Define the answer choices
+q3_choices <- c("Amount of available data", "Ability to capture data patterns", answer= "Lines of code one needs to write",  "Risk of overfitting")
+
+
+cat(q1,webexercises::torf(FALSE),"\n")
+cat(q2,webexercises::torf(FALSE),"\n")
+cat(q3,webexercises::longmcq(q3_choices))
+```
+
+
+
+# Practice
+
+* Revisit the papers you found for the previous unit's exercise. Go through them again and specifically focus on the model structure and complexity, and if results make sense. Try, as best as you can, to critically evaluate if the authors made suitable choices and explained their choices well. 
+
+
 

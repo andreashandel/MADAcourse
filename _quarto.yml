@@ -1,351 +1,335 @@
 project:
   type: website
-#  output-dir: docs # for using /docs on Github pages - currently using a separte gh-pages branch
-  preview: 
-    port: 3434 # preview at http://localhost:3434/
-  render: 
-    - "*.qmd" # render all .qmd files
-    - "!myresources/" # don't render anything in this folder
-    - "!renv/"
-    - "!files/" #those should be as they are
-  resources: "*.xlsx" # include quizsheets in _site
-
-execute: 
-  freeze: auto  # re-render only when source changes
-  #cache: true # cache any compututations unless things change - probably not needed here
-
-description-meta: "Modern Applied Data Analysis (MADA) course"
+  preview:
+    port: 3434
+  render:
+  - '*.qmd'
+  - '!myresources/'
+  - '!renv/'
+  - '!files/'
+  resources: '*.xlsx'
+execute:
+  freeze: auto
+description-meta: Modern Applied Data Analysis (MADA) course
 engine: knitr
-
 format:
   html:
-    theme: [yeti, MADAstyle.scss]
-    # author and date get added to every page unless you specify author: "" and date: "" in the document YAML header
-    author: 
-      - name: "Andreas Handel"
+    theme:
+    - yeti
+    - MADAstyle.scss
+    author:
+    - name: Andreas Handel
     date-modified: last-modified
-    date-format: iso # YYYY-MM-DD
-    # table of contents on every page unless you set `toc: false`
+    date-format: iso
     toc: true
     toc_depth: 3
-    toc_float: 
+    toc_float:
       collapsed: false
-    link-external-newwindow: true # open external links in new tab or window
-    fig-align: center # images need a caption to be considered a figure (https://github.com/quarto-dev/quarto-cli/issues/6509)
-    highlight-style: a11y # accessible syntax color theme
-    grid: 
-    # see https://quarto.org/docs/output-formats/page-layout.html#html-page-layout
-      content-mode: full # uses up the full screen
-      sidebar-width: 300px # widens the sidebar so most module names fit on one line
-      body-width: 900px # widens body content
-      
-# lightbox figures
-# https://quarto.org/docs/output-formats/html-lightbox-figures.html
+    link-external-newwindow: true
+    fig-align: center
+    highlight-style: a11y
+    grid:
+      content-mode: full
+      sidebar-width: 300px
+      body-width: 900px
+    css: include/webex.css
+    include-after-body: include/webex.js
 lightbox:
-  desc-position: right  # position of description
-  match: auto # give all images lightbox treatment
-  effect: zoom # how lightbox opens/closes
-  loop: false # doesn't loop to first image in gallery
-  
+  desc-position: right
+  match: auto
+  effect: zoom
+  loop: false
 website:
-  title: "MADA Course"
-  description: "Modern Applied Data Analysis (MADA) course"
+  title: MADA Course
+  description: Modern Applied Data Analysis (MADA) course
   site-url: https://andreashandel.github.io/MADAcourse/
   repo-url: https://github.com/andreashandel/MADAcourse/
   favicon: media/MADAlogo.png
-  page-navigation: true # adds previous/next buttons to bottom of page
+  page-navigation: true
   navbar:
-    pinned: true  # keeps navbar visible when scrolling
-    background: "#81AF8E" # light green from arrow in MADA logo
-    foreground: dark  # dark font color
+    pinned: true
+    background: '#81AF8E'
+    foreground: dark
     logo: media/MADAlogo.png
     left:
-      - text: "General Information"
-        file: courseinfo/course-overview.qmd
-      - text: "Content"
-        file: content/content-overview.qmd
-      - text: "Assessments"
-        file: courseinfo/assessments-overview.qmd
-      - text: "Project"
-        file: project/project-overview.qmd
-      - text: "Resources"
-        file: resources/resources-overview.qmd
-
+    - text: General Information
+      file: courseinfo/course-overview.qmd
+    - text: Content
+      file: content/content-overview.qmd
+    - text: Assessments
+      file: courseinfo/assessments-overview.qmd
+    - text: Project
+      file: project/project-overview.qmd
+    - text: Resources
+      file: resources/resources-overview.qmd
     right:
-      - icon: github 
-        file: https://github.com/andreashandel/MADAcourse
-    
+    - icon: github
+      file: https://github.com/andreashandel/MADAcourse
   sidebar:
-      - title: "General Information"
-        style: "docked" # see options at https://quarto.org/docs/websites/website-navigation.html#side-navigation
-        collapse-level: 1 
-        background: "#e3e2db" # cream color from MADA logo background
-        contents:
-            - text: "Course Overview"
-              file: courseinfo/course-overview.qmd
-            - text: "Syllabus"
-              file: courseinfo/course-syllabus.qmd
-            - text: "Schedule"
-              file: courseinfo/course-schedule.qmd
-            - text: "Communication"
-              file: courseinfo/course-communication.qmd
-              
-      - title: "Content"
-        contents:
-          - text: "Content Overview"
-            file: content/content-overview.qmd
-          - section: "1. Course and Tools Introduction"
-            contents:
-              - text: "Course Introduction"
-                file: content/module-intro-tools/introduction-course.qmd
-              - text: "R and Rstudio"
-                file: content/module-intro-tools/tools-randrstudio.qmd
-              - text: "GitHub Introduction"
-                file: content/module-intro-tools/tools-github-introduction.qmd
-              - text: "GitHub and R Workflow"
-                file: content/module-intro-tools/tools-github-r-workflow.qmd
-              - text: "Quarto & Co"
-                file: content/module-intro-tools/tools-quarto.qmd
-              - text: "AI Tools"
-                file: content/module-intro-tools/tools-ai.qmd
-              - text: "Reference Management"
-                file: content/module-intro-tools/tools-reference-management.qmd
-              - text: "Guidance and Tips for R/RStudio/GitHub"
-                file: content/module-intro-tools/tools-tips-guidance.qmd
-          - section: "2A. Data Analysis Introduction"
-            contents:
-              - text: "Motivating Examples"
-                file: content/module-data-analysis/data-analysis-motivation.qmd
-              - text: "Data Analysis Overview"
-                file: content/module-data-analysis/data-analysis-overview.qmd     
-          - section: "2B. READy workflows"
-            contents:
-              - text: "READy workflows overview"
-                file: content/module-ready-workflow/ready-overview.qmd
-              - text: "READy introduction"
-                file: content/module-ready-workflow/ready-introduction/ready-introduction.qmd     
-              - text: "Project organization"
-                file: content/module-ready-workflow/ready-organization/ready-organization.qmd     
-              - text: "Project management"
-                file: content/module-ready-workflow/ready-project-management/ready-project-management.qmd     
-              - text: "Software management"
-                file: content/module-ready-workflow/ready-software-management/ready-software-management.qmd     
-              - text: "Project documentation"
-                file: content/module-ready-workflow/ready-documentation/ready-documentation.qmd     
-              - text: "Tools for a READy workflow"
-                file: content/module-ready-workflow/ready-tools/ready-tools.qmd     
-              - text: "Open research"
-                file: content/module-ready-workflow/ready-open/ready-open.qmd     
-          - section: "3. R Coding Basics"
-            contents:
-              - text: "R Coding Basics"
-                file: content/module-coding-basics/rcoding-basics.qmd     
-              - text: "Tidyverse and Friends"
-                file: content/module-coding-basics/rcoding-tidyverse.qmd     
-          - section: "4A. All about Data"
-            contents:
-              - text: "Data Overview"
-                file: content/module-data/data-overview.qmd  
-              - text: Basic data types
-                file: content/module-data/data-types-basic/data-types-basic.qmd
-              - text: Complex data types
-                file: content/module-data/data-types-complex/data-types-complex.qmd
-              - text: Data storage formats
-                file: content//module-data/data-storage-formats/data-storage-formats.qmd
-              - text: Data formats in R
-                file: content//module-data/data-formats-r/data-formats-r.qmd
-              - text: The data generation process
-                file: content//module-data/data-generation-process/data-generation-process.qmd
-          - section: "4B. Synthetic Data"
-            contents:
-             - text: "Synthetic Data Overview"
-               file: content/module-synthetic-data/synthetic-data-overview.qmd  
-             - text: "Introduction and Motivation"
-               file: content/module-synthetic-data/synthetic-data-introduction/synthetic-data-introduction.qmd
-             - text: "Creating new data"
-               file: content/module-synthetic-data/synthetic-data-new-r/synthetic-data-new-r.qmd
-             - text: "Creating new data based on existing data"
-               file: content/module-synthetic-data/synthetic-data-new-existing-r/synthetic-data-new-existing-r.qmd
-             - text: "Scrambling existing data"
-               file: content/module-synthetic-data/synthetic-data-existing-r/synthetic-data-existing-r.qmd
-             - text: "R packages for data creation"
-               file: content/module-synthetic-data/synthetic-data-r-packages/synthetic-data-r-packages.qmd
-             - text: "Use synthetic data with AI tools"
-               file: content/module-synthetic-data/synthetic-data-ai-tools-r/synthetic-data-ai-tools-r.qmd
-             - text: "Use synthetic data to test models"
-               file: content/module-synthetic-data/synthetic-data-model-testing-r/synthetic-data-model-testing-r.qmd
-          - section: "5. Data Processing"
-            contents:
-             - text: "Data Processing Overview"
-               file: content/module-data-processing/data-processing-overview.qmd  
-             - text: "Data Processing Introduction"
-               file: content/module-data-processing/data-processing-introduction/data-processing-introduction.qmd
-             - text: "Data loading"
-               file: content/module-data-processing/data-loading/data-loading.qmd
-             - text: "Dealing with missing data"
-               file: content/module-data-processing/missing-data/missing-data.qmd
-             # - text: "Dealing with censored data"
-             #   file: content/module-data-processing/censored-data/censored-data.qmd
-             - text: "Dealing with outliers"
-               file: content/module-data-processing/outliers/outliers.qmd
-             - text: "Creating new data/variables"
-               file: content/module-data-processing/feature-engineering/feature-engineering.qmd
-             - text: "Merging data"
-               file: content/module-data-processing//merging-data/merging-data.qmd
-          - section: "6. Presenting Data and Results"
-            contents:
-             - text: "Presenting Results Overview"
-               file: content/module-data-presentation/presenting-results-overview.qmd     
-             - text: "Visualization Overview"
-               file: content/module-data-presentation/visualization-introduction.qmd     
-             - text: "Visualization in R"
-               file: content/module-data-presentation/visualization-in-r.qmd     
-             - text: "Tables in R"
-               file: content/module-data-presentation/tables-in-r.qmd
-          - section: "7. Statistical Analysis Overview"
-            contents:
-             - text: "Statistical Analysis Introduction"
-               file: content/module-stats-overview/statistical-analysis-introduction.qmd     
-             - text: "Some Statistical Model Fitting Terminology"
-               file: content/module-stats-overview/statistical-terminology.qmd     
-             - text: "Descriptive and preliminary analysis"
-               file: content/module-stats-overview/descriptive-analysis.qmd     
-          - section: "8. Model Fitting"
-            contents:
-             - text: "Model Fitting Overview"
-               file: content/model-fitting/model-fitting-overview.qmd  
-             - text: "Model Fitting Introduction"
-               file: content/model-fitting/model-fitting-introduction/model-fitting-introduction.qmd  
-             - text: "Fitting Basic Models"
-               file: content/model-fitting/basic-statistical-models/basic-statistical-models.qmd
-             - text: "Model performance metrics"
-               file: content/model-fitting/model-evaluation/model-evaluation.qmd
-             - text: "Fitting Models in R"
-               file: content/model-fitting/model-fitting-r/model-fitting-r.qmd
-          - section: "9. Model Assessment"
-            contents:
-             - text: "Model Assessment Overview"
-               file: content/model-assessment/model-assessment-overview.qmd     
-             - text: "Model Assessment Introduction"
-               file: content/model-assessment/model-assessment-introduction/model-assessment-introduction.qmd     
-             - text: "Reality-based assessment"
-               file: content/model-assessment/reality-based-assessment/reality-based-assessment.qmd     
-             - text: "Model evaluation with external data"
-               file: content/model-assessment/external-data-assessment/external-data-assessment.qmd     
-             - text: "Model evaluation with Information Criteria"
-               file: content/model-assessment/information-criteria-assessment/information-criteria-assessment.qmd     
-             - text: "Model diagnostics"
-               file: content/model-assessment/diagnostics-assessment/diagnostics-assessment.qmd     
-             - text: "Model uncertainty"
-               file: content/model-assessment/uncertainty-assessment/uncertainty-assessment.qmd     
-          - section: "10. Model Improvement"
-            contents:
-             - text: "Improving Model Fits Overview"
-               file: content/module-model-improvement/model-improvement-overview.qmd     
-             - text: "Pre-Processing Data"
-               file: content/module-model-improvement/model-improvement-data-processing.qmd
-             - text: "Subset Selection"
-               file: content/module-model-improvement/model-improvement-subset-selection.qmd     
-             - text: "Regularization"
-               file: content/module-model-improvement/model-improvement-regularization.qmd     
-             - text: "Model Tuning"
-               file: content/module-model-improvement/model-improvement-tuning.qmd     
-          - section: "11. Machine Learning Models I"
-            contents:
-             - text: "ML Models Overview"
-               file: content/module-model-ml-1/ml-models-overview.qmd     
-             - text: "Polynomial and Spline Models"
-               file: content/module-model-ml-1/polynomial-spline-models.qmd     
-             - text: "Decision Trees"
-               file: content/module-model-ml-1/decision-trees.qmd     
-             - text: "Many-Tree Models"
-               file: content/module-model-ml-1/many-tree-models.qmd     
-          - section: "12. Machine Learning Models II"
-            contents:
-             - text: "Support Vector Machine Models"
-               file: content/module-model-ml-2/svm-models.qmd     
-             - text: "Discriminant Analysis Models"
-               file: content/module-model-ml-2/da-models.qmd     
-             - text: "Some More ML models"
-               file: content/module-model-ml-2/more-ml-models.qmd     
-          - section: "13. Complete Analysis Workflow"
-            contents:
-             - text: "Complete Data Analysis Workflow"
-               file: content/module-workflow/complete-data-analysis-workflow.qmd  
-          - section: "AI"
-            contents:
-             - text: "AI Overview"
-               file: content/module-ai/ai-overview.qmd  
-             - text: "Introduction to AI"
-               file: content/module-ai/ai-introduction/ai-introduction.qmd  
-             - text: "Introduction to LLM AI tools"
-               file: content/module-ai/ai-llm-introduction/ai-llm-introduction.qmd  
-             - text: "AI Concepts"
-               file: content/module-ai/ai-conceptual/ai-conceptual.qmd  
-             - text: "Current AI Tools"
-               file: content/module-ai/ai-tools/ai-tools.qmd  
-             - text: "Write code with AI"
-               file: content/module-ai/ai-write-code-r/ai-write-code-r.qmd  
-             - text: "Fix code with AI"
-               file: content/module-ai/ai-fix-code-r/ai-fix-code-r.qmd  
-             - text: "Explore data with AI"
-               file: content/module-ai/ai-eda-r/ai-eda-r.qmd  
-             - text: "Analyze data with AI"
-               file: content/module-ai/ai-analysis-r/ai-analysis-r.qmd  
-             - text: "AI Resources"
-               file: content/module-ai/ai-resources/ai-resources.qmd  
-
-
-      - title: "Assessments"
-        contents:
-            - text: "Assessments Overview"
-              file: courseinfo/assessments-overview.qmd
-            - text: "1. Course and Tools Introduction"
-              file: content/module-intro-tools/assessment-course-tools-introduction.qmd
-            - text: "2. Data Analysis Introduction"
-              file: content/module-data-analysis/assessment-data-analysis.qmd
-            - text: "3. R Coding Basics"
-              file: content/module-coding-basics/assessment-coding.qmd
-            - text: "4. All about Data"
-              file: content/module-data/assessment-data.qmd
-            - text: "5. Processing Data"
-              file: content/module-data-processing/assessment-data-processing.qmd
-            - text: "6. Presenting Data and Results"
-              file: content/module-data-presentation/assessment-presenting-results.qmd
-            - text: "7. Statistical Analysis Overview"
-              file: content/module-stats-overview/assessment-statistical-analysis.qmd
-            - text: "8. Model Fitting"
-              file: content/model-fitting/assessment-model-fitting.qmd
-            - text: "9. Model Assessment"
-              file: content/model-assessment/assessment-model-assessment.qmd
-            - text: "10. Model Improvment"
-              file: content/module-model-improvement/assessment-model-improvement.qmd
-            - text: "11. Machine Learning Models I"
-              file: content/module-model-ml-1/assessment-ml-models-1.qmd
-            - text: "12. Machine Learning Models II"
-              file: content/module-model-ml-2/assessment-ml-models-2.qmd
-            - text: "13. Complete Analysis Workflow"
-              file: content/module-workflow/assessment-complete-workflow.qmd
-        
-      - title: "Project"
-        contents:
-           - text: "Project Overview"
-             file: project/project-overview.qmd
-           - text: "Project Details"
-             file: project/project-details.qmd
-           - text: "Project Review"
-             file: project/project-review.qmd
-           - text: "Project Examples"
-             file: project/project-examples.qmd
-                 
-      - title: "Resources"
-        contents:
-           - text: "Resources Overview"
-             file: resources/resources-overview.qmd
-           - text: "Course Resources"
-             file: resources/resources-course.qmd
-           - text: "General Resources"
-             file: resources/resources-general.qmd
-           - text: "Glossary"
-             file: resources/resources-glossary.qmd
-             
+  - title: General Information
+    style: docked
+    collapse-level: 1
+    background: '#e3e2db'
+    contents:
+    - text: Course Overview
+      file: courseinfo/course-overview.qmd
+    - text: Syllabus
+      file: courseinfo/course-syllabus.qmd
+    - text: Schedule
+      file: courseinfo/course-schedule.qmd
+    - text: Communication
+      file: courseinfo/course-communication.qmd
+  - title: Content
+    contents:
+    - text: Content Overview
+      file: content/content-overview.qmd
+    - section: 1. Course and Tools Introduction
+      contents:
+      - text: Course Introduction
+        file: content/module-intro-tools/introduction-course.qmd
+      - text: R and Rstudio
+        file: content/module-intro-tools/tools-randrstudio.qmd
+      - text: GitHub Introduction
+        file: content/module-intro-tools/tools-github-introduction.qmd
+      - text: GitHub and R Workflow
+        file: content/module-intro-tools/tools-github-r-workflow.qmd
+      - text: Quarto & Co
+        file: content/module-intro-tools/tools-quarto.qmd
+      - text: AI Tools
+        file: content/module-intro-tools/tools-ai.qmd
+      - text: Reference Management
+        file: content/module-intro-tools/tools-reference-management.qmd
+      - text: Guidance and Tips for R/RStudio/GitHub
+        file: content/module-intro-tools/tools-tips-guidance.qmd
+    - section: 2A. Data Analysis Introduction
+      contents:
+      - text: Motivating Examples
+        file: content/module-data-analysis/data-analysis-motivation.qmd
+      - text: Data Analysis Overview
+        file: content/module-data-analysis/data-analysis-overview.qmd
+    - section: 2B. READy workflows
+      contents:
+      - text: READy workflows overview
+        file: content/module-ready-workflow/ready-overview.qmd
+      - text: READy introduction
+        file: content/module-ready-workflow/ready-introduction/ready-introduction.qmd
+      - text: Project organization
+        file: content/module-ready-workflow/ready-organization/ready-organization.qmd
+      - text: Project management
+        file: content/module-ready-workflow/ready-project-management/ready-project-management.qmd
+      - text: Software management
+        file: content/module-ready-workflow/ready-software-management/ready-software-management.qmd
+      - text: Project documentation
+        file: content/module-ready-workflow/ready-documentation/ready-documentation.qmd
+      - text: Tools for a READy workflow
+        file: content/module-ready-workflow/ready-tools/ready-tools.qmd
+      - text: Open research
+        file: content/module-ready-workflow/ready-open/ready-open.qmd
+    - section: 3. R Coding Basics
+      contents:
+      - text: R Coding Basics
+        file: content/module-coding-basics/rcoding-basics.qmd
+      - text: Tidyverse and Friends
+        file: content/module-coding-basics/rcoding-tidyverse.qmd
+    - section: 4A. All about Data
+      contents:
+      - text: Data Overview
+        file: content/module-data/data-overview.qmd
+      - text: Basic data types
+        file: content/module-data/data-types-basic/data-types-basic.qmd
+      - text: Complex data types
+        file: content/module-data/data-types-complex/data-types-complex.qmd
+      - text: Data storage formats
+        file: content//module-data/data-storage-formats/data-storage-formats.qmd
+      - text: Data formats in R
+        file: content//module-data/data-formats-r/data-formats-r.qmd
+      - text: The data generation process
+        file: content//module-data/data-generation-process/data-generation-process.qmd
+    - section: 4B. Synthetic Data
+      contents:
+      - text: Synthetic Data Overview
+        file: content/module-synthetic-data/synthetic-data-overview.qmd
+      - text: Introduction and Motivation
+        file: content/module-synthetic-data/synthetic-data-introduction/synthetic-data-introduction.qmd
+      - text: Creating new data
+        file: content/module-synthetic-data/synthetic-data-new-r/synthetic-data-new-r.qmd
+      - text: Creating new data based on existing data
+        file: content/module-synthetic-data/synthetic-data-new-existing-r/synthetic-data-new-existing-r.qmd
+      - text: Scrambling existing data
+        file: content/module-synthetic-data/synthetic-data-existing-r/synthetic-data-existing-r.qmd
+      - text: R packages for data creation
+        file: content/module-synthetic-data/synthetic-data-r-packages/synthetic-data-r-packages.qmd
+      - text: Use synthetic data with AI tools
+        file: content/module-synthetic-data/synthetic-data-ai-tools-r/synthetic-data-ai-tools-r.qmd
+      - text: Use synthetic data to test models
+        file: content/module-synthetic-data/synthetic-data-model-testing-r/synthetic-data-model-testing-r.qmd
+    - section: 5. Data Processing
+      contents:
+      - text: Data Processing Overview
+        file: content/module-data-processing/data-processing-overview.qmd
+      - text: Data Processing Introduction
+        file: content/module-data-processing/data-processing-introduction/data-processing-introduction.qmd
+      - text: Data loading
+        file: content/module-data-processing/data-loading/data-loading.qmd
+      - text: Dealing with missing data
+        file: content/module-data-processing/missing-data/missing-data.qmd
+      - text: Dealing with outliers
+        file: content/module-data-processing/outliers/outliers.qmd
+      - text: Creating new data/variables
+        file: content/module-data-processing/feature-engineering/feature-engineering.qmd
+      - text: Merging data
+        file: content/module-data-processing//merging-data/merging-data.qmd
+    - section: 6. Presenting Data and Results
+      contents:
+      - text: Presenting Results Overview
+        file: content/module-data-presentation/presenting-results-overview.qmd
+      - text: Visualization Overview
+        file: content/module-data-presentation/visualization-introduction.qmd
+      - text: Visualization in R
+        file: content/module-data-presentation/visualization-in-r.qmd
+      - text: Tables in R
+        file: content/module-data-presentation/tables-in-r.qmd
+    - section: 7. Statistical Analysis Overview
+      contents:
+      - text: Statistical Analysis Introduction
+        file: content/module-stats-overview/statistical-analysis-introduction.qmd
+      - text: Some Statistical Model Fitting Terminology
+        file: content/module-stats-overview/statistical-terminology.qmd
+      - text: Descriptive and preliminary analysis
+        file: content/module-stats-overview/descriptive-analysis.qmd
+    - section: 8. Model Fitting
+      contents:
+      - text: Model Fitting Overview
+        file: content/model-fitting/model-fitting-overview.qmd
+      - text: Model Fitting Introduction
+        file: content/model-fitting/model-fitting-introduction/model-fitting-introduction.qmd
+      - text: Fitting Basic Models
+        file: content/model-fitting/basic-statistical-models/basic-statistical-models.qmd
+      - text: Model performance metrics
+        file: content/model-fitting/model-evaluation/model-evaluation.qmd
+      - text: Fitting Models in R
+        file: content/model-fitting/model-fitting-r/model-fitting-r.qmd
+    - section: 9. Model Assessment
+      contents:
+      - text: Model Assessment Overview
+        file: content/model-assessment/model-assessment-overview.qmd
+      - text: Model Assessment Introduction
+        file: content/model-assessment/model-assessment-introduction/model-assessment-introduction.qmd
+      - text: Reality-based assessment
+        file: content/model-assessment/reality-based-assessment/reality-based-assessment.qmd
+      - text: Model performance revisited
+        file: content/model-assessment/model-performance-revisited/model-performance-revisited.qmd
+      - text: Model evaluation with cross-validation
+        file: content/model-assessment/external-data-assessment/external-data-assessment.qmd
+      - text: Model evaluation with Information Criteria
+        file: content/model-assessment/information-criteria-assessment/information-criteria-assessment.qmd
+      - text: Model diagnostics
+        file: content/model-assessment/diagnostics-assessment/diagnostics-assessment.qmd
+      - text: Model uncertainty
+        file: content/model-assessment/uncertainty-assessment/uncertainty-assessment.qmd
+    - section: 10. Model Improvement
+      contents:
+      - text: Improving Model Fits Overview
+        file: content/module-model-improvement/model-improvement-overview.qmd
+      - text: Pre-Processing Data
+        file: content/module-model-improvement/model-improvement-data-processing.qmd
+      - text: Subset Selection
+        file: content/module-model-improvement/model-improvement-subset-selection.qmd
+      - text: Regularization
+        file: content/module-model-improvement/model-improvement-regularization.qmd
+      - text: Model Tuning
+        file: content/module-model-improvement/model-improvement-tuning.qmd
+    - section: 11. Machine Learning Models I
+      contents:
+      - text: ML Models Overview
+        file: content/module-model-ml-1/ml-models-overview.qmd
+      - text: Polynomial and Spline Models
+        file: content/module-model-ml-1/polynomial-spline-models.qmd
+      - text: Decision Trees
+        file: content/module-model-ml-1/decision-trees.qmd
+      - text: Many-Tree Models
+        file: content/module-model-ml-1/many-tree-models.qmd
+    - section: 12. Machine Learning Models II
+      contents:
+      - text: Support Vector Machine Models
+        file: content/module-model-ml-2/svm-models.qmd
+      - text: Discriminant Analysis Models
+        file: content/module-model-ml-2/da-models.qmd
+      - text: Some More ML models
+        file: content/module-model-ml-2/more-ml-models.qmd
+    - section: 13. Complete Analysis Workflow
+      contents:
+      - text: Complete Data Analysis Workflow
+        file: content/module-workflow/complete-data-analysis-workflow.qmd
+    - section: AI
+      contents:
+      - text: AI Overview
+        file: content/module-ai/ai-overview.qmd
+      - text: Introduction to AI
+        file: content/module-ai/ai-introduction/ai-introduction.qmd
+      - text: Introduction to LLM AI tools
+        file: content/module-ai/ai-llm-introduction/ai-llm-introduction.qmd
+      - text: AI Concepts
+        file: content/module-ai/ai-conceptual/ai-conceptual.qmd
+      - text: Current AI Tools
+        file: content/module-ai/ai-tools/ai-tools.qmd
+      - text: Write code with AI
+        file: content/module-ai/ai-write-code-r/ai-write-code-r.qmd
+      - text: Fix code with AI
+        file: content/module-ai/ai-fix-code-r/ai-fix-code-r.qmd
+      - text: Explore data with AI
+        file: content/module-ai/ai-eda-r/ai-eda-r.qmd
+      - text: Analyze data with AI
+        file: content/module-ai/ai-analysis-r/ai-analysis-r.qmd
+      - text: AI Resources
+        file: content/module-ai/ai-resources/ai-resources.qmd
+  - title: Assessments
+    contents:
+    - text: Assessments Overview
+      file: courseinfo/assessments-overview.qmd
+    - text: 1. Course and Tools Introduction
+      file: content/module-intro-tools/assessment-course-tools-introduction.qmd
+    - text: 2. Data Analysis Introduction
+      file: content/module-data-analysis/assessment-data-analysis.qmd
+    - text: 3. R Coding Basics
+      file: content/module-coding-basics/assessment-coding.qmd
+    - text: 4. All about Data
+      file: content/module-data/assessment-data.qmd
+    - text: 5. Processing Data
+      file: content/module-data-processing/assessment-data-processing.qmd
+    - text: 6. Presenting Data and Results
+      file: content/module-data-presentation/assessment-presenting-results.qmd
+    - text: 7. Statistical Analysis Overview
+      file: content/module-stats-overview/assessment-statistical-analysis.qmd
+    - text: 8. Model Fitting
+      file: content/model-fitting/assessment-model-fitting.qmd
+    - text: 9. Model Assessment
+      file: content/model-assessment/assessment-model-assessment.qmd
+    - text: 10. Model Improvment
+      file: content/module-model-improvement/assessment-model-improvement.qmd
+    - text: 11. Machine Learning Models I
+      file: content/module-model-ml-1/assessment-ml-models-1.qmd
+    - text: 12. Machine Learning Models II
+      file: content/module-model-ml-2/assessment-ml-models-2.qmd
+    - text: 13. Complete Analysis Workflow
+      file: content/module-workflow/assessment-complete-workflow.qmd
+  - title: Project
+    contents:
+    - text: Project Overview
+      file: project/project-overview.qmd
+    - text: Project Details
+      file: project/project-details.qmd
+    - text: Project Review
+      file: project/project-review.qmd
+    - text: Project Examples
+      file: project/project-examples.qmd
+  - title: Resources
+    contents:
+    - text: Resources Overview
+      file: resources/resources-overview.qmd
+    - text: Course Resources
+      file: resources/resources-course.qmd
+    - text: General Resources
+      file: resources/resources-general.qmd
+    - text: Glossary
+      file: resources/resources-glossary.qmd

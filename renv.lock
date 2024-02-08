@@ -3161,6 +3161,23 @@
       ],
       "Hash": "fea474d578b1cbcb696ae6ac8bdcc439"
     },
+    "webexercises": {
+      "Package": "webexercises",
+      "Version": "1.1.0",
+      "Source": "Repository",
+      "Repository": "RSPM",
+      "Requirements": [
+        "R",
+        "grDevices",
+        "jsonlite",
+        "knitr",
+        "rmarkdown",
+        "rstudioapi",
+        "utils",
+        "yaml"
+      ],
+      "Hash": "0bc402e12a6bf83525ee4cda6fd2232a"
+    },
     "withr": {
       "Package": "withr",
       "Version": "2.5.2",

@@ -81,4 +81,32 @@ It is very important to think critically about your models (and those of others)
 * The [Advanced Data Science book](http://rafalab.dfci.harvard.edu/dsbook-part-2/) covers some of these topics. (This is an updated version of part of the IDS book).
 
 
+# Test yourself
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the questions
+q1 <- "You should always choose the model that provides the best performance."
+q2 <- "Which of the following is fairly unimportant when assessing models?"
+q3 <- "You need to use your expert knowledge as part of model assessment."
+
+# Define the answer choices
+q2_choices <- c("Model performance", "Model complexity", answer= "Model programming language",  "Model uncertainty")
+
+
+cat(q2,webexercises::longmcq(q2_choices))
+cat(q1,webexercises::torf(FALSE))
+cat(q3,webexercises::torf(TRUE))
+```
+
+
+
+# Practice
+
+* Find 1-3 papers that include a data analysis in your area of work, or on a topic you are interested in and know a little bit about. Figure our the overall setting and the questions the study is trying to answer. Then look at the models. You might not be ready yet to fully assess and critique if they did things right, but just carefully pay attention to their model choices and how the papers do or don't address the aspects described above. 
+
+
+
 

@@ -2,13 +2,14 @@
 
 Most general comments/thoughts are in the Notes and Thoughts document in the off-line course folder.
 
+
 # Notes
 
--   I'm doing local rendering into the docs folder and syncing/pushing it instead of using gh-pages workflow.
+-   I'm currently using gh-pages branch for publishing. See Quarto documentation for details.
 
-# Andreas ToDo
-
-
+- I'm using the webexercises R package to embed quizzes. 
+https://psyteachr.github.io/webexercises/index.html
+https://web.mat.upc.edu/joaquim.puig/posts/webexercises-quiz/
 
 
 
