@@ -228,8 +228,8 @@ website:
                file: content/model-assessment/model-assessment-overview.qmd     
              - text: "Model Assessment Introduction"
                file: content/model-assessment/model-assessment-introduction/model-assessment-introduction.qmd     
-             - text: "Biology-based assessment"
-               file: content/model-assessment/biology-based-assessment/biology-based-assessment.qmd     
+             - text: "Reality-based assessment"
+               file: content/model-assessment/reality-based-assessment/reality-based-assessment.qmd     
              - text: "Model evaluation with external data"
                file: content/model-assessment/external-data-assessment/external-data-assessment.qmd     
              - text: "Model evaluation with Information Criteria"

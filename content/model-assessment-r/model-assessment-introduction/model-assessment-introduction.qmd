@@ -1,0 +1,70 @@
+---
+title: "Model assessment introduction"
+#subtitle: "More info here if needed"
+date: 2024-01-25
+date-modified: last-modified
+---
+
+# Overview
+This unit provides an overview of the different ways one can and should assess models - both your own and those of others. 
+
+
+
+# Learning Objectives
+
+-   Be familiar with different ways to assess models
+-   Use different approaches to critically assess your own and other models  
+
+
+
+# Introduction
+
+Throughout the process of building and using your model, and especially after you have fit it to data and want to interpret your findings, you need to carefully assess your model(s).[^1]
+
+There are different - at times conflicting - aspects that determine if a model is good, suitable for whatever goal you have, and able to give you what you want. 
+
+We'll briefly discuss various aspects one needs to consider in the assessment of models, and then go deeper in later units.
+
+[^1] The term _evaluation_ is often used interchangeably with _assessment_. I'm trying to reserve _evaluation_ when one has a clear performance metric that one can measure, for instance the mean squared error or the value of a likelihood function. I use the term _assessment_ in a broader sense. But I might not be consistent, so if you see either word, just figure out what is meant based on context 😁.
+
+
+If we fit any kind of statistical model to data, we need to determine the quality of a fit somehow. How do we know one model is *better* than another? How do we know any given model is *good*? These questions, i.e., what model is *better* among a group of models, and if a model is *good* (even the best among a group of awful models can be a bad model!) have multiple parts to them, only some of which can be answered by statistics. Others are judgment calls.
+
+There is no single way to define quality. Instead, multiple factors should be considered. Here are some important aspects to think about.
+
+
+## Agreement with reality
+
+
+
+## Model perfomance
+
+This is generally the most clear-cut metric. After you define and quantify the metric you want to optimize, 
+How well do the predictions from the model compare to the actual data?
+
+
+-   Model complexity: How easy or hard is it to understand the model? How fast does it run? How robust is it to violations of the assumptions you made?
+-   Model uncertainty: How much uncertainty is associated with the predictions made by the model?
+-   Model misspecification: How much systematic deviation is there between model predictions and actual data?
+
+We will discuss these different ways one can assess model quality in this module.
+
+
+
+## Usefulness
+
+Performance is not everything. Even if you have a model that performs best on the independent/cross-validated data, you might want to opt for a "worse" model that is easier to interpret and potentially use. Having smaller and simpler models can sometimes be of little importance and other times of great importance.
+
+For instance, if you want to build a model that allows doctors to predict the chance that a patient has a certain disease, you might want to have a model that only uses the fewest (or easiest/cheapest to measure) variables to obtain good performance. So if you collect a lot of data, some based on checking patient symptoms and some on lab results, you might not want to use all those variables in your model. Let's say that you had data on 10 predictors, 5 for easy to measure symptom variables (e.g., body temperature and similar), and 5 variables that come from different lab tests. You'll evalute models with different predictors (performing e.g., subset selection or LASSO, which we'll discuss soon) and find that the best performing model retains 3 symptom variables and 2 lab tests. Let's say its performance is 95% (I'm purposefully fuzzy about what that performance exactly is since it doesn't matter. It could be accuracy, or F1 score, or AUC, or...). But you also find that another model that contains 4 symptom variables and no lab tests has 85% performance. Which do you choose? That comes back to our discussion about assessing model quality: Performance is an important measure, but it's not the only one. In this case, since you could get data on the 4 symptoms very quickly and cheaply, you might want to recommend that model for most doctors offices, and only use the better, but more time-consuming and expensive model with the 2 lab tests in settings such as high-risk populations in the hospital.
+
+In contrast, if you are a bank that tries to predict fraud by having complicated models that constantly analyze various data streams, you might not care how complicated and big your model is, only that the performance in flagging fraudulent transactions is as good as possible.
+
+
+# Summary
+
+# Further Resources
+
+
+
+
+
