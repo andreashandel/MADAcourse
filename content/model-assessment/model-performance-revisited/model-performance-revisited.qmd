@@ -91,7 +91,7 @@ To repeat (again): **We generally want to know how well a model performs in gene
 
 # Define the questions
 q1 <- "Overfitting is only a problem for large machine learning models."
-q3 <- "Most of the time, we want a model that performs well in general/on new data, not just for our sample."
+q2 <- "Most of the time, we want a model that performs well in general/on new data, not just for our sample."
 q3 <- "Which of the following is NOT an important topic discussed in this unit?"
 
 # Define the answer choices
@@ -99,7 +99,7 @@ q3_choices <- c("Overfitting", "Variance", answer= "Convergence",  "Bias")
 
 
 cat(q1,webexercises::torf(FALSE),"\n")
-cat(q1,webexercises::torf(TRUE),"\n")
+cat(q2,webexercises::torf(TRUE),"\n")
 cat(q3,webexercises::longmcq(q3_choices))
 ```
 

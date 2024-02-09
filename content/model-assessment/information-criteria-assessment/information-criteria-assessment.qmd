@@ -7,43 +7,75 @@ date-modified: last-modified
 
 # Overview
 
-This unit discusses the idea of assessing a model based on expert knowledge.
-
+This unit discusses the idea of assessing model performance based on information criteria.
 
 # Learning Objectives
 
-* Be able to do X.
+* Be familiar with the idea of information criteria. 
+* Know when to use information criteria.
 
 
 # Introduction
 
-Subject-matter expertise
+The previous units introduced the idea that you want to assess the performance of your models on external/new data. You then learned about the train/test and cross-validation approaches to try and get a more honest assessment of the quality of your models.
 
-# Other ways to minimize overfitting
+Here, we'll cover alternative approaches that you can use if you are not able to use CV (e.g., because you don't have enough data or your data/model take too long to run a CV analysis.)
 
-**Model selection criteria:** Are an alternative option if CV is not possible/wanted. [Information criteria](https://en.wikipedia.org/wiki/Model_selection#Criteria), such as AIC, BIC, DIC and similar, compute a measure that is a trade-off between good fit to the data (low-cost function/high performance) and model complexity (number of parameters). Approaches based on such selection criteria essentially try to guess how the model would perform if it were to be fit to new data, without actually trying to do it (in contrast to CV). The disadvantage is that these guesses as to how the model might perform on new data are not as reliable as actually evaluating model performance on such data through CV. The advantage is that no sampling is needed, which means these approaches are much less computationally intensive. For all those approaches (AIC, BIC, etc.), things are set up that a model with a smaller value is considered better. These measures - thankfully! - do not have the arbitrary p\<0.05 value cut-off common in frequentist statistics. For AIC, a rule of thumb is that a difference of 10 between 2 models is meaningful. (Unfortunately, people seem to not be able to make their own decisions and need crutches, so arbitrary cut-offs for AIC/BIC/etc. have started to show up in the literature.)
 
-There is a lot of math behind information criteria (AIC and similar), see the book [*Model Selection and Multimodel Inference*](https://www.springer.com/gp/book/9780387953649). Fortunately, one does not need to know the mathematical details to use those measures, just common sense. A lot of statistical methods in R can report such selection criteria and the `broom` package of `tidymodels` can often be used to further [process such reported outcomes](https://broom.tidymodels.org/articles/broom.html).
 
-**Regularization:** If one fits models in a Bayesian framework, one needs to supplies priors for each parameter. If one provides informative priors that constrain the possible values of the model parameters based on prior scientific information, it leads to what is called [regularization](https://en.wikipedia.org/wiki/Regularization_(mathematics)) and generally reduces overfitting. In a frequentist approach, there are methods such as [LASSO](https://en.wikipedia.org/wiki/Lasso_(statistics)) which introduce a extra terms in the performance metric to try to prevent overfitting.
+# Information criteria
+
+[Information criteria](https://en.wikipedia.org/wiki/Model_selection#Criteria), such as AIC, BIC, DIC, WAIC and similar, compute a measure that is a trade-off between good fit to the data (low-cost function/high performance) and model complexity (number of parameters). Approaches based on such selection criteria essentially try to guess how the model would perform if it were to be fit to new data, without actually trying to do it (in contrast to CV). 
+
+The disadvantage is that these guesses as to how the model might perform on new data are not as reliable as actually evaluating model performance on such data through CV. The advantage is that no sampling is needed, which means these approaches are much less computationally intensive. For all those information criteria, things are set up that a model with a smaller value is considered better. These measures - thankfully! - do not have the arbitrary p\<0.05 value cut-off common in frequentist statistics. For AIC, a rule of thumb is that a difference of 10 between 2 models is meaningful. (Unfortunately, people seem to not be able to make their own decisions and need crutches, so arbitrary cut-offs for AIC/BIC/etc. have started to show up in the literature.)
+
+There is a lot of math behind information criteria. It doesn't hurt learning a bit more (see the further resources section). However, you can also just use these criteria without having to understand too much about them. A lot of statistical software can compute these criteria, and if you are not able to use CV approaches, using a information criterion can be a good idea. But beware of "researcher degrees of freedom". You shouldn't compute a lot of different criteria and then pick the one that gives you the answer you are looking for. If you compute more than one, you need to report that. And if they disagree (e.g., AIC prefers model 1, and BIC prefers model 2), you'll have to figure out what that means.
+
 
 
 # Summary
 
-
-To repeat (again): **We generally want to know how well a model performs in general and on new data - not the sample we fit it to.** Testing/reporting model performance for the data the model was fit to very often leads to overfitting and optimistic/wrong conclusions about new/future data. To minimize overfitting, here is my recommended strategy (I'm sure it's not the only one, so what matters most is that you clearly think about what each step in your analysis means/implies):
+This summarizes the whole idea of model performance evaluation. To repeat (again): **We generally want to know how well a model performs in general and on new data - not the sample we fit it to.** Testing/reporting model performance for the data the model was fit to very often leads to overfitting and optimistic/wrong conclusions about new/future data. To minimize overfitting, here is my recommended strategy (I'm sure it's not the only one, so what matters most is that you clearly think about what each step in your analysis means/implies):
 
 -   If you have enough data and care about predictive performance, set some data aside for a final validation/test. If you don't have a lot of data, you might need to skip this split.
 -   If you choose to use all your data for model fitting purposes, and don't evaluate your model on data **not** used during model building/training, you need to interpret your findings as exploratory and hypothesis generating, and you need to be careful about trying to draw generalizable conclusions.
 -   If you have enough data (\>100s observations) and CPU power, use cross-validation (CV) approaches to determine the best model. If for some reason (mainly computational time or small data) CV is not feasible, use AIC & Co.
--   Think carefully about your cost function/metric! A model that is great at predicting the wrong outcome is useless! (See e.g., the brain cancer example.)
--   No matter what approach you use, choosing a model based on performance alone is not enough. Perform additional evaluations (see next units).
-
+-   Think carefully about your cost function/metric! A model that is great at predicting the wrong outcome is useless!
+-   No matter what approach you use, choosing a model based on performance alone is not enough. 
 
 
 # Further Resources
 
 
 
+* [*Model Selection and Multimodel Inference*](https://www.springer.com/gp/book/9780387953649) is a book that covers information criteria in a lot of detail. 
+
+* [The Statistical Rethinking book](https://xcelab.net/rm/statistical-rethinking/) has - in my opinion - one of the best explanations of the concepts and ideas behind information criteria.
 
 
+
+# Test yourself
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the questions
+q1 <- "Information criteria provide estimates of model performance on new data that are as good as those obtained from a train/test approach."
+q2 <- "You should try many different information criteria and choose the one which gives the best results."
+q3 <- "Which of the following is NOT a common information criterion?"
+
+# Define the answer choices
+q3_choices <- c(answer= "VIC", "BIC", "DIC",  "AIC")
+
+
+cat(q1,webexercises::torf(FALSE),"\n")
+cat(q2,webexercises::torf(FALSE),"\n")
+cat(q3,webexercises::longmcq(q3_choices))
+```
+
+
+
+# Practice
+
+* Check publications in your area of interest to find an example of a data analysis that used an information criterion approach to choose between models. Assess if you think the authors implemented and reported their findings appropriately. Consider if the authors could/should have used a train/test and/or CV approach instead. 

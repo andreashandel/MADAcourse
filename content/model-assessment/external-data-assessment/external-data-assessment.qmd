@@ -22,7 +22,6 @@ In the previous unit, we discussed the idea that using the data that was used to
 
 Here, we'll discuss a useful approach that can help minimize overfitting.
 
-
 # Honest performance evaluation
 
 **More data:** The ultimate test is, of course, to check your model performance on newly collected data, or an existing, independently collected dataset. However, collecting or getting new data is not easy, and often you might not have a completely independent dataset that measures the same variables as the one you are trying to analyze/fit. Therefore, for the remainder of this discussion, we assume that getting more data is not an option. (Though if you have that option, certainly go for it!)
@@ -54,9 +53,10 @@ In addition to the standard way of splitting the data, there are different sampl
 
 Cross-validation works for most situations and is quite robust. It is also fairly easy to implement. Thus CV is a good default strategy. However, sometimes it is not possible or desirable to use CV. Occasionally, datasets are so small that you need all the data just to fit your model. Alternatively, your dataset might be large and/or your model complex, which might mean running a CV method takes too long. (Often, one can speed up things by down-sampling the data, using faster algorithms, or running code in parallel on a computer cluster.)
 
+
 # Cross-validation and model complexity
 
-If you are mostly fitting GLM type models or other fairly simple models, you might wonder what I mean when I say _during the fitting process_, since for a given simple model, there is just one set of model parameters that fits best, and that's it. However, many more complex models have what is often referred to as tuning parameters. These are not part of the model structure (e.g., they are not the coefficients in front of your predictor variables), but they influence model performance. A great example are AI models, many of which easily have millions of parameters that need to be tuned to get good model performance. For those models, it is critical to evaluate model performance on data that is somewhat indepedent from the sample that is used to fit/tune/optimize the model.
+If you are mostly fitting GLM type models or other fairly simple models, you might wonder what I mean when I say _during the model building/fitting process_, since for a given simple model, there is just one set of model parameters that fits best, and that's it. However, many more complex models have what is often referred to as tuning parameters. These are not part of the model structure (e.g., they are not the coefficients in front of your predictor variables), but they influence model performance. A great example are AI models, many of which easily have millions of parameters that need to be tuned to get good model performance. For those models, it is critical to evaluate model performance on data that is somewhat indepedent from the sample that is used to fit/tune/optimize the model.
 
 To provide an analogy for a GLM, the number of variables you put in your model is somewhat similar. You learned that larger models fit better, so sticking more predictors into your model will give better performance (e.g., lower RMSE). However, this might lead to worse performance on independent data. You can then use something like CV to determine how many predictors might be best for your model.
 
@@ -73,9 +73,23 @@ Train/test data splitting and cross-validation are great approaches to more hone
 [Chapters 11 and 12 of the *Tidy Modeling with R* book](https://www.tmwr.org/) provide additional discussion of the sampling/CV approaches. Another discussion of CV is [chapter 30 of *IDS*](https://rafalab.github.io/dsbook/cross-validation.html).
 
 
+# Test yourself
+
+```{r}
+#| echo: false
+#| results: asis
+q1 <- "What's the name commonly given to the data you do your final model evaluation?"
+q1_choices <- c("Split Data", "Train Data", answer= "Test Data",  "Analysis Data")
+q2 <- "One needs to use at least 10 folds/blocks in CV to get a reliable answer."
+q3 <- "Using indepedently collected data is better than using train/test or CV."
+
+cat(q1,webexercises::longmcq(q1_choices))
+cat(q2,webexercises::torf(FALSE))
+cat(q3,webexercises::torf(TRUE))
+```
 
 
 
+# Practice
 
-
-
+* Check publications in your area of interest, or look online on websites like Kaggle, to find an example of a data analysis that used the train/test and/or the CV approach. Read how the authors did things and what they found and report.

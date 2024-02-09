@@ -1,30 +1,22 @@
 ---
-title: Model assessment
+title: Model assessment with R
 subtitle: ""
 ---
 
 
 # Overview
-Critical thinking is important. That also applies to your (or someone else's) models.
 
-This module discusses ways to assess your models. 
+This module discusses ways to assess your models with R. 
+
 
 # Learning Objectives
 
-* Be familiar with methods to assess models.
-* Be able to perform model assessment on your own and other's models.
+* Be able to perform various model assessment tasks with R.
+
 
 # Content
 
 The module consists of the following units:
 
-<!-- * [Model assessment introduction](./model-assessment-introduction/model-assessment-introduction.qmd) -->
-<!-- * [Biology-based assessment](./biology-based-assessment/biology-based-assessment.qmd) -->
-<!-- * [Model evaluation with external data](./external-data-assessment/external-data-assessment.qmd) -->
-<!-- * [Model evaluation with Information Criteria](./information-criteria-assessment/information-criteria-assessment.qmd) -->
-<!-- * [Model diagnostics](./diagnostics-assessment/diagnostics-assessment.qmd) -->
-<!-- * [Model uncertainty](./uncertainty-assessment/uncertainty-assessment.qmd) -->
-
-<!-- * [Model documentation](./model-documentation/model-documentation.qmd) -->
-<!-- * [R tools for performance assessment](./assessment-r-tools/assessment-r-tools.qmd) -->
+<!-- * [Model evaluation with cross-validation in R](./cross-validation-r/cross-validation-r.qmd) -->
 

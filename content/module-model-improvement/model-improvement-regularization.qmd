@@ -18,9 +18,11 @@ The standard subset selection approach you just learned about considers a specif
 
 Newer approaches, called "regularization" methods, can take an in-between stance. In general, regularization forces some (or all) coefficients in a regression model to be smaller than the normal estimates. A variable might be included, but it might be given less weight than other variables by reducing (regularizing) the coefficient in front of it. That's the idea of regularization.
 
+
 # Regularization
 
-Regularization tries to solve the same problem as subset selection, namely preventing overfitting (and also underfitting). Instead of solving this by completely removing predictors (and thus model flexibility, which might lead to overfitting), it penalizes variables by giving them less influence on the outcome, thus *regularizing* model behavior (or, in technical language: making things less "wiggly" 😁).
+
+[Regularization](https://en.wikipedia.org/wiki/Regularization_(mathematics)) tries to solve the same problem as subset selection, namely preventing overfitting (and also underfitting). Instead of solving this by completely removing predictors (and thus model flexibility, which might lead to overfitting), it penalizes variables by giving them less influence on the outcome, thus *regularizing* model behavior (or, in technical language: making things less "wiggly" 😁).
 
 It might be easiest to explain regularization with a specific example, so let's consider a linear model. Note, however, that the regularization concept and approach is general and applies to many models beyond linear ones.
 
@@ -50,7 +52,7 @@ An alternative is to penalize the coefficients by their absolute value, namely u
 
 $$C = SSR + \lambda \sum_j^p |b_j| $$
 
-This method is called *L1 regularization* or the *Least Absolute Shrinkage and Selection Operator (LASSO)*. One nice feature of LASSO (which ridge regression does not have) is that coefficients may go to 0. That means the predictor has been dropped from the model, similar to the subset selection approach described previously. One can think of the LASSO as an efficient approach for performing subset selection. It is not quite equivalent though, since, in the LASSO, the predictors that remain might have been shrunk in their impact due to the regularization penalty.
+This method is called *L1 regularization* or the [Least Absolute Shrinkage and Selection Operator (LASSO)](https://en.wikipedia.org/wiki/Lasso_(statistics)). One nice feature of LASSO (which ridge regression does not have) is that coefficients may go to 0. That means the predictor has been dropped from the model, similar to the subset selection approach described previously. One can think of the LASSO as an efficient approach for performing subset selection. It is not quite equivalent though, since, in the LASSO, the predictors that remain might have been shrunk in their impact due to the regularization penalty.
 
 ## Elastic net
 
@@ -63,6 +65,11 @@ Now one needs to try different values for $\lambda$ (called the *penalty* parame
 ## Tuning a regularization model
 
 Depending on the kind of regularization model you fit, you have to determine 1 or 2 extra parameters ($\lambda$ and $\alpha$). These parameters are called **tuning parameters** (or **hyperparameters**) and it is the first time we see a model that has them. Most complex machine learning models have such tuning parameters, and determining good values for those is part of the model fitting/training process. We'll talk about that in the next unit.
+
+
+## Bayesian Regularization
+
+If one fits models in a Bayesian framework, one needs to supplies priors for each parameter. If one provides informative priors that constrain the possible values of the model parameters based on prior scientific information, it also leads to regularization and generally reduces overfitting. 
 
 # Further comments
 
