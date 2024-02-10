@@ -73,6 +73,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
+<link rel="stylesheet" href="../../../include/webex.css">
 </head>
 
 <body class="nav-sidebar docked nav-fixed fullcontent">
@@ -568,7 +569,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/model-fitting/model-evaluation/model-evaluation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Model evaluation</span></a>
+ <span class="menu-text">Model performance metrics</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -602,14 +603,20 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../content/model-assessment/biology-based-assessment/biology-based-assessment.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Biology-based assessment</span></a>
+  <a href="../../../content/model-assessment/reality-based-assessment/reality-based-assessment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Reality-based assessment</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/model-assessment/model-performance-revisited/model-performance-revisited.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model performance revisited</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/model-assessment/external-data-assessment/external-data-assessment.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Model evaluation with external data</span></a>
+ <span class="menu-text">Model evaluation with cross-validation</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -838,12 +845,11 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
   <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#main-section-1" id="toc-main-section-1" class="nav-link" data-scroll-target="#main-section-1">Main section 1</a>
-  <ul class="collapse">
-  <li><a href="#subsection-1" id="toc-subsection-1" class="nav-link" data-scroll-target="#subsection-1">Subsection 1</a></li>
-  </ul></li>
+  <li><a href="#information-criteria" id="toc-information-criteria" class="nav-link" data-scroll-target="#information-criteria">Information criteria</a></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
   <li><a href="#further-resources" id="toc-further-resources" class="nav-link" data-scroll-target="#further-resources">Further Resources</a></li>
+  <li><a href="#test-yourself" id="toc-test-yourself" class="nav-link" data-scroll-target="#test-yourself">Test yourself</a></li>
+  <li><a href="#practice" id="toc-practice" class="nav-link" data-scroll-target="#practice">Practice</a></li>
   </ul>
 </nav>
     </div>
@@ -876,7 +882,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2024-02-01</p>
+      <p class="date-modified">2024-02-10</p>
     </div>
   </div>
     
@@ -889,34 +895,268 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="overview" class="level1">
 <h1>Overview</h1>
-<p>This unit discusses the idea of assessing a model based on expert knowledge.</p>
+<p>This unit discusses the idea of assessing model performance based on information criteria.</p>
 </section>
 <section id="learning-objectives" class="level1">
 <h1>Learning Objectives</h1>
 <ul>
-<li>Be able to do X.</li>
+<li>Be familiar with the idea of information criteria.</li>
+<li>Know when to use information criteria.</li>
 </ul>
 </section>
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
-<p>Subject-matter expertise</p>
+<p>The previous units introduced the idea that you want to assess the performance of your models on external/new data. You then learned about the train/test and cross-validation approaches to try and get a more honest assessment of the quality of your models.</p>
+<p>Here, we’ll cover alternative approaches that you can use if you are not able to use CV (e.g., because you don’t have enough data or your data/model take too long to run a CV analysis.)</p>
 </section>
-<section id="main-section-1" class="level1">
-<h1>Main section 1</h1>
-<section id="subsection-1" class="level2">
-<h2 class="anchored" data-anchor-id="subsection-1">Subsection 1</h2>
-</section>
+<section id="information-criteria" class="level1">
+<h1>Information criteria</h1>
+<p><a href="https://en.wikipedia.org/wiki/Model_selection#Criteria">Information criteria</a>, such as AIC, BIC, DIC, WAIC and similar, compute a measure that is a trade-off between good fit to the data (low-cost function/high performance) and model complexity (number of parameters). Approaches based on such selection criteria essentially try to guess how the model would perform if it were to be fit to new data, without actually trying to do it (in contrast to CV).</p>
+<p>The disadvantage is that these guesses as to how the model might perform on new data are not as reliable as actually evaluating model performance on such data through CV. The advantage is that no sampling is needed, which means these approaches are much less computationally intensive. For all those information criteria, things are set up that a model with a smaller value is considered better. These measures - thankfully! - do not have the arbitrary p&lt;0.05 value cut-off common in frequentist statistics. For AIC, a rule of thumb is that a difference of 10 between 2 models is meaningful. (Unfortunately, people seem to not be able to make their own decisions and need crutches, so arbitrary cut-offs for AIC/BIC/etc. have started to show up in the literature.)</p>
+<p>There is a lot of math behind information criteria. It doesn’t hurt learning a bit more (see the further resources section). However, you can also just use these criteria without having to understand too much about them. A lot of statistical software can compute these criteria, and if you are not able to use CV approaches, using a information criterion can be a good idea. But beware of “researcher degrees of freedom”. You shouldn’t compute a lot of different criteria and then pick the one that gives you the answer you are looking for. If you compute more than one, you need to report that. And if they disagree (e.g., AIC prefers model 1, and BIC prefers model 2), you’ll have to figure out what that means.</p>
 </section>
 <section id="summary" class="level1">
 <h1>Summary</h1>
+<p>This summarizes the whole idea of model performance evaluation. To repeat (again): <strong>We generally want to know how well a model performs in general and on new data - not the sample we fit it to.</strong> Testing/reporting model performance for the data the model was fit to very often leads to overfitting and optimistic/wrong conclusions about new/future data. To minimize overfitting, here is my recommended strategy (I’m sure it’s not the only one, so what matters most is that you clearly think about what each step in your analysis means/implies):</p>
+<ul>
+<li>If you have enough data and care about predictive performance, set some data aside for a final validation/test. If you don’t have a lot of data, you might need to skip this split.</li>
+<li>If you choose to use all your data for model fitting purposes, and don’t evaluate your model on data <strong>not</strong> used during model building/training, you need to interpret your findings as exploratory and hypothesis generating, and you need to be careful about trying to draw generalizable conclusions.</li>
+<li>If you have enough data (&gt;100s observations) and CPU power, use cross-validation (CV) approaches to determine the best model. If for some reason (mainly computational time or small data) CV is not feasible, use AIC &amp; Co.</li>
+<li>Think carefully about your cost function/metric! A model that is great at predicting the wrong outcome is useless!</li>
+<li>No matter what approach you use, choosing a model based on performance alone is not enough.</li>
+</ul>
 </section>
 <section id="further-resources" class="level1">
 <h1>Further Resources</h1>
+<ul>
+<li><p><a href="https://www.springer.com/gp/book/9780387953649"><em>Model Selection and Multimodel Inference</em></a> is a book that covers information criteria in a lot of detail.</p></li>
+<li><p><a href="https://xcelab.net/rm/statistical-rethinking/">The Statistical Rethinking book</a> has - in my opinion - one of the best explanations of the concepts and ideas behind information criteria.</p></li>
+</ul>
+</section>
+<section id="test-yourself" class="level1">
+<h1>Test yourself</h1>
+Which of the following is NOT a common information criterion?
+<div id="radio_STOZSFVMOO" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_STOZSFVMOO" value="answer"> <span>VIC</span></label><label><input type="radio" autocomplete="off" name="radio_STOZSFVMOO" value=""> <span>BIC</span></label><label><input type="radio" autocomplete="off" name="radio_STOZSFVMOO" value=""> <span>DIC</span></label><label><input type="radio" autocomplete="off" name="radio_STOZSFVMOO" value=""> <span>AIC</span></label>
+</div>
+<p>Information criteria provide estimates of model performance on new data that are as good as those obtained from a train/test approach. <select class="webex-select"><option value="blank"></option><option value="">TRUE</option><option value="answer">FALSE</option></select> <br><br>You should try many different information criteria and choose the one which gives the best results. <select class="webex-select"><option value="blank"></option><option value="">TRUE</option><option value="answer">FALSE</option></select></p>
+</section>
+<section id="practice" class="level1">
+<h1>Practice</h1>
+<ul>
+<li>Check publications in your area of interest to find an example of a data analysis that used an information criterion approach to choose between models. Assess if you think the authors implemented and reported their findings appropriately. Consider if the authors could/should have used a train/test and/or CV approach instead.</li>
+</ul>
 
 
 </section>
 
 </main> <!-- /main -->
+<script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  var t = document.getElementsByClassName("webex-total_correct");
+  for (var i = 0; i < t.length; i++) {
+    p = t[i].parentElement;
+    var correct = p.getElementsByClassName("webex-correct").length;
+    var solvemes = p.getElementsByClassName("webex-solveme").length;
+    var radiogroups = p.getElementsByClassName("webex-radiogroup").length;
+    var selects = p.getElementsByClassName("webex-select").length;
+
+    t[i].innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* check answers */
+check_func = function() {
+  console.log("webex: check answers");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('unchecked')) {
+    cl.remove("unchecked");
+    this.innerHTML = "Hide Answers";
+  } else {
+    cl.add("unchecked");
+    this.innerHTML = "Show Answers";
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+
+  var cl = this.classList
+
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("webex onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  var check_sections = document.getElementsByClassName("webex-check");
+  console.log("check:", check_sections.length);
+  for (var i = 0; i < check_sections.length; i++) {
+    check_sections[i].classList.add("unchecked");
+
+    let btn = document.createElement("button");
+    btn.innerHTML = "Show Answers";
+    btn.classList.add("webex-check-button");
+    btn.onclick = check_func;
+    check_sections[i].appendChild(btn);
+
+    let spn = document.createElement("span");
+    spn.classList.add("webex-total_correct");
+    check_sections[i].appendChild(spn);
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+
+    solveme[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+  }
+
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+    selects[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+  }
+
+  update_total_correct();
+}
+
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -1324,8 +1564,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../../content/model-assessment/external-data-assessment/external-data-assessment.html" class="pagination-link  aria-label=" model="" evaluation="" with="" external="" data"="">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Model evaluation with external data</span>
+      <a href="../../../content/model-assessment/external-data-assessment/external-data-assessment.html" class="pagination-link  aria-label=" model="" evaluation="" with="" cross-validation"="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Model evaluation with cross-validation</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

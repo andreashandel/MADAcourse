@@ -82,6 +82,7 @@ are not limited to data listed there.
 *Often, the most interesting questions can be asked by combining data
 from more than one source.*
 
+
 # Logistics and formatting
 
 Each assignment needs to be submitted in a fully reproducible form,
@@ -95,7 +96,7 @@ let me know.
 
 The main document should be a Quarto file, which can be turned into a
 suitable output format (html or word or pdf). This should have the
-structure of a scientific paper. I suggest you use the `Manscript.qmd`
+structure of a scientific paper. I suggest you use the `manscript.qmd`
 file of the template and replace the template content with your content.
 I also suggest having the output be a word document, since that is what
 most journals want for submission of a scientific paper. The template I
@@ -129,15 +130,23 @@ file. See the template for an example.
 # Project template
 
 I created a [public Github repository called
-dataanalyis-template](https://github.com/andreashandel/dataanalysis-template)
+data-analysis-template](https://github.com/ahgroup/data-analysis-template)
 which is meant as a template for doing a data analysis project. It has
 different folders for organizing your project. Various readme files are
 provided to explain what each folder should contain. The template also
 contains several example files to show how the whole project workflow
 (or any data analysis workflow for that matter) can work.
 
+Use the provided template as starting point for your project. To do so,
+go to its Github repository and follow the instructions to turn it into a new repository for your class
+project, call it `YOURLASTNAME-MADA-project`. Once you made the new
+repository, follow the usual Github workflow to get it to your local
+computer. Then open the readme file and change the text so it states
+somewhere "This is YOURNAME class project repository".
+
+
 Inside the `manuscript` folder, there is a Quarto template file called
-`Manuscript.qmd` with a suggested outline for the report write-up. I
+`manuscript.qmd` with a suggested outline for the report write-up. I
 have also indicated which sections need to be completed/filled for which
 part of the project. This template is just a guide, you do not have to
 follow exactly that structure, as long as you provide all the requested
@@ -149,16 +158,8 @@ In addition to the Quarto file, there is a bibliography file in bibtex
 format which contains the references, and a style file which indicates
 reference formatting. You can use it as starting point. Feel free to
 switch the reference formatting style. You do need to use a setup and
-reference manager that plays nicely with Quarto.
+reference manager that plays nicely with Quarto. I recommend Zotero with the Better Bibtex extension.
 
-Use the provided template as starting point for your project. To do so,
-go to its [Github
-repository](https://github.com/andreashandel/dataanalysis-template) and
-follow the instructions to turn it into a new repository for your class
-project, call it `YOURLASTNAME-MADA-project`. Once you made the new
-repository, follow the usual Github workflow to get it to your local
-computer. Then open the readme file and change the text so it states
-somewhere "This is YOURNAME class project repository".
 
 # Feedback and Assessment
 
@@ -169,14 +170,14 @@ submission.
     to see that you deliver what you were supposed to and got the
     project to the requested stage.
 -   Your classmates will provide peer-review feedback on parts 3 and 5.
-    Details on that is provided in the [**Project Review**](/project/project-Review.qmd) document.
+    Details on that is provided in the [**Project Review**](/project/project-review.qmd) document.
 -   Part 6 is the final submission.
 
 The initial submissions and peer reviews make up 40% of the project
 grade. The final submission counts for the remaining 60%.
 
 **More details on what exactly is expected and how it is assessed is
-provided in the [**Project Details**](/project/project-Details.qmd) document.
+provided in the [**Project Details**](/project/project-details.qmd) document.
 
 # Project communications
 

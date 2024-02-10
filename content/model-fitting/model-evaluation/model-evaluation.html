@@ -10,7 +10,7 @@
 <meta name="dcterms.date" content="2024-01-25">
 <meta name="description" content="Modern Applied Data Analysis (MADA) course">
 
-<title>MADA Course - Performance assessment</title>
+<title>MADA Course - Model performance metrics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -105,6 +105,7 @@ window.Quarto = {
 };
 </script>
 
+<link rel="stylesheet" href="../../../include/webex.css">
 </head>
 
 <body class="nav-sidebar docked nav-fixed fullcontent">
@@ -165,7 +166,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../content/model-fitting/model-fitting-overview.html">8. Model Fitting</a></li><li class="breadcrumb-item"><a href="../../../content/model-fitting/model-evaluation/model-evaluation.html">Model evaluation</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../content/model-fitting/model-fitting-overview.html">8. Model Fitting</a></li><li class="breadcrumb-item"><a href="../../../content/model-fitting/model-evaluation/model-evaluation.html">Model performance metrics</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -600,7 +601,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/model-fitting/model-evaluation/model-evaluation.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Model evaluation</span></a>
+ <span class="menu-text">Model performance metrics</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -634,14 +635,20 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../content/model-assessment/biology-based-assessment/biology-based-assessment.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Biology-based assessment</span></a>
+  <a href="../../../content/model-assessment/reality-based-assessment/reality-based-assessment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Reality-based assessment</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/model-assessment/model-performance-revisited/model-performance-revisited.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model performance revisited</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/model-assessment/external-data-assessment/external-data-assessment.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Model evaluation with external data</span></a>
+ <span class="menu-text">Model evaluation with cross-validation</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -894,9 +901,9 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../content/model-fitting/model-fitting-overview.html">8. Model Fitting</a></li><li class="breadcrumb-item"><a href="../../../content/model-fitting/model-evaluation/model-evaluation.html">Model evaluation</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../content/model-fitting/model-fitting-overview.html">8. Model Fitting</a></li><li class="breadcrumb-item"><a href="../../../content/model-fitting/model-evaluation/model-evaluation.html">Model performance metrics</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Performance assessment</h1>
+<h1 class="title">Model performance metrics</h1>
 </div>
 
 
@@ -920,7 +927,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2024-02-01</p>
+      <p class="date-modified">2024-02-04</p>
     </div>
   </div>
     
@@ -933,9 +940,9 @@ window.Quarto = {
 
 <section id="overview" class="level1">
 <h1>Overview</h1>
-<p>This unit discusses the idea of assessing a model based on its performance. This is a general overview, additional units will go into more details of specific ways to assess performance.</p>
+<p>This unit discusses the idea of assessing a model based on its performance through some metric.</p>
 <div class="note">
-<p>I use the term performance here in a narrow sense, you will realize how I define it as you go through this unit.</p>
+<p>I use the term model performance here in a narrow sense, quantified through some metric.</p>
 </div>
 </section>
 <section id="learning-objectives" class="level1">
@@ -963,20 +970,19 @@ window.Quarto = {
 <p>We generally want a well-performing model to be one that captures the main patterns in the data as closely as possible.</p>
 <p>To provide a specific example, let’s say you want to fit a multivariable linear model to some outcome <span class="math inline">\(Y\)</span> given some predictor variables <span class="math inline">\(X_i\)</span> (e.g.&nbsp;fitting/predicting weight of a person, given their height and age). The model equation will look like this:</p>
 <p><span class="math display">\[Y_m=b_0 + b_1X_1 + b_2X_2 + \ldots + b_n X_n.\]</span></p>
-<p>When you ask the computer to fit this model, it will guess some values of the coefficients <em>b<sub>i</sub></em> and then vary them (in a smart way)[^1] until the predicted <em>Y<sub>m</sub></em> (often also called <span class="math inline">\(\hat{y}\)</span> or <span class="math inline">\(\hat{Y}\)</span>) from the model are as close as possible to the actual data values <em>Y<sub>d</sub></em> (often also just called <span class="math inline">\(y\)</span> or <span class="math inline">\(Y\)</span>).</p>
-<p>[^1] This business of <em>varying the model in a smart way until you find the best one</em> is an example of what’s called <a href="https://en.wikipedia.org/wiki/Mathematical_optimization">optimization</a>. Developing routines that can quickly, efficiently, and reliably find the optimum is a huge area, and depending on the model and data you are trying to fit, having smart algorithms to do the optimization can be very challenging. You can make a whole career just working on optimization topics. Fortunately, for most purposes, we can generally use existing software and rely on their built-in optimizers.</p>
+<p>When you ask the computer to fit this model, it will guess some values of the coefficients <em>b<sub>i</sub></em> and then vary them (in a smart way)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> until the predicted <em>Y<sub>m</sub></em> (often also called <span class="math inline">\(\hat{y}\)</span> or <span class="math inline">\(\hat{Y}\)</span>) from the model are as close as possible to the actual data values <em>Y<sub>d</sub></em> (often also just called <span class="math inline">\(y\)</span> or <span class="math inline">\(Y\)</span>).</p>
 <p>The overall procedure of adjusting model details until you get a model that capture the patterns in the data as best as it can, and has the highest possible performance, is very general and applies to any kind of model, as well as both continuous and categorical outcomes.</p>
-<p>What is important that for each scenario, model performance is clearly defined. What you mean by <em>model being close to data</em> or <em>model capturing the pattern in the data</em> needs to be to specified such that your algorithm can compute a number that it can try to optimize - the performance measure.</p>
-<p>It is important to be aware that the choice of the performance measure is a scientific choice. You need to specify it based on your knowledge of the system and the question you want to answer. While there are very common performance measures, which we will discuss next, it is important that you do think about what it is you are actually asking your model to do and what you optimize when you fit data.</p>
+<p>What is important that for each scenario, model performance is clearly defined. What you mean by <em>model being close to data</em> or <em>model capturing the pattern in the data</em> needs to be to specified such that your algorithm can compute a number that it can try to optimize - the performance metric.</p>
+<p>It is important to be aware that the choice of the performance metric is a scientific choice. You need to specify it based on your knowledge of the system and the question you want to answer. While there are very common performance measures, which we will discuss next, it is important that you do think about what it is you are actually asking your model to do and what you optimize when you fit data.</p>
 </section>
 <section id="the-costlossobjective-function" class="level1">
 <h1>The cost/loss/objective function</h1>
-<p>To specify a performance measure we want to optimize, we need to define some function of both model predictions (<em>Y<sub>m</sub></em>) and measured/data (<em>Y<sub>d</sub></em>) outcomes. This function goes by different names, but the terms most commonly used are <strong>cost function</strong> or <a href="https://en.wikipedia.org/wiki/Loss_function"><strong>loss function</strong></a>. In more general math or stats context, this is also called an <strong>objective function.</strong> Other names are common in different areas of science, see e.g., those listed in the linked Wikipedia article.</p>
+<p>To specify a performance metric/measure we want to optimize, we need to define some function of both model predictions (<em>Y<sub>m</sub></em>) and measured data (<em>Y<sub>d</sub></em>) outcomes. This function goes by different names, but the terms most commonly used are <strong>cost function</strong> or <a href="https://en.wikipedia.org/wiki/Loss_function"><strong>loss function</strong></a>. In more general math or stats context, this is also called an <strong>objective function.</strong> Other names are common in different areas of science, see e.g., those listed in the linked Wikipedia article.</p>
 <p>Another term is simply <strong>metric</strong>. I’m also calling it generically <strong>performance measure</strong> here. I often interchangeably use these terms, so just be aware that they mean the same thing: a function that is used to measure how close the model predictions are to the data.</p>
 <p>The convention is to set up the problem such that larger discrepancies between model and data lead to a larger numerical value of this function. Then our goal is to minimize the objective function, which means minimizing the difference between the data and the model predictions. (Occasionally, problems are set up to maximize this function. You can always change it into a minimization problem by e.g., taking the inverse or adding a minus sign.)</p>
 <p>In equation form, we have in the general case: <span class="math display">\[C = f(Y_m,Y_d).\]</span></p>
-<p>The <span class="math inline">\(Y_m\)</span> are all the predictions made by the model for the outcome, and the <span class="math inline">\(Y_d\)</span> are the actual outcomes from the data. If you have <span class="math inline">\(N\)</span> observations, you will have <span class="math inline">\(N\)</span> pairs of <span class="math inline">\(Y_m\)</span> and <span class="math inline">\(Y_d\)</span> and then you need to specify some function, <em>f</em>, that uses all those values to compute a single value to measure your performance. The different types of functions, <em>f</em>, depend on the type of data and other considerations. Once you define <em>f</em>, this is the performance metric which quantifies how well a given model fits the data.</p>
-<p>When you do a single model fitting step, the computer calculates <em>f</em> for different values of the parameters, <em>b<sub>i</sub></em>. In general, it repeats this for different values of the model parameters until it finds the ones that produce the best (i.e., minimum) value of <em>C</em>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>The <span class="math inline">\(Y_m\)</span> are all the predictions made by the model for the outcome, and the <span class="math inline">\(Y_d\)</span> are the actual outcomes from the data. You need to specify some function, <em>f</em>, that uses all those values to compute a single value to measure your performance. The different types of functions, <em>f</em>, depend on the type of data and other considerations. Once you define <em>f</em>, this is the performance metric which quantifies how well a given model fits the data.</p>
+<p>When you do a single model fitting step, the computer calculates <em>f</em> for different values of the parameters, <em>b<sub>i</sub></em>. In general, it repeats this for different values of the model parameters until it finds the ones that produce the best (i.e., minimum) value of <em>C</em>.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 <p>Similarly, if you fit two different models (e.g., a linear model with 3 predictor variables, and another one with 5), you can use the value of <em>C</em> to compare model performance. We’ll get into that in more detail in further units.</p>
 </section>
 <section id="costlossobjective-functions-for-continuous-outcomes" class="level1">
@@ -987,7 +993,7 @@ window.Quarto = {
 <p><span class="math display">\[C = f(Y_m,Y_d) = \sum_i (Y_m^i - Y_d^i)^2\]</span> Again, <span class="math inline">\(Y^i_m\)</span> are all the predictions made by the model for the outcome, and the <span class="math inline">\(Y^i_d\)</span> are the actual outcomes from the data. The quantity <span class="math inline">\(C\)</span> for this equation has many names. A common one is least squares error, or sum of square residuals (SSR), or residual sum of squares (RSS), or sum of squares (SS), or residual square error (RSE), and a bunch of similar names. You will usually be able to tell from the context what is being used as the performance metric.</p>
 <p>You will often see a variation where one divides by the sample size, i.e.&nbsp;<span class="math inline">\(C\)</span> will look like</p>
 <p><span class="math display">\[C = \frac{1}{N} \sum_i (Y_m^i - Y_d^i)^2\]</span></p>
-<p>This is called <a href="https://en.wikipedia.org/wiki/Mean_squared_error">mean squared error</a>. Other names of exist of course.</p>
+<p>This is called <a href="https://en.wikipedia.org/wiki/Mean_squared_error"><strong>mean squared error (MSE)</strong></a>. Of course, other names exist.</p>
 <p>Dividing by the sample size has the advantage of allowing you to compare values across samples of different size from the same dataset (but it doesn’t really work for comparing across different datasets). For instance if you compare model performance on training and test data (to be discussed shortly), and each has different sample size, you need to make sure you standardize by it.</p>
 <p>If you want to compare different models on the same dataset which might include some missing values, and one of your models can deal with missing data while the other cannot, you need to be careful. One option is to fit both models only to the data without missing values. If you decide to allow one model to use the observations that have some missing values, while the other model does not, you definitely need to standardize by the sample size. Even then, care is needed, since the samples with some missing data might be systematically different from those without and thus the datasets might not be equivalent anymore.</p>
 <p>Another variant is a version where at the end you take the square-root, i.e.</p>
@@ -996,7 +1002,8 @@ window.Quarto = {
 </section>
 <section id="coefficient-of-determination" class="level2">
 <h2 class="anchored" data-anchor-id="coefficient-of-determination">Coefficient of determination</h2>
-<p>An equivalent alternative to SSR is to use a quantity called <a href="https://en.wikipedia.org/wiki/Coefficient_of_determination">Coefficient of determination</a>, or more commonly <span class="math inline">\(R^2\)</span> (R-squared). This quantity is defined as <span class="math display">\[1-rSS/TSS\]</span> where RSS is the residual sum of square introduced above and TSS is the <a href="https://en.wikipedia.org/wiki/Total_sum_of_squares">total sum of squares</a>. The latter is defined as</p>
+<p>An equivalent alternative to SSR is to use a quantity called <a href="https://en.wikipedia.org/wiki/Coefficient_of_determination">Coefficient of determination</a>, or more commonly <span class="math inline">\(R^2\)</span> (R-squared). This quantity is defined as <span class="math display">\[R^2 = 1-RSS/TSS\]</span> where RSS is the residual sum of square introduced above and TSS is the <a href="https://en.wikipedia.org/wiki/Total_sum_of_squares">total sum of squares</a>.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<p>The latter is defined as</p>
 <p><span class="math display">\[TSS =  \sum_i (Y_{av} - Y_d^i)^2\]</span></p>
 <p>where <span class="math inline">\(Y_{av}\)</span> is the mean of the data. Therefore, the equation for <span class="math inline">\(R^2\)</span> is</p>
 <p><span class="math display">\[R^2 = 1-  \frac{\sum_i (Y_m^i - Y_d^i)^2}{\sum_i (Y_{av} - Y_d^i)^2}\]</span></p>
@@ -1005,13 +1012,12 @@ window.Quarto = {
 </section>
 <section id="beyond-least-squares" class="level2">
 <h2 class="anchored" data-anchor-id="beyond-least-squares">Beyond least squares</h2>
-<p>An alternative to least squares is to penalize not with the distance <em>squared</em>, but <em>linearly</em> with the (absolute) distance. This metric is called <strong>(mean) absolute error</strong> or <a href="https://en.wikipedia.org/wiki/Least_absolute_deviations"><strong>(least) absolute deviation</strong></a>, and the model is</p>
+<p>An alternative to least squares is to penalize not with the distance <em>squared</em>, but <em>linearly</em> with the (absolute) distance. This metric is called <strong>(mean) absolute error (MAE)</strong> or <a href="https://en.wikipedia.org/wiki/Least_absolute_deviations"><strong>(least) absolute deviation</strong></a>, and the model is</p>
 <p><span class="math display">\[C = f(Y_m,Y_d) = \sum_i |Y_m^i - Y_d^i|\]</span></p>
 <p>This approach can be useful if the data contains outliers (that are real, and one can’t justify removing them during cleaning). With a squared distance penalty, outliers have a strong impact on the model fit. With a linear penalty, such outliers carry less weight. Because of this, the linear difference approach is sometimes called a robust estimation.</p>
-<p>Robust estimation methods such as MAE and many others often require the use of specialized software or packages that provide this functionality.</p>
-<p>R packages. A large number of R packages exist that allow fitting this way, see e.g., the <a href="https://cran.r-project.org/web/views/Robust.html">CRAN Robust Task View</a>. The <code>yardstick</code> package as the metric <code>mae()</code> which computes the mean absolute error.</p>
+<p>Robust estimation methods such as MAE are not as common as least squares, but most software has support for it. For instance, there are multiple packages in R that support MAE and other robust fitting methods.</p>
+<p>You might wonder why we don’t just use those robust methods all the time, just to be safe. There are fundamental statistical reasons why optimizing the MSE is often more aligned with the question we want to address, so you should switch to a robust method only after you thought about it and decided it’s the right approach for your specific scenario. You can also always do it both ways and compare results to get an idea of the potential influence on your results from the outliers. Doing things more than one way – and of course reporting each approach you tried – is generally a great idea. This is often called performing a sensitivy analysis.</p>
 <p>Another way to define <em>f</em> is with step functions. The idea is that as long as model and data are within some distance, the penalty is zero. Once model and data differ by some threshold, a penalty is given, e.g., a fixed value or a linear or quadratic penalty. Such types of schemes to define <em>f</em> are common in the class of models called Support Vector Machines, which we will look at later in the course.</p>
-<p>Some other metrics are implemented in <code>yardstick</code>. You can check out other metric types in this <a href="https://yardstick.tidymodels.org/articles/metric-types.html"><code>yardstick</code> article</a>. For instance there is one called <code>huber_loss()</code> which is a combination of least squares and absolute error.</p>
 <p>No matter what scheme you choose, it might at times be useful to weigh data points. In the examples given above, each model-data pair was given the same importance. Sometimes it might be that you have some data points that should carry more weight. A common case is if you have measurements not on the individual level but some aggregate level. As an example, assume you have a fraction of heart attacks among all patients for some time period in different hospitals, and you want to fit that fraction. You don’t know the number of people who had heart attacks, only the fraction. But you do know something about the total number of beds each hospital has. You could then argue that hospitals with more beds have more patients and thus likely more heart attacks, and therefore the data from larger hospitals should get more weight, and you could e.g., multiply each term in the sum by bed size. Note that this is a scientific decision based on your expert knowledge of the data. Almost all fitting routines allow you to provide weights for your data and you can then perform <em>weighted least squares</em> (or a weighted version of whatever other approaches you choose). <code>tidymodels</code> has some support for <a href="https://www.tidyverse.org/blog/2022/05/case-weights/">weighted fitting</a>.</p>
 </section>
 </section>
@@ -1062,6 +1068,7 @@ window.Quarto = {
 <p>If you want to get some more intuition with fitting a continuous outcome, go through this <a href="https://shiny.ovpr.uga.edu/modelperformance/">interactive tutorial</a>.</p>
 <p>The <a href="https://bradleyboehmke.github.io/HOML/process.html#model-eval">Model Evaluation section of <em>HMLR</em></a> lists and describes various performance metrics. The <a href="https://www.tmwr.org/performance.html">Performance chapter of <em>Tidy Modeling with R</em></a> also discusses different performance metrics.</p>
 <p><a href="https://www.statlearning.com/">Chapter 2 of <em>ISLR</em></a>, which you already looked at previously, also discusses the topic of performance, and several other issues we are discussing in this module. Now, or once you are finished with the other readings of this module, might be good time to revisit that chapter.</p>
+<p>The <code>yardstick</code> package from the <code>tidymodels</code> framework is all about metrics and has support for a large number of them. You can check out other metric types in this <a href="https://yardstick.tidymodels.org/articles/metric-types.html"><code>yardstick</code> article</a>.</p>
 
 
 </section>
@@ -1070,9 +1077,217 @@ window.Quarto = {
 <div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
-<li id="fn1"><p>Technically, for some simple models, it is possible to find the best parameter values other than by ‘trial and error’, but for many other models, this is more or less what is happening.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>This business of <em>varying the model in a smart way until you find the best one</em> is an example of what’s called <a href="https://en.wikipedia.org/wiki/Mathematical_optimization">optimization</a>. Developing routines that can quickly, efficiently, and reliably find the optimum is a huge area, and depending on the model and data you are trying to fit, having smart algorithms to do the optimization can be very challenging. You can make a whole career just working on optimization topics. Fortunately, for most purposes, we can generally use existing software and rely on their built-in optimizers.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Technically, for some simple models, it is possible to find the best parameter values other than by ‘trial and error’, but for many other models, this is more or less what is happening.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Also called SST, sum of squares total.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
+<script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  var t = document.getElementsByClassName("webex-total_correct");
+  for (var i = 0; i < t.length; i++) {
+    p = t[i].parentElement;
+    var correct = p.getElementsByClassName("webex-correct").length;
+    var solvemes = p.getElementsByClassName("webex-solveme").length;
+    var radiogroups = p.getElementsByClassName("webex-radiogroup").length;
+    var selects = p.getElementsByClassName("webex-select").length;
+
+    t[i].innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* check answers */
+check_func = function() {
+  console.log("webex: check answers");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('unchecked')) {
+    cl.remove("unchecked");
+    this.innerHTML = "Hide Answers";
+  } else {
+    cl.add("unchecked");
+    this.innerHTML = "Show Answers";
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+
+  var cl = this.classList
+
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("webex onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  var check_sections = document.getElementsByClassName("webex-check");
+  console.log("check:", check_sections.length);
+  for (var i = 0; i < check_sections.length; i++) {
+    check_sections[i].classList.add("unchecked");
+
+    let btn = document.createElement("button");
+    btn.innerHTML = "Show Answers";
+    btn.classList.add("webex-check-button");
+    btn.onclick = check_func;
+    check_sections[i].appendChild(btn);
+
+    let spn = document.createElement("span");
+    spn.classList.add("webex-total_correct");
+    check_sections[i].appendChild(spn);
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+
+    solveme[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+  }
+
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+    selects[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+  }
+
+  update_total_correct();
+}
+
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -1491,7 +1706,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","descPosition":"right","loop":false,"selector":".lightbox","closeEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"loop":false,"closeEffect":"zoom","descPosition":"right","openEffect":"zoom","selector":".lightbox"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

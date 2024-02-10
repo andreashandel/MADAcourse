@@ -73,6 +73,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
+<link rel="stylesheet" href="../../../include/webex.css">
 </head>
 
 <body class="nav-sidebar docked nav-fixed fullcontent">
@@ -568,7 +569,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/model-fitting/model-evaluation/model-evaluation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Model evaluation</span></a>
+ <span class="menu-text">Model performance metrics</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -602,14 +603,20 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../content/model-assessment/biology-based-assessment/biology-based-assessment.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Biology-based assessment</span></a>
+  <a href="../../../content/model-assessment/reality-based-assessment/reality-based-assessment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Reality-based assessment</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/model-assessment/model-performance-revisited/model-performance-revisited.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model performance revisited</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/model-assessment/external-data-assessment/external-data-assessment.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Model evaluation with external data</span></a>
+ <span class="menu-text">Model evaluation with cross-validation</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -876,7 +883,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2024-02-01</p>
+      <p class="date-modified">2024-02-07</p>
     </div>
   </div>
     
@@ -900,8 +907,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
 <p>Doing a data analysis involves much more than fitting models to data. In fact, a majority of time will likely be spent on tasks other than implementing and running model fits. Often, the steps that are necessary to get the data into a shape ready for analysis take up the majority of the time and effort.</p>
-<p>That said, the process of fitting models to data, also called the statistical analysis, is at the heart of almost every data analysis.</p>
-<p>The question then is: What does it actually mean when we say we fit models to data, and how do we go about it in the right way?</p>
+<p>That said, the process of fitting models to data, also called the statistical analysis, is at the heart of almost every data analysis. The question then is: What does it actually mean when we say we fit models to data, and how do we go about it in the right way?</p>
 <p>The following sections provide brief introductions to specific topics, which will be revisited in more detail in further units.</p>
 </section>
 <section id="be-aware-of-the-goal" class="level1">
@@ -910,12 +916,11 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="be-clear-about-the-metrics" class="level1">
 <h1>Be clear about the metrics</h1>
-<p>Similar, but not the same as the overall goals is to be clear about the metric that you want to use to evaluate your model. Not only do you need to specify the outcome(s) you are most interested in, and how to quantify them, you will also need to specify how you compare these outcomes reported in the data with what your model predicts. This needs to be put into quantitative form and if you choose the wrong metric, you might not answer the question you actually want to answer.</p>
+<p>Similar, but not the same as the overall goals is to be clear about the metric that you want to use to evaluate your model. Not only do you need to specify the outcome(s) you are most interested in, and how to quantify them, you will also need to specify how you compare these outcomes reported in the data with what your model predicts. This needs to be put into quantitative form and if you choose the wrong metric, you might not answer the question you actually want to answer. We’ll cover that in more detail shortly.</p>
 </section>
 <section id="decide-on-a-framework" class="level1">
 <h1>Decide on a framework</h1>
-<p>In classical statistics, there are two main frameworks, Bayesian and frequentist[^1]. One could maybe call Machine Learning yet another framework that is often neither properly frequentist or Bayesian. You will have to decide on the approach you want to use (or, if you are an overachiever, you can do it in more than one framework). Ideally, the approach should be dictated by the setting and question, and you should choose the best approach given your goals. In practice, other factors come into play, such that your skills and familiarity with a certain approach, what colleagues/clients/bosses want, what computational resources you have available, etc. While I personally prefer the Bayesian framework, I think in the end there are many other places in the analysis that are more important than picking the framework. Still, you should think about it and once you have a specific framework, be aware that this is the one you chose. So if you say operate in a frequentist framework and then switch to talking about predictions (an very common occurence in the scientific literature), you are likely mis-interpreting your own analysis.</p>
-<p>[^1] And for some unexplicable, dumb reason, it is convention to capitalize Bayesian but not frequentist.</p>
+<p>In classical statistics, there are two main frameworks, Bayesian and frequentist.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> One could maybe call Machine Learning yet another framework that is often neither properly frequentist or Bayesian. You will have to decide on the approach you want to use (or, if you are an overachiever, you can do it in more than one framework). Ideally, the approach should be dictated by the setting and question, and you should choose the best approach given your goals. In practice, other factors come into play, such that your skills and familiarity with a certain approach, what colleagues/clients/bosses want, what computational resources you have available, etc. While I personally prefer the Bayesian framework, I think in the end there are many other places in the analysis that are more important than picking the framework. Still, you should think about it and once you have a specific framework, be aware that this is the one you chose. So if you say operate in a frequentist framework and then switch to talking about predictions (an very common occurrence in the scientific literature), you are likely mis-interpreting your own analysis.</p>
 </section>
 <section id="decide-on-the-tools" class="level1">
 <h1>Decide on the tools</h1>
@@ -923,14 +928,230 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="summary" class="level1">
 <h1>Summary</h1>
+<p>You have to make many choices when it comes to the data fitting part of your data analysis. While some choices are better than others, the most important aspect is to think about it and consciously choose an approach. While in an ideal world, everyone would choose the best modeling approach for a given problem, in the real world that rarely happens. Just make sure you understand what different choices mean with regards to assumptions and limitations.</p>
 </section>
 <section id="further-resources" class="level1">
 <h1>Further Resources</h1>
+<ul>
+<li>We won’t be able to discuss Bayesian data analysis in this course, but if you are interested, <a href="https://xcelab.net/rm/statistical-rethinking/">Statistical Rethinking</a> is an excellent book. It’s unfortunately not free. Another great, and free book is <a href="https://www.bayesrulesbook.com/">Bayes Rules!</a>.</li>
+</ul>
 
 
 </section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>For some inexplicable, dumb reason, it is convention to capitalize Bayesian but not frequentist.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  var t = document.getElementsByClassName("webex-total_correct");
+  for (var i = 0; i < t.length; i++) {
+    p = t[i].parentElement;
+    var correct = p.getElementsByClassName("webex-correct").length;
+    var solvemes = p.getElementsByClassName("webex-solveme").length;
+    var radiogroups = p.getElementsByClassName("webex-radiogroup").length;
+    var selects = p.getElementsByClassName("webex-select").length;
+
+    t[i].innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* check answers */
+check_func = function() {
+  console.log("webex: check answers");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('unchecked')) {
+    cl.remove("unchecked");
+    this.innerHTML = "Hide Answers";
+  } else {
+    cl.add("unchecked");
+    this.innerHTML = "Show Answers";
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+
+  var cl = this.classList
+
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("webex onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  var check_sections = document.getElementsByClassName("webex-check");
+  console.log("check:", check_sections.length);
+  for (var i = 0; i < check_sections.length; i++) {
+    check_sections[i].classList.add("unchecked");
+
+    let btn = document.createElement("button");
+    btn.innerHTML = "Show Answers";
+    btn.classList.add("webex-check-button");
+    btn.onclick = check_func;
+    check_sections[i].appendChild(btn);
+
+    let spn = document.createElement("span");
+    spn.classList.add("webex-total_correct");
+    check_sections[i].appendChild(spn);
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+
+    solveme[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+  }
+
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+    selects[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+  }
+
+  update_total_correct();
+}
+
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
