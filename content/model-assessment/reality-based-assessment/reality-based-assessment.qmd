@@ -85,17 +85,14 @@ None that I can think of ATM. Let me know if you have any suitable ones.
 #| results: asis
 
 # Define the questions
-q1 <- "A more detailed model is always better than one that contains less details."
-q2 <- "There is a single right type of model for every problem, and if you don't get it exactly right, you are screwed."
-q3 <- "Which of the following is NOT an important factor when considering model complexity?"
+q1 <- "Which of the following is NOT an important factor when considering model complexity?"
+q1_choices <- c("Amount of available data", "Ability to capture data patterns", answer= "Lines of code one needs to write",  "Risk of overfitting")
+q2 <- "A more detailed model is always better than one that contains less details."
+q3 <- "There is a single right type of model for every problem, and if you don't get it exactly right, you are screwed."
 
-# Define the answer choices
-q3_choices <- c("Amount of available data", "Ability to capture data patterns", answer= "Lines of code one needs to write",  "Risk of overfitting")
-
-
-cat(q1,webexercises::torf(FALSE),"\n")
-cat(q2,webexercises::torf(FALSE),"\n")
-cat(q3,webexercises::longmcq(q3_choices))
+cat(q1,webexercises::longmcq(q1_choices))
+cat(q2,webexercises::torf(FALSE),"<br><br>")
+cat(q3,webexercises::torf(FALSE))
 ```
 
 

@@ -81,10 +81,10 @@ Train/test data splitting and cross-validation are great approaches to more hone
 q1 <- "What's the name commonly given to the data you do your final model evaluation?"
 q1_choices <- c("Split Data", "Train Data", answer= "Test Data",  "Analysis Data")
 q2 <- "One needs to use at least 10 folds/blocks in CV to get a reliable answer."
-q3 <- "Using indepedently collected data is better than using train/test or CV."
+q3 <- "Using indepedently collected data to test model performance is better than using train/test or CV."
 
 cat(q1,webexercises::longmcq(q1_choices))
-cat(q2,webexercises::torf(FALSE))
+cat(q2,webexercises::torf(FALSE),"<br><br>")
 cat(q3,webexercises::torf(TRUE))
 ```
 

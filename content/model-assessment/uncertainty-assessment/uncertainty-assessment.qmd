@@ -19,30 +19,44 @@ This unit discusses model uncertainty, how to compute and and how to assess it.
 
 # Introduction
 
+Every estimate you obtain from your model comes with a certain amount of uncertainty. It is hard (one could say impossible) to make sense of any result that does not also report uncertainty. For instance if you know that your (or someone else's) analysis showed that a drug improves some relevant biological outcome by 20%, what does it mean? If the most likely estimate is 20%, and a large fraction (say 89%)[^uncertainty] of estimates are within 15-25%, we can conclude (assuming no confounding and such) that the drug very likely has some effect. On the other hand, if the uncertainty range is -30% - 60%, we should be much more tentative in drawing conclusions. Thus, a point estimate without knowing the associated uncertainty makes it very difficult to draw useful conclusions.
+
+
+[^uncertainty]: I'm sure you are wondering where that 89% number comes from, and why I'm not saying 95%. I'm following [Richard McElreath's example](https://xcelab.net/rm/statistical-rethinking/) from his Statistical Rethinking book. The main point being that any number is arbitrary. 95% (and it's associated p-value of 0.05) has emerged as a standard - and to avoid arguing with reviewers and colleagues, I do often use 95% in publications. But it's a totally arbitrary standard, and there is no one right or wrong number. For some scenarios, 80% might be good enough, for others you might want to have 99%. You can of course use 95%, but be aware that there is nothing special about that number, other than that everyone else is also using it.
+
+
 ![A study with n=1 has large uncertainty. Source: [SMBC](https://www.smbc-comics.com/comic/2014-09-17/).](smbc-sample-size.png){width="40%" fig-alt="A cartoon from the webcomic 'Saturday Morning Breakfast Cereal.' The comic shows a man with round glasses sitting in an armchair next to a small girl. He is holding a book, and saying 'After nineteen additional trials, of course, the results were shown to be anomalous.' The caption reads The Tortoise And The Hare is actually a fable about small sample sizes."}
 
 
-Every estimate you obtain from your model comes with a certain amount of uncertainty. It is hard (one could say impossible) to make sense of any result that does not also report uncertainty. For instance if you know that your (or someone else's) analysis showed that a drug improves some relevant biological outcome by 20%, what does it mean? If the 
-
-Quantifying uncertainty is an important part of model evaluation. During model building and selection, we are not only interested in some point estimate of model performance (e.g., average RMSE), but would often also like to know how that performance measure is distributed and how it differs between models. For instance, we might have 2 classification models, one with an average accuracy (obtained through CV) of 70%, while the other has 80%. It looks like we should go with model 2, right? But what if we also knew that the range of accuracy values (for different repeats of the CV) is 65% - 75% for model 1, and it is 45% - 95% for model 2. Which model do we prefer? We might still prefer model 2, but there is also an argument that we might want to go with model 1, which has better performance at the lower bound. Without knowing the distribution of performance measures, we can only make limited decisions.
+Because of that, quantifying uncertainty is an important part of model evaluation. During model building and selection, we are not only interested in some point estimate of model performance (e.g., average RMSE), but would often also like to know how that performance measure is distributed and how it differs between models. For instance, we might have 2 classification models, one with an average accuracy (obtained through CV) of 70%, while the other has 80%. It looks like we should go with model 2, right? But what if we also knew that the range of accuracy values (for different repeats of the CV) is 65% - 75% for model 1, and it is 45% - 95% for model 2. Which model do we prefer? We might still prefer model 2, but there is also an argument that we might want to go with model 1, which has better performance at the lower bound. Without knowing the distribution of performance measures, we can only make limited decisions.
 
 
 # Common uncertainty estimates
 
-Different parts of our model can have uncertainty. There can be uncertainty in parameter estimates, there can be uncertainty in outcome estimates. We might want to quantify the uncertainty of the average of our data, or we might want to quantify uncertainty for specific predictions. 
+Different parts of our model can have uncertainty. There can be uncertainty in parameter estimates, there can be uncertainty in outcome/prediction estimates. We might want to quantify the uncertainty of the average of our data, or we might want to quantify uncertainty for specific predictions. 
 
-Those uncertainties are are related but not the same. Unfortunately, it is quite common to find messy uncertainty reporting in the literature, and [even experts have a hard time interpreting uncertainty](). 
+Those uncertainties are are related but not the same. Unfortunately, it is quite common to find messy uncertainty reporting in the literature, and [even experts have a hard time interpreting uncertainty](https://www.pnas.org/doi/10.1073/pnas.2302491120). 
 
 In the following, we discuss a few common ways to quantify uncertainty.
 
 
-## Confidence interval
+## Confidence interval (CI)
+
+Confidence intervals (CIs) are maybe the most commonly reported uncertainty. Those intervals capture uncertainty in the model parameters and thus uncertainty in the **mean** outcome. CIs are very useful if we want to know the overall results. For instance, going back to the example above, if we report an average drug-induced improvement in some quantity by 20%, with a CI (having some width, such as 89% or 95% or...) of 15% - 25%, we can conclude that if we gave the drug to another population like the one we studied, this is roughly the range of impacts we should expect to see in the new study.[^CI]
+
+[^CI]: I'm purposefully fuzzy here. The problem with CI in a frequentist framework is that their technical definition is rather confusing. According to Wikipedia: _Given a confidence level X (95% and 99% are typical values), a CI is a random interval which contains the parameter being estimated X% of the time._ You'll find equally confusing definitions in other places. Most folks actually interpret CI as Bayesian credible intervals (see below) when they talk about it, even if they do their statistical analysis in a frequentist framework.
+
+## Standard errors
 
 
+## Standard deviations
 
 ## Prediction interval
 
-If we are interested in model predictions, we generally also want to know how much uncertainty is associated with those predictions. For continuous outcomes, computing prediction intervals gives an idea of the uncertainty in our predictions. As for parameter uncertainty, some `R` functions have built-in methods to compute prediction intervals, or you can use the bootstrap approach.
+If we are interested in model predictions, we generally also want to know how much uncertainty is associated with those predictions. The difference between a CI and a prediction interval (for some reason, almost never abbreviated as PI) is that the latter also accounts for variation around the estimated mean. Thus, prediction intervals are always wider than CI - sometimes substantially so. Unfortunately, they are often confused, readers - even experts - often interpret CI as if they were prediction intervals. [This paper](https://www.pnas.org/doi/10.1073/pnas.2302491120) is worth a read. Figure 1 in this paper shows an example where the 
+
+
+For continuous outcomes, computing prediction intervals gives an idea of the uncertainty in our predictions. As for parameter uncertainty, some `R` functions have built-in methods to compute prediction intervals, or you can use the bootstrap approach.
 
 Prediction intervals are not the same as confidence intervals. The latter quantifies the uncertainty in model parameters, e.g., the *b~i~* in a regression model. Since those *b~i~* have uncertainty, the model predictions for the *expected* observation has uncertainty. However, each real observation has additional scatter around the expected value. This additional uncertainty needs to be factored in when trying to make predictions for individual outcomes. As such, prediction intervals are wider than confidence intervals.
 

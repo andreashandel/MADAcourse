@@ -66,17 +66,14 @@ None ATM.
 #| results: asis
 
 # Define the questions
-q1 <- "On a predicted versus observed plots, the points should cluster along a horizontal line to indicate a good model fit."
-q2 <- "If your overall model metric (e.g. Accuracy) is very good, you don't need to look at individual predictions."
-q3 <- "What's the term for the differences between data and model that you want to see distributed like a symmetric cloud?"
+q1 <- "What's the term for the differences between data and model that you want to see distributed like a symmetric cloud?"
+q1_choices <- c("Overfitting", "Variance", answer= "Residuals",  "Bias")
+q2 <- "On a predicted versus observed plots, the points should cluster along a horizontal line to indicate a good model fit."
+q3 <- "If your overall model metric (e.g. Accuracy) is very good, you don't need to look at individual predictions."
 
-# Define the answer choices
-q3_choices <- c("Overfitting", "Variance", answer= "Residuals",  "Bias")
-
-
-cat(q1,webexercises::torf(FALSE),"<br>")
-cat(q2,webexercises::torf(FALSE),"<br>")
-cat(q3,webexercises::longmcq(q3_choices))
+cat(q1,webexercises::longmcq(q1_choices))
+cat(q2,webexercises::torf(FALSE),"<br><br>")
+cat(q3,webexercises::torf(FALSE))
 ```
 
 

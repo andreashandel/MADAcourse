@@ -88,16 +88,13 @@ It is very important to think critically about your models (and those of others)
 #| results: asis
 
 # Define the questions
-q1 <- "You should always choose the model that provides the best performance."
-q2 <- "Which of the following is fairly unimportant when assessing models?"
+q1 <- "Which of the following is fairly unimportant when assessing models?"
+q1_choices <- c("Model performance", "Model complexity", answer= "Model programming language",  "Model uncertainty")
+q2 <- "You should always choose the model that provides the best performance."
 q3 <- "You need to use your expert knowledge as part of model assessment."
 
-# Define the answer choices
-q2_choices <- c("Model performance", "Model complexity", answer= "Model programming language",  "Model uncertainty")
-
-
-cat(q2,webexercises::longmcq(q2_choices))
-cat(q1,webexercises::torf(FALSE))
+cat(q1,webexercises::longmcq(q1_choices))
+cat(q2,webexercises::torf(FALSE),"<br><br>")
 cat(q3,webexercises::torf(TRUE))
 ```
 
