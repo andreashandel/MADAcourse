@@ -969,7 +969,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>To install a package from CRAN, go to the R prompt at the bottom left of your RStudio session and type <code>install.packages("PACKAGENAME")</code>. The figure shows an example where I installed a package called <code>learnr</code>. Often, a package needs other packages to work (called dependencies), and they are installed automatically. It usually doesn’t matter if you use a single or double quotation mark around the name of the package. Note that R cares about capitalization, so you need to get the upper and lower case exactly right. Otherwise, it won’t work.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="../../media/installpackagesscreenshot.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1" title="Installing an R package. Click on the image to enlarge it."><img src="../../media/installpackagesscreenshot.png" class="img-fluid figure-img" alt="Screenshot of RStudio with the command 'install.packages(learnr)' in the console."></a></p>
+<p><a href="../../media/installpackagesscreenshot.png" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1" title="Installing an R package. Click on the image to enlarge it."><img src="../../media/installpackagesscreenshot.png" class="img-fluid figure-img" alt="Screenshot of RStudio with the command 'install.packages(learnr)' in the console."></a></p>
 <figcaption>Installing an R package. Click on the image to enlarge it.</figcaption>
 </figure>
 </div>
@@ -1633,7 +1633,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"loop":false,"closeEffect":"zoom","descPosition":"right","selector":".lightbox","openEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","descPosition":"right","openEffect":"zoom","loop":false});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
