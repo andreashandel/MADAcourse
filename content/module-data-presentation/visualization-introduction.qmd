@@ -25,7 +25,7 @@ In the first video [Mona Chalabi](https://monachalabi.com/) talks about good way
 <iframe class="video" src="https://embed.ted.com/talks/mona_chalabi_3_ways_to_spot_a_bad_statistic" frameborder="0" scrolling="no" allowfullscreen></iframe>
 :::
 
-In the second video [Chris Jordan](http://www.chrisjordan.com/gallery/epu/#e-pluribus-unum) discusses how one can take abstract facts and make them much more tangible through visualization.
+In the second video [Chris Jordan](https://www.chrisjordan.com/) discusses how one can take abstract facts and make them much more tangible through visualization.
 
 ::: container
 <iframe class="video" src="https://embed.ted.com/talks/lang/en/chris_jordan_pictures_some_shocking_stats" frameborder="0" scrolling="no" allowfullscreen></iframe>

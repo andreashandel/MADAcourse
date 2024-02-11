@@ -7,9 +7,10 @@ subtitle: ""
 
 Get the quiz sheet for this module from the general [**Assessments**](../../courseinfo/assessments-overview.qmd) page. Fill it in, then submit to the online grading system before the deadline.
 
+
 # Discussion
 
-Take a look at some of the visualizations your classmates created and provide feedback. Hopefully, by looking at the different visualizations and code, you get a good idea for what can be done.
+Take a look at some of the presentations your classmates created and provide feedback. Hopefully, by looking at the different examples and code, you get a good idea for what can be done.
 
 
 # Exercise
@@ -27,22 +28,20 @@ We'll try to do that ourselves.
 
 Find an interesting graph from a news website. The main requirements are that the original graph must be interesting and good looking (a basic scatter plot is not enough), AND that the graph is freely available online, not behind a pay-wall. Ideally, the data that went into making the graph should be available too. If it is not, you will have to go through the extra step of extracting the data from the graph using tools like [DataThief](https://datathief.org/) or [WebPlotDigitizer](https://automeris.io/WebPlotDigitizer/).
 
-One suggestion is to look at graphs from [FiveThirtyEight](https://fivethirtyeight.com/). They are known to produce high-quality graphs, and for some of their stories and figures, they also provide the [original data source](https://data.fivethirtyeight.com/).
+One suggestion is to look at graphs from [FiveThirtyEight](https://fivethirtyeight.com/). They are known to produce high-quality graphs, and for some of their stories and figures, they also provide the [original data source](https://data.fivethirtyeight.com/). Good starting points for a chart from FiveThirtyEight might be their annual summaries of weirdest charts, which you can find here for
+[2015](https://fivethirtyeight.com/features/our-47-weirdest-charts-from-2015/), [2016](https://fivethirtyeight.com/features/the-52-best-and-weirdest-charts-we-made-in-2016/), [2018](https://fivethirtyeight.com/features/the-45-best-and-weirdest-charts-we-made-in-2018/), [2019](https://fivethirtyeight.com/features/the-56-best-and-weirdest-charts-we-made-in-2019/), [2020](https://fivethirtyeight.com/features/the-40-weirdest-and-best-charts-we-made-in-2020/), [2021](https://fivethirtyeight.com/features/our-51-best-and-weirdest-charts-of-2021/), [2022](https://fivethirtyeight.com/features/best-charts-2022/). (No, I don't know why there's no 2017.) Or you can go straight to [their data](https://data.fivethirtyeight.com/), and see what graphs they produced with it and find a good one.
 
-Good starting points for a chart from FiveThirtyEight might be their annual summaries of weirdest charts, which you can find here for
-[2015](https://fivethirtyeight.com/features/our-47-weirdest-charts-from-2015/), [2016](https://fivethirtyeight.com/features/the-52-best-and-weirdest-charts-we-made-in-2016/), [2018](https://fivethirtyeight.com/features/the-45-best-and-weirdest-charts-we-made-in-2018/), [2019](https://fivethirtyeight.com/features/the-56-best-and-weirdest-charts-we-made-in-2019/),
-[2020](https://fivethirtyeight.com/features/the-40-weirdest-and-best-charts-we-made-in-2020/),    
-[2021](https://fivethirtyeight.com/features/our-51-best-and-weirdest-charts-of-2021/),    
-[2022](https://fivethirtyeight.com/features/best-charts-2022/). (No, I don't know why there's no 2017.)
+If you can't find a graph on FiveThirtyEight that you like and would like to reproduce, you can also check out other major news outlets (USA Today, NY Times, Wall Street Journal, The Guardian, etc.).
 
-Or you can go straight to [their data](https://data.fivethirtyeight.com/), and see what graphs they produced with it and find a good one.
 
-If you can't find a graph on FiveThirtyEight that you like and would like to reproduce, you are also allowed to check out other major news outlets (USA Today, NY Times, Wall Street Journal, The Guardian, etc.).
+## Setup
+
+This exercise will be part of your portfolio and will live in the `presentation-exercise` folder. Place your data (see next) in that folder, and add your code and explanation to the Quarto starter file in that folder.
 
 
 ## Get the data
 
-As mentioned, you either need to have the data in a file, or you need to extract it from the graph and place it into a file. I recommend a CSV file. 
+As mentioned, you either need to have the data in a file, or you need to extract it from the graph and place it into a file. I recommend a CSV file. Place it into the `presentation-exercise` folder.
 
 
 ## Ask AI to re-create the original graph
@@ -55,10 +54,9 @@ You will likely want to use ggplot2 & friends, but if you want to use base R, la
 If you already feel comfortable making high-quality graphs with `ggplot2` and want to try something different, feel free to create an interactive graph using one of the many options for that (e.g., Shiny, plotly). You can also recreate a previous static graph and make it interactive (e.g., allowing people to turn on/off specific parts).
 :::
 
-Document your AI prompts in the `visualization-exercise.qmd` Quarto file. Also show the code that the AI produced. Depending on how many iterations you do, you don't need to show the code for all intermediate steps. 
+Document (some of) your AI prompts in the `visualization-exercise.qmd` Quarto file. Also show the code that the AI produced. Depending on how many iterations you do, you don't need to show prompts and code for all intermediate steps. The AI will likely not get you all the way to where you want to get. Manually edit your code to try and get as close as possible to the original graph. 
 
-As needed, manually edit the code if the AI gets stuck. Try to get as close as possible to the original graph. You should end up with a Quarto file that shows your AI prompts, possibly intermediate code that the AI returned, and finally a fully working bit of code that loads/takes the data and re-produces the original plot. Also display the original plot next/below your reproduction for comparison.
-
+You should end up with a Quarto file that shows your AI prompts, possibly intermediate code that the AI returned, and finally a chunk of code that loads/takes the data and re-produces the original plot as closely as possible. Also show the original plot in youe Quarto file next/below your reproduction for comparison.
 
 
 ## Create a publication quality table
@@ -71,9 +69,10 @@ Again, start with AI. You can let it decide which R table package to use, or you
 
 No matter what R package you use to make the table, it should look professional, visually pleasing, and nicely convey the information. For inspiration, you can for instance check out [this R table gallery](https://community.rstudio.com/c/table-gallery/64). The R graph gallery also has a [section on tables](https://r-graph-gallery.com/table.html).
 
-As for the graphs, feel free to make your table interactive.
+:::note
+As for the graphs, if you want to challenge yourself, you can try to make your table interactive. There are several good R packages that allow you to create interactive tables inside a Quarto document. Interactivity only works if your output format is HTML, it won't work for pdf or word. But in your case it's part of your website, so it's HTML and can include interactivity.
+:::
 
-Add the code and explanatory text (e.g., your AI prompts) into a new section at the end of your Quarto document. Once this part is finished, you should have working code that generates a nice-looking table.
+Add the code and explanatory text (e.g., your AI prompts) into the same `presentation-exercise.qmd` Quarto document. You should end up with code that takes some data and generates a nice-looking table.
 
 Once all done, re-build your website and make sure that your data visualization exercise shows up nicely. Then, post the link to your online page showing your visualization into the **discussion** channel for this module. Do that **by Wednesday** so your classmates can take a look and comment by Friday.
-
