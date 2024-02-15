@@ -932,7 +932,7 @@ ul.task-list li input[type="checkbox"] {
 <p>Every estimate you obtain from your model comes with a certain amount of uncertainty. It is hard (one could say impossible) to make sense of any result that does not also report uncertainty. For instance if you know that your (or someone else’s) analysis showed that a drug improves some relevant biological outcome by 20%, what does it mean? If the most likely estimate is 20%, and a large fraction (say 89%)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> of estimates are within 15-25%, we can conclude (assuming no confounding and such) that the drug very likely has some effect. On the other hand, if the uncertainty range is -30% - 60%, we should be much more tentative in drawing conclusions. Thus, a point estimate without knowing the associated uncertainty makes it very difficult to draw useful conclusions.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="smbc-sample-size.png" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1" title="A study with n=1 has large uncertainty. Source: SMBC."><img src="smbc-sample-size.png" class="img-fluid figure-img" style="width:40.0%" alt="A cartoon from the webcomic 'Saturday Morning Breakfast Cereal.' The comic shows a man with round glasses sitting in an armchair next to a small girl. He is holding a book, and saying 'After nineteen additional trials, of course, the results were shown to be anomalous.' The caption reads The Tortoise And The Hare is actually a fable about small sample sizes."></a></p>
+<p><a href="smbc-sample-size.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1" title="A study with n=1 has large uncertainty. Source: SMBC."><img src="smbc-sample-size.png" class="img-fluid figure-img" style="width:40.0%" alt="A cartoon from the webcomic 'Saturday Morning Breakfast Cereal.' The comic shows a man with round glasses sitting in an armchair next to a small girl. He is holding a book, and saying 'After nineteen additional trials, of course, the results were shown to be anomalous.' The caption reads The Tortoise And The Hare is actually a fable about small sample sizes."></a></p>
 <figcaption>A study with n=1 has large uncertainty. Source: <a href="https://www.smbc-comics.com/comic/2014-09-17/">SMBC</a>.</figcaption>
 </figure>
 </div>
@@ -1645,7 +1645,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","closeEffect":"zoom","descPosition":"right","selector":".lightbox","loop":false});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":false,"openEffect":"zoom","descPosition":"right","closeEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

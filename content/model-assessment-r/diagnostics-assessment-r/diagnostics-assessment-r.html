@@ -7,9 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Andreas Handel">
+<meta name="dcterms.date" content="2024-01-25">
 <meta name="description" content="Modern Applied Data Analysis (MADA) course">
 
-<title>MADA Course - Webexercises</title>
+<title>MADA Course - Model diagnostics with R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,62 +23,25 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./media/MADAlogo.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../media/MADAlogo.png" rel="icon" type="image/png">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -107,7 +71,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
-<link rel="stylesheet" href="include/webex.css">
+<link rel="stylesheet" href="../../../include/webex.css">
 </head>
 
 <body class="nav-fixed fullcontent">
@@ -117,10 +81,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./media/MADAlogo.png" alt="" class="navbar-logo">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../media/MADAlogo.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">MADA Course</span>
     </a>
   </div>
@@ -131,23 +95,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./courseinfo/course-overview.html"> 
+    <a class="nav-link" href="../../../courseinfo/course-overview.html"> 
 <span class="menu-text">General Information</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./content/content-overview.html"> 
+    <a class="nav-link" href="../../../content/content-overview.html"> 
 <span class="menu-text">Content</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./courseinfo/assessments-overview.html"> 
+    <a class="nav-link" href="../../../courseinfo/assessments-overview.html"> 
 <span class="menu-text">Assessments</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./project/project-overview.html"> 
+    <a class="nav-link" href="../../../project/project-overview.html"> 
 <span class="menu-text">Project</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./resources/resources-overview.html"> 
+    <a class="nav-link" href="../../../resources/resources-overview.html"> 
 <span class="menu-text">Resources</span></a>
   </li>  
 </ul>
@@ -173,15 +137,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#example-questions" id="toc-example-questions" class="nav-link active" data-scroll-target="#example-questions">Example Questions</a>
-  <ul class="collapse">
-  <li><a href="#fill-in-the-blanks-fitb" id="toc-fill-in-the-blanks-fitb" class="nav-link" data-scroll-target="#fill-in-the-blanks-fitb">Fill-In-The-Blanks (<code>fitb()</code>)</a></li>
-  <li><a href="#multiple-choice-mcq" id="toc-multiple-choice-mcq" class="nav-link" data-scroll-target="#multiple-choice-mcq">Multiple Choice (<code>mcq()</code>)</a></li>
-  <li><a href="#true-or-false-torf" id="toc-true-or-false-torf" class="nav-link" data-scroll-target="#true-or-false-torf">True or False (<code>torf()</code>)</a></li>
-  <li><a href="#longer-mcqs-longmcq" id="toc-longer-mcqs-longmcq" class="nav-link" data-scroll-target="#longer-mcqs-longmcq">Longer MCQs (<code>longmcq()</code>)</a></li>
-  </ul></li>
-  <li><a href="#checked-sections" id="toc-checked-sections" class="nav-link" data-scroll-target="#checked-sections">Checked sections</a></li>
-  <li><a href="#hidden-solutions-and-hints" id="toc-hidden-solutions-and-hints" class="nav-link" data-scroll-target="#hidden-solutions-and-hints">Hidden solutions and hints</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#algorithm-assessment" id="toc-algorithm-assessment" class="nav-link" data-scroll-target="#algorithm-assessment">Algorithm assessment</a></li>
+  <li><a href="#null-model-comparisons" id="toc-null-model-comparisons" class="nav-link" data-scroll-target="#null-model-comparisons">Null model comparisons</a></li>
+  <li><a href="#single-predictor-comparisons" id="toc-single-predictor-comparisons" class="nav-link" data-scroll-target="#single-predictor-comparisons">Single predictor comparisons</a></li>
+  <li><a href="#observed-versus-predicted-values" id="toc-observed-versus-predicted-values" class="nav-link" data-scroll-target="#observed-versus-predicted-values">Observed versus predicted values</a></li>
+  <li><a href="#residuals" id="toc-residuals" class="nav-link" data-scroll-target="#residuals">Residuals</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#further-resources" id="toc-further-resources" class="nav-link" data-scroll-target="#further-resources">Further Resources</a></li>
+  <li><a href="#test-yourself" id="toc-test-yourself" class="nav-link" data-scroll-target="#test-yourself">Test yourself</a></li>
+  <li><a href="#practice" id="toc-practice" class="nav-link" data-scroll-target="#practice">Practice</a></li>
   </ul>
 </nav>
     </div>
@@ -190,7 +157,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Webexercises</h1>
+<h1 class="title">Model diagnostics with R</h1>
 </div>
 
 
@@ -204,11 +171,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           </div>
   </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">2024-01-25</p>
+    </div>
+  </div>
   
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2024-02-08</p>
+      <p class="date-modified">2024-02-13</p>
     </div>
   </div>
     
@@ -219,104 +192,62 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>This is a Web Exercise template created by the <a href="http://www.psy.gla.ac.uk">psychology teaching team at the University of Glasgow</a>, based on ideas from <a href="https://software-carpentry.org/lessons/">Software Carpentry</a>. This template shows how instructors can easily create interactive web documents that students can use in self-guided learning.</p>
-<p>The <code>{webexercises}</code> package provides a number of functions that you use in <a href="https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf">inline R code</a> or through code chunk options to create HTML widgets (text boxes, pull down menus, buttons that reveal hidden content). Examples are given below. Render this file to HTML to see how it works.</p>
-<p><strong>NOTE: To use the widgets in the compiled HTML file, you need to have a JavaScript-enabled browser.</strong></p>
-<section id="example-questions" class="level2">
-<h2 class="anchored" data-anchor-id="example-questions">Example Questions</h2>
-<section id="fill-in-the-blanks-fitb" class="level3">
-<h3 class="anchored" data-anchor-id="fill-in-the-blanks-fitb">Fill-In-The-Blanks (<code>fitb()</code>)</h3>
-<p>Create fill-in-the-blank questions using <code>fitb()</code>, providing the answer as the first argument.</p>
+<section id="overview" class="level1">
+<h1>Overview</h1>
+<p>This unit shows how to use R to run different diagnostics that are helpful to assess models.</p>
+</section>
+<section id="learning-objectives" class="level1">
+<h1>Learning Objectives</h1>
 <ul>
-<li>2 + 2 is <input class="webex-solveme nospaces" size="1" data-answer="[&quot;4&quot;]"></li>
-</ul>
-<p>You can also create these questions dynamically, using variables from your R session.</p>
-<ul>
-<li>The square root of 16 is: <input class="webex-solveme nospaces" size="1" data-answer="[&quot;4&quot;]"></li>
-</ul>
-<p>The blanks are case-sensitive; if you don’t care about case, use the argument <code>ignore_case = TRUE</code>.</p>
-<ul>
-<li>What is the letter after D? <input class="webex-solveme nospaces ignorecase" size="1" data-answer="[&quot;E&quot;]"></li>
-</ul>
-<p>If you want to ignore differences in whitespace use, use the argument <code>ignore_ws = TRUE</code> (which is the default) and include spaces in your answer anywhere they could be acceptable.</p>
-<ul>
-<li>How do you load the tidyverse package? <input class="webex-solveme nospaces" size="20" data-answer="[&quot;library( tidyverse )&quot;,&quot;library( \&quot;tidyverse\&quot; )&quot;,&quot;library( 'tidyverse' )&quot;]"></li>
-</ul>
-<p>You can set more than one possible correct answer by setting the answers as a vector.</p>
-<ul>
-<li>Type a vowel: <input class="webex-solveme nospaces ignorecase" size="1" data-answer="[&quot;A&quot;,&quot;E&quot;,&quot;I&quot;,&quot;O&quot;,&quot;U&quot;]"></li>
-</ul>
-<p>You can use regular expressions to test answers against more complex rules.</p>
-<ul>
-<li>Type any 3 letters: <input class="webex-solveme nospaces regex" size="3" data-answer="[&quot;^[a-zA-Z]{3}$&quot;]"></li>
+<li>Know how to implement different diagnostic approaches with R.</li>
 </ul>
 </section>
-<section id="multiple-choice-mcq" class="level3">
-<h3 class="anchored" data-anchor-id="multiple-choice-mcq">Multiple Choice (<code>mcq()</code>)</h3>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>We previously discussed how to use different diagnostics to assess models. Here, we’ll focus on their implementation with R. We’ll mostly work with the <code>tidymodels</code> set of packages.</p>
+</section>
+<section id="algorithm-assessment" class="level1">
+<h1>Algorithm assessment</h1>
+</section>
+<section id="null-model-comparisons" class="level1">
+<h1>Null model comparisons</h1>
+<p>In <code>tidymodels</code>, you can use the <code>null_model()</code> function to compute the performance for a null/base model.</p>
+</section>
+<section id="single-predictor-comparisons" class="level1">
+<h1>Single predictor comparisons</h1>
+</section>
+<section id="observed-versus-predicted-values" class="level1">
+<h1>Observed versus predicted values</h1>
+<p>The model performance metric gives you a single quantity describing how well the model matches the data, given the metric you defined. That’s useful, but you generally want to dig deeper and compare <strong>model predictions</strong> to the <strong>observed data</strong> for individual observations.</p>
+<p>For continuous outcomes, you can plot those two quantities on the x- and y-axes. For a (hypothetical) perfect model, all points are along the 45-degree line. You don’t actually want them all perfectly on the line since this suggests overfitting. Some scatter along the line is expected and healthy. However, you want to look for systematic deviations from this line, as it suggests potential problems, i.e., it likely means your model is <em>biased</em> and is not flexible enough to capture important patterns still found in the data (i.e., your model is underfitting). In that case, you will want to try different models.</p>
+<p>Similarly, for categorical outcomes, you can look at the confusion matrix to see if there are lots of FN or FP, which might suggest the model gets certain categories systematically wrong.</p>
+<p>In the common case that you only have 2 categories (e.g., yes/no) and you use a logistic model or some other model that predicts probabilities, you can plot those model-predicted probabilities together with the observed data (which will be just 0 or 1). You are again looking for any patterns that might indicate that there are systematic deviations between model predictions and data that could suggest that your model needs tweaking.</p>
+</section>
+<section id="residuals" class="level1">
+<h1>Residuals</h1>
+<p>Instead of (or in addition to) plotting observed versus predicted for continuous outcomes, you can plot the difference between the two. These differences are called the residuals. What you are looking for is a cloud of points with no discernible pattern. If there is a pattern (e.g., an overall skew, or more points above the 0 y-axes than below), it again suggests that there is still some pattern/signal in the data that the model didn’t capture.</p>
+</section>
+<section id="summary" class="level1">
+<h1>Summary</h1>
+<p>When assessing your models, it is important to go beyond the performance metric and look at individual model predictions and how closely they agree with the data. If you spot residual patterns, that might indicate that you could (but don’t have to) make your model more complex/flexible to try and capture additional details of the data.</p>
+</section>
+<section id="further-resources" class="level1">
+<h1>Further Resources</h1>
+<p>None ATM.</p>
+</section>
+<section id="test-yourself" class="level1">
+<h1>Test yourself</h1>
+What’s the term for the differences between data and model that you want to see distributed like a symmetric cloud?
+<div id="radio_PIFEDDXQCJ" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_PIFEDDXQCJ" value=""> <span>Overfitting</span></label><label><input type="radio" autocomplete="off" name="radio_PIFEDDXQCJ" value=""> <span>Variance</span></label><label><input type="radio" autocomplete="off" name="radio_PIFEDDXQCJ" value="answer"> <span>Residuals</span></label><label><input type="radio" autocomplete="off" name="radio_PIFEDDXQCJ" value=""> <span>Bias</span></label>
+</div>
+<p>On a predicted versus observed plots, the points should cluster along a horizontal line to indicate a good model fit. <select class="webex-select"><option value="blank"></option><option value="">TRUE</option><option value="answer">FALSE</option></select> <br><br>If your overall model metric (e.g.&nbsp;Accuracy) is very good, you don’t need to look at individual predictions. <select class="webex-select"><option value="blank"></option><option value="">TRUE</option><option value="answer">FALSE</option></select></p>
+</section>
+<section id="practice" class="level1">
+<h1>Practice</h1>
 <ul>
-<li>“Never gonna give you up, never gonna: <select class="webex-select"><option value="blank"></option><option value="">let you go</option><option value="">turn you down</option><option value="">run away</option><option value="answer">let you down</option></select>”</li>
-<li>“I <select class="webex-select"><option value="blank"></option><option value="answer">bless the rains</option><option value="">guess it rains</option><option value="">sense the rain</option></select> down in Africa” -Toto</li>
+<li>Revisit any of the papers you found in one of the previous exercises. See if the authors used any of the approaches discussed here to assess their model(s). Often, this kind of information would be in the supplement. At the minimum, you’d want the authors to mention that they did these checks. Unfortunately, you’ll often see it missing. It seems that at times, authors/analysts don’t want to look too closely, otherwise they would need to acknowledge that their cherished model is actually not that good 😁.</li>
 </ul>
-</section>
-<section id="true-or-false-torf" class="level3">
-<h3 class="anchored" data-anchor-id="true-or-false-torf">True or False (<code>torf()</code>)</h3>
-<ul>
-<li>True or False? You can permute values in a vector using <code>sample()</code>. <select class="webex-select"><option value="blank"></option><option value="answer">TRUE</option><option value="">FALSE</option></select></li>
-</ul>
-</section>
-<section id="longer-mcqs-longmcq" class="level3">
-<h3 class="anchored" data-anchor-id="longer-mcqs-longmcq">Longer MCQs (<code>longmcq()</code>)</h3>
-<p>When your answers are very long, sometimes a drop-down select box gets formatted oddly. You can use <code>longmcq()</code> to deal with this. Since the answers are long, It’s probably best to set up the options inside an R chunk with <code>echo=FALSE</code>.</p>
-<p><strong>What is a p-value?</strong></p>
-<div id="radio_SNACBGCBNA" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_SNACBGCBNA" value=""> <span>the probability that the null hypothesis is true</span></label><label><input type="radio" autocomplete="off" name="radio_SNACBGCBNA" value="answer"> <span>the probability of the observed, or more extreme, data, under the assumption that the null-hypothesis is true</span></label><label><input type="radio" autocomplete="off" name="radio_SNACBGCBNA" value=""> <span>the probability of making an error in your conclusion</span></label>
-</div>
-<p><strong>What is true about a 95% confidence interval of the mean?</strong></p>
-<div id="radio_DJSVFYVJDN" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_DJSVFYVJDN" value=""> <span>95% of the data fall within this range</span></label><label><input type="radio" autocomplete="off" name="radio_DJSVFYVJDN" value=""> <span>there is a 95% probability that the true mean lies within this range</span></label><label><input type="radio" autocomplete="off" name="radio_DJSVFYVJDN" value="answer"> <span>if you repeated the process many times, 95% of intervals calculated in this way contain the true mean</span></label>
-</div>
-</section>
-</section>
-<section id="checked-sections" class="level2">
-<h2 class="anchored" data-anchor-id="checked-sections">Checked sections</h2>
-<p>Create sections with the class <code>webex-check</code> to add a button that hides feedback until it is pressed. Add the class <code>webex-box</code> to draw a box around the section (or use your own styles).</p>
-<div class="webex-check webex-box">
-<p>I am going to learn a lot: <select class="webex-select"><option value="blank"></option><option value="answer">TRUE</option><option value="">FALSE</option></select></p>
-What is a p-value?
-<div id="radio_KMAEQFTXWG" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_KMAEQFTXWG" value=""> <span>the probability that the null hypothesis is true</span></label><label><input type="radio" autocomplete="off" name="radio_KMAEQFTXWG" value="answer"> <span>the probability of the observed, or more extreme, data, under the assumption that the null-hypothesis is true</span></label><label><input type="radio" autocomplete="off" name="radio_KMAEQFTXWG" value=""> <span>the probability of making an error in your conclusion</span></label>
-</div>
-</div>
-</section>
-<section id="hidden-solutions-and-hints" class="level2">
-<h2 class="anchored" data-anchor-id="hidden-solutions-and-hints">Hidden solutions and hints</h2>
-<p>You can fence off a solution area that will be hidden behind a button using <code>hide()</code> before the solution and <code>unhide()</code> after, each as inline R code. Pass the text you want to appear on the button to the <code>hide()</code> function.</p>
-<p>If the solution is a code chunk, instead of using <code>hide()</code> and <code>unhide()</code>, simply set the <code>webex.hide</code> chunk option to TRUE, or set it to the string you wish to display on the button.</p>
-<p><strong>Recreate the scatterplot below, using the built-in <code>cars</code> dataset.</strong></p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><a href="webexercises_files/figure-html/unnamed-chunk-6-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="webexercises_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></a></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="webex-solution">
-<button>
-I need a hint
-</button>
-<p>See the documentation for <code>plot()</code> (<code>?plot</code>)</p>
-</div>
-<!-- note: you could also just set webex.hide to TRUE -->
-<div class="cell" data-webex.hide="Click here to see the solution">
-<div class="webex-solution">
-<button>
-Click here to see the solution
-</button>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(cars<span class="sc">$</span>speed, cars<span class="sc">$</span>dist)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
 
 
 </section>
@@ -934,31 +865,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","loop":false,"descPosition":"right","selector":".lightbox","closeEffect":"zoom"});
-window.onload = () => {
-  lightboxQuarto.on('slide_before_load', (data) => {
-    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-    const href = trigger.getAttribute('href');
-    if (href !== null) {
-      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-      if (imgEl !== null) {
-        const srcAttr = imgEl.getAttribute("src");
-        if (srcAttr && srcAttr.startsWith("data:")) {
-          slideConfig.href = srcAttr;
-        }
-      }
-    } 
-  });
-
-  lightboxQuarto.on('slide_after_load', (data) => {
-    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-    if (window.Quarto?.typesetMath) {
-      window.Quarto.typesetMath(slideNode);
-    }
-  });
-
-};
-          </script>
 
 
 

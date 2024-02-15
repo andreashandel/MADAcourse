@@ -843,7 +843,7 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
-  <li><a href="#machine-learning-model-zoo" id="toc-machine-learning-model-zoo" class="nav-link" data-scroll-target="#machine-learning-model-zoo">Machine Learning Model Zoo</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
   <li><a href="#general-ml-considerations" id="toc-general-ml-considerations" class="nav-link" data-scroll-target="#general-ml-considerations">General ML considerations</a></li>
   <li><a href="#further-resources" id="toc-further-resources" class="nav-link" data-scroll-target="#further-resources">Further resources</a></li>
   </ul>
@@ -872,7 +872,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2024-01-27</p>
+      <p class="date-modified">2024-02-15</p>
     </div>
   </div>
     
@@ -893,17 +893,20 @@ ul.task-list li input[type="checkbox"] {
 <li>Know what ML models are.</li>
 </ul>
 </section>
-<section id="machine-learning-model-zoo" class="level1">
-<h1>Machine Learning Model Zoo</h1>
-<p>By now, I am sure you have picked up on the fact that there is a whole zoo of different statistical and machine learning models. You have also likely picked up that the terminology is fuzzy. We could call a standard linear or logistic regression model a machine learning model, and people do. Or we can reserve the term ML for more complex models - however fuzzily we define “complex”. In the end, getting hung up about terminology is not that useful and important.</p>
-<p>What is important is that you are at least a bit familiar with some of the more common models, how they work and what they are good for, such that when you either read someone else’s modeling results, or try your own, you have an idea of what’s going in. All we can do in this course is to take an introductory glance at some ML models. If you end up becoming a “machine learning practitioner”, you will want to learn more about specific models. The materials I link to hopefully give you places to look.</p>
-<p>ML models fall in broad classes, and within each class, there are many different variants. It is impossible to cover them all, but in this module and the next, we’ll briefly go over a few of the more common ones.</p>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>By now, I am sure you have picked up on the fact that there is a whole zoo of different models out there one can use to analyze data. You have also likely picked up that the terminology is fuzzy. We could call a standard linear or logistic regression model a machine learning (ML) model, and people do. Or we can reserve the term ML for more complex models - however fuzzily we define “complex”. In the end, getting hung up about terminology is not that useful and important.</p>
+<p>What is important is that you are at least a bit familiar with some of the more common models. Most of the time, you do not need to understand every detail of a model. You do however want to understand enough about how the model works, its strengths and limitations, to determine if a certain model is useful for a given situation or not. This way, when you read someone else’s modeling results, or try your own, you have an idea of what’s going in.</p>
+<p>We will do a whirlwind tour of several classes of common models. There’s no way you can learn them in detail in the short amount of time we spend on them. However, you should be able to pick up enough about a type of model such that if you happen to work on a problem where you think a certain kind of model might be useful, you will then want to revisit that model and learn more.</p>
 </section>
 <section id="general-ml-considerations" class="level1">
 <h1>General ML considerations</h1>
-<p><strong>I want to make an important point here:</strong> The statistics/model fitting topics we have discussed so far, namely pre-processing data, choosing the right performance metric, using methods like train/test and cross-validation to minimize overfitting, and carefully evaluating your model results <strong>always apply, no matter if you fit a simple linear model or a complicated neural net</strong>.</p>
-<p>Some problems become more acute for certain types of models, e.g., the more complex the model, the more likely the chance for overfitting. But the general concepts always apply. Model tuning also applies to most ML models, it is just different model parts that are being tuned. Once you dig deeper, it is useful to understand enough about the model to get an idea of what tuning a specific parameter for a given model actually means. However, in a first pass, you can often do those tuning operations without knowing much about the models (which is what we’ll do in this class). Nevertheless, always critically evaluate what your models return. Just because complex models are often black boxes and it’s hard to understand everything that goes on inside doesn’t mean you can skip your critical thinking and accept as reasonable whatever the model gives you back.</p>
-<p>I think by now you have also picked up on the idea that there is no <em>recipe</em> for choosing a specific machine learning/statistical modeling approach. It depends on the data, the question, the overall goal, what others in the field are using, and potentially further factors. In general, the most thorough approach is to try both simple and complex models, and then decide based on model performance and other considerations such as simplicity, speed, scalability, etc. on a specific model. There is always a level of subjectivity involved, i.e.&nbsp;different analysts might favor different models. As long as the thought process behind choosing a specific model is well explained and justified, you should be allowed to choose the model that you think is overall best for a given situation. Since it is very easy to fit multiple different models and compare results, it is not a bad idea to do that. You can report the results form the main model you chose as the main findings, with results from other models as supplementary material.</p>
+<div class="note">
+<p>I want to make an important point here: The statistics/model fitting topics we have discussed so far, namely pre-processing data, choosing the right performance metric, using methods like train/test and cross-validation to minimize overfitting, and carefully evaluating your model results apply to pretty much any data analysis project, no matter if you fit a simple linear model or a complicated neural net.</p>
+</div>
+<p>Most models that are considered ML models tend to be more complex than the GLM type models we discussed so far. More complexity usually means more predictive performance, but also an increased chance for overfitting and more difficulty understanding what is going on inside the model and how to interpret model results.</p>
+<p>ML models often have parameters that need to be tuned as part of the fitting process. In a first pass, you can often do those tuning operations without knowing much about the models. Once you dig deeper, it is useful to understand enough about the model to get an idea of what tuning a specific parameter for a given model actually means. Either way, always critically evaluate what your models return. Just because complex models are often black boxes and it’s hard to understand everything that goes on inside doesn’t mean you can skip your critical thinking and accept as reasonable whatever the model gives you back.</p>
+<p>I think by now you have also picked up on the idea that there is no <em>recipe</em> for choosing a specific machine learning/statistical modeling approach. It depends on the data, the question, the overall goal, what others in the field are using, and potentially further factors. In general, the most thorough approach is to try both simple and complex models, and then decide based on model performance and other considerations such as simplicity, speed, usability, etc. on a specific model. There is always a level of subjectivity involved, i.e.&nbsp;different analysts might favor different models. As long as the thought process behind choosing a specific model is well explained and justified, you should be allowed to choose the model that you think is overall best for a given situation. Since it is very easy to fit multiple different models and compare results, it is not a bad idea to do that. You can report the results form the main model you chose as the main findings, with results from other models as supplementary material.</p>
 <p>And with those general points out of the way, we’ll look at several different statistical/ML models in the following units.</p>
 </section>
 <section id="further-resources" class="level1">
