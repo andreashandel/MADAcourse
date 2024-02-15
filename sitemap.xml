@@ -93,18 +93,6 @@
     <lastmod>2024-01-28T00:24:23.900Z</lastmod>
   </url>
   <url>
-    <loc>https://andreashandel.github.io/MADAcourse/content/module-model-improvement/model-improvement-tuning.html</loc>
-    <lastmod>2024-01-28T00:24:23.900Z</lastmod>
-  </url>
-  <url>
-    <loc>https://andreashandel.github.io/MADAcourse/content/module-model-improvement/model-improvement-regularization.html</loc>
-    <lastmod>2024-02-09T00:40:12.691Z</lastmod>
-  </url>
-  <url>
-    <loc>https://andreashandel.github.io/MADAcourse/content/module-model-improvement/model-improvement-data-processing.html</loc>
-    <lastmod>2024-01-28T00:24:23.898Z</lastmod>
-  </url>
-  <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-intro-tools/tools-tips-guidance.html</loc>
     <lastmod>2024-01-28T00:24:23.874Z</lastmod>
   </url>
@@ -201,6 +189,18 @@
     <lastmod>2024-01-28T00:24:23.831Z</lastmod>
   </url>
   <url>
+    <loc>https://andreashandel.github.io/MADAcourse/content/model-improvement/model-improvement-subset/model-improvement-subset.html</loc>
+    <lastmod>2024-02-15T19:57:29.956Z</lastmod>
+  </url>
+  <url>
+    <loc>https://andreashandel.github.io/MADAcourse/content/model-improvement/model-improvement-overview.html</loc>
+    <lastmod>2024-02-15T19:57:29.898Z</lastmod>
+  </url>
+  <url>
+    <loc>https://andreashandel.github.io/MADAcourse/content/model-improvement/assessment-model-improvement.html</loc>
+    <lastmod>2024-02-15T19:57:29.850Z</lastmod>
+  </url>
+  <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/model-fitting/model-fitting-overview.html</loc>
     <lastmod>2024-02-15T13:18:14.098Z</lastmod>
   </url>
@@ -226,7 +226,7 @@
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/model-assessment/diagnostics-assessment/diagnostics-assessment.html</loc>
-    <lastmod>2024-02-13T12:52:10.215Z</lastmod>
+    <lastmod>2024-02-15T19:57:29.825Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/model-assessment-r/model-assessment-r-overview.html</loc>
@@ -234,7 +234,7 @@
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/model-assessment-r/diagnostics-assessment-r/diagnostics-assessment-r.html</loc>
-    <lastmod>2024-02-13T12:52:10.199Z</lastmod>
+    <lastmod>2024-02-15T19:57:29.809Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/content-overview.html</loc>
@@ -266,7 +266,7 @@
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/model-assessment/uncertainty-assessment/uncertainty-assessment.html</loc>
-    <lastmod>2024-02-10T21:45:24.923Z</lastmod>
+    <lastmod>2024-02-15T19:57:29.850Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/model-fitting/basic-statistical-models/basic-statistical-models.html</loc>
@@ -279,6 +279,18 @@
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/model-fitting/model-fitting-r/model-fitting-r.html</loc>
     <lastmod>2024-01-28T00:24:23.874Z</lastmod>
+  </url>
+  <url>
+    <loc>https://andreashandel.github.io/MADAcourse/content/model-improvement/model-improvement-introduction/model-improvement-introduction.html</loc>
+    <lastmod>2024-02-15T19:57:29.870Z</lastmod>
+  </url>
+  <url>
+    <loc>https://andreashandel.github.io/MADAcourse/content/model-improvement/model-improvement-regularization/model-improvement-regularization.html</loc>
+    <lastmod>2024-02-15T19:57:29.915Z</lastmod>
+  </url>
+  <url>
+    <loc>https://andreashandel.github.io/MADAcourse/content/model-improvement/model-improvement-tuning/model-improvement-tuning.html</loc>
+    <lastmod>2024-02-15T19:57:29.964Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-ai/ai-conceptual/ai-conceptual.html</loc>
@@ -334,7 +346,7 @@
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-data-processing/feature-engineering/feature-engineering.html</loc>
-    <lastmod>2024-02-01T20:52:08.811Z</lastmod>
+    <lastmod>2024-02-15T19:57:29.980Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-data-processing/missing-data/missing-data.html</loc>
@@ -371,18 +383,6 @@
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-intro-tools/tools-reference-management.html</loc>
     <lastmod>2024-01-28T00:24:23.874Z</lastmod>
-  </url>
-  <url>
-    <loc>https://andreashandel.github.io/MADAcourse/content/module-model-improvement/assessment-model-improvement.html</loc>
-    <lastmod>2024-01-28T00:24:23.892Z</lastmod>
-  </url>
-  <url>
-    <loc>https://andreashandel.github.io/MADAcourse/content/module-model-improvement/model-improvement-overview.html</loc>
-    <lastmod>2024-01-28T00:24:23.900Z</lastmod>
-  </url>
-  <url>
-    <loc>https://andreashandel.github.io/MADAcourse/content/module-model-improvement/model-improvement-subset-selection.html</loc>
-    <lastmod>2024-02-04T00:39:36.930Z</lastmod>
   </url>
   <url>
     <loc>https://andreashandel.github.io/MADAcourse/content/module-model-ml-1/assessment-ml-models-1.html</loc>

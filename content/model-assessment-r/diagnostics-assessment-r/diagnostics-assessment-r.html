@@ -143,8 +143,6 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#algorithm-assessment" id="toc-algorithm-assessment" class="nav-link" data-scroll-target="#algorithm-assessment">Algorithm assessment</a></li>
   <li><a href="#null-model-comparisons" id="toc-null-model-comparisons" class="nav-link" data-scroll-target="#null-model-comparisons">Null model comparisons</a></li>
   <li><a href="#single-predictor-comparisons" id="toc-single-predictor-comparisons" class="nav-link" data-scroll-target="#single-predictor-comparisons">Single predictor comparisons</a></li>
-  <li><a href="#observed-versus-predicted-values" id="toc-observed-versus-predicted-values" class="nav-link" data-scroll-target="#observed-versus-predicted-values">Observed versus predicted values</a></li>
-  <li><a href="#residuals" id="toc-residuals" class="nav-link" data-scroll-target="#residuals">Residuals</a></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
   <li><a href="#further-resources" id="toc-further-resources" class="nav-link" data-scroll-target="#further-resources">Further Resources</a></li>
   <li><a href="#test-yourself" id="toc-test-yourself" class="nav-link" data-scroll-target="#test-yourself">Test yourself</a></li>
@@ -181,7 +179,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2024-02-13</p>
+      <p class="date-modified">2024-02-15</p>
     </div>
   </div>
     
@@ -216,17 +214,6 @@ ul.task-list li input[type="checkbox"] {
 <section id="single-predictor-comparisons" class="level1">
 <h1>Single predictor comparisons</h1>
 </section>
-<section id="observed-versus-predicted-values" class="level1">
-<h1>Observed versus predicted values</h1>
-<p>The model performance metric gives you a single quantity describing how well the model matches the data, given the metric you defined. That’s useful, but you generally want to dig deeper and compare <strong>model predictions</strong> to the <strong>observed data</strong> for individual observations.</p>
-<p>For continuous outcomes, you can plot those two quantities on the x- and y-axes. For a (hypothetical) perfect model, all points are along the 45-degree line. You don’t actually want them all perfectly on the line since this suggests overfitting. Some scatter along the line is expected and healthy. However, you want to look for systematic deviations from this line, as it suggests potential problems, i.e., it likely means your model is <em>biased</em> and is not flexible enough to capture important patterns still found in the data (i.e., your model is underfitting). In that case, you will want to try different models.</p>
-<p>Similarly, for categorical outcomes, you can look at the confusion matrix to see if there are lots of FN or FP, which might suggest the model gets certain categories systematically wrong.</p>
-<p>In the common case that you only have 2 categories (e.g., yes/no) and you use a logistic model or some other model that predicts probabilities, you can plot those model-predicted probabilities together with the observed data (which will be just 0 or 1). You are again looking for any patterns that might indicate that there are systematic deviations between model predictions and data that could suggest that your model needs tweaking.</p>
-</section>
-<section id="residuals" class="level1">
-<h1>Residuals</h1>
-<p>Instead of (or in addition to) plotting observed versus predicted for continuous outcomes, you can plot the difference between the two. These differences are called the residuals. What you are looking for is a cloud of points with no discernible pattern. If there is a pattern (e.g., an overall skew, or more points above the 0 y-axes than below), it again suggests that there is still some pattern/signal in the data that the model didn’t capture.</p>
-</section>
 <section id="summary" class="level1">
 <h1>Summary</h1>
 <p>When assessing your models, it is important to go beyond the performance metric and look at individual model predictions and how closely they agree with the data. If you spot residual patterns, that might indicate that you could (but don’t have to) make your model more complex/flexible to try and capture additional details of the data.</p>
@@ -238,8 +225,8 @@ ul.task-list li input[type="checkbox"] {
 <section id="test-yourself" class="level1">
 <h1>Test yourself</h1>
 What’s the term for the differences between data and model that you want to see distributed like a symmetric cloud?
-<div id="radio_PIFEDDXQCJ" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_PIFEDDXQCJ" value=""> <span>Overfitting</span></label><label><input type="radio" autocomplete="off" name="radio_PIFEDDXQCJ" value=""> <span>Variance</span></label><label><input type="radio" autocomplete="off" name="radio_PIFEDDXQCJ" value="answer"> <span>Residuals</span></label><label><input type="radio" autocomplete="off" name="radio_PIFEDDXQCJ" value=""> <span>Bias</span></label>
+<div id="radio_MESCLFDINI" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_MESCLFDINI" value=""> <span>Overfitting</span></label><label><input type="radio" autocomplete="off" name="radio_MESCLFDINI" value=""> <span>Variance</span></label><label><input type="radio" autocomplete="off" name="radio_MESCLFDINI" value="answer"> <span>Residuals</span></label><label><input type="radio" autocomplete="off" name="radio_MESCLFDINI" value=""> <span>Bias</span></label>
 </div>
 <p>On a predicted versus observed plots, the points should cluster along a horizontal line to indicate a good model fit. <select class="webex-select"><option value="blank"></option><option value="">TRUE</option><option value="answer">FALSE</option></select> <br><br>If your overall model metric (e.g.&nbsp;Accuracy) is very good, you don’t need to look at individual predictions. <select class="webex-select"><option value="blank"></option><option value="">TRUE</option><option value="answer">FALSE</option></select></p>
 </section>

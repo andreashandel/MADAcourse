@@ -72,6 +72,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../../include/webex.css">
 </head>
@@ -464,7 +493,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/module-data-processing/feature-engineering/feature-engineering.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Creating new data/variables</span></a>
+ <span class="menu-text">Feature Engineering</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -650,31 +679,31 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../content/module-model-improvement/model-improvement-overview.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Improving Model Fits Overview</span></a>
+  <a href="../../../content/model-improvement/model-improvement-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model Improvement Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../content/module-model-improvement/model-improvement-data-processing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Pre-Processing Data</span></a>
+  <a href="../../../content/model-improvement/model-improvement-introduction/model-improvement-introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model Improvement Introduction</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../content/module-model-improvement/model-improvement-subset-selection.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/model-improvement/model-improvement-subset/model-improvement-subset.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Subset Selection</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../content/module-model-improvement/model-improvement-regularization.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/model-improvement/model-improvement-regularization/model-improvement-regularization.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Regularization</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../content/module-model-improvement/model-improvement-tuning.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/model-improvement/model-improvement-tuning/model-improvement-tuning.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Model Tuning</span></a>
   </div>
 </li>
@@ -850,6 +879,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#single-predictor-comparisons" id="toc-single-predictor-comparisons" class="nav-link" data-scroll-target="#single-predictor-comparisons">Single predictor comparisons</a></li>
   <li><a href="#observed-versus-predicted-values" id="toc-observed-versus-predicted-values" class="nav-link" data-scroll-target="#observed-versus-predicted-values">Observed versus predicted values</a></li>
   <li><a href="#residuals" id="toc-residuals" class="nav-link" data-scroll-target="#residuals">Residuals</a></li>
+  <li><a href="#simulation" id="toc-simulation" class="nav-link" data-scroll-target="#simulation">Simulation</a></li>
   <li><a href="#sensitivity-analysis" id="toc-sensitivity-analysis" class="nav-link" data-scroll-target="#sensitivity-analysis">Sensitivity analysis</a></li>
   <li><a href="#model-interpretation" id="toc-model-interpretation" class="nav-link" data-scroll-target="#model-interpretation">Model Interpretation</a></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
@@ -888,7 +918,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2024-02-13</p>
+      <p class="date-modified">2024-02-15</p>
     </div>
   </div>
     
@@ -911,7 +941,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
-<p>We already discussed several approaches of asssessing models. One was based on a broad comparison with the real world, the other one focused narrowly on model evaluation based on some performance metric. There are several other ways to assess models that are in some sense between the very broad and very narrow approaches we discussed.</p>
+<p>We already discussed several approaches of assessing models. One was based on a broad comparison with the real world, the other one focused narrowly on model evaluation based on some performance metric. There are several other ways to assess models that are in some sense between the very broad and very narrow approaches we discussed.</p>
 </section>
 <section id="algorithm-and-code-assessment" class="level1">
 <h1>Algorithm and Code assessment</h1>
@@ -944,6 +974,11 @@ ul.task-list li input[type="checkbox"] {
 <h1>Residuals</h1>
 <p>Instead of (or in addition to) plotting observed versus predicted for continuous outcomes, you can plot the difference between the two. These differences are called the residuals. What you are looking for is a cloud of points with no discernible pattern. If there is a pattern (e.g., an overall skew, or more points above the 0 y-axes than below), it again suggests that there is still some pattern/signal in the data that the model didn’t capture.</p>
 </section>
+<section id="simulation" class="level1">
+<h1>Simulation</h1>
+<p>One of the best general approaches toward testing models is to simulate synthetic data and fit the model to the simulated data. You know what you used to generate the synthetic data, so you know what the model should return. For instance if you simulate data for the linear model <span class="math display">\[Y=b_0 + b_1X_1 + b_2X_2\]</span> (and add a bit of noise on top), and you chose <em>b<sub>0</sub></em>=<em>b<sub>1</sub></em>=<em>b<sub>2</sub></em>=2, then when you fit such a linear model to this simulated data, those are the values for the coefficients you expect to get back (not quite, since you added a bit of noise, but they shouldn’t be far off). If you can’t get out what you stuck in, you have a problem. Most likely, it means you are over-fitting, and more than one combination of parameter values is giving almost the same performance measure, and the model can’t differentiate. You should then either get more data or make your model simpler.</p>
+<p>This approach of simulating data is a very useful general approach - which is why we <a href="../../../content/module-synthetic-data/synthetic-data-overview.html">covered it in some detail</a>. For anything beyond the simplest models, you should probably use this approach. The more complex your model becomes, the more useful this type of diagnosis is. It can at times be difficult to assess your model if you use a model for which it is not clear how the mapping of inputs to outcomes works (e.g.&nbsp;a complex machine learning model). Even then, if you make some data where say one predictor is strongly correlated with the outcome, and another one is only noise, then your model should properly predict that this is the case.</p>
+</section>
 <section id="sensitivity-analysis" class="level1">
 <h1>Sensitivity analysis</h1>
 <p>Sometimes you have observations that might have a strong impact on the model, i.e., without those observations, the best fitting model would look quite different. If you decided that those points are <em>real</em> (i.e., not data entry or other mistakes), you might want to run the model both with those data points present and absent to investigate how results might change. Similarly, you might make decisions along the data cleaning path (e.g., to remove all observations with missing values, or instead remove some variables with lots of missing) which could affect results. Performing analyses in multiple ways to see how these decisions affect outcomes is useful. If you find that the overall results stay the same, it instills confidence in the robustness of your findings. If in contrast, different decisions lead to different answers, it might point to something worth investigating further.</p>
@@ -952,12 +987,10 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="model-interpretation" class="level1">
 <h1>Model Interpretation</h1>
-<p>A nice feature of using subset selection or LASSO with GLMs, or fitting a single tree, is that the algorithm decides which predictor variables are important, and throws out the remaining ones. For the ones that stay in the model, we can look at the coefficients in front of each predictor variable, or look at the final tree/decision diagram, to assess the importance of individual predictor variables on the outcome. This provides an easy way to understand <em>how</em> specific variables influence the outcome.</p>
-<p>Those simple approaches are not available anymore for more complex models. With complex models, we generally give up interpretability in exchange for better performance. However, we ideally want both. The last several years have seen a good amount of development to come up with methods that allow one to peek inside the black box, i.e.&nbsp;to understand why and how a complex model makes its predictions, and what the role of specific predictor variables is on the outcome. This area is generally called <em>interpretable machine learning</em>.</p>
+<p>A nice feature of simple models, such as GLMs, is that one can easily understand <em>how</em> specific variables influence the outcome. You just need to look at the coefficients in front of the input variables.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>Those simple approaches are not available anymore for more complex models. With complex models, we generally give up interpretability in exchange for better performance. However, we ideally want both. There has been a good amount of development to come up with methods that allow one to peek inside the black box, i.e.&nbsp;to understand why and how a complex model makes its predictions, and what the role of specific predictor variables is on the outcome. This area is generally called <em>interpretable ML (or AI)</em>.</p>
 <p>There’s no point in me repeating what others have already said (much better than I could) 😃, therefore, instead of me writing more on this, please take a look at <a href="https://christophm.github.io/interpretable-ml-book/">chapters 2 and 3 of the <em>Interpretable Machine Learning (IML) book</em></a>, which gives a very nice introduction on this topic. As you can tell by the title, the whole book is about interpretation of machine learning methods, and is a great resource.</p>
-<p>For a shorter, but also great resource, check out <a href="https://bradleyboehmke.github.io/HOML/iml.html">chapter 16 of HMLR</a>, which provides both a quick introduction and overview to the topic, and lists and illustrates the use of several R packages to do various interpretation tasks.</p>
-<p>Another good introduction is <a href="https://www.tmwr.org/explain.html">this chapter of the <em>Tidy Modeling with R</em> book</a>.</p>
-<p>As models get more complex, making sense of them will increase in importance. Even if you are mainly interested in predictive performance and less on understanding your system, it is a good idea to investigate your model in some detail. You might often figure out things that can help further increase model performance. Also, without understanding at least to some extent how complex models make their predictions, the potential for unnoticed bias increases. A good example of this can be found <a href="https://science.sciencemag.org/content/366/6464/447">in this very recent Science paper</a> which describes racial bias in a machine learning model that tries to predict healthcare needs of patients. See also <a href="https://science.sciencemag.org/content/366/6464/421">this commentary</a> on the article. Thus, this area of interpreting results from complex models will likely see much development in the near future, hopefully leading to models that are both powerful (and thus likely complex) and interpretable.</p>
+<p>As models get more complex, making sense of them will increase in importance. Even if you are mainly interested in predictive performance and less on understanding your system, it is a good idea to investigate your model in some detail. You might often figure out things that can help further increase model performance. Also, without understanding at least to some extent how complex models make their predictions, the potential for unnoticed bias increases. A good example of this can be found <a href="https://science.sciencemag.org/content/366/6464/447">in this Science paper</a> which describes racial bias in a machine learning model that tries to predict healthcare needs of patients. See also <a href="https://science.sciencemag.org/content/366/6464/421">this commentary</a> on the article. Thus, this area of interpreting results from complex models will likely see much development in the near future, hopefully leading to models that are both powerful (and thus likely complex) and interpretable.</p>
 <p>Given how easy it is to apply some of these methods to your models, I recommend that if you decide to use a somewhat complex model (or even a not-so complex one), you should always do at least some analyses that probe the model, e.g.&nbsp;perform a variable importance analysis and related investigations as described in the references above.</p>
 </section>
 <section id="summary" class="level1">
@@ -966,13 +999,17 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="further-resources" class="level1">
 <h1>Further Resources</h1>
-<p>The chapters <a href="https://www.tmwr.org/performance.html"><em>Judging model effectiveness</em></a> and <a href="https://www.tmwr.org/trust.html"><em>When should you trust your predictions?</em></a> of the TMWR book have some additional good information.</p>
+<ul>
+<li><p>The chapters <a href="https://www.tmwr.org/performance.html"><em>Judging model effectiveness</em></a> and <a href="https://www.tmwr.org/trust.html"><em>When should you trust your predictions?</em></a> of the TMWR book have some additional good information.</p></li>
+<li><p><a href="https://bradleyboehmke.github.io/HOML/iml.html">Chapter 16 of HMLR</a>, provides another good introduction with detailed examples in R on the topic of interpretable ML.</p></li>
+<li><p>Yet another good introduction to interpretable ML is <a href="https://www.tmwr.org/explain.html">this chapter of the <em>Tidy Modeling with R</em> book</a>.</p></li>
+</ul>
 </section>
 <section id="test-yourself" class="level1">
 <h1>Test yourself</h1>
 What’s the term for the differences between data and model that you want to see distributed like a symmetric cloud?
-<div id="radio_QICCVFIINY" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_QICCVFIINY" value=""> <span>Overfitting</span></label><label><input type="radio" autocomplete="off" name="radio_QICCVFIINY" value=""> <span>Variance</span></label><label><input type="radio" autocomplete="off" name="radio_QICCVFIINY" value="answer"> <span>Residuals</span></label><label><input type="radio" autocomplete="off" name="radio_QICCVFIINY" value=""> <span>Bias</span></label>
+<div id="radio_ODPPDRAGZQ" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_ODPPDRAGZQ" value=""> <span>Overfitting</span></label><label><input type="radio" autocomplete="off" name="radio_ODPPDRAGZQ" value=""> <span>Variance</span></label><label><input type="radio" autocomplete="off" name="radio_ODPPDRAGZQ" value="answer"> <span>Residuals</span></label><label><input type="radio" autocomplete="off" name="radio_ODPPDRAGZQ" value=""> <span>Bias</span></label>
 </div>
 <p>On a predicted versus observed plots, the points should cluster along a horizontal line to indicate a good model fit. <select class="webex-select"><option value="blank"></option><option value="">TRUE</option><option value="answer">FALSE</option></select> <br><br>If your overall model metric (e.g.&nbsp;Accuracy) is very good, you don’t need to look at individual predictions. <select class="webex-select"><option value="blank"></option><option value="">TRUE</option><option value="answer">FALSE</option></select></p>
 </section>
@@ -985,7 +1022,13 @@ What’s the term for the differences between data and model that you want to se
 
 </section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Well, it can actually be quite tricky to interpret coefficients for anything but a linear model. For instance for a logistic model (and many other GLM), the impact of a change in a predictor on the outcome depends on the value of the predictor. Sometimes a 1-unit increase in some predictor (say drug dose) can lead to a strong change in the outcome (say cholesterol level), while for other values of that predictor, increasing it further by 1 unit might have almost no impact on the outcome. So one needs to be careful even when interpreting fairly simple GLM. However, the whole model is known so you can always figure out how one part relates to the other. That’s not the case any more for complex ML models.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script>
 
 /* update total correct if #webex-total_correct exists */

@@ -824,150 +824,6 @@
     ]
   },
   {
-    "objectID": "content/module-model-improvement/model-improvement-tuning.html",
-    "href": "content/module-model-improvement/model-improvement-tuning.html",
-    "title": "Model Tuning",
-    "section": "",
-    "text": "Overview\nIn this unit, we will cover the concept of parameter/model tuning and training.\n\n\nLearning Objectives\n\nLearn what parameter tuning/model training are.\nBe able to implement training/tuning in R.\n\n\n\nIntroduction\nWe discussed at length that one (but not the only) goal of model fitting is to find a model that has good performance when applied to new/different data.\nFor linear, logistic, and similar models (generalized linear models), we discussed the idea of subset/feature selection that can help determine a good model. For different sub-models, we fitted the model to some of the data and evaluated model performance on another part of the data using cross-validation. The model with the best cross-validated performance across all sub-models is then designated as the best (at least with regard to our chosen performance metric).\nWe then discussed regularization, which tries to solve a problem similar to subset selection, namely preventing a model that is too complex and thus overfits. In the regularization approach, one does not compare sub-models with different predictor variables. Instead, all predictors are present, and one (or two) parameters (the regularization or penalty parameters, We called them \\(\\lambda\\) and \\(\\alpha\\)) are varied to influence model complexity. For each value of that parameter, the model is evaluated through cross-validation, and the \\(\\lambda\\) which produces the model with the best performance is chosen (or sometimes one picks a somewhat larger \\(\\lambda\\) to further prevent potential overfitting).\nThis approach of taking a model parameter and evaluating models for different parameter values is called model/parameter tuning. These model-specific tuning parameters are often also referred to as hyperparameters. Simple models, like linear or logistic regression, do not have any parameters that can be tuned. However, more complicated models, which we will discuss soon, generally have one or more tuning parameters. Very flexible models, such as neural nets used in artificial intelligence tasks, can have thousands or even more parameters that need tuning. For any models with tuning parameters, it is essential to tune the parameters/train the model. Without it, the model will likely not perform very well.\n\n\nModel training/parameter tuning recipe\nTraining the model by tuning its parameters follows a general approach that is conceptually the same for all models. You need to go through these steps:\n\nSelect some values for your tuning parameters.\nUsing cross-validation, fit model to a part of the data (the analysis portion), evaluate model performance on the remainder of data (the assessment portion).\nSelect new values for your tuning parameters, and repeat step 2.\nKeep going until you hit some stopping criterion, e.g., you tried all parameter combinations you wanted to try, you hit the maximum number of tries, or you hit the maximum amount of time you allocated for this parameter tuning. (Or you found the absolute best tuning parameter values, but that’s only likely for simple models with few tuning parameters).\nPick your best model as the one with the parameter values that produced the overall best model performance.\n\nYour final model consists of both the type of model and the values of the parameters.\n\nYou might (or might not) have wondered if this procedure of repeatedly refitting the model for different values of the tuning parameters (hyperparameters) and re-fitting the model for different values of the model parameters (e.g., for the coefficients \\(b_i\\) for a linear or generalized linear model) isn’t more or less the same. Both conceptually and in practice, those approaches are quite similar. For GLM, there are differences in how things happen, namely the \\(b_i\\) can be determined in a single step, without the need for trial and error. But for other models, such as some of the ML models we’ll explore, tuning parameters and internal parameters associated with the model might both need to be determined by iterative procedures. Thus, while one can try to distinguish between model and tuning parameters (see e.g., Jason Brownlee’s blog post, which discusses that point a bit more), this is often fuzzy. And the usual caveat applies: The terminology is not consistent, and what some people might call a model parameter might be called a tuning parameter by others. The good news is that in practice it doesn’t matter much what you call a specific parameter. Some can be tuned and you can chose to do so (or not and fix it), others cannot be tuned and are determined internally.\n\n\n\nSearching the tuning parameter space\nThe problem of trying a lot of different tuning parameter values to find the ones that lead to the best performance is very similar to the problem of trying to test a lot of different sub-models during subset selection to find the best model. Not surprisingly then, the procedures to perform the search over parameter space are similar to the ones one can use to search over subset/sub-model space. The most basic one for subset selection was to try every possible model (exhaustive search). This works in principle for tuning parameters as well, but only if the tuning parameters are discrete. For continuous tuning parameters (e.g., \\(\\lambda\\) in regularization), it is impossible to try all values. One instead chooses discrete values for the parameter between some lower and upper limits and then searches that grid of parameters. This is called grid search. The advantage of a grid search is that you know you tried every combination of parameters in your grid.\nFor instance, if you have 2 continuous tuning parameters and 1 categorical tuning parameter with 3 categories, if you chose 10 discrete values for the 2 continuous parameters each, your grid would be 10x10x3. In this case, you would need to evaluate the model for 300 different tuning parameter values. That’s not too bad. But you can see that one problem with this approach is that as the number of tuning parameters increases, or if you want to try many different discrete values (e.g., 100 instead of 10 for each continuous parameter), the number of times you need to run the model increases rapidly. That’s the same problem as the exhaustive search for subset selection.\nTo solve this problem, there are a few major methods:\n\nOne can efficiently choose parameter values to estimate – instead of searching the entire grid, you can use a sampling method to find a smaller grid that covers the same space in the most efficient way. The most well-known algorithm for this is probably Latin hypercube sampling.\nMethods similar to those mentioned for subset selection can be applied, e.g., one can use Genetic Algorithms, Simulated Annealing, Racing Methods, or many other optimizer routines for tuning. While it is, in principle, possible to write your own code that implements the tuning procedure with whatever method you want to use, for most instances, it is easier to use pre-existing methods.\n\n\n\nTuning with R\ntidymodels, and its package tune currently have a few different algorithms for searching the tuning parameter space implemented. Grid search is the main one, but the package also implements Iterative Bayesian optimization. The finetune which is not yet on CRAN implements Simulated Annealing and Racing Methods. To learn more about those, see chapters 12-14 in Tidy Modeling With R.\nThe mlr3/mlr package I keep mentioning also has algorithms to tune parameters, including some that are not available (yet) in tidymodels. For tuning in mlr see e.g. tuning tutorial and advanced tuning tutorial. For this course, we’ll focus on what’s available in tidymodels, but if you ever need to do some major parameter tuning/model optimization, checking out mlr might be worth it (or implementing your own with tidymodels, which is possible.)\n\n\nFurther comments\nOnly if your model has very few tuning parameters and your data is manageable in size can you find the absolute best parameter values in a reasonable amount of time. More likely, you’ll find parameter values that give you a close-to-optimal model.\nAt times, cross-validation might take too much time, and you might have to use a computationally faster method, such as AIC or similar, to try to estimate model performance on future data. That’s not ideal, you might want to consider other approaches first (fewer parameter evaluations, faster computer, running things in parallel…).\nAny process that adjusts the model repeatedly based on prior fits to data has the danger of overfitting, even if you try to guard against this using approaches such as CV. Thus, sometimes less tuning might actually give you a more robust/generalizable model.\nThe more tuning parameters in your model, the more data you need to be able to train the model properly. If you have a mismatch between the amount of data and model complexity, you are likely going to overfit. This is why complex models such as neural nets need vast amounts of data (millions or billions of observations).\n\n\nFurther information\nMost relevant and maybe good to visit next are chapters 12-14 in Tidy Modeling With R, which discuss the general tuning process, and then explain how to do grid search and iterative search using tidymodels.\nSection 2.5.3 of HMLR provides a very short section on tuning. ISLR mentions tuning in various places but doesn’t describe it in a dedicated section. IDS mentions it in the Machine Learning chapters but also does not have a dedicated section on the topic.",
-    "crumbs": [
-      "Content",
-      "10. Model Improvement",
-      "Model Tuning"
-    ]
-  },
-  {
-    "objectID": "content/module-model-improvement/model-improvement-regularization.html",
-    "href": "content/module-model-improvement/model-improvement-regularization.html",
-    "title": "Regularization",
-    "section": "",
-    "text": "In this unit, we will cover the concept of regularization. We’ll also briefly mention a few related approaches.",
-    "crumbs": [
-      "Content",
-      "10. Model Improvement",
-      "Regularization"
-    ]
-  },
-  {
-    "objectID": "content/module-model-improvement/model-improvement-regularization.html#ridge-regression",
-    "href": "content/module-model-improvement/model-improvement-regularization.html#ridge-regression",
-    "title": "Regularization",
-    "section": "Ridge regression",
-    "text": "Ridge regression\nOne way to choose the function that penalizes the predictors is to weigh each predictor by the predictor’s coefficient squared. Choosing the penalty term as the square of the coefficient is called ridge regression (AKA L2 regularization, Tikhonov regularization, weight decay, and potentially lots of other names). This leads to the cost function:\n\\[C = SSR + \\lambda \\sum_j^p b_j^2.\\]\nThe parameter \\(\\lambda\\) decides the balance between the goodness of fit (low SSR) and the penalty for having large coefficients. Instead of trying different subsets as above and picking the best based on lowest CV performance, we now try different values of \\(\\lambda\\) and pick the model with the lowest (cross-validated) value for our performance measure, C. The parameter \\(\\lambda\\) is often referred to as the tuning parameter or the penalty. Sometimes \\(\\lambda\\) is also called a hyperparameter of the model, which just means that the best value of \\(\\lambda\\) cannot be found by fitting the model one time only.",
-    "crumbs": [
-      "Content",
-      "10. Model Improvement",
-      "Regularization"
-    ]
-  },
-  {
-    "objectID": "content/module-model-improvement/model-improvement-regularization.html#lasso",
-    "href": "content/module-model-improvement/model-improvement-regularization.html#lasso",
-    "title": "Regularization",
-    "section": "LASSO",
-    "text": "LASSO\nAn alternative is to penalize the coefficients by their absolute value, namely using this cost function:\n\\[C = SSR + \\lambda \\sum_j^p |b_j| \\]\nThis method is called L1 regularization or the Least Absolute Shrinkage and Selection Operator (LASSO). One nice feature of LASSO (which ridge regression does not have) is that coefficients may go to 0. That means the predictor has been dropped from the model, similar to the subset selection approach described previously. One can think of the LASSO as an efficient approach for performing subset selection. It is not quite equivalent though, since, in the LASSO, the predictors that remain might have been shrunk in their impact due to the regularization penalty.",
-    "crumbs": [
-      "Content",
-      "10. Model Improvement",
-      "Regularization"
-    ]
-  },
-  {
-    "objectID": "content/module-model-improvement/model-improvement-regularization.html#elastic-net",
-    "href": "content/module-model-improvement/model-improvement-regularization.html#elastic-net",
-    "title": "Regularization",
-    "section": "Elastic net",
-    "text": "Elastic net\nOne can also combine ridge regression and LASSO into an approach called elastic net, which has a cost function that is the combination of the previous two, namely:\n\\[ C = SSR + \\lambda \\left( (1-\\alpha) \\sum_j^p b_j^2 + \\alpha \\sum_j^p |b_j|\\right)\\]\nNow one needs to try different values for \\(\\lambda\\) (called the penalty parameter) and \\(\\alpha\\) (called the mixture parameter) to determine the model with the best (cross-validated) performance. \\(\\lambda\\) determines the overall weight given to the penalty factor, while \\(\\alpha\\) determines how the penalty should be distributed between the 2 alternative terms. There are also a few variants of this method, such as relaxed elastic net or adaptive elastic net which you can look into if you are interested but we won’t discuss here.",
-    "crumbs": [
-      "Content",
-      "10. Model Improvement",
-      "Regularization"
-    ]
-  },
-  {
-    "objectID": "content/module-model-improvement/model-improvement-regularization.html#tuning-a-regularization-model",
-    "href": "content/module-model-improvement/model-improvement-regularization.html#tuning-a-regularization-model",
-    "title": "Regularization",
-    "section": "Tuning a regularization model",
-    "text": "Tuning a regularization model\nDepending on the kind of regularization model you fit, you have to determine 1 or 2 extra parameters (\\(\\lambda\\) and \\(\\alpha\\)). These parameters are called tuning parameters (or hyperparameters) and it is the first time we see a model that has them. Most complex machine learning models have such tuning parameters, and determining good values for those is part of the model fitting/training process. We’ll talk about that in the next unit.",
-    "crumbs": [
-      "Content",
-      "10. Model Improvement",
-      "Regularization"
-    ]
-  },
-  {
-    "objectID": "content/module-model-improvement/model-improvement-regularization.html#bayesian-regularization",
-    "href": "content/module-model-improvement/model-improvement-regularization.html#bayesian-regularization",
-    "title": "Regularization",
-    "section": "Bayesian Regularization",
-    "text": "Bayesian Regularization\nIf one fits models in a Bayesian framework, one needs to supplies priors for each parameter. If one provides informative priors that constrain the possible values of the model parameters based on prior scientific information, it also leads to regularization and generally reduces overfitting.",
-    "crumbs": [
-      "Content",
-      "10. Model Improvement",
-      "Regularization"
-    ]
-  },
-  {
-    "objectID": "content/module-model-improvement/model-improvement-data-processing.html",
-    "href": "content/module-model-improvement/model-improvement-data-processing.html",
-    "title": "Some Common Data Processing Tasks",
-    "section": "",
-    "text": "This unit provides a quick description of some common data processing tasks that one often needs to do before starting the actual fitting part.",
-    "crumbs": [
-      "Content",
-      "10. Model Improvement",
-      "Pre-Processing Data"
-    ]
-  },
-  {
-    "objectID": "content/module-model-improvement/model-improvement-data-processing.html#variablepredictor-removal",
-    "href": "content/module-model-improvement/model-improvement-data-processing.html#variablepredictor-removal",
-    "title": "Some Common Data Processing Tasks",
-    "section": "Variable/Predictor Removal",
-    "text": "Variable/Predictor Removal\nIt is often the case that we have more data than we need to answer a scientific question. For almost any analysis, one therefore needs to remove some variables before starting the statistical model fitting process. A simple example is an identifier (ID) variable or the names of subjects. Often this information is not needed for the modeling process and can thus be removed before fitting. Other examples are instances where the data was collected for some purpose other than the planned analysis. In this case, it is likely that there are variables in the data which are irrelevant for our analysis.\nSuch removal of variables is done on scientific grounds, based on expert opinion. Ideally, you should report in enough detail which parts of the data you included and excluded in that way to allow the reader to make an informed decision if they agree with what you did. And of course, you should – as much as possible – also provide the raw data and the R scripts which do and document removal of specific variables – such that someone who doesn’t agree with your choice could re-run the analysis with different inclusion/exclusion criteria.\nSometimes, you might have variables that could, in principle, be useful, but the reported values show little diversity and thus contain little information. For instance, if you had a sample of several hundred individuals and only 3 of them were smokers, then it might not be useful to include the smoking variable for the analysis of this dataset, even if, in general, it might be worth considering. Such variables that do not contain much information are called “near-zero variance” variables. Some models perform better if those variables are removed. Other modeling approaches do not care since they have built-in mechanisms to remove variables that are not useful in predicting the outcome.\nAnother instance where removing variables might be useful is if predictors are strongly collinear/correlated. A trivial example is if you have height reported as both inches and centimeters in your data. Obviously, one of them should be removed. Other variables might not be so obviously containing the same information, but might be related enough (collinear) that including both makes the model performance worse. An example might be age and height among children.\nAnother example we already disused are variables with missing values. In this case, you might want to remove the variable, or the observations, or a mix of them.\nIn R, removing variables or observations is easily done with the select and filter functions from dplyr. There are a variety of good packages for dealing with missing/NA values. The naniar package is one of them.\nAll of these inclusion/exclusion decisions are based on expert (that’s you!) judgment. There is no magic recipe you can follow. Some statistical methods can help (see below), but they are only so useful. If someone on the internet tries to sell a magical way of knowing how to process your data before fitting, run away!",
-    "crumbs": [
-      "Content",
-      "10. Model Improvement",
-      "Pre-Processing Data"
-    ]
-  },
-  {
-    "objectID": "content/module-model-improvement/model-improvement-data-processing.html#variable-transformation",
-    "href": "content/module-model-improvement/model-improvement-data-processing.html#variable-transformation",
-    "title": "Some Common Data Processing Tasks",
-    "section": "Variable transformation",
-    "text": "Variable transformation\nIt is often a good idea to transform variables. For instance if you have a model with continuous and categorical predictors, and you want to compare the coefficients returned from some model, you need to have the predictors on the same scales, which you can accomplish by standardizing predictors through centering (transforming the data so the mean is a specific value) and scaling (transforming the data so that it falls within a specific range). The most common method of centering is subtracting the mean, and the most common method of scaling is dividing by the standard deviation. The drawback of such a transformation is that the model results might be harder to interpret and might have to be ‘back-transformed’ to have biological meaning.\nOther common used transformations are converting to log units, since often the log scale is the biologically relevant one. This also reduces the impact of very high and very low values.\nIt is also often the case that some numerical methods your statistical model uses work better when you transform variables. It is always good to check the manual for any statistical model (and its numerical implementation) to see what is described and recommended there.\nWhenever you do some kind of normalization or transformation, check the result of such a transformation to ensure nothing went wrong (e.g., you didn’t accidentally divide by 0 or take the log of a negative number).\nThere are many ways to do variable transformation in R. In this course we will focus for our model fitting approaches on the tidymodels set of packages. Within that set of packages, the recipes package is used for variable transformation.",
-    "crumbs": [
-      "Content",
-      "10. Model Improvement",
-      "Pre-Processing Data"
-    ]
-  },
-  {
-    "objectID": "content/module-model-improvement/model-improvement-data-processing.html#feature-engineering-variable-creation",
-    "href": "content/module-model-improvement/model-improvement-data-processing.html#feature-engineering-variable-creation",
-    "title": "Some Common Data Processing Tasks",
-    "section": "Feature engineering (variable creation)",
-    "text": "Feature engineering (variable creation)\nThe term feature engineering is often used in machine learning. It basically means creating new variables from the existing ones. The hope is that the new variables are better at describing/predicting/correlating with the outcome. (Feature is another word used for predictor or independent variable. The term feature is especially common in the machine learning literature). For instance, if we want to assess the impact of weight on diabetes, using weight itself might not be the best option since it is confounded by height. A 200lb person who’s 5 feet tall is likely at greater risk than someone who is 6 feet tall. We can instead use weight and height and compute BMI and then include that variable/feature in our model instead. In the ML terminology, we just engineered the feature of BMI from the features weight and height. Or in more everyday wording we created a new variable BMI from the two existing variables weight and height.\nCreating the right features that are most meaningful for a model needs to be guided by expert knowledge, and often differentiates the models with good predictive performance from those that are not so good. There are whole books focused on feature engineering (e.g. Feature Engineering and Selection: A Practical Approach for Predictive Models ). The recipes package mentioned above helps with some feature engineering tasks. We won’t use it too much in the course exercises, but keep in mind that it is always an option to create new variables from your existing ones. (One could think of variable transformation described in the previous section as a very simple form of feature engineering, i.e., we create a new variable/feature which is basically just the old one but somehow transformed.)",
-    "crumbs": [
-      "Content",
-      "10. Model Improvement",
-      "Pre-Processing Data"
-    ]
-  },
-  {
-    "objectID": "content/module-model-improvement/model-improvement-data-processing.html#feature-reduction-variable-reduction",
-    "href": "content/module-model-improvement/model-improvement-data-processing.html#feature-reduction-variable-reduction",
-    "title": "Some Common Data Processing Tasks",
-    "section": "Feature Reduction (variable reduction)",
-    "text": "Feature Reduction (variable reduction)\nThis could be considered one type of feature engineering. In some areas of science, this is a step that’s almost always required. For instance, with -omics type data (proteomics, transcriptomics, metabolomics, etc.), it is not uncommon to measure 1000s of variables (e.g., gene expression levels) for one individual person. Thus those datasets often have many more predictors than observations (individuals/samples in the study). This means some models might not work at all (e.g. a standard linear or logistic model) and other models might work but take way too long to run.\nIt is therefore often necessary to reduce the number of predictors. Manual removal of predictors based on biological/expert knowledge, as described above, is one option. But with thousands of predictors, and often no clear a priori idea of which ones are biologically meaningful, this quickly becomes unfeasible. Another option is to use a statistical approach with the goal to find a set of new predictors of size \\(m\\), made up of combinations of the \\(p\\) old ones, such that \\(m \\ll p\\) (\\(m\\) is much less than \\(p\\)). An approach called Principal Component Analysis (PCA) can be used to find such a smaller set of new predictors that capture most of the information contained in the larger set. One drawback of PCA is that it ignores the relationship between predictors and outcome. That means it tries to reduce the dimension/number of predictors by looking for correlations among them, but without paying attention to the potential correlations between predictors and outcome. This can at times lead to sub-optimal performance of the model. To keep predictors that are most associated with the outcome in the model, one can use a method called Partial Least Squares (PLS). Other approaches exist. The overall problem is that the new set of predictors is harder to interpret, and thus insights gained from the model are somewhat reduced. We won’t have time to look in much detail at any of those approaches, but the resources we have been using for this class cover some of the approaches, so check there if interested.",
-    "crumbs": [
-      "Content",
-      "10. Model Improvement",
-      "Pre-Processing Data"
-    ]
-  },
-  {
     "objectID": "content/module-intro-tools/tools-tips-guidance.html",
     "href": "content/module-intro-tools/tools-tips-guidance.html",
     "title": "Guidance and Tips for R/RStudio/GitHub",
@@ -1869,6 +1725,211 @@
     ]
   },
   {
+    "objectID": "content/model-improvement/model-improvement-subset/model-improvement-subset.html",
+    "href": "content/model-improvement/model-improvement-subset/model-improvement-subset.html",
+    "title": "Subset Selection",
+    "section": "",
+    "text": "In this unit, we will cover the idea of subset selection.",
+    "crumbs": [
+      "Content",
+      "10. Model Improvement",
+      "Subset Selection"
+    ]
+  },
+  {
+    "objectID": "content/model-improvement/model-improvement-subset/model-improvement-subset.html#forward-selection",
+    "href": "content/model-improvement/model-improvement-subset/model-improvement-subset.html#forward-selection",
+    "title": "Subset Selection",
+    "section": "Forward selection",
+    "text": "Forward selection\nIn forward selection, you start with the null-model (no predictors), then evaluate all single-predictor models. The best-performing 1-predictor model is chosen, and you build all 2-predictor models on top of that chosen 1-predictor model. You choose the best 2-predictor model, then go on to add a third, and do that until adding any further predictors does not lead to a model that performs better (again, measured by CV on the test set) than the smaller model. E.g., you might find that adding any of the remaining 3rd predictors does not lead to a better-performing model than the 2-predictor model you already have. Then you stop here and pick the 2-predictor model as your best.\nLet’s consider an example. Say you want to predict BMI based on age, sex, calorie intake, and exercise level. Since BMI is continuous, we can consider a linear regression model, and we might try to minimize RMSE between model-predicted BMI and actual measurements. We start by computing RMSE for the null model. Then we compute RMSE for all 1-predictor models. Assume that all 1-predictor models have RMSE lower than the null model, and the lowest RMSE (all computed using cross-validation) of the 1-predictor models is the one that includes calorie intake. Next, you try all 2-predictor models that include calorie intake. Among those, a model with calorie intake + exercise level has the lowest RMSE, and it’s also lower than the model with calorie intake only. Next, you try all 3-predictor models that include the 2 chosen predictors. In this example, only 2 of those 3-predictor models are possible, namely calorie intake + exercise level + age and calorie intake + exercise level + sex. Let’s assume both of those models have RMSE that is larger than the 2 predictor model. Note, it is important to compute RMSE through cross-validation since the RMSE evaluated on the data used for fitting will always be lower for the bigger model. We thus found our best model, namely one that includes the 2 predictors calorie intake + exercise level.",
+    "crumbs": [
+      "Content",
+      "10. Model Improvement",
+      "Subset Selection"
+    ]
+  },
+  {
+    "objectID": "content/model-improvement/model-improvement-subset/model-improvement-subset.html#backward-selection",
+    "href": "content/model-improvement/model-improvement-subset/model-improvement-subset.html#backward-selection",
+    "title": "Subset Selection",
+    "section": "Backward selection",
+    "text": "Backward selection\nBackward selection is essentially the reverse to forward selection: You start with the model with all predictors, then evaluate all models with one predictor dropped. The smaller model with the best performance is your choice. You then drop each predictor at a time from that model. You continue until dropping predictors does not improve performance anymore. Then you keep the model with the best performance. Note that this method does not work on datasets that have more predictors than observations (e.g., most -omics type data).\nLet’s consider the above example again. We now start with a model that includes all 4 predictors and compute cross-validated RMSE. Next, we drop each predictor and try all 3-predictor models. Let’s say the one that dropped exercise level is the 3-predictor model with the lowest RMSE, lower than all other 3-predictor models, and lower than the full model. Next, we drop each variable from the current best candidate 3-predictor model, which is age + sex + calorie intake. All of the 2-predictor models have RMSE larger than the 3-predictor model. We thus found our final model, with the 3 predictors age + sex + calorie intake.\nNote that it is also possible to do “forward-backward” selection: you can choose to start with the full or reduced model, but the method is allowed to add/remove predictors at every step depending on what improves performance most.",
+    "crumbs": [
+      "Content",
+      "10. Model Improvement",
+      "Subset Selection"
+    ]
+  },
+  {
+    "objectID": "content/model-improvement/model-improvement-subset/model-improvement-subset.html#exhaustive-subset-selection",
+    "href": "content/model-improvement/model-improvement-subset/model-improvement-subset.html#exhaustive-subset-selection",
+    "title": "Subset Selection",
+    "section": "Exhaustive subset selection",
+    "text": "Exhaustive subset selection\nYou might have noticed that in my example, forward selection and backward selection do not necessarily produce the same model. The reason for that is that neither forward- or backward-selection try all possible models (predictor combinations). Both approaches use what is called a greedy strategy. Once they included or excluded a predictor, it can never be dropped or included. Once you picked your 1-predictor model, all subsequent models will consist of that 1 predictor model - even if there might be a better performing 2-predictor model that doesn’t include the 1st predictor you picked. The same holds for dropping predictors in backward selection.\nAlso, as in my example, often (but not always), the final model determined through backward selection tends to include more predictors than a model determined through forward selection. In such a case, you have to decide which model to choose. Alternatively, you can try a different way of choosing the model. One approach is to try models with all combinations of predictors. This is called exhaustive subset selection, all subsets selection, or best subset selection (although note that “best subset selection” can also refer to a different method which still hasn’t gained much traction). If you have only a few predictors, you can try every combination of predictors. However, once you have more than 5-10 predictors (depending on the number of observations), trying every combination of sub-models would be too time-consuming. Therefore, most of the time, such an exhaustive feature selection is not feasible.",
+    "crumbs": [
+      "Content",
+      "10. Model Improvement",
+      "Subset Selection"
+    ]
+  },
+  {
+    "objectID": "content/model-improvement/model-improvement-subset/model-improvement-subset.html#other-subset-selection-methods",
+    "href": "content/model-improvement/model-improvement-subset/model-improvement-subset.html#other-subset-selection-methods",
+    "title": "Subset Selection",
+    "section": "Other subset selection methods",
+    "text": "Other subset selection methods\nThere have recently been a number of approaches that try to be somewhat smarter in finding the best model, without having to try every combination. The caret package has several methods, such as Genetic Algorithms and Simulated Annealing. Those methods often do a good job finding a very good sub-model in a reasonable amount of time. While the only guarantee that you found the single best model is to try them all using exhaustive subset selection, these modern approaches usually find a model that is either the best or at least close to the best while doing so rather efficiently. See sections 18-22 of the caret manual for more information if you are interested. The mlr/mlr3 packages also have similar such selection methods. tidymodels currently does not have any subset selection procedure implemented (see more below).",
+    "crumbs": [
+      "Content",
+      "10. Model Improvement",
+      "Subset Selection"
+    ]
+  },
+  {
+    "objectID": "content/model-improvement/model-improvement-subset/model-improvement-subset.html#manual-subset-selection",
+    "href": "content/model-improvement/model-improvement-subset/model-improvement-subset.html#manual-subset-selection",
+    "title": "Subset Selection",
+    "section": "Manual subset selection",
+    "text": "Manual subset selection\nAll the approaches above use cross-validated performance of some metric to determine which predictors should be included in the model. Another, still commonly used strategy is to do subset selection manually. The analyst usually starts with a simple model containing just one predictor (the most important one), and then decides based on model results (e.g., systematic deviations in the residuals) and/or based on scientific knowledge, if adding additional predictors is justified. For a skilled analyst with a lot of subject matter expertise, this can lead to models that are all-around very good. They have good performance, make scientific sense, and are still simple. Unfortunately, this requires a lot of knowledge, time and careful analysis. Also, the analyst needs to honestly report any model they tried, not just the one they end up with. Otherwise they are using and not reporting researcher’s degrees of freedom, which leads to overfitting. Most analyses are not done that way.\n\nI mentioned this before in various places and it’s a theme throughout the course, that unless data is collected and analyzed using pre-specified protocols (e.g., a clinical trial for FDA approval) it is almost always the case that scientists have so much flexibility during the data collection and analysis stages that p-values and similar statistical measures are meaningless. The Researcher’s degrees of freedom issue is everywhere and essentially impossible to get rid of. For more on this topic, see the Pitfalls section on the General Resources page.\nAll of this applies to manual subset selection (which is why I’m thinking about it here and adding this note), but it is more general and applies to every step in a scientific project.",
+    "crumbs": [
+      "Content",
+      "10. Model Improvement",
+      "Subset Selection"
+    ]
+  },
+  {
+    "objectID": "content/model-improvement/model-improvement-overview.html",
+    "href": "content/model-improvement/model-improvement-overview.html",
+    "title": "Model improvement",
+    "section": "",
+    "text": "Overview\nAlmost always, your first model is not that great. You generally want to improve your models to find a good one.\nThis module discusses ways to improve your models.\n\n\nLearning Objectives\n\nBe familiar with methods to improve models.\nBe able to perform different model improvement tasks.\n\n\n\nContent\nThe module consists of the following units:\n\nModel improvement introduction\nSubset selection\nRegularization\nTuning",
+    "crumbs": [
+      "Content",
+      "10. Model Improvement",
+      "Model Improvement Overview"
+    ]
+  },
+  {
+    "objectID": "content/model-improvement/assessment-model-improvement.html",
+    "href": "content/model-improvement/assessment-model-improvement.html",
+    "title": "Assessment - Improving Models",
+    "section": "",
+    "text": "Get the quiz sheet for this module from the general Assessments page. Fill it in, then submit to the online grading system before the deadline.",
+    "crumbs": [
+      "Assessments",
+      "10. Model Improvment"
+    ]
+  },
+  {
+    "objectID": "content/model-improvement/assessment-model-improvement.html#setup",
+    "href": "content/model-improvement/assessment-model-improvement.html#setup",
+    "title": "Assessment - Improving Models",
+    "section": "Setup",
+    "text": "Setup\nYou’ll continue working on the Flu Analysis exercise you started previously. We’ll also do some group work again, using the – by now familiar – M1, M2, … setup. Assign each other a number. As much as possible, do it such that you end up working with group members you have not (or not in a while) worked with. If you are in a group of 4, you can do pairs. That of course doesn’t work in a group of 3 or 5, so you need to use the ‘circular’ setup there. The goal is that, as in past exercises, everyone will work on their own repository and on one other person’s repository.\nAt this stage, I assume all the data wrangling and EDA code, as well as the model fitting code you worked on previously is present and fully functional. If there are still some issues that need to be resolved, go ahead and do so.\nPlace a new Quarto file called modeleval.qmd into the code folder (or sub-folder, if you use them). As always, you can of course either use a single Quarto file with code or put the code into an R script and pull it into the Quarto file. In either case, document/comment well.",
+    "crumbs": [
+      "Assessments",
+      "10. Model Improvment"
+    ]
+  },
+  {
+    "objectID": "content/model-improvement/assessment-model-improvement.html#data-splitting",
+    "href": "content/model-improvement/assessment-model-improvement.html#data-splitting",
+    "title": "Assessment - Improving Models",
+    "section": "Data splitting",
+    "text": "Data splitting\nWrite code that takes the data and splits it randomly into a train and test that, following for instance the example in the Data Splitting section of the Get Started tidymodels tutorial.",
+    "crumbs": [
+      "Assessments",
+      "10. Model Improvment"
+    ]
+  },
+  {
+    "objectID": "content/model-improvement/assessment-model-improvement.html#workflow-creation-and-model-fitting",
+    "href": "content/model-improvement/assessment-model-improvement.html#workflow-creation-and-model-fitting",
+    "title": "Assessment - Improving Models",
+    "section": "Workflow creation and model fitting",
+    "text": "Workflow creation and model fitting\nNext, following the example in the Create Recipes section of the Get Started tidymodels tutorial, create a simple recipe that fits a logistic model to our categorical outcome of interest, using all predictors. (We start with categorical and all predictors since that’s the closest to the shown example). For now, you can ignore the concept of roles and features they mention.\nSet a model as you did in the previous exercise, then use the workflow() function to create a simple workflow that fits a logistic model to all predictors using the glm engine. To that end, follow the Fit a model with a recipe section of the tutorial and adjust for your case.\nYou should end up with a fit object similar to the one shown at the end of that section in the tutorial - of course, yours will look somewhat different since you are using a different dataset, but overall things should look similar.",
+    "crumbs": [
+      "Assessments",
+      "10. Model Improvment"
+    ]
+  },
+  {
+    "objectID": "content/model-improvement/assessment-model-improvement.html#model-1-evaluation",
+    "href": "content/model-improvement/assessment-model-improvement.html#model-1-evaluation",
+    "title": "Assessment - Improving Models",
+    "section": "Model 1 evaluation",
+    "text": "Model 1 evaluation\nFollow the example in the Use a trained workflow to predict section of the tutorial to look at the predictions, ROC curve and ROC-AUC for your data. Apply it to both the training and the test data. ROC curve analysis and ROC-AUC is another common performance measure/metric for categorical outcomes. If you are not familiar with it, you can read more about them by following the link in the tutorial. It’s not too important to go into the details for now. The focus here is on getting the code to work. In general, a ROC-AUC of 0.5 means the model is no good, 1 is a perfect model. Generally, somewhere above 0.7 do people think the model might be useful. If your model has a ROC-AUC a lot less than 0.5, you likely have an issue with how your factors are coded or how tidymodels is interpreting them.",
+    "crumbs": [
+      "Assessments",
+      "10. Model Improvment"
+    ]
+  },
+  {
+    "objectID": "content/model-improvement/assessment-model-improvement.html#alternative-model",
+    "href": "content/model-improvement/assessment-model-improvement.html#alternative-model",
+    "title": "Assessment - Improving Models",
+    "section": "Alternative model",
+    "text": "Alternative model\nLet’s re-do the fitting but now with a model that only fits the main predictor to the categorical outcome. You should notice that the only thing you have to change is to set up a new recipe, this time one that only has the name of the predictor of interest on the right side of the formula (instead of the . symbol, which is shorthand notation for “all predictors”.) Then you can set up a new workflow with the new recipe, rerun the fit and evaluate performance using the same code as above. In general, if you do multiple models/recipes, you might want to write a loop to go over them, or parallelize/vectorize things. For now, just copying and pasting most of the code is ok.",
+    "crumbs": [
+      "Assessments",
+      "10. Model Improvment"
+    ]
+  },
+  {
+    "objectID": "content/model-improvement/assessment-model-improvement.html#wrap-up-part-1",
+    "href": "content/model-improvement/assessment-model-improvement.html#wrap-up-part-1",
+    "title": "Assessment - Improving Models",
+    "section": "Wrap up part 1",
+    "text": "Wrap up part 1\nMake sure everything runs and works as expected. Also make sure everything is well commented/documented/explained! Then commit, push and tell your classmate that they can take over. Finish this by Wednesday.",
+    "crumbs": [
+      "Assessments",
+      "10. Model Improvment"
+    ]
+  },
+  {
+    "objectID": "content/model-improvement/assessment-model-improvement.html#continuous-outcome",
+    "href": "content/model-improvement/assessment-model-improvement.html#continuous-outcome",
+    "title": "Assessment - Improving Models",
+    "section": "Continuous outcome",
+    "text": "Continuous outcome\nFork and clone (or if you are added as collaborator, clone directly) your classmate’s repository. Open their modeleval.qmd file. Add a heading at the bottom that says # This section added by YOURFULLNAME. I need this so I can grade accordingly.\nAdd code that repeats the above steps, but now fits linear models to the continuous outcome. One model with all predictors, one model with just the main predictor. For that, you need to change your metric. RMSE is a good one to choose. You should find that a lot of the code your classmate wrote can copied/pasted/re-used with only minimal modifications. Make sure to add comments/documentation.",
+    "crumbs": [
+      "Assessments",
+      "10. Model Improvment"
+    ]
+  },
+  {
+    "objectID": "content/model-improvement/assessment-model-improvement.html#wrap-up-part-2",
+    "href": "content/model-improvement/assessment-model-improvement.html#wrap-up-part-2",
+    "title": "Assessment - Improving Models",
+    "section": "Wrap up part 2",
+    "text": "Wrap up part 2\nMake sure everything runs and works as expected. Then commit, push and if you forked the repo, initiate a pull request. Tell our classmate that its done.",
+    "crumbs": [
+      "Assessments",
+      "10. Model Improvment"
+    ]
+  },
+  {
+    "objectID": "content/model-improvement/assessment-model-improvement.html#test-and-website-update",
+    "href": "content/model-improvement/assessment-model-improvement.html#test-and-website-update",
+    "title": "Assessment - Improving Models",
+    "section": "Test and website update",
+    "text": "Test and website update\nThe original repository owner should make sure everything works. Then, add the newly created Quarto document as an entry into your _quarto.yml file, as a sub-menu of Flu fitting. Call it Model Evaluation. Recompile your portfolio website and make sure everything works and shows up as expected. Then commit and push.\nSince this is part of your portfolio site, you don’t need to post anything, I know where to find it. Therefore there is no exercise Slack channel for this module.",
+    "crumbs": [
+      "Assessments",
+      "10. Model Improvment"
+    ]
+  },
+  {
+    "objectID": "content/model-improvement/assessment-model-improvement.html#looking-ahead",
+    "href": "content/model-improvement/assessment-model-improvement.html#looking-ahead",
+    "title": "Assessment - Improving Models",
+    "section": "Looking ahead",
+    "text": "Looking ahead\nWe also covered overfitting and strategies to minimize it (e.g., cross-validation), and further model assessment strategies in the materials. We’ll practice those in future exercises. I figured the above will already take a good bit of getting used to, and we will be able to practice more when we look at further model types in the coming weeks.",
+    "crumbs": [
+      "Assessments",
+      "10. Model Improvment"
+    ]
+  },
+  {
     "objectID": "content/model-fitting/model-fitting-overview.html",
     "href": "content/model-fitting/model-fitting-overview.html",
     "title": "Model fitting",
@@ -2084,7 +2145,19 @@
     "href": "content/model-assessment/diagnostics-assessment/diagnostics-assessment.html",
     "title": "Model diagnostics",
     "section": "",
-    "text": "Overview\nThis unit discusses different diagnostics that are helpful to assess models.\n\n\nLearning Objectives\n\nBe familiar with diagnostic approaches that can help assess model quality.\n\n\n\nIntroduction\nWe already discussed several approaches of asssessing models. One was based on a broad comparison with the real world, the other one focused narrowly on model evaluation based on some performance metric. There are several other ways to assess models that are in some sense between the very broad and very narrow approaches we discussed.\n\n\nAlgorithm and Code assessment\nThese days, every model is implemented in and fit through some kind of numerical algorithm. It is important to ensure the algorithm worked. While this is not assessing the actual model, if you find that your model fitting algorithm didn’t work, you can’t use the results and will likely have to modify your model.\nFor simple models, such as GLM-type models, this is almost never a problem. But as models get more complex, things can go wrong. A common issue is algorithm convergence. What is meant by that is that your fitting routine can’t find the value that optimizes your objective function/performance metric. This is often related to overfitting. You are likely trying to fit a model that’s too complex given the data you have available.\nIt is generally not necessary to understand the details of how the underlying algorithm works. However, if you get error or warning messages, or if there are diagnostic readouts that indicate a problem, then you’ll have to first fix those before you can further consider the model. Often, the fix is to simplify the model.\nMany fitting functions return useful information as output. Take a close look. If you thought you had 200 data points but your fitting function result states that N=180, it means the function might have dropped observations with missing values without warning you (R unfortunately does things like that at times). By carefully reading/plotting model returns, you can diagnose your model and catch problems.\nIf you get strange results (either unexpectedly bad or unexpectedly good), look carefully. As you know, most often things that are too good to be true are in fact not true. Bugs (either of the coding or thinking type) in any step of your analysis can lead to strange results.\nIf at any time during your analysis, you get warning messages, you need to investigate them carefully. Sometimes it is ok to ignore warning messages in R but only after you know precisely what they mean and why they happen!. Frequently, warning messages indicate you are doing something you shouldn’t be doing and can lead to wrong results.\n\n\nNull model comparisons\nYou should always compare your models to a “dumb” null/baseline model. A null model for a continuous outcome would be one that always predicts the mean. That is it uses no information from the predictor variables. For categorical outcomes, a null model would always predict the most common category, without using any information about predictor variables. If your more complicated model can’t beat such a null model (based on the performance metric you chose), you need to question what your model is good for. Remember that the metric is important. A null model with, e.g., high accuracy might not be as good as a different model with lower accuracy. Recall the brain cancer example mentioned in a previous unit.\n\n\nSingle predictor comparisons\nBefore building and fitting a big model, it is useful to look at the different predictors individually. (Or if you have too many, at least at some you think are important.)\nTo that end, you can perform bi-variable analyses, fitting models that each only contain a single predictor and evaluate the model performance (ideally using cross-validation) of such single-predictor models. You should definitely do that for the predictor(s) that are of main interest.\nOnce you start fitting your larger models, you can compare those to your single predictor models. Conceptually, if you only look at the performance on the data used to build the model, your multi-predictor model always performs better or at least as good as your single predictor models, which in turn should perform at least as well as your null model. If that is not the case, it means something went wrong in the analysis. Of course, now that you are aware of overfitting, you know that if you evaluate your models through cross-validation, the bigger multi-variable model does not always perform better.\nAs an example, if you want to predict mortality and you have a model (say a logistic model with outcome of 5-year mortality yes/no) that includes as predictors diet, exercise, BMI, gender and age, and such a model performs as well as a model with only age, it means that including those additional variables does not add to model performance.\n\n\nObserved versus predicted values\nThe model performance metric gives you a single quantity describing how well the model matches the data, given the metric you defined. That’s useful, but you generally want to dig deeper and compare model predictions to the observed data for individual observations.\nFor continuous outcomes, you can plot those two quantities on the x- and y-axes. For a (hypothetical) perfect model, all points are along the 45-degree line. You don’t actually want them all perfectly on the line since this suggests overfitting. Some scatter along the line is expected and healthy. However, you want to look for systematic deviations from this line, as it suggests potential problems, i.e., it likely means your model is biased and is not flexible enough to capture important patterns still found in the data (i.e., your model is underfitting). In that case, you will want to try different models.\nSimilarly, for categorical outcomes, you can look at the confusion matrix to see if there are lots of FN or FP, which might suggest the model gets certain categories systematically wrong.\nIn the common case that you only have 2 categories (e.g., yes/no) and you use a logistic model or some other model that predicts probabilities, you can plot those model-predicted probabilities together with the observed data (which will be just 0 or 1). You are again looking for any patterns that might indicate that there are systematic deviations between model predictions and data that could suggest that your model needs tweaking.\n\n\nResiduals\nInstead of (or in addition to) plotting observed versus predicted for continuous outcomes, you can plot the difference between the two. These differences are called the residuals. What you are looking for is a cloud of points with no discernible pattern. If there is a pattern (e.g., an overall skew, or more points above the 0 y-axes than below), it again suggests that there is still some pattern/signal in the data that the model didn’t capture.\n\n\nSensitivity analysis\nSometimes you have observations that might have a strong impact on the model, i.e., without those observations, the best fitting model would look quite different. If you decided that those points are real (i.e., not data entry or other mistakes), you might want to run the model both with those data points present and absent to investigate how results might change. Similarly, you might make decisions along the data cleaning path (e.g., to remove all observations with missing values, or instead remove some variables with lots of missing) which could affect results. Performing analyses in multiple ways to see how these decisions affect outcomes is useful. If you find that the overall results stay the same, it instills confidence in the robustness of your findings. If in contrast, different decisions lead to different answers, it might point to something worth investigating further.\nSince you are learning to set up your analysis in a fully automated way, doing such additional analyses is fairly painless. Often it just requires a small adjustment in code and waiting for the additional analysis to run.\nNote that sometimes the term sensitivity analysis is used to imply a more limited approach, namely just the exploration of the impact of model parameters on the outcomes. However, in the more broader sense of the word, it is the exploration how changes in the analysis pipeline (different subsets of data, different modeling assumptions, etc.) might or might not impact the results.\n\n\nModel Interpretation\nA nice feature of using subset selection or LASSO with GLMs, or fitting a single tree, is that the algorithm decides which predictor variables are important, and throws out the remaining ones. For the ones that stay in the model, we can look at the coefficients in front of each predictor variable, or look at the final tree/decision diagram, to assess the importance of individual predictor variables on the outcome. This provides an easy way to understand how specific variables influence the outcome.\nThose simple approaches are not available anymore for more complex models. With complex models, we generally give up interpretability in exchange for better performance. However, we ideally want both. The last several years have seen a good amount of development to come up with methods that allow one to peek inside the black box, i.e. to understand why and how a complex model makes its predictions, and what the role of specific predictor variables is on the outcome. This area is generally called interpretable machine learning.\nThere’s no point in me repeating what others have already said (much better than I could) 😃, therefore, instead of me writing more on this, please take a look at chapters 2 and 3 of the Interpretable Machine Learning (IML) book, which gives a very nice introduction on this topic. As you can tell by the title, the whole book is about interpretation of machine learning methods, and is a great resource.\nFor a shorter, but also great resource, check out chapter 16 of HMLR, which provides both a quick introduction and overview to the topic, and lists and illustrates the use of several R packages to do various interpretation tasks.\nAnother good introduction is this chapter of the Tidy Modeling with R book.\nAs models get more complex, making sense of them will increase in importance. Even if you are mainly interested in predictive performance and less on understanding your system, it is a good idea to investigate your model in some detail. You might often figure out things that can help further increase model performance. Also, without understanding at least to some extent how complex models make their predictions, the potential for unnoticed bias increases. A good example of this can be found in this very recent Science paper which describes racial bias in a machine learning model that tries to predict healthcare needs of patients. See also this commentary on the article. Thus, this area of interpreting results from complex models will likely see much development in the near future, hopefully leading to models that are both powerful (and thus likely complex) and interpretable.\nGiven how easy it is to apply some of these methods to your models, I recommend that if you decide to use a somewhat complex model (or even a not-so complex one), you should always do at least some analyses that probe the model, e.g. perform a variable importance analysis and related investigations as described in the references above.\n\n\nSummary\nWhen assessing your models, it is important to go beyond the performance metric and look at individual model predictions and how closely they agree with the data. If you spot residual patterns, that might indicate that you could (but don’t have to) make your model more complex/flexible to try and capture additional details of the data. In general, model assessment is a holistic approach that you should do carefully and thoroughly.\n\n\nFurther Resources\nThe chapters Judging model effectiveness and When should you trust your predictions? of the TMWR book have some additional good information.\n\n\nTest yourself\nWhat’s the term for the differences between data and model that you want to see distributed like a symmetric cloud?\n\n Overfitting Variance Residuals Bias\n\nOn a predicted versus observed plots, the points should cluster along a horizontal line to indicate a good model fit. TRUEFALSE If your overall model metric (e.g. Accuracy) is very good, you don’t need to look at individual predictions. TRUEFALSE\n\n\nPractice\n\nRevisit any of the papers you found in one of the previous exercises. See if the authors used any of the approaches discussed here to assess their model(s). Often, this kind of information would be in the supplement. At the minimum, you’d want the authors to mention that they did these checks. Unfortunately, you’ll often see it missing. It seems that at times, authors/analysts don’t want to look too closely, otherwise they would need to acknowledge that their cherished model is actually not that good 😁.",
+    "text": "This unit discusses different diagnostics that are helpful to assess models.",
+    "crumbs": [
+      "Content",
+      "9. Model Assessment",
+      "Model diagnostics"
+    ]
+  },
+  {
+    "objectID": "content/model-assessment/diagnostics-assessment/diagnostics-assessment.html#footnotes",
+    "href": "content/model-assessment/diagnostics-assessment/diagnostics-assessment.html#footnotes",
+    "title": "Model diagnostics",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nWell, it can actually be quite tricky to interpret coefficients for anything but a linear model. For instance for a logistic model (and many other GLM), the impact of a change in a predictor on the outcome depends on the value of the predictor. Sometimes a 1-unit increase in some predictor (say drug dose) can lead to a strong change in the outcome (say cholesterol level), while for other values of that predictor, increasing it further by 1 unit might have almost no impact on the outcome. So one needs to be careful even when interpreting fairly simple GLM. However, the whole model is known so you can always figure out how one part relates to the other. That’s not the case any more for complex ML models.↩︎",
     "crumbs": [
       "Content",
       "9. Model Assessment",
@@ -2103,7 +2176,7 @@
     "href": "content/model-assessment-r/diagnostics-assessment-r/diagnostics-assessment-r.html",
     "title": "Model diagnostics with R",
     "section": "",
-    "text": "Overview\nThis unit shows how to use R to run different diagnostics that are helpful to assess models.\n\n\nLearning Objectives\n\nKnow how to implement different diagnostic approaches with R.\n\n\n\nIntroduction\nWe previously discussed how to use different diagnostics to assess models. Here, we’ll focus on their implementation with R. We’ll mostly work with the tidymodels set of packages.\n\n\nAlgorithm assessment\n\n\nNull model comparisons\nIn tidymodels, you can use the null_model() function to compute the performance for a null/base model.\n\n\nSingle predictor comparisons\n\n\nObserved versus predicted values\nThe model performance metric gives you a single quantity describing how well the model matches the data, given the metric you defined. That’s useful, but you generally want to dig deeper and compare model predictions to the observed data for individual observations.\nFor continuous outcomes, you can plot those two quantities on the x- and y-axes. For a (hypothetical) perfect model, all points are along the 45-degree line. You don’t actually want them all perfectly on the line since this suggests overfitting. Some scatter along the line is expected and healthy. However, you want to look for systematic deviations from this line, as it suggests potential problems, i.e., it likely means your model is biased and is not flexible enough to capture important patterns still found in the data (i.e., your model is underfitting). In that case, you will want to try different models.\nSimilarly, for categorical outcomes, you can look at the confusion matrix to see if there are lots of FN or FP, which might suggest the model gets certain categories systematically wrong.\nIn the common case that you only have 2 categories (e.g., yes/no) and you use a logistic model or some other model that predicts probabilities, you can plot those model-predicted probabilities together with the observed data (which will be just 0 or 1). You are again looking for any patterns that might indicate that there are systematic deviations between model predictions and data that could suggest that your model needs tweaking.\n\n\nResiduals\nInstead of (or in addition to) plotting observed versus predicted for continuous outcomes, you can plot the difference between the two. These differences are called the residuals. What you are looking for is a cloud of points with no discernible pattern. If there is a pattern (e.g., an overall skew, or more points above the 0 y-axes than below), it again suggests that there is still some pattern/signal in the data that the model didn’t capture.\n\n\nSummary\nWhen assessing your models, it is important to go beyond the performance metric and look at individual model predictions and how closely they agree with the data. If you spot residual patterns, that might indicate that you could (but don’t have to) make your model more complex/flexible to try and capture additional details of the data.\n\n\nFurther Resources\nNone ATM.\n\n\nTest yourself\nWhat’s the term for the differences between data and model that you want to see distributed like a symmetric cloud?\n\n Overfitting Variance Residuals Bias\n\nOn a predicted versus observed plots, the points should cluster along a horizontal line to indicate a good model fit. TRUEFALSE If your overall model metric (e.g. Accuracy) is very good, you don’t need to look at individual predictions. TRUEFALSE\n\n\nPractice\n\nRevisit any of the papers you found in one of the previous exercises. See if the authors used any of the approaches discussed here to assess their model(s). Often, this kind of information would be in the supplement. At the minimum, you’d want the authors to mention that they did these checks. Unfortunately, you’ll often see it missing. It seems that at times, authors/analysts don’t want to look too closely, otherwise they would need to acknowledge that their cherished model is actually not that good 😁."
+    "text": "Overview\nThis unit shows how to use R to run different diagnostics that are helpful to assess models.\n\n\nLearning Objectives\n\nKnow how to implement different diagnostic approaches with R.\n\n\n\nIntroduction\nWe previously discussed how to use different diagnostics to assess models. Here, we’ll focus on their implementation with R. We’ll mostly work with the tidymodels set of packages.\n\n\nAlgorithm assessment\n\n\nNull model comparisons\nIn tidymodels, you can use the null_model() function to compute the performance for a null/base model.\n\n\nSingle predictor comparisons\n\n\nSummary\nWhen assessing your models, it is important to go beyond the performance metric and look at individual model predictions and how closely they agree with the data. If you spot residual patterns, that might indicate that you could (but don’t have to) make your model more complex/flexible to try and capture additional details of the data.\n\n\nFurther Resources\nNone ATM.\n\n\nTest yourself\nWhat’s the term for the differences between data and model that you want to see distributed like a symmetric cloud?\n\n Overfitting Variance Residuals Bias\n\nOn a predicted versus observed plots, the points should cluster along a horizontal line to indicate a good model fit. TRUEFALSE If your overall model metric (e.g. Accuracy) is very good, you don’t need to look at individual predictions. TRUEFALSE\n\n\nPractice\n\nRevisit any of the papers you found in one of the previous exercises. See if the authors used any of the approaches discussed here to assess their model(s). Often, this kind of information would be in the supplement. At the minimum, you’d want the authors to mention that they did these checks. Unfortunately, you’ll often see it missing. It seems that at times, authors/analysts don’t want to look too closely, otherwise they would need to acknowledge that their cherished model is actually not that good 😁."
   },
   {
     "objectID": "content/content-overview.html",
@@ -2287,7 +2360,7 @@
     "href": "content/model-assessment/uncertainty-assessment/uncertainty-assessment.html",
     "title": "Model uncertainty assessment",
     "section": "",
-    "text": "This unit discusses model uncertainty, how to compute and and how to assess it.",
+    "text": "This unit discusses model uncertainty, how to compute and and how to assess it.\n\n\n\nA study with n=1 has large uncertainty. Source: SMBC.",
     "crumbs": [
       "Content",
       "9. Model Assessment",
@@ -2299,7 +2372,7 @@
     "href": "content/model-assessment/uncertainty-assessment/uncertainty-assessment.html#confidence-interval-ci",
     "title": "Model uncertainty assessment",
     "section": "Confidence interval (CI)",
-    "text": "Confidence interval (CI)\nConfidence intervals (CIs) are maybe the most commonly reported uncertainty. Those intervals capture uncertainty in the model parameters and thus uncertainty in the mean outcome. CIs are very useful if we want to know the overall results. For instance, going back to the example above, if we report an average drug-induced improvement in some quantity by 20%, with a CI (having some width, such as 89% or 95% or…) of 15% - 25%, we can conclude that if we gave the drug to another population like the one we studied, this is roughly the range of impacts we should expect to see in the new study.2",
+    "text": "Confidence interval (CI)\nConfidence intervals (CIs) are a common way to report uncertainty. Those intervals capture uncertainty in the estimates for the model parameters and thus uncertainty in the mean outcome. CIs are very useful if we want to estimate the uncertainty in the population average outcome. For instance, going back to the example above, if we report an average drug-induced improvement in some quantity by 20%, with a CI (having some width, such as 89% or 95% or…) of 15% to 25%, we can conclude that if we gave the drug to another population like the one we studied, this is roughly the range of impacts we should expect to see in the new study.2",
     "crumbs": [
       "Content",
       "9. Model Assessment",
@@ -2307,11 +2380,11 @@
     ]
   },
   {
-    "objectID": "content/model-assessment/uncertainty-assessment/uncertainty-assessment.html#standard-errors",
-    "href": "content/model-assessment/uncertainty-assessment/uncertainty-assessment.html#standard-errors",
+    "objectID": "content/model-assessment/uncertainty-assessment/uncertainty-assessment.html#standard-error-se",
+    "href": "content/model-assessment/uncertainty-assessment/uncertainty-assessment.html#standard-error-se",
     "title": "Model uncertainty assessment",
-    "section": "Standard errors",
-    "text": "Standard errors",
+    "section": "Standard error (SE)",
+    "text": "Standard error (SE)\nStandard errors (also often called standard error of the mean, SEM) are closely related to CI. For SE, you need to assume some kind of distribution for the quantity of interest. Almost always, that’s a normal distribution (which is often what you implicitly do when you optimize RMSE). In the common case that one looks at 95% CI and assumes a normal distribution, the relation is that CI = 1.96*SE. Thus, with SE, you get tighter bounds (they correspond to 68% CI). As for CI, an increase in data usually leads to more precise estimates of the mean outcome and therefore tighter bounds. It seems to me that SE are popular because the give the tightest bounds and thus the impression of preciseness 😁.",
     "crumbs": [
       "Content",
       "9. Model Assessment",
@@ -2319,11 +2392,11 @@
     ]
   },
   {
-    "objectID": "content/model-assessment/uncertainty-assessment/uncertainty-assessment.html#standard-deviations",
-    "href": "content/model-assessment/uncertainty-assessment/uncertainty-assessment.html#standard-deviations",
+    "objectID": "content/model-assessment/uncertainty-assessment/uncertainty-assessment.html#prediction-interval-pi",
+    "href": "content/model-assessment/uncertainty-assessment/uncertainty-assessment.html#prediction-interval-pi",
     "title": "Model uncertainty assessment",
-    "section": "Standard deviations",
-    "text": "Standard deviations",
+    "section": "Prediction interval (PI)",
+    "text": "Prediction interval (PI)\nIf we are interested in model predictions, we generally also want to know how much uncertainty is associated with those predictions. The difference between a CI and a prediction interval (for some reason, almost never abbreviated as PI - but I’m doing it here to make my typing life easier 😁) is that the latter also accounts for variation around the estimated mean.\nIt is important to be aware of the fact that prediction intervals are not the same as confidence intervals. The latter quantifies the uncertainty in model parameters, e.g., the bi in a regression model. Since those bi have uncertainty, the model predictions for the expected observation has uncertainty. However, each real observation has additional scatter around the expected value. This additional uncertainty needs to be factored in when trying to make predictions for individual outcomes. Thus, PI are always wider than CI - sometimes substantially so.",
     "crumbs": [
       "Content",
       "9. Model Assessment",
@@ -2331,11 +2404,11 @@
     ]
   },
   {
-    "objectID": "content/model-assessment/uncertainty-assessment/uncertainty-assessment.html#prediction-interval",
-    "href": "content/model-assessment/uncertainty-assessment/uncertainty-assessment.html#prediction-interval",
+    "objectID": "content/model-assessment/uncertainty-assessment/uncertainty-assessment.html#standard-deviation-sd",
+    "href": "content/model-assessment/uncertainty-assessment/uncertainty-assessment.html#standard-deviation-sd",
     "title": "Model uncertainty assessment",
-    "section": "Prediction interval",
-    "text": "Prediction interval\nIf we are interested in model predictions, we generally also want to know how much uncertainty is associated with those predictions. The difference between a CI and a prediction interval (for some reason, almost never abbreviated as PI) is that the latter also accounts for variation around the estimated mean. Thus, prediction intervals are always wider than CI - sometimes substantially so. Unfortunately, they are often confused, readers - even experts - often interpret CI as if they were prediction intervals. This paper is worth a read. Figure 1 in this paper shows an example where the\nFor continuous outcomes, computing prediction intervals gives an idea of the uncertainty in our predictions. As for parameter uncertainty, some R functions have built-in methods to compute prediction intervals, or you can use the bootstrap approach.\nPrediction intervals are not the same as confidence intervals. The latter quantifies the uncertainty in model parameters, e.g., the bi in a regression model. Since those bi have uncertainty, the model predictions for the expected observation has uncertainty. However, each real observation has additional scatter around the expected value. This additional uncertainty needs to be factored in when trying to make predictions for individual outcomes. As such, prediction intervals are wider than confidence intervals.\nIt is unfortunately common that papers report confidence intervals, but the authors and/or readers think of them as prediction intervals. This leads to overly confident statements about the performance of the model.",
+    "section": "Standard deviation (SD)",
+    "text": "Standard deviation (SD)\nStandard deviation is a measure that tries to assess the spread in the data itself. Thus, it is closely related to the prediction interval. SE and SD are related through SE = SD/\\(\\sqrt(N)\\), where \\(N\\) is the sample size. What that means in practice is that as you get more data, your estimates of the mean (or in general population average outcome) become more precise. However, the actual variability in the data will likely not change much, so the SD remains similar.\nThis is the same idea for CI and prediction intervals. As you get more data, your CI generally shrink. But your prediction intervals likely will not, since the spread in the data will probably not change much as you get more data.",
     "crumbs": [
       "Content",
       "9. Model Assessment",
@@ -2347,7 +2420,7 @@
     "href": "content/model-assessment/uncertainty-assessment/uncertainty-assessment.html#credible-interval",
     "title": "Model uncertainty assessment",
     "section": "Credible interval",
-    "text": "Credible interval",
+    "text": "Credible interval\nIf one uses Bayesian methods for data analysis, the equivalent of a confidence interval is a credible interval. Credible intervals are sometimes - unfortunately - also abbreviated as CI, sometimes CrI. A credible interval is essentially the Bayesian equivalent to a confidence interval. It informs you about the uncertainty in the population estimate.",
     "crumbs": [
       "Content",
       "9. Model Assessment",
@@ -2359,7 +2432,7 @@
     "href": "content/model-assessment/uncertainty-assessment/uncertainty-assessment.html#posterior-prediction-interval",
     "title": "Model uncertainty assessment",
     "section": "Posterior prediction interval",
-    "text": "Posterior prediction interval",
+    "text": "Posterior prediction interval\nThe posterior prediction interval is the equivalent of the prediction interval discussed above, only computed in a Bayesian framework. It can be interpreted pretty much the same as a frequentist prediction interval.",
     "crumbs": [
       "Content",
       "9. Model Assessment",
@@ -2371,7 +2444,7 @@
     "href": "content/model-assessment/uncertainty-assessment/uncertainty-assessment.html#parametric-methods",
     "title": "Model uncertainty assessment",
     "section": "Parametric methods",
-    "text": "Parametric methods",
+    "text": "Parametric methods\nIf you make the - explicit or implicit - assumption that your outcome follows some distribution (often normal for continuous outcomes), you can use built-in routines to quickly calculate the above-described quantities. Almost all software that fits models will give you these estimates.",
     "crumbs": [
       "Content",
       "9. Model Assessment",
@@ -2383,31 +2456,7 @@
     "href": "content/model-assessment/uncertainty-assessment/uncertainty-assessment.html#bootstrapping",
     "title": "Model uncertainty assessment",
     "section": "Bootstrapping",
-    "text": "Bootstrapping\nThe idea for bootstrapping is fairly straightforward. Bootstrapping tries to imitate a scenario in which you repeated your study and collected new data. Instead of having actual new data, the idea is that the existing data is sampled to form a new “dataset”, which is then fit. Sampling is performed with replacement to obtain a sample the size of the original dataset. Some observations now show up more than once, and some do not show up. For each such sample, you fit your model and estimate parameters. You will thus get a distribution of parameter estimates. From those distributions, you can compute confidence intervals, e.g., the usual 95% interval. For each fit, you can also predict outcomes and thus obtain a distribution of prediction outcomes (see next).\nLike cross-validation, the bootstrap method is very general and can be applied to pretty much any problem. If your data has a specific structure, you can adjust the sampling approach (e.g., if you have observations from different locations, you might want to sample with replacement for each location.) Limitations for the bootstrap are that you need a decent amount of data for it to work well, and since you are repeating this sampling procedure many times, the procedure can take a while to run.",
-    "crumbs": [
-      "Content",
-      "9. Model Assessment",
-      "Model uncertainty"
-    ]
-  },
-  {
-    "objectID": "content/model-assessment/uncertainty-assessment/uncertainty-assessment.html#sem",
-    "href": "content/model-assessment/uncertainty-assessment/uncertainty-assessment.html#sem",
-    "title": "Model uncertainty assessment",
-    "section": "SEM",
-    "text": "SEM",
-    "crumbs": [
-      "Content",
-      "9. Model Assessment",
-      "Model uncertainty"
-    ]
-  },
-  {
-    "objectID": "content/model-assessment/uncertainty-assessment/uncertainty-assessment.html#sd",
-    "href": "content/model-assessment/uncertainty-assessment/uncertainty-assessment.html#sd",
-    "title": "Model uncertainty assessment",
-    "section": "SD",
-    "text": "SD",
+    "text": "Bootstrapping\nFor more complex models or approaches, there might not be a readily available method to compute uncertainty measures. A general approach to produce confidence or prediction intervals is with a sampling method that is very similar in spirit to cross-validation, namely by performing bootstrapping.\nThe idea for bootstrapping is fairly straightforward. Bootstrapping tries to imitate a scenario in which you repeated your study and collected new data. Instead of having actual new data, the idea is that the existing data is sampled to form a new “dataset”, which is then fit. Sampling is performed with replacement to obtain a sample the size of the original dataset. Some observations now show up more than once, and some do not show up. For each such sample, you fit your model and estimate parameters. You will thus get a distribution of parameter estimates. From those distributions, you can compute confidence intervals, e.g., the usual 95% interval. For each fit, you can also predict outcomes and thus obtain a distribution of prediction outcomes (see next).\nLike cross-validation, the bootstrap method is very general and can be applied to pretty much any problem. If your data has a specific structure, you can adjust the sampling approach (e.g., if you have observations from different locations, you might want to sample with replacement for each location.) Limitations for the bootstrap are that you need a decent amount of data for it to work well, and since you are repeating this sampling procedure many times, the procedure can take a while to run.",
     "crumbs": [
       "Content",
       "9. Model Assessment",
@@ -2484,6 +2533,114 @@
       "Content",
       "8. Model Fitting",
       "Fitting Models in R"
+    ]
+  },
+  {
+    "objectID": "content/model-improvement/model-improvement-introduction/model-improvement-introduction.html",
+    "href": "content/model-improvement/model-improvement-introduction/model-improvement-introduction.html",
+    "title": "Model Improvement Introduction",
+    "section": "",
+    "text": "In this module, we will discuss ways one can try to improve model performance.\n\n\n\nSource: xkcd.com",
+    "crumbs": [
+      "Content",
+      "10. Model Improvement",
+      "Model Improvement Introduction"
+    ]
+  },
+  {
+    "objectID": "content/model-improvement/model-improvement-introduction/model-improvement-introduction.html#footnotes",
+    "href": "content/model-improvement/model-improvement-introduction/model-improvement-introduction.html#footnotes",
+    "title": "Model Improvement Introduction",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nI’m again using the term performance in the narrow sense of a model that does well (however quantified) on the metric you chose (based on scientific considerations).↩︎",
+    "crumbs": [
+      "Content",
+      "10. Model Improvement",
+      "Model Improvement Introduction"
+    ]
+  },
+  {
+    "objectID": "content/model-improvement/model-improvement-regularization/model-improvement-regularization.html",
+    "href": "content/model-improvement/model-improvement-regularization/model-improvement-regularization.html",
+    "title": "Regularization",
+    "section": "",
+    "text": "In this unit, we will cover the concept of regularization. We’ll also briefly mention a few related approaches.",
+    "crumbs": [
+      "Content",
+      "10. Model Improvement",
+      "Regularization"
+    ]
+  },
+  {
+    "objectID": "content/model-improvement/model-improvement-regularization/model-improvement-regularization.html#ridge-regression",
+    "href": "content/model-improvement/model-improvement-regularization/model-improvement-regularization.html#ridge-regression",
+    "title": "Regularization",
+    "section": "Ridge regression",
+    "text": "Ridge regression\nOne way to choose the function that penalizes the predictors is to weigh each predictor by the predictor’s coefficient squared. Choosing the penalty term as the square of the coefficient is called ridge regression (AKA L2 regularization, Tikhonov regularization, weight decay, and potentially lots of other names). This leads to the cost function:\n\\[C = SSR + \\lambda \\sum_j^p b_j^2.\\]\nThe parameter \\(\\lambda\\) decides the balance between the goodness of fit (low SSR) and the penalty for having large coefficients. Instead of trying different subsets as above and picking the best based on lowest CV performance, we now try different values of \\(\\lambda\\) and pick the model with the lowest (cross-validated) value for our performance measure, C. The parameter \\(\\lambda\\) is often referred to as the tuning parameter or the penalty. Sometimes \\(\\lambda\\) is also called a hyperparameter of the model, which just means that the best value of \\(\\lambda\\) cannot be found by fitting the model one time only.",
+    "crumbs": [
+      "Content",
+      "10. Model Improvement",
+      "Regularization"
+    ]
+  },
+  {
+    "objectID": "content/model-improvement/model-improvement-regularization/model-improvement-regularization.html#lasso",
+    "href": "content/model-improvement/model-improvement-regularization/model-improvement-regularization.html#lasso",
+    "title": "Regularization",
+    "section": "LASSO",
+    "text": "LASSO\nAn alternative is to penalize the coefficients by their absolute value, namely using this cost function:\n\\[C = SSR + \\lambda \\sum_j^p |b_j| \\]\nThis method is called L1 regularization or the Least Absolute Shrinkage and Selection Operator (LASSO). One nice feature of LASSO (which ridge regression does not have) is that coefficients may go to 0. That means the predictor has been dropped from the model, similar to the subset selection approach described previously. One can think of the LASSO as an efficient approach for performing subset selection. It is not quite equivalent though, since, in the LASSO, the predictors that remain might have been shrunk in their impact due to the regularization penalty.",
+    "crumbs": [
+      "Content",
+      "10. Model Improvement",
+      "Regularization"
+    ]
+  },
+  {
+    "objectID": "content/model-improvement/model-improvement-regularization/model-improvement-regularization.html#elastic-net",
+    "href": "content/model-improvement/model-improvement-regularization/model-improvement-regularization.html#elastic-net",
+    "title": "Regularization",
+    "section": "Elastic net",
+    "text": "Elastic net\nOne can also combine ridge regression and LASSO into an approach called elastic net, which has a cost function that is the combination of the previous two, namely:\n\\[ C = SSR + \\lambda \\left( (1-\\alpha) \\sum_j^p b_j^2 + \\alpha \\sum_j^p |b_j|\\right)\\]\nNow one needs to try different values for \\(\\lambda\\) (called the penalty parameter) and \\(\\alpha\\) (called the mixture parameter) to determine the model with the best (cross-validated) performance. \\(\\lambda\\) determines the overall weight given to the penalty factor, while \\(\\alpha\\) determines how the penalty should be distributed between the 2 alternative terms. There are also a few variants of this method, such as relaxed elastic net or adaptive elastic net which you can look into if you are interested but we won’t discuss here.",
+    "crumbs": [
+      "Content",
+      "10. Model Improvement",
+      "Regularization"
+    ]
+  },
+  {
+    "objectID": "content/model-improvement/model-improvement-regularization/model-improvement-regularization.html#tuning-a-regularization-model",
+    "href": "content/model-improvement/model-improvement-regularization/model-improvement-regularization.html#tuning-a-regularization-model",
+    "title": "Regularization",
+    "section": "Tuning a regularization model",
+    "text": "Tuning a regularization model\nDepending on the kind of regularization model you fit, you have to determine 1 or 2 extra parameters (\\(\\lambda\\) and \\(\\alpha\\)). These parameters are called tuning parameters (or hyperparameters) and it is the first time we see a model that has them. Most complex machine learning models have such tuning parameters, and determining good values for those is part of the model fitting/training process. We’ll talk about that in the next unit.",
+    "crumbs": [
+      "Content",
+      "10. Model Improvement",
+      "Regularization"
+    ]
+  },
+  {
+    "objectID": "content/model-improvement/model-improvement-regularization/model-improvement-regularization.html#bayesian-regularization",
+    "href": "content/model-improvement/model-improvement-regularization/model-improvement-regularization.html#bayesian-regularization",
+    "title": "Regularization",
+    "section": "Bayesian Regularization",
+    "text": "Bayesian Regularization\nIf one fits models in a Bayesian framework, one needs to supplies priors for each parameter. If one provides informative priors that constrain the possible values of the model parameters based on prior scientific information, it also leads to regularization and generally reduces overfitting.",
+    "crumbs": [
+      "Content",
+      "10. Model Improvement",
+      "Regularization"
+    ]
+  },
+  {
+    "objectID": "content/model-improvement/model-improvement-tuning/model-improvement-tuning.html",
+    "href": "content/model-improvement/model-improvement-tuning/model-improvement-tuning.html",
+    "title": "Model Tuning",
+    "section": "",
+    "text": "Overview\nIn this unit, we will cover the concept of parameter/model tuning and training.\n\n\nLearning Objectives\n\nLearn what parameter tuning/model training are.\nBe able to implement training/tuning in R.\n\n\n\nIntroduction\nWe discussed at length that one (but not the only) goal of model fitting is to find a model that has good performance when applied to new/different data.\nFor linear, logistic, and similar models (generalized linear models), we discussed the idea of subset/feature selection that can help determine a good model. For different sub-models, we fitted the model to some of the data and evaluated model performance on another part of the data using cross-validation. The model with the best cross-validated performance across all sub-models is then designated as the best (at least with regard to our chosen performance metric).\nWe then discussed regularization, which tries to solve a problem similar to subset selection, namely preventing a model that is too complex and thus overfits. In the regularization approach, one does not compare sub-models with different predictor variables. Instead, all predictors are present, and one (or two) parameters (the regularization or penalty parameters, We called them \\(\\lambda\\) and \\(\\alpha\\)) are varied to influence model complexity. For each value of that parameter, the model is evaluated through cross-validation, and the \\(\\lambda\\) which produces the model with the best performance is chosen (or sometimes one picks a somewhat larger \\(\\lambda\\) to further prevent potential overfitting).\nThis approach of taking a model parameter and evaluating models for different parameter values is called model/parameter tuning. These model-specific tuning parameters are often also referred to as hyperparameters. Simple models, like linear or logistic regression, do not have any parameters that can be tuned. However, more complicated models, which we will discuss soon, generally have one or more tuning parameters. Very flexible models, such as neural nets used in artificial intelligence tasks, can have thousands or even more parameters that need tuning. For any models with tuning parameters, it is essential to tune the parameters/train the model. Without it, the model will likely not perform very well.\n\n\nModel training/parameter tuning recipe\nTraining the model by tuning its parameters follows a general approach that is conceptually the same for all models. You need to go through these steps:\n\nSelect some values for your tuning parameters.\nUsing cross-validation, fit model to a part of the data (the analysis portion), evaluate model performance on the remainder of data (the assessment portion).\nSelect new values for your tuning parameters, and repeat step 2.\nKeep going until you hit some stopping criterion, e.g., you tried all parameter combinations you wanted to try, you hit the maximum number of tries, or you hit the maximum amount of time you allocated for this parameter tuning. (Or you found the absolute best tuning parameter values, but that’s only likely for simple models with few tuning parameters).\nPick your best model as the one with the parameter values that produced the overall best model performance.\n\nYour final model consists of both the type of model and the values of the parameters.\n\nYou might (or might not) have wondered if this procedure of repeatedly refitting the model for different values of the tuning parameters (hyperparameters) and re-fitting the model for different values of the model parameters (e.g., for the coefficients \\(b_i\\) for a linear or generalized linear model) isn’t more or less the same. Both conceptually and in practice, those approaches are quite similar. For GLM, there are differences in how things happen, namely the \\(b_i\\) can be determined in a single step, without the need for trial and error. But for other models, such as some of the ML models we’ll explore, tuning parameters and internal parameters associated with the model might both need to be determined by iterative procedures. Thus, while one can try to distinguish between model and tuning parameters (see e.g., Jason Brownlee’s blog post, which discusses that point a bit more), this is often fuzzy. And the usual caveat applies: The terminology is not consistent, and what some people might call a model parameter might be called a tuning parameter by others. The good news is that in practice it doesn’t matter much what you call a specific parameter. Some can be tuned and you can chose to do so (or not and fix it), others cannot be tuned and are determined internally.\n\n\n\nSearching the tuning parameter space\nThe problem of trying a lot of different tuning parameter values to find the ones that lead to the best performance is very similar to the problem of trying to test a lot of different sub-models during subset selection to find the best model. Not surprisingly then, the procedures to perform the search over parameter space are similar to the ones one can use to search over subset/sub-model space. The most basic one for subset selection was to try every possible model (exhaustive search). This works in principle for tuning parameters as well, but only if the tuning parameters are discrete. For continuous tuning parameters (e.g., \\(\\lambda\\) in regularization), it is impossible to try all values. One instead chooses discrete values for the parameter between some lower and upper limits and then searches that grid of parameters. This is called grid search. The advantage of a grid search is that you know you tried every combination of parameters in your grid.\nFor instance, if you have 2 continuous tuning parameters and 1 categorical tuning parameter with 3 categories, if you chose 10 discrete values for the 2 continuous parameters each, your grid would be 10x10x3. In this case, you would need to evaluate the model for 300 different tuning parameter values. That’s not too bad. But you can see that one problem with this approach is that as the number of tuning parameters increases, or if you want to try many different discrete values (e.g., 100 instead of 10 for each continuous parameter), the number of times you need to run the model increases rapidly. That’s the same problem as the exhaustive search for subset selection.\nTo solve this problem, there are a few major methods:\n\nOne can efficiently choose parameter values to estimate – instead of searching the entire grid, you can use a sampling method to find a smaller grid that covers the same space in the most efficient way. The most well-known algorithm for this is probably Latin hypercube sampling.\nMethods similar to those mentioned for subset selection can be applied, e.g., one can use Genetic Algorithms, Simulated Annealing, Racing Methods, or many other optimizer routines for tuning. While it is, in principle, possible to write your own code that implements the tuning procedure with whatever method you want to use, for most instances, it is easier to use pre-existing methods.\n\n\n\nTuning with R\ntidymodels, and its package tune currently have a few different algorithms for searching the tuning parameter space implemented. Grid search is the main one, but the package also implements Iterative Bayesian optimization. The finetune which is not yet on CRAN implements Simulated Annealing and Racing Methods. To learn more about those, see chapters 12-14 in Tidy Modeling With R.\nThe mlr3/mlr package I keep mentioning also has algorithms to tune parameters, including some that are not available (yet) in tidymodels. For tuning in mlr see e.g. tuning tutorial and advanced tuning tutorial. For this course, we’ll focus on what’s available in tidymodels, but if you ever need to do some major parameter tuning/model optimization, checking out mlr might be worth it (or implementing your own with tidymodels, which is possible.)\n\n\nFurther comments\nOnly if your model has very few tuning parameters and your data is manageable in size can you find the absolute best parameter values in a reasonable amount of time. More likely, you’ll find parameter values that give you a close-to-optimal model.\nAt times, cross-validation might take too much time, and you might have to use a computationally faster method, such as AIC or similar, to try to estimate model performance on future data. That’s not ideal, you might want to consider other approaches first (fewer parameter evaluations, faster computer, running things in parallel…).\nAny process that adjusts the model repeatedly based on prior fits to data has the danger of overfitting, even if you try to guard against this using approaches such as CV. Thus, sometimes less tuning might actually give you a more robust/generalizable model.\nThe more tuning parameters in your model, the more data you need to be able to train the model properly. If you have a mismatch between the amount of data and model complexity, you are likely going to overfit. This is why complex models such as neural nets need vast amounts of data (millions or billions of observations).\n\n\nFurther information\nMost relevant and maybe good to visit next are chapters 12-14 in Tidy Modeling With R, which discuss the general tuning process, and then explain how to do grid search and iterative search using tidymodels.\nSection 2.5.3 of HMLR provides a very short section on tuning. ISLR mentions tuning in various places but doesn’t describe it in a dedicated section. IDS mentions it in the Machine Learning chapters but also does not have a dedicated section on the topic.",
+    "crumbs": [
+      "Content",
+      "10. Model Improvement",
+      "Model Tuning"
     ]
   },
   {
@@ -2801,11 +2958,35 @@
     "href": "content/module-data-processing/feature-engineering/feature-engineering.html",
     "title": "Feature engineering",
     "section": "",
-    "text": "Overview\nFor this unit, we will discuss the idea of creating new variables from existing ones. This is often called Feature Engineering.\n\n\nLearning Objectives\n\nBe familiar with the concept of feature engineering.\nKnow ways to do feature engineering.\n\n\n\nIntroduction\nAt times, it might be useful to process your variables into new ones. If those new variables are created in a smart way, they can potentially improve your model performance. Here, we discuss a few ways you might want to process your data.\n\n\nCombining categories\nAt times, you might have categorical variables with many categories, and a lot of them have only a few observations. This can make the modeling process problematic. In that case, you might want to consider combining certain categories into larger ones. For instance, if you have a variable for jobs which has many different values, it might make sense to group the jobs into categories (e.g., manual labor, clerical,..). You need to report what you did so readers can decide if this is a reasonable approach. Sometimes you might also want to group all minor categories into an “other” category. For instance if you have a dataset of nicotine users, your main categories might be cigarettes, cigars, chewing, vaping and everything else (whatever that might be, I don’t know) could be “other”. Note that maybe the way I’m grouping things here is really dumb. That shows that I’m not an expert on smoking. You can let the data decide the grouping by looking at numbers in each category, but there is no substitute for some level of expert topical knowledge.\n\n\nCreating new variables I\nSometimes, it makes sense to create entirely new variables. Say you have height and weight of individuals. You can use those to create a new variable, BMI = weight / height^2 (in the metric system). It might then make sense to use this new variable, BMI, in your model, instead of weight and height (if you use all, you’ll get strong correlations and model fit will probably be not as good). The creation of new variables in this manner is guided by your expert knowledge of the system.\n\n\nCreating new variables II\nIn addition to the expert-guided creation of new variables, it is also possible to use statistical approaches to come up with variables. This is a common approach in areas where there are many variables, e.g., in the -omics field where one often has 100s or 1000s of measurements, such as genes, for potentially not a lot of individuals. In those cases, approaches such as Principal Component Analysis can be useful. We’ll get to this in a later module.\n\n\nSummary\nIt is not always necessary to do much feature engineering. But sometimes it can help with the analysis and modeling task and it is worth at least thinking about it, even if you end up deciding that you don’t need it for your project.\n\n\nFurther Resources\n\nThe book Feature Engineering and Selection: A Practical Approach for Predictive Models covers this whole topic in a lot more detail. It uses R.\nFeature Engineering A-Z is another book that focuses on feature engineering. It comes with some R code examples.",
+    "text": "For this unit, we will discuss the idea of processing existing variables to potentially improve model performance. This is often called Feature Engineering.1",
     "crumbs": [
       "Content",
       "5. Data Processing",
-      "Creating new data/variables"
+      "Feature Engineering"
+    ]
+  },
+  {
+    "objectID": "content/module-data-processing/feature-engineering/feature-engineering.html#removing-variables",
+    "href": "content/module-data-processing/feature-engineering/feature-engineering.html#removing-variables",
+    "title": "Feature engineering",
+    "section": "Removing variables",
+    "text": "Removing variables\nIt is often the case that we have more data than we need to answer a scientific question. For almost any analysis, one therefore needs to remove some variables before starting the statistical model fitting process. A simple example is an identifier (ID) variable or the names of subjects. Often this information is not needed for the modeling process and can thus be removed before fitting. Other examples are instances where the data was collected for some purpose other than the planned analysis. In this case, it is likely that there are variables in the data which are irrelevant for our analysis.\nSuch removal of variables is done on scientific grounds, based on expert opinion. Ideally, you should report in enough detail which parts of the data you included and excluded in that way to allow the reader to make an informed decision if they agree with what you did. And of course, you should – as much as possible – also provide the raw data and the R scripts which do and document removal of specific variables – such that someone who doesn’t agree with your choice could re-run the analysis with different inclusion/exclusion criteria.\nSometimes, you might have variables that could, in principle, be useful, but the reported values show little diversity and thus contain little information. For instance, if you had a sample of several hundred individuals and only 3 of them were smokers, then it might not be useful to include the smoking variable for the analysis of this dataset, even if, in general, it might be worth considering. Such variables that do not contain much information are called “near-zero variance” variables. Some models perform better if those variables are removed. Other modeling approaches do not care since they have built-in mechanisms to remove variables that are not useful in predicting the outcome.\nAnother instance where removing variables might be useful is if predictors are strongly collinear/correlated. A trivial example is if you have height reported as both inches and centimeters in your data. Obviously, one of them should be removed. Other variables might not be so obviously containing the same information, but might be related enough (collinear) that including both makes the model performance worse. An example might be age and height among children.\nAnother example we already discussed are variables with missing values. In this case, you might want to remove the variable, or the observations, or a mix of them.\nAnother important consideration are variables that could bias your outcome. This is a very broad and complex topic. The best current approach is to take a causal modeling analysis perspective, and based on your causal diagram decide which variables to include. It is a bad idea to just add all variables into your model, even after you removed obviously useless ones. Unfortunately, while a very important topic, we can’t cover causal modeling here. If you want to learn more, the best resource I’m aware of is Statistical Rethinking. An alternative are some papers by Judea Pearl. Some of his work is very technical, but he has several readable introductions.\n\nAll of these inclusion/exclusion decisions are based on expert (that’s you!) judgment. There is no magic recipe you can follow. Some statistical methods can help (see below), but they are only so useful. If someone on the internet tries to sell a magical way of knowing how to process your data before fitting, run away!",
+    "crumbs": [
+      "Content",
+      "5. Data Processing",
+      "Feature Engineering"
+    ]
+  },
+  {
+    "objectID": "content/module-data-processing/feature-engineering/feature-engineering.html#footnotes",
+    "href": "content/module-data-processing/feature-engineering/feature-engineering.html#footnotes",
+    "title": "Feature engineering",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nFeature is another word used for predictor or independent or input variable. The term feature is especially common in the machine learning literature.↩︎\nOf course, sometimes exceptions apply. But you need to be able to fully justify why for your situation it is ok to use one of these generally bad approaches. And “everyone else is doing it” is not a good justification 😁.↩︎",
+    "crumbs": [
+      "Content",
+      "5. Data Processing",
+      "Feature Engineering"
     ]
   },
   {
@@ -3280,211 +3461,6 @@
       "Content",
       "1. Course and Tools Introduction",
       "Reference Management"
-    ]
-  },
-  {
-    "objectID": "content/module-model-improvement/assessment-model-improvement.html",
-    "href": "content/module-model-improvement/assessment-model-improvement.html",
-    "title": "Assessment - Improving Models",
-    "section": "",
-    "text": "Get the quiz sheet for this module from the general Assessments page. Fill it in, then submit to the online grading system before the deadline.",
-    "crumbs": [
-      "Assessments",
-      "10. Model Improvment"
-    ]
-  },
-  {
-    "objectID": "content/module-model-improvement/assessment-model-improvement.html#setup",
-    "href": "content/module-model-improvement/assessment-model-improvement.html#setup",
-    "title": "Assessment - Improving Models",
-    "section": "Setup",
-    "text": "Setup\nYou’ll continue working on the Flu Analysis exercise you started previously. We’ll also do some group work again, using the – by now familiar – M1, M2, … setup. Assign each other a number. As much as possible, do it such that you end up working with group members you have not (or not in a while) worked with. If you are in a group of 4, you can do pairs. That of course doesn’t work in a group of 3 or 5, so you need to use the ‘circular’ setup there. The goal is that, as in past exercises, everyone will work on their own repository and on one other person’s repository.\nAt this stage, I assume all the data wrangling and EDA code, as well as the model fitting code you worked on previously is present and fully functional. If there are still some issues that need to be resolved, go ahead and do so.\nPlace a new Quarto file called modeleval.qmd into the code folder (or sub-folder, if you use them). As always, you can of course either use a single Quarto file with code or put the code into an R script and pull it into the Quarto file. In either case, document/comment well.",
-    "crumbs": [
-      "Assessments",
-      "10. Model Improvment"
-    ]
-  },
-  {
-    "objectID": "content/module-model-improvement/assessment-model-improvement.html#data-splitting",
-    "href": "content/module-model-improvement/assessment-model-improvement.html#data-splitting",
-    "title": "Assessment - Improving Models",
-    "section": "Data splitting",
-    "text": "Data splitting\nWrite code that takes the data and splits it randomly into a train and test that, following for instance the example in the Data Splitting section of the Get Started tidymodels tutorial.",
-    "crumbs": [
-      "Assessments",
-      "10. Model Improvment"
-    ]
-  },
-  {
-    "objectID": "content/module-model-improvement/assessment-model-improvement.html#workflow-creation-and-model-fitting",
-    "href": "content/module-model-improvement/assessment-model-improvement.html#workflow-creation-and-model-fitting",
-    "title": "Assessment - Improving Models",
-    "section": "Workflow creation and model fitting",
-    "text": "Workflow creation and model fitting\nNext, following the example in the Create Recipes section of the Get Started tidymodels tutorial, create a simple recipe that fits a logistic model to our categorical outcome of interest, using all predictors. (We start with categorical and all predictors since that’s the closest to the shown example). For now, you can ignore the concept of roles and features they mention.\nSet a model as you did in the previous exercise, then use the workflow() function to create a simple workflow that fits a logistic model to all predictors using the glm engine. To that end, follow the Fit a model with a recipe section of the tutorial and adjust for your case.\nYou should end up with a fit object similar to the one shown at the end of that section in the tutorial - of course, yours will look somewhat different since you are using a different dataset, but overall things should look similar.",
-    "crumbs": [
-      "Assessments",
-      "10. Model Improvment"
-    ]
-  },
-  {
-    "objectID": "content/module-model-improvement/assessment-model-improvement.html#model-1-evaluation",
-    "href": "content/module-model-improvement/assessment-model-improvement.html#model-1-evaluation",
-    "title": "Assessment - Improving Models",
-    "section": "Model 1 evaluation",
-    "text": "Model 1 evaluation\nFollow the example in the Use a trained workflow to predict section of the tutorial to look at the predictions, ROC curve and ROC-AUC for your data. Apply it to both the training and the test data. ROC curve analysis and ROC-AUC is another common performance measure/metric for categorical outcomes. If you are not familiar with it, you can read more about them by following the link in the tutorial. It’s not too important to go into the details for now. The focus here is on getting the code to work. In general, a ROC-AUC of 0.5 means the model is no good, 1 is a perfect model. Generally, somewhere above 0.7 do people think the model might be useful. If your model has a ROC-AUC a lot less than 0.5, you likely have an issue with how your factors are coded or how tidymodels is interpreting them.",
-    "crumbs": [
-      "Assessments",
-      "10. Model Improvment"
-    ]
-  },
-  {
-    "objectID": "content/module-model-improvement/assessment-model-improvement.html#alternative-model",
-    "href": "content/module-model-improvement/assessment-model-improvement.html#alternative-model",
-    "title": "Assessment - Improving Models",
-    "section": "Alternative model",
-    "text": "Alternative model\nLet’s re-do the fitting but now with a model that only fits the main predictor to the categorical outcome. You should notice that the only thing you have to change is to set up a new recipe, this time one that only has the name of the predictor of interest on the right side of the formula (instead of the . symbol, which is shorthand notation for “all predictors”.) Then you can set up a new workflow with the new recipe, rerun the fit and evaluate performance using the same code as above. In general, if you do multiple models/recipes, you might want to write a loop to go over them, or parallelize/vectorize things. For now, just copying and pasting most of the code is ok.",
-    "crumbs": [
-      "Assessments",
-      "10. Model Improvment"
-    ]
-  },
-  {
-    "objectID": "content/module-model-improvement/assessment-model-improvement.html#wrap-up-part-1",
-    "href": "content/module-model-improvement/assessment-model-improvement.html#wrap-up-part-1",
-    "title": "Assessment - Improving Models",
-    "section": "Wrap up part 1",
-    "text": "Wrap up part 1\nMake sure everything runs and works as expected. Also make sure everything is well commented/documented/explained! Then commit, push and tell your classmate that they can take over. Finish this by Wednesday.",
-    "crumbs": [
-      "Assessments",
-      "10. Model Improvment"
-    ]
-  },
-  {
-    "objectID": "content/module-model-improvement/assessment-model-improvement.html#continuous-outcome",
-    "href": "content/module-model-improvement/assessment-model-improvement.html#continuous-outcome",
-    "title": "Assessment - Improving Models",
-    "section": "Continuous outcome",
-    "text": "Continuous outcome\nFork and clone (or if you are added as collaborator, clone directly) your classmate’s repository. Open their modeleval.qmd file. Add a heading at the bottom that says # This section added by YOURFULLNAME. I need this so I can grade accordingly.\nAdd code that repeats the above steps, but now fits linear models to the continuous outcome. One model with all predictors, one model with just the main predictor. For that, you need to change your metric. RMSE is a good one to choose. You should find that a lot of the code your classmate wrote can copied/pasted/re-used with only minimal modifications. Make sure to add comments/documentation.",
-    "crumbs": [
-      "Assessments",
-      "10. Model Improvment"
-    ]
-  },
-  {
-    "objectID": "content/module-model-improvement/assessment-model-improvement.html#wrap-up-part-2",
-    "href": "content/module-model-improvement/assessment-model-improvement.html#wrap-up-part-2",
-    "title": "Assessment - Improving Models",
-    "section": "Wrap up part 2",
-    "text": "Wrap up part 2\nMake sure everything runs and works as expected. Then commit, push and if you forked the repo, initiate a pull request. Tell our classmate that its done.",
-    "crumbs": [
-      "Assessments",
-      "10. Model Improvment"
-    ]
-  },
-  {
-    "objectID": "content/module-model-improvement/assessment-model-improvement.html#test-and-website-update",
-    "href": "content/module-model-improvement/assessment-model-improvement.html#test-and-website-update",
-    "title": "Assessment - Improving Models",
-    "section": "Test and website update",
-    "text": "Test and website update\nThe original repository owner should make sure everything works. Then, add the newly created Quarto document as an entry into your _quarto.yml file, as a sub-menu of Flu fitting. Call it Model Evaluation. Recompile your portfolio website and make sure everything works and shows up as expected. Then commit and push.\nSince this is part of your portfolio site, you don’t need to post anything, I know where to find it. Therefore there is no exercise Slack channel for this module.",
-    "crumbs": [
-      "Assessments",
-      "10. Model Improvment"
-    ]
-  },
-  {
-    "objectID": "content/module-model-improvement/assessment-model-improvement.html#looking-ahead",
-    "href": "content/module-model-improvement/assessment-model-improvement.html#looking-ahead",
-    "title": "Assessment - Improving Models",
-    "section": "Looking ahead",
-    "text": "Looking ahead\nWe also covered overfitting and strategies to minimize it (e.g., cross-validation), and further model assessment strategies in the materials. We’ll practice those in future exercises. I figured the above will already take a good bit of getting used to, and we will be able to practice more when we look at further model types in the coming weeks.",
-    "crumbs": [
-      "Assessments",
-      "10. Model Improvment"
-    ]
-  },
-  {
-    "objectID": "content/module-model-improvement/model-improvement-overview.html",
-    "href": "content/module-model-improvement/model-improvement-overview.html",
-    "title": "Model Fit Improvement Overview",
-    "section": "",
-    "text": "Overview\nIn this module, we will discuss ways one can try to improve model performance.\n\n\n\nSource: xkcd.com\n\n\n\n\nLearning Objectives\n\nLearn how to process your data to improve model performance.\nBecome familiar with subset selection and regularization approaches.\nLearn about model tuning.\n\n\n\nIntroduction\nWhile, as we discussed, having a model that performs great is not the only important goal, it is often one of the most important ones. We generally want a model with good performance. To get such a model, there are several things we can do to either the data or the model to help improve performance.\nTrying different models is, of course, always an option, and possibly a good one. But even if we don’t use lots of different models, there are often things we can do to improve the performance of the model (or type of model) we are using.\nWe are covering several important approaches to model performance improvement here. But as we go through these topics (and the rest of the course) always keep these things in mind:\n\nGood performance alone doesn’t mean a model is good!\nGood performance on a scientifically wrong metric is useless!\nGood performance assessed with the data used to build the model is not too meaningful!\n\n\n\n\nSource: xkcd.com",
-    "crumbs": [
-      "Content",
-      "10. Model Improvement",
-      "Improving Model Fits Overview"
-    ]
-  },
-  {
-    "objectID": "content/module-model-improvement/model-improvement-subset-selection.html",
-    "href": "content/module-model-improvement/model-improvement-subset-selection.html",
-    "title": "Subset Selection",
-    "section": "",
-    "text": "In this unit, we will cover the idea of subset selection.",
-    "crumbs": [
-      "Content",
-      "10. Model Improvement",
-      "Subset Selection"
-    ]
-  },
-  {
-    "objectID": "content/module-model-improvement/model-improvement-subset-selection.html#forward-selection",
-    "href": "content/module-model-improvement/model-improvement-subset-selection.html#forward-selection",
-    "title": "Subset Selection",
-    "section": "Forward selection",
-    "text": "Forward selection\nIn forward selection, you start with the null-model (no predictors), then evaluate all single-predictor models. The best-performing 1-predictor model is chosen, and you build all 2-predictor models on top of that chosen 1-predictor model. You choose the best 2-predictor model, then go on to add a third, and do that until adding any further predictors does not lead to a model that performs better (again, measured by CV on the test set) than the smaller model. E.g., you might find that adding any of the remaining 3rd predictors does not lead to a better-performing model than the 2-predictor model you already have. Then you stop here and pick the 2-predictor model as your best.\nLet’s consider an example. Say you want to predict BMI based on age, sex, calorie intake, and exercise level. Since BMI is continuous, we can consider a linear regression model, and we might try to minimize RMSE between model-predicted BMI and actual measurements. We start by computing RMSE for the null model. Then we compute RMSE for all 1-predictor models. Assume that all 1-predictor models have RMSE lower than the null model, and the lowest RMSE (all computed using cross-validation) of the 1-predictor models is the one that includes calorie intake. Next, you try all 2-predictor models that include calorie intake. Among those, a model with calorie intake + exercise level has the lowest RMSE, and it’s also lower than the model with calorie intake only. Next, you try all 3-predictor models that include the 2 chosen predictors. In this example, only 2 of those 3-predictor models are possible, namely calorie intake + exercise level + age and calorie intake + exercise level + sex. Let’s assume both of those models have RMSE that is larger than the 2 predictor model. Note, it is important to compute RMSE through cross-validation since the RMSE evaluated on the data used for fitting will always be lower for the bigger model. We thus found our best model, namely one that includes the 2 predictors calorie intake + exercise level.",
-    "crumbs": [
-      "Content",
-      "10. Model Improvement",
-      "Subset Selection"
-    ]
-  },
-  {
-    "objectID": "content/module-model-improvement/model-improvement-subset-selection.html#backward-selection",
-    "href": "content/module-model-improvement/model-improvement-subset-selection.html#backward-selection",
-    "title": "Subset Selection",
-    "section": "Backward selection",
-    "text": "Backward selection\nBackward selection is essentially the reverse to forward selection: You start with the model with all predictors, then evaluate all models with one predictor dropped. The smaller model with the best performance is your choice. You then drop each predictor at a time from that model. You continue until dropping predictors does not improve performance anymore. Then you keep the model with the best performance. Note that this method does not work on datasets that have more predictors than observations (e.g., most -omics type data).\nLet’s consider the above example again. We now start with a model that includes all 4 predictors and compute cross-validated RMSE. Next, we drop each predictor and try all 3-predictor models. Let’s say the one that dropped exercise level is the 3-predictor model with the lowest RMSE, lower than all other 3-predictor models, and lower than the full model. Next, we drop each variable from the current best candidate 3-predictor model, which is age + sex + calorie intake. All of the 2-predictor models have RMSE larger than the 3-predictor model. We thus found our final model, with the 3 predictors age + sex + calorie intake.\nNote that it is also possible to do “forward-backward” selection: you can choose to start with the full or reduced model, but the method is allowed to add/remove predictors at every step depending on what improves performance most.",
-    "crumbs": [
-      "Content",
-      "10. Model Improvement",
-      "Subset Selection"
-    ]
-  },
-  {
-    "objectID": "content/module-model-improvement/model-improvement-subset-selection.html#exhaustive-subset-selection",
-    "href": "content/module-model-improvement/model-improvement-subset-selection.html#exhaustive-subset-selection",
-    "title": "Subset Selection",
-    "section": "Exhaustive subset selection",
-    "text": "Exhaustive subset selection\nYou might have noticed that in my example, forward selection and backward selection do not necessarily produce the same model. The reason for that is that neither forward- or backward-selection try all possible models (predictor combinations). Both approaches use what is called a greedy strategy. Once they included or excluded a predictor, it can never be dropped or included. Once you picked your 1-predictor model, all subsequent models will consist of that 1 predictor model - even if there might be a better performing 2-predictor model that doesn’t include the 1st predictor you picked. The same holds for dropping predictors in backward selection.\nAlso, as in my example, often (but not always), the final model determined through backward selection tends to include more predictors than a model determined through forward selection. In such a case, you have to decide which model to choose. Alternatively, you can try a different way of choosing the model. One approach is to try models with all combinations of predictors. This is called exhaustive subset selection, all subsets selection, or best subset selection (although note that “best subset selection” can also refer to a different method which still hasn’t gained much traction). If you have only a few predictors, you can try every combination of predictors. However, once you have more than 5-10 predictors (depending on the number of observations), trying every combination of sub-models would be too time-consuming. Therefore, most of the time, such an exhaustive feature selection is not feasible.",
-    "crumbs": [
-      "Content",
-      "10. Model Improvement",
-      "Subset Selection"
-    ]
-  },
-  {
-    "objectID": "content/module-model-improvement/model-improvement-subset-selection.html#other-subset-selection-methods",
-    "href": "content/module-model-improvement/model-improvement-subset-selection.html#other-subset-selection-methods",
-    "title": "Subset Selection",
-    "section": "Other subset selection methods",
-    "text": "Other subset selection methods\nThere have recently been a number of approaches that try to be somewhat smarter in finding the best model, without having to try every combination. The caret package has several methods, such as Genetic Algorithms and Simulated Annealing. Those methods often do a good job finding a very good sub-model in a reasonable amount of time. While the only guarantee that you found the single best model is to try them all using exhaustive subset selection, these modern approaches usually find a model that is either the best or at least close to the best while doing so rather efficiently. See sections 18-22 of the caret manual for more information if you are interested. The mlr/mlr3 packages also have similar such selection methods. tidymodels currently does not have any subset selection procedure implemented (see more below).",
-    "crumbs": [
-      "Content",
-      "10. Model Improvement",
-      "Subset Selection"
-    ]
-  },
-  {
-    "objectID": "content/module-model-improvement/model-improvement-subset-selection.html#manual-subset-selection",
-    "href": "content/module-model-improvement/model-improvement-subset-selection.html#manual-subset-selection",
-    "title": "Subset Selection",
-    "section": "Manual subset selection",
-    "text": "Manual subset selection\nAll the approaches above use cross-validated performance of some metric to determine which predictors should be included in the model. Another, still commonly used strategy is to do subset selection manually. The analyst usually starts with a simple model containing just one predictor (the most important one), and then decides based on model results (e.g., systematic deviations in the residuals) and/or based on scientific knowledge, if adding additional predictors is justified. For a skilled analyst with a lot of subject matter expertise, this can lead to models that are all-around very good. They have good performance, make scientific sense, and are still simple. Unfortunately, this requires a lot of knowledge, time and careful analysis. Also, the analyst needs to honestly report any model they tried, not just the one they end up with. Otherwise they are using and not reporting researcher’s degrees of freedom, which leads to overfitting. Most analyses are not done that way.\n\nI mentioned this before in various places and it’s a theme throughout the course, that unless data is collected and analyzed using pre-specified protocols (e.g., a clinical trial for FDA approval) it is almost always the case that scientists have so much flexibility during the data collection and analysis stages that p-values and similar statistical measures are meaningless. The Researcher’s degrees of freedom issue is everywhere and essentially impossible to get rid of. For more on this topic, see the Pitfalls section on the General Resources page.\nAll of this applies to manual subset selection (which is why I’m thinking about it here and adding this note), but it is more general and applies to every step in a scientific project.",
-    "crumbs": [
-      "Content",
-      "10. Model Improvement",
-      "Subset Selection"
     ]
   },
   {

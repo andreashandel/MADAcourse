@@ -466,7 +466,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../content/module-data-processing/feature-engineering/feature-engineering.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Creating new data/variables</span></a>
+ <span class="menu-text">Feature Engineering</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -652,31 +652,31 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-improvement/model-improvement-overview.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Improving Model Fits Overview</span></a>
+  <a href="../../content/model-improvement/model-improvement-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model Improvement Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-improvement/model-improvement-data-processing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Pre-Processing Data</span></a>
+  <a href="../../content/model-improvement/model-improvement-introduction/model-improvement-introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model Improvement Introduction</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-improvement/model-improvement-subset-selection.html" class="sidebar-item-text sidebar-link">
+  <a href="../../content/model-improvement/model-improvement-subset/model-improvement-subset.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Subset Selection</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-improvement/model-improvement-regularization.html" class="sidebar-item-text sidebar-link">
+  <a href="../../content/model-improvement/model-improvement-regularization/model-improvement-regularization.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Regularization</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/module-model-improvement/model-improvement-tuning.html" class="sidebar-item-text sidebar-link">
+  <a href="../../content/model-improvement/model-improvement-tuning/model-improvement-tuning.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Model Tuning</span></a>
   </div>
 </li>
@@ -894,7 +894,7 @@ ul.task-list li input[type="checkbox"] {
 <p>In this Unit, we will take another look at the whole data analysis process. Here, we focus on the actual (statistical) analysis (which I also call model fitting) component of the data analysis process. A general conceptual understanding is useful before we jump into looking at and applying specific modeling/statistical approaches.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="../../media/vadlo_statistics.png" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1" title="Source: VALDO.com"><img src="../../media/vadlo_statistics.png" class="img-fluid figure-img" style="width:50.0%" alt="A comic of two scientists standing in front of a lab bench that has electrophoresis gel printouts scattered on it. One says to the other 'Data don't make any sense, we will have to resort to statistics.'"></a></p>
+<p><a href="../../media/vadlo_statistics.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1" title="Source: VALDO.com"><img src="../../media/vadlo_statistics.png" class="img-fluid figure-img" style="width:50.0%" alt="A comic of two scientists standing in front of a lab bench that has electrophoresis gel printouts scattered on it. One says to the other 'Data don't make any sense, we will have to resort to statistics.'"></a></p>
 <figcaption>Source: VALDO.com</figcaption>
 </figure>
 </div>
@@ -930,7 +930,7 @@ ul.task-list li input[type="checkbox"] {
 <p>The following way of categorizing types of data analyses follows <a href="https://leanpub.com/artofdatascience"><em>The Art of Data Science (ADS)</em></a> – specifically, chapter 3. Now might be a good time to give that chapter another quick re-read. A very similar, shortened version of the ADA chapter 3 discussion can be found in <a href="../..\references/leek15science.pdf">Jeff Leek and Roger Peng’s article</a>. The following figure from their paper gives a good summary of what follows.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="../..\media/data-analysis-chart.jpg" class="lightbox" data-glightbox="description: .lightbox-desc-2" data-gallery="quarto-lightbox-gallery-2" title="Source: Leek and Peng 2015"><img src="../..\media/data-analysis-chart.jpg" class="img-fluid figure-img" data-fig-width="80%" alt="Data analysis flow chart with questions that lead to the types of data analysis: causal, mechanistic, inferential, predictive, exploratory, and descriptive."></a></p>
+<p><a href="../..\media/data-analysis-chart.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" data-glightbox="description: .lightbox-desc-2" title="Source: Leek and Peng 2015"><img src="../..\media/data-analysis-chart.jpg" class="img-fluid figure-img" data-fig-width="80%" alt="Data analysis flow chart with questions that lead to the types of data analysis: causal, mechanistic, inferential, predictive, exploratory, and descriptive."></a></p>
 <figcaption>Source: <a href="../..\references/leek15science.pdf">Leek and Peng 2015</a></figcaption>
 </figure>
 </div>
@@ -1593,7 +1593,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"right","selector":".lightbox","loop":false,"openEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"loop":false,"selector":".lightbox","descPosition":"right","closeEffect":"zoom","openEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

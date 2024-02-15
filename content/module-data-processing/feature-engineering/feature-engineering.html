@@ -71,6 +71,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../../include/webex.css">
 </head>
@@ -133,7 +162,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../content/module-data-processing/data-processing-overview.html">5. Data Processing</a></li><li class="breadcrumb-item"><a href="../../../content/module-data-processing/feature-engineering/feature-engineering.html">Creating new data/variables</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../content/module-data-processing/data-processing-overview.html">5. Data Processing</a></li><li class="breadcrumb-item"><a href="../../../content/module-data-processing/feature-engineering/feature-engineering.html">Feature Engineering</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -463,7 +492,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/module-data-processing/feature-engineering/feature-engineering.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Creating new data/variables</span></a>
+ <span class="menu-text">Feature Engineering</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -649,31 +678,31 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../content/module-model-improvement/model-improvement-overview.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Improving Model Fits Overview</span></a>
+  <a href="../../../content/model-improvement/model-improvement-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model Improvement Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../content/module-model-improvement/model-improvement-data-processing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Pre-Processing Data</span></a>
+  <a href="../../../content/model-improvement/model-improvement-introduction/model-improvement-introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model Improvement Introduction</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../content/module-model-improvement/model-improvement-subset-selection.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/model-improvement/model-improvement-subset/model-improvement-subset.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Subset Selection</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../content/module-model-improvement/model-improvement-regularization.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/model-improvement/model-improvement-regularization/model-improvement-regularization.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Regularization</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../content/module-model-improvement/model-improvement-tuning.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../content/model-improvement/model-improvement-tuning/model-improvement-tuning.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Model Tuning</span></a>
   </div>
 </li>
@@ -843,10 +872,15 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a>
+  <ul class="collapse">
+  <li><a href="#removing-variables" id="toc-removing-variables" class="nav-link" data-scroll-target="#removing-variables">Removing variables</a></li>
+  </ul></li>
   <li><a href="#combining-categories" id="toc-combining-categories" class="nav-link" data-scroll-target="#combining-categories">Combining categories</a></li>
+  <li><a href="#transforming-variables" id="toc-transforming-variables" class="nav-link" data-scroll-target="#transforming-variables">Transforming variables</a></li>
   <li><a href="#creating-new-variables-i" id="toc-creating-new-variables-i" class="nav-link" data-scroll-target="#creating-new-variables-i">Creating new variables I</a></li>
   <li><a href="#creating-new-variables-ii" id="toc-creating-new-variables-ii" class="nav-link" data-scroll-target="#creating-new-variables-ii">Creating new variables II</a></li>
+  <li><a href="#bad-engineering" id="toc-bad-engineering" class="nav-link" data-scroll-target="#bad-engineering">Bad engineering</a></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
   <li><a href="#further-resources" id="toc-further-resources" class="nav-link" data-scroll-target="#further-resources">Further Resources</a></li>
   </ul>
@@ -855,7 +889,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../content/module-data-processing/data-processing-overview.html">5. Data Processing</a></li><li class="breadcrumb-item"><a href="../../../content/module-data-processing/feature-engineering/feature-engineering.html">Creating new data/variables</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../content/module-data-processing/data-processing-overview.html">5. Data Processing</a></li><li class="breadcrumb-item"><a href="../../../content/module-data-processing/feature-engineering/feature-engineering.html">Feature Engineering</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Feature engineering</h1>
 </div>
@@ -875,7 +909,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2024-02-01</p>
+      <p class="date-modified">2024-02-15</p>
     </div>
   </div>
     
@@ -888,46 +922,90 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="overview" class="level1">
 <h1>Overview</h1>
-<p>For this unit, we will discuss the idea of creating new variables from existing ones. This is often called <em>Feature Engineering</em>.</p>
+<p>For this unit, we will discuss the idea of processing existing variables to potentially improve model performance. This is often called <em>Feature Engineering</em>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 </section>
 <section id="learning-objectives" class="level1">
 <h1>Learning Objectives</h1>
 <ul>
 <li>Be familiar with the concept of feature engineering.</li>
-<li>Know ways to do feature engineering.</li>
+<li>Understand the advantages and disadvantages of specific feature engineering tasks</li>
 </ul>
 </section>
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
-<p>At times, it might be useful to process your variables into new ones. If those new variables are created in a smart way, they can potentially improve your model performance. Here, we discuss a few ways you might want to process your data.</p>
+<p>The term <em>feature engineering</em> is often used in machine learning. It is also frequently used in more classical statistical data analysis, but often not called that way.</p>
+<p>Feature engineering basically means <em>messing with the data</em> (that’s my technical definition) to create new variables from the existing ones. The hope is that the new variables are better at describing/predicting/correlating with the outcome. For instance, if we want to assess the impact of weight on diabetes, using weight itself might not be the best option since it is confounded by height. A 200lb person who’s 5 feet tall is likely at greater risk than someone who is 6 feet tall. We can instead use weight and height and compute BMI and then include that variable/feature in our model instead. In the ML terminology, we just <em>engineered the feature of BMI from the features weight and height</em>. Or in more everyday wording <em>we created a new variable BMI from the two existing variables</em>.</p>
+<p>In addition to actually creating completely new variables, one often can and wants to create new variables by transforming existing ones (e.g., centering and scaling, or regrouping).</p>
+<p>What type of feature engineering you might want to do depends on your question and the models you plan on using. For instance, some methods perform poorly if the data contains predictors that are essentially “noise”, i.e., that are not correlated with the outcome. Predictors that are too correlated with each other can also be a problem for some (but not all) methods. Often, it is useful to have predictors on the same scales or transform outcomes and predictors such that they follow a distribution more suitable for modeling (often a normal distribution). The amount and type of processing needed depends not only on the data itself but also on the statistical method and algorithm you plan to use.</p>
+<p>The overall hope is that if those new variables are created in a smart way, they can potentially improve your model performance. Here, we discuss a few ways you might want to process your data.</p>
+<section id="removing-variables" class="level2">
+<h2 class="anchored" data-anchor-id="removing-variables">Removing variables</h2>
+<p>It is often the case that we have more data than we need to answer a scientific question. For almost any analysis, one therefore needs to remove some variables before starting the statistical model fitting process. A simple example is an identifier (ID) variable or the names of subjects. Often this information is not needed for the modeling process and can thus be removed before fitting. Other examples are instances where the data was collected for some purpose other than the planned analysis. In this case, it is likely that there are variables in the data which are irrelevant for our analysis.</p>
+<p>Such removal of variables is done on scientific grounds, based on expert opinion. Ideally, you should report in enough detail which parts of the data you included and excluded in that way to allow the reader to make an informed decision if they agree with what you did. And of course, you should – as much as possible – also provide the raw data and the R scripts which do and document removal of specific variables – such that someone who doesn’t agree with your choice could re-run the analysis with different inclusion/exclusion criteria.</p>
+<p>Sometimes, you might have variables that could, in principle, be useful, but the reported values show little diversity and thus contain little information. For instance, if you had a sample of several hundred individuals and only 3 of them were smokers, then it might not be useful to include the smoking variable for the analysis of this dataset, even if, in general, it might be worth considering. Such variables that do not contain much information are called “near-zero variance” variables. Some models perform better if those variables are removed. Other modeling approaches do not care since they have built-in mechanisms to remove variables that are not useful in predicting the outcome.</p>
+<p>Another instance where removing variables might be useful is if predictors are strongly collinear/correlated. A trivial example is if you have height reported as both inches and centimeters in your data. Obviously, one of them should be removed. Other variables might not be so obviously containing the same information, but might be related enough (collinear) that including both makes the model performance worse. An example might be age and height among children.</p>
+<p>Another example we already discussed are variables with missing values. In this case, you might want to remove the variable, or the observations, or a mix of them.</p>
+<p>Another important consideration are variables that could bias your outcome. This is a very broad and complex topic. The best current approach is to take a <a href="https://en.wikipedia.org/wiki/Causal_model">causal modeling analysis</a> perspective, and based on your causal diagram decide which variables to include. <strong>It is a bad idea to just add all variables into your model, even after you removed obviously useless ones.</strong> Unfortunately, while a very important topic, we can’t cover causal modeling here. If you want to learn more, the best resource I’m aware of is <a href="https://xcelab.net/rm/statistical-rethinking/">Statistical Rethinking</a>. An alternative are some papers by <a href="http://bayes.cs.ucla.edu/jp_home.html">Judea Pearl</a>. Some of his work is very technical, but he has several readable introductions.</p>
+<div class="emphasis">
+<p>All of these inclusion/exclusion decisions are based on expert (that’s you!) judgment. There is no magic recipe you can follow. Some statistical methods can help (see below), but they are only so useful. If someone on the internet tries to sell a magical way of knowing how to process your data before fitting, run away!</p>
+</div>
+</section>
 </section>
 <section id="combining-categories" class="level1">
 <h1>Combining categories</h1>
 <p>At times, you might have categorical variables with many categories, and a lot of them have only a few observations. This can make the modeling process problematic. In that case, you might want to consider combining certain categories into larger ones. For instance, if you have a variable for jobs which has many different values, it might make sense to group the jobs into categories (e.g., manual labor, clerical,..). You need to report what you did so readers can decide if this is a reasonable approach. Sometimes you might also want to group all minor categories into an “other” category. For instance if you have a dataset of nicotine users, your main categories might be cigarettes, cigars, chewing, vaping and everything else (whatever that might be, I don’t know) could be “other”. Note that maybe the way I’m grouping things here is really dumb. That shows that I’m not an expert on smoking. You can let the data decide the grouping by looking at numbers in each category, but there is no substitute for some level of expert topical knowledge.</p>
 </section>
+<section id="transforming-variables" class="level1">
+<h1>Transforming variables</h1>
+<p>It is often a good idea to transform variables. For instance if you have a model with continuous and categorical predictors, and you want to compare the coefficients returned from some model, you need to have the predictors on the same scales, which you can accomplish by <strong>standardizing</strong> predictors through <strong>centering</strong> (transforming the data so the mean is a specific value) and <strong>scaling</strong> (transforming the data so that it falls within a specific range). The most common method of centering is subtracting the mean, and the most common method of scaling is dividing by the standard deviation. The drawback of such a transformation is that the model results might be harder to interpret and might have to be ‘back-transformed’ to have biological meaning.</p>
+<p>Other common used transformations are converting to log units, since often the log scale is the biologically relevant one. This also reduces the impact of very high and very low values.</p>
+<p>It is also often the case that some numerical methods your statistical model uses work better when you transform variables. It is always good to check the manual for any statistical model (and its numerical implementation) to see what is described and recommended there.</p>
+<p>Whenever you do some kind of normalization or transformation, check the result of such a transformation to ensure nothing went wrong (e.g., you didn’t accidentally divide by 0 or take the log of a negative number).</p>
+<p>One can think of variable transformation as a very simple form of creating a new variable.</p>
+</section>
 <section id="creating-new-variables-i" class="level1">
 <h1>Creating new variables I</h1>
-<p>Sometimes, it makes sense to create entirely new variables. Say you have height and weight of individuals. You can use those to create a new variable, BMI = weight / height^2 (in the metric system). It might then make sense to use this new variable, BMI, in your model, instead of weight and height (if you use all, you’ll get strong correlations and model fit will probably be not as good). The creation of new variables in this manner is guided by your expert knowledge of the system.</p>
+<p>Sometimes, it makes sense to create entirely new variables. Say you have height and weight of individuals. You can use those to create a new variable, BMI = weight / height^2 (in the metric system). It might then make sense to use this new variable, BMI, in your model, instead of weight and height (if you use all, you’ll get strong correlations and model fit will probably be not as good). The creation of new variables in this manner is guided by your expert knowledge of the system. It can sometimes improve model performance by a lot.</p>
 </section>
 <section id="creating-new-variables-ii" class="level1">
 <h1>Creating new variables II</h1>
-<p>In addition to the expert-guided creation of new variables, it is also possible to use statistical approaches to come up with variables. This is a common approach in areas where there are many variables, e.g., in the -omics field where one often has 100s or 1000s of measurements, such as genes, for potentially not a lot of individuals. In those cases, approaches such as Principal Component Analysis can be useful. We’ll get to this in a later module.</p>
+<p>In addition to the expert-guided creation of new variables, it is also possible to use statistical approaches to come up with variables. Often, what one wants to do in this case is condense existing variables into a smaller set of new variables. This often goes by the name <em>feature/variable reduction methods</em>.</p>
+<p>In some areas of science, this is a step that’s almost always required. For instance, with <strong>-omics</strong> type data (proteomics, transcriptomics, metabolomics, etc.), it is not uncommon to measure 1000s of variables (e.g., gene expression levels) for only a few individuals. Thus those datasets often have many more predictors than observations (individuals/samples in the study). This means some models might not work at all (e.g.&nbsp;a standard linear or logistic model) and other models might work but take way too long to run.</p>
+<p>It is therefore often necessary to reduce the number of predictors. Manual removal of predictors based on biological/expert knowledge, as described above, is one option. But with thousands of predictors, and often no clear <em>a priori</em> idea of which ones are biologically meaningful, this quickly becomes unfeasible. Another option is to use a statistical approach with the goal to find a set of new predictors of size <span class="math inline">\(m\)</span>, made up of combinations of the <span class="math inline">\(p\)</span> old ones, such that <span class="math inline">\(m \ll p\)</span> (<span class="math inline">\(m\)</span> is much less than <span class="math inline">\(p\)</span>). An approach called <a href="https://en.wikipedia.org/wiki/Principal_component_analysis">Principal Component Analysis (PCA)</a> can be used to find such a smaller set of new predictors that capture most of the information contained in the larger set. One drawback of PCA is that it ignores the relationship between predictors and outcome. That means it tries to reduce the dimension/number of predictors by looking for correlations among them, but without paying attention to the potential correlations between predictors and outcome. This can at times lead to sub-optimal performance of the model. To keep predictors that are most associated with the outcome in the model, one can use a method called <a href="https://en.wikipedia.org/wiki/Partial_least_squares_regression">Partial Least Squares (PLS)</a>. Other approaches, e.g.&nbsp;<a href="https://en.wikipedia.org/wiki/Least-angle_regression">Least Angle Regression (LARS)</a>, exist. The overall problem is that the new set of predictors is harder to interpret, and thus insights gained from the model are somewhat reduced. We won’t have time to look in much detail at any of those approaches, but the resources we have been using for this class cover some of the approaches, so check there if interested.</p>
+</section>
+<section id="bad-engineering" class="level1">
+<h1>Bad engineering</h1>
+<p>There are certain very common ways data gets processed that should, in fact, be avoided. Here are some things <strong>you should not do!</strong><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<p><strong>Discretizing/binning continuous variables.</strong> Doing so leads to loss of power and the binning is almost always arbitrary. E.g., there is no reason to stick people into age categories - keep age continuous (no matter how many Epi papers you see where they do that kind of stuff.) Unfortunately, binning/categorizing of continuous variables is very commonly done, but almost never is there a good reason to do so, other than custom and people not being familiar with other approaches (exceedingly bad reasons for doing things). In the statistical literature, this unhealthy urge to dichotomize/discretize has been labeled <strong>Dichotomania</strong>. <a href="https://www.fharrell.com/post/errmed/#catg">Frank Harrell’s website</a> discusses dichotomania related to chopping up of variables. Another dichotomania exists regarding misinterpretation of statistical results and especially the “magical” 0.05 <em>p</em>-value threshold, which is thorough abused throughout the scientific literature. For some discussion on this, see e.g., <a href="https://academic.oup.com/aje/article/186/6/639/3886035">Greenland 2017</a> or this <a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/sim.2331">review by Royston et al.&nbsp;2005</a>.</p>
+<p>Sometimes, the reason given for binning is that there might not be a linear relation between predictor and outcome, e.g., between age and risk of some disease. That is certainly possible. But the right approach for this is almost always to change the model and use a more flexible statistical model that allows a relation between predictor and outcome that is not linear.</p>
+<p>There are occasions when discretizing is warranted. For instance at the end of an analysis, one might need to have a decision rule that determines further action (e.g., treat or don’t treat with statin drugs) based on some continuous quantity (e.g., cholesterol level). However, the analysis should still be done with continuous variables and any binning only done at the end.</p>
+<p><strong>Variable transformation</strong> is – as I mentioned above – sometimes a good idea. However, it should not be used without a reason, and sometimes there are better alternatives. For instance if your outcome is not normally distributed, then maybe use a model that more closely mimics your data. For instance, if your data come from a process that likely produces Poisson distributed data, you can use a generalized linear model with a Poisson distribution assumption. Similarly, you do not always need to transform predictors: at times transformations make interpretability harder and it might be better to not transform.</p>
 </section>
 <section id="summary" class="level1">
 <h1>Summary</h1>
 <p>It is not always necessary to do much feature engineering. But sometimes it can help with the analysis and modeling task and it is worth at least thinking about it, even if you end up deciding that you don’t need it for your project.</p>
+<p>This is generally an iterative process. Once you have an idea of the kinds of models you want to apply, figure out if they require or could benefit from some of the data pre-processing steps just described. If yes, implement those processing steps. If a specific algorithm allows it, you can always try to fit the data with and without processing. The differences (or lack of differences) might tell you something useful. At times, this might be a trial-and-error process, where you first do not pre-process, realize the model doesn’t work, then figure out what further processing is needed, then try again.</p>
 </section>
 <section id="further-resources" class="level1">
 <h1>Further Resources</h1>
 <ul>
 <li><p>The book <a href="https://bookdown.org/max/FES/">Feature Engineering and Selection: A Practical Approach for Predictive Models</a> covers this whole topic in a lot more detail. It uses R.</p></li>
 <li><p><a href="https://feaz-book.com/">Feature Engineering A-Z</a> is another book that focuses on feature engineering. It comes with some R code examples.</p></li>
+<li><p><a href="https://bradleyboehmke.github.io/HOML/process.html">Chapter 3 of <em>HMLR</em></a> contains another discussion.</p></li>
+<li><p>The <a href="https://www.tidymodels.org/"><code>tidymodels</code> website</a> also has articles and tutorials that cover some of these topics.</p></li>
 </ul>
 
 
 </section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p><strong>Feature</strong> is another word used for <strong>predictor</strong> or <strong>independent</strong> or <strong>input</strong> variable. The term <strong>feature</strong> is especially common in the machine learning literature.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Of course, sometimes exceptions apply. But you need to be able to fully justify why for your situation it is ok to use one of these generally bad approaches. And “everyone else is doing it” is not a good justification 😁.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script>
 
 /* update total correct if #webex-total_correct exists */
