@@ -20,4 +20,3 @@ The module consists of the following units:
 * [Fitting basic models](./basic-statistical-models/basic-statistical-models.qmd)
 * [Model fit evaluation](./model-evaluation/model-evaluation.qmd)
 * [Model fitting in R](./model-fitting-r/model-fitting-r.qmd)
-
