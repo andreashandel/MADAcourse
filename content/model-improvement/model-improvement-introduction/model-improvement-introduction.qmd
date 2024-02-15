@@ -1,0 +1,59 @@
+---
+title: Model Improvement Introduction
+subtitle: ""
+---
+
+# Overview
+
+In this module, we will discuss ways one can try to improve model performance.
+
+![Source: xkcd.com](xkcd-machine_learning.png){fig-alt="An XKCD comic strip with one panel. One person is on the left, and the other is on the right, holding a shovel, and standing on top of a pile of matrices and math symbols. The left person says \"This is your machine learning system?\", then the right person says \"Yup! You pour the data into this big pile of linear algebra, then collect the answers on the other side.\" The left person responds \"What if the answers are wrong?\" and the right person replies with \"Just stir the pile until they start looking right.\""}
+
+# Learning Objectives
+
+-   Learn how to process your data to improve model performance.
+-   Become familiar with subset selection and regularization approaches.
+-   Learn about model tuning.
+
+
+# Introduction
+
+We discussed that having a model that performs great is not the only important goal. However, it is often one of the most important ones. We generally want a model with good performance. To get such a model, there are several things we can do to either the data or the model to help improve performance.[^performance]
+
+[^performance]: I'm again using the term _performance_ in the narrow sense of a model that does well (however quantified) on the metric you chose (based on scientific considerations).
+
+
+Trying different models is, of course, always an option, and possibly a good one. But even if we don't use lots of different models, there are often things we can do to improve the performance of the model (or type of model) we are using.
+
+We are covering several important approaches to model performance improvement here. But as we go through these topics (and the rest of the course) always keep these things in mind:
+
+-   **Good performance alone doesn't mean a model is good!**
+-   **Good performance on a scientifically wrong metric is useless!**
+-   **Good performance assessed with the data used to build the model is not too meaningful!**
+
+With that out of the way, here are a few ways to potentially improve your model performance. We'll discuss each in more detail in subsequent units.
+
+
+# Improving models by improving data
+
+We discussed the idea of feature engineering and related data manipulation topics previously. Getting your data in the best shape possible can often make a huge difference on model performance. Therefore, don't skip those steps when considering ways to improve your model. And now would be an excellent time [to revisit this topic](/content/module-data-processing/feature-engineering/feature-engineering.qmd) 😄.
+
+
+# Making models smaller
+
+Some feature engineering tasks might reduce your number of variables and thus your data. It might still be that you have too many variables in your model, and you don't have good scientific knowledge to justify removing further ones. You can then try some statistical approaches that can help reduce model size. Common ones are subset selection and regularization. Simpler models are easier to understand and reduce the risk of overfitting, thus likely performing better on the metric you care about, namely **performance on data not used to build the model**.
+
+
+# Making models smarter
+
+Most machine learning models have internal parameters that need to be set to specific values for optimal model performance. Finding those parameter values that make the model perform well is called tuning or training the model. The larger the model, the more important the tuning process is. Some AI models these days have millions of parameters or more. Without strong tuning, the model couldn't do anything. 
+
+
+# Summary
+
+There are several steps that one can and often needs to do to get a model with good performance. What exactly you need to do depends on the details of the model. In general, the more complex the model, the more it needs to be adjusted to give good results.
+
+
+# Further Resources
+
+None ATM.

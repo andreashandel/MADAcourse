@@ -1,0 +1,25 @@
+---
+title: Model improvement
+subtitle: ""
+---
+
+
+# Overview
+Almost always, your first model is not that great. You generally want to improve your models to find a good one.
+
+This module discusses ways to improve your models. 
+
+# Learning Objectives
+
+* Be familiar with methods to improve models.
+* Be able to perform different model improvement tasks.
+
+
+# Content
+
+The module consists of the following units:
+
+* [Model improvement introduction](./model-improvement-introduction/model-improvement-introduction.qmd)
+* [Subset selection](./model-improvement-subset/model-improvement-subset.qmd)
+* [Regularization](./model-improvement-regularization/model-improvement-regularization.qmd)
+* [Tuning](./model-improvement-tuning/model-improvement-tuning.qmd)

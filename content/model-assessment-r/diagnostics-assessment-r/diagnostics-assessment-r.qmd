@@ -34,26 +34,6 @@ In `tidymodels`, you can use the `null_model()` function to compute the performa
 # Single predictor comparisons
 
 
-
-
-# Observed versus predicted values
-
-The model performance metric gives you a single quantity describing how well the model matches the data, given the metric you defined. That's useful, but you generally want to dig deeper and compare **model predictions** to the **observed data** for individual observations.
-
-For continuous outcomes, you can plot those two quantities on the x- and y-axes. For a (hypothetical) perfect model, all points are along the 45-degree line. You don't actually want them all perfectly on the line since this suggests overfitting. Some scatter along the line is expected and healthy. However, you want to look for systematic deviations from this line, as it suggests potential problems, i.e., it likely means your model is *biased* and is not flexible enough to capture important patterns still found in the data (i.e., your model is underfitting). In that case, you will want to try different models. 
-
-Similarly, for categorical outcomes, you can look at the confusion matrix to see if there are lots of FN or FP, which might suggest the model gets certain categories systematically wrong. 
-
-In the common case that you only have 2 categories (e.g., yes/no) and you use a logistic model or some other model that predicts probabilities, you can plot those model-predicted probabilities together with the observed data (which will be just 0 or 1). You are again looking for any patterns that might indicate that there are systematic deviations between model predictions and data that could suggest that your model needs tweaking.
-
-
-
-# Residuals
-
-Instead of (or in addition to) plotting observed versus predicted for continuous outcomes, you can plot the difference between the two. These differences are called the residuals. What you are looking for is a cloud of points with no discernible pattern. If there is a pattern (e.g., an overall skew, or more points above the 0 y-axes than below), it again suggests that there is still some pattern/signal in the data that the model didn't capture.
-
-
-
 # Summary
 
 When assessing your models, it is important to go beyond the performance metric and look at individual model predictions and how closely they agree with the data. If you spot residual patterns, that might indicate that you could (but don't have to) make your model more complex/flexible to try and capture additional details of the data.

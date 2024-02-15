@@ -71,13 +71,15 @@ Depending on the kind of regularization model you fit, you have to determine 1 o
 
 If one fits models in a Bayesian framework, one needs to supplies priors for each parameter. If one provides informative priors that constrain the possible values of the model parameters based on prior scientific information, it also leads to regularization and generally reduces overfitting. 
 
-# Further comments
 
-If you are familiar with AIC, BIC or similar information criteria, you might have noticed that the cost function in regularization looks a bit like the equations for AIC or similar quantities. That is no accident. Both try to penalize the model for being overly complicated and thus have equations that contain terms for both model performance and model complexity while trying to find the model with the best balance.
+# Regularization and Information Criteria
+
+You might or might not remember [our discussion of information criteria](/content/model-assessment/information-criteria-assessment/information-criteria-assessment.qmd) to assess model performance. I didn't show any equations there. But if you are familiar with AIC, BIC or similar information criteria, or look them up, you might have noticed that the cost function in regularization looks a bit like the equations for AIC or similar quantities. That is no accident. Both try to penalize the model for being overly complicated and thus have equations that contain terms for both model performance and model complexity while trying to find the model with the best balance.
 
 If LASSO has the nice feature of potentially removing variables and thus making the model simpler, why ever use ridge regression or the elastic net? It turns out that for some problems, those other methods perform better. See [section 6.2. of *ISLR*](https://statlearning.com/) for more.
 
 There is a lot of math behind the regularization concept. From an applied perspective, the focus is to understand the overall idea and how to implement them. For more on regularization, see [section 6.2. of *ISLR*](https://statlearning.com/), [chapter 6 of *HMLR*](https://bradleyboehmke.github.io/HOML/regularized-regression.html) and [section 34.9 of *IDS*](https://rafalab.github.io/dsbook/). I encourage you to check out the ISLR and HMLR readings and skim through them to get a better understanding of these widespread and powerful techniques.
+
 
 # More regularization
 
@@ -85,6 +87,19 @@ The term *regularization* is broad and the idea has been applied to many differe
 
 The main point is that if you see the word *regularization* in the literature, it might refer to the specific approaches discussed above, but it might also refer to other approaches related to the [general concept](https://en.wikipedia.org/wiki/Regularization_(mathematics)).
 
+
 # Methods related to subset selection and regularization
 
-Subset selection and regularization are not the only methods that one can use to try and find the best performing model. Other methods that try to find the optimal set of predictors, often labeled *feature reduction methods*, can be used. Examples are [Best Subset Regression](https://github.com/ryantibs/best-subset), [Partial Least Squares (PLS)](https://en.wikipedia.org/wiki/Partial_least_squares_regression), [Principal Component Analysis (PCA)](https://en.wikipedia.org/wiki/Principal_component_analysis), [Least Angle Regression (LARS)](https://en.wikipedia.org/wiki/Least-angle_regression). We briefly mentioned some of them when we discussed feature reduction. Those methods are for instance discussed in [chapters 17-19 of *HMLR*](https://bradleyboehmke.github.io/HOML/) and [section 6.3. of *ISLR*](https://statlearning.com/). We won't cover those, but if you are interested, take a look.
+We previously mentioned some methods that can be used to reduce the number of variables - and therefore the model size - when we discussed feature reduction. [You might want to briefly revisit this topic](/content/module-data-processing/feature-engineering/feature-engineering.qmd). Those methods, such as Principal Component Analysis, do in some sense also lead to smaller data and thus smaller models. However, the approaches are different and - as far as I understand them - conceptually not quite the same, even if the result - a smaller model - might be similar.
+
+
+# Summary
+
+Regularization is a useful and increasingly common approach. The LASSO is popular because it can kick out variables and make your model simpler. Most Bayesian approaches are automatically somewhat regularizing (unless you pick crazy priors). It's definitely a technique worth considering when you try to improve the performance of your models.
+
+
+# Further Resources
+
+* [In this paper](https://projecteuclid.org/journals/statistical-science/volume-35/issue-4/Best-Subset-Forward-Stepwise-or-Lasso-Analysis-and-Recommendations-Based/10.1214/19-STS733.full), several prominent statisticians explore subset selection and regularization methods to figure out which ones is best. The result - maybe not surprisingly - is that it depends. It's worth a read-through if you are considering using any of these approaches.
+
+

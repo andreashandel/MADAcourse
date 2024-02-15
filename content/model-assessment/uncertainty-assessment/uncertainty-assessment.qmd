@@ -9,6 +9,8 @@ date-modified: last-modified
 
 This unit discusses model uncertainty, how to compute and and how to assess it.
 
+![A study with n=1 has large uncertainty. Source: [SMBC](https://www.smbc-comics.com/comic/2014-09-17/).](smbc-sample-size.png){width="40%" fig-alt="A cartoon from the webcomic 'Saturday Morning Breakfast Cereal.' The comic shows a man with round glasses sitting in an armchair next to a small girl. He is holding a book, and saying 'After nineteen additional trials, of course, the results were shown to be anomalous.' The caption reads The Tortoise And The Hare is actually a fable about small sample sizes."}
+
 
 # Learning Objectives
 
@@ -19,13 +21,10 @@ This unit discusses model uncertainty, how to compute and and how to assess it.
 
 # Introduction
 
-Every estimate you obtain from your model comes with a certain amount of uncertainty. It is hard (one could say impossible) to make sense of any result that does not also report uncertainty. For instance if you know that your (or someone else's) analysis showed that a drug improves some relevant biological outcome by 20%, what does it mean? If the most likely estimate is 20%, and a large fraction (say 89%)[^uncertainty] of estimates are within 15-25%, we can conclude (assuming no confounding and such) that the drug very likely has some effect. On the other hand, if the uncertainty range is -30% - 60%, we should be much more tentative in drawing conclusions. Thus, a point estimate without knowing the associated uncertainty makes it very difficult to draw useful conclusions.
+Every estimate you obtain from your model comes with a certain amount of uncertainty. It is hard (one could say impossible) to make sense of any result that does not also report uncertainty. For instance if you know that your (or someone else's) analysis showed that a drug improves some relevant biological outcome by 20%, what does it mean? If the most likely estimate is 20%, and a large fraction (say 89%)[^uncertainty] of estimates are within 15% to 25%, we can conclude (assuming no confounding and such) that the drug very likely has some effect. On the other hand, if the uncertainty range is -30 to 60%, we should be much more tentative in drawing conclusions. Thus, a point estimate without knowing the associated uncertainty makes it very difficult to draw useful conclusions.
 
 
 [^uncertainty]: I'm sure you are wondering where that 89% number comes from, and why I'm not saying 95%. I'm following [Richard McElreath's example](https://xcelab.net/rm/statistical-rethinking/) from his Statistical Rethinking book. The main point being that any number is arbitrary. 95% (and it's associated p-value of 0.05) has emerged as a standard - and to avoid arguing with reviewers and colleagues, I do often use 95% in publications. But it's a totally arbitrary standard, and there is no one right or wrong number. For some scenarios, 80% might be good enough, for others you might want to have 99%. You can of course use 95%, but be aware that there is nothing special about that number, other than that everyone else is also using it.
-
-
-![A study with n=1 has large uncertainty. Source: [SMBC](https://www.smbc-comics.com/comic/2014-09-17/).](smbc-sample-size.png){width="40%" fig-alt="A cartoon from the webcomic 'Saturday Morning Breakfast Cereal.' The comic shows a man with round glasses sitting in an armchair next to a small girl. He is holding a book, and saying 'After nineteen additional trials, of course, the results were shown to be anomalous.' The caption reads The Tortoise And The Hare is actually a fable about small sample sizes."}
 
 
 Because of that, quantifying uncertainty is an important part of model evaluation. During model building and selection, we are not only interested in some point estimate of model performance (e.g., average RMSE), but would often also like to know how that performance measure is distributed and how it differs between models. For instance, we might have 2 classification models, one with an average accuracy (obtained through CV) of 70%, while the other has 80%. It looks like we should go with model 2, right? But what if we also knew that the range of accuracy values (for different repeats of the CV) is 65% - 75% for model 1, and it is 45% - 95% for model 2. Which model do we prefer? We might still prefer model 2, but there is also an argument that we might want to go with model 1, which has better performance at the lower bound. Without knowing the distribution of performance measures, we can only make limited decisions.
@@ -42,44 +41,60 @@ In the following, we discuss a few common ways to quantify uncertainty.
 
 ## Confidence interval (CI)
 
-Confidence intervals (CIs) are maybe the most commonly reported uncertainty. Those intervals capture uncertainty in the model parameters and thus uncertainty in the **mean** outcome. CIs are very useful if we want to know the overall results. For instance, going back to the example above, if we report an average drug-induced improvement in some quantity by 20%, with a CI (having some width, such as 89% or 95% or...) of 15% - 25%, we can conclude that if we gave the drug to another population like the one we studied, this is roughly the range of impacts we should expect to see in the new study.[^CI]
+Confidence intervals (CIs) are a common way to report uncertainty. Those intervals capture uncertainty in the estimates for the model parameters and thus uncertainty in the **mean** outcome. CIs are very useful if we want to estimate the uncertainty in the population average outcome. For instance, going back to the example above, if we report an average drug-induced improvement in some quantity by 20%, with a CI (having some width, such as 89% or 95% or...) of 15% to 25%, we can conclude that if we gave the drug to another population like the one we studied, this is roughly the range of impacts we should expect to see in the new study.[^CI]
 
 [^CI]: I'm purposefully fuzzy here. The problem with CI in a frequentist framework is that their technical definition is rather confusing. According to Wikipedia: _Given a confidence level X (95% and 99% are typical values), a CI is a random interval which contains the parameter being estimated X% of the time._ You'll find equally confusing definitions in other places. Most folks actually interpret CI as Bayesian credible intervals (see below) when they talk about it, even if they do their statistical analysis in a frequentist framework.
 
-## Standard errors
+
+## Standard error (SE)
+
+[Standard errors (also often called standard error of the mean, SEM)](https://en.wikipedia.org/wiki/Standard_error) are closely related to CI. For SE, you need to assume some kind of distribution for the quantity of interest. Almost always, that's a normal distribution (which is often what you implicitly do when you optimize RMSE). In the common case that one looks at 95% CI and assumes a normal distribution, the relation is that CI = 1.96\*SE. Thus, with SE, you get tighter bounds (they correspond to 68% CI). As for CI, an increase in data usually leads to more precise estimates of the **mean** outcome and therefore tighter bounds. It seems to me that SE are popular because the give the tightest bounds and thus the impression of preciseness 😁.
 
 
-## Standard deviations
-
-## Prediction interval
-
-If we are interested in model predictions, we generally also want to know how much uncertainty is associated with those predictions. The difference between a CI and a prediction interval (for some reason, almost never abbreviated as PI) is that the latter also accounts for variation around the estimated mean. Thus, prediction intervals are always wider than CI - sometimes substantially so. Unfortunately, they are often confused, readers - even experts - often interpret CI as if they were prediction intervals. [This paper](https://www.pnas.org/doi/10.1073/pnas.2302491120) is worth a read. Figure 1 in this paper shows an example where the 
 
 
-For continuous outcomes, computing prediction intervals gives an idea of the uncertainty in our predictions. As for parameter uncertainty, some `R` functions have built-in methods to compute prediction intervals, or you can use the bootstrap approach.
+## Prediction interval (PI)
 
-Prediction intervals are not the same as confidence intervals. The latter quantifies the uncertainty in model parameters, e.g., the *b~i~* in a regression model. Since those *b~i~* have uncertainty, the model predictions for the *expected* observation has uncertainty. However, each real observation has additional scatter around the expected value. This additional uncertainty needs to be factored in when trying to make predictions for individual outcomes. As such, prediction intervals are wider than confidence intervals.
+If we are interested in model predictions, we generally also want to know how much uncertainty is associated with those predictions. The difference between a CI and a prediction interval (for some reason, almost never abbreviated as PI - but I'm doing it here to make my typing life easier 😁) is that the latter also accounts for variation around the estimated mean. 
 
-It is unfortunately common that papers report confidence intervals, but the authors and/or readers think of them as prediction intervals. This leads to overly confident statements about the performance of the model.
+It is important to be aware of the fact that prediction intervals are not the same as confidence intervals. The latter quantifies the uncertainty in model parameters, e.g., the *b~i~* in a regression model. Since those *b~i~* have uncertainty, the model predictions for the *expected* observation has uncertainty. However, each real observation has additional scatter around the expected value. This additional uncertainty needs to be factored in when trying to make predictions for individual outcomes. Thus, PI are always wider than CI - sometimes substantially so. 
+
+
+## Standard deviation (SD)
+
+Standard deviation is a measure that tries to assess the spread in the data itself. Thus, it is closely related to the prediction interval. SE and SD are related through SE = SD/$\sqrt(N)$, where $N$ is the sample size. What that means in practice is that as you get more data, your estimates of the mean (or in general population average outcome) become more precise. However, the actual variability in the data will likely not change much, so the SD remains similar.
+
+This is the same idea for CI and prediction intervals. As you get more data, your CI generally shrink. But your prediction intervals likely will not, since the spread in the data will probably not change much as you get more data.
+
 
 
 ## Credible interval
 
+If one uses Bayesian methods for data analysis, the equivalent of a confidence interval is a credible interval. Credible intervals are sometimes - unfortunately - also abbreviated as CI, sometimes CrI. A credible interval is essentially the Bayesian equivalent to a confidence interval. It informs you about the uncertainty in the population estimate.
+
+
 ## Posterior prediction interval
 
+The posterior prediction interval is the equivalent of the prediction interval discussed above, only computed in a Bayesian framework. It can be interpreted pretty much the same as a frequentist prediction interval.
 
+
+
+
+# Model parameter uncertainty
+
+The different uncertainty measures just discussed (and others) can be applied to different parts of the model. At times, we might be interested in knowing the uncertainty of the model parameters. Models estimate the overall/expected outcome, therefore uncertainties around parameters correspond to the CI quantity (confidence or credible intervals) discussed above. They do not factor in residual variation in the data.
 
 
 
 # Model performance uncertainty
 
-If we perform cross-validation, (often repeated), we get multiple estimates for model performance based on the test set performance. For instance, in 10-fold CV 10 times repeated, we get 100 values for the model performance metric (e.g., RMSE). We can look at the distribution of those RMSE. While the standard approach is to pick a model with lower mean RMSE (or other performance measures), that doesn't have to be the case. We might prefer one with a somewhat higher mean but less variance, as in the example above. Or we could pick a model with a "small enough" RMSE that makes the model less complex, e.g. including less predictors (what "small enough" means has to be defined by you). To that end, looking at distributions of model performance is useful.
+Once you picked your metric, you are fitting the model to optimize it. For simple models, you get a single performance metric for the most likely parameter values. You can use the uncertainty in the parameter estimates to compute the uncertainty in the outcome. 
 
-# Model parameter uncertainty
+If we perform cross-validation, (often repeated), we get multiple estimates for model performance based on the test set performance. For instance, in 10-fold CV 10 times repeated, we get 100 values for the model performance metric (e.g., RMSE). Note that each of these estimates is a point estimate. It doesn't account for uncertainty in parameter estimates. It does account for variability in the data used to obtain each estimate (and is thus similar to the bootstrap idea discussed below).
 
-At times, we might be interested in knowing the uncertainty of the model parameters. This will also give us the uncertainty in the predicted *expected* values of the model. Both of those quantities, uncertainty in parameters and model expectations can be quantified with **confidence intervals.** (Or the Bayesian equivalent of **credible intervals**).
+We can look at the distribution of those RMSE. While the standard approach is to pick a model with lower mean RMSE (or other performance measures), that doesn't have to be the case. We might prefer one with a somewhat higher mean but less variance. Or we could pick a model with a "small enough" RMSE that makes the model less complex, e.g. including less predictors (what "small enough" means has to be defined by you). To that end, looking at distributions of model performance is useful.
 
-Some functions in R, e.g. `lm()` have a built-in command to compute confidence intervals. For more complex models or approaches, such built-in functions might not exist. A general approach to produce confidence or prediction intervals is with a sampling method that is very similar in spirit to cross-validation, namely by performing **bootstrapping.**
+Once you have a final model, you can and want to still compute the uncertainty as quantified by CI/SE and probably also prediction uncertainty as quantified by PI/SD.
 
 
 # Computing uncertainty intervals
@@ -87,8 +102,12 @@ Some functions in R, e.g. `lm()` have a built-in command to compute confidence i
 
 ## Parametric methods
 
+If you make the - explicit or implicit - assumption that your outcome follows some distribution (often normal for continuous outcomes), you can use built-in routines to quickly calculate the above-described quantities. Almost all software that fits models will give you these estimates.
+
 
 ## Bootstrapping
+
+For more complex models or approaches, there might not be a readily available method to compute uncertainty measures. A general approach to produce confidence or prediction intervals is with a sampling method that is very similar in spirit to cross-validation, namely by performing **bootstrapping.**
 
 The idea for bootstrapping is fairly straightforward. Bootstrapping tries to imitate a scenario in which you repeated your study and collected new data. Instead of having actual new data, the idea is that the existing data is sampled to form a new "dataset", which is then fit. Sampling is performed *with replacement* to obtain a sample the size of the original dataset. Some observations now show up more than once, and some do not show up. For each such sample, you fit your model and estimate parameters. You will thus get a distribution of parameter estimates. From those distributions, you can compute confidence intervals, e.g., the usual 95% interval. For each fit, you can also predict outcomes and thus obtain a distribution of prediction outcomes (see next).
 
@@ -96,26 +115,22 @@ Like cross-validation, the bootstrap method is very general and can be applied t
 
 
 
-
-# Other uncertainty measures
-
-## SEM
-
-## SD
-
 ## P-values
 
 So what about the **p-value**? This quantity doesn't measure uncertainty directly, though it is in some way related to it. p-values are sometimes useful for hypothesis testing. But in my opinion, p-values are overused, generally not too meaningful, and can most often be skipped (though sometimes one needs them just to make reviewers happy). I'm thus not talking about them further.
 
 
+
 # Summary
+
+Reporting results without a measure of uncertainty makes it very hard to interpret the implications of your findings. You should therefore report some measures of uncertainty. If you are purely concerned with population-level inference, you can use CI. If you also want to make some predictive statements, you should also use prediction intervals. It is unfortunately common that papers report CI or SE, but the authors and/or readers think of them as prediction intervals or SD. This leads to overly confident statements about the performance of the model, [even among experts](https://www.pnas.org/doi/10.1073/pnas.2302491120). Reporting both is best. If you don't, be very clear what you report and what you conclude from your findings. Don't fall into the common trap of reporting CI/SE but then talking about them as if they were PI/SD.
 
 
 # Further Resources
 
 Bootstrapping is discussed in the [Resampling Methods chapter of *ISLR*](https://statlearning.com/) and [the Cross Validation chapter of *IDS*](https://rafalab.github.io/dsbook/cross-validation.html). The other topics are covered in various places in the different course materials we've been using, but again not in any full chapters/sections. So if you have suggestions for good resources, let me know.
 
-
+* [This article](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1255808/) is a short, easily readable note discussing SE and SD.
 
 
 

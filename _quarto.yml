@@ -175,7 +175,7 @@ website:
         file: content/module-data-processing/missing-data/missing-data.qmd
       - text: Dealing with outliers
         file: content/module-data-processing/outliers/outliers.qmd
-      - text: Creating new data/variables
+      - text: Feature Engineering
         file: content/module-data-processing/feature-engineering/feature-engineering.qmd
       - text: Merging data
         file: content/module-data-processing//merging-data/merging-data.qmd
@@ -229,16 +229,16 @@ website:
         file: content/model-assessment/uncertainty-assessment/uncertainty-assessment.qmd
     - section: 10. Model Improvement
       contents:
-      - text: Improving Model Fits Overview
-        file: content/module-model-improvement/model-improvement-overview.qmd
-      - text: Pre-Processing Data
-        file: content/module-model-improvement/model-improvement-data-processing.qmd
+      - text: Model Improvement Overview
+        file: content/model-improvement/model-improvement-overview.qmd
+      - text: Model Improvement Introduction
+        file: content/model-improvement/model-improvement-introduction/model-improvement-introduction.qmd
       - text: Subset Selection
-        file: content/module-model-improvement/model-improvement-subset-selection.qmd
+        file: content/model-improvement/model-improvement-subset/model-improvement-subset.qmd
       - text: Regularization
-        file: content/module-model-improvement/model-improvement-regularization.qmd
+        file: content/model-improvement/model-improvement-regularization/model-improvement-regularization.qmd
       - text: Model Tuning
-        file: content/module-model-improvement/model-improvement-tuning.qmd
+        file: content/model-improvement/model-improvement-tuning/model-improvement-tuning.qmd
     - section: 11. Machine Learning Models I
       contents:
       - text: ML Models Overview
@@ -306,7 +306,7 @@ website:
     - text: 9. Model Assessment
       file: content/model-assessment/assessment-model-assessment.qmd
     - text: 10. Model Improvment
-      file: content/module-model-improvement/assessment-model-improvement.qmd
+      file: content/model-improvement/assessment-model-improvement.qmd
     - text: 11. Machine Learning Models I
       file: content/module-model-ml-1/assessment-ml-models-1.qmd
     - text: 12. Machine Learning Models II

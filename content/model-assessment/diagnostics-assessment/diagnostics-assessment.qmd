@@ -16,7 +16,7 @@ This unit discusses different diagnostics that are helpful to assess models.
 
 # Introduction
 
-We already discussed several approaches of asssessing models. One was based on a broad comparison with the real world, the other one focused narrowly on model evaluation based on some performance metric. There are several other ways to assess models that are in some sense between the very broad and very narrow approaches we discussed.
+We already discussed several approaches of assessing models. One was based on a broad comparison with the real world, the other one focused narrowly on model evaluation based on some performance metric. There are several other ways to assess models that are in some sense between the very broad and very narrow approaches we discussed.
 
 
 
@@ -74,6 +74,13 @@ Instead of (or in addition to) plotting observed versus predicted for continuous
 
 
 
+# Simulation
+
+One of the best general approaches toward testing models is to simulate synthetic data and fit the model to the simulated data. You know what you used to generate the synthetic data, so you know what the model should return. For instance if you simulate data for the linear model $$Y=b_0 + b_1X_1 + b_2X_2$$ (and add a bit of noise on top), and you chose *b~0~*=*b~1~*=*b~2~*=2, then when you fit such a linear model to this simulated data, those are the values for the coefficients you expect to get back (not quite, since you added a bit of noise, but they shouldn't be far off). If you can't get out what you stuck in, you have a problem. Most likely, it means you are over-fitting, and more than one combination of parameter values is giving almost the same performance measure, and the model can't differentiate. You should then either get more data or make your model simpler.
+
+This approach of simulating data is a very useful general approach - which is why we [covered it in some detail](/content/module-synthetic-data/synthetic-data-overview.qmd). For anything beyond the simplest models, you should probably use this approach. The more complex your model becomes, the more useful this type of diagnosis is. It can at times be difficult to assess your model if you use a model for which it is not clear how the mapping of inputs to outcomes works (e.g. a complex machine learning model). Even then, if you make some data where say one predictor is strongly correlated with the outcome, and another one is only noise, then your model should properly predict that this is the case.
+
+
 
 # Sensitivity analysis
 
@@ -87,22 +94,17 @@ Note that sometimes the term [sensitivity analysis](https://en.wikipedia.org/wik
 
 # Model Interpretation
 
-A nice feature of using subset selection or LASSO with GLMs, or fitting a single tree, is that the algorithm decides which predictor variables are important, and throws out the remaining ones. For the ones that stay in the model, we can look at the coefficients in front of each predictor variable, or look at the final tree/decision diagram, to assess the importance of individual predictor variables on the outcome. This provides an easy way to understand _how_ specific variables influence the outcome.
+A nice feature of simple models, such as GLMs, is that one can easily understand _how_ specific variables influence the outcome. You just need to look at the coefficients in front of the input variables.[^interpretation]
 
-Those simple approaches are not available anymore for more complex models. With complex models, we generally give up interpretability in exchange for better performance. However, we ideally want both. The last several years have seen a good amount of development to come up with methods that allow one to peek inside the black box, i.e. to understand why and how a complex model makes its predictions, and what the role of specific predictor variables is on the outcome. This area is generally called _interpretable machine learning_. 
+[^interpretation]: Well, it can actually be quite tricky to interpret coefficients for anything but a linear model. For instance for a logistic model (and many other GLM), the impact of a change in a predictor on the outcome depends on the value of the predictor. Sometimes a 1-unit increase in some predictor (say drug dose) can lead to a strong change in the outcome (say cholesterol level), while for other values of that predictor, increasing it further by 1 unit might have almost no impact on the outcome. So one needs to be careful even when interpreting fairly simple GLM. However, the whole model is known so you can always figure out how one part relates to the other. That's not the case any more for complex ML models.
+
+Those simple approaches are not available anymore for more complex models. With complex models, we generally give up interpretability in exchange for better performance. However, we ideally want both. There has been a good amount of development to come up with methods that allow one to peek inside the black box, i.e. to understand why and how a complex model makes its predictions, and what the role of specific predictor variables is on the outcome. This area is generally called _interpretable ML (or AI)_. 
 
 There's no point in me repeating what others have already said (much better than I could) `r emoji::emoji('smiley')`, therefore, instead of me writing more on this, please take a look at [chapters 2 and 3 of the _Interpretable Machine Learning (IML) book_](https://christophm.github.io/interpretable-ml-book/), which gives a very nice introduction on this topic. As you can tell by the title, the whole book is about interpretation of machine learning methods, and is a great resource. 
 
-For a shorter, but also great resource, check out [chapter 16 of HMLR](https://bradleyboehmke.github.io/HOML/iml.html), which provides both a quick introduction and overview to the topic, and lists and illustrates the use of several R packages to do various interpretation tasks.
-
-Another good introduction is [this chapter of the _Tidy Modeling with R_ book](https://www.tmwr.org/explain.html).
-
-As models get more complex, making sense of them will increase in importance. Even if you are mainly interested in predictive performance and less on understanding your system, it is a good idea to investigate your model in some detail. You might often figure out things that can help further increase model performance. Also, without understanding at least to some extent how complex models make their predictions, the potential for unnoticed bias increases. A good example of this can be found [in this very recent Science paper](https://science.sciencemag.org/content/366/6464/447) which describes racial bias in a machine learning model that tries to predict healthcare needs of patients. See also [this commentary](https://science.sciencemag.org/content/366/6464/421) on the article. Thus, this area of interpreting results from complex models will likely see much development in the near future, hopefully leading to models that are both powerful (and thus likely complex) and interpretable. 
+As models get more complex, making sense of them will increase in importance. Even if you are mainly interested in predictive performance and less on understanding your system, it is a good idea to investigate your model in some detail. You might often figure out things that can help further increase model performance. Also, without understanding at least to some extent how complex models make their predictions, the potential for unnoticed bias increases. A good example of this can be found [in this Science paper](https://science.sciencemag.org/content/366/6464/447) which describes racial bias in a machine learning model that tries to predict healthcare needs of patients. See also [this commentary](https://science.sciencemag.org/content/366/6464/421) on the article. Thus, this area of interpreting results from complex models will likely see much development in the near future, hopefully leading to models that are both powerful (and thus likely complex) and interpretable. 
 
 Given how easy it is to apply some of these methods to your models, I recommend that if you decide to use a somewhat complex model (or even a not-so complex one), you should always do at least some analyses that probe the model, e.g. perform a variable importance analysis and related investigations as described in the references above. 
-
-
-
 
 
 
@@ -115,7 +117,11 @@ When assessing your models, it is important to go beyond the performance metric 
 # Further Resources
 
 
-The chapters [_Judging model effectiveness_](https://www.tmwr.org/performance.html) and [_When should you trust your predictions?_ ](https://www.tmwr.org/trust.html) of the TMWR book have some additional good information.
+* The chapters [_Judging model effectiveness_](https://www.tmwr.org/performance.html) and [_When should you trust your predictions?_ ](https://www.tmwr.org/trust.html) of the TMWR book have some additional good information.
+
+* [Chapter 16 of HMLR](https://bradleyboehmke.github.io/HOML/iml.html), provides another good introduction with detailed examples in R on the topic of interpretable ML.
+
+* Yet another good introduction to interpretable ML is [this chapter of the _Tidy Modeling with R_ book](https://www.tmwr.org/explain.html).
 
 
 
