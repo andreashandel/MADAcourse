@@ -23,6 +23,15 @@ You can use `tidymodels` for pretty much any part of the modeling workflow (e.g.
 
 The `tidymodels` suite is a relatively recent addition to the R universe. One of the main persons behind `tidymodels`, [Max Kuhn](https://github.com/topepo) previously wrote the package [`caret`](http://topepo.github.io/caret/index.html). This was -- and still is -- a nice and comprehensive package. I used it in previous versions of this course. However, at this point, all effort by Max and his team is put into `tidymodels`. Thus, for this iteration of the course, we will focus on those newer packages. If you ever end up working with the `caret` package, you might want to check out the [`caret` chapter in *IDS*](https://rafalab.github.io/dsbook/caret.html) -- `caret` has existed for a while so you can find all kinds of resources online as well.
 
+
+
+## Metrics with `tidymodels`
+
+The `yardstick` package implements a lot of different metrics in the `tidymodels` framework. For details, see the [`yardstick` package website](https://yardstick.tidymodels.org/index.html) and the [Metric types vignette](https://yardstick.tidymodels.org/articles/metric-types.html).
+
+You can also define your own metrics, as described in this [article on custom metrics](https://yardstick.tidymodels.org/articles/custom-metrics.html).
+
+
 # Other comprehensive packages
 
 While the whole data exploring, cleaning, and wrangling part in R is strongly dominated by the various `tidyverse` packages, `tidymodel` packages do not (yet) dominate the fitting part as much. And it is always good to have options.
