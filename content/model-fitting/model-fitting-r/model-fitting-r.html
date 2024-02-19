@@ -844,7 +844,10 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
   <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#the-tidymodels-set-of-packages" id="toc-the-tidymodels-set-of-packages" class="nav-link" data-scroll-target="#the-tidymodels-set-of-packages">The <code>tidymodels</code> set of packages</a></li>
+  <li><a href="#the-tidymodels-set-of-packages" id="toc-the-tidymodels-set-of-packages" class="nav-link" data-scroll-target="#the-tidymodels-set-of-packages">The <code>tidymodels</code> set of packages</a>
+  <ul class="collapse">
+  <li><a href="#metrics-with-tidymodels" id="toc-metrics-with-tidymodels" class="nav-link" data-scroll-target="#metrics-with-tidymodels">Metrics with <code>tidymodels</code></a></li>
+  </ul></li>
   <li><a href="#other-comprehensive-packages" id="toc-other-comprehensive-packages" class="nav-link" data-scroll-target="#other-comprehensive-packages">Other comprehensive packages</a></li>
   <li><a href="#direct-interaction-with-statistical-fitting-packages" id="toc-direct-interaction-with-statistical-fitting-packages" class="nav-link" data-scroll-target="#direct-interaction-with-statistical-fitting-packages">Direct interaction with statistical fitting packages</a></li>
   <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further reading</a></li>
@@ -874,7 +877,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2024-01-27</p>
+      <p class="date-modified">2024-02-18</p>
     </div>
   </div>
     
@@ -904,6 +907,11 @@ ul.task-list li input[type="checkbox"] {
 <p>You’ve learned about the <code>tidyverse</code> already. A more recent effort by the folks from RStudio – and many other contributors - is a set of packages called <a href="https://www.tidymodels.org/"><code>tidymodels</code></a>. The idea is that similar to various packages in the <code>tidyverse</code> you can use for data wrangling, <code>tidymodels</code> provides a set of packages that help you with the code related to fitting models. For this course, we will focus on the <code>tidymodels</code> set of packages.</p>
 <p>You can use <code>tidymodels</code> for pretty much any part of the modeling workflow (e.g., pre-processing, model evaluation, tuning). We have not yet covered most of those steps, but will do so shortly. The goal for this unit is to start exploring the <code>tidymodels</code> workflow – for now we’ll ignore a lot of the additional features, but we’ll discuss shortly.</p>
 <p>The <code>tidymodels</code> suite is a relatively recent addition to the R universe. One of the main persons behind <code>tidymodels</code>, <a href="https://github.com/topepo">Max Kuhn</a> previously wrote the package <a href="http://topepo.github.io/caret/index.html"><code>caret</code></a>. This was – and still is – a nice and comprehensive package. I used it in previous versions of this course. However, at this point, all effort by Max and his team is put into <code>tidymodels</code>. Thus, for this iteration of the course, we will focus on those newer packages. If you ever end up working with the <code>caret</code> package, you might want to check out the <a href="https://rafalab.github.io/dsbook/caret.html"><code>caret</code> chapter in <em>IDS</em></a> – <code>caret</code> has existed for a while so you can find all kinds of resources online as well.</p>
+<section id="metrics-with-tidymodels" class="level2">
+<h2 class="anchored" data-anchor-id="metrics-with-tidymodels">Metrics with <code>tidymodels</code></h2>
+<p>The <code>yardstick</code> package implements a lot of different metrics in the <code>tidymodels</code> framework. For details, see the <a href="https://yardstick.tidymodels.org/index.html"><code>yardstick</code> package website</a> and the <a href="https://yardstick.tidymodels.org/articles/metric-types.html">Metric types vignette</a>.</p>
+<p>You can also define your own metrics, as described in this <a href="https://yardstick.tidymodels.org/articles/custom-metrics.html">article on custom metrics</a>.</p>
+</section>
 </section>
 <section id="other-comprehensive-packages" class="level1">
 <h1>Other comprehensive packages</h1>
