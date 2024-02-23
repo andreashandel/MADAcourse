@@ -12,22 +12,27 @@ Get the quiz sheet for this module from the general [**Assessments**](../../cour
 
 Write a post in this week's discussion channel that answers this question:
 
-Which major new insight did you gain from this week's topic (or any topic related to model fitting you got exposed to over the last few weeks) and how will that maybe affect your analyses in the future? And what point(s) do you find rather confusing about the model fitting material we covered so far?
+Which new insight(s) did you gain from this week's topic (or any topic related to model fitting) and how will that possibly impact your analyses in the future? And what point(s) do you find rather confusing about the model fitting material we covered so far?
 
 Post by Wednesday, then reply to each other by Friday. See if you can help each other reduce any existing confusion. 
 
 
 # Exercise
 
-We'll practice a bit of model fitting using the `tidymodels` framework. Of course, some wrangling tasks are likely part as well. This is another solo exercise. 
+We'll practice a bit of model fitting using the `tidymodels` framework. Of course, some data processing and EDA components are also needed. This is another solo exercise. 
+
 
 ## Setup
 
-**This will be part of your portfolio site.**
+This will be part of your portfolio site. Place all files inside the 
+
+
+## Data
 
 We are going to use the [data from Brian McKay's paper](https://datadryad.org/stash/dataset/doi:10.5061/dryad.51c59zw4v) you saw at the beginning of the course. Download all his files and **make sure to unzip**. Find the `SympAct_Any_Pos.Rda` file, which is the one we'll work with.
 
 Make a folder inside your portfolio repository, call it `fluanalysis`. Make a `data` sub-folder and place the the `SympAct_Any_Pos.Rda` file into that folder. You can just use a single `data` folder for this exercise, but if you want, you can also make separate `raw_data` and `processed_data` folders and place his `.Rda` file into the `raw_data` folder. (I know he already processed it some, but we use it as our start, so for us that is the raw material.)
+
 
 ## Wrangling revisited
 
