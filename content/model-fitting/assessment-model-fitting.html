@@ -22,40 +22,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -278,11 +244,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise">Exercise</a>
   <ul class="collapse">
   <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a></li>
-  <li><a href="#wrangling-revisited" id="toc-wrangling-revisited" class="nav-link" data-scroll-target="#wrangling-revisited">Wrangling revisited</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
+  <li><a href="#data-processing-and-exploration" id="toc-data-processing-and-exploration" class="nav-link" data-scroll-target="#data-processing-and-exploration">Data processing and exploration</a></li>
   <li><a href="#eda-revisited" id="toc-eda-revisited" class="nav-link" data-scroll-target="#eda-revisited">EDA revisited</a></li>
   <li><a href="#general-wrangling-and-eda-comments" id="toc-general-wrangling-and-eda-comments" class="nav-link" data-scroll-target="#general-wrangling-and-eda-comments">General wrangling and EDA comments</a></li>
-  </ul></li>
   <li><a href="#model-fitting" id="toc-model-fitting" class="nav-link" data-scroll-target="#model-fitting">Model fitting</a></li>
+  </ul></li>
   <li><a href="#updating-the-portfolio-website" id="toc-updating-the-portfolio-website" class="nav-link" data-scroll-target="#updating-the-portfolio-website">Updating the portfolio website</a></li>
   </ul>
 </nav>
@@ -310,7 +277,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2024-02-04</p>
+      <p class="date-modified">2024-02-23</p>
     </div>
   </div>
     
@@ -328,93 +295,99 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="discussion" class="level1">
 <h1>Discussion</h1>
 <p>Write a post in this week’s discussion channel that answers this question:</p>
-<p>Which major new insight did you gain from this week’s topic (or any topic related to model fitting you got exposed to over the last few weeks) and how will that maybe affect your analyses in the future? And what point(s) do you find rather confusing about the model fitting material we covered so far?</p>
+<p>Which new insight(s) did you gain from this week’s topic (or any topic related to model fitting) and how will that possibly impact your analyses in the future? And what point(s) do you find rather confusing about the model fitting material we covered so far?</p>
 <p>Post by Wednesday, then reply to each other by Friday. See if you can help each other reduce any existing confusion.</p>
 </section>
 <section id="exercise" class="level1">
 <h1>Exercise</h1>
-<p>We’ll practice a bit of model fitting using the <code>tidymodels</code> framework. Of course, some wrangling tasks are likely part as well. This is another solo exercise.</p>
+<p>We’ll practice a bit of model fitting using the <code>tidymodels</code> framework. Of course, some data processing and EDA components are also needed. This is a solo exercise and due Friday.</p>
 <section id="setup" class="level2">
 <h2 class="anchored" data-anchor-id="setup">Setup</h2>
-<p><strong>This will be part of your portfolio site.</strong></p>
-<p>We are going to use the <a href="https://datadryad.org/stash/dataset/doi:10.5061/dryad.51c59zw4v">data from Brian McKay’s paper</a> you saw at the beginning of the course. Download all his files and <strong>make sure to unzip</strong>. Find the <code>SympAct_Any_Pos.Rda</code> file, which is the one we’ll work with.</p>
-<p>Make a folder inside your portfolio repository, call it <code>fluanalysis</code>. Make a <code>data</code> sub-folder and place the the <code>SympAct_Any_Pos.Rda</code> file into that folder. You can just use a single <code>data</code> folder for this exercise, but if you want, you can also make separate <code>raw_data</code> and <code>processed_data</code> folders and place his <code>.Rda</code> file into the <code>raw_data</code> folder. (I know he already processed it some, but we use it as our start, so for us that is the raw material.)</p>
+<p>This will be part of your portfolio site. Make a new folder called <code>fitting-exercise</code>. Also make a new Quarto document inside the folder and call it <code>fitting-exercise.qmd</code>.</p>
+<div class="{note}">
+<p>In general, I suggest using a folder structure like the one from <code>data-analysis-template</code> and having separate pieces of code and Quarto files. For the purpose of this exercise, we’ll keep it simple and do everything inside the <code>fitting-exercise</code> folder and <code>fitting-exercise.qmd</code> file.</p>
+</div>
 </section>
-<section id="wrangling-revisited" class="level2">
-<h2 class="anchored" data-anchor-id="wrangling-revisited">Wrangling revisited</h2>
-<p>We already spent time on the important steps of data wrangling/cleaning and exploring/visualizing. But practice makes perfect 😄 so we’ll talk a bit more and do a bit more of it here.</p>
-<p>By now you will have figured out that the whole wrangling/exploring process is iterative. Without exploring your data, you don’t know how to clean/wrangle it. Without at least some cleaning, exploration often doesn’t work (e.g.&nbsp;if you have missing values, some R summary functions don’t work properly).</p>
-<p>For this exercise, create a single <code>code</code> folder inside the <code>fluanalysis</code> folder and place a Quarto file (either as stand-alone Quarto or Quarto+R) called <code>wrangling.qmd</code> into that folder. Add code that further processes and cleans the data as follows:</p>
-<ul>
-<li>Load the data. Note that this is actually an <code>RDS</code> file/object, not an <code>RData/RDA</code> file, despite the somewhat misleading <code>.Rda</code> file name ending. So you need to use the right function to load <code>RDS</code> files into R.</li>
-<li>Remove all variables that have <em>Score</em> or <em>Total</em> or <em>FluA</em> or <em>FluB</em> or <em>Dxname</em> or <em>Activity</em> in their name. Don’t do this manually one by one, figure out how to use R commands that let you remove things in an efficient manner, using e.g., <code>contains()</code> or <code>starts_with()</code> from <code>dplyr/tidyselect</code>.</li>
-<li>Also remove the variable <code>Unique.Visit</code>. You should be left with 32 variables coding for presence or absence of some symptom. Only one, temperature, is continuous. A few have multiple categories.</li>
-<li>Remove any NA observations, there aren’t many.</li>
-</ul>
-<p><strong>Make sure to add plenty of comments and text explaining each step. State briefly why you are making a decision, and then if the code is not obvious, explain the how.</strong></p>
-<p>At the end of your (fairly short) cleaning process, you should end up with 730 observations and 32 variables. Save the new data set as <code>RDS</code> file into the appropriate folder (either <code>data</code> or if you made it, your clean data folder). (For single objects <a href="https://rstudio-education.github.io/hopr/dataio.html#r-files"><code>RDS</code> is better than <code>RData/RDA</code>.</a> )</p>
-<p>For our further analysis, we decide (well, I’m deciding that for you 😀) that our main continuous outcome of interest is <strong>Body temperature</strong>, and our main categorical outcome is <strong>Nausea</strong>. We want to see if the other symptoms are correlated with (predict) those outcomes.</p>
+<section id="data" class="level2">
+<h2 class="anchored" data-anchor-id="data">Data</h2>
+<p>We are going to use data on a drug candidate called Mavoglurant. This is <a href="https://link.springer.com/article/10.1007/s10928-015-9430-4">The original paper describing and analyzing the data</a>. You don’t need to look at it, unless you want to 😁. In case you do, since the paper might be behind a paywall, <a href="../..\references/wendling15jpp.pdf">here’s a local copy of the pdf</a>.</p>
+<p>The data is part of an R package called <a href="https://nlmixr2.github.io/nlmixr2data/index.html"><code>nlmixr2data</code></a>. You could get it by installing that pacakge. But the easiest way to get the data is to download it from <a href="https://github.com/metrumresearchgroup/BayesPBPK-tutorial">this Github repository</a>, which is part of <a href="https://ascpt.onlinelibrary.wiley.com/doi/10.1002/psp4.12926">another paper you don’t need to read</a> - but might want to peek at, see below.</p>
+<div class="instruction">
+<p>Go to the GitHub repository, download the <code>Mavoglurant_A2121_nmpk.csv</code> file and place it into the folder you just created.</p>
+</div>
+</section>
+<section id="data-processing-and-exploration" class="level2">
+<h2 class="anchored" data-anchor-id="data-processing-and-exploration">Data processing and exploration</h2>
+<p>Before we can do any analysis, we need to explore and process the data. The data we are looking at here has the – very common – feature that on first glance, it is confusing 🙄. Variables have weird names and there seems to be a strange structure. In almost any real-world setting, this is the kind of data you’ll be given. So let’s do some exploration and processing.</p>
+<p>Unfortunately, the data does not come with a codebook. The documentation of this dataset in the <code>nlmixr2data</code> package <a href="https://nlmixr2.github.io/nlmixr2data/reference/mavoglurant.html">provides a bit of information</a>. However, this documentation is very sparse and not enough. Another way to learn a bit more is to take a quick look at the papers that were published covering the data.</p>
+<p><a href="https://ascpt.onlinelibrary.wiley.com/doi/10.1002/psp4.12926">The second paper</a> mentioned above is likely giving you a quicker overview compared to the first one. Take a look at the <em>Data</em> section and Figure 3, which shows the data as symbols. Based on that, you’ll figure out that this is time-series data of drug concentrations.</p>
+<p>You can get a quick visual idea of the data by plotting the outcome variable (which according to the documentation is called <code>DV</code> here) as a function of time, stratified by <code>DOSE</code> and using <code>ID</code> as a grouping factor.</p>
+<div class="instruction">
+<p>Write code to load the data into R and make such a figure.</p>
+</div>
+<p>As you look closer, the formatting of the dataset still looks a bit strange. So let’s dig deeper. One thing you will notice is that there are some individuals that seem to have received the drug more than once, indicated by having both entries with OCC=1 and OCC=2. Since we are not sure what the difference is, and to keep things simple, we only keep one dataset for each individual. Therefore, remove all entries with OCC=2.</p>
+<div class="instruction">
+<p>Write code that keeps only observations with OCC = 1.</p>
+</div>
+<p>You will also see that each individual has an entry at time 0 that has <code>DV=0</code> and some non-zero value for <code>AMT</code>. This is the dosing entry for everyone. All the other entries are the time-series values for the drug concentration. We won’t do a time-series analysis here, so instead we’ll compute the total amount of drug for each individual by adding all the <code>DV</code> values. Note that this is a pretty bad idea, since some individuals might have more or less data points. The proper way to do this would be to do some form of integration to get the area under the curve, e.g.&nbsp;with a simple trapezoid rule. But to keep things simple, we’ll go ahead - keeping in mind that in general, outside of a practice example, this is not a good idea.</p>
+<div class="instruction">
+<p>Write code that removes the TIME=0 values for each individual, the computes the sum of the <code>DV</code> variable for each individual. Call this variable <code>Y</code>. Further, write code that keeps only the <code>TIME=0</code> entries for each individual. Then combine the two dataset so you have a single dataset that should have the time=0 entry for everyone, and an extra column with total drug concentration. This should be a data frame/tibble of size 120 by 18.</p>
+</div>
+<p>Finally, we’ll do a bit more cleaning. At this point, we don’t need most of these indicator variables anymore (e.g., <code>OCC</code> or <code>EVID</code>). We also want to convert <code>RACE</code> and <code>SEX</code> to factor variables.</p>
+<div class="instruction">
+<p>Write code that converts <code>RACE</code> and <code>SEX</code> to factor variables and keeps only these variables: Y,DOSE,RATE,AGE,SEX,RACE,WT,HT</p>
+</div>
+<p>Check the data and make sure everything looks ok. As needed, perform further exploration or cleaning steps.</p>
 </section>
 <section id="eda-revisited" class="level2">
 <h2 class="anchored" data-anchor-id="eda-revisited">EDA revisited</h2>
-<p>As part of the data wrangling/cleaning, and also to some extent as stand-alone exploration to prepare you for the formal statistical fitting, you need to explore and understand your data. Add a Quarto file (call it <code>exploration.qmd</code>) into the <code>code</code> folder. Write code that does a bit of exploration, produces a few figures and tables.</p>
-<p>At minimum, your exploration code should do the following:</p>
+<p>You probably already produced some EDA (figures and tables) as part of the exploratory process above. Do a few more here, once the data is clean.</p>
 <ul>
-<li>For each (important) variable, produce and print some numerical output (e.g.&nbsp;a table or some summary statistics numbers).</li>
-<li>For each (important) continuous variable, create a histogram or density plot.</li>
-<li>Create scatterplots or boxplots or similar plots for the variable you decided is your main outcome of interest and the most important (or all depending on number of variables) independent variables/predictors. For this dataset, you can pick and choose a few predictor variables.</li>
-<li>If applicable to your data, make some pairwise correlation plots. (Not applicable here)</li>
-<li>If needed for your data, explore the pattern of missing values. (Not applicable here)</li>
-<li>Any other exploration steps that might be useful.</li>
+<li>Make some useful summary tables.</li>
+<li>Show some scatterplots or boxplots between the main outcome of interest (total drug, <code>Y</code>) and other predictors.</li>
+<li>Plot the distributions of your variables to make sure they all make sense.</li>
+<li>Look at some pair/correlation plots.</li>
 </ul>
-<p>In general, if you only have a limited number of variables, say less than 10, you can usually explore them all. If you have a lot, focus your exploration on the ones you think are most interesting and important, which of course is the outcome and the main predictors of interest. You can decide on the predictors to explore. I determined the outcomes of interest for you above. Of course, if there are variables you know are of no interest, you can remove them during the cleaning/wrangling stage and don’t need to explore them.</p>
+<p>This is a fairly open exploration, I want you to play with the data enough to get a good idea of what you are looking at and what’s “inside” the data.</p>
 </section>
 <section id="general-wrangling-and-eda-comments" class="level2">
 <h2 class="anchored" data-anchor-id="general-wrangling-and-eda-comments">General wrangling and EDA comments</h2>
 <p>Always make sure you document well. Prior to each code piece that produces some output, you should add text describing what you are about to do and why. After you produced the result, add some text that comments on what you see and what it means. E.g. you could write something like <em>Histogram for height shows two persons at 20in, everyone else else is above 50in. Checked to see if those are wrong entries or not. Decided to remove those observations.</em></p>
-<p>Once you’ve come this far, you should generally have at a minimum code that explores and cleans the data, produces some figures and tables, and saves the cleaned data set to an <code>Rds</code> file. You should also have documentation, as comments in the code and as text in a Quarto document, as well as some notes in README file(s), that explain what the different parts of data and code are/do, what variables the data contain, what each variable means, which are the main outcome(s) and main predictor(s), etc. Providing all this meta-information is important so that someone else (or your future self) can easily understand what is going on.</p>
+<p>Once you’ve come this far in any kind of data analysis, you should have some code that explores and cleans the data, produces some figures and tables, and (in general, not required here) saves the cleaned data set to a file.</p>
+<p>You should also have documentation, as comments in the code and as text in a Quarto document, as well as some notes in README file(s), that explain what the different parts of data and code are/do, what variables the data contain, what each variable means, which are the main outcome(s) and main predictor(s), etc. Providing all this meta-information is important so that someone else (or your future self) can easily understand what is going on.</p>
+<p>Any good data collection and analysis requires that data is documented with meta-data to describe what it contains, what units things are in, what variables are allowed, etc. Without good meta-data, analyses often go wrong. There are famous examples in the literature where the coding 0/1 was assumed to mean the opposite of what it was, so all conclusions were wrong. To guard against this, careful documentation is crucial. Also, giving variables easy to understand names and values is best. The data we have here is a good example of how <strong>NOT</strong> to do things. There’s no codebook, and we don’t really know what SEX 0/1 stands for (which ones are male/female). We also don’t know what the 4 entries 1/2/7/88 for <code>RACE</code> stand for. If we had a codebook, or some better labeling – or ideally both –, would be very helpful. Unfortunately, a lot of real-world data is rather poorly documented.</p>
+</section>
+<section id="model-fitting" class="level2">
+<h2 class="anchored" data-anchor-id="model-fitting">Model fitting</h2>
+<p>Finally, we’ll do some model fitting. We’ll keep it simple here. We’ll use the <code>tidymodels</code> framework. I suggest you go to the <a href="https://www.tidymodels.org/start/models/">build a model tutorial</a> in the <em>Get Started</em> section on the <code>tidymodels</code> website. There, you’ll see an example of fitting some data with a linear model. From that tutorial, and other sources in the <code>tidymodels</code> website, as well as the <a href="https://www.tmwr.org/">TMWR book</a> and other online sources figure out how to do the steps below. Of course AI tools are also an option (that’s how I did part of it 😁).</p>
+<p>Write code that does the following:</p>
+<ul>
+<li>Fit a linear model to the continuous outcome (<code>Y</code>) using the main predictor of interest, which we’ll assume here to be <code>DOSE</code>.</li>
+<li>Fit a linear model to the continuous outcome (<code>Y</code>) using all predictors.</li>
+<li>For both models, compute RMSE and R-squared and print them.</li>
+</ul>
+<p>Repeat the steps above, but now we’ll consider <code>SEX</code> as the outcome of interest (that doesn’t make too much scientific sense, but we want to practice fitting both continuous and categorical outcomes).</p>
+<ul>
+<li>Fit a logistic model to the categorical/binary outcome (<code>SEX</code>) using the main predictor of interest, which we’ll again assume here to be <code>DOSE</code>.</li>
+<li>Fit a logistic model to <code>SEX</code> using all predictors.</li>
+<li>For both models, compute accuracy and ROC-AUC and print them.</li>
+</ul>
+<p>Interpret the results and add additional comments and thoughts to the document, so a reader can understand what you did, why you did it, and what it all means.</p>
+<p>If you are extra ambitious or just enjoy playing around with <code>tidymodels</code>, add a <em>k</em>-nearest neighbors model fit to the continuous and/or categorical outcome.</p>
 <div class="note">
-<p>For this exercise, it isn’t so important that the outcomes and predictors are of actual scientific interest. We won’t do exciting science here, just explore the analysis workflow. However, I want to remind you that having good/interesting question to answer (and data you can use to answer it) is the <strong>most important</strong> part of any research project. Rather a great question and basic stats than really fancy stats answering a question nobody cares about!</p>
-</div>
-<div class="note">
-<p>Any good data collection and analysis requires that data is documented with meta-data to describe what it contains, what units things are in, what variables are allowed, etc. Without good meta-data, analyses often go wrong. There are famous examples in the literature where the coding 0/1 was assumed to mean the opposite of what it was, so all conclusions were wrong. To guard against this, careful documentation is crucial. Also, giving variables easy to understand names and values is best. E.g. instead of coding sex as 0/1/99, code it as Male/Female/Other, or something along those lines. Factors in R allow you to do this very easily, so you may as well!</p>
+<p>For this exercise, it isn’t so important that the outcomes and predictors are of actual scientific interest. We won’t do exciting science here, just explore the analysis workflow. However, I want to remind you that having good/interesting question to answer (and data you can use to answer it) is the <strong>most important</strong> part of any research project. Rather a great question and basic stats than really fancy stats answering a meaningless question that nobody cares about!</p>
 </div>
 </section>
-</section>
-<section id="model-fitting" class="level1">
-<h1>Model fitting</h1>
-<p>Finally, we’ll do some model fitting. Place a file called <code>fitting.qmd</code> into the <code>code folder</code> (or sub-folder, if you use them). As always, you can either have all the R code inside the Quarto document, or you can structure it such that the code is in a separate file and pulled into Quarto as needed. In either case, document/comment well.</p>
-<p>Add code that does the following operations:</p>
-<ol type="1">
-<li>Loads cleaned data.</li>
-<li>Fits a linear model to the continuous outcome (<strong>Body temperature</strong>) using only the main predictor of interest.</li>
-<li>Fits another linear model to the continuous outcome using all (important) predictors of interest.</li>
-<li>Compares the model results for the model with just the main predictor and all predictors.</li>
-<li>Fits a logistic model to the categorical outcome (<strong>Nausea</strong>) using only the main predictor of interest.</li>
-<li>Fits another logistic model to the categorical outcome using all (important) predictors of interest.</li>
-<li>Compares the model results for the categorical model with just the main predictor and all predictors.</li>
-</ol>
-<p><strong>Here, we decide that <code>RunnyNose</code> is our main predictor of interest, and we also care about all others. So you should fit models with each of the 2 outcomes and <code>RunnyNose</code> and models with each of the 2 outcomes and all predictors. Consider whichever outcome you are currently NOT fitting to also be a predictor of interest.</strong></p>
-<p>You might have noticed that we are including some predictors twice, e.g.&nbsp;we have <em>Weakness</em> as 4 categories and also as yes/no. That’s likely not ideal. We’ll address that soon, for now let’s just “throw it all in”. Because we do that, you might get some warning messages from your code about rank deficiency. Usually, we would need to inspect those and make sure we either fix or understand what’s going on and are ok with it. For now, you can ignore.</p>
-<p>For all of these operations, you should use the the <code>tidymodels</code> framework. To do so, I suggest to go to the <a href="https://www.tidymodels.org/start/models/">build a model tutorial</a> in the <em>Get Started</em> section on the <code>tidymodels</code> website. There, you’ll see an example of fitting some data with a linear model, followed by a Bayesian model. We won’t do the Bayesian one (but if you want you can try). From that tutorial, pick out the bits and pieces you need to fit your two linear models. You’ll need to use the <code>linear_reg()</code> and <code>set_engine("lm")</code> commands. For the logistic model, you will need to use <code>logistic_reg()</code> and <code>set_engine("glm")</code>.</p>
-<p>For each of the 4 fits (2 linear models, 2 logistic models), report the results in some way, either as table or figure. You might want to try the <code>glance()</code> function. You can also play around a bit with the <code>predict()</code> function or do some other explorations with your fits. This is open-ended, so play around as much or as little as you like.</p>
-<p>Comparison of models should be based on performance of the models (and anything else you want to look at). This should be heuristic, with you looking at and discussing differences. Please no comparison using p-values or other statistical shenanigans 😄.</p>
-<p>The main point of this is to get you started fitting models with <code>tidymodels</code>. You’ll likely see lots of information on the <code>tidymodels</code> website that might not make sense yet, such as pre-processing, model evaluation, tuning, etc. Just ignore that for now, we’ll get to it soon enough.</p>
-<p>If you are extra ambitious or just enjoy playing around with <code>tidymodels</code>, add a <em>k</em>-nearest neighbors model fit to the continuous and/or categorical outcome. You do that by choosing <code>nearest_neighbor()</code> as the model type (instead of <code>linear_reg()</code> or <code>logistic_reg()</code>). It seems that <code>nearest_neighbor()</code> currently only supports a single engine (underlying implementation/model) called <code>kknn</code>, so you don’t even have to set an engine, it will use that one as default (but it’s still good practice in case <code>tidymodels</code> adds another engine in the future 😀). The rest should work as before. The fact that we can easily switch models and don’t have to write much new code is the beauty of the <code>tidymodels</code> framework and will become even clearer soon.</p>
-<div class="note">
-<p>I’m a big fan of fitting models in a Bayesian framework. R has many good packages. Most of them connect to the <a href="https://mc-stan.org/">Stan software</a>, an independent piece of powerful Bayesian fitting software. It can be somewhat tricky to get the installation of Stan and the connection to R working. So if you try to do some Bayesian modeling, along the lines of the example in the <code>tidymodels</code> tutorial, some initial fiddling is required. Once you get it up and running, it usually works well. The Stan website provides useful instructions. Learning some Bayesian statistics is very useful. Unfortunately, it’s beyond what we can cover in this course.</p>
-</div>
 </section>
 <section id="updating-the-portfolio-website" class="level1">
 <h1>Updating the portfolio website</h1>
-<p>Once you completed your <code>tidymodels</code> exploration, make sure everything runs and produces relevant output (tables, figures, text, etc.). <strong>Also make sure everything is documented well.</strong></p>
-<p>Now it’s time to add everything to the portfolio website. For that, open the <code>_quarto.yml</code> file and make a new entry in the <code>navbar</code> section. Make a new main menu entry (at the same level as the the current <code>Projects</code> entry) and call it <code>Flu Analysis</code>. Underneath this entry, make 3 sub menu entries for the 3 Quarto files you just created, namely wrangling/Exploration/Fitting. Note that you need to point to the html file in the folder you created the Quarto file. So for instance for your wrangling file, it should look like</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>href<span class="sc">:</span> .<span class="sc">/</span>fluanalysis<span class="sc">/</span>code<span class="sc">/</span>wrangling.html</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Once you completed everything, make sure everything runs/renders and produces relevant output (tables, figures, text, etc.).</p>
+<p>Now it’s time to add everything to the portfolio website. For that, open the <code>_quarto.yml</code> file and make a new entry in the <code>navbar</code> section as you did before, that points to your new Quarto file.</p>
+<div class="warning">
+<p>Remember that YAML is very picky about indentation, so if you get strange error messages, it is often likely that your entries are not aligned/indented exactly right. If you suspect that you have this problem, you can show whitespace characters in RStudio by going to `Tools -&gt; Global Options -&gt; Code -&gt; Display” and check <em>Show Whitespace Characters</em>.</p>
 </div>
-<p><strong>Remember that YAML is very picky about indentation, so if you get strange error messages, it is often likely that your entries are not aligned/indented exactly right. If you suspect that you have this problem, you can show whitespace characters in RStudio by going to `Tools -&gt; Global Options -&gt; Code -&gt; Display” and check <em>Show Whitespace Characters</em>.</strong></p>
-<p>Recompile your full portfolio website. If everything works, you should see a new menu item called <code>Flu Analysis</code> next to <code>Projects</code> with 3 entries (Wrangling/Exploration/Fitting), each one containing the rendered version of your Quarto file. Once everyting works and looks as it should, remember to commit and push your updates to GitHub.</p>
-<p><strong>Since this is part of your portfolio site, you don’t need to post anything, I know where to find it. Therefore there is no exercise Slack channel for this module.</strong></p>
+<p>Render your whole website – not just the new document! – and make sure all looks good and all links work. If all is ready, commit and push to GitHub.</p>
+<p>Since this is part of your portfolio site, you don’t need to post anything, I know where to find it.</p>
 
 
 </section>
