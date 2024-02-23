@@ -305,7 +305,7 @@ website:
       file: content/model-fitting/assessment-model-fitting.qmd
     - text: 9. Model Assessment
       file: content/model-assessment/assessment-model-assessment.qmd
-    - text: 10. Model Improvment
+    - text: 10. Model Improvement
       file: content/model-improvement/assessment-model-improvement.qmd
     - text: 11. Machine Learning Models I
       file: content/module-model-ml-1/assessment-ml-models-1.qmd

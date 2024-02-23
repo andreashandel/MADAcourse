@@ -6,39 +6,45 @@ library(ggplot2)
 
 
 ## ---- load-data --------
-rawdat <- readr::read_csv("Mavoglurant_A2121_nmpk.csv")
+dat <- readr::read_rds("mavoglurant.rds")
+set.seed(1234)
 
 
-## ---- explore-data --------
-summary(rawdat)
-skimr::skim(rawdat)
-p1 <- rawdat %>% ggplot() +
-  geom_line( aes( x = TIME, y = DV, group = as.factor(ID), color = as.factor(DOSE)) ) +
-  facet_wrap( ~ DOSE, scales = "free_y")
-plot(p1)
 
+## ---- split-data --------
+# Put 3/4 of the data into the training set 
+data_split <- initial_split(dat, prop = 3/4)
 
-## ---- process-data --------
-# remove those with OCC = 2
-dat1 <- rawdat %>% filter(OCC == 1)
-
-# total drug as a sum
-dat_y <-  dat1 %>% filter((AMT == 0)) %>%
-  group_by(ID) %>% 
-  dplyr::summarize(Y = sum(DV)) 
-
-#keep only time = 0 entry, it contains all we need
-dat_t0 <- dat1 %>% filter(TIME == 0)
-
-# merge data  
-dat_merge <- left_join(dat_y, dat_t0)
-
-# keep only useful variables
-# also convert SEX and RACE to factors
-dat <- dat_merge %>% select(Y,DOSE,RATE,AGE,SEX,RACE,WT,HT) %>% mutate_at(vars(SEX,RACE), factor) 
+# Create data frames for the two sets:
+train_data <- training(data_split)
+test_data  <- testing(data_split)
 
 
 ## ---- fit-data-linear --------
+mod <- linear_reg() %>% set_engine("lm")
+wflow <- 
+  workflow() %>% 
+  add_model(mod) %>% 
+  add_formula(Y ~ DOSE)
+
+fit1 <- wflow %>% fit(data = train_data)
+
+pred_train <- predict(fit1, train_data)
+pred_test <- predict(fit1, test_data)
+
+
+rmse_train <- pred_train %>% 
+  bind_cols(train_data) %>% 
+  metrics(truth = Y, estimate = .pred)
+print(rmse_train)
+
+rmse_test <- pred_test %>% 
+  bind_cols(test_data) %>% 
+  metrics(truth = Y, estimate = .pred)
+print(rmse_test)
+
+
+
 lin_mod <- linear_reg() %>% set_engine("lm")
 linfit1 <- lin_mod %>% fit(Y ~ DOSE, data = dat)
 linfit2 <- lin_mod %>% fit(Y ~ ., data = dat)
@@ -57,7 +63,6 @@ print(metrics_2)
 
 
 ## ---- fit-data-logistic --------
-log_mod <- logistic_reg() %>% set_engine("glm")
 logfit1 <- log_mod %>% fit(SEX ~ DOSE, data = dat)
 logfit2 <- log_mod %>% fit(SEX ~ ., data = dat)
 # Compute the accuracy and AUC for each model
@@ -74,7 +79,7 @@ m2_acc <- logfit2 %>%
   predict(dat) %>% 
   bind_cols(dat) %>% 
   metrics(truth = SEX, estimate = .pred_class) %>% 
-  filter(.metric %in% c("accuracy", "roc_auc"))
+  filter(.metric %in% c("accuracy"))
 m2_auc <-  logfit2 %>%
   predict(dat, type = "prob") %>%
   bind_cols(dat) %>%
