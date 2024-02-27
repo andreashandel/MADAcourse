@@ -35,7 +35,7 @@ dat_merge <- left_join(dat_y, dat_t0)
 
 # keep only useful variables
 # also convert SEX and RACE to factors
-dat <- dat_merge %>% select(Y,DOSE,RATE,AGE,SEX,RACE,WT,HT) %>% mutate_at(vars(SEX,RACE), factor) 
+dat <- dat_merge %>% select(Y,DOSE,AGE,SEX,RACE,WT,HT) %>% mutate_at(vars(SEX,RACE), factor) 
 readr::write_rds(dat,"mavoglurant.rds")
 
 ## ---- fit-data-linear --------
