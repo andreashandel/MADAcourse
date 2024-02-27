@@ -24,15 +24,9 @@ You are likely already familiar with these models. In fact, at some point you pr
 
 The most common model type applied to continuous outcomes is a linear regression model. This model is covered in many of the course materials we have been using (and of course other places).
 
-If you are new to regression models, a good place to start are the [chapters in the Model section of *R4DS*](https://r4ds.hadley.nz/index.html). I recommend you code along as you go through those chapters, or at least read through the code to make sure you understand what is going on.
+[Advanced Data Science](http://rafalab.dfci.harvard.edu/dsbook-part-2/) -- which used to be part of the old IDS -- has a chapter on it. [ISLR](https://statlearning.com/) also has a chapter on the topic. So does [HMLR](https://bradleyboehmke.github.io/HOML/).
 
-Another good overview and introduction, at a slightly more abstract level, is given in the [Linear Regression chapter in *ISLR*](https://statlearning.com/). You should read through this chapter in at least enough detail to get the big picture ideas. Depending on your interest and willingness to look at equations, try to follow along with the math as well. But the important part is to understand the overall ideas.
-
-If you want further discussion of the linear model -- and see it applied to baseball data -- check out the [Linear Models chapter of *IDS*](https://rafalab.github.io/dsbook/linear-models.html). In this chapter, the author also discusses a few important concepts like **confounding** and **regression to the mean.**
-
-But wait, there is more! Yet another discussion of linear models is in the [Linear Regression chapter in *HMLR*](https://bradleyboehmke.github.io/HOML/linear-regression.html).
-
-As you can tell, this is such a fundamental type of model and is thus covered in a lot of resources. Definitely check the R4DS source, skim through ISLR, then take a look at the other ones I list here or any other source you find and like (let me know if you found a nice free one so I can add it to the resources list). Make sure you read and learn enough about these models that you feel comfortable understanding conceptually what they are used for and how they work.
+This is such a fundamental type of model and is thus covered in a lot of resources. There are plenty more available, including the good old Wikipedia. Find some you like and read/learn enough about these models that you feel comfortable understanding conceptually what they are used for and how they work.
 
 # Simple models for categorical outcomes (classification)
 
