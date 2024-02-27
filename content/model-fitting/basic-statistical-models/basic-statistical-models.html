@@ -909,7 +909,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2024-02-18</p>
+      <p class="date-modified">2024-02-26</p>
     </div>
   </div>
     
@@ -939,11 +939,8 @@ window.Quarto = {
 <section id="simple-models-for-continuous-outcomes-regression" class="level1">
 <h1>Simple models for continuous outcomes (regression)</h1>
 <p>The most common model type applied to continuous outcomes is a linear regression model. This model is covered in many of the course materials we have been using (and of course other places).</p>
-<p>If you are new to regression models, a good place to start are the <a href="https://r4ds.hadley.nz/index.html">chapters in the Model section of <em>R4DS</em></a>. I recommend you code along as you go through those chapters, or at least read through the code to make sure you understand what is going on.</p>
-<p>Another good overview and introduction, at a slightly more abstract level, is given in the <a href="https://statlearning.com/">Linear Regression chapter in <em>ISLR</em></a>. You should read through this chapter in at least enough detail to get the big picture ideas. Depending on your interest and willingness to look at equations, try to follow along with the math as well. But the important part is to understand the overall ideas.</p>
-<p>If you want further discussion of the linear model – and see it applied to baseball data – check out the <a href="https://rafalab.github.io/dsbook/linear-models.html">Linear Models chapter of <em>IDS</em></a>. In this chapter, the author also discusses a few important concepts like <strong>confounding</strong> and <strong>regression to the mean.</strong></p>
-<p>But wait, there is more! Yet another discussion of linear models is in the <a href="https://bradleyboehmke.github.io/HOML/linear-regression.html">Linear Regression chapter in <em>HMLR</em></a>.</p>
-<p>As you can tell, this is such a fundamental type of model and is thus covered in a lot of resources. Definitely check the R4DS source, skim through ISLR, then take a look at the other ones I list here or any other source you find and like (let me know if you found a nice free one so I can add it to the resources list). Make sure you read and learn enough about these models that you feel comfortable understanding conceptually what they are used for and how they work.</p>
+<p><a href="http://rafalab.dfci.harvard.edu/dsbook-part-2/">Advanced Data Science</a> – which used to be part of the old IDS – has a chapter on it. <a href="https://statlearning.com/">ISLR</a> also has a chapter on the topic. So does <a href="https://bradleyboehmke.github.io/HOML/">HMLR</a>.</p>
+<p>This is such a fundamental type of model and is thus covered in a lot of resources. There are plenty more available, including the good old Wikipedia. Find some you like and read/learn enough about these models that you feel comfortable understanding conceptually what they are used for and how they work.</p>
 </section>
 <section id="simple-models-for-categorical-outcomes-classification" class="level1">
 <h1>Simple models for categorical outcomes (classification)</h1>
@@ -972,7 +969,7 @@ window.Quarto = {
 <p>There isn’t really one single, standard go-to method for unsupervised learning – in contrast to the very common linear and logistic models for supervised learning. There are often used methods, such as <strong>Principal Component Analysis (PCA)</strong> (which falls into a larger group of methods called <strong>dimensionality reduction</strong> methods) and a group of methods called <strong>clustering methods</strong> (the most common among these are probably <em>k</em>-means clustering and hierarchical clustering). Since most of you will work on labeled data using supervised methods most of the time, we won’t go much into unsupervised methods. If you want to learn a bit more, check out for instance the <a href="https://statlearning.com/">Unsupervised Learning chapter of <em>ISLR</em></a>. There are also <a href="https://bradleyboehmke.github.io/HOML/">chapters on PCA and different types of clustering in <em>HMLR</em></a>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="xkcd_k_means_clustering_2x.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1" title="Choosing K is an important task. 3 sometimes works. Source: xkcd.com."><img src="xkcd_k_means_clustering_2x.png" class="img-fluid figure-img" style="width:50.0%" alt="xkcd comic with person pointing a poster and saying 'Our analysis shows that there are three kinds of people in the world: those who use k-means clustering with k=3, and two other types whose qualitative interpretation is unclear."></a></p>
+<p><a href="xkcd_k_means_clustering_2x.png" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1" title="Choosing K is an important task. 3 sometimes works. Source: xkcd.com."><img src="xkcd_k_means_clustering_2x.png" class="img-fluid figure-img" style="width:50.0%" alt="xkcd comic with person pointing a poster and saying 'Our analysis shows that there are three kinds of people in the world: those who use k-means clustering with k=3, and two other types whose qualitative interpretation is unclear."></a></p>
 <figcaption>Choosing K is an important task. 3 sometimes works. Source: xkcd.com.</figcaption>
 </figure>
 </div>
@@ -1620,7 +1617,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"right","loop":false,"closeEffect":"zoom","openEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","closeEffect":"zoom","loop":false,"descPosition":"right","selector":".lightbox"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

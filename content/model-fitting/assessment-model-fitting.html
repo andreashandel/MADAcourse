@@ -208,7 +208,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../content/model-improvement/assessment-model-improvement.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">10. Model Improvment</span></a>
+ <span class="menu-text">10. Model Improvement</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -277,7 +277,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2024-02-23</p>
+      <p class="date-modified">2024-02-27</p>
     </div>
   </div>
     
@@ -323,19 +323,19 @@ ul.task-list li input[type="checkbox"] {
 <p><a href="https://ascpt.onlinelibrary.wiley.com/doi/10.1002/psp4.12926">The second paper</a> mentioned above is likely giving you a quicker overview compared to the first one. Take a look at the <em>Data</em> section and Figure 3, which shows the data as symbols. Based on that, you’ll figure out that this is time-series data of drug concentrations.</p>
 <p>You can get a quick visual idea of the data by plotting the outcome variable (which according to the documentation is called <code>DV</code> here) as a function of time, stratified by <code>DOSE</code> and using <code>ID</code> as a grouping factor.</p>
 <div class="instruction">
-<p>Write code to load the data into R and make such a figure.</p>
+<p>Write code to load the data into R. Then write code to make a plot that shows a line for each individual, with <code>DV</code> on the y-axis and time on the x-axis. Stratify by dose (e.g., use a different color for each dose, or facets).</p>
 </div>
 <p>As you look closer, the formatting of the dataset still looks a bit strange. So let’s dig deeper. One thing you will notice is that there are some individuals that seem to have received the drug more than once, indicated by having both entries with OCC=1 and OCC=2. Since we are not sure what the difference is, and to keep things simple, we only keep one dataset for each individual. Therefore, remove all entries with OCC=2.</p>
 <div class="instruction">
 <p>Write code that keeps only observations with OCC = 1.</p>
 </div>
-<p>You will also see that each individual has an entry at time 0 that has <code>DV=0</code> and some non-zero value for <code>AMT</code>. This is the dosing entry for everyone. All the other entries are the time-series values for the drug concentration. We won’t do a time-series analysis here, so instead we’ll compute the total amount of drug for each individual by adding all the <code>DV</code> values. Note that this is a pretty bad idea, since some individuals might have more or less data points. The proper way to do this would be to do some form of integration to get the area under the curve, e.g.&nbsp;with a simple trapezoid rule. But to keep things simple, we’ll go ahead - keeping in mind that in general, outside of a practice example, this is not a good idea.</p>
+<p>You will also see that each individual has an entry at time 0 that has <code>DV=0</code> and some non-zero value for <code>AMT</code>. This is the dosing entry for everyone. All the other entries are the time-series values for the drug concentration. We won’t do a time-series analysis here, so instead we’ll compute the total amount of drug for each individual by adding all the <code>DV</code> values. Note that this is a pretty bad idea, since some individuals might have more or less data points. The proper way to do this would be to do some form of integration to get the area under the curve, e.g.&nbsp;with a simple trapezoid rule, or to model the whole time-series with a function and then compute the AUC from that function. But to keep things simple, we’ll go ahead - keeping in mind that in general, outside of a practice example, this is not a good idea.</p>
 <div class="instruction">
-<p>Write code that removes the TIME=0 values for each individual, the computes the sum of the <code>DV</code> variable for each individual. Call this variable <code>Y</code>. Further, write code that keeps only the <code>TIME=0</code> entries for each individual. Then combine the two dataset so you have a single dataset that should have the time=0 entry for everyone, and an extra column with total drug concentration. This should be a data frame/tibble of size 120 by 18.</p>
+<p>Write code to exclude the observations with TIME = 0, then compute the sum of the DV variable for each individual using dplyr::summarize(). Call this variable <code>Y</code>. The result from this step should be a data frame/tibble of size 120 x 2, one column for the ID one for the variable <code>Y</code>. Next, create a data frame that contains only the observations where TIME == 0. This should be a tibble of size 120 x 17. Finally, use the appropriate join function to combine those two data frames, to get a data frame of size 120 x 18.</p>
 </div>
 <p>Finally, we’ll do a bit more cleaning. At this point, we don’t need most of these indicator variables anymore (e.g., <code>OCC</code> or <code>EVID</code>). We also want to convert <code>RACE</code> and <code>SEX</code> to factor variables.</p>
 <div class="instruction">
-<p>Write code that converts <code>RACE</code> and <code>SEX</code> to factor variables and keeps only these variables: Y,DOSE,RATE,AGE,SEX,RACE,WT,HT</p>
+<p>Write code that converts <code>RACE</code> and <code>SEX</code> to factor variables and keeps only these variables: Y,DOSE,AGE,SEX,RACE,WT,HT</p>
 </div>
 <p>Check the data and make sure everything looks ok. As needed, perform further exploration or cleaning steps.</p>
 </section>
@@ -372,7 +372,7 @@ ul.task-list li input[type="checkbox"] {
 <li>Fit a logistic model to <code>SEX</code> using all predictors.</li>
 <li>For both models, compute accuracy and ROC-AUC and print them.</li>
 </ul>
-<p>Interpret the results and add additional comments and thoughts to the document, so a reader can understand what you did, why you did it, and what it all means.</p>
+<p>Interpret the results and add additional comments and thoughts to the document, so a reader can understand what you did, why you did it, and what it all means. For instance do you see any pattern between <code>Y</code> and <code>DOSE</code> or <code>SEX</code> and <code>DOSE</code> and does what you see make sense? How about the other predictors?</p>
 <p>If you are extra ambitious or just enjoy playing around with <code>tidymodels</code>, add a <em>k</em>-nearest neighbors model fit to the continuous and/or categorical outcome.</p>
 <div class="note">
 <p>For this exercise, it isn’t so important that the outcomes and predictors are of actual scientific interest. We won’t do exciting science here, just explore the analysis workflow. However, I want to remind you that having good/interesting question to answer (and data you can use to answer it) is the <strong>most important</strong> part of any research project. Rather a great question and basic stats than really fancy stats answering a meaningless question that nobody cares about!</p>
