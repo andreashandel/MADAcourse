@@ -34,7 +34,7 @@ Because of that, quantifying uncertainty is an important part of model evaluatio
 
 Different parts of our model can have uncertainty. There can be uncertainty in parameter estimates, there can be uncertainty in outcome/prediction estimates. We might want to quantify the uncertainty of the average of our data, or we might want to quantify uncertainty for specific predictions. 
 
-Those uncertainties are are related but not the same. Unfortunately, it is quite common to find messy uncertainty reporting in the literature, and [even experts have a hard time interpreting uncertainty](https://www.pnas.org/doi/10.1073/pnas.2302491120). 
+Those uncertainties are related but not the same. Unfortunately, it is quite common to find messy uncertainty reporting in the literature, and [even experts have a hard time interpreting uncertainty](https://www.pnas.org/doi/10.1073/pnas.2302491120). 
 
 In the following, we discuss a few common ways to quantify uncertainty.
 
