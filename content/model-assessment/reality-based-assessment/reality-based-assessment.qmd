@@ -27,7 +27,7 @@ There are several aspects that you should keep in mind when assessing how overal
 
 There are lots of different types of models available. You will have to make specific choices for your model. That is ok and part of the process of building models. Every model contains some abstraction/simplification of the real world. You should choose the type of model that is best suited for your situation and the question you want to address. 
 
-In [this paper](https://www.nature.com/articles/s41577-019-0235-3), we used maps as an analogy for computational/statistical/mathematical models[^1]. Maps are models of the real world. they serve specific purposes, and it is important that a given map be useful for the intended purpose. Consider the three maps (models) of the fictional country of antibodia (see the figure).[^map] 
+In [this paper](https://www.nature.com/articles/s41577-019-0235-3), we used maps as an analogy for computational/statistical/mathematical models[^1]. Maps are models of the real world. They serve specific purposes, and it is important that a given map be useful for the intended purpose. Consider the three maps (models) of the fictional country of antibodia (see the figure).[^map] 
 
 ![Three different maps of the same fictional country. They all have their distinct strengths and weaknesses.](nri-review-modeldetail.png){fig-alt="Three different maps of the same fictional country."}    
 

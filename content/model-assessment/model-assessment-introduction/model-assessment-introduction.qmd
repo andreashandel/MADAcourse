@@ -73,7 +73,7 @@ In contrast, if you are a bank that tries to predict fraud by having complicated
 
 # Summary
 
-It is very important to think critically about your models (and those of others). While some parts of model assessment are driven by statistics (e.g., the performance), others depend on your scientific and expert assessment. In the end, for better or for worse, you are in charge and need to make decisions, there are no easy recipes to follow. The addiction of the scientific community to simple recipes containing magical $p=0.05$ values and _statistical signficance_ is completely misguided and unhelpful. 
+It is very important to think critically about your models (and those of others). While some parts of model assessment are driven by statistics (e.g., the performance), others depend on your scientific and expert assessment. In the end, for better or for worse, you are in charge and need to make decisions, there are no easy recipes to follow. The addiction of the scientific community to simple recipes containing magical $p=0.05$ values and _statistical significance_ is completely misguided and unhelpful. 
 
 
 # Further Resources

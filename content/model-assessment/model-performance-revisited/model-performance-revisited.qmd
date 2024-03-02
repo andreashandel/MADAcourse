@@ -34,9 +34,9 @@ If we are asking *inferential* questions, we are interested in what the data ana
 
 If we are asking predictive questions, we are interested in a model that can predict future observations, not the ones we already have. E.g., if we analyze data for a specific treatment, we are not very interested how well the model predicts the effect of the drug on the people for which we collected the data (we already know that). Instead, we want to make general predictions about the effectiveness of the treatment on future patients.
 
-In either case, what we want is a model that is generalizeable (also sometimes called *externally valid*), and that applies equally well to new and similar data beyond the data we already collected.
+In either case, what we want is a model that is generalizeable (also sometimes called *externally valid  *), and that applies equally well to new and similar data beyond the data we already collected.
 
-**What truly matters is how well our model can explain/predict other/future data, not just the data we are already observed!**
+**What truly matters is how well our model can explain/predict other/future data, not just the data we already observed!**
 
 If we build a very complex model in an effort to match our existing data as closely as possible, what generally happens is that our model [**overfits**](https://en.wikipedia.org/wiki/Overfitting). That means it becomes very good at modeling the data we use to build the model, but it won't generalize very well to the general, broader context of other/future data. The reason for that is that there is noise (random variability) in any dataset, and if we have a model that is too flexible, it will not only match the overall signal/pattern (if there is any) but will also capture all the noise in our sample, which leads to worse performance on future data that have different amounts and types of noise/variability.
 
