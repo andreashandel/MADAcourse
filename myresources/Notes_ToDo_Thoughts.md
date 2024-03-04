@@ -175,5 +175,4 @@ Remove the width/height in the embed code so that the CSS takes over and sets it
 
 ## Accessibility
 
-Accessibility is really important to me so I thought I'd call attention to some of your hyperlink names.
-Most are great (concise and descriptive) but some are just called \[here\] which aren't [helpful link names](https://www.a11yproject.com/posts/creating-valid-and-accessible-links/)
+Good resource: https://www.a11yproject.com/
