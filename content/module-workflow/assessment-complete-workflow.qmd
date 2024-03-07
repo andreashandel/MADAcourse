@@ -9,35 +9,65 @@ Get the quiz sheet for this module from the general
 [**Assessments**](../../courseinfo/assessments-overview.qmd) page. Fill it
 in, then submit to the online grading system before the deadline.
 
+# Discussion
+
+Write a post in this week's discussion channel that addresses this
+topic:
+
+*Now that we've essentially reached the end of the course and did the
+whole data-analysis pipeline, which specific topics in the data-analysis
+workflow do you still find unclear/confusing? Which ones do you wish we
+had covered more? Are you looking for further resources on a specific
+topic and haven't found anything good?*
+
+Post by Wednesday, then comment on each others posts. I hope this
+discussion will allow us to point each other to further possibly helpful
+resources and maybe help clarify some still open questions.
+
+And just to re-iterate: I very much welcome contributions to the course
+pages, so if you have resources you think should be added, or sections
+that are unclear and you can improve, please contribute! By now you know
+how to do that: Fork the course repo, make changes, send a pull request.
+I'll take a look, if things look good I'll merge. And of course I'll add you
+to the *Acknowledgments* section of the course 😄.
+
+
+
 # Exercise
 
 ## Overview
 
-For this exercise, we will participate in one more **Tidy Tuesday**
-exercise. This time, we'll apply a full analysis workflow to the data.
+For this exercise, we will join the R data science community and participate in **Tidy Tuesday**, a weekly exercise that allows you to practice playing with data. The focus for Tidy Tuesday is on getting, cleaning (i.e., tidying) and exploring a data set, though people sometimes do statistical analyses as well. We'll do a "full" analysis workflow.
 
-This is another solo exercise, so no group work this week, but of course
-more GitHub. This exercise will go into your portfolio.
+This is a solo exercise and will go into your portfolio.
 
-## Setup
+## What is Tidy Tuesday
 
-Use your portfolio website. Make sure it's up to date and fully synced.
-Open it in R Studio. From last week's exercise, you should have an empty
-Rmd file called `tidytuesday_exercise2.qmd`. Open it, that's where
-you'll write your Tidy Tuesday analysis.
+You briefly encountered Tidy Tuesday before in the [**Data Analysis Motivation unit**](../module-data-analysis/data-analysis-motivation.qmd). If you can't remember, revisit that unit and re-read that section. Also read the information at the provided links.
 
-Go to the [TidyTuesday Github
-repository](https://github.com/rfordatascience/tidytuesday). Look for
-the dataset for this week, and read the instructions on how to get the
-data. You will also be provided with a data dictionary. If the data is
-available for download, place it somewhere in your portfolio repository
-(e.g., you can make a new folder called `data`).
+If you want to see another Tidy Tuesday example, see [one I did](https://www.andreashandel.com/posts/2019-10-02-tidy-tuesday-exploration/index.html), as part of a previous version of MADA. 
 
-## What to do
+For even more examples of previous analyses, see this [Shiny app](https://nsgrantham.shinyapps.io/tidytuesdayrocks/) which scans twitter for posts mentioning `#tidytuesday`. Unfortunately, it doesn't seem to be updated/maintained anymore. But you can still find people on social media posting links to their Tidy Tuesday creations (feel free to share yours as well).
 
-Write code and text to perform the following steps:
+::: note
+Apparently, there is now also a [Tidy Tuesday podcast](https://www.tidytuesday.com/). I'm not familiar with it, so I'm not sure what it's all about and if it is worth checking out. It probably is worth giving it a try, since it's (almost) always good to check out new things 😁 and those are very short recordings, so I think they just introduce the data of the week. If you end up listening to some, let me know what you think.
+:::
 
-1.  Load, wrangle and explore the data. By now you know this is an
+## Your Tidy Tuesday Exercise
+
+Your assignment is to participate in Tidy Tuesday by analyzing this week's dataset. You can start as soon as the dataset is posted, which is Mondays. The [datasets are released on GitHub](https://github.com/rfordatascience/tidytuesday). As I'm writing this, I have no idea what the data will be the week this exercise happens. That's part of the fun of it 😄.
+
+Here are some more detailed instructions:
+
+Use your portfolio website. Make sure it's up to date and fully synced. Open it in R Studio. Then open the `tidytuesday-exercise.qmd` file. That's where you'll write your Tidy Tuesday analysis.
+
+Go to the [TidyTuesday Github repository](https://github.com/rfordatascience/tidytuesday). Look for the dataset for this week, and read the instructions on how to get the data. You will also be provided with a data dictionary. If the data is available for download, place it somewhere in your portfolio repository (e.g., in a new folder called `data`). **Remember the data limit for Git/GitHub, don't place files that are too large into your repo!**
+
+## What you need to include
+
+Write a Quarto file (with R code as part of the Quarto file or in a separate file) that loads the data, performs any needed cleaning and wrangling, does some EDA, and fits some models. Here are the details:
+
+1.  Load, wrangle and explore the data. The EDA part involves making tables/figures to get an idea what your data is about. By now you know this is an
     iterative procedure, so it's ok to have these parts of the
     process/code intertwined.
 
@@ -83,16 +113,13 @@ Write code and text to perform the following steps:
     figure or table that illustrates your main scientific finding from
     this analysis.
 
-## General pointers
-
-Add ample information/documentation in the form of both code comments
+::: note
+Remember to add ample information/documentation in the form of both code comments
 and explanatory text You should provide a running commentary on what you
 do, why you do it, and how your R code accomplishes that (so that if you
 stare at it in a few weeks, you can remember what in the world you did
 back then 😄).
-
-**I don't want to see any p-values anywhere 😁! This is an exploratory
-analysis, thus there is no place for p-values.**
+:::
 
 ## Finish up
 
@@ -100,26 +127,92 @@ Once done with your Tidy Tuesday analysis, rebuild your portfolio site
 to make sure everything works and looks good, that all the links work,
 etc. Then push to GitHub by the deadline. Since this will be on your
 portfolio website, and I know where to find it, there is no need to post
-any link this week.
+any link.
 
-# Discussion
+And you just completed all the exercises for MADA! Now would also be a good time to check all of your portfolio page and further clean up/improve. This website is a nice showcase of what you've done and learned in this course, and something you can show to others (future employers, etc.). So I suggest you make sure it looks reasonably good and presentable. Here are some specific steps you should check.
 
-Write a post in this week's discussion channel that addresses this
-topic:
 
-*Now that we've essentially reached the end of the course and did the
-whole data-analysis pipeline, which specific topics in the data-analysis
-workflow do you still find unclear/confusing? Which ones do you wish we
-had covered more? Are you looking for further resources on a specific
-topic and haven't found anything good?*
+# Portfolio website improvements
 
-Post by Wednesday, then comment on each others posts. I hope this
-discussion will allow us to point each other to further possibly helpful
-resources and maybe help clarify some still open questions.
+## Connecting website and file repository
 
-And just to re-iterate: I very much welcome contributions to the course
-pages, so if you have resources you think should be added, or sections
-that are unclear and you can improve, please contribute! By now you know
-how to do that: Fork the course repo, make changes, send a pull request.
-I'll take a look, if things look good I'll merge. And of course add you
-to the *Acknowledgments* section of the course 😄.
+First, let's make sure it's easy for people to go from your portfolio
+website (the `github.io` location) to your file repository (the
+`github.com` location) and back. To that end, open the `_quarto.yml`
+file. At the bottom, it says `URL-TO-THIS-REPOSITORY-HERE`. Replace that
+with the URL to your Github repository. As an example, for the MADA
+course, the URL one would put in there is
+`https://github.com/andreashandel/MADAcourse` (while the website lives
+at `https://andreashandel.github.io/MADAcourse/`).
+
+Once you done that, when people now are on your website, they can click
+on the `Github` icon in the top right corner and be taken to your file
+repository. Try to make sure it works by rebuilding your website and
+pushing to Github. It might take a minute or so and you might need to
+hit refresh before it shows up on the website.
+
+Now, let's connect the two in reverse. Open `Readme.md` and update the
+text. This is what people see when they come to your github repository
+for your portfolio (as opposed to the website). I recommend adding a
+little bit of text and a link pointing users to the actual website. You
+can look at the [Readme.md for this
+course](https://github.com/andreashandel/MADAcourse) as an example. Edit
+yours as you want.
+
+You might also want to point to your website in the top right area of
+your repository on Github.com. If you go to your repository on GitHub,
+you should see an `About` section in the top right. If you click on the
+gear symbol, there is a field in which you can enter the URL for your
+website (the `github.io` location). It might already show as
+pre-populated, but you have to actually manually enter it before it will
+show. You can again see how that looks on the repository for this
+course.
+
+With this, it is easy for anyone (including yourself) to quickly switch
+between the website and the file repository.
+
+
+## Adding more content
+
+You've added most "products" you generated as part of htis class to the portfolio website. If you
+have created other noteworthy products, either as part of this course or
+outside, feel free to add them to your website. By now you should know
+how to do that. For instance, if you want to add your project, either
+now or once its done, feel free to do so. It probably doesn't make sense
+to put the whole project content inside the portfolio. Instead, take the
+main product (e.g., the `manuscript` file), render it to html, and add
+it to the website. Or create a new `project.qmd` file where you briefly
+describe what you did and show a few highlights, and then provide a link
+to your main project repository for those interested in looking at the
+whole thing.
+
+
+## Cleanup and Styling
+
+At this point, it might be worth revisiting your already posted pages
+and making sure everything looks as nice and professional as possible.
+
+While the way we built the website has only limited ways of styling
+things (unless you want to start changing CSS and HTML code), you can
+still customize some. Feel free to play around and customize the look.
+You can find a good bit of information in the Quarto documentation. If you
+look into the repository for the MADA course, you will also see that I'm
+using my own CSS file (called `MADAstyle.scss`). SCSS/CSS lets you style
+websites. It's not hard to write CSS code, but it is its own thing. I
+usually just search online to find what I'm looking for 😁. You
+certainly don't have to, but if you want to further customize the look
+of your website, you can add your own CSS file and style it how you
+like.
+
+
+## More Comments
+
+Future employers really do look at portfolios like this, so being able
+to showcase something nice and polished is useful. It is also part of
+having a good online presence. I think for (future) professionals like
+yourself, a solid online presence is vital. I have in the past discussed this with our grad students in another class, if you want to see my thoughts on that, you
+can check out [my presentation on building your
+brand](https://www.andreashandel.com/presentations/2021-01-building-your-brand/)
+-- which is of course made with R Markdown and posted to a `Quarto`
+based website 😄.
+
