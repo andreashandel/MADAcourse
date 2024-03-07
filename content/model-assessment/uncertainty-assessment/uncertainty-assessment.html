@@ -928,7 +928,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2024-02-15</p>
+      <p class="date-modified">2024-03-02</p>
     </div>
   </div>
     
@@ -944,7 +944,7 @@ window.Quarto = {
 <p>This unit discusses model uncertainty, how to compute and and how to assess it.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="smbc-sample-size.png" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1" title="A study with n=1 has large uncertainty. Source: SMBC."><img src="smbc-sample-size.png" class="img-fluid figure-img" style="width:40.0%" alt="A cartoon from the webcomic 'Saturday Morning Breakfast Cereal.' The comic shows a man with round glasses sitting in an armchair next to a small girl. He is holding a book, and saying 'After nineteen additional trials, of course, the results were shown to be anomalous.' The caption reads The Tortoise And The Hare is actually a fable about small sample sizes."></a></p>
+<p><a href="smbc-sample-size.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1" title="A study with n=1 has large uncertainty. Source: SMBC."><img src="smbc-sample-size.png" class="img-fluid figure-img" style="width:40.0%" alt="A cartoon from the webcomic 'Saturday Morning Breakfast Cereal.' The comic shows a man with round glasses sitting in an armchair next to a small girl. He is holding a book, and saying 'After nineteen additional trials, of course, the results were shown to be anomalous.' The caption reads The Tortoise And The Hare is actually a fable about small sample sizes."></a></p>
 <figcaption>A study with n=1 has large uncertainty. Source: <a href="https://www.smbc-comics.com/comic/2014-09-17/">SMBC</a>.</figcaption>
 </figure>
 </div>
@@ -965,7 +965,7 @@ window.Quarto = {
 <section id="common-uncertainty-estimates" class="level1">
 <h1>Common uncertainty estimates</h1>
 <p>Different parts of our model can have uncertainty. There can be uncertainty in parameter estimates, there can be uncertainty in outcome/prediction estimates. We might want to quantify the uncertainty of the average of our data, or we might want to quantify uncertainty for specific predictions.</p>
-<p>Those uncertainties are are related but not the same. Unfortunately, it is quite common to find messy uncertainty reporting in the literature, and <a href="https://www.pnas.org/doi/10.1073/pnas.2302491120">even experts have a hard time interpreting uncertainty</a>.</p>
+<p>Those uncertainties are related but not the same. Unfortunately, it is quite common to find messy uncertainty reporting in the literature, and <a href="https://www.pnas.org/doi/10.1073/pnas.2302491120">even experts have a hard time interpreting uncertainty</a>.</p>
 <p>In the following, we discuss a few common ways to quantify uncertainty.</p>
 <section id="confidence-interval-ci" class="level2">
 <h2 class="anchored" data-anchor-id="confidence-interval-ci">Confidence interval (CI)</h2>
@@ -1671,7 +1671,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"descPosition":"right","openEffect":"zoom","selector":".lightbox","closeEffect":"zoom","loop":false});
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","openEffect":"zoom","descPosition":"right","loop":false});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

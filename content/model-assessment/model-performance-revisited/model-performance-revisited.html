@@ -888,7 +888,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2024-02-10</p>
+      <p class="date-modified">2024-03-02</p>
     </div>
   </div>
     
@@ -922,8 +922,8 @@ ul.task-list li input[type="checkbox"] {
 <p>We discussed that once we have chosen a cost function for our problem, we are trying to find a model that minimizes this cost function (e.g., minimizes the RMSE or the misclassification error), and models with smaller cost functions are better. The problem with this concept is that in general, a bigger model will be more flexible and thus able to fit the data better. However, when we do data analysis, we generally are not (only) interested in having a model that works well for the specific data sample we used to fit your model. <strong>Our main question/hypothesis usually does not concern the actual data we have/fit.</strong> Instead, we generally want to say something about ‘the larger world’.</p>
 <p>If we are asking <em>inferential</em> questions, we are interested in what the data analysis teaches us about this system in general. E.g., if we analyze data to see if there is a correlation between levels of atmospheric pollutants and cases of asthma among our study population, we are usually really interested in knowing if such a correlation is real <strong>in general</strong>.</p>
 <p>If we are asking predictive questions, we are interested in a model that can predict future observations, not the ones we already have. E.g., if we analyze data for a specific treatment, we are not very interested how well the model predicts the effect of the drug on the people for which we collected the data (we already know that). Instead, we want to make general predictions about the effectiveness of the treatment on future patients.</p>
-<p>In either case, what we want is a model that is generalizeable (also sometimes called <em>externally valid</em>), and that applies equally well to new and similar data beyond the data we already collected.</p>
-<p><strong>What truly matters is how well our model can explain/predict other/future data, not just the data we are already observed!</strong></p>
+<p>In either case, what we want is a model that is generalizeable (also sometimes called <em>externally valid </em>), and that applies equally well to new and similar data beyond the data we already collected.</p>
+<p><strong>What truly matters is how well our model can explain/predict other/future data, not just the data we already observed!</strong></p>
 <p>If we build a very complex model in an effort to match our existing data as closely as possible, what generally happens is that our model <a href="https://en.wikipedia.org/wiki/Overfitting"><strong>overfits</strong></a>. That means it becomes very good at modeling the data we use to build the model, but it won’t generalize very well to the general, broader context of other/future data. The reason for that is that there is noise (random variability) in any dataset, and if we have a model that is too flexible, it will not only match the overall signal/pattern (if there is any) but will also capture all the noise in our sample, which leads to worse performance on future data that have different amounts and types of noise/variability.</p>
 </section>
 <section id="bias-variance-trade-off" class="level1">
@@ -961,8 +961,8 @@ ul.task-list li input[type="checkbox"] {
 <section id="test-yourself" class="level1">
 <h1>Test yourself</h1>
 Which of the following is NOT an important topic discussed in this unit?
-<div id="radio_JGDOYENCYK" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_JGDOYENCYK" value=""> <span>Overfitting</span></label><label><input type="radio" autocomplete="off" name="radio_JGDOYENCYK" value=""> <span>Variance</span></label><label><input type="radio" autocomplete="off" name="radio_JGDOYENCYK" value="answer"> <span>Convergence</span></label><label><input type="radio" autocomplete="off" name="radio_JGDOYENCYK" value=""> <span>Bias</span></label>
+<div id="radio_XDLAYDEIVO" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_XDLAYDEIVO" value=""> <span>Overfitting</span></label><label><input type="radio" autocomplete="off" name="radio_XDLAYDEIVO" value=""> <span>Variance</span></label><label><input type="radio" autocomplete="off" name="radio_XDLAYDEIVO" value="answer"> <span>Convergence</span></label><label><input type="radio" autocomplete="off" name="radio_XDLAYDEIVO" value=""> <span>Bias</span></label>
 </div>
 <p>Overfitting is only a problem for large machine learning models. <select class="webex-select"><option value="blank"></option><option value="">TRUE</option><option value="answer">FALSE</option></select> <br><br>Most of the time, we want a model that performs well in general/on new data, not just for our sample. <select class="webex-select"><option value="blank"></option><option value="answer">TRUE</option><option value="">FALSE</option></select></p>
 </section>
@@ -1603,7 +1603,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"descPosition":"right","openEffect":"zoom","selector":".lightbox","loop":false,"closeEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"loop":false,"openEffect":"zoom","descPosition":"right","closeEffect":"zoom","selector":".lightbox"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
