@@ -7,6 +7,15 @@ subtitle: ""
 
 Get the quiz sheet for this module from the general [**Assessments**](../../courseinfo/assessments-overview.qmd) page. Fill it in, then submit to the online grading system before the deadline.
 
+# Project
+
+Review and provide feedback on part 3 of the projects you have been assigned to as described in the [ **Projects**](../../project/project-Overview.qmd) section.
+
+# Discussion
+
+Because you'll be doing the project reviews, there is no discussion assignment for this module.
+
+
 # Exercise
 
 We'll practice the topics covered in this and prior units by continuing with the exercise we started previously.
@@ -63,14 +72,3 @@ The original repository owner should make sure everything works. Then, add the n
 
 We also covered overfitting and strategies to minimize it (e.g., cross-validation), and further model assessment strategies in the materials. We'll practice those in future exercises. I figured the above will already take a good bit of getting used to, and we will be able to practice more when we look at further model types in the coming weeks.
 
-# Project
-
-Review and provide feedback on part 3 of the projects you have been assigned to as described in the [ **Projects**](../../project/project-Overview.qmd) section.
-
-# Discussion
-
-Because you'll be doing the project reviews, there is no discussion assignment for this module.
-
-<!-- Find a peer-reviewed paper where the authors use one or several of the approaches covered this week, and discuss if the authors properly explain and justify why they are doing what they are doing, and why you think what they are doing is or is not a good approach given their stated objective(s). -->
-
-<!-- Post your discussion (with link to paper) by Wednesday, then read at least one other paper posted by your classmates and comment on it. -->
