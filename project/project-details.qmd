@@ -91,7 +91,7 @@ To that end, provide the following pieces of information:
     with a focus on the quantities of main interest (outcome, main
     predictor, co-variates of specific interest, etc.).
 -   It is up to you how you structure things. You can use a combination
-    of R or Rmd scripts. As long as things are well documented,
+    of R or Quarto scripts. As long as things are well documented,
     reproducible and logical, the exact setup is your choice.
 -   Everything needs to be fully reproducible and you need to provide
     somewhere (e.g. in the main text file or in the readme file in your
@@ -131,7 +131,7 @@ To that end, provide the following pieces of information:
 -   Some documentation (e.g. a readme.md file) explaining how your
     project is set up and which scripts need to be run in what order to
     reproduce everything.
--   Files with well-documented code (either R scripts or Rmd files) that
+-   Files with well-documented code (either R scripts or Quarto files) that
     do all the previous tasks (cleaning/processing), as well as running
     a few analyses. You can start with simple bivariate ones, looking
     for patterns between your outcome(s) and individual predictors of
@@ -217,7 +217,7 @@ To that end, provide the following pieces of information:
     structure like a research paper
     (Abstract/Introduction/Methods/Results/Discussion/Citations).
 -   Well documented supplementary material
--   Well-documented code as Rmd or R scripts that explain clearly all
+-   Well-documented code as Quarto files or R scripts that explain clearly all
     steps in your analysis (including the wrangling/exploring parts).
 -   Meta-data explaining your data as needed.
 -   Everything very well documented and polished as much as possible.
