@@ -243,10 +243,17 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise">Exercise</a>
   <ul class="collapse">
   <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a></li>
-  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a></li>
-  <li><a href="#what-to-do" id="toc-what-to-do" class="nav-link" data-scroll-target="#what-to-do">What to do</a></li>
-  <li><a href="#general-pointers" id="toc-general-pointers" class="nav-link" data-scroll-target="#general-pointers">General pointers</a></li>
+  <li><a href="#what-is-tidy-tuesday" id="toc-what-is-tidy-tuesday" class="nav-link" data-scroll-target="#what-is-tidy-tuesday">What is Tidy Tuesday</a></li>
+  <li><a href="#your-tidy-tuesday-exercise" id="toc-your-tidy-tuesday-exercise" class="nav-link" data-scroll-target="#your-tidy-tuesday-exercise">Your Tidy Tuesday Exercise</a></li>
+  <li><a href="#what-you-need-to-include" id="toc-what-you-need-to-include" class="nav-link" data-scroll-target="#what-you-need-to-include">What you need to include</a></li>
   <li><a href="#finish-up" id="toc-finish-up" class="nav-link" data-scroll-target="#finish-up">Finish up</a></li>
+  </ul></li>
+  <li><a href="#portfolio-website-improvements" id="toc-portfolio-website-improvements" class="nav-link" data-scroll-target="#portfolio-website-improvements">Portfolio website improvements</a>
+  <ul class="collapse">
+  <li><a href="#connecting-website-and-file-repository" id="toc-connecting-website-and-file-repository" class="nav-link" data-scroll-target="#connecting-website-and-file-repository">Connecting website and file repository</a></li>
+  <li><a href="#adding-more-content" id="toc-adding-more-content" class="nav-link" data-scroll-target="#adding-more-content">Adding more content</a></li>
+  <li><a href="#cleanup-and-styling" id="toc-cleanup-and-styling" class="nav-link" data-scroll-target="#cleanup-and-styling">Cleanup and Styling</a></li>
+  <li><a href="#more-comments" id="toc-more-comments" class="nav-link" data-scroll-target="#more-comments">More Comments</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -300,19 +307,30 @@ ul.task-list li input[type="checkbox"] {
 <h1>Exercise</h1>
 <section id="overview" class="level2">
 <h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>For this exercise, we will participate in one more <strong>Tidy Tuesday</strong> exercise. This time, we’ll apply a full analysis workflow to the data.</p>
-<p>This is another solo exercise, so no group work this week, but of course more GitHub. This exercise will go into your portfolio.</p>
+<p>For this exercise, we will join the R data science community and participate in <strong>Tidy Tuesday</strong>, a weekly exercise that allows you to practice playing with data. The focus for Tidy Tuesday is on getting, cleaning (i.e., tidying) and exploring a data set, though people sometimes do statistical analyses as well. We’ll do a “full” analysis workflow.</p>
+<p>This is a solo exercise and will go into your portfolio.</p>
 </section>
-<section id="setup" class="level2">
-<h2 class="anchored" data-anchor-id="setup">Setup</h2>
-<p>Use your portfolio website. Make sure it’s up to date and fully synced. Open it in R Studio. From last week’s exercise, you should have an empty Rmd file called <code>tidytuesday_exercise2.qmd</code>. Open it, that’s where you’ll write your Tidy Tuesday analysis.</p>
-<p>Go to the <a href="https://github.com/rfordatascience/tidytuesday">TidyTuesday Github repository</a>. Look for the dataset for this week, and read the instructions on how to get the data. You will also be provided with a data dictionary. If the data is available for download, place it somewhere in your portfolio repository (e.g., you can make a new folder called <code>data</code>).</p>
+<section id="what-is-tidy-tuesday" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-tidy-tuesday">What is Tidy Tuesday</h2>
+<p>You briefly encountered Tidy Tuesday before in the <a href="../../content/module-data-analysis/data-analysis-motivation.html"><strong>Data Analysis Motivation unit</strong></a>. If you can’t remember, revisit that unit and re-read that section. Also read the information at the provided links.</p>
+<p>If you want to see another Tidy Tuesday example, see <a href="https://www.andreashandel.com/posts/2019-10-02-tidy-tuesday-exploration/index.html">one I did</a>, as part of a previous version of MADA.</p>
+<p>For even more examples of previous analyses, see this <a href="https://nsgrantham.shinyapps.io/tidytuesdayrocks/">Shiny app</a> which scans twitter for posts mentioning <code>#tidytuesday</code>. Unfortunately, it doesn’t seem to be updated/maintained anymore. But you can still find people on social media posting links to their Tidy Tuesday creations (feel free to share yours as well).</p>
+<div class="note">
+<p>Apparently, there is now also a <a href="https://www.tidytuesday.com/">Tidy Tuesday podcast</a>. I’m not familiar with it, so I’m not sure what it’s all about and if it is worth checking out. It probably is worth giving it a try, since it’s (almost) always good to check out new things 😁 and those are very short recordings, so I think they just introduce the data of the week. If you end up listening to some, let me know what you think.</p>
+</div>
 </section>
-<section id="what-to-do" class="level2">
-<h2 class="anchored" data-anchor-id="what-to-do">What to do</h2>
-<p>Write code and text to perform the following steps:</p>
+<section id="your-tidy-tuesday-exercise" class="level2">
+<h2 class="anchored" data-anchor-id="your-tidy-tuesday-exercise">Your Tidy Tuesday Exercise</h2>
+<p>Your assignment is to participate in Tidy Tuesday by analyzing this week’s dataset. You can start as soon as the dataset is posted, which is Mondays. The <a href="https://github.com/rfordatascience/tidytuesday">datasets are released on GitHub</a>. As I’m writing this, I have no idea what the data will be the week this exercise happens. That’s part of the fun of it 😄.</p>
+<p>Here are some more detailed instructions:</p>
+<p>Use your portfolio website. Make sure it’s up to date and fully synced. Open it in R Studio. Then open the <code>tidytuesday-exercise.qmd</code> file. That’s where you’ll write your Tidy Tuesday analysis.</p>
+<p>Go to the <a href="https://github.com/rfordatascience/tidytuesday">TidyTuesday Github repository</a>. Look for the dataset for this week, and read the instructions on how to get the data. You will also be provided with a data dictionary. If the data is available for download, place it somewhere in your portfolio repository (e.g., in a new folder called <code>data</code>). <strong>Remember the data limit for Git/GitHub, don’t place files that are too large into your repo!</strong></p>
+</section>
+<section id="what-you-need-to-include" class="level2">
+<h2 class="anchored" data-anchor-id="what-you-need-to-include">What you need to include</h2>
+<p>Write a Quarto file (with R code as part of the Quarto file or in a separate file) that loads the data, performs any needed cleaning and wrangling, does some EDA, and fits some models. Here are the details:</p>
 <ol type="1">
-<li><p>Load, wrangle and explore the data. By now you know this is an iterative procedure, so it’s ok to have these parts of the process/code intertwined.</p></li>
+<li><p>Load, wrangle and explore the data. The EDA part involves making tables/figures to get an idea what your data is about. By now you know this is an iterative procedure, so it’s ok to have these parts of the process/code intertwined.</p></li>
 <li><p>Once you understand the data sufficiently, formulate a question/hypothesis. This will determine your outcome of interest and, if applicable, main predictor(s) of interest. Since we don’t know the data yet, it might be that the question is a bit contrived and not actually too interesting, but I’m sure there will be more than one potentially reasonable question one can ask, no matter what the data will be.</p></li>
 <li><p>Once you determine the question and thus your outcome and main predictors, further pre-process and clean the data as needed. Then split into train/test. (It might be that the data is too small for this split to make sense <em>in real life</em> but for this exercise, we’ll just do it.)</p></li>
 <li><p>Fit at least 3 different model types to the data using the <code>tidymodels</code> framework we practiced. Use the CV approach for model training/fitting. Explore the quality of each model by looking at performance, residuals, uncertainty, etc. All of this should still be evaluated using the training/CV data. You can of course recycle code from previous exercises, but I also encourage you to explore further, e.g.&nbsp;try different ML models or use different metrics. You might have to do that anyway, depending on the data and your question/outcome.</p></li>
@@ -320,15 +338,38 @@ ul.task-list li input[type="checkbox"] {
 <li><p>As a final, somewhat honest assessment of the quality of the model you chose, evaluate it (performance, residuals, uncertainty, etc.) on the <strong>test data</strong>. This is the only time you are allowed to touch the test data, and only once. Report model performance on the test data.</p></li>
 <li><p>Summarize everything you did and found in a discussion. Make sure you discuss your findings with regard to your original question/hypothesis. What did you learn? If feasible, show a summary figure or table that illustrates your main scientific finding from this analysis.</p></li>
 </ol>
-</section>
-<section id="general-pointers" class="level2">
-<h2 class="anchored" data-anchor-id="general-pointers">General pointers</h2>
-<p>Add ample information/documentation in the form of both code comments and explanatory text You should provide a running commentary on what you do, why you do it, and how your R code accomplishes that (so that if you stare at it in a few weeks, you can remember what in the world you did back then 😄).</p>
-<p><strong>I don’t want to see any p-values anywhere 😁! This is an exploratory analysis, thus there is no place for p-values.</strong></p>
+<div class="note">
+<p>Remember to add ample information/documentation in the form of both code comments and explanatory text You should provide a running commentary on what you do, why you do it, and how your R code accomplishes that (so that if you stare at it in a few weeks, you can remember what in the world you did back then 😄).</p>
+</div>
 </section>
 <section id="finish-up" class="level2">
 <h2 class="anchored" data-anchor-id="finish-up">Finish up</h2>
-<p>Once done with your Tidy Tuesday analysis, rebuild your portfolio site to make sure everything works and looks good, that all the links work, etc. Then push to GitHub by the deadline. Since this will be on your portfolio website, and I know where to find it, there is no need to post any link this week.</p>
+<p>Once done with your Tidy Tuesday analysis, rebuild your portfolio site to make sure everything works and looks good, that all the links work, etc. Then push to GitHub by the deadline. Since this will be on your portfolio website, and I know where to find it, there is no need to post any link.</p>
+<p>And you just completed all the exercises for MADA! Now would also be a good time to check all of your portfolio page and further clean up/improve. This website is a nice showcase of what you’ve done and learned in this course, and something you can show to others (future employers, etc.). So I suggest you make sure it looks reasonably good and presentable. Here are some specific steps you should check.</p>
+</section>
+</section>
+<section id="portfolio-website-improvements" class="level1">
+<h1>Portfolio website improvements</h1>
+<section id="connecting-website-and-file-repository" class="level2">
+<h2 class="anchored" data-anchor-id="connecting-website-and-file-repository">Connecting website and file repository</h2>
+<p>First, let’s make sure it’s easy for people to go from your portfolio website (the <code>github.io</code> location) to your file repository (the <code>github.com</code> location) and back. To that end, open the <code>_quarto.yml</code> file. At the bottom, it says <code>URL-TO-THIS-REPOSITORY-HERE</code>. Replace that with the URL to your Github repository. As an example, for the MADA course, the URL one would put in there is <code>https://github.com/andreashandel/MADAcourse</code> (while the website lives at <code>https://andreashandel.github.io/MADAcourse/</code>).</p>
+<p>Once you done that, when people now are on your website, they can click on the <code>Github</code> icon in the top right corner and be taken to your file repository. Try to make sure it works by rebuilding your website and pushing to Github. It might take a minute or so and you might need to hit refresh before it shows up on the website.</p>
+<p>Now, let’s connect the two in reverse. Open <code>Readme.md</code> and update the text. This is what people see when they come to your github repository for your portfolio (as opposed to the website). I recommend adding a little bit of text and a link pointing users to the actual website. You can look at the <a href="https://github.com/andreashandel/MADAcourse">Readme.md for this course</a> as an example. Edit yours as you want.</p>
+<p>You might also want to point to your website in the top right area of your repository on Github.com. If you go to your repository on GitHub, you should see an <code>About</code> section in the top right. If you click on the gear symbol, there is a field in which you can enter the URL for your website (the <code>github.io</code> location). It might already show as pre-populated, but you have to actually manually enter it before it will show. You can again see how that looks on the repository for this course.</p>
+<p>With this, it is easy for anyone (including yourself) to quickly switch between the website and the file repository.</p>
+</section>
+<section id="adding-more-content" class="level2">
+<h2 class="anchored" data-anchor-id="adding-more-content">Adding more content</h2>
+<p>You’ve added most “products” you generated as part of htis class to the portfolio website. If you have created other noteworthy products, either as part of this course or outside, feel free to add them to your website. By now you should know how to do that. For instance, if you want to add your project, either now or once its done, feel free to do so. It probably doesn’t make sense to put the whole project content inside the portfolio. Instead, take the main product (e.g., the <code>manuscript</code> file), render it to html, and add it to the website. Or create a new <code>project.qmd</code> file where you briefly describe what you did and show a few highlights, and then provide a link to your main project repository for those interested in looking at the whole thing.</p>
+</section>
+<section id="cleanup-and-styling" class="level2">
+<h2 class="anchored" data-anchor-id="cleanup-and-styling">Cleanup and Styling</h2>
+<p>At this point, it might be worth revisiting your already posted pages and making sure everything looks as nice and professional as possible.</p>
+<p>While the way we built the website has only limited ways of styling things (unless you want to start changing CSS and HTML code), you can still customize some. Feel free to play around and customize the look. You can find a good bit of information in the Quarto documentation. If you look into the repository for the MADA course, you will also see that I’m using my own CSS file (called <code>MADAstyle.scss</code>). SCSS/CSS lets you style websites. It’s not hard to write CSS code, but it is its own thing. I usually just search online to find what I’m looking for 😁. You certainly don’t have to, but if you want to further customize the look of your website, you can add your own CSS file and style it how you like.</p>
+</section>
+<section id="more-comments" class="level2">
+<h2 class="anchored" data-anchor-id="more-comments">More Comments</h2>
+<p>Future employers really do look at portfolios like this, so being able to showcase something nice and polished is useful. It is also part of having a good online presence. I think for (future) professionals like yourself, a solid online presence is vital. I have in the past discussed this with our grad students in another class, if you want to see my thoughts on that, you can check out <a href="https://www.andreashandel.com/presentations/2021-01-building-your-brand/">my presentation on building your brand</a> – which is of course made with R Markdown and posted to a <code>Quarto</code> based website 😄.</p>
 
 
 </section>

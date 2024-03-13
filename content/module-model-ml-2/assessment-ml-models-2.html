@@ -240,18 +240,9 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#quiz" id="toc-quiz" class="nav-link active" data-scroll-target="#quiz">Quiz</a></li>
-  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise">Exercise</a>
-  <ul class="collapse">
-  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a></li>
-  <li><a href="#connecting-website-and-file-repository" id="toc-connecting-website-and-file-repository" class="nav-link" data-scroll-target="#connecting-website-and-file-repository">Connecting website and file repository</a></li>
-  <li><a href="#creating-new-content" id="toc-creating-new-content" class="nav-link" data-scroll-target="#creating-new-content">Creating new content</a></li>
-  <li><a href="#adding-more-content" id="toc-adding-more-content" class="nav-link" data-scroll-target="#adding-more-content">Adding more content</a></li>
-  <li><a href="#cleanup-and-styling" id="toc-cleanup-and-styling" class="nav-link" data-scroll-target="#cleanup-and-styling">Cleanup and Styling</a></li>
-  <li><a href="#more-comments" id="toc-more-comments" class="nav-link" data-scroll-target="#more-comments">More Comments</a></li>
-  <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a></li>
-  </ul></li>
   <li><a href="#project" id="toc-project" class="nav-link" data-scroll-target="#project">Project</a></li>
   <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a></li>
+  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise">Exercise</a></li>
   </ul>
 </nav>
     </div>
@@ -278,7 +269,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2024-01-27</p>
+      <p class="date-modified">2024-03-07</p>
     </div>
   </div>
     
@@ -293,53 +284,19 @@ ul.task-list li input[type="checkbox"] {
 <h1>Quiz</h1>
 <p>Get the quiz sheet for this module from the general <a href="../../courseinfo/assessments-overview.html"><strong>Assessments</strong></a> page. Fill it in, then submit to the online grading system before the deadline.</p>
 </section>
-<section id="exercise" class="level1">
-<h1>Exercise</h1>
-<p>Since this week is another week with a project submission deadline, I’m keeping the exercise short, but there is some cleanup and improvement I’d like you to do for your portfolio. Some of you might have already done some or all of that, then you can just ignore.</p>
-<section id="setup" class="level2">
-<h2 class="anchored" data-anchor-id="setup">Setup</h2>
-<p>Make sure your portfolio repository is fully up-to-date and synced. Open the project in RStudio.</p>
-</section>
-<section id="connecting-website-and-file-repository" class="level2">
-<h2 class="anchored" data-anchor-id="connecting-website-and-file-repository">Connecting website and file repository</h2>
-<p>First, let’s make sure it’s easy for people to go from your portfolio website (the <code>github.io</code> location) to your file repository (the <code>github.com</code> location) and back. To that end, open the <code>_quarto.yml</code> file. At the bottom, it says <code>URL-TO-THIS-REPOSITORY-HERE</code>. Replace that with the URL to your Github repository. As an example, for the MADA course, the URL one would put in there is <code>https://github.com/andreashandel/MADAcourse</code> (while the website lives at <code>https://andreashandel.github.io/MADAcourse/</code>).</p>
-<p>Once you done that, when people now are on your website, they can click on the <code>Github</code> icon in the top right corner and be taken to your file repository. Try to make sure it works by rebuilding your website and pushing to Github. It might take a minute or so and you might need to hit refresh before it shows up on the website.</p>
-<p>Now, let’s connect the two in reverse. Open <code>Readme.md</code> and update the text. This is what people see when they come to your github repository for your portfolio (as opposed to the website). I recommend adding a little bit of text and a link pointing users to the actual website. You can look at the <a href="https://github.com/andreashandel/MADAcourse">Readme.md for this course</a> as an example. Edit yours as you want.</p>
-<p>You might also want to point to your website in the top right area of your repository on Github.com. If you go to your repository on GitHub, you should see an <code>About</code> section in the top right. If you click on the gear symbol, there is a field in which you can enter the URL for your website (the <code>github.io</code> location). It might already show as pre-populated, but you have to actually manually enter it before it will show. You can again see how that looks on the repository for this course.</p>
-<p>With this, it is easy for anyone (including yourself) to quickly switch between the website and the file repository.</p>
-</section>
-<section id="creating-new-content" class="level2">
-<h2 class="anchored" data-anchor-id="creating-new-content">Creating new content</h2>
-<p>In preparation for next week, make a copy of the <code>tidytuesday_exercise.qmd</code> file, name it <code>tidytuesday_exercise2.qmd</code>. Open it, delete everything apart from the YAML header (the stuff between the <code>---</code>). Add a sentence that says “To be filled” or something like that. You will fill it next week.</p>
-<p>To see the new file and access it from the website, we also have to include it in the website navigation bar. Open the <code>_quarto.yml</code> file and add a menu entry called <code>Tidy Tuesday 2 Exercise</code> and link it to <code>./tidytuesday_exercise2.html</code>.</p>
-<p>Make sure your website rebuilds ok. You should now see another menu entry for Tidy Tuesday 2 in your <code>Projects</code> section and when you click on it, the essentially empty file we created should show up.</p>
-</section>
-<section id="adding-more-content" class="level2">
-<h2 class="anchored" data-anchor-id="adding-more-content">Adding more content</h2>
-<p>We’ve added most content of interest to the portfolio website. If you have created other noteworthy products, either as part of this course or outside, feel free to add them to your website. By now you should know how to do that. For instance, if you want to add your project, either now or once its done, feel free to do so. It probably doesn’t make sense to put the whole project content inside the portfolio. Instead, take the main product (e.g., the <code>manuscript</code> file), render it to html, and add it to the website. Or create a new <code>project.qmd</code> file where you briefly describe what you did and show a few highlights, and then provide a link to your main project repository for those interested in looking at the whole thing.</p>
-</section>
-<section id="cleanup-and-styling" class="level2">
-<h2 class="anchored" data-anchor-id="cleanup-and-styling">Cleanup and Styling</h2>
-<p>At this point, it might be worth revisiting your already posted pages and making sure everything looks as nice and professional as possible.</p>
-<p>While the way we built the website has only limited ways of styling things (unless you want to start changing CSS and HTML code), you can still customize some. Feel free to play around and customize the look. You can find a good bit of information in the Quarto documentation. Some additional information (maybe slightly outdated since it’s Rmarkdown, but most should still work) is in the <a href="https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html">Bookdown section on RMarkdown sites</a>. If you look into the repository for the MADA course, you will also see that I’m using my own CSS file (called <code>MADAstyle.css</code>). CSS lets you style websites. It’s not hard to write CSS code, but it is its own thing. I usually just search online to find what I’m looking for 😁. You certainly don’t have to, but if you want to further customize the look of your website, you can add your own CSS file and style it how you like.</p>
-</section>
-<section id="more-comments" class="level2">
-<h2 class="anchored" data-anchor-id="more-comments">More Comments</h2>
-<p>Future employers really do look at portfolios like this, so being able to showcase something nice and polished is useful. It is also part of having a good online presence. I think for (future) professionals like yourself, a solid online presence is vital. I discuss this with our grad students in another class, if you want to see my thoughts on that, you can check out <a href="https://www.andreashandel.com/presentations/2021-01-building-your-brand/">my presentation on building your brand</a> – which is of course made with R Markdown and posted to a <code>Quarto</code> based website 😄.</p>
-<!-- And if you've really gotten into making websites with R Markdown, you can always move to [blogdown](https://bookdown.org/yihui/blogdown/). This is a much more flexible and powerful way of creating websites, but it's also more complex. Maybe the current best starting point for blogdown is this [online post/tutorial](https://www.apreshill.com/blog/2020-12-new-year-new-blogdown/). -->
-</section>
-<section id="submission" class="level2">
-<h2 class="anchored" data-anchor-id="submission">Submission</h2>
-<p>I know where to find your portfolio, so you don’t need to submit anything. Just make sure you push a fully updated and re-built portfolio to Github and that the website looks right. I’ll take a look at the website after the deadline.</p>
-</section>
-</section>
 <section id="project" class="level1">
 <h1>Project</h1>
 <p>Submission of part 4 is due. Make sure your updated project is on Github.</p>
 </section>
 <section id="discussion" class="level1">
 <h1>Discussion</h1>
-<p>No discussion assignment this week. Instead, submit project part 4.</p>
+<p>Write a post in this week’s discussion channel that answers this question:</p>
+<p>Which of the machine learning methods we covered (or any we didn’t cover but you are aware of) do you find most exciting/interesting and why? And which ML method seems the most confusing/pointless to you, and why? Are there any ML approaches you want to learn more about and need more resources beyond those provided on the website?</p>
+<p>Post by Wednesday, then reply to each other by Friday.</p>
+</section>
+<section id="exercise" class="level1">
+<h1>Exercise</h1>
+<p>Since this week is another week with a project submission deadline, there’s no exercise. You can practice some of the models we covered this week in next week’s exercise.</p>
 
 
 </section>
