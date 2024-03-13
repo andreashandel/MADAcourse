@@ -17,17 +17,29 @@ train_data <- training(data_split)
 test_data  <- testing(data_split)
 
 
-
+## ---- model1 --------
 mod <- linear_reg() %>% set_engine("lm")
-wflow <- 
+wflow1 <- 
   workflow() %>% 
   add_model(mod) %>% 
   add_formula(Y ~ DOSE)
 fit1 <- wflow %>% fit(data = train_data)
 
+
+## ---- model2 --------
+wflow2 <- wflow1 %>% update_formula(Y ~ .)
+fit2 <- wflow2 %>% fit(data = train_data)
+
+
+## ---- model3 --------
+wflow3 <- wflow1 %>% update_formula(Y ~ .)
+
+fit3 <- wflow3 %>% fit(data = train_data)
+
+
 # get predictions for both train and test data
 pred_train <- predict(fit1, train_data)
-pred_test <- predict(fit1, test_data)
+
 
 # compute RMSE for train data
 rmse_train <- pred_train %>% 
@@ -40,3 +52,7 @@ rmse_test <- pred_test %>%
   bind_cols(test_data) %>% 
   metrics(truth = Y, estimate = .pred)
 print(rmse_test)
+
+
+
+pred_test <- predict(fit1, test_data)

@@ -32,15 +32,27 @@ We'll continue this exercise using the previous Quarto `data-fitting.qmd` file.
 
 ## Data splitting
 
-Write code that takes the data and splits it randomly into a train and test that, following for instance the example in the [Data Splitting section of the Get Started `tidymodels` tutorial](https://www.tidymodels.org/start/recipes/).
+Write code that takes the data and splits it randomly into a 75% train and 25% test set, following for instance the example in the [Data Splitting section of the Get Started `tidymodels` tutorial](https://www.tidymodels.org/start/recipes/).
+
+::: note
+We only have 120 observations here. This is not much, so for a real project, it might not make a lot of sense to do a train/test split. Instead, one would probably use all data during the model fitting process, and then use cross-validation to try and estimate model performance on unseen data. But since this is an exercise, we'll do the train/test split.
+:::
+
+::: note
+Also note that we are doing a random train/test split. But for a case like we have here, one might want to split differently. For instance we could split by using everyone who got the lower doses as training data, and then testing if we can predict the higher-dose outcomes. This is a common question of interest in drug development.
+:::
+
 
 ## Workflow creation and model fitting
 
-Next, following the example in the [Create Recipes section of the Get Started `tidymodels` tutorial](https://www.tidymodels.org/start/recipes/), create a simple recipe that fits a logistic model to our **categorical outcome of interest**, using all predictors. (We start with categorical and all predictors since that's the closest to the shown example). For now, you can ignore the concept of `roles` and `features` they mention.
+Next, following the example in the ["Fit a model with a recipe" section of the Get Started `tidymodels` tutorial](https://www.tidymodels.org/start/recipes/), create a simple workflow and recipe that fits a linear model to our **continuous outcome of interest**, (here, 'Y`) using all predictors. For the fitting, you should only use the training data set.
 
-Set a model as you did in the previous exercise, then use the `workflow()` function to create a simple workflow that fits a logistic model to all predictors using the `glm` engine. To that end, follow the *Fit a model with a recipe* section of the tutorial and adjust for your case.
+Then update the workflow by changing the model to one where the only predictor is `DOSE` and fit again.
 
-You should end up with a fit object similar to the one shown at the end of that section in the tutorial - of course, yours will look somewhat different since you are using a different dataset, but overall things should look similar.
+
+
+You should end up with 3 fit objects, one for each model. In the following, I assume they are called `fit1`, `fit2` and `fit3` but you can give them any name.
+
 
 ## Model 1 evaluation
 
