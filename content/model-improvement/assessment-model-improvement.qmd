@@ -29,6 +29,10 @@ At this stage, I assume all the data wrangling and EDA code, as well as the mode
 
 We'll continue this exercise using the previous Quarto `data-fitting.qmd` file.
 
+::: note
+This exercise is heavily inspired by the [Getting Started](https://www.tidymodels.org/start/) tidymodels tutorial. If you haven't yet, now would be a great time to at least skim through the tutorial and make sure you understand the overall steps. We'll draw on all 5 sections of the tutorial for this exercise.  
+:::
+
 
 ## Data splitting
 
@@ -43,18 +47,35 @@ Also note that we are doing a random train/test split. But for a case like we ha
 :::
 
 
+## Model fitting
+
+
+
 ## Workflow creation and model fitting
 
 Next, following the example in the ["Fit a model with a recipe" section of the Get Started `tidymodels` tutorial](https://www.tidymodels.org/start/recipes/), create a simple workflow and recipe that fits a linear model to our **continuous outcome of interest**, (here, 'Y`) using all predictors. For the fitting, you should only use the training data set.
 
 Then update the workflow by changing the model to one where the only predictor is `DOSE` and fit again.
 
+We'll start with 3 models that are being fit to the **continuous outcome of interest**, (here, 'Y`). The first model is really a null-model. Specifically, we just predict the mean outcome for each value. 
 
 
-You should end up with 3 fit objects, one for each model. In the following, I assume they are called `fit1`, `fit2` and `fit3` but you can give them any name.
 
 
-## Model 1 evaluation
+For these two models don't have a tuning parameter, so all we do is a single fit. In this instance, there's no reason to do anything like cross-validation during the "training" part, since we aren't really training/tuning/optimizing our model (other than finding the best-fitting parameters for the coefficients).
+
+The last model we'll test is a penalized regression model with LASSO. The example in the [predictive modeling case study](https://www.tidymodels.org/start/case-study/) will be useful to look at. Set up a workflow that uses a linear model with the `glmnet` engine. We want to do a LASSO model (set the `mixture` parameter accordingly) and we want to tune the penalty parameter.
+
+We want to use a grid search for the tuning parameter and use 5-fold cross-validation to evaluate the model performance during the tuning process. Note that for this you'll need to take snippets of code from the [Evaluate your model with resampling section](https://www.tidymodels.org/start/resampling/) of the tutorial.
+
+You should end up with a workflow that uses a `glmnet` model, and does fitting while tuning the `penalty` parameter of the model with a grid search, optimized on RMSE as the metric. By combining bits of code in the sections mentioned above, you should be able to stich it together.
+
+Once you re done with this part, you should end up with 3 fit objects, one for each model. In the following, I assume they are called `fit1`, `fit2` and `fit3` but you can give them any name.
+
+
+## Model assessment
+
+
 
 Follow the example in the *Use a trained workflow to predict* section of the tutorial to look at the predictions, ROC curve and ROC-AUC for your data. Apply it to both the training and the test data. ROC curve analysis and ROC-AUC is another common performance measure/metric for categorical outcomes. If you are not familiar with it, you can read more about them by following the link in the tutorial. It's not too important to go into the details for now. The focus here is on getting the code to work. In general, a ROC-AUC of 0.5 means the model is no good, 1 is a perfect model. Generally, somewhere above 0.7 do people think the model might be useful. If your model has a ROC-AUC a lot less than 0.5, you likely have an issue with how your factors are coded or how `tidymodels` is interpreting them.
 
