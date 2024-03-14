@@ -18,25 +18,33 @@ Because you'll be doing the project reviews, there is no discussion assignment f
 
 # Exercise
 
-We'll practice the topics covered in this and prior units by continuing with the exercise we started previously.
+We'll practice some of the topics covered in this and prior units by continuing with the exercise we started previously.
 
 
 ## Setup
 
 You'll continue working on the exercise you started previously. We'll also do some group work again, using the -- by now familiar -- M1, M2, ... setup. Assign each other a number. As much as possible, do it such that you end up working with group members you have not (or not in a while) worked with. Use the 'circular' setup such that everyone will work on their own repository and on one other person's repository.
 
-At this stage, I assume all the data wrangling and EDA code, as well as the model fitting code you worked on previously is present and fully functional. If there are still some issues that need to be resolved, go ahead and do so.
-
-We'll continue this exercise using the previous Quarto `data-fitting.qmd` file.
 
 ::: note
-This exercise is heavily inspired by the [Getting Started](https://www.tidymodels.org/start/) tidymodels tutorial. If you haven't yet, now would be a great time to at least skim through the tutorial and make sure you understand the overall steps. We'll draw on all 5 sections of the tutorial for this exercise.  
+This exercise is heavily inspired by the [Getting Started](https://www.tidymodels.org/start/) tidymodels tutorial. If you haven't yet, now would be a great time to at least skim through the tutorial and make sure you understand the overall steps. 
 :::
 
+## Part 1
 
-## Data splitting
+We'll continue this exercise using the previous Quarto `fitting-exercise.qmd` file.
 
-Write code that takes the data and splits it randomly into a 75% train and 25% test set, following for instance the example in the [Data Splitting section of the Get Started `tidymodels` tutorial](https://www.tidymodels.org/start/recipes/).
+At this stage, I assume all the data wrangling and EDA code, as well as the model fitting code you worked on previously is present and fully functional. If there are still some issues that need to be resolved, go ahead and do so.
+
+
+
+## Data prep
+
+We are doing one more change to the data. Since the `RACE` variable has a few values that are coded weirdly (7 or 88, which probably means some sort of missing), we'll just for completely remove that variable.
+
+So for this exercise, we'll have a data frame with 120 observations and 6 variables, namely `Y, DOSE, AGE, SEX, WT, HT`.
+
+Now, write code that takes the data and splits it randomly into a 75% train and 25% test set, following for instance the example in the [Data Splitting section of the Get Started `tidymodels` tutorial](https://www.tidymodels.org/start/recipes/).
 
 ::: note
 We only have 120 observations here. This is not much, so for a real project, it might not make a lot of sense to do a train/test split. Instead, one would probably use all data during the model fitting process, and then use cross-validation to try and estimate model performance on unseen data. But since this is an exercise, we'll do the train/test split.
@@ -47,63 +55,164 @@ Also note that we are doing a random train/test split. But for a case like we ha
 :::
 
 
-## Model fitting
+## Model fitting 
+
+Use the `tidymodels` framework to fit two linear models to our **continuous outcome of interest**, (here, `Y`). The first model should only use `DOSE` as predictor, the second model should use all predictors. For both models, the metric to optimize should be RMSE.   
+
+This is the same as you did previously, but for this exercise, you should only use the training data set for fitting.
 
 
+## Model performance assessment 1
 
-## Workflow creation and model fitting
+Compute predictions for the two models. Then use observed and predicted values to compute RMSE of the best-fitting model.
 
-Next, following the example in the ["Fit a model with a recipe" section of the Get Started `tidymodels` tutorial](https://www.tidymodels.org/start/recipes/), create a simple workflow and recipe that fits a linear model to our **continuous outcome of interest**, (here, 'Y`) using all predictors. For the fitting, you should only use the training data set.
+Also compute the RMSE of a null-model, one that would just predict the mean outcome for each observation, without using any predictor information. 
 
-Then update the workflow by changing the model to one where the only predictor is `DOSE` and fit again.
-
-We'll start with 3 models that are being fit to the **continuous outcome of interest**, (here, 'Y`). The first model is really a null-model. Specifically, we just predict the mean outcome for each value. 
-
+Compare the 3 RMSE values and discuss which model is performing the best (according to those metrics).
 
 
+## Model performance assessment 2
 
-For these two models don't have a tuning parameter, so all we do is a single fit. In this instance, there's no reason to do anything like cross-validation during the "training" part, since we aren't really training/tuning/optimizing our model (other than finding the best-fitting parameters for the coefficients).
+So far, we have assessed performance on the training set. But as you know by now, that is often not really of interest, we want to know how the model performs in general. We could use our test data to check, but we want to reserve that until the very end, to get a final "fair" assessment of our best model. 
 
-The last model we'll test is a penalized regression model with LASSO. The example in the [predictive modeling case study](https://www.tidymodels.org/start/case-study/) will be useful to look at. Set up a workflow that uses a linear model with the `glmnet` engine. We want to do a LASSO model (set the `mixture` parameter accordingly) and we want to tune the penalty parameter.
+We could use an information criterion, such as AIC, to try to estimate how well the models might perform on unseen data. Even better, we can use use cross-validation to compute performance on unseen data.
 
-We want to use a grid search for the tuning parameter and use 5-fold cross-validation to evaluate the model performance during the tuning process. Note that for this you'll need to take snippets of code from the [Evaluate your model with resampling section](https://www.tidymodels.org/start/resampling/) of the tutorial.
+Follow the [Evaluate your model with resampling section](https://www.tidymodels.org/start/resampling/) of the tutorial and do a 10-fold cross-validation. Doing so, you fit the 2 models to the data 10 times. Each time, you use 90% to fit the model, and 10% to evaluate (compute the RMSE) of the model. If you take the average for the RMSE over the 10 folds, you get an estimate for the model performance on data not used for fitting. It's the same idea as doing the initial train/test split, but now we use it as part of the model building and choosing part, while we keep the test data as a final evaluation of the model and won't use it before then.  
 
-You should end up with a workflow that uses a `glmnet` model, and does fitting while tuning the `penalty` parameter of the model with a grid search, optimized on RMSE as the metric. By combining bits of code in the sections mentioned above, you should be able to stich it together.
+Compute the RMSE for both models again. Of course nothing changes for the null model. Compare the new RMSE estimates obtained through CV with those obtained earlier. What did and didn't change? 
 
-Once you re done with this part, you should end up with 3 fit objects, one for each model. In the following, I assume they are called `fit1`, `fit2` and `fit3` but you can give them any name.
+Run the code again that creates the CV folds and does the fitting. If you did set a random seed, change the value. If you didn't set one, it will automatically draw different values. The RMSE values for the CV fits will change. That's just due to the randomness in the data splitting. If we had more data, we would expect to get less variability. The overall pattern between changes in the RMSE values for the fits to the training data without CV, and what we see with CV, should still be the same.
 
+::: note
+If you want to get more robust RMSE estimates with CV, you can try to set `repeats` to some value. That creates more samples by repeating the whole CV procedure several times. In theory this might give more robust results. You might encounter some warning messages. This is likely related that occasionally, by chance, data is split in a way that some information (e.g., a certain sex or race in our data) is missing from one one of the folds. That can cause issues.
+:::
 
-## Model assessment
-
-
-
-Follow the example in the *Use a trained workflow to predict* section of the tutorial to look at the predictions, ROC curve and ROC-AUC for your data. Apply it to both the training and the test data. ROC curve analysis and ROC-AUC is another common performance measure/metric for categorical outcomes. If you are not familiar with it, you can read more about them by following the link in the tutorial. It's not too important to go into the details for now. The focus here is on getting the code to work. In general, a ROC-AUC of 0.5 means the model is no good, 1 is a perfect model. Generally, somewhere above 0.7 do people think the model might be useful. If your model has a ROC-AUC a lot less than 0.5, you likely have an issue with how your factors are coded or how `tidymodels` is interpreting them.
-
-## Alternative model
-
-Let's re-do the fitting but now with a model that only fits the main predictor to the categorical outcome. You should notice that the only thing you have to change is to set up a new `recipe`, this time one that only has the name of the predictor of interest on the right side of the formula (instead of the `.` symbol, which is shorthand notation for "all predictors".) Then you can set up a new workflow with the new recipe, rerun the fit and evaluate performance using the same code as above. In general, if you do multiple models/recipes, you might want to write a loop to go over them, or parallelize/vectorize things. For now, just copying and pasting most of the code is ok.
 
 ## Wrap up part 1
 
 Make sure everything runs and works as expected. Also make sure everything is well commented/documented/explained! Then commit, push and tell your classmate that they can take over. **Finish this by Wednesday.**
 
-## Continuous outcome
 
-Fork and clone (or if you are added as collaborator, clone directly) your classmate's repository. Open their `modeleval.qmd` file. **Add a heading at the bottom that says `# This section added by YOURFULLNAME`. I need this so I can grade accordingly.**
+## Part 2
 
-Add code that repeats the above steps, but now fits linear models to the continuous outcome. One model with all predictors, one model with just the main predictor. For that, you need to change your metric. RMSE is a good one to choose. You should find that a lot of the code your classmate wrote can copied/pasted/re-used with only minimal modifications. Make sure to add comments/documentation.
+Fork and clone (or if you are added as collaborator, clone directly) your classmate's repository. Open their `fitting-exercise.qmd` file. 
+
+**Add a heading that says `# This section added by YOURFULLNAME`. I need this so I can grade accordingly.**
+
+
+## Model predictions 
+
+Nothing beats a visual inspection of results. A very useful figure is one that plots predicted versus observed values. This can quickly show you if there are important deviations that suggest the model isn't very good.
+
+Put the observed values and the predicted values from your 3 models into a data frame. Also add a label to indicate the model. Then use ggplot to create a figure that plots (as symbols) observed values on the x-axis and predictions (from each of the 3 models, including the null model) on the y-axis. Let both x and y axes go from 0 to 5000 and add a 45 degree line. For a great model, the points will fall along that line, namely observed and predicted values agree - with some scatter.
+
+For your figure, you should see that the the null model, it's a straight horizontal line. We expect that, since we predict exactly the same value (the mean) for each observation. For the model that only includes dose, you should the data fall along 3 horizontal lines. Can you understand why? If not clear, look at the `DOSE` variable and the values it takes. That should tell you why you only get 3 different predicted values for the outcome.
+
+The model with all predictors looks the best, though there's still a lot of scatter around the diagonal line, suggesting that there's still a lot of the outcome pattern that our model can't explain. That could either be because we are missing important information, i.e. we need more variables. Or it could be that the model is too simple, for instance it could be that the outcome depends on some variable in a nonlinear way.
+
+We can't do anything about the former problem (other than collecting more data), but we can try to explore if more complex models can capture the data better. We'll do that in an upcoming exercise.
+
+For this exercise, we'll do one more exploration of our existing models.
+
+
+## Model predictions and uncertainty 
+
+As you learned, model predictions without a measure of uncertainty are usually not that useful. We generally always want to determine uncertainty in our estimates/predictions.
+
+While for a linear model it is possible to get uncertainty directly from the uncertainty of the parameter estimates, for more complex models, this is not possible. However, it is always possible to use the bootstrap method to sample the data, fit models to the data, and get uncertainty that way.
+
+We'll give that a try. Since our plot above suggested that model 1 is not good, we'll focus here on model 2.
+
+Use the `bootstraps` function from the `rsample` package to create 100 bootstraps.
+
+Then write a loop (or use a `map` or `apply` function) to fit the model to each of the bootstrap samples and make predictions from this model **for the original training data**. Record all predictions (e.g., in an array or a list).
+
+If you are wondering how to get the individual bootstrap samples out of the object that `bootstraps` gave you back: Assuming you called the object that you got back `dat_bs`, you can get a single bootstrap sample with this code:
+
+`
+dat_sample = rsample::analysis(dat_bs$splits[[i]])
+`
+
+Once you have all your predictions stored, compute the mean and confidence intervals. Assuming your predictions are stored in an array called `pred_bs` that has as many rows as samples and columns as data points, this bit of code computes mean and 89% confidence intervals.
+
+`
+preds <- pred_bs |> apply(2, quantile,  c(0.055, 0.5, 0.945)) |>  t()
+`
+
+Finally, make a figure that plots observed values on the x-axis, and mean and the upper and lower bounds of the bootstrapped confidence intervals for your predictions on the y-axis. You can for instance use black symbols for mean and some color to indicate lower and upper confidence limits. As above, make sure x- and y-axis are on the same and add a 45 degree line.
+
+Interpret what you see in this plot.
+
+
+::: note
+The bootstrap uses sampling, and CV uses sampling. The difference is that for bootstrap, we sample from all the (training) data with replacement. For CV, we randomly partitioned some of the data into the part used to fit, the other part was used to evaluate/assess. So the two approaches are similar, but not the same.
+:::
+
+
+## Final evaluation using test data
+
+Let's do a final model evaluation, this time using the test data.
+
+Use the fit for model 2 you computed previously, and now use this model to make predictions for the test data. 
+
+Then make a plot that shows predicted versus observed for both the training data (which you did above) and in the same plot, also show predicted versus observed for the test data (using, e.g. different symbols or colors).
+
+You should see that the observed/predicted values for the test data are mixed in with the train data. That's a good sign. If the test data points were systematically "off", it would indicate a problem such as overfitting to the training data.
+
+
+
+
+## Overall model assessment
+
+Let's critique all our models. Here are some points for discussion:
+
+* We want to make sure that any model we have performs better than the null model. Is that the case? 
+
+* Does model 1 with only dose in the model improve results over the null model? Do the results make sense? Would you consider this model "usable" for any real purpose? 
+
+* Does model 2 with all predictors further improve results? Do the results make sense? Would you consider this model "usable" for any real purpose?  
+
+Use all the assessment bits you computed above to reason about the models. And I'm not really looking for "the right" answer here (if that even exists), I just want to see that you are thinking about what your fit results and thus underlying models mean, and that you can assess their strengths and weaknesses and interpret what you are doing and seeing.
+
+
 
 ## Wrap up part 2
 
 Make sure everything runs and works as expected. Then commit, push and if you forked the repo, initiate a pull request. Tell our classmate that its done.
 
+
 ## Test and website update
 
-The original repository owner should make sure everything works. Then, add the newly created Quarto document as an entry into your `_quarto.yml` file, as a sub-menu of `Flu fitting`. Call it `Model Evaluation`. Recompile your portfolio website and make sure everything works and shows up as expected. Then commit and push.
+The original repository owner should make sure everything works. Make any further updates that you think need to be made. Then rebuild your portfolio website and make sure everything works and shows up as expected. Then commit and push.
 
-**Since this is part of your portfolio site, you don't need to post anything, I know where to find it. Therefore there is no exercise Slack channel for this module.**
+Since this is part of your portfolio site, you don't need to post anything, I know where to find it. 
 
-## Looking ahead
 
-We also covered overfitting and strategies to minimize it (e.g., cross-validation), and further model assessment strategies in the materials. We'll practice those in future exercises. I figured the above will already take a good bit of getting used to, and we will be able to practice more when we look at further model types in the coming weeks.
+
+
+
+
+<!-- For these two models don't have a tuning parameter, so all we do is a single fit. In this instance, there's no reason to do anything like cross-validation during the "training" part, since we aren't really training/tuning/optimizing our model (other than finding the best-fitting parameters for the coefficients). -->
+
+<!-- The last model we'll test is a penalized regression model with LASSO. The example in the [predictive modeling case study](https://www.tidymodels.org/start/case-study/) will be useful to look at. Set up a workflow that uses a linear model with the `glmnet` engine. We want to do a LASSO model (set the `mixture` parameter accordingly) and we want to tune the penalty parameter. -->
+
+<!-- We want to use a grid search for the tuning parameter and use 5-fold cross-validation to evaluate the model performance during the tuning process. Note that for this you'll need to take snippets of code from the [Evaluate your model with resampling section](https://www.tidymodels.org/start/resampling/) of the tutorial. -->
+
+<!-- You should end up with a workflow that uses a `glmnet` model, and does fitting while tuning the `penalty` parameter of the model with a grid search, optimized on RMSE as the metric. By combining bits of code in the sections mentioned above, you should be able to stich it together. -->
+
+<!-- Once you re done with this part, you should end up with 3 fit objects, one for each model. In the following, I assume they are called `fit1`, `fit2` and `fit3` but you can give them any name. -->
+
+
+<!-- ## Model assessment -->
+
+
+
+<!-- Follow the example in the *Use a trained workflow to predict* section of the tutorial to look at the predictions, ROC curve and ROC-AUC for your data. Apply it to both the training and the test data. ROC curve analysis and ROC-AUC is another common performance measure/metric for categorical outcomes. If you are not familiar with it, you can read more about them by following the link in the tutorial. It's not too important to go into the details for now. The focus here is on getting the code to work. In general, a ROC-AUC of 0.5 means the model is no good, 1 is a perfect model. Generally, somewhere above 0.7 do people think the model might be useful. If your model has a ROC-AUC a lot less than 0.5, you likely have an issue with how your factors are coded or how `tidymodels` is interpreting them. -->
+
+<!-- ## Alternative model -->
+
+<!-- Let's re-do the fitting but now with a model that only fits the main predictor to the categorical outcome. You should notice that the only thing you have to change is to set up a new `recipe`, this time one that only has the name of the predictor of interest on the right side of the formula (instead of the `.` symbol, which is shorthand notation for "all predictors".) Then you can set up a new workflow with the new recipe, rerun the fit and evaluate performance using the same code as above. In general, if you do multiple models/recipes, you might want to write a loop to go over them, or parallelize/vectorize things. For now, just copying and pasting most of the code is ok. -->
+
+
+
 
