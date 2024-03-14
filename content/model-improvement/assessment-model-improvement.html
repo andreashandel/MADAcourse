@@ -254,6 +254,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#part-2" id="toc-part-2" class="nav-link" data-scroll-target="#part-2">Part 2</a></li>
   <li><a href="#model-predictions" id="toc-model-predictions" class="nav-link" data-scroll-target="#model-predictions">Model predictions</a></li>
   <li><a href="#model-predictions-and-uncertainty" id="toc-model-predictions-and-uncertainty" class="nav-link" data-scroll-target="#model-predictions-and-uncertainty">Model predictions and uncertainty</a></li>
+  <li><a href="#final-evaluation-using-test-data" id="toc-final-evaluation-using-test-data" class="nav-link" data-scroll-target="#final-evaluation-using-test-data">Final evaluation using test data</a></li>
   <li><a href="#overall-model-assessment" id="toc-overall-model-assessment" class="nav-link" data-scroll-target="#overall-model-assessment">Overall model assessment</a></li>
   <li><a href="#wrap-up-part-2" id="toc-wrap-up-part-2" class="nav-link" data-scroll-target="#wrap-up-part-2">Wrap up part 2</a></li>
   <li><a href="#test-and-website-update" id="toc-test-and-website-update" class="nav-link" data-scroll-target="#test-and-website-update">Test and website update</a></li>
@@ -390,6 +391,13 @@ ul.task-list li input[type="checkbox"] {
 <div class="note">
 <p>The bootstrap uses sampling, and CV uses sampling. The difference is that for bootstrap, we sample from all the (training) data with replacement. For CV, we randomly partitioned some of the data into the part used to fit, the other part was used to evaluate/assess. So the two approaches are similar, but not the same.</p>
 </div>
+</section>
+<section id="final-evaluation-using-test-data" class="level2">
+<h2 class="anchored" data-anchor-id="final-evaluation-using-test-data">Final evaluation using test data</h2>
+<p>Let’s do a final model evaluation, this time using the test data.</p>
+<p>Use the fit for model 2 you computed previously, and now use this model to make predictions for the test data.</p>
+<p>Then make a plot that shows predicted versus observed for both the training data (which you did above) and in the same plot, also show predicted versus observed for the test data (using, e.g.&nbsp;different symbols or colors).</p>
+<p>You should see that the observed/predicted values for the test data are mixed in with the train data. That’s a good sign. If the test data points were systematically “off”, it would indicate a problem such as overfitting to the training data.</p>
 </section>
 <section id="overall-model-assessment" class="level2">
 <h2 class="anchored" data-anchor-id="overall-model-assessment">Overall model assessment</h2>

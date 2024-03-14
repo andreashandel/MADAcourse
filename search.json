@@ -1897,6 +1897,17 @@
     ]
   },
   {
+    "objectID": "content/model-improvement/assessment-model-improvement.html#final-evaluation-using-test-data",
+    "href": "content/model-improvement/assessment-model-improvement.html#final-evaluation-using-test-data",
+    "title": "Assessment - Improving Models",
+    "section": "Final evaluation using test data",
+    "text": "Final evaluation using test data\nLet’s do a final model evaluation, this time using the test data.\nUse the fit for model 2 you computed previously, and now use this model to make predictions for the test data.\nThen make a plot that shows predicted versus observed for both the training data (which you did above) and in the same plot, also show predicted versus observed for the test data (using, e.g. different symbols or colors).\nYou should see that the observed/predicted values for the test data are mixed in with the train data. That’s a good sign. If the test data points were systematically “off”, it would indicate a problem such as overfitting to the training data.",
+    "crumbs": [
+      "Assessments",
+      "10. Model Improvement"
+    ]
+  },
+  {
     "objectID": "content/model-improvement/assessment-model-improvement.html#overall-model-assessment",
     "href": "content/model-improvement/assessment-model-improvement.html#overall-model-assessment",
     "title": "Assessment - Improving Models",
