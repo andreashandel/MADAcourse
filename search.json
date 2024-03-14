@@ -1791,51 +1791,62 @@
     "href": "content/model-improvement/assessment-model-improvement.html#setup",
     "title": "Assessment - Improving Models",
     "section": "Setup",
-    "text": "Setup\nYou’ll continue working on the exercise you started previously. We’ll also do some group work again, using the – by now familiar – M1, M2, … setup. Assign each other a number. As much as possible, do it such that you end up working with group members you have not (or not in a while) worked with. Use the ‘circular’ setup such that everyone will work on their own repository and on one other person’s repository.\nAt this stage, I assume all the data wrangling and EDA code, as well as the model fitting code you worked on previously is present and fully functional. If there are still some issues that need to be resolved, go ahead and do so.\nWe’ll continue this exercise using the previous Quarto data-fitting.qmd file.",
+    "text": "Setup\nYou’ll continue working on the exercise you started previously. We’ll also do some group work again, using the – by now familiar – M1, M2, … setup. Assign each other a number. As much as possible, do it such that you end up working with group members you have not (or not in a while) worked with. Use the ‘circular’ setup such that everyone will work on their own repository and on one other person’s repository.\n\nThis exercise is heavily inspired by the Getting Started tidymodels tutorial. If you haven’t yet, now would be a great time to at least skim through the tutorial and make sure you understand the overall steps.",
     "crumbs": [
       "Assessments",
       "10. Model Improvement"
     ]
   },
   {
-    "objectID": "content/model-improvement/assessment-model-improvement.html#data-splitting",
-    "href": "content/model-improvement/assessment-model-improvement.html#data-splitting",
+    "objectID": "content/model-improvement/assessment-model-improvement.html#part-1",
+    "href": "content/model-improvement/assessment-model-improvement.html#part-1",
     "title": "Assessment - Improving Models",
-    "section": "Data splitting",
-    "text": "Data splitting\nWrite code that takes the data and splits it randomly into a train and test that, following for instance the example in the Data Splitting section of the Get Started tidymodels tutorial.",
+    "section": "Part 1",
+    "text": "Part 1\nWe’ll continue this exercise using the previous Quarto fitting-exercise.qmd file.\nAt this stage, I assume all the data wrangling and EDA code, as well as the model fitting code you worked on previously is present and fully functional. If there are still some issues that need to be resolved, go ahead and do so.",
     "crumbs": [
       "Assessments",
       "10. Model Improvement"
     ]
   },
   {
-    "objectID": "content/model-improvement/assessment-model-improvement.html#workflow-creation-and-model-fitting",
-    "href": "content/model-improvement/assessment-model-improvement.html#workflow-creation-and-model-fitting",
+    "objectID": "content/model-improvement/assessment-model-improvement.html#data-prep",
+    "href": "content/model-improvement/assessment-model-improvement.html#data-prep",
     "title": "Assessment - Improving Models",
-    "section": "Workflow creation and model fitting",
-    "text": "Workflow creation and model fitting\nNext, following the example in the Create Recipes section of the Get Started tidymodels tutorial, create a simple recipe that fits a logistic model to our categorical outcome of interest, using all predictors. (We start with categorical and all predictors since that’s the closest to the shown example). For now, you can ignore the concept of roles and features they mention.\nSet a model as you did in the previous exercise, then use the workflow() function to create a simple workflow that fits a logistic model to all predictors using the glm engine. To that end, follow the Fit a model with a recipe section of the tutorial and adjust for your case.\nYou should end up with a fit object similar to the one shown at the end of that section in the tutorial - of course, yours will look somewhat different since you are using a different dataset, but overall things should look similar.",
+    "section": "Data prep",
+    "text": "Data prep\nWe are doing one more change to the data. Since the RACE variable has a few values that are coded weirdly (7 or 88, which probably means some sort of missing), we’ll just for completely remove that variable.\nSo for this exercise, we’ll have a data frame with 120 observations and 6 variables, namely Y, DOSE, AGE, SEX, WT, HT.\nNow, write code that takes the data and splits it randomly into a 75% train and 25% test set, following for instance the example in the Data Splitting section of the Get Started tidymodels tutorial.\n\nWe only have 120 observations here. This is not much, so for a real project, it might not make a lot of sense to do a train/test split. Instead, one would probably use all data during the model fitting process, and then use cross-validation to try and estimate model performance on unseen data. But since this is an exercise, we’ll do the train/test split.\n\n\nAlso note that we are doing a random train/test split. But for a case like we have here, one might want to split differently. For instance we could split by using everyone who got the lower doses as training data, and then testing if we can predict the higher-dose outcomes. This is a common question of interest in drug development.",
     "crumbs": [
       "Assessments",
       "10. Model Improvement"
     ]
   },
   {
-    "objectID": "content/model-improvement/assessment-model-improvement.html#model-1-evaluation",
-    "href": "content/model-improvement/assessment-model-improvement.html#model-1-evaluation",
+    "objectID": "content/model-improvement/assessment-model-improvement.html#model-fitting",
+    "href": "content/model-improvement/assessment-model-improvement.html#model-fitting",
     "title": "Assessment - Improving Models",
-    "section": "Model 1 evaluation",
-    "text": "Model 1 evaluation\nFollow the example in the Use a trained workflow to predict section of the tutorial to look at the predictions, ROC curve and ROC-AUC for your data. Apply it to both the training and the test data. ROC curve analysis and ROC-AUC is another common performance measure/metric for categorical outcomes. If you are not familiar with it, you can read more about them by following the link in the tutorial. It’s not too important to go into the details for now. The focus here is on getting the code to work. In general, a ROC-AUC of 0.5 means the model is no good, 1 is a perfect model. Generally, somewhere above 0.7 do people think the model might be useful. If your model has a ROC-AUC a lot less than 0.5, you likely have an issue with how your factors are coded or how tidymodels is interpreting them.",
+    "section": "Model fitting",
+    "text": "Model fitting\nUse the tidymodels framework to fit two linear models to our continuous outcome of interest, (here, Y). The first model should only use DOSE as predictor, the second model should use all predictors. For both models, the metric to optimize should be RMSE.\nThis is the same as you did previously, but for this exercise, you should only use the training data set for fitting.",
     "crumbs": [
       "Assessments",
       "10. Model Improvement"
     ]
   },
   {
-    "objectID": "content/model-improvement/assessment-model-improvement.html#alternative-model",
-    "href": "content/model-improvement/assessment-model-improvement.html#alternative-model",
+    "objectID": "content/model-improvement/assessment-model-improvement.html#model-performance-assessment-1",
+    "href": "content/model-improvement/assessment-model-improvement.html#model-performance-assessment-1",
     "title": "Assessment - Improving Models",
-    "section": "Alternative model",
-    "text": "Alternative model\nLet’s re-do the fitting but now with a model that only fits the main predictor to the categorical outcome. You should notice that the only thing you have to change is to set up a new recipe, this time one that only has the name of the predictor of interest on the right side of the formula (instead of the . symbol, which is shorthand notation for “all predictors”.) Then you can set up a new workflow with the new recipe, rerun the fit and evaluate performance using the same code as above. In general, if you do multiple models/recipes, you might want to write a loop to go over them, or parallelize/vectorize things. For now, just copying and pasting most of the code is ok.",
+    "section": "Model performance assessment 1",
+    "text": "Model performance assessment 1\nCompute predictions for the two models. Then use observed and predicted values to compute RMSE of the best-fitting model.\nAlso compute the RMSE of a null-model, one that would just predict the mean outcome for each observation, without using any predictor information.\nCompare the 3 RMSE values and discuss which model is performing the best (according to those metrics).",
+    "crumbs": [
+      "Assessments",
+      "10. Model Improvement"
+    ]
+  },
+  {
+    "objectID": "content/model-improvement/assessment-model-improvement.html#model-performance-assessment-2",
+    "href": "content/model-improvement/assessment-model-improvement.html#model-performance-assessment-2",
+    "title": "Assessment - Improving Models",
+    "section": "Model performance assessment 2",
+    "text": "Model performance assessment 2\nSo far, we have assessed performance on the training set. But as you know by now, that is often not really of interest, we want to know how the model performs in general. We could use our test data to check, but we want to reserve that until the very end, to get a final “fair” assessment of our best model.\nWe could use an information criterion, such as AIC, to try to estimate how well the models might perform on unseen data. Even better, we can use use cross-validation to compute performance on unseen data.\nFollow the Evaluate your model with resampling section of the tutorial and do a 10-fold cross-validation. Doing so, you fit the 2 models to the data 10 times. Each time, you use 90% to fit the model, and 10% to evaluate (compute the RMSE) of the model. If you take the average for the RMSE over the 10 folds, you get an estimate for the model performance on data not used for fitting. It’s the same idea as doing the initial train/test split, but now we use it as part of the model building and choosing part, while we keep the test data as a final evaluation of the model and won’t use it before then.\nCompute the RMSE for both models again. Of course nothing changes for the null model. Compare the new RMSE estimates obtained through CV with those obtained earlier. What did and didn’t change?\nRun the code again that creates the CV folds and does the fitting. If you did set a random seed, change the value. If you didn’t set one, it will automatically draw different values. The RMSE values for the CV fits will change. That’s just due to the randomness in the data splitting. If we had more data, we would expect to get less variability. The overall pattern between changes in the RMSE values for the fits to the training data without CV, and what we see with CV, should still be the same.\n\nIf you want to get more robust RMSE estimates with CV, you can try to set repeats to some value. That creates more samples by repeating the whole CV procedure several times. In theory this might give more robust results. You might encounter some warning messages. This is likely related that occasionally, by chance, data is split in a way that some information (e.g., a certain sex or race in our data) is missing from one one of the folds. That can cause issues.",
     "crumbs": [
       "Assessments",
       "10. Model Improvement"
@@ -1853,11 +1864,44 @@
     ]
   },
   {
-    "objectID": "content/model-improvement/assessment-model-improvement.html#continuous-outcome",
-    "href": "content/model-improvement/assessment-model-improvement.html#continuous-outcome",
+    "objectID": "content/model-improvement/assessment-model-improvement.html#part-2",
+    "href": "content/model-improvement/assessment-model-improvement.html#part-2",
     "title": "Assessment - Improving Models",
-    "section": "Continuous outcome",
-    "text": "Continuous outcome\nFork and clone (or if you are added as collaborator, clone directly) your classmate’s repository. Open their modeleval.qmd file. Add a heading at the bottom that says # This section added by YOURFULLNAME. I need this so I can grade accordingly.\nAdd code that repeats the above steps, but now fits linear models to the continuous outcome. One model with all predictors, one model with just the main predictor. For that, you need to change your metric. RMSE is a good one to choose. You should find that a lot of the code your classmate wrote can copied/pasted/re-used with only minimal modifications. Make sure to add comments/documentation.",
+    "section": "Part 2",
+    "text": "Part 2\nFork and clone (or if you are added as collaborator, clone directly) your classmate’s repository. Open their fitting-exercise.qmd file.\nAdd a heading that says # This section added by YOURFULLNAME. I need this so I can grade accordingly.",
+    "crumbs": [
+      "Assessments",
+      "10. Model Improvement"
+    ]
+  },
+  {
+    "objectID": "content/model-improvement/assessment-model-improvement.html#model-predictions",
+    "href": "content/model-improvement/assessment-model-improvement.html#model-predictions",
+    "title": "Assessment - Improving Models",
+    "section": "Model predictions",
+    "text": "Model predictions\nNothing beats a visual inspection of results. A very useful figure is one that plots predicted versus observed values. This can quickly show you if there are important deviations that suggest the model isn’t very good.\nPut the observed values and the predicted values from your 3 models into a data frame. Also add a label to indicate the model. Then use ggplot to create a figure that plots (as symbols) observed values on the x-axis and predictions (from each of the 3 models, including the null model) on the y-axis. Let both x and y axes go from 0 to 5000 and add a 45 degree line. For a great model, the points will fall along that line, namely observed and predicted values agree - with some scatter.\nFor your figure, you should see that the the null model, it’s a straight horizontal line. We expect that, since we predict exactly the same value (the mean) for each observation. For the model that only includes dose, you should the data fall along 3 horizontal lines. Can you understand why? If not clear, look at the DOSE variable and the values it takes. That should tell you why you only get 3 different predicted values for the outcome.\nThe model with all predictors looks the best, though there’s still a lot of scatter around the diagonal line, suggesting that there’s still a lot of the outcome pattern that our model can’t explain. That could either be because we are missing important information, i.e. we need more variables. Or it could be that the model is too simple, for instance it could be that the outcome depends on some variable in a nonlinear way.\nWe can’t do anything about the former problem (other than collecting more data), but we can try to explore if more complex models can capture the data better. We’ll do that in an upcoming exercise.\nFor this exercise, we’ll do one more exploration of our existing models.",
+    "crumbs": [
+      "Assessments",
+      "10. Model Improvement"
+    ]
+  },
+  {
+    "objectID": "content/model-improvement/assessment-model-improvement.html#model-predictions-and-uncertainty",
+    "href": "content/model-improvement/assessment-model-improvement.html#model-predictions-and-uncertainty",
+    "title": "Assessment - Improving Models",
+    "section": "Model predictions and uncertainty",
+    "text": "Model predictions and uncertainty\nAs you learned, model predictions without a measure of uncertainty are usually not that useful. We generally always want to determine uncertainty in our estimates/predictions.\nWhile for a linear model it is possible to get uncertainty directly from the uncertainty of the parameter estimates, for more complex models, this is not possible. However, it is always possible to use the bootstrap method to sample the data, fit models to the data, and get uncertainty that way.\nWe’ll give that a try. Since our plot above suggested that model 1 is not good, we’ll focus here on model 2.\nUse the bootstraps function from the rsample package to create 100 bootstraps.\nThen write a loop (or use a map or apply function) to fit the model to each of the bootstrap samples and make predictions from this model for the original training data. Record all predictions (e.g., in an array or a list).\nIf you are wondering how to get the individual bootstrap samples out of the object that bootstraps gave you back: Assuming you called the object that you got back dat_bs, you can get a single bootstrap sample with this code:\ndat_sample = rsample::analysis(dat_bs$splits[[i]])\nOnce you have all your predictions stored, compute the mean and confidence intervals. Assuming your predictions are stored in an array called pred_bs that has as many rows as samples and columns as data points, this bit of code computes mean and 89% confidence intervals.\npreds &lt;- pred_bs |&gt; apply(2, quantile,  c(0.055, 0.5, 0.945)) |&gt;  t()\nFinally, make a figure that plots observed values on the x-axis, and mean and the upper and lower bounds of the bootstrapped confidence intervals for your predictions on the y-axis. You can for instance use black symbols for mean and some color to indicate lower and upper confidence limits. As above, make sure x- and y-axis are on the same and add a 45 degree line.\nInterpret what you see in this plot.\n\nThe bootstrap uses sampling, and CV uses sampling. The difference is that for bootstrap, we sample from all the (training) data with replacement. For CV, we randomly partitioned some of the data into the part used to fit, the other part was used to evaluate/assess. So the two approaches are similar, but not the same.",
+    "crumbs": [
+      "Assessments",
+      "10. Model Improvement"
+    ]
+  },
+  {
+    "objectID": "content/model-improvement/assessment-model-improvement.html#overall-model-assessment",
+    "href": "content/model-improvement/assessment-model-improvement.html#overall-model-assessment",
+    "title": "Assessment - Improving Models",
+    "section": "Overall model assessment",
+    "text": "Overall model assessment\nLet’s critique all our models. Here are some points for discussion:\n\nWe want to make sure that any model we have performs better than the null model. Is that the case?\nDoes model 1 with only dose in the model improve results over the null model? Do the results make sense? Would you consider this model “usable” for any real purpose?\nDoes model 2 with all predictors further improve results? Do the results make sense? Would you consider this model “usable” for any real purpose?\n\nUse all the assessment bits you computed above to reason about the models. And I’m not really looking for “the right” answer here (if that even exists), I just want to see that you are thinking about what your fit results and thus underlying models mean, and that you can assess their strengths and weaknesses and interpret what you are doing and seeing.",
     "crumbs": [
       "Assessments",
       "10. Model Improvement"
@@ -1879,18 +1923,7 @@
     "href": "content/model-improvement/assessment-model-improvement.html#test-and-website-update",
     "title": "Assessment - Improving Models",
     "section": "Test and website update",
-    "text": "Test and website update\nThe original repository owner should make sure everything works. Then, add the newly created Quarto document as an entry into your _quarto.yml file, as a sub-menu of Flu fitting. Call it Model Evaluation. Recompile your portfolio website and make sure everything works and shows up as expected. Then commit and push.\nSince this is part of your portfolio site, you don’t need to post anything, I know where to find it. Therefore there is no exercise Slack channel for this module.",
-    "crumbs": [
-      "Assessments",
-      "10. Model Improvement"
-    ]
-  },
-  {
-    "objectID": "content/model-improvement/assessment-model-improvement.html#looking-ahead",
-    "href": "content/model-improvement/assessment-model-improvement.html#looking-ahead",
-    "title": "Assessment - Improving Models",
-    "section": "Looking ahead",
-    "text": "Looking ahead\nWe also covered overfitting and strategies to minimize it (e.g., cross-validation), and further model assessment strategies in the materials. We’ll practice those in future exercises. I figured the above will already take a good bit of getting used to, and we will be able to practice more when we look at further model types in the coming weeks.",
+    "text": "Test and website update\nThe original repository owner should make sure everything works. Make any further updates that you think need to be made. Then rebuild your portfolio website and make sure everything works and shows up as expected. Then commit and push.\nSince this is part of your portfolio site, you don’t need to post anything, I know where to find it.",
     "crumbs": [
       "Assessments",
       "10. Model Improvement"

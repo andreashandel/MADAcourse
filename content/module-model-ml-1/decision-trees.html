@@ -923,7 +923,7 @@ window.Quarto = {
 <p>In this unit, we will cover a class of models generally referred to as decision trees.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="../../media/xkcd_watson_medical_algorithm.png" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1" title="An interesting classification tree. Source: xkcd."><img src="../../media/xkcd_watson_medical_algorithm.png" class="img-fluid figure-img" data-fig-width="80" alt="An XKCD comic titled 'A guide to the medical diagnostic and treatment algorithm used by IBM's Watson computer system.' The image is a complex, nonsensical flowchart."></a></p>
+<p><a href="../../media/xkcd_watson_medical_algorithm.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1" title="An interesting classification tree. Source: xkcd."><img src="../../media/xkcd_watson_medical_algorithm.png" class="img-fluid figure-img" data-fig-width="80" alt="An XKCD comic titled 'A guide to the medical diagnostic and treatment algorithm used by IBM's Watson computer system.' The image is a complex, nonsensical flowchart."></a></p>
 <figcaption>An interesting classification tree. Source: xkcd.</figcaption>
 </figure>
 </div>
@@ -947,7 +947,7 @@ window.Quarto = {
 <p>The following shows a tree from <a href="https://doi.org/10.1093/fampra/cms020">Afonso et al.&nbsp;2012</a>, which is a study led by one of my colleagues <a href="https://publichealth.uga.edu/faculty-member/mark-h-ebell/">Mark Ebell</a> to determine if there are simple decision rules that can determine if a person has an influenza infection or not.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="../../media/afonso12.png" class="lightbox" data-glightbox="description: .lightbox-desc-2" data-gallery="quarto-lightbox-gallery-2" title="Source: Alfonso et al.&nbsp;2012"><img src="../../media/afonso12.png" class="img-fluid figure-img" alt="A classification tree from Afonso et al. 2012. The tree begins with a patient with suspected influenza, and categorizes them as high risk of flu if their temperature is greater than 37.3 degrees Celcius. If not, but the patient has chills or sweating, they are classified into moderate risk of flu. Otherwise, they are classified as haivng low risk of flu." width="400"></a></p>
+<p><a href="../../media/afonso12.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" data-glightbox="description: .lightbox-desc-2" title="Source: Alfonso et al.&nbsp;2012"><img src="../../media/afonso12.png" class="img-fluid figure-img" alt="A classification tree from Afonso et al. 2012. The tree begins with a patient with suspected influenza, and categorizes them as high risk of flu if their temperature is greater than 37.3 degrees Celcius. If not, but the patient has chills or sweating, they are classified into moderate risk of flu. Otherwise, they are classified as haivng low risk of flu." width="400"></a></p>
 <figcaption>Source: <a href="https://doi.org/10.1093/fampra/cms020">Alfonso et al.&nbsp;2012</a></figcaption>
 </figure>
 </div>
@@ -955,7 +955,7 @@ window.Quarto = {
 <p>The next example is a tree used for a regression problem to predict/model a continuous outcome.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="../../media/regressiontree.jpg" class="lightbox" data-glightbox="description: .lightbox-desc-3" data-gallery="quarto-lightbox-gallery-3" title="Source: Hess et al.&nbsp;1999"><img src="../../media/regressiontree.jpg" class="img-fluid figure-img" alt="An example of a regression tree. The tree has eight terminal nodes for predicting survival time of patients with cancers that had certain characteristics."></a></p>
+<p><a href="../../media/regressiontree.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" data-glightbox="description: .lightbox-desc-3" title="Source: Hess et al.&nbsp;1999"><img src="../../media/regressiontree.jpg" class="img-fluid figure-img" alt="An example of a regression tree. The tree has eight terminal nodes for predicting survival time of patients with cancers that had certain characteristics."></a></p>
 <figcaption>Source: <a href="https://clincancerres.aacrjournals.org/content/5/11/3403">Hess et al.&nbsp;1999</a></figcaption>
 </figure>
 </div>
@@ -1619,7 +1619,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"loop":false,"openEffect":"zoom","closeEffect":"zoom","descPosition":"right","selector":".lightbox"});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","closeEffect":"zoom","loop":false,"descPosition":"right"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
