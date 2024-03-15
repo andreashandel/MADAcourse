@@ -244,15 +244,14 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise">Exercise</a>
   <ul class="collapse">
   <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a></li>
-  <li><a href="#pre-processing" id="toc-pre-processing" class="nav-link" data-scroll-target="#pre-processing">Pre-processing</a>
+  <li><a href="#preliminaries" id="toc-preliminaries" class="nav-link" data-scroll-target="#preliminaries">Preliminaries</a></li>
+  <li><a href="#more-processing" id="toc-more-processing" class="nav-link" data-scroll-target="#more-processing">More processing</a></li>
+  <li><a href="#pairwise-correlations" id="toc-pairwise-correlations" class="nav-link" data-scroll-target="#pairwise-correlations">Pairwise correlations</a>
   <ul class="collapse">
-  <li><a href="#featurevariable-removal" id="toc-featurevariable-removal" class="nav-link" data-scroll-target="#featurevariable-removal">Feature/Variable removal</a></li>
-  <li><a href="#categoricalordinal-predictors" id="toc-categoricalordinal-predictors" class="nav-link" data-scroll-target="#categoricalordinal-predictors">Categorical/Ordinal predictors</a></li>
-  <li><a href="#low-near-zero-variance-predictors" id="toc-low-near-zero-variance-predictors" class="nav-link" data-scroll-target="#low-near-zero-variance-predictors">Low (“near-zero”) variance predictors</a></li>
+  <li><a href="#feature-engineering" id="toc-feature-engineering" class="nav-link" data-scroll-target="#feature-engineering">Feature engineering</a></li>
   </ul></li>
-  <li><a href="#analysis-code" id="toc-analysis-code" class="nav-link" data-scroll-target="#analysis-code">Analysis code</a>
+  <li><a href="#model-building" id="toc-model-building" class="nav-link" data-scroll-target="#model-building">Model building</a>
   <ul class="collapse">
-  <li><a href="#data-setup" id="toc-data-setup" class="nav-link" data-scroll-target="#data-setup">Data Setup</a></li>
   <li><a href="#null-model-performance" id="toc-null-model-performance" class="nav-link" data-scroll-target="#null-model-performance">Null model performance</a></li>
   <li><a href="#model-tuning-and-fitting" id="toc-model-tuning-and-fitting" class="nav-link" data-scroll-target="#model-tuning-and-fitting">Model tuning and fitting</a></li>
   <li><a href="#model-evaluation" id="toc-model-evaluation" class="nav-link" data-scroll-target="#model-evaluation">Model evaluation</a></li>
@@ -288,7 +287,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2024-03-07</p>
+      <p class="date-modified">2024-03-15</p>
     </div>
   </div>
     
@@ -306,52 +305,80 @@ ul.task-list li input[type="checkbox"] {
 <section id="discussion" class="level1">
 <h1>Discussion</h1>
 <p>We’ll use this week’s discussion to talk a bit more about the projects. Last week you received feedback on our project from a few classmates, this week I want everyone to have a chance to hear about and comment on all projects.</p>
-<p>To that end, post a summary of your project to the discussion channel. Briefly describe your data, your question(s), your (planned) methods and (expected) results. Sort of like an abstract for a paper, though maybe with a bit more details. This way, everyone can get a quick glimpse as to what everyone else is doing. Also provide a link to the repo for easy access (for private repos, you can skip this).</p>
+<p>To that end, post a summary of your project to the discussion channel. Briefly describe your data, your question(s), your (planned) methods and (expected) results. Sort of like an abstract for a paper, though maybe with a bit more details. This way, everyone can get a quick glimpse as to what everyone else is doing. Also provide a link to the repo for easy access (for private repositories, you can skip this).</p>
 <p>Also mention specific questions/struggles/concerns you might have regarding your project. It’s quite likely that there is some overlap in approaches and questions among you and your classmates. Hopefully, through this discussion you can provide each other with some help and input.</p>
 <p>Post by Wednesday. Then read the summaries of your classmates’ projects. If you see a question/topic that you think you might be able to help with, either by answering a specific question, or by providing some general feedback, do so. Of course, you are also welcome to take inspiration from what you see others doing and integrate some of that into your own project.</p>
 <p>Since you get feedback from me at the other submission points, I will stay out of this week’s discussion 😁. So this is all you helping each other. Each of you has already seen a few projects and will be reviewing 2 projects in depth at the end, but hopefully with the discussion this week you get a bit of an idea of what everyone else is doing, and you can comment on any project you want.</p>
 </section>
 <section id="exercise" class="level1">
 <h1>Exercise</h1>
-<p>For this exercise, we will implement some of the machine learning models covered in this module, and some of the general approaches we covered previously. This is a continuation of the exercise you’ve been working on over the last few weeks. The goal is that by the end of this exercise, you will have an example of a nice full analysis. So let’s get started!</p>
-<p><strong>Note: This exercise is likely time-consuming and you might get stuck. Please plan accordingly. Start early and ask for help in Slack.</strong></p>
+<p>For this exercise, we will implement some of the machine learning models covered in this module, and some of the general approaches we covered previously. This is a continuation of the exercise you’ve been working on over the last few weeks.</p>
+<p><strong>Note: This exercise is likely time-consuming and you might get stuck. Please plan accordingly. Start early and ask for help if needed.</strong></p>
 <section id="setup" class="level2">
 <h2 class="anchored" data-anchor-id="setup">Setup</h2>
 <p>This is a solo-exercise, and it’s part of your portfolio.</p>
-<p>The goal is to have both a complete and well-organized data analysis example at the end of the exercise. So as you go through this exercise, in addition to doing the indicated tasks and writing the code, keep organizing things as needed. You want to make sure you have readme files or other documentation that briefly explain what files are where and in which order to run them. Make sure your R/Quarto files are easy to understand and that they all run.</p>
-<p>As you re-organize, you can decide the mix of R and Quarto files and what you want to combine and what to split. However you do it, make sure it’s documented and easy to understand.</p>
+<p>Since the previous Quarto document was getting long, we’ll set this up as a different one. Make a new folder in your portfolio repo and call it <code>ml-models-exercise</code>.</p>
+<p>If you haven’t done yet, update your previous code to save the clean data (with the variable <code>SEX</code> included) from the last exercise into an <code>Rds</code> file. Copy that <code>Rds</code> file into the newly created folder. Also in this new folder, start a new quarto file called <code>ml-models-exercise.qmd</code>.</p>
+<p>Open the new quarto file you just created, and we should be ready to go.</p>
 </section>
-<section id="pre-processing" class="level2">
-<h2 class="anchored" data-anchor-id="pre-processing">Pre-processing</h2>
-<p>We previously covered pre-processing, but haven’t specifically looked at that yet in an exercise. So let’s add that part. This can be added in various places to the code/files you already created previously. You can for instance make it part of the cleaning/wrangling code, or include it in the <code>recipe</code> part of your <code>tidymodels</code> workflow (or a mix).</p>
-<section id="featurevariable-removal" class="level3">
-<h3 class="anchored" data-anchor-id="featurevariable-removal">Feature/Variable removal</h3>
-<p>You probably realized that some of the variables contain the same information in slightly different ways. Specifically, <code>Weakness</code>, <code>Cough</code> and <code>Myalgia</code> exist on both a severity score and as Yes/No.&nbsp;Further, there are 2 variables for cough yes/no. These variables are strongly correlated and thus at a minimum, don’t help when you model, and are actually more likely to confuse your model and lead to errors/warnings/poor model performance (e.g.&nbsp;“predictions from a rank-deficient fit may be misleading). So let’s fix that. For those symptoms where you have both multiple levels and yes/no, remove all the yes/no versions. That should remove 4 variables.</p>
+<section id="preliminaries" class="level2">
+<h2 class="anchored" data-anchor-id="preliminaries">Preliminaries</h2>
+<p>Write code to load your packages. You already know you’ll need <code>tidymodels</code> and probably <code>ggplot2</code>. You can add other package loading commands later.</p>
+<p>Load the data.</p>
 </section>
-<section id="categoricalordinal-predictors" class="level3">
-<h3 class="anchored" data-anchor-id="categoricalordinal-predictors">Categorical/Ordinal predictors</h3>
-<p>Some of your predictors are categorical (e.g., Yes/No) and the 3 symptom severity factors are ordinal, with None &lt; Mild &lt; Moderate &lt; Severe.</p>
-<p>We can code the categorical variables as <strong>unordered factors</strong> and the others as <strong>ordered factors</strong>. I want you to do that as practice. The functions <code>step_dummy()</code> and <code>step_ordinalscore()</code> will help. See e.g.&nbsp;the help file example for <code>step_ordinalscore()</code>. Not that to deal with ordered factors in a statistical analysis, one needs special approaches (and we won’t actually do those for this exercise.)</p>
+<section id="more-processing" class="level2">
+<h2 class="anchored" data-anchor-id="more-processing">More processing</h2>
+<p>Just to practice, we’ll do a bit more data wrangling.</p>
+<p>Earlier, we dropped the variable <code>SEX</code>. Now we decide we want to keep it. Let’s go on a ‘treasure hunt’. Try to find out what the values that are used to encode race stand for. This is the kind of task one has to do at times for any real-world data analysis. Spend a few minutes to see if you can figure out the meaning of the numbers.</p>
+<p>If you can’t find out the meaning, that’s ok for the purpose of the exercise. What we’ll do is to combine the two rare numbers into a single category, so that we are left with race 1,2, and 3, where the latter is a re-coding of everyone with a 7 and 88.</p>
+<div class="instruction">
+<p>Write code that changes the <code>RACE</code> variable such that it combines categories 7 and 88 and calls them 3.</p>
+</div>
 </section>
-<section id="low-near-zero-variance-predictors" class="level3">
-<h3 class="anchored" data-anchor-id="low-near-zero-variance-predictors">Low (“near-zero”) variance predictors</h3>
-<p>If you look at your data, you’ll see that some predictors are fairly <strong>unbalanced</strong>, with most patients reporting <code>No</code> and only a few <code>Yes</code>. If almost everyone is in one category and almost nobody in others, that often (but not always) means those predictor variables are not very helpful in fitting/predicting the outcome. Furthermore, if you do cross-validation and one of your samples happen to not include one predictor level at all, things might go wrong when applied to the holdout-sample. (There are methods to deal with this specific problem, but they are more complicated than what we will do here.) Thus, it is worth considering if we want to remove them. The <code>recipes</code> package in <code>tidymodels</code> has the function <code>step_nzv()</code> which can do that for you automatically. If you have lots of predictors, that might be good to use. But it’s often better to decide <em>manually</em> for each variable based on your scientific expertise if you want to remove it or not. We’ll take that approach here. After looking at the data, we decide to remove those <strong>binary</strong> predictors that have &lt;50 entries in one category (there are 2). Write code to remove them.</p>
-<p>You should end up with a data frame that has 730 observations and 26 variables. This is the dataset we’ll use for modeling.</p>
+<section id="pairwise-correlations" class="level2">
+<h2 class="anchored" data-anchor-id="pairwise-correlations">Pairwise correlations</h2>
+<p>Next, let’s make a pairwise correlation plot for the continuous variables. If we were to find any very strong correlations, we might want to remove those.</p>
+<div class="instruction">
+<p>Write code to make a correlation plot for the continuous variables.</p>
+</div>
+<p>You’ll see that while some variables are reasonably strongly correlated, nothing seems excessive (e.g., above an absolute value 0.9). So looks like we won’t have too much of a problem with collinearity.</p>
+<!-- ## Near-zero variance -->
+<!-- As we discussed, sometimes there might be a variable that contains little information, e.g. if pretty much everyone belongs to a single category or has very similar numbers. For instance if we had a data set of individuals, and every individual had the same value for SEX or RACE, it wouldn't contain any useful information to predict the outcome (though it could be quite important for interpreting the results from the study!) In such a case, it is generally best to remove that variable before modeling. Similarly, if you had a data set where everyone had an age between 39 and 41 years, it's likely not informative. -->
+<!-- The EDA of the data, where you plot histograms and boxplots and similar figures should have already alerted you to such potential problems. We can also test that more formally. -->
+<!-- ::: instruction -->
+<!-- Write code that looks at near-zero variance in the predictors. -->
+<!-- ::: -->
+<!-- It looks like no problems here either, so we can keep the variables. -->
+<section id="feature-engineering" class="level3">
+<h3 class="anchored" data-anchor-id="feature-engineering">Feature engineering</h3>
+<p>As you learned, <em>feature engineering</em> is a fancy word for creating new variables (or more broadly, doing stuff to existing variables, e.g., one could interpret our recoding of <code>RACE</code> above as feature engineering).</p>
+<p>Let’s become a feature engineer 😁. Our data contains height and weight for each individual (<code>HT</code> and <code>WT</code>). There’s usually some correlation between those – which you likely noticed above when you did the pairwise correlation. It’s not too strong here, but maybe it would still be good to combine these variables into a new one. Let’s do that by computing BMI.</p>
+<div class="instruction">
+<p>Look up the formula for BMI. Then add a new variable to the data frame called <code>BMI</code>, computed from the <code>HT</code> and <code>WT</code> variables. Be careful with the units! They are not given, so you have to guess.</p>
+</div>
 </section>
 </section>
-<section id="analysis-code" class="level2">
-<h2 class="anchored" data-anchor-id="analysis-code">Analysis code</h2>
-<p>Start a new Quarto file for this analysis, call it <code>machinelearing.qmd</code>, place it into the <code>code</code> folder. Note that for this exercise, some of your code might take long to run. This is one of the situations where it is often good to have a setup where some of the heavy computations are done by separate R scripts/functions, and the results saved, pulled into and displayed in the Quarto file. How you want to do it here is up to you, as long as the Quarto file shows all the main results and your code/file(s) are well documented.</p>
-<p>To keep things a bit simpler, for this exercise we focus on a single outcome, the <strong>continuous, numerical</strong> value of <strong>Body temperature</strong>. Thus, we are fitting <strong>regression</strong> models here. Once you finished the whole workflow for that outcome, you are welcome to (optionally) do it again and run a <strong>classification</strong> for the <strong>categorical</strong> outcome of <strong>Nausea</strong>. Since we are doing a regression, and we don’t have any specific expert knowledge that tells us how we should build our performance metric, we’ll go with one of the usual ones, namely RMSE. But remember to always think about your performance metric and don’t just use the default without at least considering other options.</p>
-<section id="data-setup" class="level3">
-<h3 class="anchored" data-anchor-id="data-setup">Data Setup</h3>
+<section id="model-building" class="level2">
+<h2 class="anchored" data-anchor-id="model-building">Model building</h2>
+<p>We are finally done with our additional processing bits and are ready to fit some models. Specifically, we will explore these 3 models:</p>
 <ul>
-<li><p>Start by setting the random seed to <code>123</code>. This should make everything reproducible and everyone should get the same results.</p></li>
-<li><p>Split the dataset into 70% training, 30% testing. Also use the outcome <code>BodyTemp</code> as stratification. This allows for more balanced outcome values in the train and test sets. See e.g., <a href="https://www.tidymodels.org/start/resampling/">section 3 of the <em>Get Started</em> tutorial</a>.</p></li>
+<li><p>For the first model, we’ll revisit the one we had previously, namely a linear model with all predictors.</p></li>
+<li><p>For our second model, we’ll do a LASSO.</p></li>
+<li><p>For our third model, we’ll do a random forest.</p></li>
+</ul>
+<p>Of course, we’ll also have model “0” again, our null model.</p>
+<p>We could do the train/test split, but for this exercise we’ll skip that. We’ll use cross-validation to try and get an “honest” assessment of the performance of our models.</p>
+<!-- To mix things up, we'll know use a different metric, namely the mean absolute error (MAE), which -- as you learned -- can be better when dealing with outliers. In our dataset, there aren't really any outliers, so for a real problem I would likely stick with RMSE as metric. But this is an exercise, and I want you to see how easy it is to use different metrics (the hard part is making a choice based on scientific/expert reasoning). -->
+<div class="instruction">
+<p>Create <code>tidymodels</code> workflows/recipes and fit the 3 models specified above to the data. The outcome is <code>Y</code>, predictors are all other variables. Ignore any kind of tuning for</p>
+</div>
+<div class="note">
+<p>You’ll likely have to install some further R packages to do LASSO and random forest, namely the <code>glmnet</code> and `ranger`` packages.</p>
+</div>
+<ul>
 <li><p>We want to do 5-fold cross-validation, 5 times repeated. (There’s no specific reason to do this 5x5 pattern, other than to show you that there are different ways to pick the sample, and that I want you to not use the default.) For the CV folds, we also want to stratify on <code>BodyTemp</code>, as we did for the main train/test split. Use the <code>vfold_cv()</code> function to create a resample object for the training data with these specifications.</p></li>
 <li><p>Create a recipe for the data and fitting. You won’t need to do much, just make sure you code the categorical variables as dummy variables, otherwise things might not work smoothly. For that, you want to use the <code>step_dummy()</code> function and pick all nominal predictor variables (which are actually all predictor variables here, since the only continuous variable is our outcome).</p></li>
 </ul>
-</section>
 <section id="null-model-performance" class="level3">
 <h3 class="anchored" data-anchor-id="null-model-performance">Null model performance</h3>
 <p>Write some code to compute the performance of a null model, i.e.&nbsp;a “model” that doesn’t use any predictor information. For a continuous outcome and RMSE as our metric, a null model is one that always predicts the mean of the outcome. Compute the RMSE for both training and test data for such a “model”. We’ll use that later to compare it to the performance of our real models. Of course, we expect/hope our real models that use predictor information to be better. If they aren’t that means they are no good.</p>
@@ -398,6 +425,15 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="test-and-website-update">Test and website update</h2>
 <p>Make sure your analysis and all results are nicely documented and everything runs/renders correctly. Then, add the newly created Quarto document as an entry into your <code>_quarto.yml</code> file, as a sub-menu of <code>Flu fitting</code>. Call it <code>Machine Learning</code>. Recompile your portfolio website and make sure everything works and shows up as expected. Then commit and push.</p>
 <p><strong>Since this is part of your portfolio site, you don’t need to post anything, I know where to find it. Therefore there is no exercise Slack channel for this module.</strong></p>
+<!-- For these two models don't have a tuning parameter, so all we do is a single fit. In this instance, there's no reason to do anything like cross-validation during the "training" part, since we aren't really training/tuning/optimizing our model (other than finding the best-fitting parameters for the coefficients). -->
+<!-- The last model we'll test is a penalized regression model with LASSO. The example in the [predictive modeling case study](https://www.tidymodels.org/start/case-study/) will be useful to look at. Set up a workflow that uses a linear model with the `glmnet` engine. We want to do a LASSO model (set the `mixture` parameter accordingly) and we want to tune the penalty parameter. -->
+<!-- We want to use a grid search for the tuning parameter and use 5-fold cross-validation to evaluate the model performance during the tuning process. Note that for this you'll need to take snippets of code from the [Evaluate your model with resampling section](https://www.tidymodels.org/start/resampling/) of the tutorial. -->
+<!-- You should end up with a workflow that uses a `glmnet` model, and does fitting while tuning the `penalty` parameter of the model with a grid search, optimized on RMSE as the metric. By combining bits of code in the sections mentioned above, you should be able to stich it together. -->
+<!-- Once you re done with this part, you should end up with 3 fit objects, one for each model. In the following, I assume they are called `fit1`, `fit2` and `fit3` but you can give them any name. -->
+<!-- ## Model assessment -->
+<!-- Follow the example in the *Use a trained workflow to predict* section of the tutorial to look at the predictions, ROC curve and ROC-AUC for your data. Apply it to both the training and the test data. ROC curve analysis and ROC-AUC is another common performance measure/metric for categorical outcomes. If you are not familiar with it, you can read more about them by following the link in the tutorial. It's not too important to go into the details for now. The focus here is on getting the code to work. In general, a ROC-AUC of 0.5 means the model is no good, 1 is a perfect model. Generally, somewhere above 0.7 do people think the model might be useful. If your model has a ROC-AUC a lot less than 0.5, you likely have an issue with how your factors are coded or how `tidymodels` is interpreting them. -->
+<!-- ## Alternative model -->
+<!-- Let's re-do the fitting but now with a model that only fits the main predictor to the categorical outcome. You should notice that the only thing you have to change is to set up a new `recipe`, this time one that only has the name of the predictor of interest on the right side of the formula (instead of the `.` symbol, which is shorthand notation for "all predictors".) Then you can set up a new workflow with the new recipe, rerun the fit and evaluate performance using the same code as above. In general, if you do multiple models/recipes, you might want to write a loop to go over them, or parallelize/vectorize things. For now, just copying and pasting most of the code is ok. -->
 
 
 </section>
