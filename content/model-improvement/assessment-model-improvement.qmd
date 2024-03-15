@@ -104,7 +104,9 @@ Follow the [Evaluate your model with resampling section](https://www.tidymodels.
 
 Compute the RMSE for both models again. Of course nothing changes for the null model. Compare the new RMSE estimates obtained through CV with those obtained earlier. What did and didn't change? 
 
-Run the code again that creates the CV folds and does the fitting. This time, choose a different value for the random seed. The RMSE values for the CV fits will change. That's just due to the randomness in the data splitting. If we had more data, we would expect to get less variability. The overall pattern between changes in the RMSE values for the fits to the training data without CV, and what we see with CV, should still be the same.
+Also look at the standard error for the RMSE. Since you are now sampling, you not only get a single estimate for RMSE, but one for each sample, so you can look at the variation in RMSE. This gives you a good indication of how robust your model performance is.
+
+Finally, run the code again that creates the CV folds and does the fitting. This time, choose a different value for the random seed. The RMSE values for the CV fits will change. That's just due to the randomness in the data splitting. If we had more data, we would expect to get less variability. The overall pattern between changes in the RMSE values for the fits to the training data without CV, and what we see with CV, should still be the same.
 
 ::: note
 If you want to get more robust RMSE estimates with CV, you can try to set `repeats` to some value. That creates more samples by repeating the whole CV procedure several times. In theory this might give more robust results. You might encounter some warning messages. This is likely related that occasionally, by chance, data is split in a way that some information (e.g., a certain value for `SEX` in our data) is missing from one one of the folds. That can cause issues.
