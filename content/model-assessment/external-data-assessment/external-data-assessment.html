@@ -932,7 +932,7 @@ ul.task-list li input[type="checkbox"] {
 <p>There are different ways to do the data splitting during cross-validation. A common setup is to randomly divide the data set into <em>k</em> blocks (called <em>folds</em>). You then use the data in all but one of the blocks to fit the model, then compute the cost function/performance metric (e.g., the RMSE) using the remaining block. You repeat that for all <em>k</em> blocks. The average value of the model performance over the <em>k</em> blocks is the target that you want to optimize. One usually chooses <em>k</em> = 5 or 10 blocks/folds, which has shown in simulation studies to give the best variance-bias trade-off. The figure shows an example of a 4-fold cross-validation for a categorical outcome (color of the balls). Note that this figure uses the train/test terminology for labeling the blocks, not the analysis/assessment terminology.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="cross_validation.jpg" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1" title="Source: Cross Validation Wikipedia Page"><img src="cross_validation.jpg" class="img-fluid figure-img" alt="A schematic showing data represented as green and red circles, with some data labeled test data and some training data. Each row shows the data, with always a different portion of the training data being separated, as indicated by a box. The data outside the box is used for model training, the data inside the box is used for the cross-validation."></a></p>
+<p><a href="cross_validation.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1" title="Source: Cross Validation Wikipedia Page"><img src="cross_validation.jpg" class="img-fluid figure-img" alt="A schematic showing data represented as green and red circles, with some data labeled test data and some training data. Each row shows the data, with always a different portion of the training data being separated, as indicated by a box. The data outside the box is used for model training, the data inside the box is used for the cross-validation."></a></p>
 <figcaption>Source: <a href="https://en.wikipedia.org/wiki/Cross-validation_(statistics)">Cross Validation Wikipedia Page</a></figcaption>
 </figure>
 </div>
@@ -1598,7 +1598,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","selector":".lightbox","loop":false,"descPosition":"right","closeEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"loop":false,"closeEffect":"zoom","selector":".lightbox","descPosition":"right","openEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
