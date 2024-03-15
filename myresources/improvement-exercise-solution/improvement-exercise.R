@@ -1,19 +1,19 @@
 ## ---- packages --------
 library(tidymodels)
-library(glmnet)
 library(readr)
 library(dplyr)
 library(ggplot2)
 
 ## ---- load-data --------
 dat <- readr::read_rds("mavoglurant.rds")
-set.seed(1234)
+rngseed = 1234
 
 ## ---- load-data --------
 dat$RACE <- NULL
 
 ## ---- split-data --------
 # Put 3/4 of the data into the training set 
+set.seed(rngseed)
 data_split <- initial_split(dat, prop = 3/4)
 
 # Create data frames for the two sets:
@@ -63,7 +63,7 @@ metrics = data.frame(model = c("null model","model 1","model 2"),
 print(metrics)
 
 ## ---- cross-validation --------
-set.seed(1234)
+set.seed(rngseed)
 folds <- vfold_cv(train_data, v = 10, repeats = 1)
 
 fit1_cv <- wflow1 %>% fit_resamples(folds)
@@ -95,12 +95,22 @@ p1 <- plot_data %>% ggplot() +
 plot(p1)
 
 
+## ---- residuals-plot --------
+plot_data1 <- plot_data |> mutate(residuals = predicted-observed) |> filter(model == "model 2")
+p1a <- plot_data1 %>% ggplot() +
+  geom_point(aes(x = predicted, y = residuals, color = model, shape = model)) +
+  labs(x = "Predicted", y = "Residuals", title = "Residuals vs Predicted") +
+  geom_abline(intercept = 0, slope = 0, linetype = "dashed", color = "black") +
+  scale_y_continuous(limits=c(-2500,2500)) +
+  theme_minimal()
+plot(p1a)
 
 
 
 
 ## ---- bootstrap --------
 Nsamp = 100 #number of samples
+set.seed(rngseed)
 # create samples
 dat_bs <- train_data |> rsample::bootstraps(times = Nsamp, apparent = TRUE)
 
@@ -118,14 +128,16 @@ for (i in 1:Nsamp)
 #compute mean and 89% confidence interval for predictions
 preds <- pred_bs |> apply(2, quantile,  c(0.055, 0.5, 0.945)) |>  t()
 
-#make new plot
-plot_data2 <- data.frame(mean = preds[,2], lb = preds[,1], 
-                         ub = preds[,3], observed = rep(train_data$Y,3)) 
+
+#make plot showing uncertainty
+plot_data2 <- data.frame(median = preds[,2], lb = preds[,1], 
+                         ub = preds[,3], observed = rep(train_data$Y,3), mean = pred2a$predicted) 
 
 p2 <- plot_data2 %>% ggplot() +
-  geom_point(aes(x = observed, y = mean)) +
+  geom_point(aes(x = observed, y = median), shape = 5, color = "blue") +
   geom_point(aes(x = observed, y = lb), shape = 4, color = "red") +
   geom_point(aes(x = observed, y = ub), shape = 4,  color = "red") +
+  geom_point(aes(x = observed, y = mean), shape = 6, color = "black") +
   labs(x = "Observed", y = "Predicted", title = "Predicted vs Observed") +
   geom_abline(intercept = 0, slope = 1, linetype = "dashed", color = "black") +
   scale_x_continuous(limits=c(0,5000)) +
@@ -136,18 +148,16 @@ plot(p2)
 
 
 ## ---- final testing --------
-predf <- fit2 %>% predict(test_data) %>%
-         data.frame(predicted = as.numeric(unlist(predf)), model = "m2 test")
+predf <- fit2 %>% predict(test_data) 
+plot_f <- predf %>% mutate(observed = rep(test_data$Y,1)) %>% rename(predicted = .pred)
 
-plot_f <- predf %>% mutate(observed = rep(test_data$Y,1)) 
-
-p2 <- ggplot() +
+p3 <- ggplot() +
   geom_point(aes(x = observed, y = predicted), data = plot_data, color="black") +
-  geom_point(aes(x = observed, y = predicted), data = plot_f, color="red") +
+  geom_point(aes(x = observed, y = predicted), data = plot_f, color="red", shape = 15) +
   labs(x = "Observed", y = "Predicted", title = "Predicted vs Observed") +
   geom_abline(intercept = 0, slope = 1, linetype = "dashed", color = "black") +
   scale_x_continuous(limits=c(0,5000)) +
   scale_y_continuous(limits=c(0,5000)) +
   theme_minimal()
-plot(p2)
+plot(p3)
 
