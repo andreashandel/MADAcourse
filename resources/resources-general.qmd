@@ -370,10 +370,13 @@ Given the importance and rapid change of AI, I made a [separate resource unit.](
     [Quarto](https://www.marvinschmitt.com/blog/website-tutorial-quarto/),
     similar to what you are asked to do for the Introductory
     Exercise.
+-   [This blog post](https://jadeyryan.com/blog/2024-02-19_beginner-quarto-netlify/) by Jadey Ryan is a very beginner-friendly setup of a Quarto website that does not involve Git/GitHub.   
 -   [Quarto Club](https://qmdclub.com/) is a collection of nice Quarto
     website examples. Most of them have their source code on GitHub, so
     you can see how the creators of those pages accomplished what they
     made, and shamelessly copy/paste/adapt 😁.
+-   [Awsome Quarto](https://github.com/mcanouil/awesome-quarto) is a collection of links to coll and interesting Quarto-based materials and resources.  
+    
 
 # Lists and other sources
 

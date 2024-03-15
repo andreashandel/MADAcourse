@@ -25,9 +25,11 @@ We'll practice some of the topics covered in this and prior units by continuing 
 
 You'll continue working on the exercise you started previously. We'll also do some group work again, using the -- by now familiar -- M1, M2, ... setup. Assign each other a number. As much as possible, do it such that you end up working with group members you have not (or not in a while) worked with. Use the 'circular' setup such that everyone will work on their own repository and on one other person's repository.
 
+This exercise has 3 parts. Part 1 is due Wednesday morning, part 2 Friday morning, and part 3 Friday evening. Coordinate with your team member accordingly.
+
 
 ::: note
-This exercise is heavily inspired by the [Getting Started](https://www.tidymodels.org/start/) tidymodels tutorial. If you haven't yet, now would be a great time to at least skim through the tutorial and make sure you understand the overall steps. 
+This exercise draws a good bit on the [Getting Started](https://www.tidymodels.org/start/) tidymodels tutorial. If you haven't yet, now would be a great time to at least skim through the tutorial and make sure you understand the overall steps. 
 :::
 
 ## Part 1
@@ -148,6 +150,15 @@ Interpret what you see in this plot.
 The bootstrap uses sampling, and CV uses sampling. The difference is that for bootstrap, we sample from all the (training) data with replacement. For CV, we randomly partitioned some of the data into the part used to fit, the other part was used to evaluate/assess. So the two approaches are similar, but not the same.
 :::
 
+## Wrap up part 2
+
+Make sure everything runs and works as expected. Then commit, push and if you forked the repo, initiate a pull request. Tell our classmate that its done.
+
+
+## Part 3
+
+Now it's back to you, the portfolio repository owner. Based on the work you and your classmate did, perform a final evaluation task and then summarize/discuss the models. 
+
 
 ## Final evaluation using test data
 
@@ -158,7 +169,6 @@ Use the fit for model 2 you computed previously, and now use this model to make 
 Then make a plot that shows predicted versus observed for both the training data (which you did above) and in the same plot, also show predicted versus observed for the test data (using, e.g. different symbols or colors).
 
 You should see that the observed/predicted values for the test data are mixed in with the train data. That's a good sign. If the test data points were systematically "off", it would indicate a problem such as overfitting to the training data.
-
 
 
 
@@ -175,44 +185,17 @@ Let's critique all our models. Here are some points for discussion:
 Use all the assessment bits you computed above to reason about the models. And I'm not really looking for "the right" answer here (if that even exists), I just want to see that you are thinking about what your fit results and thus underlying models mean, and that you can assess their strengths and weaknesses and interpret what you are doing and seeing.
 
 
-
-## Wrap up part 2
-
-Make sure everything runs and works as expected. Then commit, push and if you forked the repo, initiate a pull request. Tell our classmate that its done.
-
-
 ## Test and website update
 
-The original repository owner should make sure everything works. Make any further updates that you think need to be made. Then rebuild your portfolio website and make sure everything works and shows up as expected. Then commit and push.
+Make sure everything works. Make any further updates that you think need to be made. Then rebuild your portfolio website and make sure everything works and shows up as expected. Then commit and push.
 
 Since this is part of your portfolio site, you don't need to post anything, I know where to find it. 
 
 
+## More explorations
 
+If you want additional practice, you can re-do this exercise, but this time consider the categorical/binary variable `SEX` as your outcome and the others as the predictors. That does of course not make a lot of scientific sense, but as an exercise you might want to explore to get some practice with categorical outcomes. 
 
-
-
-<!-- For these two models don't have a tuning parameter, so all we do is a single fit. In this instance, there's no reason to do anything like cross-validation during the "training" part, since we aren't really training/tuning/optimizing our model (other than finding the best-fitting parameters for the coefficients). -->
-
-<!-- The last model we'll test is a penalized regression model with LASSO. The example in the [predictive modeling case study](https://www.tidymodels.org/start/case-study/) will be useful to look at. Set up a workflow that uses a linear model with the `glmnet` engine. We want to do a LASSO model (set the `mixture` parameter accordingly) and we want to tune the penalty parameter. -->
-
-<!-- We want to use a grid search for the tuning parameter and use 5-fold cross-validation to evaluate the model performance during the tuning process. Note that for this you'll need to take snippets of code from the [Evaluate your model with resampling section](https://www.tidymodels.org/start/resampling/) of the tutorial. -->
-
-<!-- You should end up with a workflow that uses a `glmnet` model, and does fitting while tuning the `penalty` parameter of the model with a grid search, optimized on RMSE as the metric. By combining bits of code in the sections mentioned above, you should be able to stich it together. -->
-
-<!-- Once you re done with this part, you should end up with 3 fit objects, one for each model. In the following, I assume they are called `fit1`, `fit2` and `fit3` but you can give them any name. -->
-
-
-<!-- ## Model assessment -->
-
-
-
-<!-- Follow the example in the *Use a trained workflow to predict* section of the tutorial to look at the predictions, ROC curve and ROC-AUC for your data. Apply it to both the training and the test data. ROC curve analysis and ROC-AUC is another common performance measure/metric for categorical outcomes. If you are not familiar with it, you can read more about them by following the link in the tutorial. It's not too important to go into the details for now. The focus here is on getting the code to work. In general, a ROC-AUC of 0.5 means the model is no good, 1 is a perfect model. Generally, somewhere above 0.7 do people think the model might be useful. If your model has a ROC-AUC a lot less than 0.5, you likely have an issue with how your factors are coded or how `tidymodels` is interpreting them. -->
-
-<!-- ## Alternative model -->
-
-<!-- Let's re-do the fitting but now with a model that only fits the main predictor to the categorical outcome. You should notice that the only thing you have to change is to set up a new `recipe`, this time one that only has the name of the predictor of interest on the right side of the formula (instead of the `.` symbol, which is shorthand notation for "all predictors".) Then you can set up a new workflow with the new recipe, rerun the fit and evaluate performance using the same code as above. In general, if you do multiple models/recipes, you might want to write a loop to go over them, or parallelize/vectorize things. For now, just copying and pasting most of the code is ok. -->
-
-
+Your metric will change from RMSE to one of your choice that is suitable for categorical/classification problems. That also means you can't do a scatterplot for observed versus predicted, but you can look at e.g. a confusion matrix. Overall, it's the same conceptual workflow. So if you want to try a categorical outcome, go ahead. This is completely optional.
 
 
