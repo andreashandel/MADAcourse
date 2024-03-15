@@ -78,6 +78,8 @@ Train/test data splitting and cross-validation are great approaches to more hone
 ```{r}
 #| echo: false
 #| results: asis
+
+# Define the questions
 q1 <- "What's the name commonly given to the data you do your final model evaluation?"
 q1_choices <- c("Split Data", "Train Data", answer= "Test Data",  "Analysis Data")
 q2 <- "One needs to use at least 10 folds/blocks in CV to get a reliable answer."

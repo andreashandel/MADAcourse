@@ -28,11 +28,11 @@ dat_y <-  dat1 %>% filter((AMT == 0)) %>%
 dat_t0 <- dat1 %>% filter(TIME == 0)
 
 # merge data  
-dat_merge <- left_join(dat_y, dat_t0)
+dat_merge <- left_join(dat_y, dat_t0, by = "ID")
 
 # keep only useful variables
 # also convert SEX and RACE to factors
-dat <- dat_merge %>% select(Y,DOSE,AGE,SEX,RACE,WT,HT) %>% mutate_at(vars(SEX,RACE), factor) 
+dat <- dat_merge %>% select(Y,DOSE,AGE,SEX,RACE,WT,HT) %>% mutate(across(c(SEX, RACE), as.factor)) 
 readr::write_rds(dat,"mavoglurant.rds")
 
 
@@ -78,6 +78,7 @@ m1_auc <-  logfit1 %>%
   predict(dat, type = "prob") %>%
   bind_cols(dat) %>%
   roc_auc(truth = SEX, .pred_1)
+
 
 # Compute the accuracy and AUC for model 2
 m2_acc <- logfit2 %>% 
