@@ -912,7 +912,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2024-02-15</p>
+      <p class="date-modified">2024-03-15</p>
     </div>
   </div>
     
@@ -943,12 +943,12 @@ window.Quarto = {
 <h1>Regularization</h1>
 <p><a href="https://en.wikipedia.org/wiki/Regularization_(mathematics)">Regularization</a> tries to solve the same problem as subset selection, namely preventing overfitting (and also underfitting). Instead of solving this by completely removing predictors (and thus model flexibility, which might lead to overfitting), it penalizes variables by giving them less influence on the outcome, thus <em>regularizing</em> model behavior (or, in technical language: making things less “wiggly” 😁).</p>
 <p>It might be easiest to explain regularization with a specific example, so let’s consider a linear model. Note, however, that the regularization concept and approach is general and applies to many models beyond linear ones.</p>
-<p>Our model is given by</p>
+<p>Our model is given by:</p>
 <p><span class="math display">\[Y = b_0 + b_1 X_1 + b_2 X_2 + \ldots + b_nX_n.\]</span></p>
-<p>We might decide to minimize the SSR between model and data, i.e., we are minimizing a cost function</p>
+<p>We might decide to minimize the SSR between model and data, i.e., we are minimizing a cost function:</p>
 <p><span class="math display">\[C = SSR=\sum_i (Y_m^i - Y_d^i)^2.\]</span></p>
 <p>Now, if we use regularization, we are going to instead minimize</p>
-<p><span class="math display">\[C = SSR + R(b_j),\]</span> where the function <em>R</em>, called the “regularization term” or “reguliarizer” is some function of the model parameters. Although you could (in theory) choose whatever function you want for <em>R</em>, there are 3 main ways to choose it, described next.</p>
+<p><span class="math display">\[C = SSR + R(b_j),\]</span> where the function <em>R</em>, called the “regularization term” or “regularizer” is some function of the model parameters. Although you could (in theory) choose whatever function you want for <em>R</em>, there are 3 main ways to choose it, described next.</p>
 <section id="ridge-regression" class="level2">
 <h2 class="anchored" data-anchor-id="ridge-regression">Ridge regression</h2>
 <p>One way to choose the function that penalizes the predictors is to weigh each predictor by the predictor’s coefficient squared. Choosing the penalty term as the square of the coefficient is called <em>ridge regression</em> (AKA <em>L2 regularization</em>, <em>Tikhonov regularization</em>, <em>weight decay</em>, and potentially lots of other names). This leads to the cost function:</p>
@@ -958,13 +958,13 @@ window.Quarto = {
 <section id="lasso" class="level2">
 <h2 class="anchored" data-anchor-id="lasso">LASSO</h2>
 <p>An alternative is to penalize the coefficients by their absolute value, namely using this cost function:</p>
-<p><span class="math display">\[C = SSR + \lambda \sum_j^p |b_j| \]</span></p>
+<p><span class="math display">\[C = SSR + \lambda \sum_j^p |b_j|.\]</span></p>
 <p>This method is called <em>L1 regularization</em> or the <a href="https://en.wikipedia.org/wiki/Lasso_(statistics)">Least Absolute Shrinkage and Selection Operator (LASSO)</a>. One nice feature of LASSO (which ridge regression does not have) is that coefficients may go to 0. That means the predictor has been dropped from the model, similar to the subset selection approach described previously. One can think of the LASSO as an efficient approach for performing subset selection. It is not quite equivalent though, since, in the LASSO, the predictors that remain might have been shrunk in their impact due to the regularization penalty.</p>
 </section>
 <section id="elastic-net" class="level2">
 <h2 class="anchored" data-anchor-id="elastic-net">Elastic net</h2>
 <p>One can also combine ridge regression and LASSO into an approach called <em>elastic net</em>, which has a cost function that is the combination of the previous two, namely:</p>
-<p><span class="math display">\[ C = SSR + \lambda \left( (1-\alpha) \sum_j^p b_j^2 + \alpha \sum_j^p |b_j|\right)\]</span></p>
+<p><span class="math display">\[ C = SSR + \lambda \left( (1-\alpha) \sum_j^p b_j^2 + \alpha \sum_j^p |b_j|\right).\]</span></p>
 <p>Now one needs to try different values for <span class="math inline">\(\lambda\)</span> (called the <em>penalty</em> parameter) and <span class="math inline">\(\alpha\)</span> (called the <em>mixture</em> parameter) to determine the model with the best (cross-validated) performance. <span class="math inline">\(\lambda\)</span> determines the overall weight given to the penalty factor, while <span class="math inline">\(\alpha\)</span> determines how the penalty should be distributed between the 2 alternative terms. There are also a few variants of this method, such as relaxed elastic net or adaptive elastic net which you can look into if you are interested but we won’t discuss here.</p>
 </section>
 <section id="tuning-a-regularization-model" class="level2">
@@ -989,7 +989,7 @@ window.Quarto = {
 </section>
 <section id="methods-related-to-subset-selection-and-regularization" class="level1">
 <h1>Methods related to subset selection and regularization</h1>
-<p>We previously mentioned some methods that can be used to reduce the number of variables - and therefore the model size - when we discussed feature reduction. <a href="../../../content/module-data-processing/feature-engineering/feature-engineering.html">You might want to briefly revisit this topic</a>. Those methods, such as Principal Component Analysis, do in some sense also lead to smaller data and thus smaller models. However, the approaches are different and - as far as I understand them - conceptually not quite the same, even if the result - a smaller model - might be similar.</p>
+<p>We previously mentioned some methods that can be used to reduce the number of variables - and therefore the model size - when we discussed feature reduction. <a href="../../../content/module-data-processing/feature-engineering/feature-engineering.html">You might want to briefly revisit this topic</a>. Those methods, such as principal component analysis (PCA), do in some sense also lead to smaller data and thus smaller models. However, the approaches are different and - as far as I understand them - conceptually not quite the same, even if the result - a smaller model - might be similar.</p>
 </section>
 <section id="summary" class="level1">
 <h1>Summary</h1>

@@ -904,7 +904,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2024-02-15</p>
+      <p class="date-modified">2024-03-15</p>
     </div>
   </div>
     
@@ -930,7 +930,7 @@ window.Quarto = {
 <h1>Introduction</h1>
 <p>We discussed at length that one (but not the only) goal of model fitting is to find a model that has <strong>good performance when applied to new/different data.</strong></p>
 <p>For linear, logistic, and similar models (generalized linear models), we discussed the idea of subset/feature selection that can help determine a good model. For different sub-models, we fitted the model to some of the data and evaluated model performance on another part of the data using cross-validation. The model with the best cross-validated performance across all sub-models is then designated as the best (at least with regard to our chosen performance metric).</p>
-<p>We then discussed regularization, which tries to solve a problem similar to subset selection, namely preventing a model that is too complex and thus <strong>overfits</strong>. In the regularization approach, one does not compare sub-models with different predictor variables. Instead, all predictors are present, and one (or two) parameters (the regularization or penalty parameters, We called them <span class="math inline">\(\lambda\)</span> and <span class="math inline">\(\alpha\)</span>) are varied to influence model complexity. For each value of that parameter, the model is evaluated through cross-validation, and the <span class="math inline">\(\lambda\)</span> which produces the model with the best performance is chosen (or sometimes one picks a somewhat larger <span class="math inline">\(\lambda\)</span> to further prevent potential overfitting).</p>
+<p>We then discussed regularization, which tries to solve a problem similar to subset selection, namely preventing a model that is too complex and thus <strong>overfits</strong>. In the regularization approach, one does not compare sub-models with different predictor variables. Instead, all predictors are present, and one (or two) parameters (the regularization or penalty parameters, we called them <span class="math inline">\(\lambda\)</span> and <span class="math inline">\(\alpha\)</span>) are varied to influence model complexity. For each value of that parameter, the model is evaluated through cross-validation, and the <span class="math inline">\(\lambda\)</span> which produces the model with the best performance is chosen (or sometimes one picks a somewhat larger <span class="math inline">\(\lambda\)</span> to further prevent potential overfitting).</p>
 <p>This approach of taking a model parameter and evaluating models for different parameter values is called <strong>model/parameter tuning</strong>. These model-specific tuning parameters are often also referred to as <strong>hyperparameters</strong>. Simple models, like linear or logistic regression, do not have any parameters that can be tuned. However, more complicated models, which we will discuss soon, generally have one or more tuning parameters. Very flexible models, such as neural nets used in artificial intelligence tasks, can have thousands or even more parameters that need tuning. For any models with tuning parameters, it is essential to <strong>tune the parameters/train the model.</strong> Without it, the model will likely not perform very well.</p>
 </section>
 <section id="model-trainingparameter-tuning-recipe" class="level1">
