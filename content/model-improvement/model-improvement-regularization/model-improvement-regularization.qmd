@@ -26,17 +26,17 @@ Newer approaches, called "regularization" methods, can take an in-between stance
 
 It might be easiest to explain regularization with a specific example, so let's consider a linear model. Note, however, that the regularization concept and approach is general and applies to many models beyond linear ones.
 
-Our model is given by
+Our model is given by:
 
 $$Y = b_0 + b_1 X_1 + b_2 X_2 + \ldots + b_nX_n.$$
 
-We might decide to minimize the SSR between model and data, i.e., we are minimizing a cost function
+We might decide to minimize the SSR between model and data, i.e., we are minimizing a cost function:
 
 $$C = SSR=\sum_i (Y_m^i - Y_d^i)^2.$$
 
 Now, if we use regularization, we are going to instead minimize
 
-$$C = SSR + R(b_j),$$ where the function *R*, called the "regularization term" or "reguliarizer" is some function of the model parameters. Although you could (in theory) choose whatever function you want for *R*, there are 3 main ways to choose it, described next.
+$$C = SSR + R(b_j),$$ where the function *R*, called the "regularization term" or "regularizer" is some function of the model parameters. Although you could (in theory) choose whatever function you want for *R*, there are 3 main ways to choose it, described next.
 
 ## Ridge regression
 
@@ -50,7 +50,7 @@ The parameter $\lambda$ decides the balance between the goodness of fit (low SSR
 
 An alternative is to penalize the coefficients by their absolute value, namely using this cost function:
 
-$$C = SSR + \lambda \sum_j^p |b_j| $$
+$$C = SSR + \lambda \sum_j^p |b_j|.$$
 
 This method is called *L1 regularization* or the [Least Absolute Shrinkage and Selection Operator (LASSO)](https://en.wikipedia.org/wiki/Lasso_(statistics)). One nice feature of LASSO (which ridge regression does not have) is that coefficients may go to 0. That means the predictor has been dropped from the model, similar to the subset selection approach described previously. One can think of the LASSO as an efficient approach for performing subset selection. It is not quite equivalent though, since, in the LASSO, the predictors that remain might have been shrunk in their impact due to the regularization penalty.
 
@@ -58,7 +58,7 @@ This method is called *L1 regularization* or the [Least Absolute Shrinkage and S
 
 One can also combine ridge regression and LASSO into an approach called *elastic net*, which has a cost function that is the combination of the previous two, namely:
 
-$$ C = SSR + \lambda \left( (1-\alpha) \sum_j^p b_j^2 + \alpha \sum_j^p |b_j|\right)$$
+$$ C = SSR + \lambda \left( (1-\alpha) \sum_j^p b_j^2 + \alpha \sum_j^p |b_j|\right).$$
 
 Now one needs to try different values for $\lambda$ (called the *penalty* parameter) and $\alpha$ (called the *mixture* parameter) to determine the model with the best (cross-validated) performance. $\lambda$ determines the overall weight given to the penalty factor, while $\alpha$ determines how the penalty should be distributed between the 2 alternative terms. There are also a few variants of this method, such as relaxed elastic net or adaptive elastic net which you can look into if you are interested but we won't discuss here.
 
@@ -90,7 +90,7 @@ The main point is that if you see the word *regularization* in the literature, i
 
 # Methods related to subset selection and regularization
 
-We previously mentioned some methods that can be used to reduce the number of variables - and therefore the model size - when we discussed feature reduction. [You might want to briefly revisit this topic](/content/module-data-processing/feature-engineering/feature-engineering.qmd). Those methods, such as Principal Component Analysis, do in some sense also lead to smaller data and thus smaller models. However, the approaches are different and - as far as I understand them - conceptually not quite the same, even if the result - a smaller model - might be similar.
+We previously mentioned some methods that can be used to reduce the number of variables - and therefore the model size - when we discussed feature reduction. [You might want to briefly revisit this topic](/content/module-data-processing/feature-engineering/feature-engineering.qmd). Those methods, such as principal component analysis (PCA), do in some sense also lead to smaller data and thus smaller models. However, the approaches are different and - as far as I understand them - conceptually not quite the same, even if the result - a smaller model - might be similar.
 
 
 # Summary
