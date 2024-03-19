@@ -71,10 +71,14 @@ fit2_cv <- wflow2 %>% fit_resamples(folds)
 # pulls out the RMSE from what collect_metrics returns
 rmse_cv_1 <- collect_metrics(fit1_cv)$mean[1]
 rmse_cv_2 <- collect_metrics(fit2_cv)$mean[1]
+# pulls out the SE of the RMSE 
+se_cv_1 <- collect_metrics(fit1_cv)$std_err[1]
+se_cv_2 <- collect_metrics(fit2_cv)$std_err[1]
+
 
 # Print the results
 metrics_cv = data.frame(model = c("null","model 1","model 2"), 
-												rmse = c(rmse_train_0, rmse_cv_1, rmse_cv_2) )
+												rmse = c(rmse_train_0, rmse_cv_1, rmse_cv_2), se = c(0, se_cv_1, se_cv_2) )
 print(metrics_cv)
 
 ## ---- obs-pred-plot --------

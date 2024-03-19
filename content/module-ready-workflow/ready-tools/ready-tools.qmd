@@ -78,4 +78,4 @@ There are many useful tools that help you implement a READy workflow. The import
 
 # Further Resources
 
-None at the moment. Let me know if you come across any good ones that describe further tools.
+* [Good enough practices in scientific computing](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510) is a paper that provides a nice discussion of the approaches, and some tools, that are useful for doing work in a way that follows READy guidelines.
