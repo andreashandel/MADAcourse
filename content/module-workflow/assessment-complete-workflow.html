@@ -281,7 +281,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2024-03-07</p>
+      <p class="date-modified">2024-03-19</p>
     </div>
   </div>
     
@@ -331,11 +331,11 @@ ul.task-list li input[type="checkbox"] {
 <p>Write a Quarto file (with R code as part of the Quarto file or in a separate file) that loads the data, performs any needed cleaning and wrangling, does some EDA, and fits some models. Here are the details:</p>
 <ol type="1">
 <li><p>Load, wrangle and explore the data. The EDA part involves making tables/figures to get an idea what your data is about. By now you know this is an iterative procedure, so it’s ok to have these parts of the process/code intertwined.</p></li>
-<li><p>Once you understand the data sufficiently, formulate a question/hypothesis. This will determine your outcome of interest and, if applicable, main predictor(s) of interest. Since we don’t know the data yet, it might be that the question is a bit contrived and not actually too interesting, but I’m sure there will be more than one potentially reasonable question one can ask, no matter what the data will be.</p></li>
+<li><p>Once you understand the data sufficiently, formulate a question/hypothesis. This will determine your outcome of interest and, if applicable, main predictor(s) of interest. Since we don’t know the data yet, it might be that the question is a bit contrived and not actually too interesting, but I’m sure there will be more than one potentially reasonable question one can ask, no matter what the data will be. If it turns out that the data just doesn’t easily work for asking a question, create some synthetic data/variables to augment the exisitng data such that it will be possible to ask a question and do some machine learning modeling.</p></li>
 <li><p>Once you determine the question and thus your outcome and main predictors, further pre-process and clean the data as needed. Then split into train/test. (It might be that the data is too small for this split to make sense <em>in real life</em> but for this exercise, we’ll just do it.)</p></li>
 <li><p>Fit at least 3 different model types to the data using the <code>tidymodels</code> framework we practiced. Use the CV approach for model training/fitting. Explore the quality of each model by looking at performance, residuals, uncertainty, etc. All of this should still be evaluated using the training/CV data. You can of course recycle code from previous exercises, but I also encourage you to explore further, e.g.&nbsp;try different ML models or use different metrics. You might have to do that anyway, depending on the data and your question/outcome.</p></li>
 <li><p>Based on the model evaluations and your scientific question/hypothesis, decide on one model you think is overall best. Explain why. It doesn’t have to be the model with the best performance. You make the choice, just explain why you picked the one you picked.</p></li>
-<li><p>As a final, somewhat honest assessment of the quality of the model you chose, evaluate it (performance, residuals, uncertainty, etc.) on the <strong>test data</strong>. This is the only time you are allowed to touch the test data, and only once. Report model performance on the test data.</p></li>
+<li><p>As a final, somewhat honest assessment of the quality of the model you chose, evaluate it (performance, residuals, uncertainty, etc.) on the <strong>test data</strong>. This is the only time you are allowed to touch the test data, and only once.</p></li>
 <li><p>Summarize everything you did and found in a discussion. Make sure you discuss your findings with regard to your original question/hypothesis. What did you learn? If feasible, show a summary figure or table that illustrates your main scientific finding from this analysis.</p></li>
 </ol>
 <div class="note">
