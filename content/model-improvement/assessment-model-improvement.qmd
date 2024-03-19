@@ -58,7 +58,7 @@ For this exercise, we'll try the last method. At this point in our code, add a s
 
 ## Data prep
 
-We are doing one more change to the data. Since the `RACE` variable has a few values that are coded weirdly (7 or 88, which probably means some sort of missing), we'll just for completely remove that variable.
+We are doing one more change to the data. Since the `RACE` variable has a few values that are coded weirdly (7 or 88, which probably means some sort of missing), we'll completely remove that variable for this exercise.
 
 So for this exercise, we'll have a data frame with 120 observations and 6 variables, namely `Y, DOSE, AGE, SEX, WT, HT`.
 
@@ -85,7 +85,7 @@ This is the same as you did previously, but for this exercise, you should only u
 
 ## Model performance assessment 1
 
-Compute predictions for the two models. Then use observed and predicted values to compute RMSE of the best-fitting model.
+Compute predictions for the two models on the training data (we'll use the test data later). Then use observed and predicted values to compute RMSE of the best-fitting model.
 
 Also compute the RMSE of a null-model, one that would just predict the mean outcome for each observation, without using any predictor information. You can use the `null_model()` function from `tidymodels` for this (using the _parsnip_ engine), or just do it "by hand".
 
