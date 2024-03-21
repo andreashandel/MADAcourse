@@ -288,7 +288,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2024-03-15</p>
+      <p class="date-modified">2024-03-19</p>
     </div>
   </div>
     
@@ -338,7 +338,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="data-prep" class="level2">
 <h2 class="anchored" data-anchor-id="data-prep">Data prep</h2>
-<p>We are doing one more change to the data. Since the <code>RACE</code> variable has a few values that are coded weirdly (7 or 88, which probably means some sort of missing), we’ll just for completely remove that variable.</p>
+<p>We are doing one more change to the data. Since the <code>RACE</code> variable has a few values that are coded weirdly (7 or 88, which probably means some sort of missing), we’ll completely remove that variable for this exercise.</p>
 <p>So for this exercise, we’ll have a data frame with 120 observations and 6 variables, namely <code>Y, DOSE, AGE, SEX, WT, HT</code>.</p>
 <p>Since we are about to do some random sampling of our data, now is the time to set a seed with <code>set.seed(rngseed)</code>. After you’ve done that, write code that takes the data and splits it randomly into a 75% train and 25% test set, following for instance the example in the <a href="https://www.tidymodels.org/start/recipes/">Data Splitting section of the Get Started <code>tidymodels</code> tutorial</a>.</p>
 <div class="note">
@@ -355,7 +355,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="model-performance-assessment-1" class="level2">
 <h2 class="anchored" data-anchor-id="model-performance-assessment-1">Model performance assessment 1</h2>
-<p>Compute predictions for the two models. Then use observed and predicted values to compute RMSE of the best-fitting model.</p>
+<p>Compute predictions for the two models on the training data (we’ll use the test data later). Then use observed and predicted values to compute RMSE of the best-fitting model.</p>
 <p>Also compute the RMSE of a null-model, one that would just predict the mean outcome for each observation, without using any predictor information. You can use the <code>null_model()</code> function from <code>tidymodels</code> for this (using the <em>parsnip</em> engine), or just do it “by hand”.</p>
 <p>Compare the 3 RMSE values and discuss which model is performing the best (according to those metrics). You should have gotten values of 948, 702 and 627 for the null model and models 1 and 2 respectively. If your values are different, it’s likely that you didn’t set the random seed.</p>
 </section>

@@ -252,7 +252,9 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#first-fit" id="toc-first-fit" class="nav-link" data-scroll-target="#first-fit">First fit</a></li>
   <li><a href="#tuning-the-models" id="toc-tuning-the-models" class="nav-link" data-scroll-target="#tuning-the-models">Tuning the models</a></li>
   <li><a href="#tuning-with-cv" id="toc-tuning-with-cv" class="nav-link" data-scroll-target="#tuning-with-cv">Tuning with CV</a></li>
-  <li><a href="#further-model-evaluation" id="toc-further-model-evaluation" class="nav-link" data-scroll-target="#further-model-evaluation">Further model evaluation</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#ml-and-speed" id="toc-ml-and-speed" class="nav-link" data-scroll-target="#ml-and-speed">ML and speed</a></li>
+  <li><a href="#final-test-and-website-update" id="toc-final-test-and-website-update" class="nav-link" data-scroll-target="#final-test-and-website-update">Final test and website update</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -280,7 +282,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2024-03-19</p>
+      <p class="date-modified">2024-03-20</p>
     </div>
   </div>
     
@@ -358,7 +360,6 @@ ul.task-list li input[type="checkbox"] {
 <li><p>For our second model, we’ll do a LASSO.</p></li>
 <li><p>For our third model, we’ll do a random forest (RF).</p></li>
 </ul>
-<p>Of course, we’ll also have model “0” again, our null model.</p>
 <p>As we discussed, sometimes it’s useful to do a train/test split, so that we can do a final model assessment at the end. Depending on your question and setup, that might or might not be useful. For this exercise we’ll skip this split. Instead, we’ll use all the data and perform cross-validation to try and get an “honest” assessment of the performance of our models.</p>
 </section>
 <section id="first-fit" class="level2">
@@ -367,13 +368,13 @@ ul.task-list li input[type="checkbox"] {
 <p>As always, we should compare to a null model that includes no predictors. Since we already did that previously, we don’t need to repeat here.</p>
 <p>Some algorithms, such as random forest, do at times use random numbers. So to ensure reproducibility, set a seed to the value given above.</p>
 <div class="instruction">
-<p>Create <code>tidymodels</code> workflows/recipes and fit the 3 models specified above to the data. The outcome is <code>Y</code>, predictors are all other variables. Use the <code>glmnet</code> engine for the LASSO and the <code>ranger</code> engine for the random forest. Ignore any kind of tuning for the models for now. For the LASSO model, set the penalty to 0.1. We’ll tune it later.</p>
+<p>Create <code>tidymodels</code> workflows/recipes and fit the 3 models specified above to the data. The outcome is <code>Y</code>, predictors are all other variables. Use the <code>glmnet</code> engine for the LASSO and the <code>ranger</code> engine for the random forest. Ignore any kind of tuning for the models for now. For the LASSO model, set the penalty to 0.1. We’ll tune it later. For the random forest, we’ll keep all the defaults as they are and don’t specify any for now.</p>
 </div>
 <div class="note">
 <p>You’ll likely have to install some further R packages to do LASSO and random forest, namely the <code>glmnet</code> and `ranger`` packages.</p>
 </div>
 <p>Once you fit each model, use the model to make predictions and report the RMSE performance metric for each model fit. Also make a observed versus predicted plot for the 3 models.</p>
-<p>You should find that linear model and the LASSO give the same results. Can you explain why that is?</p>
+<p>You should find that linear model and the LASSO give pretty much the same results. Can you explain why that is?</p>
 <p>You should also find that the random forest performs best, with a RMSE of around 356 and predictions that are overall closer to the observations (closer to the 45 degree line) in the observed versus predicted plot.</p>
 <p>This isn’t entirely surprising, because random forest models are very flexible and thus can capture a lot of the patterns seen in the data. The danger is that they easily overfit.</p>
 </section>
@@ -381,20 +382,20 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="tuning-the-models">Tuning the models</h2>
 <p>Now we’ll do something that you should never do in the real world!</p>
 <p>The LASSO and RF both have tuning parameters. Tuning them will often improve model performance. So let’s tune them now.</p>
-<p>The stupid thing we’ll be doing is tuning them only using the actual data <strong>without</strong> cross-validation. This means model performance is evaluated on the actual data used for tuning. This pretty much guarantees that we’ll overfit our model. This is a bad idea, but it is instructive to see what happens, so let’s do that.</p>
+<p>The stupid thing we’ll be doing is tuning them by repeated fitting to the sdata <strong>without</strong> cross-validation. This means model performance is evaluated on the data used for tuning. This pretty much guarantees that we’ll overfit our model. This is a bad idea, but it is instructive to see what happens, so let’s do that.</p>
 <div class="note">
 <p>The <a href="https://www.tidymodels.org/start/tuning/">Tune model parameters</a> section of the Tidymodels tutorial and <a href="https://juliasilge.com/blog/lasso-the-office/">this blog post</a> might be useful to look at.</p>
 </div>
 <p>Write code that tunes the LASSO and RF models (there is nothing to tune for the linear model, it’s so simple it doesn’t have any tuning parameters).</p>
-<p>For LASSO, define a grid of parameters to tune over that range from 1E-5 to 1E2 (pick values linearly spaced on a log scale). Note that here, our “grid” is just a number of values. But as you’ll see below, for models that have multiple tuning parameters, it does become a grid.</p>
+<p>For LASSO, define a grid of parameters to tune over that range from 1E-5 to 1E2 (pick 50 values linearly spaced on a log scale). Note that here, our “grid” is just a number of values. But as you’ll see below, for models that have multiple tuning parameters, it does become a grid.</p>
 <p>Use <code>tune_grid</code> to tune the model by testing model performance for each parameter value you defined as the search grid.</p>
 <p>To create an object that only contains the data, and that you can use as <code>resamples</code> input for <code>tune_grid</code>, use the <code>apparent()</code> function.</p>
-<p>Once you have done the tuning, you can take a look at some diagnostics by sending your object returned from the <code>tune_grid()</code> function to <code>autoplot()</code>. For instance if you tuned the tree and saved the result as <code>tree_tune_res</code>, you can run <code>tree_tune_res %&gt;% autoplot()</code>. Depending on the model, the plot will be different, but in general it shows you what happened during the tuning process. For the LASSO, you’ll see RMSE as function of penalty parameter. You should see that the LASSO does best (lowest RMSE) for low penalty values and gets worse if the penalty parameter increases. At the lowest penalty, the RMSE is the same as for the linear model.</p>
+<p>Once you have done the tuning, you can take a look at some diagnostics by sending your object returned from the <code>tune_grid()</code> function to <code>autoplot()</code>. For instance if you tuned the tree and saved the result as <code>tree_tune_res</code>, you can run <code>tree_tune_res %&gt;% autoplot()</code>. Depending on the model, the plot will be different, but in general it shows you what happened during the tuning process.</p>
+<p>For the LASSO, you’ll see RMSE as function of penalty parameter. You should see that the LASSO does best (lowest RMSE) for low penalty values and gets worse if the penalty parameter increases. At the lowest penalty, the RMSE is the same as for the linear model.</p>
 <p>Explain why you see this behavior. What are you doing here, what happens as the penalty parameter goes up? Why does the RMSE only increase and does not go lower than the value found from the linear model or the un-tuned model above? You’ll likely need to re-read the LASSO section on the course website to really understand what is going on here.</p>
-<p>Now, let’s repeat with a random forest. Different ML algorithms have different tuning parameters. It’s usually a good idea to look them up to understand at least a bit what they mean and do. You can check this for the <code>ranger</code> algorithm but looking at its help file. There’s a bunch we could tune. We’ll tune over the parameters <code>mtry</code> and <code>min_n</code> and fix <code>trees</code> at 500. Everything else we keep at their defaults. Update your model/workflow accordingly.</p>
+<p>Now, let’s repeat with a random forest. Different ML algorithms have different tuning parameters. It’s usually a good idea to look them up to understand at least a bit what they mean and do. You can check this for the <code>ranger</code> algorithm by looking at its help file. There’s a bunch we could tune. We’ll tune over the parameters <code>mtry</code> and <code>min_n</code> and fix <code>trees</code> at 200. Everything else we keep at their defaults. Update your model/workflow accordingly.</p>
 <p>Then set up a tuning grid with the <code>grid_regular()</code> function. Do a range for <code>mtry</code> between 1 and 7, <code>min_n</code> between 1 and 21, and 7 levels for each parameter. (That means we’ll be trying 7 x 7 tuning parameter combinations).</p>
-<p>The tuning might take several seconds. Once done, use the <code>autoplot</code> function to look at the results. You’ll see a plot showing how RMSE changes as you change the tuning parameters. You’ll see that a higher value of <code>mtry</code> and a lower one for <code>min_n</code> lead to the best results. This model isn’t as easily understandable as the linear and LASSO models, so it’s not quite clear why those values for the tuning parameters should give the best performance. This is one of the drawbacks of complex ML/AI models, they are harder to interpret.</p>
-<p>We’ll take another look at the RF below. For now, just keep in mind the best RMSE values we got for LASSO and RF (if you want to get the actual numbers instead of estimating them from the plots, you can use the <code>select_best</code> function)</p>
+<p>The tuning might take several seconds. Once done, use the <code>autoplot</code> function to look at the results. You’ll see a plot showing how RMSE changes as you change the tuning parameters. You’ll see that a higher value of <code>mtry</code> and a lower one for <code>min_n</code> lead to the best results. This model isn’t as easily understandable as the linear and LASSO models, so it’s not quite clear why those values for the tuning parameters should give the best performance. This is one of the drawbacks of complex ML/AI models, they are harder to interpret. We could probably understand this if we thought more about it. But for now, let’s move on.</p>
 </section>
 <section id="tuning-with-cv" class="level2">
 <h2 class="anchored" data-anchor-id="tuning-with-cv">Tuning with CV</h2>
@@ -403,35 +404,48 @@ ul.task-list li input[type="checkbox"] {
 <p>Then redo the tuning of both models. You can keep everything as before, the only thing that needs to change in the <code>tune_grid()</code> function is to replace the <code>resamples</code> input, now with real samples generated by the <code>vfold_cv()</code> function.</p>
 <p>Running this code will now take time. It’s basically 5x5 = 25 times as long as what you ran above. So it might take several minutes.</p>
 <p>Once done, look at the results from both the LASSO and the RF again using the <code>autoplot()</code> function.</p>
-<p>Compare what you see for the RMSE here with the results above when we didn’t use CV to evaluate our model. Explain why you are seeing what you do.</p>
+<p>Compare what you see for the RMSE here with the results above when we didn’t use CV to evaluate our model. You should find that the LASSO still does best for a small penalty, the RMSE for both models went up, and the LASSO now has lower RMSE compared to the RF. Explain why you are seeing what you do.</p>
 <p>Based on what you find here, which model performs better?</p>
-<p>We should also compare the results to the linear model we had initially. However, this is not really necessary, since the LASSO with a small penalty is essentially the linear model. Let’s explore this some more.</p>
+<p>We should also compare the results to the linear model we had initially. However, this is not really necessary, since the LASSO with a small penalty is essentially the linear model. If this is not clear why, revisit the discussion of LASSO on the course page.</p>
 </section>
-<section id="further-model-evaluation" class="level2">
-<h2 class="anchored" data-anchor-id="further-model-evaluation">Further model evaluation</h2>
-<!-- Given that the RF had worse performance and is more complex, there doesn't seem to be a reason to choose it over the simpler linear/LASSO model.  -->
-<!-- Let's explore the LASSO model a bit more. First, let's further investigate what the LASSO does as we change the penalty.  -->
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>I hope this exercise showed you a few things, the main ones to me are:</p>
+<ul>
+<li><p>Complex models need tuning and with tuning they can get close to the data.</p></li>
+<li><p>Because complex models can fit data well, it’s important to not evaluate their performance on the data that was used to tune/train them. Otherwise one will make overly confident conclusions and the models will likely perform poorly on new data.</p></li>
+</ul>
+</section>
+<section id="ml-and-speed" class="level2">
+<h2 class="anchored" data-anchor-id="ml-and-speed">ML and speed</h2>
+<p>This is probably the first exercise where things started slowing down. Once you do bigger models with more data, and extensive tuning and CV, things slow down. It is possible and generally not too hard to parallelize some code. For instance for CV, you could run each sample on a different core. This can often give you a lot of speedup. We won’t go into this here.</p>
+<p>You’ll also find that as things slow down, including computationally intensive code into your Quarto documents can be annoying, since each time you re-render the code might run and take a lot of time. Some options to deal with this are:</p>
+<ul>
+<li><p>Move to a mix of R scripts for computation and Quarto for showing the results.</p></li>
+<li><p>Set specific code chunks to not execute during rendering. Instead, run those code chunks manually, save the results to a file, and in your Quarto document, you don’t execute the code chunk that does the computation but instead just load the previously computed code chunk.</p></li>
+<li><p>Quarto also lets you set a project-wide <code>freeze</code> option that you can set to only re-render a file when it changed. You might want to use this in combination with the ideas above.</p></li>
+</ul>
+</section>
+<section id="final-test-and-website-update" class="level2">
+<h2 class="anchored" data-anchor-id="final-test-and-website-update">Final test and website update</h2>
+<p>Make sure your analysis and all results are nicely documented and everything runs/renders correctly. Then, add the newly created Quarto document as an entry into your <code>_quarto.yml</code> file, as a sub-menu of <code>Flu fitting</code>. Call it <code>Machine Learning</code>. Recompile your portfolio website and make sure everything works and shows up as expected. Then commit and push.</p>
+<p><strong>Since this is part of your portfolio site, you don’t need to post anything, I know where to find it. Therefore there is no exercise Slack channel for this module.</strong></p>
+<!-- ## Further model evaluation -->
+<!-- Given that the RF had worse performance and is more complex, there doesn't seem to be a reason to choose it over the simpler linear/LASSO model. -->
+<!-- Let's explore the LASSO model a bit more. First, let's further investigate what the LASSO does as we change the penalty. -->
 <!-- You learned that the LASSO penalizes predictor variables. The penalty helps to regularize the model, which is another term of saying it helps reduce overfitting. -->
 <!-- As the penalty increases, some predictors might end up being removed from the model. In that sense, it does variable selection. We can look at the the number of predictors included in the LASSO model as the penalty/tuning parameter is changed. -->
-<!-- Next, you want to get the model that the tuning process has determined is the best. You can get the best-fit model with `select_best()` and `finalize_workflow()` and then do one more fit to the **training data** with this final workflow using the `fit()` function. Follow the examples in the tutorial. -->
+<!-- To do so, you need to get the best model with `select_best()` applied to the object you got back from tuning the LASSO. Then use `finalize_workflow()` to get a final model.  -->
 <!-- , you can extract the model from your final fit (say it's called `best_lasso_fit`) with `x <- best_lasso_fit$fit$fit$fit` and then `plot(x, "lambda")`. I know, this is awful code having to dig that deep into the `best_lasso_fit` object. You might also be able to use the `extract_fit_engine()` function to get the underlying fit object produced by LASSO, e.g., `x <- extract_fit_engine(best_lasso_fit)` might work (this is new in `tidymodels` and I haven't fully tried it yet). -->
 <!-- 1)  Make two plots, one that shows model predictions from the tuned model versus actual outcomes, and one that plots residuals. The actual outcomes you get straight from the data, the predicted outcomes you can get by applying the `predict()` function to the final fit. -->
 <!-- ::: note -->
 <!-- Fitting speed, Quarto options, etc. -->
 <!-- ::: -->
-<!-- 2)  Look at/print the model performance and compare it with the null model (still only on training data). Here, we want the performance of the tuned, best-fitting model on the CV dataset (we are not yet touching the test data). You can get that for instance with the `show_best()` function, which gives you the mean cross-validated performance for the best models. It also shows the standard deviation for the performance. Compare that model performance with the null model. -->
-<!-- The mean and standard deviation of the performance give you a measure of overall performance and variability in that measure. The plots show you if there are any systematic deviations between model and data. Taken together, these can be compared for the different models and based on those (and as wanted, other considerations) a final model can be chosen. -->
-<!-- **Implement the model tuning/fitting and evaluating steps for all 3 models.** -->
-<!-- ### Comments for specific models -->
-<!-- **For the random forest model**, you will likely again find that it performs a bit better than the tree, but not a lot. The tuning setup might require some fiddling around, I had a few initial tries where the whole tuning failed. For a model like random forest, all variables stay in the model. There are ways to look at the variables that are most important. If you want to do that, you again need to pull out the fit object. Say it's called `best_rf_fit`, you can do that with `x <- best_rf_fit$fit$fit$fit` and then use the `vip()` function from the `vip` package to plot the importance of the variables. Alternatively `extract_fit_engine()` should also work. -->
 <!-- ### Model selection -->
 <!-- Once you have implemented above steps for the 3 models, you should have a "best" fit for each one based on the tuning process. For each best model you should have performance, uncertainty around the performance measure, and some diagnostic plots. While for any real research project, you likely want to look deeper (e.g. at uncertainty in predictions instead of just overall performance), for now this is enough. Pick one of the three models. Explain why you pick it. There is no single answer that's correct, I just want you to practice reasoning for why you are doing something: in this case justify why you are picking the model you do. -->
 <!-- ### Final evaluation -->
 <!-- Once you picked your final model, you are allowed to once -- **and only once** -- fit it to the test data and check how well it performs on that data. This gives you a somewhat honest estimate of how the model might perform for new, unseen data. You can do that using the `last_fit()` function applied to the model you end up choosing. For the final model applied to the test set, report performance and the diagnostic plots as above. -->
 <!-- And that concludes what is likely a fairly long exercise. The code itself is not that long, but it will take you time to cobble it together from the `tidymodel` tutorial and possibly other sources. -->
-<!-- ## Test and website update -->
-<!-- Make sure your analysis and all results are nicely documented and everything runs/renders correctly. Then, add the newly created Quarto document as an entry into your `_quarto.yml` file, as a sub-menu of `Flu fitting`. Call it `Machine Learning`. Recompile your portfolio website and make sure everything works and shows up as expected. Then commit and push. -->
-<!-- **Since this is part of your portfolio site, you don't need to post anything, I know where to find it. Therefore there is no exercise Slack channel for this module.** -->
 
 
 </section>
