@@ -1,12 +1,11 @@
 ## ---- packages --------
-library(readr)
-library(dplyr)
-library(forcats)
-library(ggplot2)
+library(tidyverse)
 library(tidymodels)
+library(here)
+library(ggcorrplot)
 library(glmnet)
 library(ranger)
-library(corrr)
+
 
 ## ---- load-data --------
 rngseed = 1234
@@ -28,11 +27,17 @@ df1 <- df_raw %>%
 
 ## ---- correlations --------
 # remove categorical variables for correlation plot
-df1_tmp <- df1 %>% dplyr::select(-c(RACE,SEX))
-cplot <- corrr::correlate(df1_tmp) %>% corrr::rplot(print_cor = TRUE)
-ctab <- corrr::correlate(df1_tmp) %>% corrr::fashion()
+cplot <- df1 |>
+  # Drop non-numeric variables
+  dplyr::select(dplyr::where(is.numeric)) |>
+  # Compute the correlation matrix
+  cor(method = "pearson") |>
+  # Make the plot
+  ggcorrplot::ggcorrplot(
+    type = "full",
+    lab = TRUE
+  )
 plot(cplot)
-print(ctab)
 
 
 
@@ -143,7 +148,7 @@ print(best_lasso)
 ## ---- RF-tuning --------
 rf_tune <- rand_forest(
   mtry = tune(),
-  trees = 500,
+  trees = 300,
   min_n = tune()
 ) |>
   set_mode("regression") |>
@@ -214,14 +219,14 @@ best_rf <- rf_tune_CV %>%
 print(best_rf)
 
 
-## ---- LASSO-exploration --------
-
-# Finalize workflow with best values
-final_lasso_wf <- wflow_m2_t1 |>
-  finalize_workflow(best_param)
-# Fit model to training data
-lasso_train_fit <- final_lasso_wf |> fit(data = df1)
-
-x <- extract_fit_engine(lasso_train_fit)
-
-plot(x, "lambda")
+# ## ---- LASSO-exploration --------
+# 
+# # Finalize workflow with best values
+# final_lasso_wf <- wflow_m2_t1 |>
+#   finalize_workflow(best_param)
+# # Fit model to training data
+# lasso_train_fit <- final_lasso_wf |> fit(data = df1)
+# 
+# x <- extract_fit_engine(lasso_train_fit)
+# 
+# plot(x, "lambda")
