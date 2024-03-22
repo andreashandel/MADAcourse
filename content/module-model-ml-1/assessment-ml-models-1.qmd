@@ -35,38 +35,38 @@ This is a solo-exercise, and it's part of your portfolio.
 
 Since the previous Quarto document was getting long, we'll set this up as a different one. Make a new folder in your portfolio repo and call it `ml-models-exercise`.
 
-If you haven't done yet, update your previous code to save the clean data (with the variable `SEX` included) from the last exercise into an `Rds` file. Copy that `Rds` file into the newly created folder. Also in this new folder, start a new quarto file called `ml-models-exercise.qmd`. 
+If you haven't done so yet, update your previous code to save the clean data (with the variable `SEX` included) from the last exercise into an `Rds` file. Copy that `Rds` file into the newly created folder. Also in this new folder, start a new quarto file called `ml-models-exercise.qmd`. 
 
 Open the new quarto file you just created, and we should be ready to go.
 
 
 ## Preliminaries
 
-Write code to load your packages. You already know you'll need `tidymodels` and probably `ggplot2`. You can add other package loading commands later. Also define a random number seed. Set it to the value 1234. Then load the data.
+Write code to load your packages. You already know you'll need `tidymodels` and probably `ggplot2`. You can add other package loading commands later (but remember that is is good practice to add them to the top of your script). Also define a random number seed. Set it to the value `1234`. Then load the data.
 
 
 ## More processing
 
 Just to practice, we'll do a bit more data wrangling. 
 
-Earlier, we dropped the variable `SEX`. Now we decide we want to keep it. Let's go on a 'treasure hunt'. Try to find out what the values used to encode race stand for. This is the kind of task one has to do at times for any real-world data analysis. Spend a few minutes to see if you can figure out the meaning of the numbers. 
+Earlier, we dropped the variable `SEX`. Now we'll decide we actually want to keep it. Let's go on a 'treasure hunt'. Try to find out what the values used to encode race stand for. This is the kind of task one has to do at times for any real-world data analysis. Spend a few minutes to see if you can figure out the meaning of the numbers. (Hint: you can look at the manuscript from our first exercise with these data.)
 
-If you can't find out the meaning, that's ok for the purpose of the exercise. What we'll do is to combine the two rare numbers into a single category, so that we are left with race 1,2, and 3, where the latter is a re-coding of everyone with a 7 and 88. 
+If you can't find out the meaning, that's ok for the purpose of the exercise. What we'll do is to combine the two sparse groups into a single category, so that we are left with race 1, 2, and 3, where the latter is a re-coding of everyone with a 7 and 88. 
 
 ::: instruction 
-Write code that changes the `RACE` variable such that it combines categories 7 and 88 and calls them 3.
+Write code that changes the `RACE` variable such that it combines categories 7 and 88 and puts them in a category called 3.
 :::
 
 
 ## Pairwise correlations
 
-Next, let's make a pairwise correlation plot for the continuous variables. If we were to find any very strong correlations, we might want to remove those. 
+Next, let's make a pairwise correlation plot for the continuous variables. If we were to find any very strong correlations, we might want to remove those.
 
 ::: instruction 
 Write code to make a correlation plot for the continuous variables. 
 :::
 
-You'll see that while some variables are reasonably strongly correlated, nothing seems excessive (e.g., above an absolute value 0.9). So looks like we won't have too much of a problem with collinearity.
+You'll see that while some variables are somewhat strongly correlated, nothing seems excessive (e.g., above an absolute value of 0.9). So looks like we won't have too much of a problem with collinearity.
 
 
 <!-- ## Near-zero variance -->
@@ -100,7 +100,7 @@ We are finally done with our additional processing bits and are ready to fit som
 
 * For the first model, we'll revisit the one we had previously, namely a linear model with all predictors.
 
-* For our second model, we'll do a LASSO.
+* For our second model, we'll use LASSO regression.
 
 * For our third model, we'll do a random forest (RF).
 
@@ -111,24 +111,25 @@ As we discussed, sometimes it's useful to do a train/test split, so that we can 
 
 We'll start by performing a single fit to the training data, without any CV and model tuning.
 
-As always, we should compare to a null model that includes no predictors. Since we already did that previously, we don't need to repeat here.
+As always, we should compare to a null model that includes no predictors. Since we already did that previously, we don't need to repeat here. (Although keep in mind that you should almost always fit a null model when you do a real analysis!)
 
 Some algorithms, such as random forest, do at times use random numbers. So to ensure reproducibility, set a seed to the value given above.
 
 ::: instruction
 Create `tidymodels` workflows/recipes and fit the 3 models specified above to the data. The outcome is `Y`, predictors are all other variables. Use the `glmnet` engine for the LASSO and the `ranger` engine for the random forest. Ignore any kind of tuning for the models for now. For the LASSO model, set the penalty to 0.1. We'll tune it later. For the random forest, we'll keep all the defaults as they are and don't specify any for now.
+To ensure reproducibility for the random forest model, you also need to specify the random seed as an engine argument: `set_engine("ranger", seed = rngseed)`.
 :::
 
 
 ::: note
-You'll likely have to install some further R packages to do LASSO and random forest, namely the `glmnet` and `ranger`` packages.
+You'll likely have to install some further R packages to do LASSO and random forest, namely the `glmnet` and `ranger` packages.
 :::
 
-Once you fit each model, use the model to make predictions and report the RMSE performance metric for each model fit. Also make a observed versus predicted plot for the 3 models.
+Once you fit each model, use the model to make predictions on the entire dataset, and report the RMSE performance metric for each model fit. Also make a observed versus predicted plot for each of the models.
 
 You should find that linear model and the LASSO give pretty much the same results. Can you explain why that is?
 
-You should also find that the random forest performs best, with a RMSE of around 356 and predictions that are overall closer to the observations (closer to the 45 degree line) in the observed versus predicted plot.
+You should also find that the random forest performs best, with a RMSE of around 362 and predictions that are overall closer to the observations (closer to the 45 degree line) in the observed versus predicted plot.
 
 This isn't entirely surprising, because random forest models are very flexible and thus can capture a lot of the patterns seen in the data. The danger is that they easily overfit. 
 
@@ -139,19 +140,19 @@ Now we'll do something that you should never do in the real world!
 
 The LASSO and RF both have tuning parameters. Tuning them will often improve model performance. So let's tune them now.
 
-The stupid thing we'll be doing is tuning them by repeated fitting to the sdata **without** cross-validation. This means model performance is evaluated on the data used for tuning. This pretty much guarantees that we'll overfit our model. This is a bad idea, but it is instructive to see what happens, so let's do that.
+The stupid thing we'll be doing is tuning them by repeated fitting to the data **without** cross-validation. This means model performance is evaluated on the data used for tuning. This pretty much guarantees that we'll overfit our model. This is a bad idea, but it is instructive to see what happens, so let's do that.
 
 ::: note
 The [Tune model parameters](https://www.tidymodels.org/start/tuning/) section of the Tidymodels tutorial and [this blog post](https://juliasilge.com/blog/lasso-the-office/) might be useful to look at.
 :::
 
-Write code that tunes the LASSO and RF models (there is nothing to tune for the linear model, it's so simple it doesn't have any tuning parameters).
+Write code that tunes the LASSO and RF models (there is nothing to tune for the linear model, because it doesn't have any hyperparameters).
 
-For LASSO, define a grid of parameters to tune over that range from 1E-5 to 1E2 (pick 50 values linearly spaced on a log scale). Note that here, our "grid" is just a number of values. But as you'll see below, for models that have multiple tuning parameters, it does become a grid.
+For LASSO, define a grid of parameters to tune over that range from `1E-5` to `1E2` (pick 50 values linearly spaced on a log scale). Note that here, our "grid" is just a vector of numbers. But as you'll see below, for models that have multiple tuning parameters, it does become a grid.
 
-Use `tune_grid` to tune the model by testing model performance for each parameter value you defined as the search grid. 
+Use `tune_grid()` to tune the model by testing model performance for each parameter value you defined as the search grid. 
 
-To create an object that only contains the data, and that you can use as `resamples` input for `tune_grid`, use the `apparent()` function. 
+To create an object that only contains the data, and that you can use as `resamples` input for `tune_grid()`, use the `apparent()` function. 
 
 Once you have done the tuning, you can take a look at some diagnostics by sending your object returned from the `tune_grid()` function to `autoplot()`. For instance if you tuned the tree and saved the result as `tree_tune_res`, you can run `tree_tune_res %>% autoplot()`. Depending on the model, the plot will be different, but in general it shows you what happened during the tuning process. 
 
@@ -159,11 +160,11 @@ For the LASSO, you'll see RMSE as function of penalty parameter. You should see 
 
 Explain why you see this behavior. What are you doing here, what happens as the penalty parameter goes up? Why does the RMSE only increase and does not go lower than the value found from the linear model or the un-tuned model above? You'll likely need to re-read the LASSO section on the course website to really understand what is going on here.
 
-Now, let's repeat with a random forest. Different ML algorithms have different tuning parameters. It's usually a good idea to look them up to understand at least a bit what they mean and do. You can check this for the `ranger` algorithm by looking at its help file. There's a bunch we could tune. We'll tune over the parameters `mtry` and `min_n` and fix `trees` at 200. Everything else we keep at their defaults. Update your model/workflow accordingly.
+Now, let's repeat with a random forest. Different ML algorithms have different tuning parameters. It's usually a good idea to look them up to understand at least a bit what they mean and do. You can check this for the `ranger` algorithm by looking at its help file. There's a bunch we could tune. We'll tune over the parameters `mtry` and `min_n` and fix `trees` at 300. Everything else we keep at their defaults. Update your model/workflow accordingly.
 
 Then set up a tuning grid with the `grid_regular()` function. Do a range for `mtry` between 1 and 7, `min_n` between 1 and 21, and 7 levels for each parameter. (That means we'll be trying 7 x 7 tuning parameter combinations).
 
-The tuning might take several seconds. Once done, use the `autoplot` function to look at the results. You'll see a plot showing how RMSE changes as you change the tuning parameters. You'll see that a higher value of `mtry` and a lower one for `min_n` lead to the best results. This model isn't as easily understandable as the linear and LASSO models, so it's not quite clear why those values for the tuning parameters should give the best performance. This is one of the drawbacks of complex ML/AI models, they are harder to interpret. We could probably understand this if we thought more about it. But for now, let's move on.
+The tuning might take several seconds. Once done, use the `autoplot()` function to look at the results. You'll see a plot showing how RMSE changes as you change the tuning parameters. You'll see that a higher value of `mtry` and a lower one for `min_n` lead to the best results. This model isn't as easily understandable as the linear and LASSO models, so it's not quite clear why those values for the tuning parameters should give the best performance. This is one of the drawbacks of complex ML/AI models, they are harder to interpret. We could probably understand this if we thought more about it. But for now, let's move on.
 
 
 ## Tuning with CV
@@ -198,21 +199,23 @@ I hope this exercise showed you a few things, the main ones to me are:
 
 This is probably the first exercise where things started slowing down. Once you do bigger models with more data, and extensive tuning and CV, things slow down. It is possible and generally not too hard to parallelize some code. For instance for CV, you could run each sample on a different core. This can often give you a lot of speedup. We won't go into this here.
 
+If you need to do a lot of hyperparameter tuning, there are also more advanced methods for tuning available in the `tune` and `finetune` packages that can help you reduce the number of hyperparameters you need to check.
+
 You'll also find that as things slow down, including computationally intensive code into your Quarto documents can be annoying, since each time you re-render the code might run and take a lot of time. Some options to deal with this are:
 
 * Move to a mix of R scripts for computation and Quarto for showing the results.
 
 * Set specific code chunks to not execute during rendering. Instead, run those code chunks manually, save the results to a file, and in your Quarto document, you don't execute the code chunk that does the computation but instead just load the previously computed code chunk.
 
-* Quarto also lets you set a project-wide `freeze` option that you can set to only re-render a file when it changed. You might want to use this in combination with the ideas above.
+* Quarto also lets you set a `freeze` option (either for specific Quarto documents in the YAML header, or at the project level in the `_quarto.yml` file) that you can set to only re-render a file when it changed. You might want to use this in combination with the ideas above.
 
 
 
 ## Final test and website update
 
-Make sure your analysis and all results are nicely documented and everything runs/renders correctly. Then, add the newly created Quarto document as an entry into your `_quarto.yml` file, as a sub-menu of `Flu fitting`. Call it `Machine Learning`. Recompile your portfolio website and make sure everything works and shows up as expected. Then commit and push.
+Make sure your analysis and all results are nicely documented and everything runs/renders correctly. Then, add the newly created Quarto document as an entry into your `_quarto.yml` file. Call it `Machine Learning`. Recompile your portfolio website and make sure everything works and shows up as expected. Then commit and push.
 
-**Since this is part of your portfolio site, you don't need to post anything, I know where to find it. Therefore there is no exercise Slack channel for this module.**
+**Since this is part of your portfolio site, you don't need to post anything, I know where to find it.**
 
 
 
