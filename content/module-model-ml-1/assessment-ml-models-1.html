@@ -282,7 +282,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2024-03-20</p>
+      <p class="date-modified">2024-03-23</p>
     </div>
   </div>
     
@@ -313,20 +313,20 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="setup">Setup</h2>
 <p>This is a solo-exercise, and it’s part of your portfolio.</p>
 <p>Since the previous Quarto document was getting long, we’ll set this up as a different one. Make a new folder in your portfolio repo and call it <code>ml-models-exercise</code>.</p>
-<p>If you haven’t done yet, update your previous code to save the clean data (with the variable <code>SEX</code> included) from the last exercise into an <code>Rds</code> file. Copy that <code>Rds</code> file into the newly created folder. Also in this new folder, start a new quarto file called <code>ml-models-exercise.qmd</code>.</p>
+<p>If you haven’t done so yet, update your previous code to save the clean data (with the variable <code>SEX</code> included) from the last exercise into an <code>Rds</code> file. Copy that <code>Rds</code> file into the newly created folder. Also in this new folder, start a new quarto file called <code>ml-models-exercise.qmd</code>.</p>
 <p>Open the new quarto file you just created, and we should be ready to go.</p>
 </section>
 <section id="preliminaries" class="level2">
 <h2 class="anchored" data-anchor-id="preliminaries">Preliminaries</h2>
-<p>Write code to load your packages. You already know you’ll need <code>tidymodels</code> and probably <code>ggplot2</code>. You can add other package loading commands later. Also define a random number seed. Set it to the value 1234. Then load the data.</p>
+<p>Write code to load your packages. You already know you’ll need <code>tidymodels</code> and probably <code>ggplot2</code>. You can add other package loading commands later (but remember that is is good practice to add them to the top of your script). Also define a random number seed. Set it to the value <code>1234</code>. Then load the data.</p>
 </section>
 <section id="more-processing" class="level2">
 <h2 class="anchored" data-anchor-id="more-processing">More processing</h2>
 <p>Just to practice, we’ll do a bit more data wrangling.</p>
-<p>Earlier, we dropped the variable <code>SEX</code>. Now we decide we want to keep it. Let’s go on a ‘treasure hunt’. Try to find out what the values used to encode race stand for. This is the kind of task one has to do at times for any real-world data analysis. Spend a few minutes to see if you can figure out the meaning of the numbers.</p>
-<p>If you can’t find out the meaning, that’s ok for the purpose of the exercise. What we’ll do is to combine the two rare numbers into a single category, so that we are left with race 1,2, and 3, where the latter is a re-coding of everyone with a 7 and 88.</p>
+<p>Earlier, we dropped the variable <code>SEX</code>. Now we’ll decide we actually want to keep it. Let’s go on a ‘treasure hunt’. Try to find out what the values used to encode race stand for. This is the kind of task one has to do at times for any real-world data analysis. Spend a few minutes to see if you can figure out the meaning of the numbers. (Hint: you can look at the manuscript from our first exercise with these data.)</p>
+<p>If you can’t find out the meaning, that’s ok for the purpose of the exercise. What we’ll do is to combine the two sparse groups into a single category, so that we are left with race 1, 2, and 3, where the latter is a re-coding of everyone with a 7 and 88.</p>
 <div class="instruction">
-<p>Write code that changes the <code>RACE</code> variable such that it combines categories 7 and 88 and calls them 3.</p>
+<p>Write code that changes the <code>RACE</code> variable such that it combines categories 7 and 88 and puts them in a category called 3.</p>
 </div>
 </section>
 <section id="pairwise-correlations" class="level2">
@@ -335,7 +335,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="instruction">
 <p>Write code to make a correlation plot for the continuous variables.</p>
 </div>
-<p>You’ll see that while some variables are reasonably strongly correlated, nothing seems excessive (e.g., above an absolute value 0.9). So looks like we won’t have too much of a problem with collinearity.</p>
+<p>You’ll see that while some variables are somewhat strongly correlated, nothing seems excessive (e.g., above an absolute value of 0.9). So looks like we won’t have too much of a problem with collinearity.</p>
 <!-- ## Near-zero variance -->
 <!-- As we discussed, sometimes there might be a variable that contains little information, e.g. if pretty much everyone belongs to a single category or has very similar numbers. For instance if we had a data set of individuals, and every individual had the same value for SEX or RACE, it wouldn't contain any useful information to predict the outcome (though it could be quite important for interpreting the results from the study!) In such a case, it is generally best to remove that variable before modeling. Similarly, if you had a data set where everyone had an age between 39 and 41 years, it's likely not informative. -->
 <!-- The EDA of the data, where you plot histograms and boxplots and similar figures should have already alerted you to such potential problems. We can also test that more formally. -->
@@ -357,7 +357,7 @@ ul.task-list li input[type="checkbox"] {
 <p>We are finally done with our additional processing bits and are ready to fit some models. Specifically, we will explore these 3 models:</p>
 <ul>
 <li><p>For the first model, we’ll revisit the one we had previously, namely a linear model with all predictors.</p></li>
-<li><p>For our second model, we’ll do a LASSO.</p></li>
+<li><p>For our second model, we’ll use LASSO regression.</p></li>
 <li><p>For our third model, we’ll do a random forest (RF).</p></li>
 </ul>
 <p>As we discussed, sometimes it’s useful to do a train/test split, so that we can do a final model assessment at the end. Depending on your question and setup, that might or might not be useful. For this exercise we’ll skip this split. Instead, we’ll use all the data and perform cross-validation to try and get an “honest” assessment of the performance of our models.</p>
@@ -365,37 +365,37 @@ ul.task-list li input[type="checkbox"] {
 <section id="first-fit" class="level2">
 <h2 class="anchored" data-anchor-id="first-fit">First fit</h2>
 <p>We’ll start by performing a single fit to the training data, without any CV and model tuning.</p>
-<p>As always, we should compare to a null model that includes no predictors. Since we already did that previously, we don’t need to repeat here.</p>
+<p>As always, we should compare to a null model that includes no predictors. Since we already did that previously, we don’t need to repeat here. (Although keep in mind that you should almost always fit a null model when you do a real analysis!)</p>
 <p>Some algorithms, such as random forest, do at times use random numbers. So to ensure reproducibility, set a seed to the value given above.</p>
 <div class="instruction">
-<p>Create <code>tidymodels</code> workflows/recipes and fit the 3 models specified above to the data. The outcome is <code>Y</code>, predictors are all other variables. Use the <code>glmnet</code> engine for the LASSO and the <code>ranger</code> engine for the random forest. Ignore any kind of tuning for the models for now. For the LASSO model, set the penalty to 0.1. We’ll tune it later. For the random forest, we’ll keep all the defaults as they are and don’t specify any for now.</p>
+<p>Create <code>tidymodels</code> workflows/recipes and fit the 3 models specified above to the data. The outcome is <code>Y</code>, predictors are all other variables. Use the <code>glmnet</code> engine for the LASSO and the <code>ranger</code> engine for the random forest. Ignore any kind of tuning for the models for now. For the LASSO model, set the penalty to 0.1. We’ll tune it later. For the random forest, we’ll keep all the defaults as they are and don’t specify any for now. To ensure reproducibility for the random forest model, you also need to specify the random seed as an engine argument: <code>set_engine("ranger", seed = rngseed)</code>.</p>
 </div>
 <div class="note">
-<p>You’ll likely have to install some further R packages to do LASSO and random forest, namely the <code>glmnet</code> and `ranger`` packages.</p>
+<p>You’ll likely have to install some further R packages to do LASSO and random forest, namely the <code>glmnet</code> and <code>ranger</code> packages.</p>
 </div>
-<p>Once you fit each model, use the model to make predictions and report the RMSE performance metric for each model fit. Also make a observed versus predicted plot for the 3 models.</p>
+<p>Once you fit each model, use the model to make predictions on the entire dataset, and report the RMSE performance metric for each model fit. Also make a observed versus predicted plot for each of the models.</p>
 <p>You should find that linear model and the LASSO give pretty much the same results. Can you explain why that is?</p>
-<p>You should also find that the random forest performs best, with a RMSE of around 356 and predictions that are overall closer to the observations (closer to the 45 degree line) in the observed versus predicted plot.</p>
+<p>You should also find that the random forest performs best, with a RMSE of around 362 and predictions that are overall closer to the observations (closer to the 45 degree line) in the observed versus predicted plot.</p>
 <p>This isn’t entirely surprising, because random forest models are very flexible and thus can capture a lot of the patterns seen in the data. The danger is that they easily overfit.</p>
 </section>
 <section id="tuning-the-models" class="level2">
 <h2 class="anchored" data-anchor-id="tuning-the-models">Tuning the models</h2>
 <p>Now we’ll do something that you should never do in the real world!</p>
 <p>The LASSO and RF both have tuning parameters. Tuning them will often improve model performance. So let’s tune them now.</p>
-<p>The stupid thing we’ll be doing is tuning them by repeated fitting to the sdata <strong>without</strong> cross-validation. This means model performance is evaluated on the data used for tuning. This pretty much guarantees that we’ll overfit our model. This is a bad idea, but it is instructive to see what happens, so let’s do that.</p>
+<p>The stupid thing we’ll be doing is tuning them by repeated fitting to the data <strong>without</strong> cross-validation. This means model performance is evaluated on the data used for tuning. This pretty much guarantees that we’ll overfit our model. This is a bad idea, but it is instructive to see what happens, so let’s do that.</p>
 <div class="note">
 <p>The <a href="https://www.tidymodels.org/start/tuning/">Tune model parameters</a> section of the Tidymodels tutorial and <a href="https://juliasilge.com/blog/lasso-the-office/">this blog post</a> might be useful to look at.</p>
 </div>
-<p>Write code that tunes the LASSO and RF models (there is nothing to tune for the linear model, it’s so simple it doesn’t have any tuning parameters).</p>
-<p>For LASSO, define a grid of parameters to tune over that range from 1E-5 to 1E2 (pick 50 values linearly spaced on a log scale). Note that here, our “grid” is just a number of values. But as you’ll see below, for models that have multiple tuning parameters, it does become a grid.</p>
-<p>Use <code>tune_grid</code> to tune the model by testing model performance for each parameter value you defined as the search grid.</p>
-<p>To create an object that only contains the data, and that you can use as <code>resamples</code> input for <code>tune_grid</code>, use the <code>apparent()</code> function.</p>
+<p>Write code that tunes the LASSO and RF models (there is nothing to tune for the linear model, because it doesn’t have any hyperparameters).</p>
+<p>For LASSO, define a grid of parameters to tune over that range from <code>1E-5</code> to <code>1E2</code> (pick 50 values linearly spaced on a log scale). Note that here, our “grid” is just a vector of numbers. But as you’ll see below, for models that have multiple tuning parameters, it does become a grid.</p>
+<p>Use <code>tune_grid()</code> to tune the model by testing model performance for each parameter value you defined as the search grid.</p>
+<p>To create an object that only contains the data, and that you can use as <code>resamples</code> input for <code>tune_grid()</code>, use the <code>apparent()</code> function.</p>
 <p>Once you have done the tuning, you can take a look at some diagnostics by sending your object returned from the <code>tune_grid()</code> function to <code>autoplot()</code>. For instance if you tuned the tree and saved the result as <code>tree_tune_res</code>, you can run <code>tree_tune_res %&gt;% autoplot()</code>. Depending on the model, the plot will be different, but in general it shows you what happened during the tuning process.</p>
 <p>For the LASSO, you’ll see RMSE as function of penalty parameter. You should see that the LASSO does best (lowest RMSE) for low penalty values and gets worse if the penalty parameter increases. At the lowest penalty, the RMSE is the same as for the linear model.</p>
 <p>Explain why you see this behavior. What are you doing here, what happens as the penalty parameter goes up? Why does the RMSE only increase and does not go lower than the value found from the linear model or the un-tuned model above? You’ll likely need to re-read the LASSO section on the course website to really understand what is going on here.</p>
-<p>Now, let’s repeat with a random forest. Different ML algorithms have different tuning parameters. It’s usually a good idea to look them up to understand at least a bit what they mean and do. You can check this for the <code>ranger</code> algorithm by looking at its help file. There’s a bunch we could tune. We’ll tune over the parameters <code>mtry</code> and <code>min_n</code> and fix <code>trees</code> at 200. Everything else we keep at their defaults. Update your model/workflow accordingly.</p>
+<p>Now, let’s repeat with a random forest. Different ML algorithms have different tuning parameters. It’s usually a good idea to look them up to understand at least a bit what they mean and do. You can check this for the <code>ranger</code> algorithm by looking at its help file. There’s a bunch we could tune. We’ll tune over the parameters <code>mtry</code> and <code>min_n</code> and fix <code>trees</code> at 300. Everything else we keep at their defaults. Update your model/workflow accordingly.</p>
 <p>Then set up a tuning grid with the <code>grid_regular()</code> function. Do a range for <code>mtry</code> between 1 and 7, <code>min_n</code> between 1 and 21, and 7 levels for each parameter. (That means we’ll be trying 7 x 7 tuning parameter combinations).</p>
-<p>The tuning might take several seconds. Once done, use the <code>autoplot</code> function to look at the results. You’ll see a plot showing how RMSE changes as you change the tuning parameters. You’ll see that a higher value of <code>mtry</code> and a lower one for <code>min_n</code> lead to the best results. This model isn’t as easily understandable as the linear and LASSO models, so it’s not quite clear why those values for the tuning parameters should give the best performance. This is one of the drawbacks of complex ML/AI models, they are harder to interpret. We could probably understand this if we thought more about it. But for now, let’s move on.</p>
+<p>The tuning might take several seconds. Once done, use the <code>autoplot()</code> function to look at the results. You’ll see a plot showing how RMSE changes as you change the tuning parameters. You’ll see that a higher value of <code>mtry</code> and a lower one for <code>min_n</code> lead to the best results. This model isn’t as easily understandable as the linear and LASSO models, so it’s not quite clear why those values for the tuning parameters should give the best performance. This is one of the drawbacks of complex ML/AI models, they are harder to interpret. We could probably understand this if we thought more about it. But for now, let’s move on.</p>
 </section>
 <section id="tuning-with-cv" class="level2">
 <h2 class="anchored" data-anchor-id="tuning-with-cv">Tuning with CV</h2>
@@ -419,17 +419,18 @@ ul.task-list li input[type="checkbox"] {
 <section id="ml-and-speed" class="level2">
 <h2 class="anchored" data-anchor-id="ml-and-speed">ML and speed</h2>
 <p>This is probably the first exercise where things started slowing down. Once you do bigger models with more data, and extensive tuning and CV, things slow down. It is possible and generally not too hard to parallelize some code. For instance for CV, you could run each sample on a different core. This can often give you a lot of speedup. We won’t go into this here.</p>
+<p>If you need to do a lot of hyperparameter tuning, there are also more advanced methods for tuning available in the <code>tune</code> and <code>finetune</code> packages that can help you reduce the number of hyperparameters you need to check.</p>
 <p>You’ll also find that as things slow down, including computationally intensive code into your Quarto documents can be annoying, since each time you re-render the code might run and take a lot of time. Some options to deal with this are:</p>
 <ul>
 <li><p>Move to a mix of R scripts for computation and Quarto for showing the results.</p></li>
 <li><p>Set specific code chunks to not execute during rendering. Instead, run those code chunks manually, save the results to a file, and in your Quarto document, you don’t execute the code chunk that does the computation but instead just load the previously computed code chunk.</p></li>
-<li><p>Quarto also lets you set a project-wide <code>freeze</code> option that you can set to only re-render a file when it changed. You might want to use this in combination with the ideas above.</p></li>
+<li><p>Quarto also lets you set a <code>freeze</code> option (either for specific Quarto documents in the YAML header, or at the project level in the <code>_quarto.yml</code> file) that you can set to only re-render a file when it changed. You might want to use this in combination with the ideas above.</p></li>
 </ul>
 </section>
 <section id="final-test-and-website-update" class="level2">
 <h2 class="anchored" data-anchor-id="final-test-and-website-update">Final test and website update</h2>
-<p>Make sure your analysis and all results are nicely documented and everything runs/renders correctly. Then, add the newly created Quarto document as an entry into your <code>_quarto.yml</code> file, as a sub-menu of <code>Flu fitting</code>. Call it <code>Machine Learning</code>. Recompile your portfolio website and make sure everything works and shows up as expected. Then commit and push.</p>
-<p><strong>Since this is part of your portfolio site, you don’t need to post anything, I know where to find it. Therefore there is no exercise Slack channel for this module.</strong></p>
+<p>Make sure your analysis and all results are nicely documented and everything runs/renders correctly. Then, add the newly created Quarto document as an entry into your <code>_quarto.yml</code> file. Call it <code>Machine Learning</code>. Recompile your portfolio website and make sure everything works and shows up as expected. Then commit and push.</p>
+<p><strong>Since this is part of your portfolio site, you don’t need to post anything, I know where to find it.</strong></p>
 <!-- ## Further model evaluation -->
 <!-- Given that the RF had worse performance and is more complex, there doesn't seem to be a reason to choose it over the simpler linear/LASSO model. -->
 <!-- Let's explore the LASSO model a bit more. First, let's further investigate what the LASSO does as we change the penalty. -->
