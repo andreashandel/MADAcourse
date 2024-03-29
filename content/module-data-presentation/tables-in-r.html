@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.545">
+<meta name="generator" content="quarto-1.4.551">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -946,7 +946,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2024-02-09</p>
+      <p class="date-modified">2024-03-20</p>
     </div>
   </div>
     
@@ -963,7 +963,7 @@ window.Quarto = {
 <p>In this unit, we will discuss how to make publication-ready tables of data in <code>R</code>, and when making tables is appropriate (compared to visualizations).</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="../../media/xkcd-every-data-table.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1" title="Some data are best in tables…but that means we have to learn how to make footnotes too."><img src="../../media/xkcd-every-data-table.png" class="img-fluid figure-img" style="width:80.0%" alt="A comic from the website XKCD. It shows a list of years with scribbles beside each year to represent some kind of data. The years 2020 and 2021 both have symbols indicating they are associated with footnotes containign extra explanations. The caption reads 'every data table from now on.'"></a></p>
+<p><a href="../../media/xkcd-every-data-table.png" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1" title="Some data are best in tables…but that means we have to learn how to make footnotes too."><img src="../../media/xkcd-every-data-table.png" class="img-fluid figure-img" style="width:80.0%" alt="A comic from the website XKCD. It shows a list of years with scribbles beside each year to represent some kind of data. The years 2020 and 2021 both have symbols indicating they are associated with footnotes containign extra explanations. The caption reads 'every data table from now on.'"></a></p>
 <figcaption>Some data are best in tables…but that means we have to learn how to make footnotes too.</figcaption>
 </figure>
 </div>
@@ -1127,6 +1127,7 @@ window.Quarto = {
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>iris <span class="sc">|&gt;</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  gtsummary<span class="sc">::</span><span class="fu">tbl_summary</span>(<span class="at">by =</span> Species)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
+<div>
 <div id="vvtlyqfchs" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#vvtlyqfchs table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -1613,6 +1614,7 @@ window.Quarto = {
 </div>
 </div>
 </div>
+</div>
 <p>See how easy that was? It’s also extremely customization.</p>
 <p>There are a few very simple packages that make basic summary tables. These include packages like <a href="https://cran.r-project.org/web/packages/janitor/index.html"><code>janitor</code></a>, <a href="https://cran.r-project.org/web/packages/rstatix/index.html"><code>rstatix</code></a>, <a href="https://cran.r-project.org/web/packages/furniture/index.html"><code>furniture</code></a>, and <a href="https://cran.r-project.org/web/packages/arsenal/index.html"><code>arsenal</code></a>. All of these are fairly easy to use and somewhat limited in their functionality.</p>
 <p>The best package for making summary tables, in my opinion, is <a href="https://www.danieldsjoberg.com/gtsummary/"><code>gtsummary</code></a>, which is part of the <code>gt</code> package family, but can export summary tables to multiple table packages, including <code>flextable</code> and <code>gt</code>. The <code>gtsummary</code> package can make “Table 1” style descriptive tables, cross-tables, stratified tables, tables of regression models, and univariate regression tables which automatically calculate unadjusted results (thus making it easy to create a standard “Table 2” for epidemiology as well, although this is not a statistical practice that we necessarily condone).</p>
@@ -1851,210 +1853,416 @@ window.Quarto = {
 </main> <!-- /main -->
 <script>
 
+
+
 /* update total correct if #webex-total_correct exists */
+
 update_total_correct = function() {
+
   console.log("webex: update total_correct");
 
+
+
   var t = document.getElementsByClassName("webex-total_correct");
+
   for (var i = 0; i < t.length; i++) {
+
     p = t[i].parentElement;
+
     var correct = p.getElementsByClassName("webex-correct").length;
+
     var solvemes = p.getElementsByClassName("webex-solveme").length;
+
     var radiogroups = p.getElementsByClassName("webex-radiogroup").length;
+
     var selects = p.getElementsByClassName("webex-select").length;
 
+
+
     t[i].innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+
   }
+
 }
+
+
 
 /* webex-solution button toggling function */
+
 b_func = function() {
+
   console.log("webex: toggle hide");
 
+
+
   var cl = this.parentElement.classList;
+
   if (cl.contains('open')) {
+
     cl.remove("open");
+
   } else {
+
     cl.add("open");
+
   }
+
 }
+
+
 
 /* check answers */
+
 check_func = function() {
+
   console.log("webex: check answers");
 
+
+
   var cl = this.parentElement.classList;
+
   if (cl.contains('unchecked')) {
+
     cl.remove("unchecked");
+
     this.innerHTML = "Hide Answers";
+
   } else {
+
     cl.add("unchecked");
+
     this.innerHTML = "Show Answers";
+
   }
+
 }
+
+
 
 /* function for checking solveme answers */
+
 solveme_func = function(e) {
+
   console.log("webex: check solveme");
 
+
+
   var real_answers = JSON.parse(this.dataset.answer);
+
   var my_answer = this.value;
+
   var cl = this.classList;
+
   if (cl.contains("ignorecase")) {
+
     my_answer = my_answer.toLowerCase();
+
   }
+
   if (cl.contains("nospaces")) {
+
     my_answer = my_answer.replace(/ /g, "")
+
   }
+
+
 
   if (my_answer == "") {
+
     cl.remove("webex-correct");
+
     cl.remove("webex-incorrect");
+
   } else if (real_answers.includes(my_answer)) {
+
     cl.add("webex-correct");
+
     cl.remove("webex-incorrect");
+
   } else {
+
     cl.add("webex-incorrect");
+
     cl.remove("webex-correct");
+
   }
+
+
 
   // match numeric answers within a specified tolerance
+
   if(this.dataset.tol > 0){
+
     var tol = JSON.parse(this.dataset.tol);
+
     var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+
     if (matches.reduce((a, b) => a + b, 0) > 0) {
+
       cl.add("webex-correct");
+
     } else {
+
       cl.remove("webex-correct");
+
     }
+
   }
+
+
 
   // added regex bit
+
   if (cl.contains("regex")){
+
     answer_regex = RegExp(real_answers.join("|"))
+
     if (answer_regex.test(my_answer)) {
+
       cl.add("webex-correct");
+
     }
+
   }
 
+
+
   update_total_correct();
+
 }
 
+
+
 /* function for checking select answers */
+
 select_func = function(e) {
+
   console.log("webex: check select");
+
+
 
   var cl = this.classList
 
+
+
   /* add style */
+
   cl.remove("webex-incorrect");
+
   cl.remove("webex-correct");
+
   if (this.value == "answer") {
+
     cl.add("webex-correct");
+
   } else if (this.value != "blank") {
+
     cl.add("webex-incorrect");
+
   }
 
+
+
   update_total_correct();
+
 }
+
+
 
 /* function for checking radiogroups answers */
+
 radiogroups_func = function(e) {
+
   console.log("webex: check radiogroups");
 
+
+
   var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+
   var cl = checked_button.parentElement.classList;
+
   var labels = checked_button.parentElement.parentElement.children;
 
+
+
   /* get rid of styles */
+
   for (i = 0; i < labels.length; i++) {
+
     labels[i].classList.remove("webex-incorrect");
+
     labels[i].classList.remove("webex-correct");
+
   }
+
+
 
   /* add style */
+
   if (checked_button.value == "answer") {
+
     cl.add("webex-correct");
+
   } else {
+
     cl.add("webex-incorrect");
+
   }
 
+
+
   update_total_correct();
+
 }
+
+
 
 window.onload = function() {
+
   console.log("webex onload");
+
   /* set up solution buttons */
+
   var buttons = document.getElementsByTagName("button");
 
+
+
   for (var i = 0; i < buttons.length; i++) {
+
     if (buttons[i].parentElement.classList.contains('webex-solution')) {
+
       buttons[i].onclick = b_func;
+
     }
+
   }
+
+
 
   var check_sections = document.getElementsByClassName("webex-check");
+
   console.log("check:", check_sections.length);
+
   for (var i = 0; i < check_sections.length; i++) {
+
     check_sections[i].classList.add("unchecked");
 
+
+
     let btn = document.createElement("button");
+
     btn.innerHTML = "Show Answers";
+
     btn.classList.add("webex-check-button");
+
     btn.onclick = check_func;
+
     check_sections[i].appendChild(btn);
 
+
+
     let spn = document.createElement("span");
+
     spn.classList.add("webex-total_correct");
+
     check_sections[i].appendChild(spn);
+
   }
+
+
 
   /* set up webex-solveme inputs */
+
   var solveme = document.getElementsByClassName("webex-solveme");
 
+
+
   for (var i = 0; i < solveme.length; i++) {
+
     /* make sure input boxes don't auto-anything */
+
     solveme[i].setAttribute("autocomplete","off");
+
     solveme[i].setAttribute("autocorrect", "off");
+
     solveme[i].setAttribute("autocapitalize", "off");
+
     solveme[i].setAttribute("spellcheck", "false");
+
     solveme[i].value = "";
 
+
+
     /* adjust answer for ignorecase or nospaces */
+
     var cl = solveme[i].classList;
+
     var real_answer = solveme[i].dataset.answer;
+
     if (cl.contains("ignorecase")) {
+
       real_answer = real_answer.toLowerCase();
+
     }
+
     if (cl.contains("nospaces")) {
+
       real_answer = real_answer.replace(/ /g, "");
+
     }
+
     solveme[i].dataset.answer = real_answer;
 
+
+
     /* attach checking function */
+
     solveme[i].onkeyup = solveme_func;
+
     solveme[i].onchange = solveme_func;
 
+
+
     solveme[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+
   }
+
+
 
   /* set up radiogroups */
+
   var radiogroups = document.getElementsByClassName("webex-radiogroup");
+
   for (var i = 0; i < radiogroups.length; i++) {
+
     radiogroups[i].onchange = radiogroups_func;
+
   }
+
+
 
   /* set up selects */
+
   var selects = document.getElementsByClassName("webex-select");
+
   for (var i = 0; i < selects.length; i++) {
+
     selects[i].onchange = select_func;
+
     selects[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+
   }
 
+
+
   update_total_correct();
+
 }
 
+
+
 </script>
+
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -2145,6 +2353,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
           // target, if specified
           link.setAttribute("target", "_blank");
           if (link.getAttribute("rel") === null) {
@@ -2186,7 +2399,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
@@ -2462,7 +2679,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../content/module-data-presentation/visualization-in-r.html" class="pagination-link  aria-label=" visualization="" in="" r"="">
+      <a href="../../content/module-data-presentation/visualization-in-r.html" class="pagination-link" aria-label="Visualization in R">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Visualization in R</span>
       </a>          
   </div>
@@ -2473,7 +2690,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"loop":false,"selector":".lightbox","openEffect":"zoom","descPosition":"right","closeEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","loop":false,"openEffect":"zoom","descPosition":"right"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
