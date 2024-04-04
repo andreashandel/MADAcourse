@@ -167,6 +167,12 @@ listed and not listed), I'd love to receive feedback.
 - [The R Graph Gallery](https://r-graph-gallery.com/index.html) has a large collection of plots made with R, also showing the code. A great place for inspiration and copy/paste/modify.
 
 
+
+# Machine Learning
+
+- [StatQuest](https://www.youtube.com/@statquest) is a YouTube channel with lots of great videos explaining many statistical and machine learning concepts in a fairly easy to understand manner.
+
+
 # Pitfalls and best practices in data analysis {#sec-pitfalls}
 
 ## Researcher degrees of freedom (p-hacking)
