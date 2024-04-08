@@ -24,7 +24,7 @@ Write your comments and feedback below for each section/component of the project
 
 For each component, pick one summary statement by deleting the ones that do not apply and keeping only the one that you think most closely summarizes a given component. 
 
-Make sure your final document compiles/knits into a readable, well-formatted html document.
+Make sure your final document compiles/renders into a readable, well-formatted html document.
 
 Delete any sections/text of this template that are not part of your final review document. (Including these instructions.)
 
