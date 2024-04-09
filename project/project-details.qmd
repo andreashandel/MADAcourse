@@ -225,7 +225,7 @@ To that end, provide the following pieces of information:
 Check the [**Project Review Template**](/files/project-review-template.qmd) file to see how this
 submission will be assessed by your peers. I will not grade this part
 but it will be assessed by your peers, as described in the [**Project
-Review**](/project/project-Review.qmd) document.
+Review**](/project/project-review.qmd) document.
 
 *A strong project would be at the level of one of the projects on the `Project Examples` page.*
 
