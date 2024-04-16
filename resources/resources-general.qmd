@@ -124,15 +124,9 @@ listed and not listed), I'd love to receive feedback.
     Learning*](https://christophm.github.io/interpretable-ml-book/) is
     an online book that discusses approaches that can be used to start
     making sense of sometimes complex ML models.
--   [Jesse Mostipak, aka Kiersi](https://www.twitch.tv/kierisi) streams
-    data science sessions on Twitch.
--   [Nick Wan](https://www.twitch.tv/nickwan_datasci) is another date
-    science Twitch streamer.
--   [David Robinson](https://www.youtube.com/user/safe4democracy/videos)
-    has videos of screencasts showing him digging into datasets from
-    TidyTuesday and other sources.
--   [Andrew Heiss](https://www.andrewheiss.com/) has a lot of good
-    materials related to R and data analysis on his website.
+- [Introduction to Data Analysis with R](https://datawithr.com/) is an online book with a public health perspective.    
+
+
 
 # Data Sources and Wrangling
 
@@ -382,6 +376,19 @@ Given the importance and rapid change of AI, I made a [separate resource unit.](
     you can see how the creators of those pages accomplished what they
     made, and shamelessly copy/paste/adapt 😁.
 -   [Awsome Quarto](https://github.com/mcanouil/awesome-quarto) is a collection of links to coll and interesting Quarto-based materials and resources.  
+
+
+# Individuals producing Data Science & R content
+    
+-   [Jesse Mostipak, aka Kiersi](https://www.twitch.tv/kierisi) streams
+    data science sessions on Twitch.
+-   [Nick Wan](https://www.twitch.tv/nickwan_datasci) is another date
+    science Twitch streamer.
+-   [David Robinson](https://www.youtube.com/user/safe4democracy/videos)
+    has videos of screencasts showing him digging into datasets from
+    TidyTuesday and other sources.
+-   [Andrew Heiss](https://www.andrewheiss.com/) has a lot of good
+    materials related to R and data analysis on his website.
     
 
 # Lists and other sources
