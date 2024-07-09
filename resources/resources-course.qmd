@@ -61,8 +61,9 @@ let me know.
     those topics.
 -   [**happygitwitR (HGR)**](https://happygitwithr.com/) is a good
     resource to learn some of the basics of Git/Github with R.
--   [**Posit Recipes (PR)**](https://posit.cloud/learn/recipes) are
-    a great source for short code examples to do common tasks. 
+
+-   [**Posit Recipes (PR)**](https://posit.cloud/learn/recipes) is a good source for short code examples to do common tasks. This is the successor to RStudio Primers, which was even better, and had interactive exercises. While Posit removed the Primers, they were fortunately licensed to allow recreation, and [Andrew Heiss](https://www.andrewheiss.com/) did just that with his version of [R Studio primers](https://r-primers.andrewheiss.com/). 
+
 
 # Tools
 
