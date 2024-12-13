@@ -141,7 +141,7 @@ listed and not listed), I'd love to receive feedback.
     in R, taught by [Andrew Heiss](https://www.andrewheiss.com/).
 -   A great free book which discusses the principles of good data
     visualization is [*Fundamentals of Data
-    Visualization*](https://serialmentor.com/dataviz/). The book is not
+    Visualization*](https://clauswilke.com/dataviz/). The book is not
     R specific (and doesn't show R code, but all figures are made in R).
     \* [*Data Visualization - A practical
     introduction*](https://socviz.co/) is a fairly complete free online
@@ -347,7 +347,7 @@ Given the importance and rapid change of AI, I made a [separate resource unit.](
     but still worth checking out. Especially the first several chapters
     and the *debugging R code* sections are worth learning/reading.
 -   [*The `Introverse` R
-    package*](https://spielmanlab.github.io/introverse/index.html) is
+    package*](https://sjspielman.github.io/introverse/) is
     providing more novice-friendly help files for important `tidyverse`
     functions. If you struggle with the default help file for a
     function, check out this package.
