@@ -56,7 +56,7 @@ let me know.
     approach. I refer to it in several of the later course modules.
 
 -   [**Feature Engineering and
-    Selection (FES)**](https://bookdown.org/max/FES/) focuses on a specific
+    Selection (FES)**](http://www.feat.engineering/) focuses on a specific
     aspect of the data analysis workflow and is a good resource for
     those topics.
 -   [**happygitwitR (HGR)**](https://happygitwithr.com/) is a good

@@ -111,7 +111,7 @@ listed and not listed), I'd love to receive feedback.
     an interesting way to discuss data analysis, focusing on the
     story/message.
 -   [*Reproducible Medical Research with
-    R*](https://bookdown.org/pdr_higgins/rmrwr/) - free online book
+    R*]( ://rmrwr.netlify.app/) - free online book
     showing how to use R to do basic analysis.
 -   [*Data Science for the Biomedical
     Sciences*](https://ds4biomed.tech/) - another free online textbook.
