@@ -22,7 +22,7 @@ This is the first time I'm using Discord for the class, previous classes used Sl
 
 The main mode of communication will be through Discord. You should get an email invite to the Discord server for this class. If you haven't received an email by Friday before classes start or can't find the Discord invite link on eLC, let me know. We won't use eLC, everything is going to happen on Discord or this website. 
 
-If you are unfamiliar with Discord, it is essentially a chat/discussion tool (similar to Slack or Teams or...). The main area for the class is called a *server* in Discord. Ours is called **MADA-Spring-2024**. If you use Discord for other purposes, you might be a member of additional servers. Each server has *channels*. Each *channel* corresponds to a topic. The names and descriptions of the different channels should be self-explanatory. 
+If you are unfamiliar with Discord, it is essentially a chat/discussion tool (similar to Slack or Teams or...). The main area for the class is called a *server* in Discord. Ours is called **MADA-Spring-2025**. If you use Discord for other purposes, you might be a member of additional servers. Each server has *channels*. Each *channel* corresponds to a topic. The names and descriptions of the different channels should be self-explanatory. 
 
 If you have requests for specific channels to be created, let me know.
 
@@ -48,9 +48,10 @@ Also, to make things more personal, add an image of yourself to the profile. It 
 
 ## Zoom
 
-I will offer weekly synchronous meetings through Zoom. Those are **completely optional.**  Whoever wants to join can do so, and we will use the meeting for discussions, answering questions, and whatever else you want to talk about. Think of those meetings a bit like virtual office hours or virtual in-class discussions. To ensure everyone will be able to join at least occasionally, I plan to alternate between two times each week. 
+I will offer weekly synchronous Zoom sessions. Those are **completely optional.** To ensure everyone will be able to join at least occasionally, I plan to alternate between two times each week. Check the schedule for details.  
+I want to emphasize that the only use for these Zoom sessions is for me to be there and answer any questions you might have. There is no material covered, no announcements, or anything of that sort. Unless you have a question/topic that you want to discuss and that can't be addressed by posting it to Discord, there is no reason for you to come to the Zoom meetings.
 
-I want to emphasize that there is **nothing** covered in the meetings other than me addressing questions from individuals. I will **not record** these meetings to ensure students feel comfortable asking "dumb" questions (they are rarely "dumb", but I don't want anyone to feel limited out of fear of "looking stupid" in the recording). If any topic comes up that I think is worth sharing more widely, I will afterwards post a message and/or add content to the website. Therefore, if you can't make these Zoom meetings, you are not missing anything (other than the option of asking me questions that might be tricky to discuss on Discord).
+I will **not record** these meetings to ensure students feel comfortable discussing/asking anything they want to. If any topic comes up that I think is worth sharing more widely, I will afterwards post a Discord message and/or add content to the website. Therefore, if you can't make these Zoom meetings, you are not missing anything other than the option of asking me questions that might be tricky to discuss on Discord.
 
 Tentative dates for Zoom meetings are listed in the [*Schedule*](course-schedule.qmd) document. Those are subject to change. If we need to move things around, I'll post an announcement and also update the [*Schedule*](course-schedule.qmd) document. At the designated times, I will start the meeting. I'll wait around for 15 minutes. If nobody connects, I'll end the meeting. If people connect, we'll talk until we covered everything, or until I or you need to move on to our next appointments. The information for the Zoom meeting login will be provided on Discord.
 
@@ -71,6 +72,6 @@ We will not be using eLC. I might occasionally use the *email everyone* feature 
 
 ## Course Teaching Assistant
 
-In some semesters, I have a TA for the class. If there is a TA the semester you are taking the class, they will be another point of contact for you to ask questions. The TA will be posting an introduction to Discord with details of their availability and preferred modes of communication (Discord/Zoom/etc.).
+In some semesters, I have a TA for the class. If there is a TA the semester you are taking the class, they will be another point of contact for you to ask questions. The TA will be posting an introduction to Discord with details of their availability and preferred modes of communication (Discord/Zoom/etc.). If no such posting shows up on Discord, it means there is no TA.
 
 

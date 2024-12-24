@@ -1,5 +1,5 @@
 ---
-title: MADA – Spring 2024 – Schedule
+title: MADA – Spring 2025 – Schedule
 subtitle: ""
 toc: FALSE
 ---
@@ -15,25 +15,25 @@ Unless otherwise specified, the first posting of the discussion is due by end of
 
 | **Module Topic**                                  | **Start and end dates** | **Assessments**                                            |
 |---------------------------------------------------|-------------------------|------------------------------------------------------------|
-| Module 1 -- Course and tools introduction         | 1/8 -- 1/12             | quiz, exercise, discussion                       |
-| Module 2 -- Data analysis introduction            | 1/15 -- 1/19            | quiz, exercise, discussion    |
-| Module 3 -- R coding basics                       | 1/22 -- 1/26            | quiz, exercise, discussion            |
-| Module 4 -- All about data                        | 1/29 -- 2/2             | quiz, exercise, **project part 1**    |
-| Module 5 -- Data processing                       | 2/5 -- 2/9              | quiz, exercise, discussion            |
-| Module 6 -- Presenting data                       | 2/12 -- 2/16            | quiz, exercise, discussion                                 |
-| Module 7 -- Statistical analysis overview         | 2/19 -- 2/23            | quiz, discussion, **project part 2**                       |
-| Module 8 -- Model fitting      | 2/26 -- 3/1             | quiz, exercise, discussion                                 |
-| **Spring Break**                                  | **3/4 -- 3/8**          |                                                            |
-| Module 9 -- Model assessment            | 3/11 -- 3/15            | quiz, discussion, **project part 3**                       |
-| Module 10 -- Model improvement            | 3/18 -- 3/22            | quiz, exercise, project part 3 review |
-| Module 11 -- Machine learning models I            | 3/25 -- 3/29            | quiz, exercise, discussion                                 |
-| Module 12 -- Machine learning models II           | 4/1 -- 4/5              | quiz, discussion, **project part 4**                         |
-| Module 13 -- The complete analysis workflow       | 4/8 -- 4/12             | quiz, exercise, discussion                                 |
-| Finishing Project                                 | 4/15 -- 4/19            | **project part 5** due Friday 4/19, 5pm                    |
-| Project Reviews                                   | 4/22 -- 4/26            | project reviews due Friday 4/26, 5pm                       |
-| Final project revision                            | 4/29 -- 5/3             | **project part 6** due Friday 5/3, 5pm                     |
+| Module 1 -- Course and tools introduction         | 1/6 -- 1/10             | quiz, exercise, discussion                       |
+| Module 2 -- Data analysis introduction            | 1/13 -- 1/17            | quiz, exercise, discussion    |
+| Module 3 -- R coding basics                       | 1/20 -- 1/24            | quiz, exercise, discussion            |
+| Module 4 -- All about data                        | 1/27 -- 1/31             | quiz, exercise, **project part 1**    |
+| Module 5 -- Data processing                       | 2/3 -- 2/7              | quiz, exercise, discussion            |
+| Module 6 -- Presenting data                       | 2/10 -- 2/14            | quiz, exercise, discussion                                 |
+| Module 7 -- Statistical analysis overview         | 2/17 -- 2/21            | quiz, discussion, **project part 2**                       |
+| Module 8 -- Model fitting      | 2/24 -- 2/28             | quiz, exercise, discussion                                 |
+| **Spring Break**                                  | **3/3 -- 3/7**          |                                                            |
+| Module 9 -- Model assessment            | 3/10 -- 3/14            | quiz, discussion, **project part 3**                       |
+| Module 10 -- Model improvement            | 3/17 -- 3/21            | quiz, exercise, project part 3 review |
+| Module 11 -- Machine learning models I            | 3/24 -- 3/28            | quiz, exercise, discussion                                 |
+| Module 12 -- Machine learning models II           | 3/31 -- 4/4              | quiz, discussion, **project part 4**                         |
+| Module 13 -- The complete analysis workflow       | 4/7 -- 4/11             | quiz, exercise, discussion                                 |
+| Finishing Project                                 | 4/14 -- 4/18            | **project part 5** due Friday 4/18, 5pm                    |
+| Project Reviews                                   | 4/21 -- 4/25            | project reviews due Friday 4/25, 5pm                       |
+| Final project revision                            | 4/28 -- 5/2             | **project part 6** due Friday 5/2, 5pm                     |
 
-*Note: Withdrawal deadline is Thursday 3/21.*
+*Note: Withdrawal deadline is 4/3.*
 
 ## Synchronous Zoom meetings
 
@@ -41,7 +41,7 @@ I will offer a weekly Zoom meeting (aka office hour). See the [**Communication**
 
 You can find the Zoom link on Discord. The plan is to have weekly alternating times for those zoom meetings such that everyone is able to make the meeting at least every 2 weeks.
 
-The current plan is to have **Zoom meetings for odd module numbers on Wednesdays at 8am, and for even module numbers on Tuesdays at 8am. The first Zoom session will be on Wednesday, 1/10 at 8am ET.**
+The current plan is to have **Zoom meetings for odd module numbers on Wednesdays at 8am, and for even module numbers on Thursdays at 8am. The first Zoom session will be on Wednesday, 1/8 at 8am ET.**
 
 Hopefully, at least one of those two times works for you, allowing you to join at least every other time if wanted. If you already know that neither times work for you, and you are keen on joining the Zoom meetings, let me know and we can adjust. 
 
