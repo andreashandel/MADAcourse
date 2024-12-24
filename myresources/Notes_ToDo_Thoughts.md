@@ -5,7 +5,10 @@ Most general comments/thoughts are in the Notes and Thoughts document in the off
 
 # Notes
 
--   I'm currently using gh-pages branch for publishing. See Quarto documentation for details.
+-   I'm currently using gh-pages branch for publishing. 
+- Run quarto publish locally to update the site on the server.
+- See Quarto documentation for details: https://quarto.org/docs/publishing/github-pages.html
+
 
 - I'm using the webexercises R package to embed quizzes. 
 https://psyteachr.github.io/webexercises/index.html
