@@ -4,44 +4,51 @@ subtitle: ""
 toc: FALSE
 ---
 
-This is the current course schedule for the class. Things might change, so check regularly for updates.
+This is the current course schedule for the class.
+Things might change, so check regularly for updates.
 
-The *Assessments* column lists items that need to be submitted and that will be graded. Those are described in more detail in an [**Assessments**](assessments-overview.qmd) page and in the assessment document for each module.
+The *Assessments* column lists items that need to be submitted and that will be graded.
+Those are described in more detail in an [**Assessments**](assessments-overview.qmd) page and in the assessment document for each module.
 
 ::: emphasis
-Unless otherwise specified, the first posting of the discussion is due by end of Wednesday, the discussion replies are due by end of Friday. Quizzes are due by Friday. Exercises often have multiple parts with staggered deadlines. See each exercise for details.
+Unless otherwise specified, the first posting of the discussion is due by end of Wednesday, the discussion replies are due by end of Friday.
+Quizzes are due by Friday.
+Exercises often have multiple parts with staggered deadlines.
+See each exercise for details.
 :::
 
-
-| **Module Topic**                                  | **Start and end dates** | **Assessments**                                            |
-|---------------------------------------------------|-------------------------|------------------------------------------------------------|
-| Module 1 -- Course and tools introduction         | 1/6 -- 1/10             | quiz, exercise, discussion                       |
-| Module 2 -- Data analysis introduction            | 1/13 -- 1/17            | quiz, exercise, discussion    |
-| Module 3 -- R coding basics                       | 1/20 -- 1/24            | quiz, exercise, discussion            |
-| Module 4 -- All about data                        | 1/27 -- 1/31             | quiz, exercise, **project part 1**    |
-| Module 5 -- Data processing                       | 2/3 -- 2/7              | quiz, exercise, discussion            |
-| Module 6 -- Presenting data                       | 2/10 -- 2/14            | quiz, exercise, discussion                                 |
-| Module 7 -- Statistical analysis overview         | 2/17 -- 2/21            | quiz, discussion, **project part 2**                       |
-| Module 8 -- Model fitting      | 2/24 -- 2/28             | quiz, exercise, discussion                                 |
-| **Spring Break**                                  | **3/3 -- 3/7**          |                                                            |
-| Module 9 -- Model assessment            | 3/10 -- 3/14            | quiz, discussion, **project part 3**                       |
-| Module 10 -- Model improvement            | 3/17 -- 3/21            | quiz, exercise, project part 3 review |
-| Module 11 -- Machine learning models I            | 3/24 -- 3/28            | quiz, exercise, discussion                                 |
-| Module 12 -- Machine learning models II           | 3/31 -- 4/4              | quiz, discussion, **project part 4**                         |
-| Module 13 -- The complete analysis workflow       | 4/7 -- 4/11             | quiz, exercise, discussion                                 |
-| Finishing Project                                 | 4/14 -- 4/18            | **project part 5** due Friday 4/18, 5pm                    |
-| Project Reviews                                   | 4/21 -- 4/25            | project reviews due Friday 4/25, 5pm                       |
-| Final project revision                            | 4/28 -- 5/2             | **project part 6** due Friday 5/2, 5pm                     |
+| **Module Topic** | **Start and end dates** | Quiz | Exercise | **Discussion** |
+|-------------------------|----------------|--|--|-----------------------------|
+| Module 1 -- Course and tools introduction | 1/6 -- 1/10 | Y | Portfolio start | Introductions |
+| Module 2 -- Data analysis introduction | 1/13 -- 1/17 | Y |  | quiz, exercise, discussion |
+| Module 3 -- R coding basics | 1/20 -- 1/24 | Y |  | quiz, exercise, discussion |
+| Module 4 -- All about data | 1/27 -- 1/31 | Y |  | quiz, exercise, **project part 1** |
+| Module 5 -- Data processing | 2/3 -- 2/7 | Y |  | quiz, exercise, discussion |
+| Module 6 -- Presenting data | 2/10 -- 2/14 | Y |  | quiz, exercise, discussion |
+| Module 7 -- Statistical analysis overview | 2/17 -- 2/21 | Y |  | quiz, discussion, **project part 2** |
+| Module 8 -- Model fitting | 2/24 -- 2/28 | Y |  | quiz, exercise, discussion |
+| **Spring Break** | **3/3 -- 3/7** |  |  |  |
+| Module 9 -- Model assessment | 3/10 -- 3/14 | Y |  | quiz, discussion, **project part 3** |
+| Module 10 -- Model improvement | 3/17 -- 3/21 | Y |  | quiz, exercise, project part 3 review |
+| Module 11 -- Machine learning models I | 3/24 -- 3/28 | Y |  | quiz, exercise, discussion |
+| Module 12 -- Machine learning models II | 3/31 -- 4/4 | Y |  | quiz, discussion, **project part 4** |
+| Module 13 -- The complete analysis workflow | 4/7 -- 4/11 | Y |  | quiz, exercise, discussion |
+| Finishing Project | 4/14 -- 4/18 |  |  | **project part 5** due Friday 4/18, 5pm |
+| Project Reviews | 4/21 -- 4/25 |  |  | project reviews due Friday 4/25, 5pm |
+| Final project revision | 4/28 -- 5/2 |  |  | **project part 6** due Friday 5/2, 5pm |
 
 *Note: Withdrawal deadline is 4/3.*
 
 ## Synchronous Zoom meetings
 
-I will offer a weekly Zoom meeting (aka office hour). See the [**Communication**](course-communication.qmd) section for some more details. As described in the **Communication** document, if you don't join the Zoom meetings you are not missing any important information, these are just **completely optional** opportunities to ask for help/feedback etc.
+I will offer a weekly Zoom meeting (aka office hour).
+See the [**Communication**](course-communication.qmd) section for some more details.
+As described in the **Communication** document, if you don't join the Zoom meetings you are not missing any important information, these are just **completely optional** opportunities to ask for help/feedback etc.
 
-You can find the Zoom link on Discord. The plan is to have weekly alternating times for those zoom meetings such that everyone is able to make the meeting at least every 2 weeks.
+You can find the Zoom link on Discord.
+The plan is to have weekly alternating times for those zoom meetings such that everyone is able to make the meeting at least every 2 weeks.
 
 The current plan is to have **Zoom meetings for odd module numbers on Thursdays at 8am, and for even module numbers on Wednesday at 8am. The first Zoom session will be on Thursday, 1/9 at 8am ET.**
 
-Hopefully, at least one of those two times works for you, allowing you to join at least every other time if wanted. If you already know that neither times work for you, and you are keen on joining the Zoom meetings, let me know and we can adjust. 
-
+Hopefully, at least one of those two times works for you, allowing you to join at least every other time if wanted.
+If you already know that neither times work for you, and you are keen on joining the Zoom meetings, let me know and we can adjust.
