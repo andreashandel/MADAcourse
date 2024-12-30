@@ -36,7 +36,7 @@ If you can't find a graph on FiveThirtyEight that you like and would like to rep
 
 ## Setup
 
-This exercise will be part of your portfolio and will live in the `presentation-exercise` folder. Place your data (see next) in that folder, and add your code and explanation to the Quarto starter file in that folder.
+This exercise will be part of your portfolio and will live in the `presentation-exercise` folder. Create that folder and place your data (see next) in that folder. Then create a file called `presentation-exercise.qmd`, which will contain your code and explanation for this exercise.
 
 
 ## Get the data
@@ -75,4 +75,7 @@ As for the graphs, if you want to challenge yourself, you can try to make your t
 
 Add the code and explanatory text (e.g., your AI prompts) into the same `presentation-exercise.qmd` Quarto document. You should end up with code that takes some data and generates a nice-looking table.
 
-Once all done, re-build your website and make sure that your data visualization exercise shows up nicely. Then, post the link to your online page showing your visualization into the **discussion** channel for this module. Do that **by Wednesday** so your classmates can take a look and comment by Friday.
+## Finish up
+
+Once all done, edit the `_quarto.yml` file to include an entry for this exercise. Re-build your website and make sure that your data visualization exercise shows up nicely and is reachable through the main menu. Then, post the link to your online page showing your visualization into the **discussion** channel for this module. Do that **by Wednesday** so your classmates can take a look and comment by Friday.
+

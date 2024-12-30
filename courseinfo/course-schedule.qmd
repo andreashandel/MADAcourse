@@ -11,31 +11,31 @@ The *Assessments* column lists items that need to be submitted and that will be 
 Those are described in more detail in an [**Assessments**](assessments-overview.qmd) page and in the assessment document for each module.
 
 ::: emphasis
-Unless otherwise specified, the first posting of the discussion is due by end of Wednesday, the discussion replies are due by end of Friday.
-Quizzes are due by Friday.
+Unless otherwise specified, the first posting of the discussion is due by end of Wednesday, the discussion replies are due by Friday 5pm.
+Quizzes and Projects are due by Friday 5pm.
 Exercises often have multiple parts with staggered deadlines.
 See each exercise for details.
 :::
 
-| **Module Topic** | **Start and end dates** | Quiz | Exercise | **Discussion** |
-|-------------------------|----------------|--|--|-----------------------------|
-| Module 1 -- Course and tools introduction | 1/6 -- 1/10 | Y | Portfolio start | Introductions |
-| Module 2 -- Data analysis introduction | 1/13 -- 1/17 | Y |  | quiz, exercise, discussion |
-| Module 3 -- R coding basics | 1/20 -- 1/24 | Y |  | quiz, exercise, discussion |
-| Module 4 -- All about data | 1/27 -- 1/31 | Y |  | quiz, exercise, **project part 1** |
-| Module 5 -- Data processing | 2/3 -- 2/7 | Y |  | quiz, exercise, discussion |
-| Module 6 -- Presenting data | 2/10 -- 2/14 | Y |  | quiz, exercise, discussion |
-| Module 7 -- Statistical analysis overview | 2/17 -- 2/21 | Y |  | quiz, discussion, **project part 2** |
-| Module 8 -- Model fitting | 2/24 -- 2/28 | Y |  | quiz, exercise, discussion |
-| **Spring Break** | **3/3 -- 3/7** |  |  |  |
-| Module 9 -- Model assessment | 3/10 -- 3/14 | Y |  | quiz, discussion, **project part 3** |
-| Module 10 -- Model improvement | 3/17 -- 3/21 | Y |  | quiz, exercise, project part 3 review |
-| Module 11 -- Machine learning models I | 3/24 -- 3/28 | Y |  | quiz, exercise, discussion |
-| Module 12 -- Machine learning models II | 3/31 -- 4/4 | Y |  | quiz, discussion, **project part 4** |
-| Module 13 -- The complete analysis workflow | 4/7 -- 4/11 | Y |  | quiz, exercise, discussion |
-| Finishing Project | 4/14 -- 4/18 |  |  | **project part 5** due Friday 4/18, 5pm |
-| Project Reviews | 4/21 -- 4/25 |  |  | project reviews due Friday 4/25, 5pm |
-| Final project revision | 4/28 -- 5/2 |  |  | **project part 6** due Friday 5/2, 5pm |
+| **Module Topic** | **Start and end dates** | Quiz | Exercise | **Discussion** | Project |
+|-----------------|-----------|-----------|-----------|--------------|--------|
+| Module 1 -- Course and tools introduction | 1/6 -- 1/10 | Y | Portfolio start | Introductions |  |
+| Module 2 -- Data analysis introduction | 1/13 -- 1/17 | Y | Starter analysis (group work) | Reproducible research example |  |
+| Module 3 -- R coding basics | 1/20 -- 1/24 | Y | Data analysis and coding (group work) | Module Reflection |  |
+| Module 4 -- All about data | 1/27 -- 1/31 | Y | Complex or Synthetic data (solo work) | *None* | Part 1 due |
+| Module 5 -- Data processing | 2/3 -- 2/7 | Y | Data wrangling (group work) | AI tools |  |
+| Module 6 -- Presenting data | 2/10 -- 2/14 | Y | Figures and Tables (solo work) | Exercise feedback |  |
+| Module 7 -- Statistical analysis overview | 2/17 -- 2/21 | Y | *None* | Scientific Paper Evaluation | Part 2 due |
+| Module 8 -- Model fitting | 2/24 -- 2/28 | Y | Model fitting (solo work) | Module Reflection |  |
+| **Spring Break** | **3/3 -- 3/7** |  |  |  |  |
+| Module 9 -- Model assessment | 3/10 -- 3/14 | Y | *None* | Module Reflection | Part 3 due |
+| Module 10 -- Model improvement | 3/17 -- 3/21 | Y | Model performance and predictions (group work) | *None* | Project reviews due |
+| Module 11 -- Machine learning models I | 3/24 -- 3/28 | Y | Machine Learning Models (solo work) | Projects |  |
+| Module 12 -- Machine learning models II | 3/31 -- 4/4 | Y | *None* | Machine Learning methods | Part 4 due |
+| Module 13 -- The complete analysis workflow | 4/7 -- 4/11 | Y | Tidytuesday analysis (solo work) | Course feedback |  |
+| Finishing Project | 4/14 -- 4/18 |  |  |  | Part 5 due |
+| Project Reviews | 4/21 -- 4/25 |  |  |  | Project reviews due |
+| Final project revision | 4/28 -- 5/2 |  |  |  | Part 6 due |
 
 *Note: Withdrawal deadline is 4/3.*
 

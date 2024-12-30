@@ -33,7 +33,7 @@ RStudio is an integrated development environment (IDE) made by the folks from [P
 
 # Installing R and RStudio
 
--   If you haven't already, [install R first](https://www.r-project.org/). You can pick any mirror you like. If you already have R installed, make sure it is a fairly recent version, at least version 4.1 or newer. I recommend you upgrade to the most recent version (as of this writing 4.2.2, but if there is a newer one available, use that one).
+-   If you haven't already, [install R first](https://www.r-project.org/). You can pick any mirror you like. If you already have R installed, make sure it is a fairly recent version, at least version 4.2 or newer. I recommend you upgrade to the most recent version (as of this writing 4.4.2, but if there is a newer one available, use that one).
 -   Once you have R installed, install the free version of [RStudio Desktop](https://www.rstudio.com/products/rstudio/download/). Get the most recent version. If you have an older one already installed, update it.
 
 Installing R and RStudio should be fairly straightforward. If you want detailed instructions, go through this [chapter of IDS](https://rafalab.github.io/dsbook/installing-r-rstudio.html). If things don't work, ask for help on the discussion boards.
