@@ -7,7 +7,7 @@ toc: FALSE
 This is the current course schedule for the class.
 Things might change, so check regularly for updates.
 
-The *Assessments* column lists items that need to be submitted and that will be graded.
+The graded assessments for the course consist of quizzes, exercises, discussions and a project.
 Those are described in more detail in an [**Assessments**](assessments-overview.qmd) page and in the assessment document for each module.
 
 ::: emphasis
@@ -18,7 +18,7 @@ See each exercise for details.
 :::
 
 | **Module Topic** | **Start and end dates** | Quiz | Exercise | **Discussion** | Project |
-|-----------------|-----------|-----------|-----------|--------------|--------|
+|------------|------------|------------|------------|------------|------------|
 | Module 1 -- Course and tools introduction | 1/6 -- 1/10 | Y | Portfolio start | Introductions |  |
 | Module 2 -- Data analysis introduction | 1/13 -- 1/17 | Y | Starter analysis (group work) | Reproducible research example |  |
 | Module 3 -- R coding basics | 1/20 -- 1/24 | Y | Data analysis and coding (group work) | Module Reflection |  |
@@ -33,9 +33,9 @@ See each exercise for details.
 | Module 11 -- Machine learning models I | 3/24 -- 3/28 | Y | Machine Learning Models (solo work) | Projects |  |
 | Module 12 -- Machine learning models II | 3/31 -- 4/4 | Y | *None* | Machine Learning methods | Part 4 due |
 | Module 13 -- The complete analysis workflow | 4/7 -- 4/11 | Y | Tidytuesday analysis (solo work) | Course feedback |  |
-| Finishing Project | 4/14 -- 4/18 |  |  |  | Part 5 due |
-| Project Reviews | 4/21 -- 4/25 |  |  |  | Project reviews due |
-| Final project revision | 4/28 -- 5/2 |  |  |  | Part 6 due |
+| Finishing Project | 4/14 -- 4/18 | N | *None* | *None* | Part 5 due |
+| Project Reviews | 4/21 -- 4/25 | N | *None* | *None* | Project reviews due |
+| Final project revision | 4/28 -- 5/2 | N | *None* | *None* | Part 6 due |
 
 *Note: Withdrawal deadline is 4/3.*
 
