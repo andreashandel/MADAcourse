@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.45">
+<meta name="generator" content="quarto-1.6.39">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -38,10 +38,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-3e476e15ae565c222d94875412ae43a1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-484058ea2a1f2133eee2daa4dbd2a3e3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -281,7 +281,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2024-04-04</p>
+      <p class="date-modified">2024-12-31</p>
     </div>
   </div>
     
@@ -323,7 +323,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="your-tidy-tuesday-exercise">Your Tidy Tuesday Exercise</h2>
 <p>Your assignment is to participate in Tidy Tuesday by analyzing this week’s dataset. You can start as soon as the dataset is posted, which is Mondays. The <a href="https://github.com/rfordatascience/tidytuesday">datasets are released on GitHub</a>. As I’m writing this, I have no idea what the data will be the week this exercise happens. That’s part of the fun of it 😄.</p>
 <p>Here are some more detailed instructions:</p>
-<p>Use your portfolio website. Make sure it’s up to date and fully synced. Open it in R Studio. Then open the <code>tidytuesday-exercise.qmd</code> file. That’s where you’ll write your Tidy Tuesday analysis.</p>
+<p>Use your portfolio website. Make sure it’s up to date and fully synced. Create a folder called <code>tidytuesday-exercise</code> and inside that folder, add a file called <code>tidytuesday-exercise.qmd</code> file. That’s where you’ll write your Tidy Tuesday analysis. As needed, add the data for this exercise into the same folder.</p>
 <p>Go to the <a href="https://github.com/rfordatascience/tidytuesday">TidyTuesday Github repository</a>. Look for the dataset for this week, and read the instructions on how to get the data. You will also be provided with a data dictionary. If the data is available for download, place it somewhere in your portfolio repository (e.g., in a new folder called <code>data</code>). <strong>Remember the data limit for Git/GitHub, don’t place files that are too large into your repo!</strong></p>
 </section>
 <section id="what-you-need-to-include" class="level2">
@@ -344,7 +344,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="finish-up" class="level2">
 <h2 class="anchored" data-anchor-id="finish-up">Finish up</h2>
-<p>Once done with your Tidy Tuesday analysis, rebuild your portfolio site to make sure everything works and looks good, that all the links work, etc. Then push to GitHub by the deadline. Since this will be on your portfolio website, and I know where to find it, there is no need to post any link.</p>
+<p>Once done with your Tidy Tuesday analysis, edit your <code>_quarto.yml</code> file to include an entry for this exercise. Rebuild your portfolio site to make sure everything works and looks good, that all the links work, etc. Then push to GitHub by the deadline. Since this will be on your portfolio website, and I know where to find it, there is no need to post any link.</p>
 <p>And you just completed all the exercises for MADA! Now would also be a good time to check all of your portfolio page and further clean up/improve. This website is a nice showcase of what you’ve done and learned in this course, and something you can show to others (future employers, etc.). So I suggest you make sure it looks reasonably good and presentable. Here are some specific steps you should check.</p>
 </section>
 </section>
@@ -870,8 +870,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -987,7 +985,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

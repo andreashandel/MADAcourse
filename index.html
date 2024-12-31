@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.45">
+<meta name="generator" content="quarto-1.6.39">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -37,10 +37,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-3e476e15ae565c222d94875412ae43a1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-484058ea2a1f2133eee2daa4dbd2a3e3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -157,7 +157,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2024-12-23</p>
+      <p class="date-modified">2024-12-31</p>
     </div>
   </div>
     
@@ -172,12 +172,12 @@ ul.task-list li input[type="checkbox"] {
 <section id="modern-applied-data-analysis-mada" class="level1">
 <h1>Modern Applied Data Analysis (MADA)</h1>
 <!-- Date is added here instead of YAML heading so the logo floats at the top right of the page -->
-<p>Last modified: 2024-12-23</p>
+<p>Last modified: 2024-12-31</p>
 <p>Welcome to the <strong>Modern Applied Data Analysis (MADA)</strong> course website.</p>
 <p>This website contains almost all the content of an online graduate level course taught by <a href="https://www.andreashandel.com/">Andreas Handel</a> at the University of Georgia. Most materials are hosted here, some are on external sites and either linked or embedded from here.</p>
 <!-- _**The course is currently not running. The website will likely receive none or only minor updates until the next time the course will be offered (tentatively spring 2025).**_ -->
-<p><strong>This course website is currently being updated for spring 2025. As long as this message is shown, consider the current website outdated. Things will change (though likely not by much).</strong></p>
-<!-- _**The course is currently running. The website will be updated throughout the semester. Things might change (though likely not by a whole lot). Visit/check regularly, especially the Schedule. Note the last update time above.**_ -->
+<!-- **This course website is currently being updated for spring 2025. As long as this message is shown, consider the current website outdated. Things will change (though likely not by much).** -->
+<p><em><strong>The course is currently running. The website will be updated throughout the semester. Things might change (though likely not by a whole lot). Visit/check regularly, especially the Schedule. Note the last update time above.</strong></em></p>
 </section>
 <section id="website-content" class="level1">
 <h1>Website content</h1>
@@ -697,8 +697,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -814,7 +812,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
@@ -1041,7 +1038,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"loop":false,"selector":".lightbox","descPosition":"right","openEffect":"zoom","closeEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"right","loop":false,"openEffect":"zoom","selector":".lightbox"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
