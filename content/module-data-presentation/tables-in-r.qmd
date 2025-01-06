@@ -1,10 +1,11 @@
 ---
 title: Tables in R
 subtitle: ""
-authors: [Zane Billings, Andreas Handel]
+authors: 
+  - Zane Billings
+  - Andreas Handel
 ---
 
-**Unit to come.**
 
 # Overview
 
@@ -133,9 +134,8 @@ The second of these is the also-previously-mentioned [flextable](https://ardata-
 package is notable for its consistency across many formats -- for several years,
 `flextable` was the only table package that could guarantee your table would
 look the same in HTML, PDF, and Word. While Flextable certainly has a learning
-curve, I think the lengthy manual with several examples written by the author
-is fairly approachable, and `flextable` is the main package I have used in
-my research up to now.
+curve, the detailed manual with several examples written by the author
+is fairly approachable. It's a package worth checking out.
 
 The final family is the `gt` family of packages. The `gt` family, which stands
 for "grammar of tables" is developed by Posit, and intended to be the table
@@ -262,6 +262,7 @@ don't believe that after one example, take a look at the [Datasaurus Dozen](http
 # Further resources
 
 * [This post](https://datavizuniverse.substack.com/p/navigating-the-table-jungle) has examples of a lot of these table packages. Here is [another blog post](https://www.adrianbruegger.com/post/quick-descriptive-tables/) that also covers several table packages.
+* [This tutorial](https://gt.albert-rapp.de/) shows how to make nice tables with the `gt` package. 
 * If you want to read a paper about making tables, I recommend Bartram L et al., *Untidy Data: The Unreasonable Effectiveness of Tables* (2021); [https://doi.org/10.1109/TVCG.2021.3114830](https://doi.org/10.1109/TVCG.2021.3114830). 
 * The Epidemiologist R Handbook has a nice [section on tables](https://epirhandbook.com/en/descriptive-tables.html).
 * Tables are important in the pharma industry and for reports submitted to agencies like the FDA. The [Tables in Clinical Trials with R](https://rconsortium.github.io/rtrs-wg/) book has a lot of good information on that topic.

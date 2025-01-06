@@ -107,23 +107,23 @@ website:
         file: content/module-data-analysis/data-analysis-motivation.qmd
       - text: Data Analysis Overview
         file: content/module-data-analysis/data-analysis-overview.qmd
-    - section: 2B. READy workflows
+    - section: 2B. READy Workflows
       contents:
-      - text: READy workflows overview
+      - text: READy Workflows Overview
         file: content/module-ready-workflow/ready-overview.qmd
-      - text: READy introduction
+      - text: READy Introduction
         file: content/module-ready-workflow/ready-introduction/ready-introduction.qmd
-      - text: Project organization
+      - text: Project Organization
         file: content/module-ready-workflow/ready-organization/ready-organization.qmd
-      - text: Project management
+      - text: Project Management
         file: content/module-ready-workflow/ready-project-management/ready-project-management.qmd
-      - text: Software management
+      - text: Software Management
         file: content/module-ready-workflow/ready-software-management/ready-software-management.qmd
-      - text: Project documentation
+      - text: Project Documentation
         file: content/module-ready-workflow/ready-documentation/ready-documentation.qmd
       - text: Tools for a READy workflow
         file: content/module-ready-workflow/ready-tools/ready-tools.qmd
-      - text: Open research
+      - text: Open Research
         file: content/module-ready-workflow/ready-open/ready-open.qmd
     - section: 3. R Coding Basics
       contents:
@@ -131,19 +131,19 @@ website:
         file: content/module-coding-basics/rcoding-basics.qmd
       - text: Tidyverse and Friends
         file: content/module-coding-basics/rcoding-tidyverse.qmd
-    - section: 4A. All about Data
+    - section: 4A. Data Introduction
       contents:
       - text: Data Overview
         file: content/module-data/data-overview.qmd
-      - text: Basic data types
+      - text: Basic Data Types
         file: content/module-data/data-types-basic/data-types-basic.qmd
-      - text: Complex data types
+      - text: Complex Data Types
         file: content/module-data/data-types-complex/data-types-complex.qmd
-      - text: Data storage formats
+      - text: Data Storage Formats
         file: content//module-data/data-storage-formats/data-storage-formats.qmd
-      - text: Data formats in R
+      - text: Data Formats in R
         file: content//module-data/data-formats-r/data-formats-r.qmd
-      - text: The data generation process
+      - text: Data Generation 
         file: content//module-data/data-generation-process/data-generation-process.qmd
     - section: 4B. Synthetic Data
       contents:
@@ -151,11 +151,11 @@ website:
         file: content/module-synthetic-data/synthetic-data-overview.qmd
       - text: Introduction and Motivation
         file: content/module-synthetic-data/synthetic-data-introduction/synthetic-data-introduction.qmd
-      - text: Creating new data
+      - text: Creating new Data
         file: content/module-synthetic-data/synthetic-data-new-r/synthetic-data-new-r.qmd
       - text: Creating new data based on existing data
         file: content/module-synthetic-data/synthetic-data-new-existing-r/synthetic-data-new-existing-r.qmd
-      - text: Scrambling existing data
+      - text: Scrambling existing Data
         file: content/module-synthetic-data/synthetic-data-existing-r/synthetic-data-existing-r.qmd
       - text: R packages for data creation
         file: content/module-synthetic-data/synthetic-data-r-packages/synthetic-data-r-packages.qmd
@@ -289,11 +289,11 @@ website:
       file: courseinfo/assessments-overview.qmd
     - text: 1. Course and Tools Introduction
       file: content/module-intro-tools/assessment-course-tools-introduction.qmd
-    - text: 2. Data Analysis Introduction
+    - text: 2. Data Analysis Introduction & READy Workflow
       file: content/module-data-analysis/assessment-data-analysis.qmd
     - text: 3. R Coding Basics
       file: content/module-coding-basics/assessment-coding.qmd
-    - text: 4. All about Data
+    - text: 4. Data Introduction & Synthetic Data
       file: content/module-data/assessment-data.qmd
     - text: 5. Processing Data
       file: content/module-data-processing/assessment-data-processing.qmd

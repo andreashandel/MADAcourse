@@ -1,5 +1,8 @@
 ---
 title: Open Research
+authors: 
+  - Zane Billings
+  - Andreas Handel
 subtitle: ""
 ---
 

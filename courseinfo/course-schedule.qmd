@@ -20,9 +20,9 @@ See each exercise for details.
 | **Module Topic** | **Start and end dates** | Quiz | Exercise | **Discussion** | Project |
 |------------|------------|------------|------------|------------|------------|
 | Module 1 -- Course and tools introduction | 1/6 -- 1/10 | Y | Portfolio start | Introductions |  |
-| Module 2 -- Data analysis introduction | 1/13 -- 1/17 | Y | Starter analysis (group work) | Reproducible research example |  |
+| Module 2 -- Data analysis introduction & READy workflows | 1/13 -- 1/17 | Y | Starter analysis (group work) | Reproducible research example |  |
 | Module 3 -- R coding basics | 1/20 -- 1/24 | Y | Data analysis and coding (group work) | Module Reflection |  |
-| Module 4 -- All about data | 1/27 -- 1/31 | Y | Complex or Synthetic data (solo work) | *None* | Part 1 due |
+| Module 4 -- Data introduction & Synthetic data | 1/27 -- 1/31 | Y | Complex or Synthetic data (solo work) | *None* | Part 1 due |
 | Module 5 -- Data processing | 2/3 -- 2/7 | Y | Data wrangling (group work) | AI tools |  |
 | Module 6 -- Presenting data | 2/10 -- 2/14 | Y | Figures and Tables (solo work) | Exercise feedback |  |
 | Module 7 -- Statistical analysis overview | 2/17 -- 2/21 | Y | *None* | Scientific Paper Evaluation | Part 2 due |

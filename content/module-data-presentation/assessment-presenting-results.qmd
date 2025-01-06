@@ -64,11 +64,26 @@ You should end up with a Quarto file that shows your AI prompts, possibly interm
 
 For this part, the easiest approach is to use the same data you used for the graph (or a subset of the data) and create a nice looking table. 
 
-Alternatively, find a good-looking table somewhere online and try to recreate it. Of course, you need all data necessary to re-create the table. Often (but not always) that's just the numbers in the table.
+Alternatively, find a good-looking table somewhere online and try to recreate it. Of course, you need all data necessary to re-create the table. 
 
-Again, start with AI. You can let it decide which R table package to use, or you can specify that as part of your prompt. Use whichever R table package you like. [This tutorial](https://gt.albert-rapp.de/) shows how to make nice tables with the `gt` package. Our group uses [flextable](https://ardata-fr.github.io/flextable-book/) a lot.
+Your table should be appropriately formatted to display some type of potentially interesting result. Your table should take up at most one standard letter-sized page if printed and should summarize information in a useful way (not just list the raw data, but for instance show summary statistics such as mean, percentage, etc.). 
 
-No matter what R package you use to make the table, it should look professional, visually pleasing, and nicely convey the information. For inspiration, you can for instance check out [this R table gallery](https://community.rstudio.com/c/table-gallery/64). The R graph gallery also has a [section on tables](https://r-graph-gallery.com/table.html).
+Your table must contain an example of each of the following:
+
+* Formatted text which can be bold, italic, etc.
+* Colored text or highlighted cells
+* Additional text outside of the regular table structure like spanning column headers or correctly attributed footnotes
+* A descriptive caption explaining the useful information summary that your table represents.
+
+Additionally, your table must contain at least one of the following advanced features:
+
+* A column with some type of image for the values, which could potentially be a data visualization (e.g. sparklines).
+* Automatically calculated summary statistics (summary statistics that you calculate manually do not count towards this objective)
+* Automatically applied (not manual) conditional formatting (potentially overlapping with formatted or colored text/cells)
+* Interactive features
+
+
+As always you are welcome and encouraged to use an AI tool to get started. It is up to you which package you use to make the table. No matter what R package you use to make the table, it should look professional, visually pleasing, and nicely convey the information. For inspiration, you can for instance check out [this R table gallery](https://community.rstudio.com/c/table-gallery/64). The R graph gallery also has a [section on tables](https://r-graph-gallery.com/table.html).
 
 :::note
 As for the graphs, if you want to challenge yourself, you can try to make your table interactive. There are several good R packages that allow you to create interactive tables inside a Quarto document. Interactivity only works if your output format is HTML, it won't work for pdf or word. But in your case it's part of your website, so it's HTML and can include interactivity.
