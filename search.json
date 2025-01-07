@@ -321,7 +321,7 @@
     "crumbs": [
       "Content",
       "4B. Synthetic Data",
-      "Creating new data"
+      "Creating new Data"
     ]
   },
   {
@@ -333,7 +333,7 @@
     "crumbs": [
       "Content",
       "4B. Synthetic Data",
-      "Creating new data"
+      "Creating new Data"
     ]
   },
   {
@@ -345,7 +345,7 @@
     "crumbs": [
       "Content",
       "4B. Synthetic Data",
-      "Creating new data"
+      "Creating new Data"
     ]
   },
   {
@@ -357,7 +357,7 @@
     "crumbs": [
       "Content",
       "4B. Synthetic Data",
-      "Creating new data"
+      "Creating new Data"
     ]
   },
   {
@@ -369,7 +369,7 @@
     "crumbs": [
       "Content",
       "4B. Synthetic Data",
-      "Creating new data"
+      "Creating new Data"
     ]
   },
   {
@@ -381,7 +381,7 @@
     "crumbs": [
       "Content",
       "4B. Synthetic Data",
-      "Creating new data"
+      "Creating new Data"
     ]
   },
   {
@@ -393,7 +393,7 @@
     "crumbs": [
       "Content",
       "4B. Synthetic Data",
-      "Creating new data"
+      "Creating new Data"
     ]
   },
   {
@@ -405,7 +405,7 @@
     "crumbs": [
       "Content",
       "4B. Synthetic Data",
-      "Creating new data"
+      "Creating new Data"
     ]
   },
   {
@@ -417,7 +417,7 @@
     "crumbs": [
       "Content",
       "4B. Synthetic Data",
-      "Creating new data"
+      "Creating new Data"
     ]
   },
   {
@@ -441,7 +441,7 @@
     "crumbs": [
       "Content",
       "4B. Synthetic Data",
-      "Scrambling existing data"
+      "Scrambling existing Data"
     ]
   },
   {
@@ -453,7 +453,7 @@
     "crumbs": [
       "Content",
       "4B. Synthetic Data",
-      "Scrambling existing data"
+      "Scrambling existing Data"
     ]
   },
   {
@@ -465,7 +465,7 @@
     "crumbs": [
       "Content",
       "4B. Synthetic Data",
-      "Scrambling existing data"
+      "Scrambling existing Data"
     ]
   },
   {
@@ -500,7 +500,7 @@
     "text": "Overview\nThis unit covers some tools that can help with a READy workflow.\n\n\nLearning Objectives\n\nBe familiar with some tools that can help with a READy workflow.\n\n\n\nIntroduction\nThere are many different ways to make a data analysis READy. The following is a brief discussion of some common tools.\n\n\nVersion control software\nVersion control software, such as Git/GitHub, is used for tracking project changes and is discussed in the Project Management unit.\n\n\nQuarto\nQuarto is tool that allows for easy scientific writing in a reproducible manner, by seamlessly integrating code with text. Quarto is further discussed in the Quarto unit.\n\n\nJupyter\nJupyter is another platform that supports combining code with text. I’m not very familiar with it. As far as I understand it, it doesn’t support the generation of different outputs that Quarto does. Since Quarto supports the same languages as Jupyter, I am not sure what the advantages are of using Jupyter. There might be some 😁.\n\n\nPluto\nFor the Julia programming language, there is Pluto.jl, which has similarities to Jupyter and Quarto. Again, I don’t have experience with it, so can’t say what – if any – advantages it has over Quarto. But if you do some coding in Julia, it might be worth checking out.\n\n\nSweave and such\nThere are some older tools, such as Sweave that can also help in reproducible work. You might still occasionally run into old projects that use it. But in my opinion it is essentially obsolete and you should use Quarto or another of the tools listed above.\n\n\nPipeline tools\nQuarto and similar programs generally chain together a series of commands to get from the initial result to the final product. For instance for a Quarto file, when you render it, it first runs any code, then processes the markdown file, then turns it into the final product.\nMore generally, tools that allow you to automatically run such chains of steps are often referred to as pipeline tools. In R, there is the targets package. Outside of R, Unix/Linux type systems support Make, which lets you combine multiple steps into often complicated workflows. If you find yourself needing a workflow that executes multiple different steps that go beyond what Quarto can execute, the targets package might be worth checking out.\n\n\nOther tools\nIn general, any software tool you use that allows you to document each step - usually in the form of code and comments - should allow others to reproduce your results. Many common software packages and languages such as Mathematica, Matlab, Julia, Python, etc. allow you to add documentation to your code and therefore support reproducibility.\n\n\nHall of shame\nThere is a long list of software that is commonly used for research and data analysis, but which one should stay away from. This encompasses any software that does not contain a full documentation of all steps taken to allow reproducibility.\nExcel and similar spreadsheet software is a major culprit. Using such software for data entry and storage is perfectly fine, as long as one follows guidelines that make later analysis easy, as for instance described in this paper.\nHowever, spreadsheet software is a poor choice for analysis tasks (though nevertheless widely used). The problem with standard spreadsheet software like Excel is that if you make a change to the data and save it, there is usually no track record of what happened. Therefore, any data processing that happens is not reproducible.\nStatistical and data analysis software that relies on graphical user interfaces (GUI), such as e.g. Graphpad Prism or SPSS are equally problematic. Some of these software tools can record the commands you perform through a GUI and you can save those at the end. This does allow for reproducibility. But if that step is missing or not implemented, the analysis is again not reproducible.\nSimilarly, any software to produce graphics by hand (e.g., Photoshop) should not be used. It is ok to use it make schematics, but not to edit any results.\nSimilarly, results tables should be generated automatically and not produced by copying and pasting numbers from one location to another. Again, that means no Excel.\n\n\nSummary\nThere are many useful tools that help you implement a READy workflow. The important part is that things are scripted, automated and repeatable, as well as documented. Any tools that support such a workflow are useful. Stay away from tools that require manual steps.\n\n\nFurther Resources\n\nGood enough practices in scientific computing is a paper that provides a nice discussion of the approaches, and some tools, that are useful for doing work in a way that follows READy guidelines.",
     "crumbs": [
       "Content",
-      "2B. READy workflows",
+      "2B. READy Workflows",
       "Tools for a READy workflow"
     ]
   },
@@ -512,8 +512,8 @@
     "text": "For this unit, we will discuss ways to make sure working collaboratively on a project is efficient and that project progress is tracked.",
     "crumbs": [
       "Content",
-      "2B. READy workflows",
-      "Project management"
+      "2B. READy Workflows",
+      "Project Management"
     ]
   },
   {
@@ -524,8 +524,8 @@
     "text": "File sizes\nGitHub has a problem with large files. Anything above 100MB will lead to a failure which is annoying and tricky to resolve. In general, files above 50mb will work, be will be slow and give you a warning. Unfortunately, once you have a failed attempt to sync a large file, it can be quite tricky to fix the repository to work again. Therefore keep large (&gt;100MB) files out of your GitHub repositories. If you have to work with such files, try to reduce them first before placing into the GitHub repository. As alternative, place those files in another sync service (e.g. Dropbox, OneDrive, GoogleDrive) and load them from there. Fortunately, there are some nice R packages that can usually make retrieving those files reproducible, even if they are in a file syncing service outside of your repo. Finally, your overall repo must be less than 5GB in size, so consider storing your huge data files and audio/video files somewhere else.\nThere is an option to have larger files with GitHub using Git Large File Storage. This can be a bit tricky, if you think it’s worth trying, see the documentation here. GitHub Pro users (including students using the Student Developer Kit) have free access to limited LFS features.",
     "crumbs": [
       "Content",
-      "2B. READy workflows",
-      "Project management"
+      "2B. READy Workflows",
+      "Project Management"
     ]
   },
   {
@@ -536,8 +536,8 @@
     "text": "Confidentiality\nBy default, GitHub repositories are public. Since you might not want to share your analysis publicly, sometimes using a private repository is useful. I think you generally don’t need to worry about getting scooped. Everyone is so busy with their own stuff, nobody really cares what you are working on 😁. However, you might often have data or other information as part of your project that you don’t want to share publicly.\nTherefore, for most data analysis projects, it is probably good practice to start with a private repository, so you can have potentially confidential information in the repo. You can add collaborators to the private repository. This way only those individuals who you want to give access will be able to see, and potentially contribute to the project.\nEventually, to ensure your project is publicly reproducible, you want to share some version of the data and the code. Be aware that if you make a repository public, others can also see the full history. This can be important if you want to make your final results public - after you made sure everything is anonymous enough for sharing. If at any time you worked in the repository with the full dataset and tracked it, others can go back in your GitHub/Git history and see it. The best option is likely to start a new public repository and copy only the elements you want to share into that repository, while keeping your original repository private.",
     "crumbs": [
       "Content",
-      "2B. READy workflows",
-      "Project management"
+      "2B. READy Workflows",
+      "Project Management"
     ]
   },
   {
@@ -548,8 +548,8 @@
     "text": "For this unit, we will discuss general principles for organizing your project in a READy way.",
     "crumbs": [
       "Content",
-      "2B. READy workflows",
-      "Project organization"
+      "2B. READy Workflows",
+      "Project Organization"
     ]
   },
   {
@@ -560,8 +560,8 @@
     "text": "Project structure\nYou want to set up your analysis in such a way that it makes sense to you and others and allows for a good and efficient workflow. The main components of your analysis will be data, code, results (tables, figures, etc.) and products (reports, interactive apps, slides, etc.).\nYour project could be a Github repository — a good idea — or not. If you use a software that supports the concept of projects, you should use it. For instance in R, R projects are defined by having a folder structure with an .Rproj file at the top level. Most of the time making use of such project support is recommended.\nBy having any project you work on as an R project, relative paths will always be relative to the main directory in which your .Rproj file is located. As long as someone loads the project by clicking on the .Rproj file, and you only use relative paths, things should work well on any computer.",
     "crumbs": [
       "Content",
-      "2B. READy workflows",
-      "Project organization"
+      "2B. READy Workflows",
+      "Project Organization"
     ]
   },
   {
@@ -572,8 +572,8 @@
     "text": "Folder structure\nIn general, the different components of your project should be mapped to folders inside your main project folder.\nInside your folders, you can have subfolders, e.g., separate folders for figures and tables. Or you could have subfolders for different types of analyses. There is no one correct way to set up things, but you should think of a logical and consistent structure before you start your project.",
     "crumbs": [
       "Content",
-      "2B. READy workflows",
-      "Project organization"
+      "2B. READy Workflows",
+      "Project Organization"
     ]
   },
   {
@@ -584,8 +584,8 @@
     "text": "File structure\nYou will want different files that do specific tasks. You’ll likely have files that contain data in raw and processed form, scripts with code (such as .R files), scripts with results (such as Quarto .qmd files), files that contain images, files that contain the content for tables, etc.\nThe number and type of scripts and other files depends on your project and your preference. In general, keeping things modular is useful. If you had one file that did the analysis and created a report, that would be ok for a small project. But then if you wanted to make a set of slides based on your results, you’ll have to find a way to include the code in those slides. It would be easier to have code produce and save results such as figures, which can then be included in both a report/manuscript and slides.\nAnother consideration is computational time. For simple projects, your code will likely run fast. Once your analyses or data become large, parts of your code might run very long. You will then want to structure your scripts such that the computationally-intensive part is only run when absolutely needed. You definitely want to avoid a scenario where you have to wait minutes or hours as you play around with a figure to make it look the way you want. A good way to split this is to have files/code that does the various pieces (cleaning, processing, exploratory analysis, etc.) that happen before your main analysis (and usually run fairly quickly), then have one or multiple scripts that perform the - potentially computationally expensive - main analysis and save the outcomes from that analysis, and then further scripts that take these results and turn them into good-looking figures and tables. Finally, you’ll have one or a few files that produce manuscripts or reports in an automated fashion by pulling in the different results you generated.",
     "crumbs": [
       "Content",
-      "2B. READy workflows",
-      "Project organization"
+      "2B. READy Workflows",
+      "Project Organization"
     ]
   },
   {
@@ -596,8 +596,8 @@
     "text": "Setting file and folder paths\nIt is important to ensure that everything can be reproduced not just on your computer, but on the systems of others.\nA common problem that prevents others to reproduce your work is the use of paths that are specific to only your computer. Do not set paths or load files from paths that only exist on your machine! Instead, you should only use relative paths. A relative path is a file path that is relative to some directory.\nAs an example, loading a file from location C:/myusername/mydesktop/myproject/data/rawdata.csv is a bad idea, because someone else will not have that setup. They will have a different user name, they might be on a Mac or Linux machine, they might have different names for their hard drives, etc.\nInstead, you should load data relative to your main project directory. So for instance reference data/rawdata.csv and use a tool that automatically looks for that folder inside your project folder (in this example, myproject). With this, as long as someone else has a copy of your project and its subfolders, everything should work, no matter where they store your project.\nFor nice video tutorial, see this video on relative versus absolute paths. The setting for this is development of websites, instead of data analysis. So he talks about html files, but that doesn’t really matter, everything that is explained about the paths applies in general.",
     "crumbs": [
       "Content",
-      "2B. READy workflows",
-      "Project organization"
+      "2B. READy Workflows",
+      "Project Organization"
     ]
   },
   {
@@ -608,8 +608,8 @@
     "text": "here R package\nThe here R package and its associated here() command in R is very useful for working with paths and loading/saving files. It works nicely with R projects. If you use the here command to load a file, it always looks for the file relative to the main project directory. So you can load a file with a command like dat &lt;- read.csv(here::here('data','rawdata,csv')). Malcolm Barrett’s blog post is a great, short explanation of why one should use the here package and how to do it.",
     "crumbs": [
       "Content",
-      "2B. READy workflows",
-      "Project organization"
+      "2B. READy Workflows",
+      "Project Organization"
     ]
   },
   {
@@ -620,8 +620,8 @@
     "text": "This unit provides an overview of the ideas for a data analysis that follows Reproducible, Efficient, Automated, and Documented (READy) workflow principles.",
     "crumbs": [
       "Content",
-      "2B. READy workflows",
-      "READy introduction"
+      "2B. READy Workflows",
+      "READy Introduction"
     ]
   },
   {
@@ -632,8 +632,8 @@
     "text": "Footnotes\n\n\nREADy is an acronym I invented. If you look around online, you’ll find lots of discussions on the topic of reproducible or automated data analysis, and why documentation is important, but you’ll likely not find anything calling it READy.↩︎",
     "crumbs": [
       "Content",
-      "2B. READy workflows",
-      "READy introduction"
+      "2B. READy Workflows",
+      "READy Introduction"
     ]
   },
   {
@@ -1003,8 +1003,8 @@
     "text": "For this unit, we will discuss different types of data and how data type influences the analysis approach.",
     "crumbs": [
       "Content",
-      "4A. All about Data",
-      "Complex data types"
+      "4A. Data Introduction",
+      "Complex Data Types"
     ]
   },
   {
@@ -1015,8 +1015,8 @@
     "text": "Text\nWorking with and analyzing larger sections of text is becoming increasingly important. Complex and powerful AI tools (e.g., ChatGPT) have become rather good at working with text. The analysis of text often goes by the term natural language processing. Such text analysis will continue to increase in importance, given the increasing data streams of that type. If you are interested in doing full analyses of text data, the tidytext R package and the Text mining with R book are great resources. A short introduction to this topic is the Text Mining chapter (27) of IDS.\nOf course, with the rise of text-based LLM AI tools and similar such offerings, this whole area of data analysis has grown very large on its own. If you want to really dig deep into this, check out some of the course and training offerings from DeepLearning.AI.",
     "crumbs": [
       "Content",
-      "4A. All about Data",
-      "Complex data types"
+      "4A. Data Introduction",
+      "Complex Data Types"
     ]
   },
   {
@@ -1027,8 +1027,8 @@
     "text": "Audio\nAudio recordings can contain text/speech, or other sound. In the former case, models need to be applied to transform audio into text. After that, any text analysis tool can be used. If the audio does not contain text, one likely wants to apply other analyses. For instance one might want to detect if a certain sound is present, such as the sound of a fire alarm going off. This generally requires partitioning and transforming the audio into pieces that can be turned into some form of numeric variables and analyzed. Audio has a time-series structure that needs to be taken into account when analyzing it.",
     "crumbs": [
       "Content",
-      "4A. All about Data",
-      "Complex data types"
+      "4A. Data Introduction",
+      "Complex Data Types"
     ]
   },
   {
@@ -1039,8 +1039,8 @@
     "text": "Images\nFor analysis purposes, one can think of an image is essentially a matrix of pixels, with each pixel having color and intensity values. This large amount of - usually very structured — data needs to be processed.\nImages are generally converted into multiple matrices of values for different pixels of an image. For instance, one could divide an image into a 100x100 grid of pixels, and assign each pixel RGB (color) values and intensity. That means one would have 4 matrices of numeric values, each of size 100x100. One would then perform operations on those values. As you can imagine, that quickly leads to fairly large amounts of data. These days, most successful image analysis is done using some form of neural nets, which are generally considered an artificial intelligence (AI) method. (But recall that ML and AI terminology is somewhat fuzzy. The general current usage is that AI are a type of ML, specifically the neural net type.)",
     "crumbs": [
       "Content",
-      "4A. All about Data",
-      "Complex data types"
+      "4A. Data Introduction",
+      "Complex Data Types"
     ]
   },
   {
@@ -1051,8 +1051,8 @@
     "text": "Video\nVideo is essentially a time-series of images with audio. As such, approaches that work for image and audio analysis can also be applied to video. Of course, the time-series nature of the images makes things more complicated. Neural-net/AI based methods are most often used.",
     "crumbs": [
       "Content",
-      "4A. All about Data",
-      "Complex data types"
+      "4A. Data Introduction",
+      "Complex Data Types"
     ]
   },
   {
@@ -1063,8 +1063,8 @@
     "text": "Genetics and -omics data\nThe main genetic type of data is based on sequences. A lot of specialized tools exist to work with what is often fairly noisy data. Aligning sequences, comparing them, placing them on phylogenetic trees, and other such operations are so common and important that there is a large area of tools for those purposes.\nData that is often called -omics (e.g., metabolomics, glycomics) is often rectangular in structure, but often has distinguishing features, such as few individuals/rows and many observations/columns. Such data needs special treatment. Often, variable/feature reduction is a common step in the analysis workflow.\nThe bioconductor website is your source for (almost) all tools and resources related to genetics and omics-type data analyses in R.",
     "crumbs": [
       "Content",
-      "4A. All about Data",
-      "Complex data types"
+      "4A. Data Introduction",
+      "Complex Data Types"
     ]
   },
   {
@@ -1075,8 +1075,8 @@
     "text": "Big data\nThis isn’t really a type of data in the same sense as the ones listed above. Still, it is its own type of data simply by the fact that it encompasses large amounts of data. Some of the complex data types above, e.g., videos, quickly become big data.\nWhile the term big data is a bit fuzzy, in general people mean any dataset that doesn’t easily fit into the memory of a regular computer (or cluster) and thus needs to be analyzed using special tools. Alternatively, big data might be defined as data that is so big that doing analysis on it takes too long using standard tools (e.g. R on a regular computer) and instead requires special treatment. Of course this also depends on the type of analysis, not only the type of data. As computers keep getting faster and tools more flexible and integrated, the label big data is a moving target.\nGenerally, big data is stored somewhere in a database. SQL type databases are most common. You then want to access that database in a form that allows you to perform your analysis. There are different ways of dealing with big data. Most methods are general and apply independent of the programming language you use. This article describes a few general approaches and explains how they can be implemented in R. This webinar gives a bit more information and a nice description of the overall setup for big data. As you learn in that tutorial, R is often used together with other software to analyze big data. A tool that is often used for big data analysis is Spark. For R, there is the sparklyr package, which allows one to nicely interface with Spark.\nIn general, when you work with big data, you will have to carefully look at the data, the type of database it is stored, and the analysis goals. Based on that, you should use a stack of tools that allows analysis. The Databases task view gives a good overview of different R packages for specific types of databases. You will use R for your analysis, and R will then interface with other software. This interface is usually fairly seamless.\nBig data is commonly modeled using complex models, such as machine-learning or AI algorithms. The reason for that is that those models are very powerful but need a lot of data. Thus, if you have big data, you can use them. That said, you can analyze big data with any model you want, including simple GLM or similar such models.",
     "crumbs": [
       "Content",
-      "4A. All about Data",
-      "Complex data types"
+      "4A. Data Introduction",
+      "Complex Data Types"
     ]
   },
   {
@@ -1087,8 +1087,8 @@
     "text": "Hierarchical data\nThis type of data is actually quite common. A hierarchy (also at times called multi-level or nesting structure) occurs when there is some type of grouping inherent. For instance, if you analyze heart attacks from different hospitals, there might be systematic differences between hospitals that are worth taking into account. You can then build models that take that into account. I think there is a strong case to be made that one should often start with a hierarchical modeling approach, and only drop it if one is convinced that there are no systematic differences in the data. Unfortunately, such hierarchical models are still a little bit harder to implement, and often a lot harder to understand and interpret. For such models, a Bayesian framework is often very useful. A good introductory resource for hierarchical modeling, and especially how to do it with R, is Statistical Rethinking (the second half of the book). There is also a CRAN Task view that lists R packages relevant to hierarchical modeling.\nAnother term you might hear is recursively nested data. While this type of data is a type of hierarchical data, when we discuss hierarchical data we often think about nesting in terms of statistical clusters. Computer scientists and web developers often use hierarchical data for storage and data transfer purposes, and often call it recursively nested data instead.\nRecursively nested data has become extremely common on the internet the past few years, and is essentially the default data format of APIs. While statisticians often store hierarchical data in one or more rectangular data sets, recursively nested data is stored in recursive lists. For example, consider the following list of Cars in Jay Leno’s Garage.\n\nMazda Miata\n\nYear: 1996\nOriginal MSRP: $18450\nColor: Red\nConvertible: True\n\nChevrolet Volt\n\nYear: 2011\nOriginal MSRP: $4100\nColor: Steel Metallic\nInterior: Black\nConvertible: False\nHybrid: True\n\nEtc.\n\nWhile we can imagine a world where this data is stored in a rectangular format (see mtcars for example), we would have to do some processing to get it in that format, and we would have to decide what to do for the fields that are not shared across all the entries. These data can also have lists nested within lists (nested within lists, to very high levels of list-recursion), which can be more challenging to “rectangle” (that is, convert to a rectangular format).\nData stored in this format is usually stored in JSON or XML formats, which can be read into R using the rjson or xml2 packages, among others. The new edition of R4DS has a chapter on working with hierarchical and recursively nested data data (but does not cover the fitting/analysis part). The repurrrsive package, by Jenny Brian, contains some examples of this type of data.",
     "crumbs": [
       "Content",
-      "4A. All about Data",
-      "Complex data types"
+      "4A. Data Introduction",
+      "Complex Data Types"
     ]
   },
   {
@@ -1099,8 +1099,8 @@
     "text": "Longitudinal/Time-series data\nLongitudinal or time series are a specialized data type that are autocorrelated (i.e., each measurement is correlated with at least one measurement that came before it), and we can therefore get better predictions by using specialized models that take this data structure into account. A good resource is the free textbook Forecasting: Principles and Practice and a lot of the other work by Rob Hyndman.\nA very useful set of tools to allow times-series work in R is the set of packages called the tidyverts. The modeltime R package allows one to use the tidymodels framework to analyze time-series data.\nCRAN also has a Task View for Time Series Analysis. (A Task View on CRAN is a site that tries to combine and summarize various R packages for a specific topic). Another task view that deals with longitudinal/time-series data is the Survival Analysis Task View.\nNote that, somewhat confusingly, longitudinal data are common in epidemiology, and despite being measured over time, “time-series methods” are not usually appropriate. Time-series and forecasting methods are mainly appropriate for data where the times are dense, which means many time points are measured somewhat close together. The term “longitudinal data” (also called panel data in some fields) is most commonly used to refer to sparse data collected over time, where each study unit is only measured a handful of times which may be spread apart. Most cohort studies therefore fall into this longitudinal framework, not into a time series framework.",
     "crumbs": [
       "Content",
-      "4A. All about Data",
-      "Complex data types"
+      "4A. Data Introduction",
+      "Complex Data Types"
     ]
   },
   {
@@ -1111,8 +1111,8 @@
     "text": "Spatial data\nLike time series data, spatial data also feature autocorrelation, but typically in two dimensions. (i.e., latitude and longitude.) Spatiotemporal data, typically collected as repeated measurements of spatial data over time, is also somewhat common. One could also have an elevation coordinate and have 3D (or even 4D spatiotemporal data) spatial data, but most analyses focus on 2D spatial autocorrelation structures.\nWhile there is (to my knowledge) no current way to fit specific spatial models in tidymodels (i.e. no modeltime analogue), one can use spatial resampling through the spatialsample package, which provides resampling methods that take spatial autocorrelation into account.",
     "crumbs": [
       "Content",
-      "4A. All about Data",
-      "Complex data types"
+      "4A. Data Introduction",
+      "Complex Data Types"
     ]
   },
   {
@@ -1123,8 +1123,8 @@
     "text": "For this unit, we will discuss different common formats for storing data.",
     "crumbs": [
       "Content",
-      "4A. All about Data",
-      "Data storage formats"
+      "4A. Data Introduction",
+      "Data Storage Formats"
     ]
   },
   {
@@ -1135,8 +1135,8 @@
     "text": "Text\nPlain text is the most portable and easy to use format. Most code, no matter what the programming language is, is written and stored as text. The Quarto files you have been working on are also text. Text can be read by any text editor and can be modified easily. The major disadvantage is that it’s not that suitable for storing potentially complex data.\nFixed-width files are an important special case of plain text data, which are becoming more rare as time goes on, but that you may still run into. These files have a set length for each variable (so column one may be 8 characters long, column 2 may be 3 characters long, etc.), so they are easy for the computer to read, but you will need to use an appropriate function and set the widths. While fixed width files are usable in most programs, we do not recommend them because they are (generally) more annoying to work with than other options.",
     "crumbs": [
       "Content",
-      "4A. All about Data",
-      "Data storage formats"
+      "4A. Data Introduction",
+      "Data Storage Formats"
     ]
   },
   {
@@ -1147,8 +1147,8 @@
     "text": "CSV (and delimited formats)\nThe CSV (comma-separated values) format is really just a text format that’s very well suited for rectangular, spreadsheet-type data. In a CSV, you have rows and columns of entries, and the entries are separated by commas. CSV files are easily readable by most software. If you are storing information that contains commas as part of the values (e.g., if you are storing text in some columns), CSV files can be problematic. TSV files, which stands for tab-separated values, are a variation that uses a tab instead of a comma to separate entries, thus sometimes being more robust. Semicolons are also sometimes used to separate values.\nIn general these files are called “delimited” formats, and the separator character (comma for CSV, tab for TSV) is called the “delimiter”. A special case is space-delimited files, which are typically saved in DAT or TXT file types instead of a specialized format.\nDelimited storage formats are likely the most common data-sharing format, and are a good, all-purpose way to share data files across platforms.",
     "crumbs": [
       "Content",
-      "4A. All about Data",
-      "Data storage formats"
+      "4A. Data Introduction",
+      "Data Storage Formats"
     ]
   },
   {
@@ -1159,8 +1159,8 @@
     "text": "Compressed data\nWhile CSV and text files are very easily readable formats, one major disadvantage of those files is that they can get relatively large. They don’t store information in the most efficient manner. CSV files also can’t store meta-information, for instance the fact that some variable encodes a date. In a CSV file, it’s all just text.\nThere are formats that are more space-efficient and can preserve some meta-information. Examples are the Rds and Rda formats in R. For differences between those two formats, see e.g. this article. The disadvantage of this and similar formats is that they require specific software to read the data. As long as the data format and software needed is open and free, it’s not that big of an issue, though sometimes it can hinder portability.\nFormats like parquet and Arrow invented by Apache for their Arrow software are also very efficient and have become quite common in industry recently. The Arrow R package is a fairly intuitive interface for these file formats if you come across them in your data science work.",
     "crumbs": [
       "Content",
-      "4A. All about Data",
-      "Data storage formats"
+      "4A. Data Introduction",
+      "Data Storage Formats"
     ]
   },
   {
@@ -1171,8 +1171,8 @@
     "text": "Other open formats\nDepending on the data type, there are other open formats for images, audio, video, web content, etc. As much as possible it is good to use formats that are open and follow some international standard. This makes it most likely that a wide variety of tools can work with these files, both in the present and the future.",
     "crumbs": [
       "Content",
-      "4A. All about Data",
-      "Data storage formats"
+      "4A. Data Introduction",
+      "Data Storage Formats"
     ]
   },
   {
@@ -1183,8 +1183,8 @@
     "text": "Excel\nExcel has its own format for storing data. It is common enough that a lot of software can read Excel files. One problem with the Excel format is that the way the data is stored is not always how it looks when you open the file and look at the data, due to additional formatting that’s encoded. This means you think you might have the data in one format, but really it’s different once you load it into another software. Dates are good example where this can happen.\nIf possible, it is safer to store information in CSV files. If you get data in Excel files, you’ll ideally want to read it into another software - such as R - as quickly as possible.",
     "crumbs": [
       "Content",
-      "4A. All about Data",
-      "Data storage formats"
+      "4A. Data Introduction",
+      "Data Storage Formats"
     ]
   },
   {
@@ -1195,8 +1195,8 @@
     "text": "SAS/SPSS/STATA/etc.\nMost commercial software has its own format of storing code and data. The problem with these formats is that you need the right software to read the data, and you often won’t know what you are getting unless you can open the file with the right program.",
     "crumbs": [
       "Content",
-      "4A. All about Data",
-      "Data storage formats"
+      "4A. Data Introduction",
+      "Data Storage Formats"
     ]
   },
   {
@@ -1207,8 +1207,8 @@
     "text": "Databases\nAt times, the data is so complex or large that it can’t be stored in a single file. In such situations, data is often stored in databases. There are tons of types of databases in existence. SQL based databases are very common. Databases are a huge topic and definitely something worth learning about if you need to work with them. However, since there are so many types, it is best to learn ‘as needed’ about the specific database you plan on working with.",
     "crumbs": [
       "Content",
-      "4A. All about Data",
-      "Data storage formats"
+      "4A. Data Introduction",
+      "Data Storage Formats"
     ]
   },
   {
@@ -1219,8 +1219,8 @@
     "text": "Overview\nWe are generally in the business of analyzing data, not generating it (but see the synthetic data content). Nevertheless, it is very important to think about the processes that generated the data you are trying to analyze.\n\n\nLearning Objectives\n\nUnderstand why it’s important to think of the data generation process\nBe familiar with common features and structures in data\n\n\n\nIntroduction\nEvery dataset is generated by processes that can often be very complex. At times, seemingly similar data is generated by different processes. For instance, most of the text you read in this course was written by a single person. In contrast, a lot of the text you read in Wikipedia was co-authored and co-edited by many individuals. Thus, while both are pieces of text, the processes that generated them are different. Often, this difference in processes is reflected in patterns in the data, and needs to be accounted for. For any kind of analysis you do, it is useful to think about the likely processes that generated the data. This can influence your analysis approach.\n\n\nRandomness\nMany natural processes that lead to the generation of data have some inherent randomness associated with them. For instance if you want to analyze the effect of a drug on some health outcome, you expect to see variation among individuals. Some of the variation is due to individual characteristics (e.g., age, weight), but some variation is likely random. While one could discuss if true randomness exists, for the purpose of pretty much any analysis, randomness just means anything that can’t be measured in our system and that fluctuates randomly and contributes to variation. Being aware of which processes might be affected by more or less of such random variation is important. In the worst case, if you have too much random variation, it might swamp your signal and you won’t see any meaningful pattern in your data.\n\n\nMeasurements\nMeasurements that lead to data always have inherent limitations. For instance if you use a scale to measure someone’s weight, it might only report it to one decimal place. Similarly, if your scale has a minimum and maximum value it can record, anything that is lighter and heavier than that value will not produce a numeric result, just an indication that it’s too light (the scale might show zero) or too heavy (the scale might show some error message or the maximum value). It is important to consider these kind of measurement limitations and account for them if possible.\n\n\nInteractions\nOften, the components in our system of interest interact. The simplest interaction is a direct one between a predictor and an outcome. Say you give some kind of cancer drug to a patient and see if it reduces the size of their tumor. This is often the scientific question of interest. However, there might be other factors interacting with the variables of interest. For instance the drug might induce some immune response which could either help or hinder the ability of the drug to shrink the tumor. Let’s say the immune system synergistically helps the drug reduce the tumor in individuals that have blood type A-positive and it hinders the drug in everyone else. These might be important aspects that — if you know them — need to inform your model.\nThe whole field of causal modeling tries to - among other things - get at such situations and help you devise the best analysis approach given what you know or assume about the system. It’s worth learning causal modeling, but we can’t cover it in this class.\n\n\nData structures\nDepending on the processes that generate the data, it is common for data to have certain structures. Thinking about those structures, and as suitable accounting for them in your analyses, is important. The Complex Data unit discussed some important structure such as temporal/spatial/hierarchical. These structures will likely determine the details of your modeling approach, since you will likely want to use models that account for such structures.\n\n\nSummary\nOccasionally, you might do an analysis that tries to explicitly model (some of) the processes that lead to the observed data. More often, you will want to discover patterns and you don’t directly care about the processes that led to the data. Nevertheless, thinking about them is important since it might influence the way you go about analyzing the data, the specific questions you might try to answer, and the conclusions you can draw from your analysis. Therefore, as a good analyst, you want to understand as much as possible about the system and processes that led to the data you are analyzing.\n\n\nFurther resources\n\nA great source for causal modeling, and statistics in general, is Richard McElreath’s online course - some of the materials are free, though his book is not.",
     "crumbs": [
       "Content",
-      "4A. All about Data",
-      "The data generation process"
+      "4A. Data Introduction",
+      "Data Generation"
     ]
   },
   {
@@ -1231,7 +1231,7 @@
     "text": "Get the quiz sheet for this module from the general Assessments page. Fill it in, then submit to the online grading system before the deadline.",
     "crumbs": [
       "Assessments",
-      "4. All about Data"
+      "4. Data Introduction & Synthetic Data"
     ]
   },
   {
@@ -1242,7 +1242,7 @@
     "text": "Overview\nYou have two main options for the exercise this week:\n\nOption 1: Try your hand at a bit of an exploration of some complex data type.\nOption 2: Generate and explore synthetic data.\n\nFor either option, I expect well-documented code and lots of explanatory text in the Quarto document.\nWhile this is an open-ended exercise and there are no specific requirements as to what you need to produce, I expect more than just a single figure or 10 lines of code. Since you are getting better each week, it should definitely be at least as comprehensive as last week’s exercise 😁.",
     "crumbs": [
       "Assessments",
-      "4. All about Data"
+      "4. Data Introduction & Synthetic Data"
     ]
   },
   {
@@ -1253,7 +1253,7 @@
     "text": "Setup\nThis exercise doesn’t have an existing folder in your portfolio. Make a new folder, call it data-exercise. Copy one of the existing Quarto files into that new folder (e.g., the one called tidytuesday-exercise.qmd), rename it to data-exercise.qmd and open it (make sure you open your portfolio by clicking on your R project file, then open the Quarto file inside R Studio).",
     "crumbs": [
       "Assessments",
-      "4. All about Data"
+      "4. Data Introduction & Synthetic Data"
     ]
   },
   {
@@ -1264,7 +1264,7 @@
     "text": "Option 1\nFind some data that falls into the categories described in the Complex data types unit. It could be some text or images or video or audio or any other complex data. Basically anything that’s not rectangular data with rows as observations and columns as variables.\nThen look for some suitable R packages that allow you to explore the data. You don’t need to do any statistical analysis at this stage. Focus on loading the data, processing as needed, and then do some descriptive/exploratory analysis, e.g. by making plots or tables or… Basically anything that you can think of.",
     "crumbs": [
       "Assessments",
-      "4. All about Data"
+      "4. Data Introduction & Synthetic Data"
     ]
   },
   {
@@ -1275,7 +1275,7 @@
     "text": "Option 2\nWrite code that generates a synthetic dataset. This dataset should have multiple variables, and there should be some associations between variables.\nThen write code that explores the data by making plots or tables to confirm that your synthetic data is what you expect it to be.\nThen fit a few simple models to the data. For instance, use the lm or glm functions to fit a linear or logistic model. Make sure your model can recover the associations you built into the data. Explore if and how different models might be able to capture the patterns you see.\nTake some inspiration from the examples shown in the Synthetic Data module.",
     "crumbs": [
       "Assessments",
-      "4. All about Data"
+      "4. Data Introduction & Synthetic Data"
     ]
   },
   {
@@ -1286,7 +1286,7 @@
     "text": "Wrap-up\nOnce you got your exercise done, you need to add it to your website. To that end, open the _quarto.yml file. In the section that says menu and lists several of your projects, add lines at a -text: and file: entry that points to your new folder/file. Be careful to have exactly the same number of empty spaces at the beginning of the line as all the other lines.\nWhile you are in that file, if you haven’t done so, update other parts, e.g. such as the title and the github URL. See the instructions for the first exercise if you need a reminder.\nOnce all done, render your website to make sure everything looks ok and your new exercise shows up. Once things looks fine on your local computer, push your updates to GitHub and check that they also look ok online.\nSince this will be part of your portfolio site, and you already posted a link to that previously, you don’t need to post anything, I know where to find it.",
     "crumbs": [
       "Assessments",
-      "4. All about Data"
+      "4. Data Introduction & Synthetic Data"
     ]
   },
   {
@@ -1373,7 +1373,7 @@
     "href": "content/module-data-presentation/tables-in-r.html",
     "title": "Tables in R",
     "section": "",
-    "text": "Unit to come.",
+    "text": "In this unit, we will discuss how to make publication-ready tables of data in R, and when making tables is appropriate (compared to visualizations).\n\n\n\nSome data are best in tables…but that means we have to learn how to make footnotes too.",
     "crumbs": [
       "Content",
       "6. Presenting Data and Results",
@@ -1409,7 +1409,7 @@
     "href": "content/module-data-presentation/tables-in-r.html#modern-table-packages",
     "title": "Tables in R",
     "section": "“Modern” table packages",
-    "text": "“Modern” table packages\nFor better or worse, the table package ecosystem in R has largely coalesced around three major families of packages. Each of these packages has pros and cons, and can generally make whatever table you need to make, and they are all very good packages.\nThe first of these sets of packages is the previously-mentioned knitr::kable() and kableExtra. These packages are relatively easy to use, but are not quite as flexible as the other two options. They will suffice for most tables if you like using them.\nThe second of these is the also-previously-mentioned flextable. The flextable package is notable for its consistency across many formats – for several years, flextable was the only table package that could guarantee your table would look the same in HTML, PDF, and Word. While Flextable certainly has a learning curve, I think the lengthy manual with several examples written by the author is fairly approachable, and flextable is the main package I have used in my research up to now.\nThe final family is the gt family of packages. The gt family, which stands for “grammar of tables” is developed by Posit, and intended to be the table version of ggplot2. This family revolves around the gt package. The syntax for making tables in this package is designed to be similar to tidyverse-style syntax, and is therefore probably the easiest to learn as part of this course. There are also many, many examples and tutorials showing how to use gt to make gorgeous tables. In the old days, gt was not a viable option for us because it didn’t work with Word, but that has been remedied and now gt is the official table package supported by Posit, which means there are a lot of resources showing how to use gt. The gt package can do almost everything, but if you need it, the gtExtras package provides even more options. There is currently no “gt extension gallery” like there is for ggplot2, but in time I think there will be.\nIn short, while all of these packages are great, I highly recommend that new users start practicing with the gt package, since this package will have the most learning resources and the most consistent development support for the foreseeable future.",
+    "text": "“Modern” table packages\nFor better or worse, the table package ecosystem in R has largely coalesced around three major families of packages. Each of these packages has pros and cons, and can generally make whatever table you need to make, and they are all very good packages.\nThe first of these sets of packages is the previously-mentioned knitr::kable() and kableExtra. These packages are relatively easy to use, but are not quite as flexible as the other two options. They will suffice for most tables if you like using them.\nThe second of these is the also-previously-mentioned flextable. The flextable package is notable for its consistency across many formats – for several years, flextable was the only table package that could guarantee your table would look the same in HTML, PDF, and Word. While Flextable certainly has a learning curve, the detailed manual with several examples written by the author is fairly approachable. It’s a package worth checking out.\nThe final family is the gt family of packages. The gt family, which stands for “grammar of tables” is developed by Posit, and intended to be the table version of ggplot2. This family revolves around the gt package. The syntax for making tables in this package is designed to be similar to tidyverse-style syntax, and is therefore probably the easiest to learn as part of this course. There are also many, many examples and tutorials showing how to use gt to make gorgeous tables. In the old days, gt was not a viable option for us because it didn’t work with Word, but that has been remedied and now gt is the official table package supported by Posit, which means there are a lot of resources showing how to use gt. The gt package can do almost everything, but if you need it, the gtExtras package provides even more options. There is currently no “gt extension gallery” like there is for ggplot2, but in time I think there will be.\nIn short, while all of these packages are great, I highly recommend that new users start practicing with the gt package, since this package will have the most learning resources and the most consistent development support for the foreseeable future.",
     "crumbs": [
       "Content",
       "6. Presenting Data and Results",
@@ -1476,7 +1476,7 @@
     "href": "content/module-data-presentation/assessment-presenting-results.html#create-a-publication-quality-table",
     "title": "Assessment - Presenting Results",
     "section": "Create a publication quality table",
-    "text": "Create a publication quality table\nFor this part, the easiest approach is to use the same data you used for the graph (or a subset of the data) and create a nice looking table.\nAlternatively, find a good-looking table somewhere online and try to recreate it. Of course, you need all data necessary to re-create the table. Often (but not always) that’s just the numbers in the table.\nAgain, start with AI. You can let it decide which R table package to use, or you can specify that as part of your prompt. Use whichever R table package you like. This tutorial shows how to make nice tables with the gt package. Our group uses flextable a lot.\nNo matter what R package you use to make the table, it should look professional, visually pleasing, and nicely convey the information. For inspiration, you can for instance check out this R table gallery. The R graph gallery also has a section on tables.\n\nAs for the graphs, if you want to challenge yourself, you can try to make your table interactive. There are several good R packages that allow you to create interactive tables inside a Quarto document. Interactivity only works if your output format is HTML, it won’t work for pdf or word. But in your case it’s part of your website, so it’s HTML and can include interactivity.\n\nAdd the code and explanatory text (e.g., your AI prompts) into the same presentation-exercise.qmd Quarto document. You should end up with code that takes some data and generates a nice-looking table.",
+    "text": "Create a publication quality table\nFor this part, the easiest approach is to use the same data you used for the graph (or a subset of the data) and create a nice looking table.\nAlternatively, find a good-looking table somewhere online and try to recreate it. Of course, you need all data necessary to re-create the table.\nYour table should be appropriately formatted to display some type of potentially interesting result. Your table should take up at most one standard letter-sized page if printed and should summarize information in a useful way (not just list the raw data, but for instance show summary statistics such as mean, percentage, etc.).\nYour table must contain an example of each of the following:\n\nFormatted text which can be bold, italic, etc.\nColored text or highlighted cells\nAdditional text outside of the regular table structure like spanning column headers or correctly attributed footnotes\nA descriptive caption explaining the useful information summary that your table represents.\n\nAdditionally, your table must contain at least one of the following advanced features:\n\nA column with some type of image for the values, which could potentially be a data visualization (e.g. sparklines).\nAutomatically calculated summary statistics (summary statistics that you calculate manually do not count towards this objective)\nAutomatically applied (not manual) conditional formatting (potentially overlapping with formatted or colored text/cells)\nInteractive features\n\nAs always you are welcome and encouraged to use an AI tool to get started. It is up to you which package you use to make the table. No matter what R package you use to make the table, it should look professional, visually pleasing, and nicely convey the information. For inspiration, you can for instance check out this R table gallery. The R graph gallery also has a section on tables.\n\nAs for the graphs, if you want to challenge yourself, you can try to make your table interactive. There are several good R packages that allow you to create interactive tables inside a Quarto document. Interactivity only works if your output format is HTML, it won’t work for pdf or word. But in your case it’s part of your website, so it’s HTML and can include interactivity.\n\nAdd the code and explanatory text (e.g., your AI prompts) into the same presentation-exercise.qmd Quarto document. You should end up with code that takes some data and generates a nice-looking table.",
     "crumbs": [
       "Assessments",
       "6. Presenting Data and Results"
@@ -1513,7 +1513,7 @@
     "text": "Get the quiz sheet for this module from the general Assessments page. Fill it in, then submit to the online grading system before the deadline.",
     "crumbs": [
       "Assessments",
-      "2. Data Analysis Introduction"
+      "2. Data Analysis Introduction & READy Workflow"
     ]
   },
   {
@@ -1524,7 +1524,7 @@
     "text": "More information\nSome more information on forks and pulls and what to do if things don’t go right can be found in happygitwithR. Note that a lot of the commands described for use on the command line (e.g. stash) can be applied graphically through GitKraken.\n\nGithub also has branches. Those are similar to forks but meant for more internal use. For instance, if you have a project and want to implement something new, but it might not work, you can create a branch, work in that branch, and once everything is ok, you can merge the branch into the main/master. This is useful if you write software that others are using, and you don’t want to break the whole thing. It is also helpful if you work with collaborators on a project. To be able to use branches, you need to be an owner or member of a repository. In contrast, you can fork any public repository.",
     "crumbs": [
       "Assessments",
-      "2. Data Analysis Introduction"
+      "2. Data Analysis Introduction & READy Workflow"
     ]
   },
   {
@@ -1535,7 +1535,7 @@
     "text": "Another fork and pull exercise\nThis is optional. You can do it at any time during this course (and more than once) 😁.\nHelp improve the course with your contributions! Find something wrong/unclear/worth improving with this course (e.g. a typo, something confusing, a broken link, a suggestion for a new reference, or anything else). Go to the Github repository for this course. Follow the steps outlined above: Fork the course to your personal account, clone it to your local computer, implement your updates, push it back to GitHub, then initiate a pull request. I will get a notification of your pull request. If things look ok and no conflicts exist, I will merge your improvements into the course. And just like that, you have contributed to improving this course! (And of course, you will be listed in the Acknowledgments section of the main course page.)\nAnother option for helping to improve the course website is to file a GitHub Issue. Feel free to do so any time during the course to let me know of anything that needs fixing.",
     "crumbs": [
       "Assessments",
-      "2. Data Analysis Introduction"
+      "2. Data Analysis Introduction & READy Workflow"
     ]
   },
   {
@@ -3286,8 +3286,8 @@
     "text": "For this unit, we will briefly discuss different types of variables and data formats in R.",
     "crumbs": [
       "Content",
-      "4A. All about Data",
-      "Data formats in R"
+      "4A. Data Introduction",
+      "Data Formats in R"
     ]
   },
   {
@@ -3298,8 +3298,8 @@
     "text": "Characters/strings\nA string is a collection of characters. You will often hear the labels “character” and “string” used interchangeably, though strictly speaking, a string is a collection of characters. Everything can be encoded as a character string. Unfortunately, you cannot do a lot of analysis with strings. For instance, if you have the numbers 2 and 3, you can add and subtract. But if you code those numbers as characters “2” and “3”, you can’t do much with them. Thus, transforming characters into other, more useful categories (if applicable) is a common task. It is common that you read in some data and there is a variable which should be numeric, but some entries are not (e.g., the original spreadsheet shows something like “&lt;10”). In this case, R reads all of these variables as characters. You then have to go in, clean the “&lt;10” value, and convert the rest to numeric. Sometimes you do want to work with strings directly. There are many tools and packages in R that are helpful, including base R command. The stringr package is particularly useful.\nIf you do any kind of analysis of text, you’ll be dealing with strings/characters. But even if you are not planning to analyze text, it is quite likely that you will need to work with strings at some point during a data analysis, even if it is only to find specific values, clean up variable names, etc. Thus, learning more about this topic is a good idea. A very powerful, and also very confusing way to deal with strings is to use what are called regular expressions (or regex for short). This concept applies to any programming language, not just R. Being at least somewhat familiar with the concept of regular expressions is useful. The rebus package is particularly useful for building regular expressions without knowing the highly specific syntax. However, learning regex applies to many different languages and is an incredibly powerful tool in your data science repertoire.\nIf you have no experience manipulating strings, I suggest you work through the Strings chapter (14) of R4DS, and do the exercises. The string processing chapter (25) of IDS contains further good material that is worth working through. Another good source is the Character Vectors chapter in the STAT 545 book by Jenny Bryan. Take a look at those various sources, decide which one is right for your level and go through some of them. And/or consult them as needed.",
     "crumbs": [
       "Content",
-      "4A. All about Data",
-      "Data formats in R"
+      "4A. Data Introduction",
+      "Data Formats in R"
     ]
   },
   {
@@ -3310,8 +3310,8 @@
     "text": "Factors\nFactors is the name that R gives to categorical variables. They can be ordered/ordinal or not. You need to make sure variables that should be coded as a factor are, and that those that shouldn’t be aren’t. For instance, you might have a variable with entries of 0, 1, and 2. Those could be numeric values, e.g., the number of siblings a person has. Or it could be a factor coding for 3 types of ethnicity (unordered), or 3 levels of socioeconomic status (ordered). You need to make sure it is coded as factor or numeric, based on what you know about the variable. An excellent package to work with factors is the forcats package.\nTo learn some more about factors, you might want to go through the Factors chapter of R4DS, and do the exercises. Factors are the most complicated basic data format, so it is worth spending extra time making sure you understand a bit how factors work.",
     "crumbs": [
       "Content",
-      "4A. All about Data",
-      "Data formats in R"
+      "4A. Data Introduction",
+      "Data Formats in R"
     ]
   },
   {
@@ -3322,8 +3322,8 @@
     "text": "Logicals\nYou can think of a logical variable as a type of categorical variable with 2 categories, TRUE and FALSE. Alternatively, in R, 0 is interpreted as FALSE and 1 as TRUE (and vice versa). R will sometimes treat logicals as numbers, and sometimes as categorical variables, so it is often more straightforward to code these variables as either numeric or categorical to be safe. You will use those logical values often when checking your data, e.g., if you want to see if your variable x is greater than 5, then the R command x &gt; 5 will return either TRUE or FALSE, based on the value of x.",
     "crumbs": [
       "Content",
-      "4A. All about Data",
-      "Data formats in R"
+      "4A. Data Introduction",
+      "Data Formats in R"
     ]
   },
   {
@@ -3334,8 +3334,8 @@
     "text": "Numeric value\nNumeric values can be integers or general numeric values (double). You generally do not need to care too much how exactly your numeric values are coded. Often, you can treat integers as general numeric value. (In R, a general numeric variable is called double – there is no single.) You might rarely come across a case where some analytic method or other bits of code requires integers to be specified as such. In R, you can use the as.integer() function to convert general numeric values to integers. You don’t really need any other special packages in R to deal with numeric values. Note that when you type an integer value, e.g. x &lt;- 2, into R, this is considered numeric by default. If you want to make sure it is treated as integer, add an L, e.g. x &lt;- 2L.\nOne issue to be careful about is if you do comparisons. For instance if x and y each contain some number and you expect it to be the same, but there was some rounding going on, it could be that if you do x == y you get a FALSE because you had x  = 2 and y = 1.99999997 - the latter not being exactly 2 because some rounding was happening. If this is the case, the safer approach is to check for abs(x - y) &lt; 1-e10 or some other small number; or alternatively you can use the shortcut all.equal(x, y). Basically you are looking if x and y are the same within some rounding error.",
     "crumbs": [
       "Content",
-      "4A. All about Data",
-      "Data formats in R"
+      "4A. Data Introduction",
+      "Data Formats in R"
     ]
   },
   {
@@ -3346,8 +3346,8 @@
     "text": "Dates and times\nWhile dates and times are a type of continuous numeric variable, you should assign the date class explicitly in R, which allows you to do more with them. Dates can be trick to work with in base R (which usually calls them POSIX variables). The lubridate package is a good package to work with dates, and is more user friendly. Others exist.\nTo learn some more about dates and times in R, check out the Dates and times chapter of R4DS as well as the Parsing Dates and Times chapter of IDS.\nThe nice thing about having explicit date formats is that you can do things like subtract one date from another to get the days between the two dates and R will automatically account for things like leap-years.\n\nExcel is notoriously bad at storing dates. It has some internal format that’s different than what you see in the spreadsheet. That means that at times, if you read an Excel file into R, the date is messed up. In my experience, the most robust option is to explicitly format the date (and really every column) in Excel as text. Then you can read this into R and re-code as date/factor/etc.",
     "crumbs": [
       "Content",
-      "4A. All about Data",
-      "Data formats in R"
+      "4A. Data Introduction",
+      "Data Formats in R"
     ]
   },
   {
@@ -3358,8 +3358,8 @@
     "text": "Special data types\nR has several symbols that represent a special type of object. Here’s a quick summary.\nTRUE and FALSE are words that are interpreted as logical values. The abbreviations T and F are also treated as logical values (so you should avoid overwriting those names). R also allows you to use 0 and 1 as logical (1=TRUE, 0=FALSE) but that can be confusing.\nNA (not available) is R’s default way of encoding a missing value. If something is missing, you can’t do useful things with it. For instance if you have this vector x1 &lt;- c(1,3,NA) and try to do mean(x1), you get NA again. For some functions, there is an ignore setting, e.g. mean(x1, na.rm=TRUE) removes the NA, then takes the mean. You can check if you have NA with is.na(x1). You’ll likely encounter NA frequently in your data analysis, and you need to be careful when you try to perform operations in the presence of NA.\nInf and -Inf can also show up when you do numerical operations, for instance divide by zero. If you perform further mathematical operations with infinity, you almost always end up with infinity again. Generally, if you end up with one of those, it’s an indication that you did some mathematical operation that you probably shouldn’t be doing (commonly divide by zero, or log of a negative number).\nNaN (Not a Number) happens when you do some mathematical operation that can’t be resolved to any number or infinity. For instance if you do 0/0 you’ll get NaN. Like Inf, NaN will generally mess up any further computations, so if you encounter it you should figure out where it came from and figure out a fix.\nNULL indicates something that exists but is empty. For instance if you want to set up a new list object to hold some future results, but want to start it empty, you can do x &lt;- list(NULL). And then you can later add elements to that list. You’ll likely not need to care too much about NULL initially, but if you start writing more code it is often a useful object.\nFor most of these special objects, there are functions is() and is.*(), where * is a specific data type, that let you check. For instance is.nan(x) will tell you if any element in x contains NaN.",
     "crumbs": [
       "Content",
-      "4A. All about Data",
-      "Data formats in R"
+      "4A. Data Introduction",
+      "Data Formats in R"
     ]
   },
   {
@@ -3370,8 +3370,8 @@
     "text": "Vectors\nVectors are a simple collection of elements in a single row or column. In R, the easiest way to create vectors is with the concatenate command, c(). An example is x1 &lt;- c(3,12,5). A single vector can contain only one element type (e.g., all characters or all numeric). If you try to mix and match, everything ends up as a character. Type x1 &lt;- c(3,12,5) and x2 &lt;- c(6, 5, 'h') into R and apply the class() command to both x1 and x2 and note the difference. It is worth mentioning that vectors can be of length 1. (Unlike some other languages, there is no separate concept of a scalar in R, a scalar is just a length one vector.) For instance if you define x3 &lt;- 1 and then check it with is(x3) you’ll see that is is classified as a numeric vector — of length 1, which you can find out with length(x3).",
     "crumbs": [
       "Content",
-      "4A. All about Data",
-      "Data formats in R"
+      "4A. Data Introduction",
+      "Data Formats in R"
     ]
   },
   {
@@ -3382,8 +3382,8 @@
     "text": "Matrices\nA matrix is a collection of elements in rows and columns. A matrix can contain only one element type. You can think of a matrix as a collection of horizontal vectors stacked on top of each other or vertical vectors next to each other.",
     "crumbs": [
       "Content",
-      "4A. All about Data",
-      "Data formats in R"
+      "4A. Data Introduction",
+      "Data Formats in R"
     ]
   },
   {
@@ -3394,8 +3394,8 @@
     "text": "Data frames\nA data frame has the same shape as a matrix, i.e., it is a collection of elements in rows and columns. The critical difference is that each column of a data frame can contain elements of different types. This makes it ideal for storing data, with each row and observation and each variable in a column, and different columns potentially with different data types. E.g., column 1 could be age and numeric, and column 2 could be gender and be categorical, etc. Data frames also have a name for each column. As the name might imply, a data frame is a very common way to store data. It is worth mentioning a version of a data frame called a tibble that is often used in the tidyverse. It is similar but not quite the same as the basic data frame. Most of the time, you can use one format or the other. You can read more about tibbles on its package website.",
     "crumbs": [
       "Content",
-      "4A. All about Data",
-      "Data formats in R"
+      "4A. Data Introduction",
+      "Data Formats in R"
     ]
   },
   {
@@ -3406,8 +3406,8 @@
     "text": "Lists\nLists are the most flexible data types in R. You can combine different elements as in data frames. Further, each element can be of varying length. For instance, you could have the first list element contain a person’s name, the second list element their age, the third their address. You can even have other elements inside lists, for instance, you could have a data frame as a list element containing the names and ages of the person’s parents. Lists are very flexible, and if you get deeper into data analysis, you’ll be working with them. The downside is that because they are more flexible, they can also be a bit more confusing to work with. With enough practice, you’ll figure it out. Also note that almost every function in R that returns something a bit more complicated to you (e.g., the result from a linear fit), returns it as a list.",
     "crumbs": [
       "Content",
-      "4A. All about Data",
-      "Data formats in R"
+      "4A. Data Introduction",
+      "Data Formats in R"
     ]
   },
   {
@@ -3418,8 +3418,8 @@
     "text": "Other data structures\nThe ones described above are the most important ones, but there are many others. Often, specific R packages come with their own structures. You are usually told how to use specific data structures, and there are generally versions of the structures just described.",
     "crumbs": [
       "Content",
-      "4A. All about Data",
-      "Data formats in R"
+      "4A. Data Introduction",
+      "Data Formats in R"
     ]
   },
   {
@@ -3430,7 +3430,7 @@
     "text": "Overview\nYou need data to do a data analysis — surprise!\nThis module discusses data. What it is, where to get it, how to load and store it, and some other basics of that sort.\n\n\nLearning Objectives\n\nBe familiar with basic data types.\nBe aware of data structure.\nKnow how to work with various data formats in R.\n\n\n\nContent\nThe module consists of the following units:\n\nBasic data types\nComplex data types\nData storage formats\nData formats in R\nThe data generation process",
     "crumbs": [
       "Content",
-      "4A. All about Data",
+      "4A. Data Introduction",
       "Data Overview"
     ]
   },
@@ -3442,8 +3442,8 @@
     "text": "For this unit, we will discuss basic data types that you will come across frequently.",
     "crumbs": [
       "Content",
-      "4A. All about Data",
-      "Basic data types"
+      "4A. Data Introduction",
+      "Basic Data Types"
     ]
   },
   {
@@ -3454,8 +3454,8 @@
     "text": "Quantitative variables\nThis data type, sometimes called interval scale data, generally allows one to do certain mathematical operations, e.g., subtraction or addition. Some quantiative variables are also ratio scale data, which means they have a true zero, or lowest value — for these data, multiplying, dividing, and taking ratios makes sense.\nDifferent subcategories exist:\n\nContinuous: Can, in principle, be any number. Examples are height, weight, age, etc.\nDiscrete: Can only take discrete (integer) values, e.g., the number of siblings a person has.\nFraction/Proportion: Continuous, but between 0-1.\nSometimes other special forms (e.g., only positive, only in some range).",
     "crumbs": [
       "Content",
-      "4A. All about Data",
-      "Basic data types"
+      "4A. Data Introduction",
+      "Basic Data Types"
     ]
   },
   {
@@ -3466,8 +3466,8 @@
     "text": "Qualitative variables\nBroadly speaking, qualitative variables are those that do not allow one to perform any mathematical operations such as subtraction or addition. Qualitative data which has no intrinsic order is also called nominal (scale) data. Types of such data are:\n\nDescriptive: e.g., free text data from participant interviews. This data typically has very different values for each individual and requires extra steps to aggregate into something that can be analyzed.\nCategorical: e.g., hair color, ethnicity. No ordering is possible. These are also called polytomous variables.\nDichotomous: A special and common case of categorical data is data with exactly 2 categories, e.g., yes/no, dead/alive, diseased/healthy, exposed/unexposed. These are also commonly called binary variables.",
     "crumbs": [
       "Content",
-      "4A. All about Data",
-      "Basic data types"
+      "4A. Data Introduction",
+      "Basic Data Types"
     ]
   },
   {
@@ -3478,8 +3478,8 @@
     "text": "Ordinal variables\nThis data type is usually considered a type of categorical variable, but it is worth thinking about it as something on its own. Ordinal data fall in between being strictly quantitative or strictly qualitative. For instance, if a question asks a person to rank their level of a pain on a scale from 1-10, a 7 is clearly higher than a 6, and a 6 higher than a 5. But it’s unclear if the difference between 5 and 6 is the same as 6 and 7. Thus it is not clear if one can do operations like subtraction (to get a difference of 1 in each case). Another example is level of education, which a survey might collect in categories of ‘no high school’, ‘high school’, ‘some college’, ‘college degree’, ‘graduate degree’. We could code that with numbers 1-5, and in some sense these items are ordered, but it’s unclear if one is justified in considering the difference between ‘high school (2)’ and ‘some college (3)’ the same as ‘some college (3)’ and ‘college degree (4)’. Typically ordinal data is more complicated to deal with than purely qualitative or quantitative data.",
     "crumbs": [
       "Content",
-      "4A. All about Data",
-      "Basic data types"
+      "4A. Data Introduction",
+      "Basic Data Types"
     ]
   },
   {
@@ -3490,8 +3490,8 @@
     "text": "Footnotes\n\n\nLogistic regression, which you might be familiar, is used for classification. However, the underlying model predicts a quantitative outcome (a value between 0 and 1 usually interpreted as a probability), which is then binned to make categorical predictions. This is true of many, but not all, classification approaches.↩︎",
     "crumbs": [
       "Content",
-      "4A. All about Data",
-      "Basic data types"
+      "4A. Data Introduction",
+      "Basic Data Types"
     ]
   },
   {
@@ -3644,8 +3644,8 @@
     "text": "Overview\nFor this unit, we will discuss why and how to document the different parts of your project.\n\n\nLearning Objectives\n\nKnow why documenting everything is essential.\nKnow ways to efficiently document different aspects of your project.\n\n\n\nIntroduction\nIf you do not explain the why, what and how of your project, it is essentially impossible for someone else to understand what’s going on. They might be able to technically reproduce what you did by running code in the order you specified, but they will unlikely be able to understand what’ going on in enough detail to be useful to them.\nThus, any practically meaningful reproducibility attempt requires ample documentation.\n\n\nDocument your project, folder and files\nTogether with a good structure for your project, you should provide documentation to orient users. The easiest way is to have readme text files. Plain .txt text files or simple.md Markdown files are best. There should be one for the overall project, and then as suitable for individual folders. Those files don’t need to be too detailed, but should explain what is to be found where, and what different files contain/do.\nAn important bit is to keep those readme files updated. If your documentation talks about files and folders that don’t exist because you renamed or deleted them, it is confusing. So if you do major (or even minor) updates, take a few seconds to update your readme files too. Definitely make sure they are up to date before you share it with others, e.g. collaborators or reviewers or readers.\n\n\nDocument your process\nIn addition to explaining your structure and the basics of your files, you should document what you are doing. This is in some sense the equivalent to a lab notebook. Some of this information might later make it into a finished product, but most of it might not. An ideal format for documenting is text that can be formatted somewhat, such as the markdown format. Quarto is excellent since it allows you to combine your code with documentation in a seamless manner.\nThis documentation should explain why you are doing what you are doing, and what you are thinking as you look at results, plots, etc.\n\n\nDocument your code\nThere is overlap between documenting your process and your code, but they are not the same. For instance you might write some commentary explaining that you deal with missing values by removing a few variables that contain mostly missing values, and for the remaining variables, remove any observations that has at least one missing. This would be the general explanation. Then you write code to do that. It is generally useful to document each line of code to explain what it does. This might seem like too much. But trust me, it helps. Code can get complicated, something that was obvious to you when you wrote it will not be in a few weeks, or will not be clear to someone else. Therefore, a good rule of thumb is that your code should be 50% or more comments. Each line of code can use a comment, and then have additional blocks of comment to explain what certain chunks of code are doing.\nThere is almost never too much documentation in code, but there certainly often is not enough.\nCommenting also helps you think clearly about what you are doing. If you end up with code that might not have enough comments, you could also try to ask some AI tool to add comments for you.\n\n\nSummary\nDocument everything. A lot. Others and your future self will thank you. Remember to documentation how your code works and also why you wrote the code you did.\n\n\nFurther Resources\n\nThe organization Write the Docs has a website with many resources, including a brief guide for beginners.\nGoogle’s developer documentation style guide is a very comprehensive free resource.\nYou might be interested in the idea of documentation driven development (DDD) (see i.a. this blog post), which is the idea that you should write down what your code will do, how a user will do each task, and how the code will internally do what it is supposed to before you even write the code down. It is a somewhat trendy philosophy that is maybe not 100% practical but will result in good (and often revised) documentation, by forcing you to do the thinking critically about how your code should work instead of just trying things.",
     "crumbs": [
       "Content",
-      "2B. READy workflows",
-      "Project documentation"
+      "2B. READy Workflows",
+      "Project Documentation"
     ]
   },
   {
@@ -3656,8 +3656,8 @@
     "text": "Overview\nThis unit provides an introduction to the concept of open research/science.\n\n\nLearning Objectives\n\nUnderstand the general idea of open science\nExplain what makes research reproducible and/or replicable\nKnow what FAIR data standards are\n\n\n\nIntroduction\nWhile READy principles and openness are not necessarily the same, they are often connected.\nThe idea is that if you provide others access to your data, code and other components of analysis - the open part - it is generally only useful if this is done in a READy framework. Otherwise, it might become close to impossible for others to reproduce and further build on your work.\n\n\nThe general idea of open science\nThere are many ways of defining and describing “open science”.\nIf you search online for “what is open science,” you will likely find various conceptual diagrams and descriptions. The papers Open science saves lives: lessons from the COVID-19 pandemic and From Open Data to Open Science provide pretty good conceptual discussions of open science, but I think the best of schematic summary is from NASA.\n\n\n\nSource: NASA\n\n\nNASA defines three components that are central to open science.\n\nAccessible – your research process and results need to be transparent. Open access, FAIR data, and code sharing all fall into this.\nReproducible – other people should be able to get the same results as you, and you should strive to make reusable products.\nInclusive – if your research is only accessible and reproducible for relatively well-off scientists at major institutions in the USA, it’s still not really open 🙂.\n\nIf you want a formal definition of “open science,” here’s the one from the OSTP, which is pretty comprehensive:\n\n“The principle and practice of making research products and processes available to all, while respecting diverse cultures, maintaining security and privacy, and fostering collaborations, reproducibility, and equity.”\n\n\n\nFederal open science requirements\nWhile the concepts of reproducible research and open science have been around for a while, they have recently increased in prominence. Several US government organizations have said that 2023 is the Year of Open Science, and a recent Office of Science and Technology Policy memo has recommended that all federal agencies take serious steps towards open science practices (more on what exactly this means later).\nFederal agencies like the NIH have been requiring data sharing and public releases of papers (on PMC) for some time now, but these recommended measures are even stronger, and in my opinion, a very positive direction for science. It is quite likely that if you work with federal funding in the near future, you will be required to share your data and code publicly as soon as you decide to publish. The exact implementation of these protocols hasn’t been determined yet (nor has the degree to which these recommendations will be formally implemented), but the writing is on the wall, so to speak.\nIt is easier for you to get comfortable with reproducible research methods and open science now, rather than scrambling to learn it in the future!\n\n\nAccessibility and FAIR data\nOpen access publishing is a big topic, but for the purposes of this class I will just say that I think you should publish Open Access whenever possible. In the future, it seems likely that any federally funded projects in the US will require an open access fund as part of the budget, as publishing OA can often be prohibitively expensive. If you want to learn more, check out the Wikipedia page on Open Access, or if you really want to learn more, see Peter Suber’s book on OA.\nThe main purpose of this section is to talk about data sharing. Data sharing used to be a pretty contentious topic, but fortunately it is more normalized now than it has ever been before, and thanks to NIH (and other agency mandates), it will likely be a normal part of science before too long.\nOf course just dumping messy data without any documentation into a depository is not great for accessibility and reproducibility. As some of you noticed during this course, even data from the CDC or other reputable organizations is often very poorly formatted and does not have a lot of metadata or documentation to help you out. To somewhat solve this issue, the FAIR data standards was created. FAIR stands for:\n\nFindable: when someone goes to your paper or project, they should be able to easily get to the data source.\nAccessible: users need to be able to access the data, and data are stored in a way that users can feasibly get them.\nInteroperable: data should be in standardized formats, using standard vocabulary. You should be specific if your data is derived from another dataset or if the user will need other related datasets.\nReusable: data should be documented and version-controlled when you release it, with clear descriptions of what information is contained in the data, who can use the data, and for what purposes.\n\nThe FAIR standard was originally described in this 2016 publication. Another great resource is the GO FAIR initiative. It is worth taking a short look at both these resources.\nOf course dealing with things like data use agreements and individual privacy is paramount, so 100% achieving these goals all the time is not feasible. Sometimes you might need to use synthetic data based on your real data, or remove certain information from your data to protect privacy, or require a data use agreement before you can distribute the data to individuals. We should strive for data to be as FAIR as possible, but protecting individual privacy is equally important!\nIn general, a lot of authors still hide behind “I can’t share my data, it’s confidential” as an excuse for not having to share. Most of the time, it is possible to share de-identified data without confidentiality problems. Hopefully, the near future will make data sharing much more common and also easier.\n\n\nInclusivity\nThe topic of inclusivity in data science is heavily tied into the idea of data ethics – critical thinking about the potential results and consequences of the products we create is crucial in data science. Many of you have some public health training, and are therefore likely familiar with the Belmont Report.\nRegardless of your scientific background, when working with data (especially human subjects data), the guiding principles of respect for persons, beneficence, and justice should be critical considerations for all of our research.\nFor some additional reading on inclusivity and data science ethics, see for instance these resources:\n\nElaine O Nsoesie, Sandro Galea, Towards better Data Science to address racial bias and health equity, PNAS Nexus, Volume 1, Issue 3, July 2022, pgac120, https://doi.org/10.1093/pnasnexus/pgac120\nO’Neil, Cathy. Weapons of math destruction. Crown, 2016. ISBN: 978-0553418811.\nNoble, Safiya Umoja. Algorithms of Oppression: How Search Engines Reinforce Racism. NYU Press, 2018. ISBN: 978-1479837243.\nhttps://datapractices.org/manifesto/\nFloridi L, Taddeo M. What is data ethics?. Philos Trans A Math Phys Eng Sci. 2016;374(2083):20160360. doi:10.1098/rsta.2016.0360\n\n\n\nPractical considerations\nIt is all nice and good to tell people that their data needs to be FAIR, and that their science needs to be open. But the question is, why do it? Most people might agree that there are societal benefits. For instance having a resource like GenBank for genetic sequences has allowed many scientists beyond those who created the original sequence to use the data and answer important scientific questions. However, there generally need to also be benefits for individuals to entice them to spend time following Open Science standards. This is happening increasingly. On one hand, tools to do research in an Open Science framework are getting increasingly better. For instance the whole R + Quarto framework we’ve been using in class makes it rather easy to do things automated and reproducible. Many other similar tools and resources are becoming available. Another potential benefit of Open Science is increased visibility. If others can use your data and models, they will likely cite your work. They might even want to collaborate with you. It seems for those individuals who are good at sharing, the benefits outweigh the perceived risks (such as “being scooped”). And the final, ever increasing “benefit” is that publishers and funding agencies increasingly require it. So if you don’t follow Open Science standards, it might soon get hard to publish work or get funding. It’s less of a “benefit” and more of an “avoid the penalties” thing, but regardless, it is an important practical consideration.\n\n\n\n\nSummary\nWhile open research is not the same as READy principles, there is a lot of overlap. With the increasing requirements for research (data as well as code) to be made openly accessible and FAIR, it is important to ensure your analyses are done in a way that it is easy to publicly share your results and for others to build on it. The READy principles will ensure this is the case.\n\n\nFurther Resources\n\nThe Center for Open Science, a nonprofit dedicated to promoting open science practices and community change, maintains a blog with several thought provoking readings.\nStatistician Andrew Gelman sometimes writes about open science, mostly from a statistical perspective and has some nice comments on replication. (1) (2)\nFOSTER is a European organization with a set of free courses on open science principles.",
     "crumbs": [
       "Content",
-      "2B. READy workflows",
-      "Open research"
+      "2B. READy Workflows",
+      "Open Research"
     ]
   },
   {
@@ -3668,8 +3668,8 @@
     "text": "Overview\nThis module covers different aspects and topics related to data analysis projects done in a reproducible, efficient, automated, and documented (READy) manner.\n\n\nLearning Objectives\n\nKnow different components of a reproducible, efficient, automated, and documented (READy) workflow and approaches to implementing it.\n\n\n\nContent\nThe module consists of the following units:\n\nIntroduction to READy\nProject organization\nProject management\nSoftware management\nProject documentation\nTools for a READy workflow\nOpen research",
     "crumbs": [
       "Content",
-      "2B. READy workflows",
-      "READy workflows overview"
+      "2B. READy Workflows",
+      "READy Workflows Overview"
     ]
   },
   {
@@ -3680,8 +3680,8 @@
     "text": "For this unit, we will discuss ways to make sure your software is managed in such a way that it allows future reproducibility.",
     "crumbs": [
       "Content",
-      "2B. READy workflows",
-      "Software management"
+      "2B. READy Workflows",
+      "Software Management"
     ]
   },
   {
@@ -3692,8 +3692,8 @@
     "text": "R package renv\nThe renv package (renv stands for reproducible environments) is a tool that allows you to install all packages you use for a given project as part of that project. It records the packages and exactly which version of the package is used. If you then give your project to someone else, they can install these exact versions of the packages on their machine, and therefore ensure that they are using the same versions you did.\nNote that this only holds for R packages, not R itself. But again, R doesn’t change that rapidly, so even if you run something under a newer or older version of R, most of the time it is not much of a problem.\nBecause reproducibility issues related to outdated packages are quite common, it is a good idea to use renv for all your data analysis projects. Once you got the hang of it, it is fairly easy to use. The renv website has a good tutorial.",
     "crumbs": [
       "Content",
-      "2B. READy workflows",
-      "Software management"
+      "2B. READy Workflows",
+      "Software Management"
     ]
   },
   {
@@ -3704,8 +3704,8 @@
     "text": "renv alternatives\nThere is a package called packrat. It’s basically the older version of renv and not as good. There is also a package called capsule, which is supposed to be an renv alternative. I have no experience with it.\nPosit (formerly R Studio) has the Posit package manager, which is an alternative to renv. It’s more powerful, but also more complex and not free.\nThere are further, more specialized options. For instance the company Metrum Research Group has a tool called the Metrum Package Network. It is also fairly complex and not recommended for individual use.\nBasically, at the time of this writing, renv is pretty much the only useful option for individuals working on projects and wanting to manage R packages.",
     "crumbs": [
       "Content",
-      "2B. READy workflows",
-      "Software management"
+      "2B. READy Workflows",
+      "Software Management"
     ]
   },
   {
