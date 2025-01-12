@@ -3,9 +3,7 @@ title: More Data Science Resources
 subtitle: ""
 ---
 
-I kept adding resources until things got too unwieldy and the *Course
-Resources* page was becoming too large 😁. So I decided to split things
-into two pages. The [**Course Resources**](resources-course.qmd) page
+The [**Course Resources**](resources-course.qmd) page
 lists materials directly related to and used/mentioned in the course.
 This page lists a lot of other resources that are not heavily featured
 in the course, but that might be useful and interesting. Everything
@@ -133,6 +131,8 @@ listed and not listed), I'd love to receive feedback.
 -   [`juicr` R
     package](https://cran.r-project.org/web/packages/juicr/index.html)
     allows one to extract numerical values from figures.
+- [Cleaning Medical Data with R](https://shannonpileggi.github.io/rmedicine-data-cleaning-2023/) - materials from a workshop focusing on processing medical data. 
+
 
 # Data Visualization
 
