@@ -25,7 +25,7 @@ Find your fellow group members and organize yourself. You can find group assignm
 
 ### Part 1
 
-Take a look inside the `starter-analysis-exercise` folder. You will find files and folders that provide a template for a data analysis. This is a simplified version of a Github template called [dataanalyis-template](https://github.com/andreashandel/dataanalysis-template). You'll be using the full template for your class project later in the course. For now, go to the github repository for the [dataanalysis-template](https://github.com/andreashandel/dataanalysis-template) and read the information in the `README.md` file (shown at the bottom of the repository website). You can ignore the bits about `renv`, we are not using that just yet.
+Take a look inside the `starter-analysis-exercise` folder. You will find files and folders that provide a template for a data analysis. This is a simplified version of a Github template called [dataanalyis-template](https://github.com/ahgroup/dataanalysis-template). You'll be using the full template for your class project later in the course. For now, go to the github repository for the [dataanalysis-template](https://github.com/ahgroup/dataanalysis-template) and read the information in the `README.md` file (shown at the bottom of the repository website). You can ignore the bits about `renv`, we are not using that just yet.
 
 Then take a look at the different folders, files, `readme` comments that you find inside the `starter-analysis-exercise` folder. Feel free to run the various R and Quarto scripts. The idea is that you get some familiarity with the whole setup to prepare you for the next steps.
 
