@@ -39,8 +39,8 @@ You can expand and resize the columns/rows of the Excel file so you can make sur
 
 * [Module 1 – Course and tools introduction](../quizsheets/m1_mada_course_tools_student.xlsx) - you have 2 attempts available for this one.
 * [Module 2 – Data analysis introduction ](../quizsheets/m2_mada_data_analysis_intro_student.xlsx)
+* [Module 3 – R coding basics](../quizsheets/m3_mada_coding_basics_student.xlsx)
 
-<!-- * [Module 3 – R coding basics](../quizsheets/m3_mada_coding_basics_student.xlsx) -->
 <!-- * [Module 4 – All about data](../quizsheets/m4_mada_data_student.xlsx) -->
 <!-- * [Module 5 – Data Processing](../quizsheets/m5_mada_data_processing_student.xlsx) -->
 <!-- * [Module 6 – Data presentation](../quizsheets/m6_mada_presentation_student.xlsx) -->
