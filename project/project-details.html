@@ -180,6 +180,7 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting started</a></li>
   <li><a href="#part-1" id="toc-part-1" class="nav-link" data-scroll-target="#part-1">Part 1</a></li>
   <li><a href="#part-2" id="toc-part-2" class="nav-link" data-scroll-target="#part-2">Part 2</a></li>
   <li><a href="#sec-part-3" id="toc-sec-part-3" class="nav-link" data-scroll-target="#sec-part-3">Part 3</a></li>
@@ -212,7 +213,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2024-04-10</p>
+      <p class="date-modified">2025-02-05</p>
     </div>
   </div>
     
@@ -229,17 +230,24 @@ ul.task-list li input[type="checkbox"] {
 <p>Note that you should not consider the scores below as corresponding to a letter grade. Instead, I use those to differentiate between different aspects of the project. Only at the end while I make actual grade-like scores, which will likely involve curving (up, never down).</p>
 <p>At my discretion, I might consider assignments even if they are submitted after the deadline. In that case, I might take off a point for lateness.</p>
 </section>
+<section id="getting-started" class="level1">
+<h1>Getting started</h1>
+<p>As soon as possible - definitely a few weeks before the part 1 deadline - start thinking about possible topics and data sources.</p>
+<p><strong>To practice the vital skill of working in a team, I strongly encourage you to team up with a classmate for this project.</strong> Post your topic idea or general topic interest in the <code>project-related</code> channel as soon as you have one and use that channel to find a partner. If for some reason you want/need to do the project on your own, that is also acceptable.</p>
+<p>Once you got your team formed, follow the setup instructions on the <strong>Project Overview</strong> page.</p>
+<p>The following sections describe in some more detail what the deliverables are for each part of the project.</p>
+</section>
 <section id="part-1" class="level1">
 <h1>Part 1</h1>
 <p><strong>The main objective for part 1 is to describe data and question in enough detail that I can assess if the planned project is feasible.</strong></p>
 <p>Use the <code>manuscript.qmd</code> file. Remove or replace the template information. Add your proposed project title and your name(s).</p>
 <p>To that end, provide the following pieces of information:</p>
 <ul>
-<li>Briefly describe what the data is, how it was collected, where you will get (or got) it from. How many observations do you have, what was measured? Anything else important to report about the data?</li>
-<li>At this stage you are not required to already have and show the data, but if you do, even better. Then add a few lines of code which load the data and using some of the commands you learned about, provide summary descriptions of the data.</li>
+<li>Describe what the data is, how it was collected, where you will get (or got) it from. How many observations do you have, what was measured? How many variables are included in the data? You will want some data that has enough detail (observations and variables) to allow you to apply some of the modeling approaches we cover in this course. Anything else important to report about the data?</li>
+<li>At this stage you are not required to already have and show the data, but if you do, even better. Have a few lines of code which load the data and using some of the commands you learned about, provide summary descriptions of the data.</li>
 <li>Explain the question you want to answer using the data. What will be your outcome(s) of interest (if any)? What (if any) specific predictors will you focus on? What relations/patterns are you looking for in the data?</li>
 <li>As much as you know, suggest how you will analyze it. At this stage in the course, we haven’t covered analysis approaches yet, so you can keep things vague and non-technical here.</li>
-<li>You are allowed, but not yet required, to provide background information for the question you plan to answer. For instance you can describe why it’s an interesting question, who else has done similar analyses, how your analysis will be new/different, etc. Similar to what you read in an introduction to a research paper. For the final report, you’ll need these parts. For part 1, they are not required, but you are welcome to already write down some of that.</li>
+<li>At this stage, you can (but don’t have to yet) provide background information for the question you plan to answer. For instance you can describe why it’s an interesting question, who else has done similar analyses, how your analysis will be new/different, etc. Similar to what you read in an introduction to a research paper. For the final report, you’ll need these parts. For part 1, they are not required, but you are welcome to already write down some of that.</li>
 <li>Eventually, for your final report, what you write for this part will go into different sections of the full report. Some will go into the introduction, some in the methods section. You can already place these items there, or for now just write them as a single section.</li>
 </ul>
 <p>Grading for this part will follow the following rubric:</p>
@@ -279,6 +287,9 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
+<div class="warning">
+<p>Do not use any paths to load/save files that only work on your computer! If I can’t run your code and render your qmd files because of that, I’ll take points off. Use the <code>here()</code> package mentioned many times in the course materials.</p>
+</div>
 </section>
 <section id="part-2" class="level1">
 <h1>Part 2</h1>

@@ -25,7 +25,7 @@ components of a data analysis we will cover in this class.
 -   Reporting/communicating your findings
 -   Doing everything reproducibly
 
-**You can do the class project either on your own or in a team of two.**
+**You are encouraged to do the project in a team of two. Solo is also ok.**
 
 # Timeline
 
@@ -45,11 +45,13 @@ but they might change, so keep checking that document).
 # Project Requirements
 
 You can pick your project topic and data source pretty much however you
-like. The only requirements are:
+like. The project does need to meet these requirements:
 
 -   Real world (messy) data.
 -   An interesting question.
 -   An analysis that has not been done previously.
+-   Application of topics we cover in this course: data processing, exploratory analysis, visualization, etc. 
+-   Use of some of the modeling approaches (e.g., cross-validation, machine learning) we will cover in this class.
 -   A fully reproducible and automated analysis using the tools we use
     in this class.
 
@@ -88,28 +90,26 @@ from more than one source.*
 Each assignment needs to be submitted in a fully reproducible form,
 using the tools we cover in the class (R, Quarto, GitHub, etc.). You
 should create a Github repository (using the template described below)
-which should contain all the files for your project. Name it
-`YOURLASTNAME-MADA-project`. The preferred type is a public repository,
-if you have data that requires to be kept confidential, you can make it
-a private repository. If you need to use a private repository, please
-let me know.
+which should contain all the files for your project. 
+
+If you work in a team - the preferred setup - one of you should create a new repository for the project. Name it `LASTNAME1-LASTNAME2-MADA-project`. If you do it solo, of course just have your name in the repository.
+
+The preferred type is to make it a public repository. If you have data that requires to be kept confidential, you can make it a private repository. If you need to use a private repository, please let me know. You will then also need to invite me (and later in the course, a few of your classmates) as collaborators.
 
 The main document should be a Quarto file, which can be turned into a
 suitable output format (html or word or pdf). This should have the
-structure of a scientific paper. I suggest you use the `manscript.qmd`
-file of the template and replace the template content with your content.
-I also suggest having the output be a word document, since that is what
+structure of a scientific paper. Use the `manscript.qmd`
+file contained in the template and replace the template content with your content. I suggest having the output be a word document, since that is what
 most journals want for submission of a scientific paper. The template I
 provide is set up for word output. However, if you for instance decide
-to include interactive figures or apps (using e.g. Shiny) in your
+to include interactive figures or apps (using e.g., Shiny) in your
 analysis project, you can also pick html as output. If for some reason
 you want/need pdf, that's ok too (then you need a LaTeX system
 installed, see the Quarto documentation for how to do that).
 
 Structure your project similar to the provided template (see below),
 with data, scripts, results and manuscript in different folders, various
-R scripts to perform different bits of the analysis, and a final Rmd
-file that pulls everything in and generates the report.
+R scripts to perform different bits of the analysis, and a main Quarto file that pulls everything in and generates the report/paper.
 
 Use a setup that resembles a real research paper. A main manuscript file
 in Quarto format should contain text, the main results (figures/tables),
@@ -160,6 +160,9 @@ reference formatting. You can use it as starting point. Feel free to
 switch the reference formatting style. You do need to use a setup and
 reference manager that plays nicely with Quarto. I recommend Zotero with the Better Bibtex extension.
 
+::: {.warning}
+Do not use any paths to load/save files that only work on your computer! If I can't render your qmd file because of that, I'll take points off. Use the `here()` package mentioned many times in the course materials. 
+:::
 
 # Feedback and Assessment
 
