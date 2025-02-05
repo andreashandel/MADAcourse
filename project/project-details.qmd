@@ -17,6 +17,16 @@ At my discretion, I might consider assignments even if they are
 submitted after the deadline. In that case, I might take off a point for
 lateness.
 
+# Getting started
+
+As soon as possible - definitely a few weeks before the part 1 deadline - start thinking about possible topics and data sources.
+
+**To practice the vital skill of working in a team, I strongly encourage you to team up with a classmate for this project.** Post your topic idea or general topic interest in the `project-related` channel as soon as you have one and use that channel to find a partner. If for some reason you want/need to do the project on your own, that is also acceptable.
+
+Once you got your team formed, follow the setup instructions on the **Project Overview** page.
+
+The following sections describe in some more detail what the deliverables are for each part of the project.
+
 # Part 1
 
 **The main objective for part 1 is to describe data and question in
@@ -27,11 +37,11 @@ information. Add your proposed project title and your name(s).
 
 To that end, provide the following pieces of information:
 
--   Briefly describe what the data is, how it was collected, where you
+-   Describe what the data is, how it was collected, where you
     will get (or got) it from. How many observations do you have, what
-    was measured? Anything else important to report about the data?
+    was measured? How many variables are included in the data? You will want some data that has enough detail (observations and variables) to allow you to apply some of the modeling approaches we cover in this course. Anything else important to report about the data?
 -   At this stage you are not required to already have and show the
-    data, but if you do, even better. Then add a few lines of code which
+    data, but if you do, even better. Have a few lines of code which
     load the data and using some of the commands you learned about,
     provide summary descriptions of the data.
 -   Explain the question you want to answer using the data. What will be
@@ -41,7 +51,7 @@ To that end, provide the following pieces of information:
 -   As much as you know, suggest how you will analyze it. At this stage
     in the course, we haven't covered analysis approaches yet, so you
     can keep things vague and non-technical here.
--   You are allowed, but not yet required, to provide background
+-   At this stage, you can (but don't have to yet) provide background
     information for the question you plan to answer. For instance you
     can describe why it's an interesting question, who else has done
     similar analyses, how your analysis will be new/different, etc.
@@ -61,6 +71,11 @@ Grading for this part will follow the following rubric:
 | Somewhat insufficient | Most components are present, but noticeable gaps exist, or existing materials can't be fully reproduced.                                 | 2         |
 | Not sufficient        | Submission is rather incomplete, has major missing parts which does not allow assessment of feasibility of proposed project              | 1         |
 | Absent                | (Almost) everything of submission is missing                                                                                             | 0         |
+
+::: {.warning}
+Do not use any paths to load/save files that only work on your computer! If I can't run your code and render your qmd files because of that, I'll take points off. Use the `here()` package mentioned many times in the course materials. 
+:::
+
 
 # Part 2
 
