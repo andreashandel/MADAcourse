@@ -45,7 +45,7 @@ analysis, with lots of freedom within each category.
 I mentioned this point previously, probably more than once 😄: This need
 to make choices and decisions on how exactly to perform various steps of
 an analysis is one reason why p-values are generally meaningless, or at
-least do not mean what people think/claim they mean. For some good and
+least do not mean what people think/claim they mean. [Data dredging/p-hacking](https://en.wikipedia.org/wiki/Data_dredging) is common. For some good and
 easy introductions to that topic, see the
 [**Pitfalls**](../../resources/resources-general.qmd#sec-pitfalls)
 section on the [**General

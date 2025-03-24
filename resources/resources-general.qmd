@@ -182,8 +182,7 @@ listed and not listed), I'd love to receive feedback.
     statistical analyses. But the concept applies even if one doesn't
     use p-values.
 -   You can find a fun hands-on exploration of the potential problem of
-    researcher degrees of freedom in this [538
-    visualization](https://projects.fivethirtyeight.com/p-hacking/) and
+    researcher degrees of freedom on [this page](https://stats.andrewheiss.com/hack-your-way/) and
     another [choose-your-own adventure
     story](https://jabde.com/2022/03/20/p-hack-your-own-adventure/).
 -   For further discussions of this general problem, see e.g. this
@@ -199,6 +198,7 @@ listed and not listed), I'd love to receive feedback.
     degrees of freedom, combined with incomplete reporting, can lead to
     apparently nonsensical results. The study is a (fake) psychology
     study, but everything applies in general and it is easy to follow.
+-   Another interesting example is this [ecology study](https://bmcbiol.biomedcentral.com/articles/10.1186/s12915-024-02101-x) where teams of analysts looking at the same data came up with many different answers.    
 -   Not surprisingly, *xkcd* has also [covered the topic of
     p-hacking](https://xkcd.com/882/).
 
