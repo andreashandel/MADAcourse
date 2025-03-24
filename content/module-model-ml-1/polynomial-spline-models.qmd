@@ -167,7 +167,7 @@ fitting, you have to tweak/tune them as discussed below.
 
 A version of the models just discussed are those that allow non-smooth
 jumps in the outcome as a predictor varies. As a simple example, say you
-want to model current time as function of geographical location. Since
+want to model current time as a function of geographical location. Since
 humans divided the world arbitrarily into time zones, as you move from
 one zone to another, there is an abrupt change in the outcome (time)
 with a small change in the predictor (longitude). A bad way of modeling
