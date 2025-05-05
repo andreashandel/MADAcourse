@@ -55,7 +55,7 @@ Then go through the very nice [Getting Started with Quarto tutorial](https://qua
 
 Quarto is the more powerful successor of [R Markdown](https://rmarkdown.rstudio.com/). R Markdown is still around and functional. However, most effort is going into implementing new features for Quarto, and it is already much more full-featured compared to R Markdown. 
 
-Occasionally, you might still need to use R Markdown, and you will find a lot of online information for R Markdown. Quarto and R Markdown are very similar, so often what works in one will also work in the other. 
+Occasionally, you might still need to use R Markdown, and you will find a lot of online information for R Markdown. Since Quarto is the successor of R Markdown and shares many similiarities, often what works in R Markdown will also work in Quarto. 
 
 
 
