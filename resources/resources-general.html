@@ -31,7 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../resources/resources-glossary.html" rel="next">
+<link href="../resources/resources-data.html" rel="next">
 <link href="../resources/resources-course.html" rel="prev">
 <link href="../media/MADAlogo.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js"></script>
@@ -165,6 +165,12 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../resources/resources-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Resources</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../resources/resources-glossary.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Glossary</span></a>
   </div>
@@ -182,7 +188,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#general-data-science" id="toc-general-data-science" class="nav-link active" data-scroll-target="#general-data-science">General Data Science</a></li>
   <li><a href="#data-sources-and-wrangling" id="toc-data-sources-and-wrangling" class="nav-link" data-scroll-target="#data-sources-and-wrangling">Data Sources and Wrangling</a></li>
   <li><a href="#data-visualization" id="toc-data-visualization" class="nav-link" data-scroll-target="#data-visualization">Data Visualization</a></li>
-  <li><a href="#machine-learning" id="toc-machine-learning" class="nav-link" data-scroll-target="#machine-learning">Machine Learning</a></li>
+  <li><a href="#machine-learning-ml" id="toc-machine-learning-ml" class="nav-link" data-scroll-target="#machine-learning-ml">Machine Learning (ML)</a></li>
+  <li><a href="#artificial-intelligence-ai" id="toc-artificial-intelligence-ai" class="nav-link" data-scroll-target="#artificial-intelligence-ai">Artificial Intelligence (AI)</a></li>
   <li><a href="#sec-pitfalls" id="toc-sec-pitfalls" class="nav-link" data-scroll-target="#sec-pitfalls">Pitfalls and best practices in data analysis</a>
   <ul class="collapse">
   <li><a href="#researcher-degrees-of-freedom-p-hacking" id="toc-researcher-degrees-of-freedom-p-hacking" class="nav-link" data-scroll-target="#researcher-degrees-of-freedom-p-hacking">Researcher degrees of freedom (p-hacking)</a></li>
@@ -191,9 +198,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#general-statistical-analysis" id="toc-general-statistical-analysis" class="nav-link" data-scroll-target="#general-statistical-analysis">General Statistical Analysis</a></li>
   <li><a href="#bayesian-analysis" id="toc-bayesian-analysis" class="nav-link" data-scroll-target="#bayesian-analysis">Bayesian Analysis</a></li>
   <li><a href="#causal-analysis" id="toc-causal-analysis" class="nav-link" data-scroll-target="#causal-analysis">Causal Analysis</a></li>
-  <li><a href="#machine-learning-ml" id="toc-machine-learning-ml" class="nav-link" data-scroll-target="#machine-learning-ml">Machine Learning (ML)</a></li>
-  <li><a href="#artificial-intelligence-ai" id="toc-artificial-intelligence-ai" class="nav-link" data-scroll-target="#artificial-intelligence-ai">Artificial Intelligence (AI)</a></li>
   <li><a href="#r-coding" id="toc-r-coding" class="nav-link" data-scroll-target="#r-coding">R coding</a></li>
+  <li><a href="#r-and-shiny" id="toc-r-and-shiny" class="nav-link" data-scroll-target="#r-and-shiny">R and Shiny</a></li>
   <li><a href="#gitgithub" id="toc-gitgithub" class="nav-link" data-scroll-target="#gitgithub">Git/GitHub</a></li>
   <li><a href="#quarto" id="toc-quarto" class="nav-link" data-scroll-target="#quarto">Quarto</a></li>
   <li><a href="#individuals-producing-data-science-r-content" id="toc-individuals-producing-data-science-r-content" class="nav-link" data-scroll-target="#individuals-producing-data-science-r-content">Individuals producing Data Science &amp; R content</a></li>
@@ -224,7 +230,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2025-03-24</p>
+      <p class="date-modified">2025-06-04</p>
     </div>
   </div>
     
@@ -262,7 +268,9 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="https://ds4biomed.tech/"><em>Data Science for the Biomedical Sciences</em></a> - another free online textbook. Part of a workshop, but can also be used for self-learning.</li>
 <li><a href="https://hastie.su.domains/ElemStatLearn/"><em>Elements of Statistical Learning</em></a> - is a somewhat advanced book on statistical/machine learning. Not useful as introduction, but a potentially good reference.</li>
 <li><a href="https://christophm.github.io/interpretable-ml-book/"><em>Interpretable Machine Learning</em></a> is an online book that discusses approaches that can be used to start making sense of sometimes complex ML models.</li>
-<li><a href="https://datawithr.com/">Introduction to Data Analysis with R</a> is an online book with a public health perspective.</li>
+<li><a href="https://datawithr.com/">Introduction to Data Analysis with R</a> is an online book with a public health perspective.<br>
+</li>
+<li><a href="https://stat545.com/">Data wrangling, exploration, and analysis with R - Stat 545</a> - A website that goes with a course that Jenny Bryan used to teach.</li>
 </ul>
 </section>
 <section id="data-sources-and-wrangling" class="level1">
@@ -284,10 +292,20 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="https://r-graph-gallery.com/index.html">The R Graph Gallery</a> has a large collection of plots made with R, also showing the code. A great place for inspiration and copy/paste/modify.</li>
 </ul>
 </section>
-<section id="machine-learning" class="level1">
-<h1>Machine Learning</h1>
+<section id="machine-learning-ml" class="level1">
+<h1>Machine Learning (ML)</h1>
 <ul>
 <li><a href="https://www.youtube.com/@statquest">StatQuest</a> is a YouTube channel with lots of great videos explaining many statistical and machine learning concepts in a fairly easy to understand manner.</li>
+<li><a href="https://mlu-explain.github.io/">Machine Learning University (MLU)</a> is an educational offering from Amazon with several nice tutorials covering important ML-related topics. It also includes very basic statistical concepts such as linear/logistic regression.</li>
+<li><a href="https://m-clark.github.io/introduction-to-machine-learning/">Machine Learning</a> - an online reference (almost book) which nicely explains some of the basics of machine learning.</li>
+<li><a href="https://developers.google.com/machine-learning/glossary/">A machine learning list of terms and definitions.</a></li>
+</ul>
+</section>
+<section id="artificial-intelligence-ai" class="level1">
+<h1>Artificial Intelligence (AI)</h1>
+<ul>
+<li><a href="http://www.deeplearningbook.org/">Deep Learning book</a></li>
+<li>Given the importance and rapid change of AI, I also made a <a href="../content/module-ai/ai-resources/ai-resources.html">separate resource unit.</a></li>
 </ul>
 </section>
 <section id="sec-pitfalls" class="level1">
@@ -302,14 +320,17 @@ ul.task-list li input[type="checkbox"] {
 <li>Another interesting example is this <a href="https://bmcbiol.biomedcentral.com/articles/10.1186/s12915-024-02101-x">ecology study</a> where teams of analysts looking at the same data came up with many different answers.<br>
 </li>
 <li>Not surprisingly, <em>xkcd</em> has also <a href="https://xkcd.com/882/">covered the topic of p-hacking</a>.</li>
+<li><a href="http://fivethirtyeight.com/features/not-even-scientists-can-easily-explain-p-values/">Nice discussion of p-values</a></li>
+<li><a href="http://fivethirtyeight.com/features/statisticians-found-one-thing-they-can-agree-on-its-time-to-stop-misusing-p-values/">Another stab at p-values</a></li>
+<li><a href="https://emcrit.org/pulmcrit/p-value-cutoffs/">Another good discussion of the problem with p-values</a></li>
 </ul>
 </section>
 <section id="reproducible-research" class="level2">
 <h2 class="anchored" data-anchor-id="reproducible-research">Reproducible research</h2>
 <ul>
-<li><a href="https://www.nature.com/articles/s41597-022-01143-6">Trisovic et al. 2022</a> provides a nice glimpse at the problems that still exist when trying to reproduce/replicate prior studies by re-running the code.</li>
-<li><a href="http://hbiostat.org/rflow/"><em>R Workflow</em></a> is an online book describing how to do reproducible research using the R ecosystem and the still fairly new <a href="https://quarto.org/">Quarto</a> framework.</li>
-<li>For more Quarto, the <a href="https://github.com/mcanouil/awesome-quarto">Awesome Quarto</a> repository has a nice curated list of links to resources.</li>
+<li><p><a href="https://www.nature.com/articles/s41597-022-01143-6">Trisovic et al.&nbsp;2022</a> provides a nice glimpse at the problems that still exist when trying to reproduce/replicate prior studies by re-running the code.</p></li>
+<li><p><a href="https://ecrcommunity.plos.org/2016/08/05/the-irreproducibility-crisis-an-opportunity-to-make-science-better/">Another blog post discussing (lack of) reproducibility in science</a></p></li>
+<li><p><a href="http://hbiostat.org/rflow/"><em>R Workflow</em></a> is an online book describing how to do reproducible research using the R ecosystem and the still fairly new <a href="https://quarto.org/">Quarto</a> framework.</p></li>
 </ul>
 </section>
 </section>
@@ -341,19 +362,10 @@ set of lecture notes](https://data.princeton.edu/wws509/notes/c7s1) provide - am
 <li><a href="https://ajph.aphapublications.org/doi/full/10.2105/AJPH.2018.304337">Short paper by Hernán 2018</a> provides a very basic and easy introduction and commentary on the topic of causal analysis.</li>
 <li><a href="https://mixtape.scunning.com/index.html"><em>Causal Inference - The Mixtape</em></a> is the free online version of a book that provides a good introduction to causal analysis/inference/modeling.</li>
 <li><a href="https://www.hsph.harvard.edu/miguel-hernan/causal-inference-book/"><em>Causal Inference: What If</em></a> is a great book on the topic that’s freely available online.</li>
-<li>The above mentioned <a href="https://xcelab.net/rm/statistical-rethinking/"><em>Statistical Rethinking</em></a> by Richard McElreath also covers a good bit of causal analysis at a very accessible introductory level. He also has several great recordings on the topic on his <a href="https://www.youtube.com/channel/UCNJK6_DZvcMqNSzQdEkzvzA">YouTube channel</a>.</li>
+<li>The above mentioned <a href="https://xcelab.net/rm/statistical-rethinking/">Statistical Rethinking</a> by Richard McElreath also covers a good bit of causal analysis at a very accessible introductory level. He also has several great recordings on the topic on his <a href="https://www.youtube.com/channel/UCNJK6_DZvcMqNSzQdEkzvzA">YouTube channel</a>.</li>
 <li><a href="https://r-causal.github.io/causal_workshop_website/">Causal Inference in R Workshop</a> contains workshop materials and a link to a book covering the topic.</li>
+<li><a href="https://theeffectbook.net/">The Effect: An Introduction to Research Design and Causality</a> - focus on causal inference.</li>
 </ul>
-</section>
-<section id="machine-learning-ml" class="level1">
-<h1>Machine Learning (ML)</h1>
-<ul>
-<li><a href="https://mlu-explain.github.io/">Machine Learning University (MLU)</a> is an educational offering from Amazon with several nice tutorials covering important ML-related topics. It also includes very basic statistical concepts such as linear/logistic regression.</li>
-</ul>
-</section>
-<section id="artificial-intelligence-ai" class="level1">
-<h1>Artificial Intelligence (AI)</h1>
-<p>Given the importance and rapid change of AI, I made a <a href="../content/module-ai/ai-resources/ai-resources.html">separate resource unit.</a></p>
 </section>
 <section id="r-coding" class="level1">
 <h1>R coding</h1>
@@ -370,6 +382,21 @@ set of lecture notes](https://data.princeton.edu/wws509/notes/c7s1) provide - am
 <li><a href="https://rstats.wtf/"><em>What They Forgot to Teach You About R</em></a> is the beginning of an online book which covers some topics rarely found elsewhere. As of this writing, the book is fairly incomplete, but still worth checking out. Especially the first several chapters and the <em>debugging R code</em> sections are worth learning/reading.</li>
 <li><a href="https://sjspielman.github.io/introverse/"><em>The <code>Introverse</code> R package</em></a> is providing more novice-friendly help files for important <code>tidyverse</code> functions. If you struggle with the default help file for a function, check out this package.</li>
 <li><a href="https://www.youtube.com/@RProgramming101">R Programming 101</a> is a YouTube channel with R tutorials that students have found useful.</li>
+<li><a href="https://bookdown.org/ndphillips/YaRrr/">YaRrr! The Pirate’s Guide to R:</a> A nice R introduction with a piratey bend</li>
+<li><a href="http://www.springer.com/series/6991">‘Use R’ series of books</a> - A long and growing series of books on a lot of different R topics. From beginner to advanced. Many university libraries have a subscription to Springer Online, which allows you to get the books for free.</li>
+<li><a href="https://posit.co/resources/cheatsheets/">Posit Cheatsheets</a> contain useful single-page summaries of many R related topics and packages.</li>
+<li><a href="http://adv-r.had.co.nz/">“Advanced R” by Hadley Wickham for more advanced R coding</a></li>
+<li><a href="https://r-pkgs.org/">“R packages” by Hadley Wickham and Jennifer Bryan</a>. This (free online) book alone is enough to get a package done. Should definitely be the first (and maybe even only) source to read/use.</li>
+<li><a href="http://cran.r-project.org/web/views/">The Task View sorting R packages into categories is often useful</a></li>
+</ul>
+</section>
+<section id="r-and-shiny" class="level1">
+<h1>R and Shiny</h1>
+<ul>
+<li><a href="http://shiny.rstudio.com/">Official shiny webpage</a></li>
+<li><a href="https://github.com/daattali/advanced-shiny">Collection of Shiny tips and tricks</a>, <a href="https://deanattali.com/blog/advanced-shiny-tips/">see also here</a> and <a href="https://shiny.rstudio.com/articles/dynamic-ui.html">here</a></li>
+<li><a href="https://engineering-shiny.org/">Engineering Production-Grade Shiny Apps</a></li>
+<li><a href="https://unleash-shiny.rinterface.com/">Outstanding User Interfaces with Shiny</a> - a book covering advanced Shiny material, covering advanced styling, mobile development, integration with other web technologies, etc.</li>
 </ul>
 </section>
 <section id="gitgithub" class="level1">
@@ -383,7 +410,8 @@ set of lecture notes](https://data.princeton.edu/wws509/notes/c7s1) provide - am
 <ul>
 <li>The <a href="https://quarto.org/">Quarto website</a> has a ton of great information and documentation.</li>
 <li>Here is another example and template of setting up a website with <a href="https://www.marvinschmitt.com/blog/website-tutorial-quarto/">Quarto</a>, similar to what you are asked to do for the Introductory Exercise.</li>
-<li><a href="https://jadeyryan.com/blog/2024-02-19_beginner-quarto-netlify/">This blog post</a> by Jadey Ryan is a very beginner-friendly setup of a Quarto website that does not involve Git/GitHub.<br>
+<li><a href="https://jadeyryan.com/blog/2024-02-19_beginner-quarto-netlify/">This blog post</a> by Jadey Ryan is a very beginner-friendly setup of a Quarto website that does not involve Git/GitHub.</li>
+<li><a href="https://bartlettje.github.io/dissemination_quarto/">Dissemination using Quarto and Github Pages</a> is an online book by James Bartlett which contains a lot of information about using Quarto and Github Pages, not just for websites but also other output formats.<br>
 </li>
 <li><a href="https://qmdclub.com/">Quarto Club</a> is a collection of nice Quarto website examples. Most of them have their source code on GitHub, so you can see how the creators of those pages accomplished what they made, and shamelessly copy/paste/adapt 😁.</li>
 <li><a href="https://github.com/mcanouil/awesome-quarto">Awsome Quarto</a> is a collection of links to coll and interesting Quarto-based materials and resources.</li>
@@ -402,15 +430,8 @@ set of lecture notes](https://data.princeton.edu/wws509/notes/c7s1) provide - am
 <h1>Lists and other sources</h1>
 <ul>
 <li><a href="https://www.bigbookofr.com/">Big Book of R</a> - a website listing and summarizing several hundred books, many free, related to R and Data Science. If you are looking for a resource on a specific topic, this is a good place to check.</li>
-<li>By now, there are hundreds of books on R and Data Science available online. Many of these books are written in bookdown, a version of R Markdown. You will learn all about it in this course. It is worth checking out the <a href="https://bookdown.org/">main bookdown website</a> as well as the <a href="https://bookdown.org/home/archive/">archive list</a> and scrolling through the list of books. Some of the books you can find there are very good. Of course, there is also a good bit of “noise”.</li>
-<li>Another recent list of good R and Data Science resources is <a href="https://github.com/Chris-Engelhardt/data_sci_guide">Chris Engelhardt’s GitHub repository</a>.</li>
-<li><a href="https://teachdatascience.com/">Teach Data Science</a> - a blog with short, informative posts on various aspects related to data science using R.</li>
-<li><a href="https://m-clark.github.io/introduction-to-machine-learning/">Machine Learning</a> - an online reference (almost book) which nicely explains some of the basics of machine learning.</li>
 <li>RStudio has a <a href="https://resources.rstudio.com/the-essentials-of-data-science">collection of materials for data science</a>.</li>
-<li><a href="https://www.rstudio.com/resources/cheatsheets/">R Studio cheatsheets</a> are 1 page reference documents that quickly let you see how you use specific R packages or do certain tasks. A very useful resource, definitely check them out.</li>
-<li><a href="https://github.com/business-science/cheatsheets/blob/master/Data_Science_With_R_Workflow.pdf">A meta-cheatsheet</a> - this is a cheat-sheet showing you links to different R packages and their cheat-sheets for specific tasks. A nice overview document, developed by the folks at <a href="https://www.business-science.io/">business-science.io</a>.</li>
 <li><a href="https://www.mbastack.org/data-science-learning-resources/">Data Science Learning Resources</a> - a collection of links to resources that discuss general aspects of the data science field.</li>
-<li>I created lists related to R and Data Analysis (as well as other topics). You can find all resource lists on <a href="https://andreashandel.github.io/research-and-teaching-resources/">my website</a>. (These lists are works in progress, and some are better/more useful than others. Feel free to send me links/resources to include).</li>
 </ul>
 
 
@@ -1258,8 +1279,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../resources/resources-glossary.html" class="pagination-link" aria-label="Glossary">
-        <span class="nav-page-text">Glossary</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../resources/resources-data.html" class="pagination-link" aria-label="Data Resources">
+        <span class="nav-page-text">Data Resources</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
