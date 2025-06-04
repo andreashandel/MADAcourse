@@ -1,0 +1,82 @@
+---
+title: Data Resources
+subtitle: ""
+---
+
+This page lists possible resources for data that might be suitable for the course project, or also generally for research.
+
+
+__This list needs cleaning.__
+
+
+# General Data related resources
+
+* [Guide to Open Data Publishing & Analytics](http://blog.kaggle.com/2016/10/21/a-guide-to-open-data-publishing-analytics/) - A good article describing best practices for publishing data openly. Is also a good read for those who want to analyze other's data.
+
+* [A short list of data related R packages](https://rviews.rstudio.com/2017/11/01/r-data-packages/) - packages that either access data or include data
+
+* [Google's Data Search Engine](https://toolbox.google.com/datasetsearch)
+
+* [Reddit forum related to data sources](https://www.reddit.com/r/datasets/)
+
+
+# Some data Sources
+(listed in no particular order)
+
+* [Kaggle Data](https://www.kaggle.com/datasets) - A growing number of datasets used in Kaggle data analysis contests and available for any other use.
+
+* [Nasdaq Data Link](https://data.nasdaq.com/) - mainly finance related data
+
+* [NHANES](http://www.cdc.gov/nchs/nhanes.htm) - longstanding and thorough survey done by CDC
+
+* [SEER](http://seer.cancer.gov/) - Cancer data
+
+* [CDC WONDER](http://wonder.cdc.gov/) - list of mainly CDC online databases
+
+* [Healthy People Website](https://health.gov/healthypeople) - contains among other things links to various data sources
+
+* [HCUP](https://www.hcup-us.ahrq.gov/)  - collection of health related databases, focusing on US wide and state-specific samples of ER and hospital visits. Not free, but not too expensive.
+
+* [Clinical Study Data Request](https://www.clinicalstudydatarequest.com/) - a way to get (tedious) access to clinical trial data
+
+* [EMA Clinical Data Portal](https://clinicaldata.ema.europa.eu/web/cdp/home) - looks like a way to get access to some clinical trial data for EMA registered studies.
+
+* [MIMIC](https://mimic.physionet.org/) - a free and open database of critical care patient visits to a Boston hospital.
+
+* [Data.gov](http://www.data.gov/) - federak government data platform.
+
+* [Analyze Survey Data for Free](http://asdfree.com/) - Step by Step Instructions to Explore Public Microdata from an Easy to Type Website
+
+* [Vaccine Safety Datalink (VSD)](https://www.cdc.gov/vaccinesafety/ensuringsafety/monitoring/vsd/accessing-data.html)
+
+* [Global Health Data Exchange / IHME](http://ghdx.healthdata.org/)
+
+* [Vaccine Adverse Event Reporting System (VAERS)](https://vaers.hhs.gov/)
+
+* [National EMS Data (NEMSIS)](https://nemsis.org/)
+
+* [Data from the UN](http://data.un.org/)
+
+* [Inter-university Consortium for Political and Social Research (ICPSR)](http://www.icpsr.umich.edu/) - access to various social and behavioral sciences data.
+
+* [Federal Reserve in Atlanta Data Center](http://acrdc.gsu.edu/index.html)
+
+* [Database to search health related government data](https://www.healthdata.gov/)
+
+* [ImmPort](https://immport.niaid.nih.gov) - NIH's main repository for immunological data.
+
+
+
+## Infectious disease data
+
+* [Project Tycho](https://www.tycho.pitt.edu/) - infectious disease data
+* http://www.viprbrc.orgrelated 
+* http://eupathdb.org
+* [ClinEpiDB](https://clinepidb.org) - a database of (a few) clinical epidemiology studies, focusing on infectious diseases. 
+*	http://www.cdc.gov/flu/index.htm
+*	http://www.ncbi.nlm.nih.gov/genomes/FLU/FLU.html
+*	SystemsInfluenza.org
+*	OTIS on CDC WONDER: http://wonder.cdc.gov/tb.html
+
+
+

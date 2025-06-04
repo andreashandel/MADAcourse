@@ -331,5 +331,7 @@ website:
       file: resources/resources-course.qmd
     - text: General Resources
       file: resources/resources-general.qmd
+    - text: Data Resources
+      file: resources/resources-data.qmd
     - text: Glossary
       file: resources/resources-glossary.qmd

@@ -1,12 +1,23 @@
 # Overall
 
-Most general comments/thoughts are in the Notes and Thoughts document in the off-line course folder.
-
+Most general course comments/thoughts are in the Notes and Thoughts document in the off-line course folder.
+The comments here are technical and related to the working of the website.
 
 # Notes
 
--   I'm currently using gh-pages branch for publishing. 
-- Run quarto publish locally to update the site on the server.
+- I disabled/removed renv since it's taking too long.
+- These packages are needed: 
+    - `webexercises`
+    - `quarto`
+    - `knitr`
+    - `rmarkdown`
+    - `tidyverse`
+    - `fs`
+    - `stringr`
+
+
+- I'm currently using gh-pages branch for publishing. Local website content in _site is not synced with github. 
+- Run "quarto publish gh-pages" to update the site on the server.
 - See Quarto documentation for details: https://quarto.org/docs/publishing/github-pages.html
 
 
