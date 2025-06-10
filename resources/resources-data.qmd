@@ -65,6 +65,7 @@ __This list needs cleaning.__
 
 * [ImmPort](https://immport.niaid.nih.gov) - NIH's main repository for immunological data.
 
+* [medicaldata R package](https://higgi13425.github.io/medicaldata/) - contains several medical datasets that can be used to practice data analysis. The website also contains links to a few messy (kinda real world) data sets.
 
 
 ## Infectious disease data
