@@ -1,5 +1,5 @@
 ---
-title: MADA – Spring 2025 – Schedule
+title: MADA – Spring 2026 – Schedule
 subtitle: ""
 toc: FALSE
 ---
@@ -19,25 +19,25 @@ See each exercise for details.
 
 | **Module Topic** | **Start and end dates** | Quiz | Exercise | **Discussion** | Project |
 |------------|------------|------------|------------|------------|------------|
-| Module 1 -- Course and tools introduction | 1/6 -- 1/10 | Y | Portfolio start | Introductions |  |
-| Module 2 -- Data analysis introduction & READy workflows | 1/13 -- 1/17 | Y | Starter analysis (group work) | Reproducible research example |  |
-| Module 3 -- R coding basics | 1/20 -- 1/24 | Y | Data analysis and coding (group work) | Module Reflection |  |
-| Module 4 -- Data introduction & Synthetic data | 1/27 -- 1/31 | Y | Complex or Synthetic data (solo work) | *None* | Part 1 due |
-| Module 5 -- Data processing | 2/3 -- 2/7 | Y | Data wrangling (group work) | AI tools |  |
-| Module 6 -- Presenting data | 2/10 -- 2/14 | Y | Figures and Tables (solo work) | Exercise feedback |  |
-| Module 7 -- Statistical analysis overview | 2/17 -- 2/21 | Y | *None* | Scientific Paper Evaluation | Part 2 due |
-| Module 8 -- Model fitting | 2/24 -- 2/28 | Y | Model fitting (solo work) | Module Reflection |  |
-| **Spring Break** | **3/3 -- 3/7** |  |  |  |  |
-| Module 9 -- Model assessment | 3/10 -- 3/14 | Y | *None* | Module Reflection | Part 3 due |
-| Module 10 -- Model improvement | 3/17 -- 3/21 | Y | Model performance and predictions (group work) | *None* | Project reviews due |
-| Module 11 -- Machine learning models I | 3/24 -- 3/28 | Y | Machine Learning Models (solo work) | Projects |  |
-| Module 12 -- Machine learning models II | 3/31 -- 4/4 | Y | *None* | Machine Learning methods | Part 4 due |
-| Module 13 -- The complete analysis workflow | 4/7 -- 4/11 | Y | Tidytuesday analysis (solo work) | Course feedback |  |
-| Finishing Project | 4/14 -- 4/18 | N | *None* | *None* | Part 5 due |
-| Project Reviews | 4/21 -- 4/25 | N | *None* | *None* | Project reviews due |
-| Final project revision | 4/28 -- 5/2 | N | *None* | *None* | Part 6 due |
+| Module 1 -- Course and tools introduction | 1/12 -- 1/16 | Y | Portfolio start | Introductions |  |
+| Module 2 -- Data analysis introduction & READy workflows | 1/19 -- 1/23 | Y | Starter analysis (group work) | Reproducible research example |  |
+| Module 3 -- R coding basics | 1/26 -- 1/30 | Y | Data analysis and coding (group work) | Module Reflection |  |
+| Module 4 -- Data introduction & Synthetic data | 2/2 -- 2/6 | Y | Complex or Synthetic data (solo work) | *None* | Part 1 due |
+| Module 5 -- Data processing | 2/9 -- 2/13 | Y | Data wrangling (group work) | AI tools |  |
+| Module 6 -- Presenting data | 2/16 -- 2/20 | Y | Figures and Tables (solo work) | Exercise feedback |  |
+| Module 7 -- Statistical analysis overview | 2/23 -- 2/27 | Y | *None* | Scientific Paper Evaluation | Part 2 due |
+| Module 8 -- Model fitting | 3/2 -- 3/6 | Y | Model fitting (solo work) | Module Reflection |  |
+| **Spring Break** | **3/9 -- 3/13** |  |  |  |  |
+| Module 9 -- Model assessment | 3/16 -- 3/20 | Y | *None* | Module Reflection | Part 3 due |
+| Module 10 -- Model improvement | 3/23 -- 3/27 | Y | Model performance and predictions (group work) | *None* | Project reviews due |
+| Module 11 -- Machine learning models I | 3/30 -- 4/3 | Y | Machine Learning Models (solo work) | Projects |  |
+| Module 12 -- Machine learning models II | 4/6 -- 4/10 | Y | *None* | Machine Learning methods | Part 4 due |
+| Module 13 -- The complete analysis workflow | 4/13 -- 4/17 | Y | Tidytuesday analysis (solo work) | Course feedback |  |
+| Finishing Project | 4/20 -- 4/24 | N | *None* | *None* | Part 5 due  |
+| Project Reviews | 4/27 -- 5/1 | N | *None* | *None* | Project reviews due |
+| Final project revision | 5/4 --  5/6 (Wednesday) | N | *None* | *None* | Part 6 due |
 
-*Note: Withdrawal deadline is 4/3.*
+*Note: Withdrawal deadline is April 9.*
 
 ## Synchronous Zoom meetings
 
