@@ -43,3 +43,4 @@ vignettes/*.pdf
 
 # Don't commit _site to avoid messy diffs
 /_site/
+**/*.quarto_ipynb

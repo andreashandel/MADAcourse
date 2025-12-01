@@ -161,6 +161,14 @@ This class is online. You are expected to submit all assignments by their due da
 If you have questions about any aspect of the course, please do not hesitate to ask for help. The course materials describe in detail the ways you can ask for help.
 
 
+## Plagiarism, AI, and related topics
+
+I strongly encourage you to use AI tools as part of this course. They have become a vital part of doing data analysis and coding, and you need to learn how to use those tools properly and efficiently. That said, you should be transparent and judicious about your use of AI tools. If you use AI tools to help you, you should indicate where. I expect you might have AI running 'in the background' as you code. If that is the case, your code should have a statement that it is partially written with the help of AI. Similarly, any other work that is not your own (e.g. you found someone else's code to do a certain thing for you) should be acknowledged. You should generally provide a link or reference to the source of any code or text that is not your own. If in doubt, be explicit and detailed and state what you did and where you got help from.
+
+Overall, the goal of any course assignment is to help you learn. AI is a powerful tool to help you learn, but it's also a powerful tool to avoid learning. Not doing the work, or not understanding and supervising the tools you are using (e.g. AI), means you won't learn much. So use them to enhance your learning, not to avoid it.
+
+
+
 ## University Honor Code and Academic Honesty Policy
 
 All academic work must meet the standards contained in *A Culture of Honesty*. All students are responsible to inform themselves about those standards before performing any academic work. More detailed information about academic honesty can be found on UGA's [honesty webpage](http://www.uga.edu/honesty/).
