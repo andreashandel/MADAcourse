@@ -89,6 +89,8 @@ website:
       contents:
       - text: Course Introduction
         file: content/module-intro-tools/introduction-course.qmd
+      - text: Tools Introduction
+        file: content/module-intro-tools/introduction-tools.qmd
       - text: R and Rstudio
         file: content/module-intro-tools/tools-randrstudio.qmd
       - text: GitHub Introduction
