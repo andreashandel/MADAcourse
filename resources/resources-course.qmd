@@ -67,27 +67,8 @@ let me know.
 
 # Tools
 
--   We'll be using [R](https://www.r-project.org/) and [R Studio
-    Desktop](https://www.rstudio.com/products/rstudio/download/). The [R
-    and R Studio
-    document](../content/module-intro-tools/tools-randrstudio.qmd) has
-    details.
--   We will also be using [Git](https://git-scm.com/) and
-    [GitHub](https://github.com/). You need to get that software and a
-    GitHub user account. I also recommend/assume you are using the
-    [GitKraken](https://www.gitkraken.com/) client (but you don't have
-    to). See the [**GitHub introduction
-    document**](../content/module-intro-tools/tools-github-introduction.qmd) for details.
+-   We'll be using various software tools in this course. All tools are available for free. More information can be found in the **Course ad Tools Introduction** unit of the course. 
 
-# Important notes
-
--   The company now called
-    **Posit** was called **R Studio**. You will likely see the old label
-    show up. The **software editor** we use for writing R code is still called R
-    Studio.
--   **Quarto** is fairly new, in the past we used **R Markdown** instead. You will likely see references to **R
-    Markdown**. Just think of it as now being Quarto (i.e. instead of
-    `.Rmd` files we now work with `.qmd` files). They are very similar, Quarto is basically the newer version of R Markdown. R Markdown still works, but Quarto is more powerful, so it's the better option to use/learn it.
 
 # General help
 

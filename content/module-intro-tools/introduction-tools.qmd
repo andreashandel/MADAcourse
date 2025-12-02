@@ -1,0 +1,58 @@
+---
+title: Tools Introduction 
+subtitle: ""
+---
+
+## Introduction
+
+This unit provides a brief introduction to the various course tools, and points you to further resources to get started with those tools.
+
+## Learning Objectives
+
+The specific learning objectives for this unit are:
+
+-   Know what tools we are using in this course.
+-   Know where to learn more about these tools.
+
+
+## Course Tools
+
+Every data analysis project requires a set of tools to get the job done. In this course, we will be using a variety of tools to help us perform data analyses in a modern, reproducible way. 
+
+Since the use of these tools is an important part of the course, it is essential that you get familiar with them early on. The first assignment this week will ask you to use a good number of these tools.
+
+
+# Main Tools
+
+-   We will use the R software for coding.
+-   We will use Positron (an editor and graphical frontend to R). You can use a different editor if you want (e.g. RStudio), but the instructions assume you are using Positron.
+-   We will use Quarto, which nicely plays with R/Rstudio to let you create easy, automated workflows.
+-   We will use Git/GitHub for exercises and the project.
+
+
+# Also Used Tools
+
+-   This website is the main resource for all materials.
+-   We will use Discord for discussions and help.
+-   We will use an online system for quizzes.
+
+
+# Important notes
+
+Over the years that I've been teaching the course, the tools used in the course changed. Noticable changes are the following:
+
+- The company now called **Posit** was formerly called **R Studio**. You will likely see the old label show up here and there. 
+- The **software editor** we used in the past for writing R code is called **R Studio.** R Studio still exists, but a lot of new development effort is going into Posit's new editor **Positron**. This is the first year I'm switching to Positron for the class. Mentions of R Studio might still happen here and there.
+- **Quarto** is also fairly new, in the past we used **R Markdown** instead. Again, you might come across references to **R Markdown** in the course materials or online. Quarto and R Markdown share many similarities. Quarto is basically a newer/better/expanded version of R Markdown. R Markdown still works, but Quarto is more powerful, so it's the better option to use/learn it.
+- In the past, I used a tool for Git/GitHub called **GitKraken**. I decided that it's not worth using another tool, so now I'm focusing on GitHub Desktop and the built-in GitHub support of Positron. Again, there might be some GitKraken references in the materials, and you can certainly check it out if you want.
+
+
+# Learning the tools
+
+Since the tools change over time, I decided to have a separate location with small courses/tutorials on how to use the tools we use in this course.
+
+You can find these tutorials on this page:
+
+
+
+
