@@ -56,7 +56,7 @@ Here are my goals, promises, and expectations for this course.
 -   There is generally a lot of material for each unit. You are expected to go through the main components at a level that allows you to get the big picture and be able to answer the quiz questions. Once you get the overall idea, consider the materials to be resources you can visit on demand, e.g., when you are working on the exercises.
 -   You will be placed in groups throughout the course. The hope is that this will create a support group of classmates where you can help each other. Assignments often require interaction among group members (like in a real-world team), and I hope you will interact with your group members outside the assignments as well. You are welcome and encouraged to interact with anyone else in the course.
 
-# Course Tools
+<!-- # Course Tools
 
 The next unit introduces the tools and resources to get started with them.
 
@@ -69,7 +69,7 @@ is is a brief overview of the tools we will be using for this class. The next mo
 -   We will use RStudio (a graphical frontend to R). You can use a different editor if you want, but all instructions assume you are using RStudio.
 -   We will use Quarto, which nicely plays with R/Rstudio to let you create easy, automated workflows.
 -   We will use Git/GitHub for exercises and the project.
--   We will use GitKraken as Git/GitHub frontend. You can use a different software, but all instructions assume you are using GitKraken.
+-   We will use GitKraken as Git/GitHub frontend. You can use a different software, but all instructions assume you are using GitKraken. -->
 
 # Assessments
 
