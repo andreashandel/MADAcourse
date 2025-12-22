@@ -6,7 +6,7 @@ The comments here are technical and related to the working of the website.
 # Notes
 
 - I disabled/removed renv since it's taking too long.
-- These packages are needed: 
+- These packages are needed (possibly an incomplete list): 
     - `webexercises`
     - `quarto`
     - `knitr`
@@ -14,6 +14,8 @@ The comments here are technical and related to the working of the website.
     - `tidyverse`
     - `fs`
     - `stringr`
+    - `dslabs`
+    - `gapminder`
 
 
 - I'm currently using gh-pages branch for publishing. Local website content in _site is not synced with github. 

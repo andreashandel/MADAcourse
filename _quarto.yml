@@ -91,27 +91,27 @@ website:
         file: content/module-intro-tools/introduction-course.qmd
       - text: Tools Introduction
         file: content/module-intro-tools/introduction-tools.qmd
-      - text: R and Rstudio
-        file: content/module-intro-tools/tools-randrstudio.qmd
-      - text: GitHub Introduction
-        file: content/module-intro-tools/tools-github-introduction.qmd
-      - text: GitHub and R Workflow
-        file: content/module-intro-tools/tools-github-r-workflow.qmd
-      - text: Quarto & Co
-        file: content/module-intro-tools/tools-quarto.qmd
-      - text: AI Tools
-        file: content/module-intro-tools/tools-ai.qmd
-      - text: Reference Management
-        file: content/module-intro-tools/tools-reference-management.qmd
-      - text: Guidance and Tips for R/RStudio/GitHub
-        file: content/module-intro-tools/tools-tips-guidance.qmd
-    - section: 2A. Data Analysis Introduction
+      # - text: R and Rstudio
+      #   file: content/module-intro-tools/tools-randrstudio.qmd
+      # - text: GitHub Introduction
+      #   file: content/module-intro-tools/tools-github-introduction.qmd
+      # - text: GitHub and R Workflow
+      #   file: content/module-intro-tools/tools-github-r-workflow.qmd
+      # - text: Quarto & Co
+      #   file: content/module-intro-tools/tools-quarto.qmd
+      # - text: AI Tools
+      #   file: content/module-intro-tools/tools-ai.qmd
+      # - text: Reference Management
+      #   file: content/module-intro-tools/tools-reference-management.qmd
+      # - text: Guidance and Tips for R/RStudio/GitHub
+      #   file: content/module-intro-tools/tools-tips-guidance.qmd
+    - section: 2. Data Analysis Introduction
       contents:
       - text: Motivating Examples
         file: content/module-data-analysis/data-analysis-motivation.qmd
       - text: Data Analysis Overview
         file: content/module-data-analysis/data-analysis-overview.qmd
-    - section: 2B. READy Workflows
+    - section: 3. READy Workflows
       contents:
       - text: READy Workflows Overview
         file: content/module-ready-workflow/ready-overview.qmd
@@ -129,12 +129,6 @@ website:
         file: content/module-ready-workflow/ready-tools/ready-tools.qmd
       - text: Open Research
         file: content/module-ready-workflow/ready-open/ready-open.qmd
-    - section: 3. R Coding Basics
-      contents:
-      - text: R Coding Basics
-        file: content/module-coding-basics/rcoding-basics.qmd
-      - text: Tidyverse and Friends
-        file: content/module-coding-basics/rcoding-tidyverse.qmd
     - section: 4A. Data Introduction
       contents:
       - text: Data Overview
@@ -293,10 +287,10 @@ website:
       file: courseinfo/assessments-overview.qmd
     - text: 1. Course and Tools Introduction
       file: content/module-intro-tools/assessment-course-tools-introduction.qmd
-    - text: 2. Data Analysis Introduction & READy Workflow
+    - text: 2. Data Analysis Introduction 
       file: content/module-data-analysis/assessment-data-analysis.qmd
-    - text: 3. R Coding Basics
-      file: content/module-coding-basics/assessment-coding.qmd
+    - text: 3. READy Workflow
+      file: content/module-ready-workflow/assessment-ready-workflow.qmd
     - text: 4. Data Introduction & Synthetic Data
       file: content/module-data/assessment-data.qmd
     - text: 5. Processing Data

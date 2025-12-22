@@ -5,14 +5,14 @@ subtitle: ""
 
 ## Introduction
 
-This unit provides a brief introduction to the various course tools. The main materials to get started with these tools is found on a separate website, as described below.
+This unit provides a brief introduction to the various course tools, and points you to further resources to get started with those tools.
 
 ## Learning Objectives
 
 The specific learning objectives for this unit are:
 
 -   Know what tools we are using in this course.
--   Know where to learn about these tools.
+-   Know where to learn more about these tools.
 
 
 ## Course Tools
@@ -28,7 +28,7 @@ Since the use of these tools is an important part of the course, it is essential
 -   We will use the [Positron](https://positron.posit.co/) integrated development environment (IDE) to write our code and generally manage our projects. You can use a different editor/IDE if you want (e.g. RStudio or VS Code or Emacs), but the instructions assume you are using Positron.
 -   We will use [Quarto](https://quarto.org/), which nicely plays with R/Rstudio to let you create easy, automated workflows.
 -   We will use [Git](https://git-scm.com/) and [GitHub](https://github.com/) for exercises and the project.
-- You are strongly encouraged to use AI tools to help you with your work in this course. 
+
 
 # Also Used Tools
 
@@ -55,9 +55,8 @@ The website that contains these tutorials/mini-courses is currently called [
 Modeling and Data Science Tools](https://andreashandel.github.io/mds-tools/).
 
 
-:::{emphasis}
-As preparation for MADA and the first assignment, go through the **Positron**, **R**, **Quarto**, **Git/GitHub** and **AI** tutorials [on th MDS Tools website](https://andreashandel.github.io/mds-tools/). The **Portfolio** tutorial will be your first exercise.
-:::
+As preparation for MADA and the first assignment, go through the **Positron**, **R**, **Quarto**, **Git/GitHub** and **AI** tutorials on that site. The **Portfolio** tutorial will be your first exercise.
+
 
 
 

@@ -27,7 +27,7 @@ If you haven't received an email by Friday before classes start or can't find th
 
 If you are unfamiliar with Discord, it is essentially a chat/discussion tool (similar to Slack or Teams or...).
 The main area for the class is called a *server* in Discord.
-Ours is called **MADA-Spring-2025**.
+Ours is called **MADA-Spring-2026**.
 If you use Discord for other purposes, you might be a member of additional servers.
 Each server has *channels*.
 Each *channel* corresponds to a topic.
