@@ -36,8 +36,7 @@ While this is an open-ended exercise and there are no specific requirements as t
 
 ## Setup
 
-This exercise doesn't have an existing folder in your portfolio. Make a new folder, call it either `synthetic-data-exercise` or `complex-data-exercise`, depending on which option you choose. Copy one of the existing Quarto files into that new folder (e.g., the one called `tidytuesday-exercise.qmd`), rename it to `synthetic-data-exercise.qmd` or `complex-data-exercise.qmd` and open it (make sure you open your portfolio by clicking on your R project file, then open the Quarto file inside R Studio).
-
+This exercise doesn't have an existing folder in your portfolio. Make a new folder, call it either `synthetic-data-exercise` or `complex-data-exercise`, depending on which option you choose. Copy one of the existing Quarto files into that new folder (e.g., the one called `tidytuesday-exercise.qmd`), rename it to `synthetic-data-exercise.qmd` or `complex-data-exercise.qmd`. Then open your portfolio as a project/workspace in Positron.
 
 ## Option 1
 

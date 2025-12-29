@@ -8,12 +8,6 @@ output:
 ---
 
 
-```{r, include = FALSE}
-library(emoji)
-```
-
-
-
 # Quiz
 
 Get the quiz sheet for this module from the general [__Assessments__](./Course_Assessments.html) page. Fill it in, then submit to the online grading system before the deadline. 
@@ -28,7 +22,7 @@ We'll practice a bit of model fitting using the `tidymodels` framework and conti
 
 We'll again add a group exercise component, using the - by now familiar - M1, M2, ... setup. Assign each other a number, as much as possible, do it such that you end up working with group members you have not (or not in a while) worked together. The goal is that again as in past exercises, everyone will work on their own and one other person's repository. If you are in a group of 4, you can do pairs. That of course doesn't work in a group of 3, so you need to use the 'circular' setup there.
 
-For this exercise, we'll revisit and extend the project you started in the _wrangling_ module. Make sure you have the latest version of the repository on your local machine (it might not be, since last time your classmate contributed to your repository). As needed pull/push/merge to make sure remote and local repositories are in sync. Open the project in RStudio. 
+For this exercise, we'll revisit and extend the project you started in the _wrangling_ module. Make sure you have the latest version of the repository on your local machine (it might not be, since last time your classmate contributed to your repository). As needed pull/push/merge to make sure remote and local repositories are in sync. Open the project. 
 
 The dataset you previously got from the CDC should have at least 5 variables, with a mix of continuous and categorical. If for some reason that's not the case for your dataset, you have two options. Either, you create some new variables and fill them with artificial data or you switch to a different dataset. 
 
@@ -38,7 +32,7 @@ If you have to create artificial data, do that with R commands, either at the be
 
 ## Wrangling and EDA revisited
 
-We already spent time on the important steps of data wrangling/cleaning and exploring/visualizing. But practice makes perfect `r emo::ji('grin')` so we'll talk a bit more and do a bit more if it here.
+We already spent time on the important steps of data wrangling/cleaning and exploring/visualizing. But practice makes perfect 😀 so we'll talk a bit more and do a bit more if it here.
 
 By now you will have figured out that the whole wrangling/exporing process is iterative. Without exploring your data, you don't know how to clean/wrangle it. Without at least some cleaning, exploration often doesn't work (e.g. if you have missing values, some R summary functions don't work properly.) 
 

@@ -38,12 +38,12 @@ Part 1 is due by **Tuesday**.
 
 
 ## Getting started
-Open **your portfolio website project** in RStudio. Then open the file for the coding exercise, `coding-exercise.qmd`.
+Open **your portfolio website project**. Then open the file for the coding exercise, `coding-exercise.qmd`.
 
 :::note
 Documenting well is very important! Add lots of comments to your code/file. I suggest that your code should be more than half comments. For every block of code, you have a few lines of comments at the beginning explaining what the code block does, and then each line of code gets its separate line of comment with more details. Comment on both the how and why of your code. This much commentary might seem overkill initially. But as your code gets more complex, it will be very useful. Both your collaborators, and your future self looking at the code you wrote several weeks ago will be incredibly thankful for your comments!
 
-If you write R code, your comments will be lines that start with `#`. For Quarto or R Markdown files, you can either add comments as Markdown text above/below your code, and/or add comments inside your R code chunks. Both is ideal. R Studio allows you to quickly turn sections of a document into comments or un-comment them (In the `Code` section of the R Studio menu). That can be useful for turning on/off code during testing, or hiding some parts of text that's just meant for you but not for the reader.
+If you write R code, your comments will be lines that start with `#`. For Quarto or R Markdown files, you can either add comments as Markdown text above/below your code, and/or add comments inside your R code chunks. Both is ideal. Positron allows you to quickly turn sections of a document into comments or un-comment them. Just select the part you want to change, and hit `Ctrl/Cmd + /`. That can be useful for turning on/off code during testing, or hiding some parts of text that's just meant for you but not for the reader.
 :::
 
 
@@ -58,15 +58,14 @@ It is good practice to load all packages at the beginning of your code. So if yo
 
 **All the code you write for this (and any other) project should be written into an R or Quarto file, not in the R console. The reason for that is that you want a permanent record of what you did, and the ability to modify and re-run your analysis easily.** For this exercise, you can either write the code directly into the Quarto document, or if you prefer the setup of a separate R script and pulling code into the Quarto document (see the data analysis template for an example), you can do it that way too.
 
-We'll look at the `gapminder` dataset from `dslabs`. Once you have installed and loaded the `dslabs` package, the dataset is available. I.e., different than datasets you get from external sources, those that come with R packages are available right after you load the package. Write a code chunk using the `help()` function that pulls up the help page for the data to see what it contains. Then use the `str()` and `summary()` functions to take a look at the data. Use the `class()` function to check what type of object `gapminder` is.
+We'll look at the `gapminder` dataset from `dslabs`. Once you have installed and loaded the `dslabs` package, the dataset is available. I.e., different than datasets you get from external sources, those that come with R packages are available right after you load the package. If you want to learn more about the dataset, you can run `help(gapminder)` or `?gapminder` in the R console (this is one instance where an R call should only be done interactively, not inside a file.)
 
+Write code to use the `str()` and `summary()` functions to take a look at the data. Use the `class()` function to check what type of object `gapminder` is.
 To illustrate how that should look, you should have something like these lines of code and R output so far for this exercise.
 
 ```{r, eval = TRUE}
 #load dslabs package
 library("dslabs")
-#look at help file for gapminder data
-help(gapminder)
 #get an overview of data structure
 str(gapminder)
 #get a summary of data
@@ -117,7 +116,7 @@ Use the `lm` function and fit life expectancy as the outcome, and infant mortali
 
 ## Sending updates to Github
 
-Once you are done with your exercise, re-build your portfolio website. Make sure no error messages show up. A preview should show up, check that the page for this exercise looks the way you want it to. Once you are happy with how everything looks, close RStudio. Go to GitKraken, commit your changes, and push to the remote repository. Check your portfolio website online to make sure you can now see the newly created R exercise document (in addition to your previously created `About` page). Of course, at any point, feel free to make further enhancements to your portfolio website.
+Once you are done with your exercise, re-build your portfolio website. Make sure no error messages show up. A preview should show up, check that the page for this exercise looks the way you want it to. Once you are happy with how everything looks, commit your changes and push to the remote repository. Check your portfolio website online to make sure you can now see the newly created R exercise document (in addition to your previously created `About` page). Of course, at any point, feel free to make further enhancements to your portfolio website.
 
 ## Part 2
 
@@ -128,7 +127,7 @@ Part 2 is due by **Thursday**.
 
 Once you've done your first part, you'll contribute to another group member's project. As previously, find your classmates' portfolio repository and fork it, then clone to your local computer.
 
-Open the repository. Remember to always do that by clicking on the `.Rproj` file in the main folder, which should open the project/repository in RStudio. Once you have the repository open, find the file for this exercise `coding-exercise.qmd`. Open it, make sure it runs/renders. Then add your part at the bottom of the file. 
+Open the repository. Once you have the repository open, find the file for this exercise `coding-exercise.qmd`. Open it, make sure it runs/renders. Then add your part at the bottom of the file. 
 
 Start off by adding a comment that says something like **This section contributed by YOURNAME**. This needs to be there for me to be able to grade your contribution.
 

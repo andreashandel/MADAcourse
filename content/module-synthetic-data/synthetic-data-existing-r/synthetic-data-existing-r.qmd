@@ -63,7 +63,7 @@ We'll look at some real data from [this paper](https://royalsocietypublishing.or
 
 If you want to work along, go ahead and download the supplement, which is a zip file. Inside the zip file, find the _Clean Data_ folder and the `SympAct_Any_Pos.Rda` file. Copy that file to the location where you'll be placing your `R` script. 
 
-First, we load the data. Note that the authors (that would be us `r emoji::emoji('smirking face')`) used the wrong file ending, they called it an `.Rda` file, even though it is an `.Rds` file (for a discussion of the differences, see e.g. [here](http://www.sthda.com/english/wiki/saving-data-into-r-data-format-rds-and-rdata)).
+First, we load the data. Note that the authors (that would be us 😁) used the wrong file ending, they called it an `.Rda` file, even though it is an `.Rds` file (for a discussion of the differences, see e.g. [here](http://www.sthda.com/english/wiki/saving-data-into-r-data-format-rds-and-rdata)).
 
 
 ### The data 

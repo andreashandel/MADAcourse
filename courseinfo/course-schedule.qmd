@@ -8,7 +8,7 @@ This is the current course schedule for the class.
 Things might change, so check regularly for updates.
 
 The graded assessments for the course consist of quizzes, exercises, discussions and a project.
-Those are described in more detail in an [**Assessments**](assessments-overview.qmd) page and in the assessment document for each module.
+Those are described in more detail on the [**Assessments**](assessments-overview.qmd) page and in the assessment document for each module.
 
 ::: emphasis
 Unless otherwise specified, the first posting of the discussion is due by end of Wednesday, the discussion replies are due by Friday 5pm.
@@ -41,14 +41,4 @@ See each exercise for details.
 
 ## Synchronous Zoom meetings
 
-I will offer a weekly Zoom meeting (aka office hour).
-See the [**Communication**](course-communication.qmd) section for some more details.
-As described in the **Communication** document, if you don't join the Zoom meetings you are not missing any important information, these are just **completely optional** opportunities to ask for help/feedback etc.
-
-You can find the Zoom link on Discord.
-The plan is to have weekly alternating times for those zoom meetings such that everyone is able to make the meeting at least every 2 weeks.
-
-The current plan is to have **Zoom meetings for odd module numbers on Thursdays at 8am, and for even module numbers on Wednesday at 8am. The first Zoom session will be on Thursday, 1/9 at 8am ET.**
-
-Hopefully, at least one of those two times works for you, allowing you to join at least every other time if wanted.
-If you already know that neither times work for you, and you are keen on joining the Zoom meetings, let me know and we can adjust.
+I will offer a weekly Zoom meeting (aka office hour). See the [**Communication**](course-communication.qmd) section for details. As described in the **Communication** document, if you don't join the Zoom meetings you are not missing any important information, these are just **completely optional** opportunities to ask for help/feedback etc. We will have weekly alternating times for those zoom meetings such that everyone is hopefully able to make the meeting at least every 2 weeks. The current plan is to have **Zoom meetings for odd module numbers on Thursdays at 8am, and for even module numbers on Wednesday at 8am. The first Zoom session will be on Thursday, 1/15 at 8am ET.** You can find the Zoom link on Discord.

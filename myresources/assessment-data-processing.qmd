@@ -33,7 +33,7 @@ Your assignment is to participate in Tidy Tuesday by analyzing this week's datas
 
 Here are some more detailed instructions:
 
-Use your portfolio website. Make sure it's up to date and fully synced. Open it in R Studio. Then open the `tidytuesday_exercise.Rmd` file. That's where you'll write your Tidy Tuesday analysis.
+Use your portfolio website. Make sure it's up to date and fully synced. Open the project/workspace, then open the `tidytuesday_exercise.qmd` file. That's where you'll write your Tidy Tuesday analysis.
 
 Go to the [TidyTuesday Github repository](https://github.com/rfordatascience/tidytuesday). Look for the dataset for this week, and read the instructions on how to get the data. You will also be provided with a data dictionary. If the data is available for download, place it somewhere in your portfolio repository (e.g., in a new folder called `data`).
 

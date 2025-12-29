@@ -17,7 +17,7 @@ R has a few statistical model fitting routines built in, e.g., the `lm()` and `g
 
 # The `tidymodels` set of packages
 
-You've learned about the `tidyverse` already. A more recent effort by the folks from RStudio -- and many other contributors - is a set of packages called [`tidymodels`](https://www.tidymodels.org/). The idea is that similar to various packages in the `tidyverse` you can use for data wrangling, `tidymodels` provides a set of packages that help you with the code related to fitting models. For this course, we will focus on the `tidymodels` set of packages.
+You've learned about the `tidyverse` already. A more recent effort by the folks from Posit -- and many other contributors - is a set of packages called [`tidymodels`](https://www.tidymodels.org/). The idea is that similar to various packages in the `tidyverse` you can use for data wrangling, `tidymodels` provides a set of packages that help you with the code related to fitting models. For this course, we will focus on the `tidymodels` set of packages.
 
 You can use `tidymodels` for pretty much any part of the modeling workflow (e.g., pre-processing, model evaluation, tuning). We have not yet covered most of those steps, but will do so shortly. The goal for this unit is to start exploring the `tidymodels` workflow -- for now we'll ignore a lot of the additional features, but we'll discuss shortly.
 

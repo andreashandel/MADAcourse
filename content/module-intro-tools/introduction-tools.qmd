@@ -26,7 +26,7 @@ Since the use of these tools is an important part of the course, it is essential
 
 -   We will use the [`R`](https://www.r-project.org/) software for coding.
 -   We will use the [Positron](https://positron.posit.co/) integrated development environment (IDE) to write our code and generally manage our projects. You can use a different editor/IDE if you want (e.g. RStudio or VS Code or Emacs), but the instructions assume you are using Positron.
--   We will use [Quarto](https://quarto.org/), which nicely plays with R/Rstudio to let you create easy, automated workflows.
+-   We will use [Quarto](https://quarto.org/), to create output in an efficient, easy and automated manner.
 -   We will use [Git](https://git-scm.com/) and [GitHub](https://github.com/) for exercises and the project.
 - You are strongly encouraged to use AI tools to help you with your work in this course. 
 

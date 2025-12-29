@@ -141,7 +141,7 @@ Once you completed everything, make sure everything runs/renders and produces re
 Now it's time to add everything to the portfolio website. For that, open the `_quarto.yml` file and make a new entry in the `navbar` section as you did before, that points to your new Quarto file.
 
 ::: warning
-Remember that YAML is very picky about indentation, so if you get strange error messages, it is often likely that your entries are not aligned/indented exactly right. If you suspect that you have this problem, you can show whitespace characters in RStudio by going to \`Tools -\> Global Options -\> Code -\> Display" and check *Show Whitespace Characters*.
+Remember that YAML is very picky about indentation, so if you get strange error messages, it is often likely that your entries are not aligned/indented exactly right. The `Problems` pane in Positron might give you a warning.
 :::
 
 Render your whole website -- not just the new document! -- and make sure all looks good and all links work. If all is ready, commit and push to GitHub.

@@ -310,18 +310,6 @@ non-technical and thus beginner-friendly.
 
 # R coding
 
--   [R Studio education](https://education.rstudio.com/) is a fairly new
-    website that I expect will contain an increasing collection to all
-    kinds of useful teaching resources related to R and Data Science.
-    Check their *Learn* section for links to resources.
--   [`swirl`](http://swirlstats.com) is a package that teaches R
-    inside R. Especially complete beginner students have found it to be
-    a nice start since it provides very encouraging feedback. The
-    downside is that all code writing happens interactively in the `R`
-    console, which is not the way one writes real code. It's still worth
-    checking out if you want to get some more direct, hands-on R
-    practice. Unfortunately, the package seems dormant and hasn't been
-    updated in a few years (but what's in there probably still works?)
 -   [Ready for R](https://ready4r.netlify.app/) - materials for a basic
     introductory online R course taught by [Ted
     Laderas](https://laderast.github.io/).

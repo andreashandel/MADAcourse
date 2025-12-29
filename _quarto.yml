@@ -91,20 +91,6 @@ website:
         file: content/module-intro-tools/introduction-course.qmd
       - text: Tools Introduction
         file: content/module-intro-tools/introduction-tools.qmd
-      # - text: R and Rstudio
-      #   file: content/module-intro-tools/tools-randrstudio.qmd
-      # - text: GitHub Introduction
-      #   file: content/module-intro-tools/tools-github-introduction.qmd
-      # - text: GitHub and R Workflow
-      #   file: content/module-intro-tools/tools-github-r-workflow.qmd
-      # - text: Quarto & Co
-      #   file: content/module-intro-tools/tools-quarto.qmd
-      # - text: AI Tools
-      #   file: content/module-intro-tools/tools-ai.qmd
-      # - text: Reference Management
-      #   file: content/module-intro-tools/tools-reference-management.qmd
-      # - text: Guidance and Tips for R/RStudio/GitHub
-      #   file: content/module-intro-tools/tools-tips-guidance.qmd
     - section: 2. Data Analysis Introduction
       contents:
       - text: Motivating Examples
@@ -259,28 +245,6 @@ website:
       contents:
       - text: Complete Data Analysis Workflow
         file: content/module-workflow/complete-data-analysis-workflow.qmd
-    - section: AI
-      contents:
-      - text: AI Overview
-        file: content/module-ai/ai-overview.qmd
-      - text: Introduction to AI
-        file: content/module-ai/ai-introduction/ai-introduction.qmd
-      - text: Introduction to LLM AI tools
-        file: content/module-ai/ai-llm-introduction/ai-llm-introduction.qmd
-      - text: AI Concepts
-        file: content/module-ai/ai-conceptual/ai-conceptual.qmd
-      - text: Current AI Tools
-        file: content/module-ai/ai-tools/ai-tools.qmd
-      - text: Write code with AI
-        file: content/module-ai/ai-write-code-r/ai-write-code-r.qmd
-      - text: Fix code with AI
-        file: content/module-ai/ai-fix-code-r/ai-fix-code-r.qmd
-      - text: Explore data with AI
-        file: content/module-ai/ai-eda-r/ai-eda-r.qmd
-      - text: Analyze data with AI
-        file: content/module-ai/ai-analysis-r/ai-analysis-r.qmd
-      - text: AI Resources
-        file: content/module-ai/ai-resources/ai-resources.qmd
   - title: Assessments
     contents:
     - text: Assessments Overview
