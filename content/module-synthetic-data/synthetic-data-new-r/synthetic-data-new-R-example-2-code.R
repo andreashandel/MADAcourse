@@ -22,7 +22,6 @@
 # Load required packages
 library(dplyr)
 library(ggplot2)
-library(here)
 
 
 ## ---- setup-ex2 --------
