@@ -21,7 +21,7 @@ The concept of reproducible research, or what I call here more generally the REA
 [^1]: READy is an acronym I invented. If you look around online, you'll find lots of discussions on the topic of reproducible or automated data analysis, and why documentation is important, but you'll likely not find anything calling it READy.
 
 
-![Not a good example of reproducibility.](/media/amiracleoccurs.gif){fig-alt="Comic of two people in front of a chalkboard that has mathematical equations and the phrase 'then a miracle occurs' between equations. The person pointing at that phrase says 'I think you should be more explicit here in step two.'"}
+![Not a good example of reproducibility.](amiracleoccurs.gif){fig-alt="Comic of two people in front of a chalkboard that has mathematical equations and the phrase 'then a miracle occurs' between equations. The person pointing at that phrase says 'I think you should be more explicit here in step two.'"}
 
 
 

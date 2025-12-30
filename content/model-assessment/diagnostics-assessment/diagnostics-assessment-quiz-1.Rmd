@@ -1,0 +1,27 @@
+Question
+========
+What's the term for the differences between data and model that you want to see distributed like a symmetric cloud?
+
+Answerlist
+----------
+* Overfitting
+* Variance
+* Residuals
+* Bias
+
+Solution
+========
+The differences between data and model are called residuals.
+
+Answerlist
+----------
+* False
+* False
+* True
+* False
+
+Meta-information
+================
+exname: Diagnostics residuals
+extype: schoice
+exsolution: 0010

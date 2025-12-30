@@ -1,0 +1,27 @@
+Question
+========
+Which of the following is NOT a common information criterion?
+
+Answerlist
+----------
+* VIC
+* BIC
+* DIC
+* AIC
+
+Solution
+========
+VIC is not a common information criterion.
+
+Answerlist
+----------
+* True
+* False
+* False
+* False
+
+Meta-information
+================
+exname: Information criteria not common
+extype: schoice
+exsolution: 1000

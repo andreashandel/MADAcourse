@@ -1,0 +1,23 @@
+Question
+========
+A more detailed model is always better than one that contains less details.
+
+Answerlist
+----------
+* True
+* False
+
+Solution
+========
+False. More detail is not always better.
+
+Answerlist
+----------
+* False
+* True
+
+Meta-information
+================
+exname: Reality detailed model
+extype: schoice
+exsolution: 01

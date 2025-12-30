@@ -25,7 +25,7 @@ Version control software, such as Git/GitHub, is used for tracking project chang
 
 # Quarto
 
-Quarto is tool that allows for easy scientific writing in a reproducible manner, by seamlessly integrating code with text. Quarto is further discussed in the [Quarto unit](/content/module-intro-tools/tools-quarto.qmd).
+Quarto is tool that allows for easy scientific writing in a reproducible manner, by seamlessly integrating code with text. We discussed Quarto previously.
 
 
 # Jupyter 

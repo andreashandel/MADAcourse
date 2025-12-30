@@ -1,0 +1,27 @@
+Question
+========
+What's the name commonly given to the data you do your final model evaluation?
+
+Answerlist
+----------
+* Split Data
+* Train Data
+* Test Data
+* Analysis Data
+
+Solution
+========
+Test data is used for the final model evaluation.
+
+Answerlist
+----------
+* False
+* False
+* True
+* False
+
+Meta-information
+================
+exname: External data test data
+extype: schoice
+exsolution: 0010

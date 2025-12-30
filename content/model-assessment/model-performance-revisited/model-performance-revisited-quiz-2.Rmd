@@ -1,0 +1,23 @@
+Question
+========
+Overfitting is only a problem for large machine learning models.
+
+Answerlist
+----------
+* True
+* False
+
+Solution
+========
+False. Overfitting can occur with many model types.
+
+Answerlist
+----------
+* False
+* True
+
+Meta-information
+================
+exname: Model performance overfitting
+extype: schoice
+exsolution: 01

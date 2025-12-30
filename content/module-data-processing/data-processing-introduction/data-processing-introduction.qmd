@@ -24,7 +24,7 @@ This unit provides a brief introduction to the topic of data processing.
 
 I want to remind you of this diagram:
 
-![Data analysis workflow](/media/analysis-workflow.png){width="60%"
+![Data analysis workflow](analysis-workflow.png){width="60%"
 fig-alt="Double sided arrow points between Question and Data with the text 'Match needed' above the arrow. A spiral moves from Load, to Clean, to Explore, to Process. Below the spiral an arrow points from Model to Report. An rounded arrow points from Model and Report back up to the spiral with the word Repeat."}
 
 Different data-analysis related tasks rarely happen in a linear sequence. Instead there is a general stage before statistical analysis

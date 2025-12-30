@@ -1,0 +1,161 @@
+/* --------------------------------------*/
+/* Begin formatting for teaching unit components  ------*/
+/* --------------------------------------*/
+
+
+/*-- scss:defaults --*/
+
+// Currently all of that is in the main scss file
+
+
+/*-- scss:rules --*/
+
+/* --------------------------------------*/
+/* Shared layout for all unit‑page components */
+/* --------------------------------------*/
+
+.unit-overview,
+.unit-goals,
+.unit-video,
+.unit-reading,
+.unit-summary,
+.unit-resources,
+.unit-quiz,
+.unit-exercise {
+  border: 2px solid black;
+  border-left: 6px solid var(--left-border-color);
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 1em 0;
+  background-color: var(--content-bg);
+  font-family: sans-serif;
+}
+
+/* Header styling (first heading inside each box) */
+.unit-overview > h1,
+.unit-goals     > h1,
+.unit-video     > h1,
+.unit-reading   > h1,
+.unit-summary   > h1,
+.unit-resources > h1,
+.unit-quiz      > h1,
+.unit-exercise  > h1 {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  margin: 0;
+  padding: 0.75em 1em;
+  background-color: var(--header-bg);
+  font-size: 1.25em;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Icon that precedes the heading text */
+.unit-overview  > h1::before,
+.unit-goals     > h1::before,
+.unit-video     > h1::before,
+.unit-reading   > h1::before,
+.unit-summary   > h1::before,
+.unit-resources > h1::before,
+.unit-quiz      > h1::before,
+.unit-exercise  > h1::before {
+  content: "";
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Content padding */
+.unit-overview  > :not(h1),
+.unit-goals     > :not(h1),
+.unit-video     > :not(h1),
+.unit-reading   > :not(h1),
+.unit-summary   > :not(h1),
+.unit-resources > :not(h1),
+.unit-quiz      > :not(h1),
+.unit-exercise  > :not(h1) {
+  padding: 1em;
+}
+
+/* --------------------------------------*/
+/* Section‑specific themes (colours + icons) */
+/* --------------------------------------*/
+
+.unit-overview {
+  --header-bg:        #d0e4ff;
+  --content-bg:       #e9f2ff;
+  --left-border-color:#00509e;
+}
+.unit-overview > h1::before {
+  background-image: url("assets/images/unit-overview.png");
+}
+
+.unit-goals {
+  --header-bg:        #d2ffd0;
+  --content-bg:       #eaffea;
+  --left-border-color:#1b8e0d;
+}
+.unit-goals > h1::before {
+  background-image: url("assets/images/unit-goals.png");
+}
+
+.unit-video {
+  --header-bg:        #ffe0e0;
+  --content-bg:       #fff4f4;
+  --left-border-color:#cc3333;
+}
+.unit-video > h1::before {
+  background-image: url("assets/images/unit-video.png");
+}
+
+.unit-reading {
+  --header-bg:        #e9e4ff;
+  --content-bg:       #f4f2ff;
+  --left-border-color:#4f3ccc;
+}
+.unit-reading > h1::before {
+  background-image: url("assets/images/unit-reading.png");
+}
+
+.unit-summary {
+  --header-bg:        #fff0cc;
+  --content-bg:       #fff7e6;
+  --left-border-color:#b8860b;
+}
+.unit-summary > h1::before {
+  background-image: url("assets/images/unit-summary.png");
+}
+
+.unit-resources {
+  --header-bg:        #e0f7ff;
+  --content-bg:       #f0fbff;
+  --left-border-color:#0099cc;
+}
+.unit-resources > h1::before {
+  background-image: url("assets/images/unit-resources.png");
+}
+
+.unit-quiz {
+  --header-bg:        #eaffd6;
+  --content-bg:       #f7ffe9;
+  --left-border-color:#66aa00;
+}
+.unit-quiz > h1::before {
+  background-image: url("assets/images/unit-quiz.png");
+}
+
+.unit-exercise {
+  --header-bg:        #dff7ff;
+  --content-bg:       #f3fcff;
+  --left-border-color:#0086b3;
+}
+.unit-exercise > h1::before {
+  background-image: url("assets/images/unit-exercise.png");
+}
+
+/* --------------------------------------*/
+/* End of unit‑page component styling    */
+/* --------------------------------------*/

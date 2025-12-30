@@ -31,10 +31,7 @@ We'll only consider a few of those systems. Wikipedia [has a long list](https://
 
 # Git/GitHub
 
-Git/GitHub is a very common method of working collaboratively on projects. 
-A prior unit provides [a brief introduction to Git/GitHub](/content/module-intro-tools/tools-github-introduction.qmd). 
-
-The following only mentions (again) some topics worth keeping in mind when using Git/GitHub for data analysis work.
+Git/GitHub is a very common method of working collaboratively on projects. We covered it previously. The following only mentions (again) some topics worth keeping in mind when using Git/GitHub for data analysis work.
 
 
 ## File sizes

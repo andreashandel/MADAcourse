@@ -1,7 +1,5 @@
 ---
 title: Course Glossary
-subtitle: ""
-toc: FALSE
 ---
 
 *This page is work in progress. Feel free to contribute via a GitHub

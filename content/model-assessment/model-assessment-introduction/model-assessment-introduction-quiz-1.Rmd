@@ -1,0 +1,27 @@
+Question
+========
+Which of the following is fairly unimportant when assessing models?
+
+Answerlist
+----------
+* Model performance
+* Model complexity
+* Model programming language
+* Model uncertainty
+
+Solution
+========
+Model programming language is fairly unimportant.
+
+Answerlist
+----------
+* False
+* False
+* True
+* False
+
+Meta-information
+================
+exname: Model assessment unimportant
+extype: schoice
+exsolution: 0010

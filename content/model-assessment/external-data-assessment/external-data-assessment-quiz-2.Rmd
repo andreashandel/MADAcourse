@@ -1,0 +1,23 @@
+Question
+========
+One needs to use at least 10 folds/blocks in CV to get a reliable answer.
+
+Answerlist
+----------
+* True
+* False
+
+Solution
+========
+False. Other fold counts can be appropriate.
+
+Answerlist
+----------
+* False
+* True
+
+Meta-information
+================
+exname: External data folds
+extype: schoice
+exsolution: 01

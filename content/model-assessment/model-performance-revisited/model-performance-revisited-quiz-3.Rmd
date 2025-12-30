@@ -1,0 +1,23 @@
+Question
+========
+Most of the time, we want a model that performs well in general/on new data, not just for our sample.
+
+Answerlist
+----------
+* True
+* False
+
+Solution
+========
+True. Generalization to new data is the key goal.
+
+Answerlist
+----------
+* True
+* False
+
+Meta-information
+================
+exname: Model performance generalization
+extype: schoice
+exsolution: 10

@@ -81,22 +81,24 @@ It is very important to think critically about your models (and those of others)
 * The [Advanced Data Science book](http://rafalab.dfci.harvard.edu/dsbook-part-2/) covers some of these topics. (This is an updated version of part of the IDS book).
 
 
+::: {.unit-quiz}
 # Test yourself
 
-```{r}
+```{r model-assessment-introduction-quiz}
 #| echo: false
-#| results: asis
-
-# Define the questions
-q1 <- "Which of the following is fairly unimportant when assessing models?"
-q1_choices <- c("Model performance", "Model complexity", answer= "Model programming language",  "Model uncertainty")
-q2 <- "You should always choose the model that provides the best performance."
-q3 <- "You need to use your expert knowledge as part of model assessment."
-
-cat(q1,webexercises::longmcq(q1_choices))
-cat(q2,webexercises::torf(FALSE),"<br><br>")
-cat(q3,webexercises::torf(TRUE))
+#| results: "asis"
+quizzes <- list(
+  "model-assessment-introduction-quiz-1.Rmd",
+  "model-assessment-introduction-quiz-2.Rmd",
+  "model-assessment-introduction-quiz-3.Rmd"
+)
+exams2forms::exams2forms(
+  file = quizzes,
+  title = "model-assessment-introduction-quiz"
+)
 ```
+:::
+<!-- end unit-quiz div -->
 
 
 

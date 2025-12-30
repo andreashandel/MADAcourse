@@ -41,7 +41,7 @@ the best of schematic summary is from
 [NASA](https://www.earthdata.nasa.gov/esds/open-science/oss-for-eso-workshops).
 
 ![Source:
-[NASA](https://www.earthdata.nasa.gov/esds/open-science/oss-for-eso-workshops)](/media/open-science.jpg){width="50%"
+[NASA](https://www.earthdata.nasa.gov/esds/open-science/oss-for-eso-workshops)](open-science.jpg){width="50%"
 fig-alt="A circular graphic with 'open science' in the center, showing several components of open science around it ([source](https://www.earthdata.nasa.gov/esds/open-science/oss-for-eso-workshops))."}
 
 NASA defines three components that are central to open science.

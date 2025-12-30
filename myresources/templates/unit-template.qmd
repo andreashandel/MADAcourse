@@ -1,0 +1,97 @@
+---
+title: Title of unit
+---
+
+::: {.unit-overview}
+# Overview
+
+This unit provides a brief..
+
+:::
+<!-- end unit-overview div -->
+
+::: {.unit-goals}
+# Goals
+
+* Know how to do X.
+* Be able to mess with Y.
+
+::: 
+<!-- end unit-goals div -->
+
+::: {.unit-video}
+# Video, slides and audio transcript
+
+Below is the video for this unit. Here are [the slides shown in the video](), and here is the [audio transcript](), as well as a [text version of the transcript]().
+
+<iframe class="video" src="https://www.youtube.com/embed/tiwJzvqFgmY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+::: 
+<!-- end unit-video div -->
+
+
+::: {.unit-reading}
+# Reading
+
+## Introduction
+
+This unit is about XYZ
+
+## Main section 1
+
+Main and sub sections as needed.
+Use level 2 headings and below. Level 1 are reserved for the main section headers.
+
+### Subsection 1
+
+### Subsection 2
+
+## Main section 2
+
+### Subsection 1
+
+::: 
+<!-- end unit-reading div -->
+
+
+::: {.unit-summary}
+# Summary
+
+In this unit, we covered XYZ.
+
+::: 
+<!-- end unit-summary div -->
+
+
+::: {.unit-resources}
+# Further Resources
+
+* This is a good additional reading: URL
+* Here is some more good information.
+
+::: 
+<!-- end unit-resources div -->
+
+
+::: {.unit-quiz}
+# Test yourself
+
+```{r topic-title-of-quiz}
+#| echo: false
+#| results: "asis"
+quizzes <- list("topic-title-quiz-1.Rmd", "topic-title-quiz-2.Rmd", "topic-title-quiz-3.Rmd")
+exams2forms::exams2forms(file = quizzes, title = 'topic-title-of-quiz')
+```
+::: 
+<!-- end unit-quiz div -->
+
+
+
+::: {.unit-exercise}
+# Practice
+
+* Do task X.
+* Do task Y.
+
+::: 
+<!-- end unit-exercise div -->

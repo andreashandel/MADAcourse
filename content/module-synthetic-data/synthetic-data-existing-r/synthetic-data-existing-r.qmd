@@ -1,13 +1,12 @@
 ---
 title: Scrambling existing data - R
-subtitle: ""
 ---
 
 
 
 ```{r, include=FALSE, cache=FALSE}
 #R script that contains code chunks shown below
-knitr::read_chunk(here::here('code','synthetic-data-existing-R-example-code.R'))
+knitr::read_chunk('synthetic-data-existing-R-example-code.R')
 ```
 
 
@@ -44,7 +43,7 @@ Since you are working with the real data, you probably don't want to use AI for 
 
 ## Example
 
-Time for a simple example. You can find the code shown below in [this file](/code/synthetic-data-existing-R-example-code.R).
+Time for a simple example. You can find the code shown below in [this file](synthetic-data-existing-R-example-code.R).
 
 
 ### Setup

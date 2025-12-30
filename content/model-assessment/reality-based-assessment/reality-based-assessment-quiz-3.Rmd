@@ -1,0 +1,23 @@
+Question
+========
+There is a single right type of model for every problem, and if you don't get it exactly right, you are screwed.
+
+Answerlist
+----------
+* True
+* False
+
+Solution
+========
+False. Multiple model types can be reasonable depending on goals.
+
+Answerlist
+----------
+* False
+* True
+
+Meta-information
+================
+exname: Reality single model
+extype: schoice
+exsolution: 01

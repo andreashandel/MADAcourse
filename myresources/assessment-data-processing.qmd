@@ -17,7 +17,7 @@ This is another solo exercise, so no group work this week, but of course more Gi
 
 ## What is Tidy Tuesday
 
-You briefly encountered Tidy Tuesday before in the [**Data Analysis Motivation unit**](../module-data-analysis/data-analysis-motivation.qmd). If you can't remember, revisit that unit and re-read that section. Also read the information at the provided links.
+You briefly encountered Tidy Tuesday before in the [**Data Analysis Motivation unit**](../module-data-analysis/data-analysis-motivation/data-analysis-motivation.qmd). If you can't remember, revisit that unit and re-read that section. Also read the information at the provided links.
 
 If you want to see another Tidy Tuesday example, see [one I did](https://www.andreashandel.com/posts/2019-10-02-tidy-tuesday-exploration/index.html), as part of a previous version of MADA. I did it at the same time the students did theirs. I plan to do my own Tidy Tuesday again this time.
 

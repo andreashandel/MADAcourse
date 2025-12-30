@@ -1,0 +1,23 @@
+Question
+========
+You should always choose the model that provides the best performance.
+
+Answerlist
+----------
+* True
+* False
+
+Solution
+========
+False. Performance is only one part of assessment.
+
+Answerlist
+----------
+* False
+* True
+
+Meta-information
+================
+exname: Model assessment performance
+extype: schoice
+exsolution: 01

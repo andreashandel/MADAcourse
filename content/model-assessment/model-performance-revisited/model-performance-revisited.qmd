@@ -83,22 +83,24 @@ To repeat (again): **We generally want to know how well a model performs in gene
 
 
 
+::: {.unit-quiz}
 # Test yourself
 
-```{r}
+```{r model-performance-revisited-quiz}
 #| echo: false
-#| results: asis
-
-# Define the questions
-q1 <- "Which of the following is NOT an important topic discussed in this unit?"
-q1_choices <- c("Overfitting", "Variance", answer= "Convergence",  "Bias")
-q2 <- "Overfitting is only a problem for large machine learning models."
-q3 <- "Most of the time, we want a model that performs well in general/on new data, not just for our sample."
-
-cat(q1,webexercises::longmcq(q1_choices))
-cat(q2,webexercises::torf(FALSE),"<br><br>")
-cat(q3,webexercises::torf(TRUE))
+#| results: "asis"
+quizzes <- list(
+  "model-performance-revisited-quiz-1.Rmd",
+  "model-performance-revisited-quiz-2.Rmd",
+  "model-performance-revisited-quiz-3.Rmd"
+)
+exams2forms::exams2forms(
+  file = quizzes,
+  title = "model-performance-revisited-quiz"
+)
 ```
+:::
+<!-- end unit-quiz div -->
 
 
 

@@ -1,0 +1,23 @@
+Question
+========
+You should try many different information criteria and choose the one which gives the best results.
+
+Answerlist
+----------
+* True
+* False
+
+Solution
+========
+False. You should not pick criteria based on desired results.
+
+Answerlist
+----------
+* False
+* True
+
+Meta-information
+================
+exname: Information criteria cherry pick
+extype: schoice
+exsolution: 01

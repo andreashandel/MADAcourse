@@ -1,0 +1,23 @@
+Question
+========
+You need to use your expert knowledge as part of model assessment.
+
+Answerlist
+----------
+* True
+* False
+
+Solution
+========
+True. Expert judgment is part of assessment.
+
+Answerlist
+----------
+* True
+* False
+
+Meta-information
+================
+exname: Model assessment expertise
+extype: schoice
+exsolution: 10

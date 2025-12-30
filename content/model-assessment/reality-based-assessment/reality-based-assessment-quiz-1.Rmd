@@ -1,0 +1,27 @@
+Question
+========
+Which of the following is NOT an important factor when considering model complexity?
+
+Answerlist
+----------
+* Amount of available data
+* Ability to capture data patterns
+* Lines of code one needs to write
+* Risk of overfitting
+
+Solution
+========
+Lines of code one needs to write is not an important factor.
+
+Answerlist
+----------
+* False
+* False
+* True
+* False
+
+Meta-information
+================
+exname: Reality complexity factor
+extype: schoice
+exsolution: 0010

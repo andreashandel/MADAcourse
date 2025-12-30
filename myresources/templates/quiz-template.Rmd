@@ -1,0 +1,27 @@
+Question
+========
+What does QSP stand for?
+
+Answerlist
+----------
+* Quark Sugar Pie
+* Qualitative Standard Procedure
+* Quantitative Systems Pharmacology
+* Quick Service Provider
+
+Solution
+========
+QSP stands for Quantitative Systems Pharmacology.
+
+Answerlist
+----------
+* False
+* False
+* True
+* False
+
+Meta-information
+================
+exname: QSP name
+extype: schoice
+exsolution: 0010

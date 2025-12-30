@@ -1,0 +1,129 @@
+/*-- scss:defaults --*/
+
+// Currently all of that is in the main scss file
+
+/*-- scss:rules --*/
+
+
+/* --------------------------------------*/
+/* Begin formatting for course landing page components  ------*/
+/* This si currently also used for the course overview pages. ------*/
+/* --------------------------------------*/
+
+/* Shared layout for all course boxes */
+.course-overview,
+.course-goals,
+.course-stats,
+.course-prerequisites,
+.course-content,
+.course-getstarted {
+  border: 2px solid black;
+  border-left: 6px solid var(--left-border-color);
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 1em 0;
+  background-color: var(--content-bg);
+  font-family: sans-serif;
+}
+
+/* Header styling (first heading) */
+.course-overview > h1,
+.course-goals > h1,
+.course-stats > h1,
+.course-prerequisites > h1,
+.course-content > h1,
+.course-getstarted > h1 {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  margin: 0;
+  padding: 0.75em 1em;
+  background-color: var(--header-bg);
+  font-size: 1.25em;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Icon before header text */
+.course-overview > h1::before,
+.course-goals > h1::before,
+.course-stats > h1::before,
+.course-prerequisites > h1::before,
+.course-content > h1::before,
+.course-getstarted > h1::before {
+  content: "";
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Content padding */
+.course-overview > :not(h1),
+.course-goals > :not(h1),
+.course-stats > :not(h1),
+.course-prerequisites > :not(h1),
+.course-content > :not(h1),
+.course-getstarted > :not(h1) {
+  padding: 1em;
+}
+
+/* Section-specific themes */
+
+.course-overview {
+  --header-bg: #d0e4ff;
+  --content-bg: #e9f2ff;
+  --left-border-color: #00509e;
+}
+.course-overview > h1::before {
+  background-image: url("assets/images/course-overview.png");
+}
+
+.course-goals {
+  --header-bg: #d2ffd0;
+  --content-bg: #eaffea;
+  --left-border-color: #1b8e0d;
+}
+.course-goals > h1::before {
+  background-image: url("assets/images/course-goals.png");
+}
+
+.course-stats {
+  --header-bg: #fff0cc;
+  --content-bg: #fff7e6;
+  --left-border-color: #b8860b;
+}
+.course-stats > h1::before {
+  background-image: url("assets/images/course-stats.png");
+}
+
+.course-prerequisites {
+  --header-bg: #fff0cc;
+  --content-bg: #fff7e6;
+  --left-border-color:rgb(11, 184, 144);
+}
+.course-prerequisites > h1::before {
+  background-image: url("assets/images/course-prerequisites.png");
+}
+
+
+.course-content {
+  --header-bg: #ffe0f0;
+  --content-bg: #fff0f8;
+  --left-border-color: #cc3366;
+}
+.course-content > h1::before {
+  background-image: url("assets/images/course-content.png");
+}
+
+.course-getstarted {
+  --header-bg: #e0f7ff;
+  --content-bg: #f0fbff;
+  --left-border-color: #0099cc;
+}
+.course-getstarted > h1::before {
+  background-image: url("assets/images/course-getstarted.png");
+}
+
+

@@ -4,13 +4,12 @@ subtitle: ""
 toc: FALSE
 ---
 
-# Overview
+## Overview
 
 -   The main course content can be found on this website.
 -   We'll mostly communicate and discuss through Discord.
 -   There will be completely optional Zoom sessions (aka office hours).
 -   Some communication/interaction will happen via GitHub. More details are provided in the relevant sections.
--   Quizzes will be available from this website and submitted to an online system, instructions will be provided.
 
 
 ## Discord
@@ -70,18 +69,22 @@ You can do all that if you right-click your user name and choose "Edit Server Pr
 
 ## Zoom
 
-I will offer weekly synchronous Zoom sessions. Those are **completely optional.** To ensure everyone will be able to join at least occasionally, I plan to alternate between two times each week. 
-Dates for Zoom meetings are listed in the [*Schedule*](course-schedule.qmd) document. If we need to move things around, I'll post an announcement and also update the [*Schedule*](course-schedule.qmd) document.
+I will offer a weekly Zoom meeting (aka office hour). 
 
-At the designated times, I will start the meeting. I'll wait around for 15 minutes. If nobody connects, I'll end the meeting. If people connect, we'll talk until we covered everything, or until I or you need to move on to our next appointments. The information for the Zoom meeting login will be provided on Discord.
+Those are **completely optional.** To ensure everyone will be able to join at least occasionally, I plan to alternate between two times each week. 
+
+The current plan is to have **Zoom meetings for odd module numbers on Thursdays at 8am, and for even module numbers on Wednesday at 8am. The first Zoom session will be on Thursday, 1/15 at 8am ET.** You can find the Zoom link on Discord.
+
+At the designated times, I will start the meeting. I'll wait around for 15 minutes. If nobody connects, I'll end the meeting. If people connect, we'll talk until we covered everything, or until I or you need to move on to our next appointments. 
 
 I want to emphasize that the only use for these Zoom sessions is for me to be there and answer any questions you might have. There is no material covered, no announcements, or anything of that sort. Unless you have a question/topic that you want to discuss and that can't be addressed by posting it to Discord, there should be no reason for you to come to the Zoom meetings.
 
 I will **not record** these meetings to ensure students feel comfortable discussing/asking anything they want to.
-If any topic comes up that I think is worth sharing more widely, I will afterwards post a Discord message and/or add content to the website.
-Therefore, if you can't make these Zoom meetings, you are not missing anything other than the option of asking me questions that might be tricky to discuss on Discord.
+If any topic comes up that I think is worth sharing more widely, I will afterwards post a Discord message and/or add content to the website. Therefore, if you can't make these Zoom meetings, you are not missing anything other than the option of asking me questions that might be tricky to discuss on Discord.
 
-And of course, if you have something you want to discuss outside of those scheduled times, send me a message and we can schedule a meeting.
+And of course, if you have something you want to discuss outside of those weekly office hours, send me a message and we can schedule a meeting.
+
+
 
 ## GitHub
 

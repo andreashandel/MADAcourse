@@ -73,22 +73,24 @@ Train/test data splitting and cross-validation are great approaches to more hone
 [Chapters 11 and 12 of the *Tidy Modeling with R* book](https://www.tmwr.org/) provide additional discussion of the sampling/CV approaches. Another discussion of CV is [chapter 30 of *IDS*](https://rafalab.github.io/dsbook/cross-validation.html).
 
 
+::: {.unit-quiz}
 # Test yourself
 
-```{r}
+```{r external-data-assessment-quiz}
 #| echo: false
-#| results: asis
-
-# Define the questions
-q1 <- "What's the name commonly given to the data you do your final model evaluation?"
-q1_choices <- c("Split Data", "Train Data", answer= "Test Data",  "Analysis Data")
-q2 <- "One needs to use at least 10 folds/blocks in CV to get a reliable answer."
-q3 <- "Using indepedently collected data to test model performance is better than using train/test or CV."
-
-cat(q1,webexercises::longmcq(q1_choices))
-cat(q2,webexercises::torf(FALSE),"<br><br>")
-cat(q3,webexercises::torf(TRUE))
+#| results: "asis"
+quizzes <- list(
+  "external-data-assessment-quiz-1.Rmd",
+  "external-data-assessment-quiz-2.Rmd",
+  "external-data-assessment-quiz-3.Rmd"
+)
+exams2forms::exams2forms(
+  file = quizzes,
+  title = "external-data-assessment-quiz"
+)
 ```
+:::
+<!-- end unit-quiz div -->
 
 
 

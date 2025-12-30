@@ -1,6 +1,5 @@
 ---
 title: More Data Science Resources
-subtitle: ""
 ---
 
 The [**Course Resources**](resources-course.qmd) page
@@ -180,7 +179,7 @@ listed and not listed), I'd love to receive feedback.
 # Artificial Intelligence (AI) 
 
 * [Deep Learning book](http://www.deeplearningbook.org/)
-- Given the importance and rapid change of AI, I also made a [separate resource unit.](../content/module-ai/ai-resources/ai-resources.qmd)
+- Given the importance and rapid change of AI, I also made a [separate tutorial.](https://andreashandel.github.io/mds-tools/courses/courses.html)
 
 
 
@@ -351,9 +350,8 @@ non-technical and thus beginner-friendly.
 
 # R and Shiny
 
-* [Official shiny webpage](http://shiny.rstudio.com/)
+* [Official shiny webpage](https://shiny.posit.co/)
 * [Collection of Shiny tips and tricks](https://github.com/daattali/advanced-shiny), [see also here](https://deanattali.com/blog/advanced-shiny-tips/
-) and [here](https://shiny.rstudio.com/articles/dynamic-ui.html)
 * [Engineering Production-Grade Shiny Apps](https://engineering-shiny.org/)
 * [Outstanding User Interfaces with Shiny](https://unleash-shiny.rinterface.com/) - a book covering advanced Shiny material, covering advanced styling, mobile development, integration with other web technologies, etc.
 
@@ -403,8 +401,6 @@ non-technical and thus beginner-friendly.
     summarizing several hundred books, many free, related to R and Data
     Science. If you are looking for a resource on a specific topic, this
     is a good place to check.
--   RStudio has a [collection of materials for data
-    science](https://resources.rstudio.com/the-essentials-of-data-science).
 -   [Data Science Learning
     Resources](https://www.mbastack.org/data-science-learning-resources/) -
     a collection of links to resources that discuss general aspects of

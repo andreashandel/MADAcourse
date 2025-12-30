@@ -1,0 +1,23 @@
+Question
+========
+On a predicted versus observed plots, the points should cluster along a horizontal line to indicate a good model fit.
+
+Answerlist
+----------
+* True
+* False
+
+Solution
+========
+False. The points should cluster along the 45-degree line.
+
+Answerlist
+----------
+* False
+* True
+
+Meta-information
+================
+exname: Diagnostics predicted observed
+extype: schoice
+exsolution: 01

@@ -1,6 +1,5 @@
 ---
 title: Course Resources
-subtitle: ""
 ---
 
 This page lists resources that this course draws on frequently or at

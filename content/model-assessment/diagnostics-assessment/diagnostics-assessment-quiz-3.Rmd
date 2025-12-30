@@ -1,0 +1,23 @@
+Question
+========
+If your overall model metric (e.g. Accuracy) is very good, you don't need to look at individual predictions.
+
+Answerlist
+----------
+* True
+* False
+
+Solution
+========
+False. You should still inspect individual predictions.
+
+Answerlist
+----------
+* False
+* True
+
+Meta-information
+================
+exname: Diagnostics predictions
+extype: schoice
+exsolution: 01

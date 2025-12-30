@@ -1,0 +1,23 @@
+Question
+========
+Using indepedently collected data to test model performance is better than using train/test or CV.
+
+Answerlist
+----------
+* True
+* False
+
+Solution
+========
+True. Independently collected data is the most honest assessment.
+
+Answerlist
+----------
+* True
+* False
+
+Meta-information
+================
+exname: External data independent
+extype: schoice
+exsolution: 10

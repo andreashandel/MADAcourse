@@ -1,0 +1,23 @@
+Question
+========
+Information criteria provide estimates of model performance on new data that are as good as those obtained from a train/test approach.
+
+Answerlist
+----------
+* True
+* False
+
+Solution
+========
+False. They are generally less reliable than train/test approaches.
+
+Answerlist
+----------
+* False
+* True
+
+Meta-information
+================
+exname: Information criteria reliability
+extype: schoice
+exsolution: 01

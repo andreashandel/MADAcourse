@@ -237,10 +237,8 @@ To that end, provide the following pieces of information:
 -   Meta-data explaining your data as needed.
 -   Everything very well documented and polished as much as possible.
 
-Check the [**Project Review Template**](/files/project-review-template.qmd) file to see how this
-submission will be assessed by your peers. I will not grade this part
-but it will be assessed by your peers, as described in the [**Project
-Review**](/project/project-review.qmd) document.
+Check the [**Project Review Template**](/assets/files/project-review-template.qmd) file to see how this
+submission will be assessed by your peers. I will not grade this part but it will be assessed by your peers, as described in the [**Project Review**](project-review.qmd) document.
 
 *A strong project would be at the level of one of the projects on the `Project Examples` page.*
 

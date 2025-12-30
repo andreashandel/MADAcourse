@@ -7,7 +7,7 @@ The comments here are technical and related to the working of the website.
 
 - I disabled/removed renv since it's taking too long.
 - These packages are needed (possibly an incomplete list): 
-    - `webexercises`
+    - `exams2forms`
     - `quarto`
     - `knitr`
     - `rmarkdown`
@@ -16,6 +16,10 @@ The comments here are technical and related to the working of the website.
     - `stringr`
     - `dslabs`
     - `gapminder`
+    - gtsummary
+    - vip
+    - tidymodels
+    - ranger
 
 
 - I'm currently using gh-pages branch for publishing. Local website content in _site is not synced with github. 
@@ -23,9 +27,7 @@ The comments here are technical and related to the working of the website.
 - See Quarto documentation for details: https://quarto.org/docs/publishing/github-pages.html
 
 
-- I'm using the webexercises R package to embed quizzes. 
-https://psyteachr.github.io/webexercises/index.html
-https://web.mat.upc.edu/joaquim.puig/posts/webexercises-quiz/
+- I'm using the exams2forms R package to embed quizzes. 
 
 
 

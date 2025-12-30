@@ -1,6 +1,5 @@
 ---
 title: Data Resources
-subtitle: ""
 ---
 
 This page lists possible resources for data that might be suitable for the course project, or also generally for research.

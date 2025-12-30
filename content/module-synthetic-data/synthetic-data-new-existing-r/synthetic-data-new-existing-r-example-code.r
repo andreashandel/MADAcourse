@@ -17,7 +17,7 @@ set.seed(123)
 n_patients <- 100
 
 ## ---- summarize-data --------
-dat <- readRDS(here::here("content/module-synthetic-data/synthetic-data-new-existing-r/syn_dat.rds"))
+dat <- readRDS("syn_dat.rds")
 skimr::skim(dat)
 gtsummary::tbl_summary(dat, statistic = list(
   all_continuous() ~ "{mean}/{median}/{min}/{max}/{sd}",

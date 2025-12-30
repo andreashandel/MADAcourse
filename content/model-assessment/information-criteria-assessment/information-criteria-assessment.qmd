@@ -54,22 +54,24 @@ This summarizes the whole idea of model performance evaluation. To repeat (again
 
 
 
+::: {.unit-quiz}
 # Test yourself
 
-```{r}
+```{r information-criteria-assessment-quiz}
 #| echo: false
-#| results: asis
-
-# Define the questions
-q1 <- "Which of the following is NOT a common information criterion?"
-q1_choices <- c(answer= "VIC", "BIC", "DIC",  "AIC")
-q2 <- "Information criteria provide estimates of model performance on new data that are as good as those obtained from a train/test approach."
-q3 <- "You should try many different information criteria and choose the one which gives the best results."
-
-cat(q1,webexercises::longmcq(q1_choices))
-cat(q2,webexercises::torf(FALSE),"<br><br>")
-cat(q3,webexercises::torf(FALSE))
+#| results: "asis"
+quizzes <- list(
+  "information-criteria-assessment-quiz-1.Rmd",
+  "information-criteria-assessment-quiz-2.Rmd",
+  "information-criteria-assessment-quiz-3.Rmd"
+)
+exams2forms::exams2forms(
+  file = quizzes,
+  title = "information-criteria-assessment-quiz"
+)
 ```
+:::
+<!-- end unit-quiz div -->
 
 
 

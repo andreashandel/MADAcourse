@@ -1,0 +1,27 @@
+Question
+========
+Which of the following is NOT an important topic discussed in this unit?
+
+Answerlist
+----------
+* Overfitting
+* Variance
+* Convergence
+* Bias
+
+Solution
+========
+Convergence is not a main topic in this unit.
+
+Answerlist
+----------
+* False
+* False
+* True
+* False
+
+Meta-information
+================
+exname: Model performance topics
+extype: schoice
+exsolution: 0010

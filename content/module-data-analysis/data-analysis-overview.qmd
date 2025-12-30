@@ -16,7 +16,7 @@ In this unit, we will talk about the whole data analysis workflow from a general
 
 The following figure provides a conceptual illustration of the whole data analysis workflow.
 
-![Data analysis workflow](../../media/analysis-workflow.png){width="60%" fig-alt="Double sided arrow points between Question and Data with the text 'Match needed' above the arrow. A spiral moves from Load, to Clean, to Explore, to Process. Below the spiral an arrow points from Model to Report. An rounded arrow points from Model and Report back up to the spiral with the word Repeat."}
+![Data analysis workflow](analysis-workflow.png){width="60%" fig-alt="Double sided arrow points between Question and Data with the text 'Match needed' above the arrow. A spiral moves from Load, to Clean, to Explore, to Process. Below the spiral an arrow points from Model to Report. An rounded arrow points from Model and Report back up to the spiral with the word Repeat."}
 
 The spiral is meant to represent that while the different steps in an analysis are rarely linear, things should improve over time until you have the data and code in a form that everything fits and you can produce *final* results.
 
@@ -127,7 +127,7 @@ Above, I gave you my thoughts related to the various steps of the data analysis 
 
 # Some practice {#sec-some-practice}
 
-There is code shown in chapter 4 of ADS. If you want, you can try to work along and reproduce what they are showing. This is optional. If you want to try and work along, note that the link provided in the book to download the data does not work anymore (not easily reproducible!). I did find the [data](https://aqs.epa.gov/aqsweb/airdata/download_files.html), which you can download as a [zip folder](/data/hourly_44201_2014.zip). Download and unzip and you should be good to work along.
+There is code shown in chapter 4 of ADS. If you want, you can try to work along and reproduce what they are showing. This is optional. If you want to try and work along, note that the link provided in the book to download the data does not work anymore (not easily reproducible!). I did find the [data](https://aqs.epa.gov/aqsweb/airdata/download_files.html), which you can download as a [zip folder](/assets/hourly_44201_2014.zip). Download and unzip and you should be good to work along.
 
 If you code along, I suggest you start a new R script and place their code into that script (instead of copying it into the console). We'll talk about that more soon. You will need to slightly adjust the code shown in the book to make it work. E.g., if you don't place the data into a `data` folder, you will need to change the path in the `read_csv` command. Also, for that command and some others, the book has a formatting with `+` signs across multiple lines of code, that might not work if you just copy and paste their code, and you might need to remove them and move everything into a single line of code. You can write everything into a single line and delete all `+` signs.
 

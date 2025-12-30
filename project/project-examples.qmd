@@ -11,13 +11,13 @@ inspiration of future projects, below you can find links to a few past projects.
 
 -   *Plastic in the Urban Freshwater Environment* by [Amelia
     Foley](https://ameliafoley.github.io/AMELIAFOLEY-MADA-portfolio/) -
-    [main report](/files/projectexamples/Foley_Report.html), [supplement
-    file](/files/projectexamples/Foley_Supplement.html), [GitHub project
+    [main report](/assets/projectexamples/Foley_Report.html), [supplement
+    file](/assets/projectexamples/Foley_Supplement.html), [GitHub project
     repository](https://github.com/ameliafoley/AmeliaFoley-MADA-project).
 
 -   *Predicting Federal Emergency Management Agency Funding for U.S.
     Disasters* by [Morgan
     Taylor](https://morganataylor.github.io/MorganTaylor-MADA-portfolio/index.html) -
-    [main report](/files/projectexamples/Taylor_Report.html), [supplement
-    file](/files/projectexamples/Taylor_Supplement.html), [GitHub project
+    [main report](/assets/projectexamples/Taylor_Report.html), [supplement
+    file](/assets/projectexamples/Taylor_Supplement.html), [GitHub project
     repository](https://github.com/morganataylor/MorganTaylor-MADA-project).
