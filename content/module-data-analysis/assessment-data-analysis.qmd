@@ -163,10 +163,19 @@ Once you chose one of the datasets, write R code to go through similar steps as 
 
 Once you are done with your additions, make sure the whole website renders. Then commit and push your updates to your fork on GitHub. Note that this pushes to **your fork** (i.e. copy) of the repository.
 
-Now it's time to offer your contribution to your classmate to integrate into their repository. Go to your (forked) repository on the GitHub website. In the top left, you should see the *New Pull Request* button. (Underneath, it should say something like `this branch is N commits ahead of NNN`). Click the *New Pull Request* button. A page comes up showing what you want to do, which is to send your changes to the original repository. You are requesting that the other person *pull* your changes into their repository. Hopefully, you'll see a green check-mark that says *able to merge*. If your classmate made changes to the same files you did, it could have created a merge conflict. Hopefully, this won't be the case. In either case (merge conflict or not), you can click the green button and *Create a pull request*. You are presented with a box in which you want to add a meaningful title, so the other person knows what you changed and some more explanation in the box. Then click *Create pull request*.
 
-This should send a notification to the owner of the repository that a pull request was created. 
 
+Now it's time to offer your contribution to your classmate to integrate into their repository. 
+
+This is called issuing a **pull request**. You are requesting that the other person *pull* your changes into their repository, hence the at times confusing (at least for us) terminology. Maybe thinking of it as *merge* requests or *sync* requests is better, i.e. you are requesting that they merge or sync your changes into their repository. You'll find the terminology *merge request* is used at times. If the person who controls the main repository likes your changes, they will *merge* your fork into the main branch. And just like that, you have contributed to some project becoming better! 
+
+To open a pull request, go to your fork of the repo on GitHub. At the top, you should see something like `This branch is N commits ahead of NNN:main.` and next to it a `Contribute` button. Click on that buttion and choose **Open pull request**.
+
+You will be taken to a page where you can provide a title and description of your changes. Be clear about what you changed and why. 
+
+Hopefully, you'll see a green check-mark that says *able to merge*. If your classmate made changes to the same files you did, it could have created a merge conflict. Hopefully, this won't be the case. If it is, you might want to put the file that has been edited by both into a safe location outside of your repository, then pull the latest version of the original repository into your local copy, re-apply your changes, commit and push again.
+
+In either case (merge conflict or not), you can click the green button and *Create a pull request*. This should send a notification to the owner of the repository that a pull request was created. 
 
 
 
@@ -177,15 +186,14 @@ Part 3 is due by **Friday**.
 
 ## Merging the PR
 
-Once you receive the pull request notification, go to the GitHub site and to your online portfolio repository. Click on *Pull requests*, then click on the request (there should only be one). Take a look. On the first page, it shows you their message and if there are conflicts with your version of the repository. Hopefully, you didn't change things around while they did, so there shouldn't be any conflicts. Click on the *Files changed* button, which will show you an overview of the code they changed. Removals are red, and additions are green.
+Once you receive the pull request notification, go to the GitHub site for your repository. Click on *Pull requests*, then click on the request. Take a look. On the first page, it shows you their message and if there are conflicts with your version of the repository. Hopefully, you didn't change things around while they did, so there shouldn't be any conflicts. Click on the *Files changed* button, which will show you an overview of the code they changed. Removals are red, and additions are green.
 
 On the main pull request site, you can do various things. If you don't like the suggested edits, you can write a comment and close the pull request without merging their changes into your repository. If you like most of what they did, but there is something they need to adjust, write a comment and let them know. Close the pull request and ask them to send a new one. If you are ok with their changes (hopefully, this is the case here), you can merge the pull request and close it. Their updates are now part of your repository.
 
-Once you finished the merging of their updates into your repository online, pull the latest version to your local computer.
+Once you finished the merging of their updates into your repository online, make sure to pull the latest version to your local computer. Make sure everything looks fine and everything runs. 
 
-Once you received the pull request, check it. Hopefully all is ok and merge it. If something isn't right, tell the person who sent the PR to fix what needs fixing and send another one.
+Make any further needed changes/updates. Re-render everything. Once everything is good, push your updated portfolio repository to GitHub. Check the website to make sure everything looks good. I'll be looking at the content shown on the website for assessment/grading purposes.
 
-Once you merged the PR, pull the updates to your local computer. Make sure everything looks fine and everything runs. Make any further needed changes/updates. Once everything is good, push your updated portfolio repository to GitHub. Check the website URL to make sure everything looks good. I'll be looking at the content shown on the website for assessment/grading purposes.
 
 ::: note
 Since this will be part of your portfolio site, and you already posted a link to that previously, you don't need to post anything, I know where to find it. 

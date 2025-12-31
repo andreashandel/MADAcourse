@@ -39,7 +39,7 @@ If you get stuck (quite possible), check the materials listed in the **Resources
 
 ## Pre-requisites
 
-You should have gone through all content in this module and all relevant courses on the MDS site. 
+You should have gone through all content in this module and all relevant courses on the [MDS Tools site](https://andreashandel.github.io/mds-tools/). 
 
 ## Instructions
 
