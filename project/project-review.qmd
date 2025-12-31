@@ -70,7 +70,7 @@ detailed and in-depth than the part 3 review.**
 ## Part 5 review logistics
 
 Follow the instructions provided in the repository to run all code and
-reproduce everything. Review the whole project using this [review template](/assets/files/project-review-template.qmd) (right-click to download).
+reproduce everything. Review the whole project using this [review template](/project/templates/project-review-template.qmd) (right-click to download).
 
 Write up a detailed review using the provided template. Once you
 are done, place your completed review document into the main folder of the repository you
