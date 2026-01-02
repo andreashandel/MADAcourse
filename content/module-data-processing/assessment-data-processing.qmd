@@ -19,7 +19,7 @@ This exercise lets you do a bit of data loading and wrangling. You'll also work 
 
 **The first part of the exercise is due by Wednesday, so your classmate can do their part before the Friday deadline.**
 
-**Since this will be part of your portfolio site, and you already posted a link to that previously, you don't need to post anything, I know where to find it. Therefore there is no exercise Slack channel for this module.**
+
 
 ## Setup
 
@@ -27,13 +27,13 @@ We'll also use the familiar group setup. Check the group assignment to make sure
 
 ## Part 1
 
-Part 1 is due by Wednesday.
+**Part 1 is due by Wednesday.**
 
 ## Finding Data
 
 Previously, you did a quick exploration of a dataset that came with an R package (`gapminder` data inside `dslabs` package). A lot of datasets can be found inside R packages. For instance, this [page lists what is likely only a small fraction](https://vincentarelbundock.github.io/Rdatasets/datasets.html). The good and the bad about datasets that come with R packages is that they are often fairly clean/tidy. That's unfortunately not how most "real world" datasets look like. Getting dirty and messy datasets and wrangling them into a form that is suitable for statistical analysis is part of most workflows and often takes a lot of time. We'll start practicing this here by getting data that might or might not be very clean.
 
-Go to the CDC's data website at <https://data.cdc.gov/>. Browse through the site and identify a dataset of interest.
+Go to the [CDC's data website](https://data.cdc.gov/). Browse through the site and identify a dataset of interest.
 
 Which dataset you choose is up to you. I suggest you pick a dataset that has at least 100 observations with 5 different variables, and a mix of continuous and categorical ones. Often, 5 variables means 5 columns. That would be the case in properly formatted data. However, some of the data provided by the CDC is rather poorly formatted. For instance [CDC's dataset on traumatic brain injury](https://data.cdc.gov/Traumatic-Brain-Injury-/Rates-of-TBI-related-Deaths-by-Age-Group-United-St/nq6q-szvs) has the same variable (age) in separate columns, and it is also discretized. As we'll discuss, these are two really bad things you can do to your data, so I recommend staying away from such datasets. There are plenty on that website, so I'm sure you'll find one that is suitable and interesting to you.
 
@@ -69,25 +69,22 @@ Remember to add both text to your Quarto file and comments into your code to exp
 In a final step, update the `_quarto.yml` file and include a menu item for "Data Analysis Exercise" pointing to the new file. Follow the format of the existing entries. Remember to be very careful about the right amount of empty space. Re-create your website and make sure it all works and the new project shows up on the website.
 
 
-## A new GitHub workflow
+## GitHub Collaboration
 
-If everything works as expected, commit and push your changes to GitHub. Instead of using the fork + pull-request workflow we've tried a few times, we'll explore a different collaborative approach. In this approach, you and your collaborator work on the same repository. To that end, you need to add your classmate as collaborator. Go to Github.com, find your portfolio repository, go to `Settings`, then `Collaborators`. Choose `Add Collaborator` and add your classmate. Your classmate should receive an invitation, which they need to accept. With this, they are now able to directly push and pull to your repository, without them needing to create a fork. (You can remove them after this exercise if you don't want them to be able to continue having write access to your repository).   
-
-To avoid any potential merge conflicts, once your classmate takes over, you shouldn't make further changes to the repository.
+If everything works as expected, commit and push your changes to GitHub. Let your team member know that things are ready. We are using the fork + pull-request workflow again. If you forgot, go back to the previous exercise and follow those detailed instructions.
 
 ## Part 2
 
-Part 2 is due by Friday.
+**Part 2 is due by Friday.**
 
 
-## Joining and cloning the GitHub repository
-
-You should have received an invitation to be a collaborator on your classmate's repository. Accept it, then directly clone (**not fork**) the repository to your local computer. 
-
-Find and open the `cdcdata-exercise.qmd` file. At the bottom, write a comment that says something like **This section contributed by YOURNAME.** This needs to be there for me to be able to grade your contribution.
 
 
 ## Making synthetic data 
+
+Get a copy of your classmate's repositry using the fork+clone approach discussed previously.
+
+Find and open the `cdcdata-exercise.qmd` file. At the bottom, write a comment that says something like **This section contributed by YOURNAME.** This needs to be there for me to be able to grade your contribution.
 
 Take a look at the descriptive analysis your classmate did. 
 
@@ -101,20 +98,21 @@ Make sure everything works and the website renders ok.
 
 ## Finishing the GitHub workflow
 
-Once all is done and works, commit, push to GitHub. **Note that you are now directly pushing to the original repo which is owned by your classmate.** This is easier, you don't need to do fork and pull request (PR). **It's also more dangerous**, since you could potentially mess up your classmate's repo. So make sure things work before committing and pushing. 
-
-::: note
-Some more comments on GitHub workflows:
-
-In general, if you work closely with someone on a project, it might make sense to add them as collaborator, and as needed coordinate with them to avoid merge conflicts. Otherwise, telling someone to contribute by forking and sending a pull request is the safer approach, and you have control if you want to accept their changes or not.
-
-There is yet another common way to use GitHub, namely collaborators working in the same repository, but with different branches. Think of a branch like a fork, but it happens inside the repository. Work can occur independently on branches, and at some point one can merge branches. This allows people to work in a single repository, but minimizes possible merge conflicts. This approach is standard for larger projects with many collaborators. For this class, we won't use branches, but note that they are useful and commonly used.
-:::
+Once all is done and works, commit, push to GitHub. Visit your fork of the repo on Github.com and initiate a pull request as you did in a previous exercise.
 
 
 ## Part 3
 
-The original repository owner doesn't really need to do anything. What their classmate added hopefully works and shows up on the website. You still might want to check to make sure that everything is ok. 
+The original repository owner should receive a PR. Hopefully there are no conflicts and the updates can be merged. Pull the updates to your local machine and make sure it all works. Rebuild/render the whole website. Then push back. Check your website online to make sure everything shows up as it should and that all your exercises are reachable through the menu.
 
-**Since this will be part of your portfolio site, and you already posted a link to that previously, you don't need to post anything, I know where to find it. I will assess both the original contribution and the addition made by the second person.**
+**Since this will be part of your portfolio site, and you already posted a link to that previously, you don't need to post anything, I know where to find it.**
+
+
+## Another *fork and pull* exercise
+
+**This is optional. You can do it at any time during this course (and more than once) 😁.**
+
+Help improve the course with your contributions! Find something wrong/unclear/worth improving with this course (e.g. a typo, something confusing, a broken link, a suggestion for a new reference, or anything else). Go to the [Github repository for this course](https://github.com/andreashandel/MADAcourse). Follow the steps outlined above: Fork the course to your personal account, clone it to your local computer, implement your updates, push it back to GitHub, then initiate a pull request. I will get a notification of your pull request. If things look ok and no conflicts exist, I will merge your improvements into the course. And just like that, you have contributed to improving this course! (And of course, you will be listed in the *Acknowledgments* section of the main course page.)
+
+Another option for helping to improve the course website is to file a GitHub Issue. Feel free to do so any time during the course to let me know of anything that needs fixing.
 
