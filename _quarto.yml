@@ -98,6 +98,8 @@ website:
         file: content/module-intro-tools/introduction-course/introduction-course.qmd
       - text: Tools Introduction
         file: content/module-intro-tools/introduction-tools/introduction-tools.qmd
+      - text: Reference Management
+        file: content/module-intro-tools/tools-reference-management/tools-reference-management.qmd
     - section: 2. Data Analysis Introduction
       contents:
       - text: Motivating Examples

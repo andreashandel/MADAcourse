@@ -26,18 +26,18 @@ This project asks you to go through the steps of a simple data analysis. As you 
 
 ## Group setup
 
-As in the previous exercise, assign each member in your group a different, arbitrary number (I'm calling them M1, M2, ...). Make sure you are teamed up with a different person this time. For this exercise, everyone will first work on their own and finish this part by Wednesday. Then M1 will contribute to M2's repository, M2 will work on M3, etc. The last person (M3/M4/M5, based on the number of people in your group), will work on M1's repository. This way, everyone will work on their own and one group member's repository. Mix things up so you are interacting with different persons this time.
+As in the previous exercise, assign each member in your group a different, arbitrary number (I'm calling them M1, M2, ...). Make sure you are teamed up with a different person this time. For this exercise, everyone will first work on their own and finish this part by Wednesday. Then M1 will contribute to M2's repository, M2 will work on M3, etc. The last person (M3/M4/M5, based on the number of people in your group), will work on M1's repository. This way, everyone will work on their own and one group member's repository. 
 
 
 ## Part 1
 
-Take a look at the Github template called [dataanalyis-template](https://github.com/ahgroup/dataanalysis-template). You'll be using this template for your class project later in the course. 
+You will be using another project template for this exercise (and the same one also for your class project). Go to the Github repository for the [data-analysis-template](https://github.com/ahgroup/data-analysis-template) and read the information in the `README.md` file (shown at the bottom of the repository website). You can ignore the bits about Package Management.
 
-For now, go to the github repository for the [dataanalysis-template](https://github.com/ahgroup/dataanalysis-template) and read the information in the `README.md` file (shown at the bottom of the repository website). You can ignore the bits about `renv`, we are not using that just yet.
+Then start a new repository using this template by clicking the green `Use this template` button on the top right of the repository page, then chose `Create a new repository`. Name the repository `FirstnameLastname-ready-exercise`. Make sure the repository is public. Add a description. Then create the repository. Once it has been created on GitHub.com, clone it to your local computer.
 
-Then take a look at the different folders, files, `readme` comments that you find inside the `starter-analysis-exercise` folder. Feel free to run the various R and Quarto scripts. The idea is that you get some familiarity with the whole setup to prepare you for the next steps.
+One you have a local version, open it in Positron an look at the different folders, files, and `readme.md` comments that you find inside the various folders. You should be able to run all the various R and Quarto scripts. The idea is that you get some familiarity with the whole setup to prepare you for the next steps.
 
-Now go ahead and open the `exampledata.xlsx` file (with Excel or a similar program) and add 2 more columns to the data. One column should be something numeric, the other can be something consisting of (a few) different categories. As a (boring) example, you could add eye color and waist size. Feel free to come up with more creative attributes/variables to add. Also add descriptions of your new variables to the `Codebook` sheet. Once done, save the new data as **`exampledata2.xlsx`**.
+Now go ahead and open the `exampledata.xlsx` file (with Excel or a similar program) located in the `raw-data` folder, and add 2 more columns to the data. One column should be something numeric, the other can be something consisting of (a few) different categories. As a (boring) example, you could add eye color and waist size. Feel free to come up with more creative attributes/variables to add. Also add descriptions of your new variables to the `Codebook` sheet/tab. Once done, save the new data as **`exampledata2.xlsx`**.
 
 Then open the `starter-analysis-report.qmd` file, find the _Description of data and data source_ section and add a few sentences explaining what you added to the data sheet.
 

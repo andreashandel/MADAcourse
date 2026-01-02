@@ -24,7 +24,7 @@ As a reminder, you are allowed to use AI tools for this - or any other - task in
 
 ## Group setup
 
-Find your fellow group members and organize yourself. You can find group assignments in the `important-information` channel. Get in touch with your group members. You will need to exchange GitHub user names. Assign each group member an (arbitrary) number (I'm calling them M1, M2, ...). 
+Find your fellow group members and organize yourself. You can find group assignments in the `important-information` channel. There is also a dedicated channel for each group. Get in touch with your group members. You will need to exchange GitHub user names. Assign each group member an (arbitrary) number (I'm calling them M1, M2, ...). 
 
 You will start working in your portfolio repository and finish this part by Wednesday. Then M2 will contribute to M1's repository, M3 will work on M2s, etc. M1 will contribute to the last person in the group (M3/M4/M5, based on the number of people in our group). This way, everyone will work on their own and one other group member's repository.
 
@@ -52,13 +52,13 @@ If you write R code, your comments will be lines that start with `#`. For Quarto
 We'll look at and play with some data from the [`dslabs` package](https://cran.r-project.org/web/packages/dslabs/index.html). Write a code chunk using the `library()` function that loads the package (install the `dslabs` package first if you don't have it yet). 
 
 :::note
-It is good practice to load all packages at the beginning of your code. So if you are using some R package, instead of loading it with `library` just before you use it, place all your `library` commands at the beginning of your R script or Quarto file. Also, add a short comment explaining why you are loading a certain package. For a complex project, it might even make sense to list all packages you use in a `readme` file. You can also use something like the [`renv` package](https://rstudio.github.io/renv/) which keeps track of all your packages and makes sure someone running your project at a later time gets exactly the same packages you use. While `renv` needs a bit of getting used to, and I'm not requiring for the course, I encourage you to check it out and if you want to, use it.
+It is good practice to load all packages at the beginning of your code. So if you are using some R package, instead of loading it with `library` just before you use it, place all your `library` commands at the beginning of your R script or Quarto file. Also, add a short comment explaining why you are loading a certain package. For a complex project, it might even make sense to list all packages you use in a `readme` file. You can also use something like the [`renv` package](https://rstudio.github.io/renv/) which keeps track of all your packages and makes sure someone running your project at a later time gets exactly the same packages you use. While `renv` needs a bit of getting used to, and it's not required for the course, I encourage you to check it out and if you want to, use it.
 :::
 
 
 **All the code you write for this (and any other) project should be written into an R or Quarto file, not in the R console. The reason for that is that you want a permanent record of what you did, and the ability to modify and re-run your analysis easily.** For this exercise, the best option is to write the code directly into the Quarto document.
 
-We'll look at the `gapminder` dataset from `dslabs`. Once you have installed and loaded the `dslabs` package, the dataset is available. I.e., different than datasets you get from external sources, those that come with R packages are available right after you load the package. If you want to learn more about the dataset, you can run `help(gapminder)` or `?gapminder` in the R console (this is one instance where an R call should only be done interactively, not inside a file.)
+We'll look at the `gapminder` dataset from `dslabs`. Once you have installed and loaded the `dslabs` package, the dataset is available. I.e., different than datasets you get from external sources, those that come with R packages are available right after you load the package. If you want to learn more about the dataset, you can run `help(gapminder)` or `?gapminder` **in the R console**  - this is one instance where an R call should only be done interactively, not inside a file since you don't want the help page to open when you run your code in an automated/scripted manner.
 
 Write code to use the `str()` and `summary()` functions to take a look at the data. Use the `class()` function to check what type of object `gapminder` is.
 To illustrate how that should look, you should have something like these lines of code and R output so far for this exercise.
@@ -80,7 +80,7 @@ class(gapminder)
 ### Processing data
 
 :::note
-You can accomplish the next steps (and pretty much anything) with just basic R commands and not using extra functionality from packages. However, things are often easier with packages. 
+You can accomplish the next steps (and pretty much anything) with just basic R commands and not use additional packages. However, things are often easier with packages. 
 For data processing tasks, the packages from the [`tidyverse`](https://www.tidyverse.org/) are very useful. You can do the following tasks with any commands/packages you like. 
 :::
 
@@ -112,7 +112,7 @@ Let's make the same plots as above again, this time only for the year 2000. Base
 
 ### Simple model fits
 
-Use the `lm` function and fit life expectancy as the outcome, and infant mortality as the predictor. Then repeat, now with the population size as the predictor variable. (Use the data from 2000 only.) Save the result from the two fits into two objects (e.g. `fit1` and `fit2`) and apply the `summary` command to both, which will print various fit results to the screen. Based on the p-values for each fit, what do you conclude? Add comments into your quarto file to explain what you did and found.
+Use the `lm` function and fit life expectancy as the outcome, and infant mortality as the predictor. Then repeat, now with the population size as the predictor variable. (Use the data from 2000 only.) Save the result from the two fits into two objects (e.g. `fit1` and `fit2`) and apply the `summary` command to both, which will print various fit results to the screen Add comments into your Quarto file to explain what you did and found.
 
 
 ### Sending updates to Github
@@ -137,11 +137,11 @@ You will work on your classmate's repository using what is called the **fork and
 
 Next, you implement your improvements in the forked repository. Once you are done, you ask the owner of the original repository to incorporate the updates you made in the fork into their main repository. This last part is called issuing a **pull request**. You are requesting that the other person *pull* your changes into their repository, hence the at times confusing (at least for me) terminology. I prefer to think of them as *merge* requests or *sync* requests, i.e. you are requesting that they merge or sync your changes into their repository. You'll find the terminology *merge request* is used at times. If the person who controls the main repository likes your changes, they will *merge* your fork into the main branch. And just like that, you have contributed to some project becoming better! We will practice this *fork and pull* flow now.
 
-Find the repository of the team member you will contribute to and *fork* their repository on `Github.com`. This basically places a copy of their repository into your online Github account. Next, clone your fork to your local machine, as you have done previously with your own repositories. In fact, this fork is now your own repository, you have it forever, even if the person who owns the original repository deletes theirs.
+Find the repository of the team member you will contribute to and *fork* their repository on `Github.com`. This places a copy of their repository into your online Github account. This fork is now your own repository, you have it forever, even if the person who owns the original repository deletes theirs.
 
-Once you finished cloning to your local machine, open the repository in Positron. Once you have the repository open, find the file for this exercise. Open it, make sure it runs/renders. Then add your part at the bottom of the file. 
+Next, clone your fork to your local machine, as you have done previously with your own repositories. Once you finished cloning to your local machine, open the repository in Positron. Once you have the repository open, find the file for this exercise. Open it, make sure it runs/renders. Then add your part at the bottom of the file. 
 
-Start off by adding a comment that says something like **This section contributed by YOURNAME**. This needs to be there for me to be able to grade your contribution.
+Start off by adding a comment that says something like **This section contributed by YOURFULLNAME**. This needs to be there for me to be able to grade your contribution.
 
 
 ### More data exploration 
@@ -186,7 +186,7 @@ Part 3 is due by **Friday**.
 
 ## Merging the PR
 
-Once you receive the pull request notification, go to the GitHub site for your repository. Click on *Pull requests*, then click on the request. Take a look. On the first page, it shows you their message and if there are conflicts with your version of the repository. Hopefully, you didn't change things around while they did, so there shouldn't be any conflicts. Click on the *Files changed* button, which will show you an overview of the code they changed. Removals are red, and additions are green.
+Once you receive a pull request notification from your teammate, go to the GitHub site for your repository. Click on *Pull requests*, then click on the request. Take a look. On the first page, it shows you their message and if there are conflicts with your version of the repository. Hopefully, you didn't change things around while they did, so there shouldn't be any conflicts. Click on the *Files changed* button, which will show you an overview of the code they changed. Removals are red, and additions are green.
 
 On the main pull request site, you can do various things. If you don't like the suggested edits, you can write a comment and close the pull request without merging their changes into your repository. If you like most of what they did, but there is something they need to adjust, write a comment and let them know. Close the pull request and ask them to send a new one. If you are ok with their changes (hopefully, this is the case here), you can merge the pull request and close it. Their updates are now part of your repository.
 
