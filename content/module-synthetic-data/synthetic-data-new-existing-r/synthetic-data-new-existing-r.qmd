@@ -7,7 +7,7 @@ subtitle: ""
 
 ```{r, include=FALSE, cache=FALSE}
 #R script that contains code chunks shown below
-knitr::read_chunk('synthetic-data-new-existing-R-example-code.R')
+knitr::read_chunk('synthetic-data-new-existing-r-example-code.R')
 ```
 
 

@@ -29,13 +29,11 @@ listed and not listed), I'd love to receive feedback.
 
 # General Data Science
 
--   [Cloud Based Data
-    Science](https://leanpub.com/universities/set/jhu/chromebook-data-science) -
+-   [Cloud Based Data  Science](https://leanpub.com/universities/set/jhu/chromebook-data-science) -
     a nice online course covering many of the topics we cover at a
     somewhat more basic level. You can decide what to pay for it,
     including getting it for free. That course used to be called
-    [Chromebook Data
-    Science](https://jhudatascience.org/chromebookdatascience/index.html)
+    [Chromebook Data Science](https://jhudatascience.org/chromebookdatascience/index.html)
     and seems to be now updated and rebranded as [Cloud Based Data
     Science](https://www.clouddatascience.org/). It is done by [Jeff
     Leek](http://jtleek.com/) and his team. You'll run into Jeff
@@ -98,27 +96,19 @@ listed and not listed), I'd love to receive feedback.
     in (R)Markdown and want to turn it into a (self)-published book, it
     is rather easy to do with Leanpub. That's how those individuals made
     their books, as spin-offs from their RMarkdown course materials.
--   [*ModernDive - Statistical Inference via Data
-    Science*](https://moderndive.com) - another good recent book
+-   [*ModernDive - Statistical Inference via Data Science*](https://moderndive.com) - another good recent book
     covering data analysis with R.
--   [*Introduction to Modern
-    Statistics*](https://openintro-ims.netlify.app/) is a free online
+-   [*Introduction to Modern Statistics*](https://openintro-ims.netlify.app/) is a free online
     textbook teaching statistics using R in a modern framework.
 -   [*Telling Stories with Data*](https://tellingstorieswithdata.com/) -
     an interesting way to discuss data analysis, focusing on the
     story/message.
--   [*Reproducible Medical Research with
-    R*]( ://rmrwr.netlify.app/) - free online book
-    showing how to use R to do basic analysis.
--   [*Data Science for the Biomedical
-    Sciences*](https://ds4biomed.tech/) - another free online textbook.
+-   [*Data Science for the Biomedical Sciences*](https://ds4biomed.tech/) - another free online textbook.
     Part of a workshop, but can also be used for self-learning.
--   [*Elements of Statistical
-    Learning*](https://hastie.su.domains/ElemStatLearn/) - is a somewhat
+-   [*Elements of Statistical Learning*](https://hastie.su.domains/ElemStatLearn/) - is a somewhat
     advanced book on statistical/machine learning. Not useful as
     introduction, but a potentially good reference.
--   [*Interpretable Machine
-    Learning*](https://christophm.github.io/interpretable-ml-book/) is
+-   [*Interpretable Machine Learning*](https://christophm.github.io/interpretable-ml-book/) is
     an online book that discusses approaches that can be used to start
     making sense of sometimes complex ML models.
 - [Introduction to Data Analysis with R](https://datawithr.com/) is an online book with a public health perspective.    
@@ -351,7 +341,7 @@ non-technical and thus beginner-friendly.
 # R and Shiny
 
 * [Official shiny webpage](https://shiny.posit.co/)
-* [Collection of Shiny tips and tricks](https://github.com/daattali/advanced-shiny), [see also here](https://deanattali.com/blog/advanced-shiny-tips/
+* [Collection of Shiny tips and tricks](https://github.com/daattali/advanced-shiny).
 * [Engineering Production-Grade Shiny Apps](https://engineering-shiny.org/)
 * [Outstanding User Interfaces with Shiny](https://unleash-shiny.rinterface.com/) - a book covering advanced Shiny material, covering advanced styling, mobile development, integration with other web technologies, etc.
 

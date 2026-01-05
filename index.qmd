@@ -71,7 +71,6 @@ cat("The following individuals have contributed to improving the course:\n")
 cat(paste0(contributors$desc, collapse = ", "))
 ```
 
-<!-- Some icons come from [Desirée De Leon](https://desiree.rbind.io/post/2019/making-tip-boxes-with-bookdown-and-rmarkdown/). -->
 
 The course materials are licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
 Linked and embedded materials are governed by their own licenses.
