@@ -121,18 +121,8 @@ You want to make as much of your reporting automated as possible. For that, all 
 
 You want automation for both efficiency and reproducibility purposes. Especially if you design an analysis that might be repeated often (maybe not so common in academia, but very common in other settings), you want to be able to automatically re-run and regenerate as much of the whole process as possible.
 
+
 # Further reading
 
-Above, I gave you my thoughts related to the various steps of the data analysis workflow. It's good to hear it from multiple sources. To that end, go back to [*The Art of Data Science (ADS)*](https://leanpub.com/artofdatascience) and read through chapters 4 and 9--11.
+Above, I gave you my thoughts related to the various steps of the data analysis workflow. It's good to hear it from multiple sources. To that end, go back to [*The Art of Data Science (ADS)*](https://leanpub.com/artofdatascience) and read through chapters 4 and 9-11.
 
-# Some practice {#sec-some-practice}
-
-There is code shown in chapter 4 of ADS. If you want, you can try to work along and reproduce what they are showing. This is optional. If you want to try and work along, note that the link provided in the book to download the data does not work anymore (not easily reproducible!). I did find the [data](https://aqs.epa.gov/aqsweb/airdata/download_files.html), which you can download as a [zip folder](/assets/hourly_44201_2014.zip). Download and unzip and you should be good to work along.
-
-If you code along, I suggest you start a new R script and place their code into that script (instead of copying it into the console). We'll talk about that more soon. You will need to slightly adjust the code shown in the book to make it work. E.g., if you don't place the data into a `data` folder, you will need to change the path in the `read_csv` command. Also, for that command and some others, the book has a formatting with `+` signs across multiple lines of code, that might not work if you just copy and paste their code, and you might need to remove them and move everything into a single line of code. You can write everything into a single line and delete all `+` signs.
-
-You will also notice that the data is different than what they report. Their book was published on 2018-06-22, but on the website where the data comes from, a time stamp of 2019-05-07 is listed. Thus the data got updated after the book was published, again making things not quite reproducible. (Changes to data are common, which is a reason why an automated and reproducible workflow is so important!)
-
-Finally, there are minor errors/typos in the book, e.g., what the code does and what the text says are not the same when looking at time (page 41).
-
-Overall, while you should be able to reproduce most of what they show, it will be slightly different since the data has changed, and you will need to make adjustments to the code. If you have no R coding experience, trying to get it to work might be too tedious, so skip for now and consider revisiting later once you learned some R coding.
