@@ -784,7 +784,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2025-12-29</p>
+      <p class="date-modified">2026-01-06</p>
     </div>
   </div>
     
@@ -851,7 +851,7 @@ window.Quarto = {
 <section id="fast-and-frugal-trees" class="level1">
 <h1>Fast and frugal trees</h1>
 <p>While trees are fairly simple to understand, sometimes, especially if there are many branching points, a complex decision tree might still not be suitable in practice. Further, even with regularization, trees might overfit. There is a type of tree, called <em>fast and frugal tree (FFT)</em>, which can potentially help with both aspects. The difference between a regular tree and a FFT is that for the FFT, at each split/decision point, at least one of the splits needs to end in a terminal node. Check e.g.&nbsp;the <a href="https://en.wikipedia.org/wiki/Fast-and-frugal_trees">example diagrams shown in the FFT Wikipedia article</a> to see what this means. This constraint makes the trees often simpler and thus easier to implement in practice (e.g.&nbsp;by a doctor) and they might also be more robust, i.e.&nbsp;their performance on future data might be better than a larger tree. Disadvantages of FFT are that sometimes they might be too simple and thus not perform as well as a full tree, and they only work for binary outcomes.</p>
-<p>A very nice R package called <code>FFTrees</code> implements FFT (and automatically compares their performance to regular trees and some of the tree based methods discussed below). You can find more about this R package in the <a href="https://ndphillips.github.io/FFTrees.html"><code>FFTrees</code> documentation</a>.</p>
+<p>A nice <a href="https://cran.r-project.org/web/packages/FFTrees/index.html">R package called <code>FFTrees</code></a> implements FFT (and automatically compares their performance to regular trees and some of the tree based methods discussed below).</p>
 </section>
 <section id="advantages-and-disadvantages-of-tree-models" class="level1">
 <h1>Advantages and disadvantages of tree models</h1>
@@ -860,7 +860,7 @@ window.Quarto = {
 </section>
 <section id="further-information" class="level1">
 <h1>Further information</h1>
-<p><a href="http://www.r2d3.us/visual-intro-to-machine-learning-part-1/"><em>R2D3</em>’s excellent interactive tutorial</a> gives a very nice, visual introduction to machine learning in general and trees in particular. It covers and nicely illustrates some of the topics discussed here, as well as topics discussed in previous units. In <a href="http://www.r2d3.us/visual-intro-to-machine-learning-part-2/">part 2 of the tutorial</a> the authors discuss overfitting. I strongly recommend you check it out, even if you just skim through it. It is fun and informative!</p>
+<p><a href="https://r2d3.us/"><em>R2D3</em>’s excellent interactive tutorial</a> gives a very nice, visual introduction to machine learning in general and trees in particular. It covers and nicely illustrates some of the topics discussed here, as well as topics discussed in previous units. I strongly recommend you check it out, even if you just skim through it. It is fun and informative!</p>
 <p>For more on tree models, see the first part <a href="https://statlearning.com/">Tree-based Methods chapter of <em>ISLR</em></a>, the <a href="https://bradleyboehmke.github.io/HOML/DT.html">Decision Trees chapter of <em>HMLR</em></a>.</p>
 
 
