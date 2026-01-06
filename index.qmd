@@ -18,9 +18,9 @@ Most materials are hosted here, some are on external sites and either linked or 
 <!-- _**The course is currently not running. The website will likely receive none or only minor updates until the next time the course will be offered (tentatively spring 2026).**_ -->
 
 
-**This course website is currently being updated for the upcoming semester. As long as this message is shown, consider the current website outdated.**
+<!-- **This course website is currently being updated for the upcoming semester. As long as this message is shown, consider the current website outdated.** -->
 
-<!-- _**The course is currently running. The website will be updated throughout the semester. Things might change (though likely not by a whole lot). Visit/check regularly, especially the Schedule. Note the last update time above.**_ -->
+**The course is currently running. The website will be updated throughout the semester. Things might change (though likely not by a whole lot). Visit/check regularly, especially the Schedule. Note the last modified date.**
 
 # Website content
 
