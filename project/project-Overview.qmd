@@ -76,10 +76,10 @@ as part of your research!*
 You can use any data you can get access to. Since it needs to be
 reproducible, you need to be able to share the data at least with me and
 the classmates who will review your project. If you need some ideas for
-data, check out this [website I maintain with various links to
-resources](https://andreashandel.github.io/research-and-teaching-resources/),
-among them is a list with links to various data sources. Of course you
+data, check out the ones listed in the [Data Resources page](/resources/resources-data.qmd). Of course you
 are not limited to data listed there.
+
+Note that if you use a publicly available data set, it needs to be somewhat 'messy' and not fully cleaned. Some data files on sites such as Kaggle are already too processed/cleaned to generally be suitable for the class project. If unsure, ask me.
 
 *Often, the most interesting questions can be asked by combining data
 from more than one source.*
@@ -98,7 +98,7 @@ The preferred type is to make it a public repository. If you have data that requ
 
 The main document should be a Quarto file, which can be turned into a
 suitable output format (html or word or pdf). This should have the
-structure of a scientific paper. Use the `manscript.qmd`
+structure of a scientific paper. Use the `manuscript.qmd`
 file contained in the template and replace the template content with your content. I suggest having the output be a word document, since that is what
 most journals want for submission of a scientific paper. The template I
 provide is set up for word output. However, if you for instance decide
@@ -179,7 +179,7 @@ submission.
 The initial submissions and peer reviews make up 40% of the project
 grade. The final submission counts for the remaining 60%.
 
-**More details on what exactly is expected and how it is assessed is
+More details on what exactly is expected and how it is assessed is
 provided in the [**Project Details**](/project/project-details.qmd) document.
 
 # Project communications

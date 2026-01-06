@@ -1,0 +1,211 @@
+/*-- scss:defaults --*/
+
+/* Colors */
+
+$blue:    #267ee3 !default;
+$indigo:  #6610f2 !default;
+$gray-765: #373a3c !default;
+$gray-800: #373a3c !default;
+$pink:    #A52C60 !default;
+$red:     #CF4446 !default;
+$orange:  #EE6A24 !default;
+$yellow:  #F6D645 !default;
+$green:   #118230 !default;
+$teal:    #20c997 !default;
+$cyan:    #3093CF !default;
+
+
+/*-- scss:rules --*/
+
+
+/* This section can also contain CSS rules */
+
+
+// Bold the title of the active document in the sidebar
+div.sidebar-item-container .active, div.sidebar-item-container .show>.nav-link, div.sidebar-item-container .sidebar-link>code {
+  font-weight: bold;
+}
+
+// Add a little more space between heading and author / date metadata
+#title-block-header.quarto-title-block.default .quarto-title .title {
+  margin-bottom: 0.5em;
+}
+
+
+/* Images ---------------*/
+
+// Quarto figure class contains the figure and the figure-caption. 
+// The below rules set the figure class to center-justify both the image and caption. 
+// The text itself inside the caption is left-justified.
+
+.figure {
+  display: grid;
+  justify-items: center;
+}
+
+.figure-caption {
+  text-align: left;
+}
+
+
+
+/* --------------------------------------*/
+/* Begin formatting for certain types of content components  ------*/
+/* --------------------------------------*/
+
+
+
+/* Formatting for code-specific text  ------*/
+/* Not currently used, instead we write as R/Julia code chunks and as needed just set eval = false */
+
+// div.r
+// {
+//     padding: 1em;
+//     margin: 1em 0;
+//     color: #1f5386;
+//     background-color: #bed3ec;
+//     border: solid 5px #dfedff;
+// }
+
+// div.julia
+// {
+//     padding: 1em;
+//     margin: 1em 0;
+//     color: #d4e2e0;
+//     background-color: #27ceda;
+// }
+
+
+div.note
+{
+    padding: 0.5em;
+    margin: 0.5em 0em;
+    color: #153e67;
+    background-color: #dde8f6;
+    border: solid 5px #ecf4ff;
+    border-radius: 10px;
+
+}
+
+div.warning
+{
+    padding: 0.5em;
+    margin: 0.5em 0em;
+    color: #6c1f0e;
+    background-color: #ffece7;
+    border: solid 5px #fff4f2;
+    border-radius: 10px;
+}
+
+/*
+  WARNING BOX STYLES
+  Still need Work
+  This warning box is used **only when skipping a step will prevent progress or generate misleading results**.
+  It should be used sparingly to highlight critical steps that must not be ignored.
+*/
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+.warning-box {
+  background-color: #ffebeb;
+  border: 1px solid #ff0000;
+  padding: 0; /* Remove unnecessary padding to align header properly */
+  border-radius: 5px;
+  position: relative;
+  width: 100%; /* Ensures it always fits inside its container */
+  max-width: 600px; /* Prevents it from being too wide */
+  box-sizing: border-box; /* Ensures padding doesn't affect width */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  overflow: hidden; /* Ensures no internal scroll bars */
+  margin: 10px auto; /* Centers the box */
+  word-wrap: break-word; /* Forces text to wrap inside the box */
+  white-space: normal; /* Ensures long words don't cause overflow */
+  overflow-wrap: break-word; /* Alternative for wrapping in different browsers */
+
+  /* HEADER: Adds the warning sign and text dynamically */
+  &::before {
+    content: "⚠️ Warning"; /* Only keep this inside the header */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ff6b6b;
+    color: white;
+    font-weight: bold;
+    padding: 12px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    font-size: 1.2rem;
+    width: 100%;
+    animation: blink 1s infinite; /* Blinking effect */
+  }
+
+
+
+  .warning-content {
+  padding: 15px;
+  font-size: 1rem;
+  text-align: left;
+  word-wrap: break-word;
+  white-space: normal;
+  overflow-wrap: break-word;
+  max-width: 100%; /* Prevents text from going outside the box */
+  display: block;
+  }
+}
+
+
+
+
+div.emphasis
+{
+    padding: 0.5em;
+    margin: 0.5em 0em;
+    color: #145233;
+    background-color: #d6f5e6;
+    border: solid 5px #33cc80;
+    border-radius: 10px;
+
+}
+
+div.prompt
+{
+    padding: 0.5em;
+    margin: 0.5em 0em;
+    color: black;
+    background-color: #c7dcf2;
+    border: solid 5px #0c7ef5;
+    border-radius: 10px;
+
+}
+
+div.output
+{
+    padding: 0.5em;
+    margin: 0.5em 0;
+    color: black;
+    background-color: #d0f7e2;
+    border: solid 5px #029645;
+    border-radius: 10px;
+
+}
+
+
+/* Inline code only (not fenced/code blocks) */
+code:not(.sourceCode) {
+  background: #ffe9c7;
+  color: #8a3a00;
+  padding: 0.1em 0.35em;
+  border-radius: 0.35em;
+  box-shadow: 0 0 0 1px #f3b36c inset;
+  font-weight: 600;
+}
+
+
+/* --------------------------------------*/
+/* End formatting for certain types of content components  ------*/
+/* --------------------------------------*/
+

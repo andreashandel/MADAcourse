@@ -1,0 +1,302 @@
+:root {
+  --incorrect: #983E82;
+  --incorrect_alpha: #edaddd;
+  --correct: #59935B;
+  --correct_alpha: #c0edc2;
+  --highlight: #467AAC;
+  --highlight_alpha: #D1E4FF;
+  --highlight_gray: #C3C3C3;
+  --background_question: #7f7f7f0d;
+  --background_input: white;
+  --text_input: black;
+  --webex-reveal-main-font-size: 1.5rem; /* 1.5 line height relative to document */
+  --webex-reveal-main-color: var(--r-main-color);
+}
+
+/* Wishlist: Adding styling for .color-theme-1 (sepia; gitbook) */
+
+/* for quarto websites when using dark theme and
+ * for bookdown::gitbook: dark theme (.color-theme-2) */
+:root .quarto-dark, :root .color-theme-2 {
+  --highlight: #5687B9;
+  --background_input: black;
+  --text_input: white;
+}
+
+/*--------------ADJUSTMENTS FOR REVEALJS-----------------*/
+
+.reveal .webex-question * {
+    font-size: var(--webex-reveal-main-font-size) !important;
+    color: var(--webex-reveal-main-color) !important;
+} 
+
+
+/*--------------------webex/exams2forms-------------------*/
+
+/* a webex-group is a div container containing multiple
+ * webex-questions. We first hide all and randomly show
+ * one of the randomizations (webex.js) */
+.webex-group .webex-question {
+  display: none;
+}
+.webex-group .webex-question.active {
+  display: block;
+}
+
+.webex-check {}
+
+.webex-box {
+  border: 2px solid var(--highlight);
+  padding: 0.5em;
+  margin: 1em 0;
+  border-radius: .25em;
+  background-color: var(--background_question);
+}
+
+.webex-filename {
+  display: block;
+  font-family: "Lucida Console", "Courier New", monospace;
+  color: gray;
+  text-align: right;
+}
+.webex-filename > p { margin: 0; }
+
+.webex-total_correct {
+  margin-left: 1em;
+}
+
+.unchecked .webex-total_correct {
+  display: none;
+}
+
+.unchecked .webex-incorrect,
+.unchecked .webex-correct {
+  border: 2px solid transparent !important;
+  background-color: transparent !important;
+}
+
+/* input elements require a visible border */
+.unchecked select.webex-incorrect,
+.unchecked select.webex-correct,
+.unchecked input.webex-incorrect,
+.unchecked input.webex-correct {
+  border: 2px solid var(--highlight) !important;
+  background-color: var(--background_input) !important;
+  color: var(--text_input) !important;
+}
+
+/* styles for webex-solveme */
+.webex-select, .webex-solveme,
+.unchecked .webex-radiogroup > .webex-incorrect,
+.unchecked .webex-radiogroup > .webex-correct{
+  border: 2px solid var(--highlight);
+  background-color: var(--background_input);
+  color: var(--text_input) !important;
+  border-radius: 0.25em;
+  width: auto;
+  max-width: 90%;
+}
+
+.webex-question .tolerance + .webex-solveme {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-left: none;
+  padding-left: 0.5em;
+}
+.webex-question .tolerance {
+  border-color: var(--highlight);
+  border-radius: 0.25em;
+  background-color: #CECECE;
+  color: gray;
+  text-align: right;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-style: solid;
+  border-right: none;
+  padding-right: .5em;
+  padding-left: .25em;
+}
+.webex-check:not(.unchecked) .tolerance:has(+ .webex-solveme.webex-incorrect) {
+  border-color: var(--incorrect);
+  color: var(--incorrect);
+}
+.webex-check:not(.unchecked) .tolerance:has(+ .webex-solveme.webex-correct) {
+  border-color: var(--correct);
+  color: var(--correct);
+}
+
+
+.webex-incorrect, .webex-checkboxgroup, .webex-solveme. .webex-radiogroup {
+    /* DEPRICATED color: black; */
+    border-radius: 0.25em;
+}
+.webex-checkboxgroup {
+    margin-bottom: 1em;
+}
+
+.webex-incorrect,
+.webex-checkboxgroup > .webex-incorrect,
+.webex-solveme.webex-incorrect,
+.webex-radiogroup > .webex-incorrect {
+    border: 2px solid var(--incorrect);
+    background-color: var(--incorrect_alpha);
+}
+.webex-correct,  
+.webex-checkboxgroup > .webex-correct,
+.webex-solveme.webex-correct,
+.webex-radiogroup >.webex-correct {
+    border: 2px solid var(--correct);
+    background-color: var(--correct_alpha);
+}
+
+.unchecked .webex-incorrect > span::after,
+.unchecked .webex-incorrect + .webex-icon::after,
+.unchecked .webex-correct > span::after,
+.unchecked .webex-correct + .webex-icon::after {
+  content: "";
+}
+
+/* icons specified as CSS decimal 9984-10175 unicode chars,
+ * see e.g.: https://www.w3schools.com/charsets/ref_utf_dingbats.asp */
+.webex-incorrect > span::after,
+.webex-incorrect + .webex-icon::after {
+  content: "\00a0\00a0\2715";
+}
+
+.webex-correct > span::after,
+.webex-correct + .webex-icon::after {
+  content: "\00a0\00a0\2713";
+}
+
+/* **************************** */
+/* **************************** */
+
+/* styles for hidden solutions */
+.webex-solution {
+    display: none;
+    padding: 0.5em;
+    margin-bottom: 10px;
+    border: 2px solid var(--highlight_gray);
+    border-radius: 5px;
+}
+.webex-solution.visible {
+    display: block;
+}
+.webex-solution > ul {
+    padding-left: 2em;
+}
+
+/* webex button list styling */
+ul.webex-button-list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    list-style: none;
+    padding: 0 !important; /* !important for bookdown::gitbook: */
+    margin: 0 !important; /* !important for bookdown::gitbook: */
+}
+ul.webex-button-list > li {
+    padding: 0;
+}
+ul.webex-button-list > li {
+    margin-bottom: 0 !important; /* !important for bookdown */
+}
+ul.webex-button-list > li:first-child {
+    margin-right: auto;
+    margin-top: 0; /* for bookdown bs4_book */
+}
+
+.webex-solution button,
+.webex-box .webex-button {
+    height: 2em;
+    min-width: 2em;
+    margin-bottom: 0;
+    margin-right: 0.25em;
+    border-radius: 0.5em;
+    background-color: transparent;
+    border-color: var(--highlight);
+    color: var(--highlight);
+    padding: 0 0.5em;
+    font-size: 1.2em;
+    white-space: nowrap;
+}
+.webex-button:hover {
+    background-color: var(--highlight_alpha);
+}
+.webex-solution pre.sourceCode {
+    border-color: var(--correct);
+}
+ul.webex-button-list > li:last-child > .webex-button { 
+    margin-right: 0;
+}
+
+/* invisible border to keep dimensions when not highlighted */
+.webex-checkboxgroup > label,
+.unchecked .webex-checkboxgroup > label,
+.webex-radiogroup label {
+  font-weight: 400;
+  display: block;
+  border: 2px solid transparent;
+  background-color: inherit;
+  border-radius: 0.25em;
+}
+
+.webex-checkboxgroup label > input[type=checkbox],
+.webex-radiogroup label > input[type=radio] {
+  margin: 0.1em 0.5em 0 0.25em;
+  position: relative;
+  top: 0.125em;
+}
+
+.webex-radiogroup {
+  margin: 1em 0;
+}
+
+
+/* ----------------------------------------------------------------
+ * CSS styling for lists (<ul>) used for multiple choice exercises
+ * with display = "dropdown". The <ul> comes from markdown and
+ * has no specific class, thus we must rely on the nesting
+ * .webex-box > ul.
+ */
+.webex-box > ul:not(.webex-button-list) {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 1em 0.25em;
+}
+.webex-box > ul:not(.webex-button-list) > li {
+    margin: 0 0 0.25em 0;
+}
+.webex-box > ul:not(.webex-button-list) > li > select {
+    margin: 0 0.5em 0 0;
+}
+
+
+/* ----------------------------------------------------------------
+ * CSS style for webex-checkboxgroup used for multiple choice
+ * when using 'display = "buttons"'.
+ *
+ * For 'checkboxgroups' (multiple choice with display = "buttons"
+ * things need to be different from e.g., single choice radiogroups.
+ * First, we do not want the icon (correct, incorrect) in front of the answers,
+ * setting span::before to no content. Second, we remove the border and
+ * background highlight used to show 'selected items' on radiogroups.
+ * --------------------------------------------------------------- */
+.webex-checkboxgroup > label {
+  display: block;
+}
+.webex-checkboxgroup > label > span {
+  font-weight: normal;
+}
+.unchecked .webex-checkboxgroup .webex-incorrect,
+.unchecked .webex-checkboxgroup .webex-correct {
+  border: 2px solid transparent !important;
+  background-color: transparent !important;
+}
+.unchecked .webex-checkboxgroup > label.webex-correct,
+.unchecked .webex-checkboxgroup > label.webex-incorrect {
+  background-color: transparent;
+}
+
+
+
