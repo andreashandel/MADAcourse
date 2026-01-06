@@ -77,9 +77,7 @@ To repeat (again): **We generally want to know how well a model performs in gene
 
 # Further Resources
 
-[MLNAR's blog post](https://www.mlnar.com/generalization-mindsets.html) provides a nice further discussion of the idea of **generalization** and how different areas of data science (statistics, machine learning, causal modeling) think about this problem. I think the most important paragraph is actually the short last one. I want to add to this that while different areas might think about the question of generalization differently, all of them more or less agree, that in the end, what is important is the general conclusions you can draw from your statistical modeling analysis and **it doesn't matter (by itself) how well your model performs on the data that you used to build your model!** What matters is what it means more generally.
-
-[Chapters 2 *ISL*](https://statlearning.com/) covers the bias-variance trade-off. 
+[Chapter 2 *ISL*](https://statlearning.com/) covers the bias-variance trade-off. 
 
 
 

@@ -26,7 +26,7 @@ __This list needs cleaning.__
 
 * [Nasdaq Data Link](https://data.nasdaq.com/) - mainly finance related data
 
-* [NHANES](http://www.cdc.gov/nchs/nhanes.htm) - longstanding and thorough survey done by CDC
+* [NHANES](https://www.cdc.gov/nchs/nhanes/index.html) - longstanding and thorough survey done by CDC
 
 * [SEER](http://seer.cancer.gov/) - Cancer data
 
@@ -45,8 +45,6 @@ __This list needs cleaning.__
 * [Data.gov](http://www.data.gov/) - federak government data platform.
 
 * [Analyze Survey Data for Free](http://asdfree.com/) - Step by Step Instructions to Explore Public Microdata from an Easy to Type Website
-
-* [Vaccine Safety Datalink (VSD)](https://www.cdc.gov/vaccinesafety/ensuringsafety/monitoring/vsd/accessing-data.html)
 
 * [Global Health Data Exchange / IHME](http://ghdx.healthdata.org/)
 

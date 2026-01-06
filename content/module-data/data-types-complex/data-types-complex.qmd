@@ -236,6 +236,5 @@ The amount and variety of data available for analysis keeps increasing. As data 
 # Further Resources
 
 
-* You can find a community-curated list of resources for spatial data in [*The Big Book of R*](https://www.bigbookofr.com/geospatial.html) or in
-the [*Spatial Data* CRAN task view](https://cran.r-project.org/web/views/Spatial.html).
+* You can find a community-curated list of resources for spatial data the [*Spatial Data* CRAN task view](https://cran.r-project.org/web/views/Spatial.html).
 

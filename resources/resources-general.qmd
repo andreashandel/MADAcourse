@@ -29,17 +29,8 @@ listed and not listed), I'd love to receive feedback.
 
 # General Data Science
 
--   [Cloud Based Data  Science](https://leanpub.com/universities/set/jhu/chromebook-data-science) -
-    a nice online course covering many of the topics we cover at a
-    somewhat more basic level. You can decide what to pay for it,
-    including getting it for free. That course used to be called
-    [Chromebook Data Science](https://jhudatascience.org/chromebookdatascience/index.html)
-    and seems to be now updated and rebranded as [Cloud Based Data
-    Science](https://www.clouddatascience.org/). It is done by [Jeff
-    Leek](http://jtleek.com/) and his team. You'll run into Jeff
-    multiple times throughout this course.
 -   ["Data Science Specialization" on
-    Coursera](https://www.coursera.org/specialization/jhudatascience/1).
+    Coursera](https://www.coursera.org/specializations/jhu-data-science).
     One of the first comprehensive online offerings. Coursera has gotten
     more restrictive over the years, but I think you can still get each
     course for free.
@@ -359,10 +350,6 @@ non-technical and thus beginner-friendly.
 # Quarto
 
 -   The [Quarto website](https://quarto.org/) has a ton of great information and documentation.
--   Here is another example and template of setting up a website with
-    [Quarto](https://www.marvinschmitt.com/blog/website-tutorial-quarto/),
-    similar to what you are asked to do for the Introductory
-    Exercise.
 -   [This blog post](https://jadeyryan.com/blog/2024-02-19_beginner-quarto-netlify/) by Jadey Ryan is a very beginner-friendly setup of a Quarto website that does not involve Git/GitHub.
 - [Dissemination using Quarto and Github Pages](https://bartlettje.github.io/dissemination_quarto/) is an online book by James Bartlett which contains a lot of information about using Quarto and Github Pages, not just for websites but also other output formats.   
 -   [Quarto Club](https://qmdclub.com/) is a collection of nice Quarto

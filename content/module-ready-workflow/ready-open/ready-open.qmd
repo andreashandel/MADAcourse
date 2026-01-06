@@ -28,55 +28,17 @@ The idea is that if you provide others access to your data, code and other compo
 
 # The general idea of open science
 
-There are many ways of defining and describing "open science".
+There are many ways of defining and describing "open science". If you search online for "what is open science," you will likely find various conceptual diagrams and descriptions. For instance, the [Wikipedia Open Science page](https://en.wikipedia.org/wiki/Open_science) has a pretty good overview and diagram.
 
-If you search online for "what is open science," you will likely find
-various conceptual diagrams and descriptions. The papers [*Open science
-saves lives: lessons from the COVID-19
-pandemic*](https://bmcmedresmethodol.biomedcentral.com/articles/10.1186/s12874-021-01304-y)
-and [*From Open Data to Open
-Science*](https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2020EA001562)
-provide pretty good conceptual discussions of open science, but I think
-the best of schematic summary is from
-[NASA](https://www.earthdata.nasa.gov/esds/open-science/oss-for-eso-workshops).
+The basic idea is that - as much as possible - data, code, and any other related product is provided publicly and free of charge, in a way that is easily findable, accessible, and usable by others. 
 
-![Source:
-[NASA](https://www.earthdata.nasa.gov/esds/open-science/oss-for-eso-workshops)](open-science.jpg){width="50%"
-fig-alt="A circular graphic with 'open science' in the center, showing several components of open science around it ([source](https://www.earthdata.nasa.gov/esds/open-science/oss-for-eso-workshops))."}
-
-NASA defines three components that are central to open science.
-
-1.  Accessible -- your research process and results need to be
-    transparent. Open access, FAIR data, and code sharing all fall into
-    this.
-2.  Reproducible -- other people should be able to get the same results
-    as you, and you should strive to make reusable products.
-3.  Inclusive -- if your research is only accessible and reproducible
-    for relatively well-off scientists at major institutions in the USA,
-    it's still not really open 🙂.
-
-If you want a formal definition of "open science," here's the one from
-the OSTP, which is pretty comprehensive:
-
-> "The principle and practice of making research products and processes
-> available to all, while respecting diverse cultures, maintaining
-> security and privacy, and fostering collaborations, reproducibility,
-> and equity."
+In general, a reproducible workflow makes it easier for others to find/access/and re-use your work, thus the connection between reproducibility and open science.
 
 
 # Federal open science requirements
 
 While the concepts of reproducible research and open science have been
-around for a while, they have recently increased in prominence. Several
-US government organizations have said that [2023 is the Year of Open
-Science](https://www.earthdata.nasa.gov/news/year-of-open-science), and
-a recent Office of Science and Technology Policy
-[memo](https://www.whitehouse.gov/ostp/news-updates/2022/08/25/ostp-issues-guidance-to-make-federally-funded-research-freely-available-without-delay/)
-has recommended that all federal agencies take serious steps towards
-open science practices (more on what exactly this means later).
-
-Federal agencies like the NIH have been requiring data sharing and
-public releases of papers (on PMC) for some time now, but these
+around for a while, they have recently increased in prominence. Federal agencies like the NIH have been requiring data sharing and public releases of papers (on PMC) for some time now, but these
 recommended measures are even stronger, and in my opinion, a very
 positive direction for science. It is quite likely that if you work with
 federal funding in the near future, you will be required to share your
@@ -132,10 +94,10 @@ resource is the [GO FAIR
 initiative](https://www.go-fair.org/fair-principles/). It is worth
 taking a short look at both these resources.
 
+
 Of course dealing with things like data use agreements and individual
 privacy is paramount, so 100% achieving these goals all the time is not
-feasible. Sometimes you might need to use [synthetic
-data](https://en.wikipedia.org/wiki/Synthetic_data) based on your real
+feasible. Sometimes you might need to use synthetic data based on your real
 data, or remove certain information from your data to protect privacy,
 or require a data use agreement before you can distribute the data to
 individuals. We should strive for data to be as FAIR as possible, but
@@ -227,7 +189,3 @@ With the increasing requirements for research (data as well as code) to be made 
     replication.
     [(1)](http://www.stat.columbia.edu/~gelman/research/published/ChanceEthics14.pdf)
     [(2)](https://www.americanscientist.org/article/the-statistical-crisis-in-science)
--   [FOSTER](https://www.fosteropenscience.eu/) is a European
-    organization with a set of free courses on open science principles.
-
-

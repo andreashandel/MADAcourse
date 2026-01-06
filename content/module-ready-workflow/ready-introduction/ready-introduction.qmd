@@ -49,7 +49,7 @@ To make a fully reproducible analysis, you have to provide all the data and code
 
 While there is a strong movement toward *Open Access*, providing all the data is not always possible. However, the full automation of data processing, analysis, and result generation is almost always possible.
 
-In this video, [Roger Peng](http://www.biostat.jhsph.edu/~rpeng/) goes into some more details of the concept of reproducible research:
+In this video, [Roger Peng](https://rdpeng.org/) goes into some more details of the concept of reproducible research:
 
 ::: container
 <iframe class="video" src="https://www.youtube.com/embed/DfBSiOupI1I" frameborder="0" allowfullscreen></iframe>
