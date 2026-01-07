@@ -1,4 +1,4 @@
----
+﻿---
 title: Course Communications
 subtitle: ""
 toc: FALSE
@@ -88,7 +88,7 @@ And of course, if you have something you want to discuss outside of those weekly
 
 ## GitHub
 
-We will also use Github for some specific communications, related to exercises and projects.
+We will also use GitHub for some specific communications, related to exercises and projects.
 More detailed instructions on that are provided at the time you are asked to use GitHub.
 
 ## eLC
@@ -104,3 +104,4 @@ In some semesters, I have a TA for the class.
 If there is a TA the semester you are taking the class, they will be another point of contact for you to ask questions.
 The TA will be posting an introduction to Discord with details of their availability and preferred modes of communication (Discord/Zoom/etc.).
 If no such posting shows up on Discord, it means there is no TA.
+

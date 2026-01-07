@@ -1,5 +1,5 @@
----
-title: Revisting the Full Data Analysis Workflow
+﻿---
+title: Revisiting the Full Data Analysis Workflow
 subtitle: ""
 ---
 
@@ -238,3 +238,4 @@ might want to give [*The Art of Data Science
 (ADS)*](https://leanpub.com/artofdatascience) another go-through. It
 addresses these various topics from a fairly big-picture level and will
 give you some additional useful pointers.
+

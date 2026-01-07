@@ -1,4 +1,4 @@
----
+﻿---
 title: Assessment - Machine Learning Models 2
 subtitle: ""
 ---
@@ -12,7 +12,7 @@ in, then submit to the online grading system before the deadline.
 # Project
 
 Submission of part 4 is due. Make sure your updated project is on
-Github.
+GitHub.
 
 # Discussion
 
@@ -25,4 +25,5 @@ Post by Wednesday, then reply to each other by Friday.
 # Exercise
 
 Since this week is another week with a project submission deadline, there's no exercise. You can practice some of the models we covered this week in next week's exercise.
+
 

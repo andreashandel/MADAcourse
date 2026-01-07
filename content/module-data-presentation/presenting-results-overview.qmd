@@ -1,4 +1,4 @@
----
+﻿---
 title: Presentation Overview
 subtitle: ""
 ---
@@ -17,7 +17,7 @@ In this unit, we will discuss the main ways to show your data and results and di
 
 # Introduction
 
-At some stage during your project, you'll want to communicate what you did and found to others. This can be in the form of a peer-reviewed paper, a report, a presentation, a website, or any other mode of delivery. In most cases, the core of what you'll communicate will be in the form of figures/graphs and tables, accompanied by text. Here, we'll briefly talk about figures/graphs (I'll use the words interchangably) and tables.
+At some stage during your project, you'll want to communicate what you did and found to others. This can be in the form of a peer-reviewed paper, a report, a presentation, a website, or any other mode of delivery. In most cases, the core of what you'll communicate will be in the form of figures/graphs and tables, accompanied by text. Here, we'll briefly talk about figures/graphs (I'll use the words interchangeably) and tables.
 
 
 
@@ -72,5 +72,6 @@ Figures and tables are the most important components of communicating findings. 
 # Further resources
 
 * In the pharma space, this topic is known as _tables, listings, and graphs (TLG)_ and the folks behind the pharmaverse collected [a bunch of R packages](https://pharmaverse.org/e2eclinical/tlg/) to help with TLG generation.
+
 
 

@@ -1,4 +1,4 @@
----
+﻿---
 title: Assessment - Fitting Basic Statistical Models
 subtitle: ""
 ---
@@ -35,7 +35,7 @@ In general, I suggest using a folder structure like the one from `data-analysis-
 
 We are going to use data on a drug candidate called Mavoglurant. This is [The original paper describing and analyzing the data](https://link.springer.com/article/10.1007/s10928-015-9430-4). You don't need to look at it, unless you want to 😁. In case you do, since the paper might be behind a paywall, [here's a local copy of the pdf](/references/wendling15jpp.pdf).
 
-The data is part of an R package called [`nlmixr2data`](https://nlmixr2.github.io/nlmixr2data/index.html). You could get it by installing that pacakge. But the easiest way to get the data is to download it from [this Github repository](https://github.com/metrumresearchgroup/BayesPBPK-tutorial), which is part of [another paper you don't need to read](https://ascpt.onlinelibrary.wiley.com/doi/10.1002/psp4.12926) - but might want to peek at, see below.
+The data is part of an R package called [`nlmixr2data`](https://nlmixr2.github.io/nlmixr2data/index.html). You could get it by installing that package. But the easiest way to get the data is to download it from [this GitHub repository](https://github.com/metrumresearchgroup/BayesPBPK-tutorial), which is part of [another paper you don't need to read](https://ascpt.onlinelibrary.wiley.com/doi/10.1002/psp4.12926) - but might want to peek at, see below.
 
 ::: instruction
 Go to the GitHub repository, download the `Mavoglurant_A2121_nmpk.csv` file and place it into the folder you just created.

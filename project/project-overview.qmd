@@ -1,4 +1,4 @@
----
+﻿---
 title: Class Project Overview 
 subtitle: ""
 ---
@@ -89,7 +89,7 @@ from more than one source.*
 
 Each assignment needs to be submitted in a fully reproducible form,
 using the tools we cover in the class (R, Quarto, GitHub, etc.). You
-should create a Github repository (using the template described below)
+should create a GitHub repository (using the template described below)
 which should contain all the files for your project. 
 
 If you work in a team - the preferred setup - one of you should create a new repository for the project. Name it `LASTNAME1-LASTNAME2-MADA-project`. If you do it solo, of course just have your name in the repository.
@@ -129,7 +129,7 @@ file. See the template for an example.
 
 # Project template
 
-I created a [public Github repository called
+I created a [public GitHub repository called
 data-analysis-template](https://github.com/ahgroup/data-analysis-template)
 which is meant as a template for doing a data analysis project. It has
 different folders for organizing your project. Various readme files are
@@ -138,9 +138,9 @@ contains several example files to show how the whole project workflow
 (or any data analysis workflow for that matter) can work.
 
 Use the provided template as starting point for your project. To do so,
-go to its Github repository and follow the instructions to turn it into a new repository for your class
+go to its GitHub repository and follow the instructions to turn it into a new repository for your class
 project, call it `YOURLASTNAME-MADA-project`. Once you made the new
-repository, follow the usual Github workflow to get it to your local
+repository, follow the usual GitHub workflow to get it to your local
 computer. Then open the readme file and change the text so it states
 somewhere "This is YOURNAME class project repository".
 

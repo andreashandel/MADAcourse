@@ -1,4 +1,4 @@
----
+﻿---
 title: Assessment - Course and Tools Introduction
 subtitle: ""
 ---
@@ -33,7 +33,7 @@ For this exercise, you are asked to use the tools you learned about to create a 
 
 ## Workload Note
 
-For those of you who are new to Github/R/Quarto, this first project will make you do a lot of things that you are not familiar with. I know that this will be time-consuming and also might feel a bit intimidating. It's partly unavoidable and partly on purpose. You need to learn how to quickly get up to speed with all kinds of new tools that come your way. So practicing it is a good idea. You are welcome to draw on any sources for help that you want (online, classmates, instructor, etc.). I'm confident with a bit of trial and error you'll get it to work.
+For those of you who are new to GitHub/R/Quarto, this first project will make you do a lot of things that you are not familiar with. I know that this will be time-consuming and also might feel a bit intimidating. It's partly unavoidable and partly on purpose. You need to learn how to quickly get up to speed with all kinds of new tools that come your way. So practicing it is a good idea. You are welcome to draw on any sources for help that you want (online, classmates, instructor, etc.). I'm confident with a bit of trial and error you'll get it to work.
 
 If you get stuck (quite possible), check the materials listed in the **Resources** section of the course, or use Google. Also use the discussion boards to ask questions. You may use any method to get help (Google, R4DS Slack channel, AI, colleagues/friends/relatives with R/Quarto/Markdown experience, etc.). Still, try to do as much as possible yourself. We'll use all the bits you are learning here repeatedly during this course.
 
@@ -48,4 +48,5 @@ To execute this exercise, follow the instructions in the [Portfolio Creation Cou
 ::: emphasis
 Once your website is up and running, don't forget to post the link into the `introductions` channel!
 :::
+
 

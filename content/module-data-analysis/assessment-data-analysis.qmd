@@ -1,4 +1,4 @@
----
+﻿---
 title: Assessment - Data Analysis
 subtitle: ""
 ---
@@ -115,7 +115,7 @@ Let's make the same plots as above again, this time only for the year 2000. Base
 Use the `lm` function and fit life expectancy as the outcome, and infant mortality as the predictor. Then repeat, now with the population size as the predictor variable. (Use the data from 2000 only.) Save the result from the two fits into two objects (e.g. `fit1` and `fit2`) and apply the `summary` command to both, which will print various fit results to the screen Add comments into your Quarto file to explain what you did and found.
 
 
-### Sending updates to Github
+### Sending updates to GitHub
 
 Once you are done with your exercise, render/re-build your portfolio website. Make sure no error messages show up. A preview should show up, check that the page for this exercise looks the way you want it to. Once you are happy with how everything looks, commit your changes and push to the remote repository on GitHub.com. Check your portfolio website online to make sure you can now see the newly created R exercise document (in addition to your previously created `About` page). 
 
@@ -137,7 +137,7 @@ You will work on your classmate's repository using what is called the **fork and
 
 Next, you implement your improvements in the forked repository. Once you are done, you ask the owner of the original repository to incorporate the updates you made in the fork into their main repository. This last part is called issuing a **pull request**. You are requesting that the other person *pull* your changes into their repository, hence the at times confusing (at least for me) terminology. I prefer to think of them as *merge* requests or *sync* requests, i.e. you are requesting that they merge or sync your changes into their repository. You'll find the terminology *merge request* is used at times. If the person who controls the main repository likes your changes, they will *merge* your fork into the main branch. And just like that, you have contributed to some project becoming better! We will practice this *fork and pull* flow now.
 
-Find the repository of the team member you will contribute to and *fork* their repository on `Github.com`. This places a copy of their repository into your online Github account. This fork is now your own repository, you have it forever, even if the person who owns the original repository deletes theirs.
+Find the repository of the team member you will contribute to and *fork* their repository on `GitHub.com`. This places a copy of their repository into your online GitHub account. This fork is now your own repository, you have it forever, even if the person who owns the original repository deletes theirs.
 
 Next, clone your fork to your local machine, as you have done previously with your own repositories. Once you finished cloning to your local machine, open the repository in Positron. Once you have the repository open, find the file for this exercise. Open it, make sure it runs/renders. Then add your part at the bottom of the file. 
 
@@ -146,7 +146,7 @@ Start off by adding a comment that says something like **This section contribute
 
 ### More data exploration 
 
-Pick another dataset from `dslabs`, whichever one you want. Unfortunately, the `dslabs` package doesn't have a nice website. But you can go to [its offical CRAN entry](https://cran.r-project.org/web/packages/dslabs/index.html) and click on _Reference Manual_. The pdf lists the various other datasets and for each provides a brief explanation.
+Pick another dataset from `dslabs`, whichever one you want. Unfortunately, the `dslabs` package doesn't have a nice website. But you can go to [its official CRAN entry](https://cran.r-project.org/web/packages/dslabs/index.html) and click on _Reference Manual_. The pdf lists the various other datasets and for each provides a brief explanation.
 
 Once you chose one of the datasets, write R code to go through similar steps as above. Specifically, do the following:
 

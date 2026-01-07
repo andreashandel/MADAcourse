@@ -1,4 +1,4 @@
----
+﻿---
 title: Tools Introduction 
 subtitle: ""
 ---
@@ -39,7 +39,7 @@ Since the use of these tools is an important part of the course, it is essential
 
 # Important notes
 
-Over the years that I've been teaching the course, the tools used in the course changed. Noticable changes are the following:
+Over the years that I've been teaching the course, the tools used in the course changed. Noticeable changes are the following:
 
 - The company now called **Posit** was formerly called **R Studio**. You will likely see the old label show up here and there. 
 - The **software editor** we used in the past for writing R code is called **R Studio.** R Studio still exists, but a lot of new development effort is going into Posit's new editor **Positron**. This is the first year I'm switching to Positron for the class. Mentions of R Studio might still happen here and there.
@@ -58,6 +58,7 @@ Modeling and Data Science Tools](https://andreashandel.github.io/mds-tools/).
 :::{emphasis}
 As preparation for MADA and the first assignment, go through the tutorials/mini-courses [on th MDS Tools website](https://andreashandel.github.io/mds-tools/). The **Portfolio** tutorial will be your first exercise.
 :::
+
 
 
 

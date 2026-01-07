@@ -1,4 +1,4 @@
----
+﻿---
 title: Assessment - READy Workflow
 subtitle: ""
 ---
@@ -33,7 +33,7 @@ As in the previous exercise, assign each member in your group a different, arbit
 
 ### Adding data
 
-You will be using another project template for this exercise (and the same one also for your class project). Go to the Github repository for the [data-analysis-template](https://github.com/ahgroup/data-analysis-template) and read the information in the `README.md` file (shown at the bottom of the repository website). You can ignore the bits about Package Management.
+You will be using another project template for this exercise (and the same one also for your class project). Go to the GitHub repository for the [data-analysis-template](https://github.com/ahgroup/data-analysis-template) and read the information in the `README.md` file (shown at the bottom of the repository website). You can ignore the bits about Package Management.
 
 Then start a new repository using this template by clicking the green `Use this template` button on the top right of the repository page, then chose `Create a new repository`. Name the repository `FirstnameLastname-ready-exercise`. Make sure the repository is public. Add a description. Then create the repository. Once it has been created on GitHub.com, clone it to your local computer.
 
@@ -47,7 +47,7 @@ Commit your changes (write a meaningful commit message) and push them to GitHub.
 
 ### Collaborating
 
-Instead of using the fork + pull-request workflow, we will explore a different collaborative approach. In this approach, you and your collaborator work on the same repository. To that end, you need to add your classmate as collaborator. Go to Github.com, find the repository for this exercise (`FirstnameLastname-ready-exercise`). Then go to `Settings`, then `Collaborators`. Choose `Add People` and add your classmate (based on their GitHub account name). Your classmate should receive an invitation, which they need to accept. With this, they are now able to directly push and pull to your repository, without them needing to create a fork. (You can remove them after this exercise if you don’t want them to be able to continue having write access to your repository).
+Instead of using the fork + pull-request workflow, we will explore a different collaborative approach. In this approach, you and your collaborator work on the same repository. To that end, you need to add your classmate as collaborator. Go to GitHub.com, find the repository for this exercise (`FirstnameLastname-ready-exercise`). Then go to `Settings`, then `Collaborators`. Choose `Add People` and add your classmate (based on their GitHub account name). Your classmate should receive an invitation, which they need to accept. With this, they are now able to directly push and pull to your repository, without them needing to create a fork. (You can remove them after this exercise if you don’t want them to be able to continue having write access to your repository).
 
 To avoid any potential merge conflicts, once your classmate takes over, you shouldn’t make further changes to the repository.
 
@@ -65,7 +65,7 @@ Find `processingfile-v1.qmd` inside `/code/processing-code/`, make a copy of the
 
 If you prefer, you can also make copies and edit `processingcode.R` and `processingfile-v2.qmd` instead of `processingfile-v1.qmd`. The first option is a bit easier since you have to only edit one file, but the second option of working in a separate R script can become more efficient once you are doing larger projects with more code.
 
-Next, repeat those steps for the exploratory data anaylsis (EDA) code. Make a copy of the relevant files using either approach (single `qmd` file or R-script + `qmd` file), add code to the new file to create a boxplot with the new categorical variable (whatever it is) on the x-axis, and height on the y-axis. Also create a scatterplot with weight on the x-axis and the new numerical variable on the y-axis. Save both figures to files into the appropariate `results` folder.
+Next, repeat those steps for the exploratory data analysis (EDA) code. Make a copy of the relevant files using either approach (single `qmd` file or R-script + `qmd` file), add code to the new file to create a boxplot with the new categorical variable (whatever it is) on the x-axis, and height on the y-axis. Also create a scatterplot with weight on the x-axis and the new numerical variable on the y-axis. Save both figures to files into the appropriate `results` folder.
 
 Make sure everything works, then commit and push your changes to GitHub.com. Let your classmate know that you are done with your part.
 
@@ -113,4 +113,5 @@ In general, if you work closely with someone on a project, it might make sense t
 
 There is yet another common way to use GitHub, namely collaborators working in the same repository, but with different branches. Think of a branch like a fork, but it happens inside the repository. Work can occur independently on branches, and at some point one can merge branches. This allows people to work in a single repository, but minimizes possible merge conflicts. This approach is standard for larger projects with many collaborators. For this class, we won't use branches, but note that they are useful and commonly used.
 :::
+
 

@@ -1,4 +1,4 @@
----
+﻿---
 title: Why create and use synthetic data?
 subtitle: ""
 ---
@@ -36,7 +36,7 @@ For your simulated data, you know exactly how it is created (because you do it).
 There are often limitations (real or perceived) for sharing the actual data. An important reason might be confidentiality. This not a problem with simulated data. So if you want to be able to share your analysis with collaborators or readers when you publish, and for some reason you can't share the actual data, you can share simulated data. This allows others to run all your code and reproduce your analysis workflow, even if they won't get quite the same results since they are using simulated and not the real data. (In this case, you should also share the results you got on your
 simulated data, in addition to your real results, as a basis for comparison.)
 
-Another important aspect of being able to share is the increasing use of AI models to help with data analysis. You can upload data to AI tools and request them to perform certain analyses and return the code that does the analysis. This can be very powerful and time-saving. However, you probably often do not want to give the AI your real data, as whatever you upload is often stored and re-used by the companies owning the AI tool (this is part of what you agree to when you click that terms and conditions check box). What you can do instead is feed the AI synthetic data, ask it to write code to do the analyses you are interested in, then take the code and with probably only a few modifications, apply it off-line on your real dataset.
+Another important aspect of being able to share is the increasing use of AI models to help with data analysis. You can upload data to AI tools and request them to perform certain analyses and return the code that does the analysis. This can be very powerful and time-saving. However, you probably often do not want to give the AI your real data, as whatever you upload is often stored and reused by the companies owning the AI tool (this is part of what you agree to when you click that terms and conditions check box). What you can do instead is feed the AI synthetic data, ask it to write code to do the analyses you are interested in, then take the code and with probably only a few modifications, apply it off-line on your real dataset.
 
 
 ## Easier to play around with
@@ -92,6 +92,7 @@ Synthetic data also allow you to more easily share what you are doing with colle
 # Further Resources
 
 In the next units, we will discuss how to actually generate synthetic data and how to use it.
+
 
 
 
