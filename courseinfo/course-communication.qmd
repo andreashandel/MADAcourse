@@ -26,12 +26,14 @@ Each server has *channels*.
 Each *channel* corresponds to a topic.
 The names and descriptions of the different channels should be self-explanatory.
 
-If you have requests for specific channels to be created, let me know.
+**Please set your Discord profile for our server to your full name (first and last). Also, add an image of yourself to the profile.** It will help make things a bit more personal and social, even if it's not quite the same as in-person. You can do all that if you right-click your user name and choose **Edit Server Profile**. _Doing so will adjust things just for our server. If you use Discord for other purposes and don't want to use your real name on other servers, make sure you change the **per-server profile**._ In contrast, if you want to change your user name/image and other details for all your Discord servers, you would adjust it under `Main Profile`.
+
 
 If a channel is public, you can see it and participate in the discussion.
 For private channels you need an invite to see it and participate.
 For simplicity, all channels are public, though there will be channels which likely won't be of interest to you.
 Specifically, you'll be placed into groups during the course and will likely only be interested in the channel for your group.
+If you have requests for specific channels to be created, let me know.
 
 Inside a channel, you can write messages.
 To respond to someone's message you should reply as thread so it's clear which messages go together.
@@ -40,32 +42,24 @@ You can also use Discord to send one or more individuals direct messages (DM).
 You can use that to communicate with me or each other.
 
 Overall, Discord is fairly intuitive, and hopefully much easier to use than the rather clunky discussion feature of eLC.
-But some features might need getting used to.
-If you have no previous Discord experience, I suggest you browse through [their very comprehensive documentation](https://support.discord.com/hc/en-us) to pick up a few more tips and tricks.
+If you have no previous Discord experience, I suggest you browse through [their very comprehensive documentation](https://support.discord.com/hc/en-us) to pick up a few tips and tricks.
 
-One useful thing to know is that people will get a specific notification if you either send them a direct message or use their handle in our message, e.g. by writing @personname *can you take a look at the figure below...*.
-Specifically, if you want to get my attention, you need to do it that way.
-I have too many things pinging me all the time 😁.
+One useful thing to know is that people will get a specific notification if you either send them a direct message or use their handle in our message, e.g. by writing `@personname can you take a look at the figure below...`.
+Specifically, if you want to get my attention, you need to do it that way. I have too many things pinging me all the time 😁.
 While I try to stay on top of all the messages in our class, I likely won't.
 To ensure I don't miss something directed at me, use the \@ notation (or DM).
 
 **I will use the *announcements* channel to post any important course related announcements. Check regularly.**
 
-Use Discord widely to ask questions, to answer others' questions, to notify me and others of things that are unclear/wrong, to post links to interesting resources, etc.
-I hope we can build a *community of learners* where you help and support each other.
-So please don't always wait for me to answer questions or provide feedback!
-Engage with each other.
+Use Discord widely to ask questions, to answer others' questions, to notify me and others of things that are unclear/wrong, to post links to interesting resources, etc. I hope we can build a *community of learners* where you help and support each other.
+So please don't always wait for me to answer questions or provide feedback, instead, engage with each other!
 I will regularly visit and read the discussions and participate, but I hope that I will end up as one participant of many, not the only person providing answers.
 
-I prefer that you use Discord instead of email to ask questions.
+In general, I prefer that you use the `questions-help` Discord channel to ask questions.
 The reason is that if you have a question, it is likely that others have it too.
-By asking and answering online, everyone can see it.
-That said, there might be instances where the question only relates to you.
-In such cases, feel free to either send me a direct message on Discord or email me.
+By asking and answering online, everyone can see it. You might also get a quicker reply since everyone can answer.
+That said, there might be instances where the question only relates to you or is personal. In such cases, feel free to either send me a direct message on Discord or email me.
 
-You might already have a Discord user name or decide to choose a user name which is not your real name.
-**Please set your Discord profile for our server to your real name (and if you want, preferred pronouns and other information). Also, to make things more personal, add an image of yourself to the profile.** It will help make things a bit more social, even if it's not quite the same as in-person.
-You can do all that if you right-click your user name and choose "Edit Server Profile".
 
 ## Zoom
 
