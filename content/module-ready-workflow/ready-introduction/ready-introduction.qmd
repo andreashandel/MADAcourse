@@ -1,4 +1,4 @@
----
+﻿---
 title: READy workflow introduction
 subtitle: ""
 ---
@@ -27,7 +27,7 @@ The concept of reproducible research, or what I call here more generally the REA
 
 # Reproducibility and Replicability
 
-A hallmark of proper scientific research is that findings can be replicated and/or reproduced. The terms **reproduciblity** and **replicability** are sometimes used interchangably, sometimes they are considered slightly distinct.
+A hallmark of proper scientific research is that findings can be replicated and/or reproduced. The terms **reproducibility** and **replicability** are sometimes used interchangeably, sometimes they are considered slightly distinct.
 
 If they are differentiated, **replicability** is generally considered broader. In one sentence, *your research is replicable if someone else can follow your methods and materials to collect new data, analyze their data, and
 get the same results*  (or similar results, taking random variation into account). 
@@ -91,3 +91,4 @@ While the READy concept might seem a bit strange, and maybe also sounds like a l
 - [Reproducible analysis and Research Transparency](https://reproducible-analysis-workshop.readthedocs.io/en/latest/) are materials from a workshop on that topic. I didn't read through it, and it's already a bit old (e.g., pre-Quarto), but seems to contain some interesting and materials.
 
 * [This course](https://pll.harvard.edu/course/principles-statistical-and-computational-tools-reproducible-data-science) cover some of the same topics. I haven't taken it, so I'm not sure what it contains. But it's free to sign up, so you can always register and check it out. 
+

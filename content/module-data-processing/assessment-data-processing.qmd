@@ -1,4 +1,4 @@
----
+﻿---
 title: Assessment - Data Processing
 subtitle: ""
 ---
@@ -82,7 +82,7 @@ If everything works as expected, commit and push your changes to GitHub. Let you
 
 ## Making synthetic data 
 
-Get a copy of your classmate's repositry using the fork+clone approach discussed previously.
+Get a copy of your classmate's repository using the fork+clone approach discussed previously.
 
 Find and open the `cdcdata-exercise.qmd` file. At the bottom, write a comment that says something like **This section contributed by YOURNAME.** This needs to be there for me to be able to grade your contribution.
 
@@ -98,7 +98,7 @@ Make sure everything works and the website renders ok.
 
 ## Finishing the GitHub workflow
 
-Once all is done and works, commit, push to GitHub. Visit your fork of the repo on Github.com and initiate a pull request as you did in a previous exercise.
+Once all is done and works, commit, push to GitHub. Visit your fork of the repo on GitHub.com and initiate a pull request as you did in a previous exercise.
 
 
 ## Part 3
@@ -112,7 +112,8 @@ The original repository owner should receive a PR. Hopefully there are no confli
 
 **This is optional. You can do it at any time during this course (and more than once) 😁.**
 
-Help improve the course with your contributions! Find something wrong/unclear/worth improving with this course (e.g. a typo, something confusing, a broken link, a suggestion for a new reference, or anything else). Go to the [Github repository for this course](https://github.com/andreashandel/MADAcourse). Follow the steps outlined above: Fork the course to your personal account, clone it to your local computer, implement your updates, push it back to GitHub, then initiate a pull request. I will get a notification of your pull request. If things look ok and no conflicts exist, I will merge your improvements into the course. And just like that, you have contributed to improving this course! (And of course, you will be listed in the *Acknowledgments* section of the main course page.)
+Help improve the course with your contributions! Find something wrong/unclear/worth improving with this course (e.g. a typo, something confusing, a broken link, a suggestion for a new reference, or anything else). Go to the [GitHub repository for this course](https://github.com/andreashandel/MADAcourse). Follow the steps outlined above: Fork the course to your personal account, clone it to your local computer, implement your updates, push it back to GitHub, then initiate a pull request. I will get a notification of your pull request. If things look ok and no conflicts exist, I will merge your improvements into the course. And just like that, you have contributed to improving this course! (And of course, you will be listed in the *Acknowledgments* section of the main course page.)
 
 Another option for helping to improve the course website is to file a GitHub Issue. Feel free to do so any time during the course to let me know of anything that needs fixing.
+
 

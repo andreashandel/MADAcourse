@@ -1,4 +1,4 @@
----
+﻿---
 title: Open Research
 authors: 
   - Zane Billings
@@ -32,7 +32,7 @@ There are many ways of defining and describing "open science". If you search onl
 
 The basic idea is that - as much as possible - data, code, and any other related product is provided publicly and free of charge, in a way that is easily findable, accessible, and usable by others. 
 
-In general, a reproducible workflow makes it easier for others to find/access/and re-use your work, thus the connection between reproducibility and open science.
+In general, a reproducible workflow makes it easier for others to find/access/and reuse your work, thus the connection between reproducibility and open science.
 
 
 # Federal open science requirements
@@ -74,7 +74,7 @@ depository is not great for accessibility and reproducibility. As some
 of you noticed during this course, even data from the CDC or other
 reputable organizations is often very poorly formatted and does not have
 a lot of metadata or documentation to help you out. To somewhat solve
-this issue, the FAIR data standards was created. FAIR stands for:
+this issue, the FAIR data standards were created. FAIR stands for:
 
 1.  **F**indable: when someone goes to your paper or project, they
     should be able to easily get to the data source.
@@ -189,3 +189,4 @@ With the increasing requirements for research (data as well as code) to be made 
     replication.
     [(1)](http://www.stat.columbia.edu/~gelman/research/published/ChanceEthics14.pdf)
     [(2)](https://www.americanscientist.org/article/the-statistical-crisis-in-science)
+

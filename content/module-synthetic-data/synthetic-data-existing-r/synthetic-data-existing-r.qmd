@@ -1,4 +1,4 @@
----
+﻿---
 title: Scrambling existing data - R
 ---
 
@@ -104,7 +104,7 @@ Now let's see if things worked. First, we summarize both the old and the new dat
 ```
 
 
-We can also look at correlations between variables. Here is where we run into the above-mentioned problems. Correlations that might exist in the original data can be wiped out. We see that here. In the original data, more individuals (approximately 63% + 9%) reported either absence or presence of both nausea and vomiting. In the scrambled data, this dropped to around 58% + 4%. We would expect that these 2 symptoms are somewhat related, and the scrambling removed it. Similarily, the original data showed lower activity levels for those with vomit as symptom. This pattern is gone in the scrambled data.
+We can also look at correlations between variables. Here is where we run into the above-mentioned problems. Correlations that might exist in the original data can be wiped out. We see that here. In the original data, more individuals (approximately 63% + 9%) reported either absence or presence of both nausea and vomiting. In the scrambled data, this dropped to around 58% + 4%. We would expect that these 2 symptoms are somewhat related, and the scrambling removed it. Similarly, the original data showed lower activity levels for those with vomit as symptom. This pattern is gone in the scrambled data.
 
 ```{r, compare-data2}
 ```
@@ -122,6 +122,7 @@ Scrambling the original data is generally fairly easy. It can be useful to for s
 # Further Resources
 
 The [synthpop R package](https://www.synthpop.org.uk/index.html) might be useful. It doesn't quite preserve the original data, it's more similar to the approach discussed in the unit [Generating synthetic data based on existing data](../synthetic-data-new-existing-r/synthetic-data-new-existing-r.qmd). But you can get data that is very close to the original, thus might often give you what you wanted to get when you considered the scrambling approach.
+
 
 
 

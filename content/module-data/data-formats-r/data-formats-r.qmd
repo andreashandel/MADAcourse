@@ -1,4 +1,4 @@
----
+﻿---
 title: Data formats in R
 subtitle: ""
 ---
@@ -15,7 +15,7 @@ For this unit, we will briefly discuss different types of variables and data for
 
 
 
-# Introdution
+# Introduction
 
 To efficiently work with data in R, you need to understand how different types of data are represented in and handled by R.
 
@@ -120,4 +120,5 @@ For some more information, you can check out this video by [Jeff Leek](http://jt
 :::
 
 To learn more, check for instance the [R Objects Chapter of Hands-On Programming with R ](https://rstudio-education.github.io/hopr/r-objects.html) or [chapter 2 of *IDS*](https://rafalab.github.io/dsbook/r-basics.html).
+
 

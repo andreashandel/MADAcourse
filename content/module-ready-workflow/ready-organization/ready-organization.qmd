@@ -1,4 +1,4 @@
----
+﻿---
 title: Project organization
 subtitle: ""
 ---
@@ -22,7 +22,7 @@ While there is no single best way of structuring your project, there are many ba
 
 You want to set up your analysis in such a way that it makes sense to you and others and allows for a good and efficient workflow. The main components of your analysis will be data, code, results (tables, figures, etc.) and products (reports, interactive apps, slides, etc.). 
 
-Your project could be a Github repository --- [a good idea](../ready-project-management/ready-project-management.qmd) --- or not. If you use a software that supports the concept of projects, you should use it. For instance in `R`, R projects are defined by having a folder structure with an `.Rproj` file at the top level. Most of the time making use of such project support is recommended.
+Your project could be a GitHub repository --- [a good idea](../ready-project-management/ready-project-management.qmd) --- or not. If you use a software that supports the concept of projects, you should use it. For instance in `R`, R projects are defined by having a folder structure with an `.Rproj` file at the top level. Most of the time making use of such project support is recommended.
 
 By having any project you work on as an `R` project, relative paths will always be relative to the main directory in which your `.Rproj` file is located. As long as someone loads the project by clicking on the `.Rproj` file, and you only use relative paths, things should work well on any computer. 
 
@@ -82,10 +82,12 @@ And beware of having R projects inside projects. That's a bad idea and can lead 
 
 -   For some more useful information on structuring your project see [What They Forgot to Teach You About R](https://rstats.wtf/), which is a collection of notes - some more complete than others - by [Jenny Bryan](https://jennybryan.org/) and co-authors. Jenny Brian also has [a shorter blog post](https://www.tidyverse.org/blog/2017/12/workflow-vs-script/) on more or less the same topic.
 
-- I created a public Github repository called [dataanalyis-template](https://github.com/andreashandel/dataanalysis-template) which is meant as a template for doing a data analysis project. It has different folders for organizing your project. Various `README` files are provided to explain what each folder should contain. The template also contains several example files to show how the whole project workflow (or any data analysis workflow for that matter) can work. This is, of course, only one way to structure things. You are welcome to figure out your own setup and structure. 
+- I created a public GitHub repository called [dataanalysis-template](https://github.com/andreashandel/dataanalysis-template) which is meant as a template for doing a data analysis project. It has different folders for organizing your project. Various `README` files are provided to explain what each folder should contain. The template also contains several example files to show how the whole project workflow (or any data analysis workflow for that matter) can work. This is, of course, only one way to structure things. You are welcome to figure out your own setup and structure. 
 
 
 ::: note
 While there is no substitute for clear thinking and being careful in your analysis, things such as having a clear structure can help with this. The importance of good structure to help you achieve optimal results is well appreciated in many contexts outside of data analysis. For a short discussion of this, see [Seth Godin's article](https://seths.blog/2018/11/quality-and-effort/). For a more in-depth discussion of this idea, the [*Checklist Manifesto* by Atul Gawande](http://atulgawande.com/book/the-checklist-manifesto/) is a great read.
 :::
+
+
 

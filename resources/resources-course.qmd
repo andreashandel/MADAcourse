@@ -1,4 +1,4 @@
----
+﻿---
 title: Course Resources
 ---
 
@@ -59,7 +59,7 @@ let me know.
     aspect of the data analysis workflow and is a good resource for
     those topics.
 -   [**happygitwitR (HGR)**](https://happygitwithr.com/) is a good
-    resource to learn some of the basics of Git/Github with R.
+    resource to learn some of the basics of Git/GitHub with R.
 
 -   [**Posit Recipes (PR)**](https://posit.cloud/learn/recipes) is a good source for short code examples to do common tasks. This is the successor to RStudio Primers, which was even better, and had interactive exercises. While Posit removed the Primers, they were fortunately licensed to allow recreation, and [Andrew Heiss](https://www.andrewheiss.com/) did just that with his version of [R Studio primers](https://r-primers.andrewheiss.com/). 
 
@@ -75,7 +75,7 @@ let me know.
     discussion boards. Use them widely to ask questions, to answer
     others' questions, to post links to interesting resources, etc.
 -   Most questions you will have are likely not course specific, but
-    will have to do with R/Github/RMarkdown/etc. For that, Google will
+    will have to do with R/GitHub/RMarkdown/etc. For that, Google will
     be your best friend. Most of the time, someone had the same
     problem/question you do and someone else answered it. The only
     tricky thing is finding that post. Even after years of doing this, I
@@ -85,7 +85,7 @@ let me know.
     Overflow](https://stackoverflow.com/)). These are a [collection of
     widely-used online question and answer
     sites](https://stackexchange.com/sites) covering all kinds of topics
-    (including R, Github, Data Analysis, etc.). The majority of the
+    (including R, GitHub, Data Analysis, etc.). The majority of the
     time, you will find an answer, or at least something that gets you
     closer, on those sites. I rarely go to those sites directly, instead
     I type my query into Google and it often sends me to one of the
@@ -105,3 +105,4 @@ let me know.
 
 The [**General Resources**](resources-general.qmd) page has a more extensive
 list of relevant resources.
+

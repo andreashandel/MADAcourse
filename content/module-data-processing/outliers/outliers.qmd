@@ -1,4 +1,4 @@
----
+﻿---
 title: Dealing with outliers
 subtitle: ""
 ---
@@ -36,7 +36,7 @@ Once you have identified outliers, you should try to determine if you think that
 
 # Removing outliers
 
-One option is to remove any observation that contains a variable with an outlier. This is usually straightfoward. It is in some sense similar to removing observations with missing values. The problem is that this leads to less data you can analyze, and if the outliers were real - just strange - data, you might get biased estimates. 
+One option is to remove any observation that contains a variable with an outlier. This is usually straightforward. It is in some sense similar to removing observations with missing values. The problem is that this leads to less data you can analyze, and if the outliers were real - just strange - data, you might get biased estimates. 
 
 
 
@@ -61,6 +61,7 @@ It is likely that your data has some _strange values_ (outliers). Take a close l
 # Further Resources
 
 * [Finney 2012](https://www.tandfonline.com/doi/pdf/10.1198/000313006X150182) provides a nice further discussion regarding outliers. It's very non-technical (no equations) and easy to read.
+
 
 
 

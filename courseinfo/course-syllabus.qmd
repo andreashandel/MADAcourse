@@ -1,4 +1,4 @@
----
+﻿---
 title: MADA Syllabus
 subtitle: ""
 ---
@@ -43,7 +43,7 @@ The specific learning objectives that I hope you will achieve by going through t
 
 * Explain the importance of workflow, project management, and reproducibility tools, and know how to use those tools.
 * Be proficient in R coding to implement and execute a complete data analysis project in a reproducible and automated manner.
-* Be comfortable using R and Github to do data analysis in a reproducible manner.
+* Be comfortable using R and GitHub to do data analysis in a reproducible manner.
 * Be able to quickly learn how to use new software and tools, figure out how to get help when stuck, and make it work for you.
 
 *Develop skills to critically assess your own and others' analyses and conclusions.*
@@ -107,7 +107,7 @@ To re-emphasize: This course requires a significant time commitment, especially 
 ### Some feedback from past students
 
 
-_"I have thoroughly enjoyed this class from start to finish, and I have gained a lot of knowledge, starting from Github to the entire data analysis workflow. However, I feel that we have covered a lot of material in just one semester."_
+_"I have thoroughly enjoyed this class from start to finish, and I have gained a lot of knowledge, starting from GitHub to the entire data analysis workflow. However, I feel that we have covered a lot of material in just one semester."_
 
 _"I have learned so much from this class in what feels like such a short amount of time, and it has gotten me a lot more comfortable working with and interpreting my data and I now feel that I have a strong grasp on data analysis workflows. However, sometimes I feel like I’ve learned about so many new things that I feel dumb all over again because there is so much to take in when it comes to machine learning and I want the opportunity to explore each facet in greater detail."_
 
@@ -194,3 +194,4 @@ For an outline of the course, please see the [**Course Schedule**](course-schedu
 <!-- ## More Details
 
 The *General Information* section and the [**introductory unit**](../content/module-intro-tools/introduction-course/introduction-course.qmd) of this course contains all the logistic details you need to know. -->
+

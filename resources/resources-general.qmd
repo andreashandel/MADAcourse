@@ -1,4 +1,4 @@
----
+﻿---
 title: More Data Science Resources
 ---
 
@@ -351,20 +351,19 @@ non-technical and thus beginner-friendly.
 
 -   The [Quarto website](https://quarto.org/) has a ton of great information and documentation.
 -   [This blog post](https://jadeyryan.com/blog/2024-02-19_beginner-quarto-netlify/) by Jadey Ryan is a very beginner-friendly setup of a Quarto website that does not involve Git/GitHub.
-- [Dissemination using Quarto and Github Pages](https://bartlettje.github.io/dissemination_quarto/) is an online book by James Bartlett which contains a lot of information about using Quarto and Github Pages, not just for websites but also other output formats.   
+- [Dissemination using Quarto and GitHub Pages](https://bartlettje.github.io/dissemination_quarto/) is an online book by James Bartlett which contains a lot of information about using Quarto and GitHub Pages, not just for websites but also other output formats.   
 -   [Quarto Club](https://qmdclub.com/) is a collection of nice Quarto
     website examples. Most of them have their source code on GitHub, so
     you can see how the creators of those pages accomplished what they
-    made, and shamelessly copy/paste/adapt 😁.
--   [Awsome Quarto](https://github.com/mcanouil/awesome-quarto) is a collection of links to coll and interesting Quarto-based materials and resources.  
+    made, and shamelessly copy/paste/adapt them.
+-   [Awesome Quarto](https://github.com/mcanouil/awesome-quarto) is a collection of links to cool and interesting Quarto-based materials and resources.  
 
 
 # Individuals producing Data Science & R content
     
 -   [Jesse Mostipak, aka Kiersi](https://www.twitch.tv/kierisi) streams
     data science sessions on Twitch.
--   [Nick Wan](https://www.twitch.tv/nickwan_datasci) is another date
-    science Twitch streamer.
+-   [Nick Wan](https://www.twitch.tv/nickwan_datasci) is another data science Twitch streamer.
 -   [David Robinson](https://www.youtube.com/user/safe4democracy/videos)
     has videos of screencasts showing him digging into datasets from
     TidyTuesday and other sources.
@@ -382,3 +381,5 @@ non-technical and thus beginner-friendly.
     Resources](https://www.mbastack.org/data-science-learning-resources/) -
     a collection of links to resources that discuss general aspects of
     the data science field.
+
+
