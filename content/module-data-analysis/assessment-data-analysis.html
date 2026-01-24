@@ -9,7 +9,7 @@
 <meta name="author" content="Andreas Handel">
 <meta name="description" content="Modern Applied Data Analysis (MADA) course">
 
-<title>Assessment - Data Analysis – MADA Course</title>
+<title>assessment-data-analysis – MADA Course</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -289,7 +289,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#more-data-processing" id="toc-more-data-processing" class="nav-link" data-scroll-target="#more-data-processing">More data processing</a></li>
   <li><a href="#more-plotting" id="toc-more-plotting" class="nav-link" data-scroll-target="#more-plotting">More plotting</a></li>
   <li><a href="#simple-model-fits" id="toc-simple-model-fits" class="nav-link" data-scroll-target="#simple-model-fits">Simple model fits</a></li>
-  <li><a href="#sending-updates-to-github" id="toc-sending-updates-to-github" class="nav-link" data-scroll-target="#sending-updates-to-github">Sending updates to Github</a></li>
+  <li><a href="#sending-updates-to-github" id="toc-sending-updates-to-github" class="nav-link" data-scroll-target="#sending-updates-to-github">Sending updates to GitHub</a></li>
   <li><a href="#handing-it-off-to-your-classmate" id="toc-handing-it-off-to-your-classmate" class="nav-link" data-scroll-target="#handing-it-off-to-your-classmate">Handing it off to your classmate</a></li>
   </ul></li>
   <li><a href="#part-2" id="toc-part-2" class="nav-link" data-scroll-target="#part-2">Part 2</a>
@@ -327,7 +327,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2026-01-02</p>
+      <p class="date-modified">2026-01-17</p>
     </div>
   </div>
     
@@ -465,7 +465,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Use the <code>lm</code> function and fit life expectancy as the outcome, and infant mortality as the predictor. Then repeat, now with the population size as the predictor variable. (Use the data from 2000 only.) Save the result from the two fits into two objects (e.g.&nbsp;<code>fit1</code> and <code>fit2</code>) and apply the <code>summary</code> command to both, which will print various fit results to the screen Add comments into your Quarto file to explain what you did and found.</p>
 </section>
 <section id="sending-updates-to-github" class="level3">
-<h3 class="anchored" data-anchor-id="sending-updates-to-github">Sending updates to Github</h3>
+<h3 class="anchored" data-anchor-id="sending-updates-to-github">Sending updates to GitHub</h3>
 <p>Once you are done with your exercise, render/re-build your portfolio website. Make sure no error messages show up. A preview should show up, check that the page for this exercise looks the way you want it to. Once you are happy with how everything looks, commit your changes and push to the remote repository on GitHub.com. Check your portfolio website online to make sure you can now see the newly created R exercise document (in addition to your previously created <code>About</code> page).</p>
 </section>
 <section id="handing-it-off-to-your-classmate" class="level3">
@@ -481,13 +481,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Once you’ve done your first part, you’ll contribute to another group member’s project.</p>
 <p>You will work on your classmate’s repository using what is called the <strong>fork and pull-request</strong> workflow. The basic idea is as follows. First, you make a copy of someone’s GitHub repository. In GitHub terminology, that is called doing a <em>fork</em> of their repository. You can do that for any public repository.</p>
 <p>Next, you implement your improvements in the forked repository. Once you are done, you ask the owner of the original repository to incorporate the updates you made in the fork into their main repository. This last part is called issuing a <strong>pull request</strong>. You are requesting that the other person <em>pull</em> your changes into their repository, hence the at times confusing (at least for me) terminology. I prefer to think of them as <em>merge</em> requests or <em>sync</em> requests, i.e.&nbsp;you are requesting that they merge or sync your changes into their repository. You’ll find the terminology <em>merge request</em> is used at times. If the person who controls the main repository likes your changes, they will <em>merge</em> your fork into the main branch. And just like that, you have contributed to some project becoming better! We will practice this <em>fork and pull</em> flow now.</p>
-<p>Find the repository of the team member you will contribute to and <em>fork</em> their repository on <code>Github.com</code>. This places a copy of their repository into your online Github account. This fork is now your own repository, you have it forever, even if the person who owns the original repository deletes theirs.</p>
+<p>Find the repository of the team member you will contribute to and <em>fork</em> their repository on <code>GitHub.com</code>. This places a copy of their repository into your online GitHub account. This fork is now your own repository, you have it forever, even if the person who owns the original repository deletes theirs.</p>
 <p>Next, clone your fork to your local machine, as you have done previously with your own repositories. Once you finished cloning to your local machine, open the repository in Positron. Once you have the repository open, find the file for this exercise. Open it, make sure it runs/renders. Then add your part at the bottom of the file.</p>
 <p>Start off by adding a comment that says something like <strong>This section contributed by YOURFULLNAME</strong>. This needs to be there for me to be able to grade your contribution.</p>
 </section>
 <section id="more-data-exploration" class="level3">
 <h3 class="anchored" data-anchor-id="more-data-exploration">More data exploration</h3>
-<p>Pick another dataset from <code>dslabs</code>, whichever one you want. Unfortunately, the <code>dslabs</code> package doesn’t have a nice website. But you can go to <a href="https://cran.r-project.org/web/packages/dslabs/index.html">its offical CRAN entry</a> and click on <em>Reference Manual</em>. The pdf lists the various other datasets and for each provides a brief explanation.</p>
+<p>Pick another dataset from <code>dslabs</code>, whichever one you want. Unfortunately, the <code>dslabs</code> package doesn’t have a nice website. But you can go to <a href="https://cran.r-project.org/web/packages/dslabs/index.html">its official CRAN entry</a> and click on <em>Reference Manual</em>. The pdf lists the various other datasets and for each provides a brief explanation.</p>
 <p>Once you chose one of the datasets, write R code to go through similar steps as above. Specifically, do the following:</p>
 <ul>
 <li>Explore the dataset.</li>

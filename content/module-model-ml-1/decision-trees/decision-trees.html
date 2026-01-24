@@ -9,7 +9,7 @@
 <meta name="author" content="Andreas Handel">
 <meta name="description" content="Modern Applied Data Analysis (MADA) course">
 
-<title>Decision Trees – MADA Course</title>
+<title>decision-trees – MADA Course</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -784,7 +784,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2026-01-06</p>
+      <p class="date-modified">2026-01-17</p>
     </div>
   </div>
     
@@ -817,14 +817,14 @@ window.Quarto = {
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
 <p>Simple GLMs have the main limitation of capturing only overall smooth patterns relating inputs and outcomes. Higher order terms or interactions must be manually specified. The polynomial and spline models we discussed allow for more flexible patterns, at the cost of more potential overfitting and also reduced interpretability. Another class of models that allow non-linear relation between inputs and outcomes are based on <a href="https://en.wikipedia.org/wiki/Decision_tree"><strong>decision trees</strong></a>. In general, a decision tree is a tree-like structure that helps you make decisions. In machine learning, there are <a href="https://en.wikipedia.org/wiki/Decision_tree_learning">specific methods to build those trees</a>. Decision trees can be used for continuous outcomes, in which case they are called <strong>regression trees</strong> or for categorical outcomes, in which case they are called <strong>classification trees</strong>. The umbrella term <strong>Classification and regression trees - or CART for short</strong> is also often used to mean the same as decision trees.</p>
-<p>Basic tree models have the advantage of being fairly easy to understand and use, even by non-statisticians. Trees can deal with nonlinear relations between predictors and outcome, they easily accomodate more than two categories for classification, and they can handle predictors that have missing values.</p>
+<p>Basic tree models have the advantage of being fairly easy to understand and use, even by non-statisticians. Trees can deal with nonlinear relations between predictors and outcome, they easily accommodate more than two categories for classification, and they can handle predictors that have missing values.</p>
 </section>
 <section id="tree-examples" class="level1">
 <h1>Tree Examples</h1>
 <p>The following shows a tree from <a href="https://doi.org/10.1093/fampra/cms020">Afonso et al.&nbsp;2012</a>, which is a study led by one of my colleagues <a href="https://publichealth.uga.edu/faculty-member/mark-h-ebell/">Mark Ebell</a> to determine if there are simple decision rules that can determine if a person has an influenza infection or not.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="afonso12.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Source: Alfonso et al.&nbsp;2012"><img src="afonso12.png" class="img-fluid figure-img" alt="A classification tree from Afonso et al. 2012. The tree begins with a patient with suspected influenza, and categorizes them as high risk of flu if their temperature is greater than 37.3 degrees Celcius. If not, but the patient has chills or sweating, they are classified into moderate risk of flu. Otherwise, they are classified as haivng low risk of flu." width="400"></a></p>
+<p><a href="afonso12.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Source: Alfonso et al.&nbsp;2012"><img src="afonso12.png" class="img-fluid figure-img" alt="A classification tree from Afonso et al. 2012. The tree begins with a patient with suspected influenza, and categorizes them as high risk of flu if their temperature is greater than 37.3 degrees Celsius. If not, but the patient has chills or sweating, they are classified into moderate risk of flu. Otherwise, they are classified as having low risk of flu." width="400"></a></p>
 <figcaption>Source: <a href="https://doi.org/10.1093/fampra/cms020">Alfonso et al.&nbsp;2012</a></figcaption>
 </figure>
 </div>

@@ -10,7 +10,7 @@
 <meta name="dcterms.date" content="2024-01-25">
 <meta name="description" content="Modern Applied Data Analysis (MADA) course">
 
-<title>Model assessment using cross-validation – MADA Course</title>
+<title>external-data-assessment – MADA Course</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -764,7 +764,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2025-12-29</p>
+      <p class="date-modified">2026-01-17</p>
     </div>
   </div>
     
@@ -818,7 +818,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="cross-validation-and-model-complexity" class="level1">
 <h1>Cross-validation and model complexity</h1>
-<p>If you are mostly fitting GLM type models or other fairly simple models, you might wonder what I mean when I say <em>during the model building/fitting process</em>, since for a given simple model, there is just one set of model parameters that fits best, and that’s it. However, many more complex models have what is often referred to as tuning parameters. These are not part of the model structure (e.g., they are not the coefficients in front of your predictor variables), but they influence model performance. A great example are AI models, many of which easily have millions of parameters that need to be tuned to get good model performance. For those models, it is critical to evaluate model performance on data that is somewhat indepedent from the sample that is used to fit/tune/optimize the model.</p>
+<p>If you are mostly fitting GLM type models or other fairly simple models, you might wonder what I mean when I say <em>during the model building/fitting process</em>, since for a given simple model, there is just one set of model parameters that fits best, and that’s it. However, many more complex models have what is often referred to as tuning parameters. These are not part of the model structure (e.g., they are not the coefficients in front of your predictor variables), but they influence model performance. A great example are AI models, many of which easily have millions of parameters that need to be tuned to get good model performance. For those models, it is critical to evaluate model performance on data that is somewhat independent from the sample that is used to fit/tune/optimize the model.</p>
 <p>To provide an analogy for a GLM, the number of variables you put in your model is somewhat similar. You learned that larger models fit better, so sticking more predictors into your model will give better performance (e.g., lower RMSE). However, this might lead to worse performance on independent data. You can then use something like CV to determine how many predictors might be best for your model.</p>
 </section>
 <section id="summary" class="level1">
@@ -835,8 +835,8 @@ ul.task-list li input[type="checkbox"] {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>What’s the name commonly given to the data you do your final model evaluation?</p>
-<div id="webex-9658bdf8fa20dc7db5679a89c4fd9d98" class="webex-radiogroup" data-answer="YgYZCE5VSgg7">
-<label><input type="radio" autocomplete="off" name="9658bdf8fa20dc7db5679a89c4fd9d98"><span>Split Data</span></label><label><input type="radio" autocomplete="off" name="9658bdf8fa20dc7db5679a89c4fd9d98"><span>Train Data</span></label><label><input type="radio" autocomplete="off" name="9658bdf8fa20dc7db5679a89c4fd9d98"><span>Test Data</span></label><label><input type="radio" autocomplete="off" name="9658bdf8fa20dc7db5679a89c4fd9d98"><span>Analysis Data</span></label>
+<div id="webex-4415ba1f04065a071ebdf29cc3aa99ac" class="webex-radiogroup" data-answer="bwQdBU5QHVZt">
+<label><input type="radio" autocomplete="off" name="4415ba1f04065a071ebdf29cc3aa99ac"><span>Split Data</span></label><label><input type="radio" autocomplete="off" name="4415ba1f04065a071ebdf29cc3aa99ac"><span>Train Data</span></label><label><input type="radio" autocomplete="off" name="4415ba1f04065a071ebdf29cc3aa99ac"><span>Test Data</span></label><label><input type="radio" autocomplete="off" name="4415ba1f04065a071ebdf29cc3aa99ac"><span>Analysis Data</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -852,8 +852,8 @@ ul.task-list li input[type="checkbox"] {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>One needs to use at least 10 folds/blocks in CV to get a reliable answer.</p>
-<div id="webex-c746ecda1a9258df50ad4b5775a2acbc" class="webex-radiogroup" data-answer="OAcYBzg=">
-<label><input type="radio" autocomplete="off" name="c746ecda1a9258df50ad4b5775a2acbc"><span>True</span></label><label><input type="radio" autocomplete="off" name="c746ecda1a9258df50ad4b5775a2acbc"><span>False</span></label>
+<div id="webex-f5a402f8b8a791e763e4b18cd7ee35db" class="webex-radiogroup" data-answer="PQVNBW0=">
+<label><input type="radio" autocomplete="off" name="f5a402f8b8a791e763e4b18cd7ee35db"><span>True</span></label><label><input type="radio" autocomplete="off" name="f5a402f8b8a791e763e4b18cd7ee35db"><span>False</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -867,8 +867,8 @@ ul.task-list li input[type="checkbox"] {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>Using indepedently collected data to test model performance is better than using train/test or CV.</p>
-<div id="webex-0cb7de811e7bb315f4fba5fe15be285f" class="webex-radiogroup" data-answer="a1JOBzk=">
-<label><input type="radio" autocomplete="off" name="0cb7de811e7bb315f4fba5fe15be285f"><span>True</span></label><label><input type="radio" autocomplete="off" name="0cb7de811e7bb315f4fba5fe15be285f"><span>False</span></label>
+<div id="webex-c4d9f2b1daa1c43eb156c3d4a0ce84e5" class="webex-radiogroup" data-answer="OAVICTs=">
+<label><input type="radio" autocomplete="off" name="c4d9f2b1daa1c43eb156c3d4a0ce84e5"><span>True</span></label><label><input type="radio" autocomplete="off" name="c4d9f2b1daa1c43eb156c3d4a0ce84e5"><span>False</span></label>
 </div>
 </div>
 <div class="webex-solution">

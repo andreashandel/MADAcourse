@@ -10,7 +10,7 @@
 <meta name="dcterms.date" content="2024-01-25">
 <meta name="description" content="Modern Applied Data Analysis (MADA) course">
 
-<title>Model assessment introduction – MADA Course</title>
+<title>model-assessment-introduction – MADA Course</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -753,7 +753,7 @@ window.Quarto = {
   <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a>
   <ul class="collapse">
   <li><a href="#agreement-with-reality" id="toc-agreement-with-reality" class="nav-link" data-scroll-target="#agreement-with-reality">Agreement with reality</a></li>
-  <li><a href="#model-perfomance" id="toc-model-perfomance" class="nav-link" data-scroll-target="#model-perfomance">Model perfomance</a></li>
+  <li><a href="#model-performance" id="toc-model-performance" class="nav-link" data-scroll-target="#model-performance">Model performance</a></li>
   <li><a href="#predictions" id="toc-predictions" class="nav-link" data-scroll-target="#predictions">Predictions</a></li>
   <li><a href="#uncertainty" id="toc-uncertainty" class="nav-link" data-scroll-target="#uncertainty">Uncertainty</a></li>
   <li><a href="#complexity" id="toc-complexity" class="nav-link" data-scroll-target="#complexity">Complexity</a></li>
@@ -795,7 +795,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2025-12-29</p>
+      <p class="date-modified">2026-01-17</p>
     </div>
   </div>
     
@@ -829,8 +829,8 @@ window.Quarto = {
 <p>First and foremost, you should ask yourself if a given model makes sense. If there’s an obvious conflict between the model structure or the model results and reality, something can’t be right about the model. This is where your subject matter expertise comes in. To be a good data analyst, you not only need statistical and data analysis skills, you should also know a fair bit about the system you are trying to study. If there’s disagreement between model and reality, reality wins. Let’s say, you used a model to explore pattern between children’s age and height. Your model predicts that a 30 year old person will be 20 feet tall. You know this is not possible, therefore your model is likely not a very good one. In this case, you maybe extrapolated outside the range of where the model might be useful - a common occurrence. For this example, the solution is to either only use the model in the range where it was calibrated, or if you want to predict the height of a 30 year old person, you need to change your model.</p>
 <p>So always think critically about the model and its results and ensure they pass the ‘reality test’. Only if they do does it make sense to move to more narrow ways of assessing the model.</p>
 </section>
-<section id="model-perfomance" class="level2">
-<h2 class="anchored" data-anchor-id="model-perfomance">Model perfomance</h2>
+<section id="model-performance" class="level2">
+<h2 class="anchored" data-anchor-id="model-performance">Model performance</h2>
 <p>This is generally the most clear-cut metric. After you define and quantify the metric you want to optimize, you can compare model performance among different models. We discussed some of those metrics before, such as RMSE or accuracy. Comparing those values among models can indicate which model is better. How exactly one should do that performance evaluation is something we’ll discuss in later unit.</p>
 </section>
 <section id="predictions" class="level2">
@@ -867,8 +867,8 @@ window.Quarto = {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>Which of the following is fairly unimportant when assessing models?</p>
-<div id="webex-9b646978e73d8cd4fb5264a2203ce36d" class="webex-radiogroup" data-answer="YlIaBBoIGwg4">
-<label><input type="radio" autocomplete="off" name="9b646978e73d8cd4fb5264a2203ce36d"><span>Model performance</span></label><label><input type="radio" autocomplete="off" name="9b646978e73d8cd4fb5264a2203ce36d"><span>Model complexity</span></label><label><input type="radio" autocomplete="off" name="9b646978e73d8cd4fb5264a2203ce36d"><span>Model programming language</span></label><label><input type="radio" autocomplete="off" name="9b646978e73d8cd4fb5264a2203ce36d"><span>Model uncertainty</span></label>
+<div id="webex-a1d1690a276810fc1df2ce75e2945af6" class="webex-radiogroup" data-answer="OgFIARoIHFFv">
+<label><input type="radio" autocomplete="off" name="a1d1690a276810fc1df2ce75e2945af6"><span>Model performance</span></label><label><input type="radio" autocomplete="off" name="a1d1690a276810fc1df2ce75e2945af6"><span>Model complexity</span></label><label><input type="radio" autocomplete="off" name="a1d1690a276810fc1df2ce75e2945af6"><span>Model programming language</span></label><label><input type="radio" autocomplete="off" name="a1d1690a276810fc1df2ce75e2945af6"><span>Model uncertainty</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -884,8 +884,8 @@ window.Quarto = {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>You should always choose the model that provides the best performance.</p>
-<div id="webex-4de294d5d885cb568b1ecefcfb9dbd7f" class="webex-radiogroup" data-answer="b1RJA2Q=">
-<label><input type="radio" autocomplete="off" name="4de294d5d885cb568b1ecefcfb9dbd7f"><span>True</span></label><label><input type="radio" autocomplete="off" name="4de294d5d885cb568b1ecefcfb9dbd7f"><span>False</span></label>
+<div id="webex-32e6ebad5ccda9806a2ed45ef012152b" class="webex-radiogroup" data-answer="aAJJBzg=">
+<label><input type="radio" autocomplete="off" name="32e6ebad5ccda9806a2ed45ef012152b"><span>True</span></label><label><input type="radio" autocomplete="off" name="32e6ebad5ccda9806a2ed45ef012152b"><span>False</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -899,8 +899,8 @@ window.Quarto = {
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>You need to use your expert knowledge as part of model assessment.</p>
-<div id="webex-307dfc850db6bbc0c915ada554f96830" class="webex-radiogroup" data-answer="aAEbVDs=">
-<label><input type="radio" autocomplete="off" name="307dfc850db6bbc0c915ada554f96830"><span>True</span></label><label><input type="radio" autocomplete="off" name="307dfc850db6bbc0c915ada554f96830"><span>False</span></label>
+<div id="webex-2a7aa02cc1b1f18aea46723f62b50045" class="webex-radiogroup" data-answer="aVAbUTw=">
+<label><input type="radio" autocomplete="off" name="2a7aa02cc1b1f18aea46723f62b50045"><span>True</span></label><label><input type="radio" autocomplete="off" name="2a7aa02cc1b1f18aea46723f62b50045"><span>False</span></label>
 </div>
 </div>
 <div class="webex-solution">
