@@ -33,11 +33,11 @@ As in the previous exercise, assign each member in your group a different, arbit
 
 ### Adding data
 
-You will be using another project template for this exercise (and the same one also for your class project). Go to the GitHub repository for the [data-analysis-template](https://github.com/ahgroup/data-analysis-template) and read the information in the `README.md` file (shown at the bottom of the repository website). You can ignore the bits about Package Management.
+You will be using another project template for this exercise (this is the same template you will be using for your class project). Go to the GitHub repository for the [data-analysis-template](https://github.com/ahgroup/data-analysis-template) and read the information in the `README.md` file (shown at the bottom of the repository website). You can ignore the bits about Package Management.
 
 Then start a new repository using this template by clicking the green `Use this template` button on the top right of the repository page, then chose `Create a new repository`. Name the repository `FirstnameLastname-ready-exercise`. Make sure the repository is public. Add a description. Then create the repository. Once it has been created on GitHub.com, clone it to your local computer.
 
-One you have a local version, open it in Positron an look at the different folders, files, and `readme.md` comments that you find inside the various folders. You should be able to run all the various R and Quarto scripts. The idea is that you get some familiarity with the whole setup to prepare you for the next steps.
+One you have a local version, open it in Positron and look at the different folders, files, and `readme.md` comments that you find inside the folders. You should be able to run all the R and Quarto scripts. By exploring the repo, you should get some familiarity with the whole setup to prepare you for the next steps.
 
 Now go ahead and open the `exampledata.xlsx` file (with Excel or a similar program) located in the `raw-data` folder, and add 2 more columns to the data. One column should be something numeric, the other can be something consisting of (a few) different categories. As a (boring) example, you could add eye color and waist size. Feel free to come up with more creative attributes/variables to add. Also add descriptions of your new variables to the `Codebook` sheet/tab. Once done, save the new data as **`exampledata2.xlsx`**.
 
@@ -57,19 +57,21 @@ To avoid any potential merge conflicts, once your classmate takes over, you shou
 
 ### Part 2
 
-You should have received an invitation to be a collaborator on your classmate's repository. Accept it, then directly clone (**not fork**) the repository to your local computer. 
+You should have received an invitation to be a collaborator on your classmate's repository. Accept it, then **directly clone - not fork** the repository to your local computer. 
 
 Look at the `exampledata2.xlsx` file and information in `Codebook`, as well as the description in `report.qmd` to understand what new variables your classmate created.
 
 Find `processingfile-v1.qmd` inside `/code/processing-code/`, make a copy of the file. Update the code such that it now loads the new data file called `exampledata2.xlsx`. Take a look at the new data. Add code to clean the new data as needed. Have the code save the updated data to `processeddata2.rds`.
 
-If you prefer, you can also make copies and edit `processingcode.R` and `processingfile-v2.qmd` instead of `processingfile-v1.qmd`. The first option is a bit easier since you have to only edit one file, but the second option of working in a separate R script can become more efficient once you are doing larger projects with more code.
+::: note
+If you prefer, you can instead make copies and edit `processingcode.R` and `processingfile-v2.qmd` instead of `processingfile-v1.qmd`. The first option is a bit easier since you have to only edit one file, but the second option of working in a separate R script can become more efficient once you are doing larger projects with more code.
+:::
 
-Next, repeat those steps for the exploratory data analysis (EDA) code. Make a copy of the relevant files using either approach (single `qmd` file or R-script + `qmd` file), add code to the new file to create a boxplot with the new categorical variable (whatever it is) on the x-axis, and height on the y-axis. Also create a scatterplot with weight on the x-axis and the new numerical variable on the y-axis. Save both figures to files into the appropriate `results` folder.
+Next, repeat those steps for the exploratory data analysis (EDA) code. Make a copy of the relevant files using either approach (single `qmd` file or R-script + `qmd` file), add code to the new file to create a violin-plot with the new categorical variable (whatever it is) on the x-axis, and height on the y-axis. Also create a scatterplot with weight on the x-axis and the new numerical variable on the y-axis. Save both figures to files into the appropriate `results` sub-folder.
 
 Make sure everything works, then commit and push your changes to GitHub.com. Let your classmate know that you are done with your part.
 
- **Note that you are now directly pushing to the original repo which is owned by your classmate.** This is easier, you don't need to do fork and pull request (PR). **It's also more dangerous**, since you could potentially mess up your classmate's repo. So make sure things work before committing and pushing. 
+ **Note that you are now directly pushing to the original repo which is owned by your classmate.** This is easier, you don't need to do a fork and pull request (PR). **It's also more dangerous**, since you could potentially mess up your classmate's repo. So make sure things work before committing and pushing. 
 
 
 **You need to have this done by Thursday evening.**
@@ -93,6 +95,8 @@ Write the appropriate text into the relevant `Methods` and `Results` sections. T
 Adjust sections as you see fit, just make sure you explain everything that is happening in this - very basic - analysis. Also **delete everything in this report that is not relevant/applicable to your exercise.**
 
 Once all is done, render the report. Find the `report.html` file, open it on your browser and make sure everything looks ok. If all is good, commit and push to make sure your local repo is in sync with your remote.
+
+### Part 4
 
 **Now continue in your portfolio website repository.** 
 
