@@ -36,7 +36,8 @@ While this is an open-ended exercise and there are no specific requirements as t
 
 ## Setup
 
-This exercise doesn't have an existing folder in your portfolio. Make a new folder, call it either `synthetic-data-exercise` or `complex-data-exercise`, depending on which option you choose. Copy one of the existing Quarto files into that new folder (e.g., the one called `tidytuesday-exercise.qmd`), rename it to `synthetic-data-exercise.qmd` or `complex-data-exercise.qmd`. Then open your portfolio as a project/workspace in Positron.
+This exercise doesn't have an existing folder in your portfolio. Make a new folder, call it either `data-exercise`. Copy one of the existing Quarto files into that new folder (e.g., the one called `starter-analysis-exercise.qmd`), rename it to `data-exercise.qmd`. Then open your portfolio as a project/workspace in Positron. Open the new `.qmd` file, delete everything apart from the YAML header. Now you are ready to start.
+
 
 ## Option 1
 
@@ -59,11 +60,10 @@ Take some inspiration from the examples shown in the [Synthetic Data module](/co
 
 ## Wrap-up
 
-Once you got your exercise done, you need to add it to your website. To that end, open the `_quarto.yml` file. In the section that says `menu` and lists several of your projects, add lines at a `-text:` and `file:` entry that points to your new folder/file. Call it either `Synthetic Data Exercise` or `Complex Data Exercise`. **Be careful to have exactly the same number of empty spaces at the beginning of the line as all the other lines.**
+Once you got your exercise done, you need to add it to your website. To that end, edit the `_quarto.yml` file as you did previously. Basically, copy the `menu:` entry for the Starter Analysis exercise, and adjust so it has the right title and points to the right file for this week's exercise. **Remember to be careful to have exactly the same number of empty spaces at the beginning of the line as all the other lines.**
 
 While you are in that file, if you haven't done so, update other parts, e.g. such as the title and the github URL. See the instructions for the first exercise if you need a reminder.
 
 Once all done, render your website to make sure everything looks ok and your new exercise shows up. Once things looks fine on your local computer, push your updates to GitHub and check that they also look ok online.
-
 
 **Since this will be part of your portfolio site, and you already posted a link to that previously, you don't need to post anything, I know where to find it.**
