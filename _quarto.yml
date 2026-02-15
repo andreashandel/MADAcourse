@@ -20,8 +20,8 @@ description-meta: Modern Applied Data Analysis (MADA) course
 engine: knitr
 format:
   html:
-    axe:
-      output: document 
+#    axe: #for accessibility check
+#      output: document 
     theme:
       - yeti
       - assets/MADAstyle.scss
