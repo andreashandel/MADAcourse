@@ -29,6 +29,11 @@ We'll also use the familiar group setup. Assign each member in your group an (ar
 
 **Part 1 is due by Wednesday.**
 
+## Preparation
+
+Open your portfolio repository. Create a folder called `cdcdata-exercise`. Add a new Quarto document called `cdcdata-exercise.qmd` to the folder you just created. It's best to make a copy of an existing one and just remove everything apart from the YAML header.
+
+
 ## Finding Data
 
 Previously, you did a quick exploration of a dataset that came with an R package (`gapminder` data inside `dslabs` package). A lot of datasets can be found inside R packages. For instance, this [page lists what is likely only a small fraction](https://vincentarelbundock.github.io/Rdatasets/datasets.html). The good and the bad about datasets that come with R packages is that they are often fairly clean/tidy. That's unfortunately not how most "real world" datasets look like. Getting dirty and messy datasets and wrangling them into a form that is suitable for statistical analysis is part of most workflows and often takes a lot of time. We'll start practicing this here by getting data that might or might not be very clean.
@@ -40,7 +45,7 @@ Which dataset you choose is up to you. I suggest you pick a dataset that has at 
 
 ## Getting the data
 
-To get the dataset you selected, it is easiest if you download the file to your computer and place it inside your portfolio repository. Note that in general, you should  make each data analysis (or other) project its own GitHub repository, and always use a structure like the one provided in the `Data Analysis Template` (or something similar). However, for this small exercise and for logistic reasons, you'll use your portfolio/website repository, and just a single folder. Make a new folder called `cdcdata-exercise` inside your portfolio repository. Place the data into that folder.
+To get the dataset you selected, it is easiest if you download the file to your computer and place it inside your exercise folder. Note that in general, you should  make each data analysis (or other) project its own GitHub repository, and always use a structure like the one provided in the `Data Analysis Template` (or something similar). However, for this small exercise and for logistic reasons, you'll use your portfolio/website repository, and just a single folder. 
 
 
 ::: warning
@@ -53,10 +58,7 @@ While you should be able to find data for direct download from the CDC website, 
 
 ## Exploring the data
 
-Now, write code that explores the data. 
-Add a new Quarto document called `cdcdata-exercise.qmd` to the folder you just created.
-
-Start by providing a brief description of the data, where you got it, what it contains. Also add a link to the source.
+Now, write code that explores the data. Open `cdcdata-exercise.qmd`. Start by providing a brief description of the data, where you got it, what it contains. Also add a link to the source.
 
 Then write code that reads/loads the data. As needed, process the data (e.g., if there are weird symbols in the data, or missing values coded as `999` or anything of that sort, write code to fix it.) If your dataset has a lot of variables, pick a few of them (at least 5).
 
@@ -66,7 +68,7 @@ The idea is that your descriptive analysis will provide enough information for y
 
 Remember to add both text to your Quarto file and comments into your code to explain what you are doing.
 
-In a final step, update the `_quarto.yml` file and include a menu item for "Data Analysis Exercise" pointing to the new file. Follow the format of the existing entries. Remember to be very careful about the right amount of empty space. Re-create your website and make sure it all works and the new project shows up on the website.
+In a final step, update the `_quarto.yml` file and include a menu item for **CDC Data Exercise** pointing to the new file. Follow the format of the existing entries. Remember to be very careful about the right amount of empty space. Re-create your website and make sure it all works and the new project shows up on the website.
 
 
 ## GitHub Collaboration
