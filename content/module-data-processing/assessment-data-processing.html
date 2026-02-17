@@ -248,6 +248,7 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a></li>
   <li><a href="#part-1" id="toc-part-1" class="nav-link" data-scroll-target="#part-1">Part 1</a></li>
+  <li><a href="#preparation" id="toc-preparation" class="nav-link" data-scroll-target="#preparation">Preparation</a></li>
   <li><a href="#finding-data" id="toc-finding-data" class="nav-link" data-scroll-target="#finding-data">Finding Data</a></li>
   <li><a href="#getting-the-data" id="toc-getting-the-data" class="nav-link" data-scroll-target="#getting-the-data">Getting the data</a></li>
   <li><a href="#exploring-the-data" id="toc-exploring-the-data" class="nav-link" data-scroll-target="#exploring-the-data">Exploring the data</a></li>
@@ -284,7 +285,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2026-02-12</p>
+      <p class="date-modified">2026-02-15</p>
     </div>
   </div>
     
@@ -315,6 +316,10 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="part-1">Part 1</h2>
 <p><strong>Part 1 is due by Wednesday.</strong></p>
 </section>
+<section id="preparation" class="level2">
+<h2 class="anchored" data-anchor-id="preparation">Preparation</h2>
+<p>Open your portfolio repository. Create a folder called <code>cdcdata-exercise</code>. Add a new Quarto document called <code>cdcdata-exercise.qmd</code> to the folder you just created. It’s best to make a copy of an existing one and just remove everything apart from the YAML header.</p>
+</section>
 <section id="finding-data" class="level2">
 <h2 class="anchored" data-anchor-id="finding-data">Finding Data</h2>
 <p>Previously, you did a quick exploration of a dataset that came with an R package (<code>gapminder</code> data inside <code>dslabs</code> package). A lot of datasets can be found inside R packages. For instance, this <a href="https://vincentarelbundock.github.io/Rdatasets/datasets.html">page lists what is likely only a small fraction</a>. The good and the bad about datasets that come with R packages is that they are often fairly clean/tidy. That’s unfortunately not how most “real world” datasets look like. Getting dirty and messy datasets and wrangling them into a form that is suitable for statistical analysis is part of most workflows and often takes a lot of time. We’ll start practicing this here by getting data that might or might not be very clean.</p>
@@ -323,7 +328,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="getting-the-data" class="level2">
 <h2 class="anchored" data-anchor-id="getting-the-data">Getting the data</h2>
-<p>To get the dataset you selected, it is easiest if you download the file to your computer and place it inside your portfolio repository. Note that in general, you should make each data analysis (or other) project its own GitHub repository, and always use a structure like the one provided in the <code>Data Analysis Template</code> (or something similar). However, for this small exercise and for logistic reasons, you’ll use your portfolio/website repository, and just a single folder. Make a new folder called <code>cdcdata-exercise</code> inside your portfolio repository. Place the data into that folder.</p>
+<p>To get the dataset you selected, it is easiest if you download the file to your computer and place it inside your exercise folder. Note that in general, you should make each data analysis (or other) project its own GitHub repository, and always use a structure like the one provided in the <code>Data Analysis Template</code> (or something similar). However, for this small exercise and for logistic reasons, you’ll use your portfolio/website repository, and just a single folder.</p>
 <div class="warning">
 <p>Remember that GitHub doesn’t like large files. So if you pick a large data file (&gt;50MB), first place it somewhere outside your repository, then reduce it by e.g., writing some R code that selects only a portion of the data. Once it’s small enough, you can place it into the GitHub repository.</p>
 </div>
@@ -333,13 +338,12 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="exploring-the-data" class="level2">
 <h2 class="anchored" data-anchor-id="exploring-the-data">Exploring the data</h2>
-<p>Now, write code that explores the data. Add a new Quarto document called <code>cdcdata-exercise.qmd</code> to the folder you just created.</p>
-<p>Start by providing a brief description of the data, where you got it, what it contains. Also add a link to the source.</p>
+<p>Now, write code that explores the data. Open <code>cdcdata-exercise.qmd</code>. Start by providing a brief description of the data, where you got it, what it contains. Also add a link to the source.</p>
 <p>Then write code that reads/loads the data. As needed, process the data (e.g., if there are weird symbols in the data, or missing values coded as <code>999</code> or anything of that sort, write code to fix it.) If your dataset has a lot of variables, pick a few of them (at least 5).</p>
 <p>Once you have the data processed and cleaned, perform some exploratory/descriptive analysis on this cleaned dataset. Make some summary tables, produce some figures. Try to summarize each variable in a way that it can be described by a distribution. For instance if you have a categorical variable, show what % are in each category. If you have a continuous variable, make a plot to see if it’s approximately normal, then try to summarize it to determine its mean and standard deviation.</p>
 <p>The idea is that your descriptive analysis will provide enough information for your classmate to make synthetic data that looks similar, along the lines discussed in the synthetic data module.</p>
 <p>Remember to add both text to your Quarto file and comments into your code to explain what you are doing.</p>
-<p>In a final step, update the <code>_quarto.yml</code> file and include a menu item for “Data Analysis Exercise” pointing to the new file. Follow the format of the existing entries. Remember to be very careful about the right amount of empty space. Re-create your website and make sure it all works and the new project shows up on the website.</p>
+<p>In a final step, update the <code>_quarto.yml</code> file and include a menu item for <strong>CDC Data Exercise</strong> pointing to the new file. Follow the format of the existing entries. Remember to be very careful about the right amount of empty space. Re-create your website and make sure it all works and the new project shows up on the website.</p>
 </section>
 <section id="github-collaboration" class="level2">
 <h2 class="anchored" data-anchor-id="github-collaboration">GitHub Collaboration</h2>
