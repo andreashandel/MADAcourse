@@ -26,11 +26,7 @@ analyses the authors did (based on the categories described in this
 module). Also discuss what the (stated or not stated) objective of the
 paper/study was. Comment on if you think the authors performed the right analysis given their goals, and state your opinion if they interpreted/presented their results properly. If you think they didn't do their analysis right or didn't present/interpret their results correctly, make suggestions for what they should have done.
 
-You don't need to go into modeling details, a big picture description is
-enough. For instance if the authors clearly did a secondary analysis
-collected for a different purpose, but present their findings as if they
-showed causal relations, point out this mis-representation (there's no
-shortage of studies like that).
+You don't need to go into modeling details, a big picture description is enough. For instance if the authors clearly did a secondary analysis collected for a different purpose, but present their findings as if they had a fully pre-specified hypothesis and analysis protocol (e.g., they use p-values and talk about 'significance'), point out this mis-representation (there's no shortage of studies like that).
 
 Post your findings and commentary by Wednesday. Then read through and
 comment on some of the studies your classmates posted.
