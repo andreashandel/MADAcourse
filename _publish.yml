@@ -1,0 +1,4 @@
+- source: project
+  netlify:
+    - id: 78f54427-93ea-41a3-aa1e-83263aa4102f
+      url: https://dainty-speculoos-c7de5d.netlify.app

@@ -7,7 +7,7 @@ project:
   - '!myresources/'
   - '!renv/'
   - '!files/'
-  - "!assets/**" # i don't think we need stuff in this folder rendered, but not sure
+  - "!assets/**" # we don't want/need stuff in this folder rendered
   resources:
     - "assets/**"
     - '*.xlsx'
