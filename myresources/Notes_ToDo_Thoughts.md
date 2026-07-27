@@ -29,7 +29,7 @@ The comments here are technical and related to the working of the website.
 
 - I'm using the exams2forms R package to embed quizzes. 
 
-
+- Good tool to check links: https://www.deadlinkchecker.com/ also https://validator.w3.org/checklink
 
 
 
