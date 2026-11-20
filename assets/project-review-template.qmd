@@ -73,7 +73,7 @@ WRITE YOUR FEEDBACK HERE
 
 
 ## Data wrangling and exploratory analysis
-How well is the data cleaned/processed and explored? Are all steps reasonable and well explained? Are alternatives discussed and considered? Are meaningful exploratory results shown (e.g. in the supplementary materials)?
+How well is the data cleaned/processed and explored? Are all steps reasonable and well explained? Are alternatives discussed and considered? Are meaningful exploratory results shown and interpreted in the manuscript, with the processing and exploration steps documented in the accompanying code?
 
 ### Feedback and Comments
 

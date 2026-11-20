@@ -26,22 +26,22 @@ This project asks you to go through the steps of a simple data analysis. As you 
 
 ## Group setup
 
-As in the previous exercise, assign each member in your group a different, arbitrary number (I'm calling them M1, M2, ...). Make sure you are teamed up with a different person this time. For this exercise, everyone will first work on their own and finish this part by Wednesday. Then M1 will contribute to M2's repository, M2 will work on M3, etc. The last person (M3/M4/M5, based on the number of people in your group), will work on M1's repository. This way, everyone will work on their own and one group member's repository. 
+As in the previous exercise, assign each member in your group a different, arbitrary number (I'm calling them M1, M2, ...). Make sure you are teamed up with a different person this time. For this exercise, everyone will first work on their own and finish Part 1 by Tuesday evening. Then M1 will contribute to M2's repository, M2 will work on M3, etc. The last person (M3/M4/M5, based on the number of people in your group), will work on M1's repository. This way, everyone will work on their own and one group member's repository.
 
 
 ## Part 1
 
 ### Adding data
 
-You will be using another project template for this exercise (this is the same template you will be using for your class project). Go to the GitHub repository for the [data-analysis-template](https://github.com/ahgroup/data-analysis-template) and read the information in the `README.md` file (shown at the bottom of the repository website). You can ignore the bits about Package Management.
+You will be using another project template for this exercise (this is the same template you will be using for your class project). Go to the GitHub repository for the [mds-project-template](https://github.com/andreashandel/mds-project-template) and read `readme.md` and `usage.md`. The latter explains the order in which to run the example processing, exploration, analysis, and figure/table scripts. For this exercise, use the HTML manuscript output; you do not need a supplement or presentation.
 
 Then start a new repository using this template by clicking the green `Use this template` button on the top right of the repository page, then chose `Create a new repository`. Name the repository `FirstnameLastname-ready-exercise`. Make sure the repository is public. Add a description. Then create the repository. Once it has been created on GitHub.com, clone it to your local computer.
 
-One you have a local version, open it in Positron and look at the different folders, files, and `readme.md` comments that you find inside the folders. You should be able to run all the R and Quarto scripts. By exploring the repo, you should get some familiarity with the whole setup to prepare you for the next steps.
+Once you have a local version, open the repository root in Positron and look at the different folders and readme files. Install the packages listed in the template, then follow `usage.md` to run the example workflow and render `products/manuscript/manuscript.qmd` to HTML. By exploring the repo, you should get some familiarity with the whole setup to prepare you for the next steps.
 
-Now go ahead and open the `exampledata.xlsx` file (with Excel or a similar program) located in the `raw-data` folder, and add 2 more columns to the data. One column should be something numeric, the other can be something consisting of (a few) different categories. As a (boring) example, you could add eye color and waist size. Feel free to come up with more creative attributes/variables to add. Also add descriptions of your new variables to the `Codebook` sheet/tab. Once done, save the new data as **`exampledata2.xlsx`**.
+Make a copy of `data/raw-data/example-data.xlsx` called **`data/raw-data/example-data-2.xlsx`**. For this toy exercise, use Excel or a similar program to add two invented columns to the copy, keeping the original file unchanged. One column should be numeric, and the other should contain a few categories. As a (boring) example, you could add eye color and waist size. Feel free to come up with more creative attributes/variables. Add a value for each row, use at least two categories with several observations per category, and describe the new variables and their units/allowed values in the `Codebook` sheet. Keep the existing columns and sheets. These are invented exercise data, not measurements of real people.
 
-Then find `report.qmd` in the `products/report` folder, open it, and add a few sentences explaining what you added to the data into the  _Description of data and data source_ section.
+Then open `products/manuscript/manuscript.qmd` and add a few sentences explaining what you added to the data in the _Description of data and data source_ section.
 
 Commit your changes (write a meaningful commit message) and push them to GitHub.com.
 
@@ -59,15 +59,19 @@ To avoid any potential merge conflicts, once your classmate takes over, you shou
 
 You should have received an invitation to be a collaborator on your classmate's repository. Accept it, then **directly clone - not fork** the repository to your local computer. 
 
-Look at the `exampledata2.xlsx` file and information in `Codebook`, as well as the description in `report.qmd` to understand what new variables your classmate created.
+Look at `data/raw-data/example-data-2.xlsx`, its `Codebook` sheet, and the description in `products/manuscript/manuscript.qmd` to understand what new variables your classmate created.
 
-Find `processingfile-v1.qmd` inside `/code/processing-code/`, make a copy of the file. Update the code such that it now loads the new data file called `exampledata2.xlsx`. Take a look at the new data. Add code to clean the new data as needed. Have the code save the updated data to `processeddata2.rds`.
+Copy `code/data-processing/processing-file-v1.qmd` to `processing-file-exercise.qmd` in the same folder. Update its input to `data/raw-data/example-data-2.xlsx`. Take a look at the new data and add code to clean it as needed, preserving the two new columns. Have the code save the updated data to `data/processed-data/processed-data-2.rds`. Use project-relative paths with `here::here()` as shown in the template.
+
+Review the template's checks as well as its cleaning code. For example, it checks that exactly five rows were removed from the original example. If your changes affect that count, investigate and document the reason before updating the check; do not simply delete a failing check. Also review whether missing values in a new column should cause a whole row to be dropped.
 
 ::: note
-If you prefer, you can instead make copies and edit `processingcode.R` and `processingfile-v2.qmd` instead of `processingfile-v1.qmd`. The first option is a bit easier since you have to only edit one file, but the second option of working in a separate R script can become more efficient once you are doing larger projects with more code.
+If you prefer, copy `code/data-processing/processing-code.r` and `processing-file-v2.qmd` instead. Update the copied Quarto file's `knitr::read_chunk()` path to read your copied R script, and make the same input/output changes there. Choose one processing route; you do not need to maintain both versions. Combining code and text in one Quarto file is a little simpler; a separate R script can become more efficient for larger projects.
 :::
 
-Next, repeat those steps for the exploratory data analysis (EDA) code. Make a copy of the relevant files using either approach (single `qmd` file or R-script + `qmd` file), add code to the new file to create a violin-plot with the new categorical variable (whatever it is) on the x-axis, and height on the y-axis. Also create a scatterplot with weight on the x-axis and the new numerical variable on the y-axis. Save both figures to files into the appropriate `results` sub-folder.
+Next, copy `code/data-exploration/eda.qmd` to `eda-exercise.qmd` in the same folder. Have it read `data/processed-data/processed-data-2.rds`, explore the new variables, and save its computed summary to `results/output/summary-table-2.rds`. Alternatively, copy `eda-code.r` and `eda-v2.qmd`, updating the copied Quarto file to read the copied R script.
+
+The current template separates computing results from producing final figures and tables. Copy `code/figures-tables/make-figures.r` to `make-figures-exercise.r` in the same folder and update it to read `processed-data-2.rds`. Add code to create a violin plot with the new categorical variable on the x-axis and `Height` on the y-axis, and a scatterplot with `Weight` on the x-axis and the new numeric variable on the y-axis. Save both figures under `results/figures/` with informative filenames, labels, and units. Run the processing and exploration steps before the figure-generation script.
 
 Make sure everything works, then commit and push your changes to GitHub.com. Let your classmate know that you are done with your part.
 
@@ -80,29 +84,31 @@ Make sure everything works, then commit and push your changes to GitHub.com. Let
 
 Everyone goes back to their own repository. This should now contain the content your classmate contributed. Pull the changes from GitHub.com to your local computer.
 
-Find `statistical-analysis.R` inside `/code/analysis-code/`. Make a copy. Edit the code such that it fits a third linear model with `Height` as outcome and the 2 new variables as predictors. Save the result into `resulttable3.rds` into the appropriate results folder.
+Copy `code/modeling-analysis/statistical-analysis.r` to `statistical-analysis-exercise.r` in the same folder. Update it to read `data/processed-data/processed-data-2.rds`, rerun the two example models on that data, and add a third linear model with `Height` as the outcome and the two new variables as predictors. Save the third model's results to `results/output/result-table-3.rds`, following the template's use of `broom::tidy(..., conf.int = TRUE)` for the first two models.
+
+Copy `code/figures-tables/make-tables.r` to `make-tables-exercise.r` in the same folder. Update its summary input to `results/output/summary-table-2.rds` and extend it to read and format the third model's results. Save the formatted third table to `results/tables/result-table-3.rds`, with a CSV companion as in the template. Check that the table labels describe your new predictors. Run the updated analysis script before the table-generation script so that all model tables use the updated data.
 
 ::: note
 I'm sure you noticed that for this last part, we switched from Quarto files to R scripts. I'm doing this to show you that either are fine. Sometimes it's better to combine code and text in one file. Sometimes just having code by itself is easier/better. In any case, you should add lots of comments and documentation to the Quarto or R file.
 :::
 
-Now we are ready to include the new findings. Open `report.qmd` inside the `products/report` folder. 
+Now we are ready to include the new findings. Open `products/manuscript/manuscript.qmd`.
 
 At the top of the file, list yourself and your classmate as authors. Remove everything else from the example that's irrelevant for this exercise.
 
-Write the appropriate text into the relevant `Methods` and `Results` sections. This will include code to pull in the new figures and the new table.
+Write the appropriate text into the relevant `Methods` and `Results` sections. Pull in the new figures from `results/figures/` and the new formatted model table from `results/tables/`, following the template's examples. Explain what you did and what the results show. Keep the write-up in this one manuscript; no supplement is needed.
 
-Adjust sections as you see fit, just make sure you explain everything that is happening in this - very basic - analysis. Also **delete everything in this report that is not relevant/applicable to your exercise.**
+Adjust sections as you see fit, just make sure you explain everything that is happening in this - very basic - analysis. Also **delete everything in this manuscript that is not relevant/applicable to your exercise.** Update `usage.md` to list your chosen processing/exploration files, analysis script, figure/table scripts, and manuscript render command in the order needed to reproduce the exercise. Make sure no retained manuscript code chunks load stale example outputs.
 
-Once all is done, render the report. Find the `report.html` file, open it on your browser and make sure everything looks ok. If all is good, commit and push to make sure your local repo is in sync with your remote.
+Once all is done, rerun your exercise workflow in the documented order. From the project root, render the manuscript with `quarto render products/manuscript/manuscript.qmd --to html`. Open `products/manuscript/manuscript.html` in your browser and check the new figures, table, and text. Keep the template's `embed-resources: true` HTML setting so the file can be copied to your portfolio on its own. If all is good, commit and push to make sure your local repo is in sync with your remote.
 
 ### Part 4
 
 **Now continue in your portfolio website repository.** 
 
-Open the portfolio repo in Positron. Create a new folder inside the main folder called `ready-exercise`. Copy the `report.html` file you just created into that folder, and rename it `ready-exercise.html`.
+Open the portfolio repo in Positron. Create a new folder inside the main folder called `ready-exercise`. Copy `products/manuscript/manuscript.html` from your exercise repository into that folder, and rename the copy `ready-exercise.html`.
 
-Now open `_.quarto.yml`. Find the `menu` section and copy/paste the 2 lines from "Starter Analysis Exercise" with "READy Exercise", adjusting the path and the text accordingly. Make sure to point to `ready-exercise.html` NOT `.qmd`. Save the file.
+Now open `_quarto.yml`. Find the navigation entry for "Starter Analysis Exercise" and copy it to create an entry named "READy Exercise", adjusting the path and the text accordingly. Point it to `ready-exercise/ready-exercise.html`, not a `.qmd` file. Save the file.
 
 Fully rebuild/render your portfolio website. Make sure everything works and the new exercise shows up in the menu and links to the correct page. Commit and push your changes. Go to your website URL to make sure it also looks ok on your website. **I will only be checking the entry on your portfolio website, so you need to make sure it is all there.**
 
