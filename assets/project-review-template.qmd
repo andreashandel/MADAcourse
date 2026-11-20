@@ -1,7 +1,6 @@
 ---
 title: Project Review Template 
 author: YOUR NAME
-date: date-modified
 format: 
   html:
     toc: true

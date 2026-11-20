@@ -1,8 +1,6 @@
 ---
 title: "Model uncertainty assessment"
 #subtitle: "More info here if needed"
-date: 2024-01-25
-date-modified: last-modified
 ---
 
 # Overview

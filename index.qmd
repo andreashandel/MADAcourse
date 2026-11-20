@@ -6,10 +6,6 @@ toc: FALSE
 
 # Modern Applied Data Analysis (MADA)
 
-<!-- Date is added here instead of YAML heading so the logo floats at the top right of the page -->
-
-<!-- Last modified: 2025-12-14 -->
-
 Welcome to the **Modern Applied Data Analysis (MADA)** course website.
 
 <!-- This website contains almost all the content of an online graduate level course taught by [Andreas Handel](https://www.andreashandel.com/) at the University of Georgia.

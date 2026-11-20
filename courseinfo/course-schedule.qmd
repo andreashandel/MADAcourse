@@ -1,5 +1,5 @@
 ---
-title: MADA – Spring 2026 – Schedule
+title: MADA – Spring 2027 – Schedule
 subtitle: ""
 toc: FALSE
 ---
@@ -13,29 +13,35 @@ Those are described in more detail on the [**Assessments**](assessments-overview
 ::: emphasis
 Unless otherwise specified, the first posting of the discussion is due by end of Wednesday, the discussion replies are due by Friday 5pm.
 Quizzes and Projects are due by Friday 5pm.
+The final project revision (Part 6) is due Tuesday, May 4, at 5pm.
 Exercises often have multiple parts with staggered deadlines.
 See each exercise for details.
 :::
 
 | **Module Topic** | **Start and end dates** | Quiz | Exercise | **Discussion** | Project |
 |------------|------------|------------|------------|------------|------------|
-| Module 1 -- Course and tools introduction | 1/12 -- 1/16 | Y | Portfolio start | Introductions |  |
-| Module 2 -- Data analysis introduction  | 1/19 -- 1/23 | Y | Starter analysis (group work) | Reproducible research example |  |
-| Module 3 -- READy workflows | 1/26 -- 1/30 | Y | Data analysis and coding (group work) | Module Reflection |  |
-| Module 4 -- Data introduction & Synthetic data | 2/2 -- 2/6 | Y | Complex or Synthetic data (solo work) | *None* | Part 1 due |
-| Module 5 -- Data processing | 2/9 -- 2/13 | Y | Data wrangling (group work) | AI tools |  |
-| Module 6 -- Presenting data | 2/16 -- 2/20 | Y | Figures and Tables (solo work) | Exercise feedback |  |
-| Module 7 -- Statistical analysis overview | 2/23 -- 2/27 | Y | *None* | Scientific Paper Evaluation | Part 2 due |
-| Module 8 -- Model fitting | 3/2 -- 3/6 | Y | Model fitting (solo work) | Module Reflection |  |
-| **Spring Break** | **3/9 -- 3/13** |  |  |  |  |
-| Module 9 -- Model assessment | 3/16 -- 3/20 | Y | *None* | Module Reflection | Part 3 due |
-| Module 10 -- Model improvement | 3/23 -- 3/27 | Y | Model performance and predictions (group work) | *None* | Project reviews due |
-| Module 11 -- Machine learning models I | 3/30 -- 4/3 | Y | Machine Learning Models (solo work) | Projects |  |
-| Module 12 -- Machine learning models II | 4/6 -- 4/10 | Y | *None* | Machine Learning methods | Part 4 due |
-| Module 13 -- The complete analysis workflow | 4/13 -- 4/17 | Y | Tidytuesday analysis (solo work) | Course feedback |  |
-| Finishing Project | 4/20 -- 4/24 | N | *None* | *None* | Part 5 due  |
-| Project Reviews | 4/27 -- 5/1 | N | *None* | *None* | Project reviews due |
-| Final project revision | 5/4 --  5/6 (Wednesday) | N | *None* | *None* | Part 6 due |
+| Module 1 -- Course and tools introduction | 1/11 -- 1/15 | Y | Portfolio start | Introductions |  |
+| Module 2 -- Data analysis introduction  | 1/18 -- 1/22 | Y | Starter analysis (group work) | Reproducible research example |  |
+| Module 3 -- READy workflows | 1/25 -- 1/29 | Y | Data analysis and coding (group work) | Module Reflection |  |
+| Module 4 -- Data introduction & Synthetic data | 2/1 -- 2/5 | Y | Complex or Synthetic data (solo work) | *None* | Part 1 due |
+| Module 5 -- Data processing | 2/8 -- 2/12 | Y | Data wrangling (group work) | AI tools |  |
+| Module 6 -- Presenting data | 2/15 -- 2/19 | Y | Figures and Tables (solo work) | Exercise feedback |  |
+| Module 7 -- Statistical analysis overview | 2/22 -- 2/26 | Y | *None* | Scientific Paper Evaluation | Part 2 due |
+| Module 8 -- Model fitting | 3/1 -- 3/5 | Y | Model fitting (solo work) | Module Reflection |  |
+| **Spring Break** | **3/8 -- 3/12** |  |  |  |  |
+| Module 9 -- Model assessment | 3/15 -- 3/19 | Y | *None* | Module Reflection | Part 3 due |
+| Module 10 -- Model improvement | 3/22 -- 3/26 | Y | Model performance and predictions (group work) | *None* | Project reviews due |
+| Module 11 -- Machine learning models I | 3/29 -- 4/2 | Y | Machine Learning Models (solo work) | Projects |  |
+| Module 12 -- Machine learning models II | 4/5 -- 4/9 | Y | *None* | Machine Learning methods | Part 4 due |
+| Module 13 -- The complete analysis workflow | 4/12 -- 4/16 | Y | Tidytuesday analysis (solo work) | Course feedback |  |
+| Finishing Project | 4/19 -- 4/23 | N | *None* | *None* | Part 5 due  |
+| Project Reviews | 4/26 -- 4/30 | N | *None* | *None* | Project reviews due |
+| Final project revision | 5/3 -- 5/4 (Tuesday) | N | *None* | *None* | Part 6 due |
 
-*Note: Withdrawal deadline is April 9.*
+Dates follow the [UGA spring 2027 academic calendar](https://reg.uga.edu/calendars/academic-calendars/).
+Classes begin January 11; drop/add runs January 11--15.
+January 18 is the Martin Luther King Jr. Day holiday (no classes), so Module 2 begins January 19.
+The withdrawal deadline is April 7.
+Classes end April 26; April 27 is Reading Day, with no course deadlines.
+Final exams run April 28--May 4; the final project reviews and revision are scheduled during this period.
 

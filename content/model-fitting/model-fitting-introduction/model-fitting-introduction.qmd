@@ -1,8 +1,6 @@
 ---
 title: "Model fitting introduction"
 #subtitle: "More info here if needed"
-date: 2024-02-01
-date-modified: last-modified
 ---
 
 

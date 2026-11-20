@@ -18,6 +18,9 @@ execute:
   keep-md: false
 description-meta: Modern Applied Data Analysis (MADA) course
 engine: knitr
+date-modified: last-modified
+date-format: iso
+modified-title: Last updated
 format:
   html:
 #    axe: #for accessibility check
@@ -30,8 +33,6 @@ format:
     include-after-body: assets/exams2forms-webex.js # from the exam2forms R package for quizzes    
     author:
     - name: Andreas Handel
-    date-modified: last-modified
-    date-format: iso
     toc: true
     toc_depth: 3
     toc_float:
