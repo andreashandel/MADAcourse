@@ -14,8 +14,7 @@ Those are described in more detail on the [**Assessments**](assessments-overview
 Unless otherwise specified, the first posting of the discussion is due by end of Wednesday, the discussion replies are due by Friday 5pm.
 Quizzes and Projects are due by Friday 5pm.
 The final project revision (Part 6) is due Tuesday, May 4, at 5pm.
-Exercises often have multiple parts with staggered deadlines.
-See each exercise for details.
+Exercises often have multiple parts with staggered deadlines. See each exercise for details.
 :::
 
 | **Module Topic** | **Start and end dates** | Quiz | Exercise | **Discussion** | Project |
@@ -38,10 +37,4 @@ See each exercise for details.
 | Project Reviews | 4/26 -- 4/30 | N | *None* | *None* | Project reviews due |
 | Final project revision | 5/3 -- 5/4 (Tuesday) | N | *None* | *None* | Part 6 due |
 
-Dates follow the [UGA spring 2027 academic calendar](https://reg.uga.edu/calendars/academic-calendars/).
-Classes begin January 11; drop/add runs January 11--15.
-January 18 is the Martin Luther King Jr. Day holiday (no classes), so Module 2 begins January 19.
 The withdrawal deadline is April 7.
-Classes end April 26; April 27 is Reading Day, with no course deadlines.
-Final exams run April 28--May 4; the final project reviews and revision are scheduled during this period.
-

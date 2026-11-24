@@ -25,7 +25,7 @@ We'll practice some of the topics covered in this and prior units by continuing 
 
 You'll continue working on the exercise you started previously. We'll also do some group work again, using the -- by now familiar -- M1, M2, ... setup. Assign each other a number. As much as possible, do it such that you end up working with group members you have not (or not in a while) worked with. Use the 'circular' setup such that everyone will work on their own repository and on one other person's repository.
 
-This exercise has 3 parts. Part 1 is due Wednesday morning, part 2 Friday morning, and part 3 Friday evening. Coordinate with your team member accordingly.
+This exercise has 3 parts. Part 1 is due Wednesday 5pm, part 2 Thursday 5pm, and part 3 Friday 5pm. Coordinate with your team member accordingly.
 
 
 ::: note
@@ -115,7 +115,7 @@ If you want to get more robust RMSE estimates with CV, you can try to set `repea
 
 ## Wrap up part 1
 
-Make sure everything runs and works as expected. Also make sure everything is well commented/documented/explained! Then commit, push and tell your classmate that they can take over. **Finish this by Wednesday.**
+Make sure everything runs and works as expected. Also make sure everything is well commented/documented/explained! Then commit, push and tell your classmate that they can take over. **Finish this by Wednesday 5pm.**
 
 
 ## Part 2
@@ -180,7 +180,7 @@ The bootstrap uses sampling, and CV uses sampling. The difference is that for bo
 
 ## Wrap up part 2
 
-Make sure everything runs and works as expected. Then commit, push and if you forked the repo, initiate a pull request. Tell our classmate that its done.
+Make sure everything runs and works as expected. Then commit, push and if you forked the repo, initiate a pull request. Tell our classmate that its done. **Finish this by Thursday 5pm.**
 
 
 ## Part 3
@@ -215,7 +215,7 @@ Use all the assessment bits you computed above to reason about the models. And I
 
 ## Test and website update
 
-Make sure everything works. Make any further updates that you think need to be made. Then rebuild your portfolio website and make sure everything works and shows up as expected. Then commit and push.
+Make sure everything works. Make any further updates that you think need to be made. Then rebuild your portfolio website and make sure everything works and shows up as expected. Then commit and push. **Finish this by Friday 5pm.**
 
 Since this is part of your portfolio site, you don't need to post anything, I know where to find it. 
 
